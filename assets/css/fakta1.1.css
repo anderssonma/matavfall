@@ -1,0 +1,459 @@
+body, html {
+	overflow-x: hidden;
+}
+
+p, h2 {
+	color: rgba(255, 255, 255, 0.95);
+}
+h2 {
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#stage-1 {
+	position: relative;
+	width: 100%;
+}
+#stage-1.active-stage {
+	z-index: 100;
+}
+
+#stage-1.active-stage #basket-1 {
+	opacity: 1;
+}
+#hallare {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -94px;
+	margin-top: -40px;
+	z-index: 11;
+	
+}
+#hallare-bak {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -186px;
+	margin-top: -40px;
+	z-index: 0;
+	
+}
+#hand-plocka {
+	position: absolute;
+	right: -968px;
+	top: 50%;
+	margin-top: -170px;
+}
+#basket-1 {
+	position:absolute;
+	top: 50%;
+	opacity: 0;
+	left: 50%;
+	margin-left: -85px;
+	margin-top: -131px;
+	width: 217px;
+	height: 262px;
+	background: url(../img/matavfallspase-sprite.svg) -1928px 0px;
+}
+.fruit-container {
+	position: absolute;
+	top: 0;
+	max-width: 1440px;
+	width: 1440px;
+	margin: 0 auto;
+	height: 5000px;
+	left: 50%;
+	margin-left: -720px;
+}
+#fakta1-1 {
+	overflow: hidden;
+	width: 100%;
+	padding-top: 1000px;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");
+	
+	/*background: #15927e;*/
+}
+#basket {
+	position: relative;
+	left: 50%;
+	margin-left: -50px;
+	top: 100%;
+	z-index: 10;
+	width: 217px;
+	height: 262px;
+	background: url(../img/matavfallspase-sprite.svg) 0px 0px;
+}
+#basket.addFruits0 {
+	background-position: -1678px 0px;
+}
+#basket.addFruits1 {
+	background-position: -221px  0px;
+}
+#basket.addFruits2 {
+	background-position: -454px 0px;
+}
+#basket.addFruits3 {
+	background-position: -685px 0px;
+}
+#basket.addFruits4 {
+	background-position: -916px 0px;
+}
+#basket.addFruits5 {
+	background-position: -1156px 0px;
+}
+#basket.addFruits6 {
+	background-position: -1407px 0px;
+}
+#basket.addFruits7 {
+	background-position: -1928px 0px;
+}
+h3 {
+	text-transform: uppercase;
+}
+.large-8 {
+	z-index: 1000;
+}
+#bananskal, 
+#tomathalva, 
+#appelskrutt, 
+#aggskal, 
+#fiskben, 
+#pasta, 
+#rakskal, 
+#plastpase, 
+#burk, 
+#glasflaska, 
+#plastflaska,
+#fimp,
+#ostron,
+#tallrik,
+#kokosskal,
+#tuggummi, 
+#snus,
+#snus-1,
+#ost, 
+#medicin,
+#grapefrukt,
+#gurka,
+#hammare, 
+#konservburk,
+#krabbklo,
+#mussla,
+#kycklingklubba,
+#bananfluga,
+#ostmacka,
+#bananfluga-1,
+#bananfluga-2,
+#bananfluga-3, 
+#bananfluga-4{
+	position: absolute;
+}
+.space400 {
+	padding-bottom: 400px;
+}
+#fruit-1 {
+	top: 600px;
+	left: 300px;
+}
+#appelskrutt {
+	top: 1160px;
+	right: 450px;
+	transform: rotate(53deg);
+	-webkit-transform: rotate(53deg);
+}
+#bananskal {
+	top: 760px;
+	left: 170px;
+}
+#pasta {
+	top: 1340px;
+	left: -190px;
+	z-index: 1;
+}
+#ostmacka {
+	top: 1520px;
+	left: 400px;
+	transform: rotate(18deg);
+	-webkit-transform: rotate(18deg);
+}
+#tomathalva {
+	
+}
+#rakskal {
+	
+}
+#aggskal {
+	top: 1420px;
+	right: 250px;
+}
+#fiskben {
+	top: 940px;
+	right: 40px;
+}
+#burk {
+	top: 2370px;
+	left: -10px;
+-webkit-transform: rotate(-298deg);
+}
+#plastpase {
+	top: 1650px;
+	right: -110px;
+	transform:rotate(-53deg);
+	-webkit-transform: rotate(-53deg);
+}
+#fimp {
+	top: 3290px;
+	right: 110px;
+	transform: rotate(-78deg);
+	-webkit-transform: rotate(-78deg);
+}
+#ostron {
+	top: 2090px;
+	right: 30px;
+	transform:rotate(53deg);
+	-webkit-transform: rotate(53deg);
+}
+#plastflaska {
+	top: 2220px;
+	right: 120px;
+	transform: rotate(53deg);
+	-webkit-transform: rotate(53deg);
+}
+#glasflaska {
+	top: 1764px;
+	left: 20px;
+	transform: rotate(78deg);
+	-webkit-transform: rotate(78deg);
+}
+#glasspinne {
+	top: 2220px;
+	position: absolute;
+	left: 560px;
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+}
+#tallrik {
+	top: 1240px;
+	left: -180px;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
+#kokosskal {
+	top: 2489px;
+	right: 80px;
+}
+#snus {
+	top: 3080px;
+	right: 80px;
+}
+#snus-1 {
+	top: 3400px;
+	left: 100px;
+}
+#tuggummi {
+	top: 3180px;
+	left: 100px;
+}
+#ost {
+
+}
+#medicin {
+	top: 3120px;
+	left: 240px;
+}
+#grapefrukt {
+	top: 1250px;
+	right: -40px;
+}
+#gurka {
+	left: 200px;
+}
+#hammare {
+	top: 2410px;
+	right: 360px;
+	-webkit-transform: rotate(-60deg);
+	  -webkit-animation-name: hamrar; 
+    -webkit-animation-duration: 1s	; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition-timing-function: linear;
+    -webkit-transform-origin: left 80%;
+}
+@-webkit-keyframes hamrar {
+	0% { -webkit-transform: rotate(-60deg); }
+	30% { -webkit-transform: rotate(40deg); }
+	100% { -webkit-transform: rotate(-60deg); }
+}
+#konservbruk {
+	top: 1000px;
+	left: 200px;
+}
+#krabbklo {
+	top: 2300px;
+	right: -80px;
+	transform: rotate(-19deg);
+	-webkit-transform: rotate(-19deg);
+}
+#mussla {
+	top: 2110px;
+	right: 260px;
+	transform: rotate(-53deg);
+	-webkit-transform: rotate(-53deg);
+}
+#kycklingklubba {
+	top: 450px;
+	right: 300px;
+	transform:rotate(53deg);
+	-webkit-transform: rotate(53deg);
+}
+#bananfluga {
+	top: 4000px;
+	right: 200px;
+-moz-animation-duration: 4000ms;
+-moz-animation-delay: 0ms;
+-moz-animation-fill-mode: forwards;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
+-moz-transform-origin: 0 0;
+-webkit-animation-name: bananflugaflyger;
+-webkit-animation-duration: 4000ms;
+-webkit-animation-delay: 0ms;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-webkit-transform-origin: 0 0;
+animation-name: bananflugaflyger;
+animation-duration: 4000ms;
+animation-delay: 0ms;
+animation-fill-mode: forwards;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+transform-origin: 0 0;
+}
+#bananfluga-1 {
+	top: 3970px;
+	right: 360px;
+-moz-animation-duration: 2000ms;
+-moz-animation-delay: 0ms;
+-moz-animation-fill-mode: forwards;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
+-moz-transform-origin: 0 0;
+-webkit-animation-name: bananflugaflyger;
+-webkit-animation-duration: 2000ms;
+-webkit-animation-delay: 0ms;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-webkit-transform-origin: 0 0;
+animation-name: bananflugaflyger;
+animation-duration: 2000ms;
+animation-delay: 0ms;
+animation-fill-mode: forwards;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+transform-origin: 0 0;
+}
+#bananfluga-2 {
+	top: 3930px;
+	right: 370px;
+-moz-animation-duration: 1000ms;
+-moz-animation-delay: 0ms;
+-moz-animation-fill-mode: forwards;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
+-moz-transform-origin: 0 0;
+-webkit-animation-name: bananflugaflyger;
+-webkit-animation-duration: 1000ms;
+-webkit-animation-delay: 0ms;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-webkit-transform-origin: 0 0;
+animation-name: bananflugaflyger;
+animation-duration: 1000ms;
+animation-delay: 0ms;
+animation-fill-mode: forwards;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+transform-origin: 0 0;
+}
+#bananfluga-3 {
+	top: 3980px;
+	right: 430px;
+-moz-animation-duration: 7000ms;
+-moz-animation-delay: 0ms;
+-moz-animation-fill-mode: forwards;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
+-moz-transform-origin: 0 0;
+-webkit-animation-name: bananflugaflyger;
+-webkit-animation-duration: 7000ms;
+-webkit-animation-delay: 0ms;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-webkit-transform-origin: 0 0;
+animation-name: bananflugaflyger;
+animation-duration: 7000ms;
+animation-delay: 0ms;
+animation-fill-mode: forwards;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+transform-origin: 0 0;
+}
+#bananfluga-4 {
+	top: 3900px;
+	right: 500px;
+-moz-animation-name: bananflugaflyger;
+-moz-animation-duration:3000ms;
+-moz-animation-delay: 0ms;
+-moz-animation-fill-mode: forwards;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
+-moz-transform-origin: 0 0;
+-webkit-animation-name: bananflugaflyger;
+-webkit-animation-duration: 3000ms;
+-webkit-animation-delay: 0ms;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-webkit-transform-origin: 0 0;
+animation-name: bananflugaflyger;
+animation-duration: 3000ms;
+animation-delay: 0ms;
+animation-fill-mode: forwards;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+transform-origin: 0 0;
+}
+
+
+@-moz-keyframes bananflugaflyger {
+  0% {-moz-transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  4.29% {-moz-transform:translate(160px, 25px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  8.57% {-moz-transform:translate(101px, 101px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  57.14% {-moz-transform:translate(58px, 42px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  71.43% {-moz-transform:translate(17px, -59px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  85.71% {-moz-transform:translate(130px, -7px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-moz-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  100% {-moz-transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);}
+}
+@-webkit-keyframes bananflugaflyger {
+  0% {-webkit-transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  4.29% {-webkit-transform:translate(160px, 25px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  8.57% {-webkit-transform:translate(101px, 101px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  57.14% {-webkit-transform:translate(58px, 42px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  71.43% {-webkit-transform:translate(17px, -59px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  85.71% {-webkit-transform:translate(130px, -7px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  100% {-webkit-transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);}
+}
+@keyframes bananflugaflyger {
+  0% {transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  4.29% {transform:translate(160px, 25px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  8.57% {transform:translate(101px, 101px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  57.14% {transform:translate(58px, 42px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  71.43% {transform:translate(17px, -59px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  85.71% {transform:translate(130px, -7px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  100% {transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);}
+}
+
