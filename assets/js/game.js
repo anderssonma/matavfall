@@ -184,25 +184,25 @@ var setupGame = function() {
 		{
 			type: 'broccoli',
 			title: 'Brocoli',
-			image: 'img/broccoli.png',
+			image: '../assets/img/broccoli.png',
 			width: 100,
 			height: 111
 		}, {
 			type: 'lemon',
 			title: 'Citron',
-			image: '/assets/img/citron.png',
+			image: '../assets/img/citron.png',
 			width: 100,
 			height: 100
 		}, {
 			type: 'banana',
 			title: 'Banan',
-			image: '/assets/svg/bananer.svg',
+			image: '../assets/img/bananer.svg',
 			width: 110,
 			height: 89,
 		}, {
 			type: 'trash',
 			title: 'Telefon',
-			image: '/assets/svg/mobil.svg',
+			image: '../assets/img/mobil.svg',
 			width: 54,
 			height: 104,
 		}
@@ -214,7 +214,7 @@ var setupGame = function() {
 		var loadImg = new Image();
 		loadImg.src = type.image;
 	});
-	crackedPhone.src = 'img/mobil_paj.png';
+	crackedPhone.src = '../assets/img/mobil_paj.png';
 
 	// BEZIER PATHS FOR OBJECTS
 	var pathArray = [
@@ -244,24 +244,24 @@ var setupGame = function() {
 	// ===========
 	/*
 	var gameSounds = {
-		bad: new Audio('sound/error.mp3'),
-		ok: new Audio('sound/lostitem.mp3'),
-		great: new Audio('sound/gotitem.mp3'),
-		punch: new Audio('sound/punch.mp3'),
-		end: new Audio('sound/lose.mp3'),
-		crack: new Audio('sound/glass_crack.mp3'),
-		highScore: new Audio('sound/newhighscore.mp3')
+		bad: new Audio('../assets/sound/error.mp3'),
+		ok: new Audio('../assets/sound/lostitem.mp3'),
+		great: new Audio('../assets/sound/gotitem.mp3'),
+		punch: new Audio('../assets/sound/punch.mp3'),
+		end: new Audio('../assets/sound/lose.mp3'),
+		crack: new Audio('../assets/sound/glass_crack.mp3'),
+		highScore: new Audio('../assets/sound/newhighscore.mp3')
 	};
 	*/
 	var gameSounds = {};
 	var soundURL = [
-		'sound/error.mp3',
-		'sound/lostitem.mp3',
-		'sound/gotitem.mp3',
-		'sound/punch.mp3',
-		'sound/lose.mp3',
-		'sound/glass_crack.mp3',
-		'sound/newhighscore.mp3'
+		'../assets/sound/error.mp3',
+		'../assets/sound/lostitem.mp3',
+		'../assets/sound/gotitem.mp3',
+		'../assets/sound/punch.mp3',
+		'../assets/sound/lose.mp3',
+		'../assets/sound/glass_crack.mp3',
+		'../assets/sound/newhighscore.mp3'
 	];
 
 	var playSound = function(sound) {
@@ -453,7 +453,7 @@ var setupGame = function() {
 		},
 		init: function() {
 			this.image = new Image();
-			this.image.src = 'svg/hand.svg';
+			this.image.src = '../assets/img/hand.svg';
 			this.image.width = 118;
 			this.image.height =  171; // 251 FOR .PNG
 			this.spawnIndex = 2;
@@ -1122,13 +1122,13 @@ var setupGame = function() {
 			console.log('DONE');
 
 			gameSounds = {
-				bad: new Audio('sound/error.mp3'),
-				ok: new Audio('sound/lostitem.mp3'),
-				great: new Audio('sound/gotitem.mp3'),
-				punch: new Audio('sound/punch.mp3'),
-				end: new Audio('sound/lose.mp3'),
-				crack: new Audio('sound/glass_crack.mp3'),
-				highScore: new Audio('sound/newhighscore.mp3')
+				bad: new Audio('../assets/sound/error.mp3'),
+				ok: new Audio('../assets/sound/lostitem.mp3'),
+				great: new Audio('../assets/sound/gotitem.mp3'),
+				punch: new Audio('../assets/sound/punch.mp3'),
+				end: new Audio('../assets/sound/lose.mp3'),
+				crack: new Audio('../assets/sound/glass_crack.mp3'),
+				highScore: new Audio('../assets/sound/newhighscore.mp3')
 			};
 
 			startGame();

@@ -1,4 +1,4 @@
-body, html {
+html {
 	overflow-x: hidden;
 }
 
@@ -69,10 +69,8 @@ h2 {
 #fakta1-1 {
 	overflow: hidden;
 	width: 100%;
-	padding-top: 1000px;
-	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");
-	
-	/*background: #15927e;*/
+	padding-top: 1000px;	
+	background: #8AC6CF;
 }
 #basket {
 	position: relative;

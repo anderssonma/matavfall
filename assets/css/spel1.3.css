@@ -1,3 +1,17 @@
+body {
+	height: 15000px;
+	background: #699C9E;
+}
+
+.game-1 {
+	width: 100%;
+	position: relative;
+	padding: 200px 0 0;
+	background: #8AC6CF;
+	border-top: 1px solid #699C9E;
+	border-bottom: 1px solid #8AC6CF;
+}
+
 .key-binds {
 	margin: 66px 0 0 80px;
 	float: left;
@@ -129,12 +143,13 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.container {
+.game {
 	position: relative;
 	overflow-x: visible;
 	background: url(../img/kitchen_bg.png) #8AC6CF no-repeat top center;
 	height: 700px;
 	width: 1000px;
+	margin: 0 auto;
 }
 
 .alt-bg {
