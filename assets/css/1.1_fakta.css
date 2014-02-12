@@ -2,10 +2,10 @@ html {
 	overflow-x: hidden;
 }
 
-p, h2 {
+#fakta1-1 p, #fakta1-1 h2 {
 	color: rgba(255, 255, 255, 0.95);
 }
-h2 {
+#fakta1-1 h2 {
 	text-transform: uppercase;
 	font-weight: normal;
 }
