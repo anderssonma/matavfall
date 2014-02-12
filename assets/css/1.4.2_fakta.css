@@ -1,0 +1,235 @@
+/* GENERIC */
+.cinema h1, .cinema h6 {
+	font-family: 'Futura', 'Helvetica', sans-serif;
+	color: #F8F8F8;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* CINEMA SCAFFOLDING */
+.cinema {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: static;
+	overflow: hidden;
+}
+.cinema .area {
+	position: absolute;
+	width: 1200px;
+	left: 50%;
+	margin-left: -600px;
+	bottom: 0;
+	height: 700px;
+}
+.cinema .interactive {
+	position: relative;
+	width: 960px;
+	height: 700px;
+	top: 700px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.cinema .content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 100px;
+	background: #F8F8F8;
+}
+
+
+
+/* MOVIE */
+.cinema .movie { /* 840px x 490px är maxupplösning på skärmen (Det som garanterat syns). Behövs några extra px i sidled/höjdled */
+	position: relative;
+	background: #333;
+}
+
+.cinema .play-button {
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	margin: -40px 0 0 -60px;
+	z-index: 1;
+  height: 80px;
+  width: 120px;    
+  background: #7D261D;
+  border-radius: 5px;
+  -webkit-transition: background 0.35s;
+  transition: background 0.35s;
+}
+.cinema .play-button:hover {
+  background: #D93939;
+}
+.cinema .play-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: 48px;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 20px 0 20px 35px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+}
+
+
+
+/* CINEMA TOP & LIGHTS */
+.cinema .top-bar {
+	position: absolute;
+	left: 2px;
+	right: 2px;
+	height: 92px;
+	width: 956px;
+	top: 10px;
+	border-bottom: 12px solid #7D261D;
+	z-index: 3;
+}
+.cinema .top-bar h1 {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	width: 200px;
+	left: 50%;
+	background: #7D261D;
+	font-size: 32px;
+	margin: 10px 0 0 -100px;
+	padding: 20px 0;
+}
+
+.cinema .bulb-array {
+	position: absolute;
+	bottom: -17px;
+	left: 0;
+	right: 0;
+	height: 25px;
+}
+.cinema .bulb {
+	width: 28px;
+	height: 28px;
+	float: left;
+	border: 4px solid #F5E1B8;
+	background: #FCF7EC;
+	margin: 0 23px 0 -2px;
+	border-radius: 20px;
+}
+.cinema .bulb.bulb-lastleft {
+	margin-right: 0;
+}
+.cinema .bulb.bulb-right {
+	float: right;
+	margin: 0 -2px 0 0;
+}
+
+
+
+/* CURTAINS */
+.cinema .curtain {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 580px;
+	background: #A24442;
+	z-index: 2;
+}
+.cinema .curtain-left {
+	left: -100px;
+	background: url(../img/curtain.svg) top right;
+	background-size: 60px 1px;
+}
+.cinema .curtain-right {
+	right: -100px;
+	background: url(../img/curtain.svg) top left;
+	background-size: 60px 1px;
+}
+
+
+
+/* SEATS */
+.cinema .seats {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -225px;
+	height: 100px;
+	z-index: 5;
+}
+.cinema .seat {
+	width: 172px;
+	height: 150px;
+	border-radius: 50px;
+	background: #7D261D;
+	margin: 0 -1px 0 0;
+	float: left;
+}
+.cinema .seats2 {
+	bottom: -185px;
+	left: 78px;
+	z-index: 3;
+}
+.cinema .seats2 .seat {
+	background: #A23728;
+	border-radius: 40px;
+	width: 150px;
+}
+
+
+
+/* READ-MORE SIGN */
+.cinema .read-more {
+	width: 200px;
+	height: 180px;
+	position: absolute;
+	bottom: -200px;
+	right: 100px;
+	-webkit-animation: waveSign 5s infinite alternate ease-in-out;
+	-moz-animation: waveSign 5s infinite alternate ease-in-out;
+	animation: waveSign 5s infinite alternate ease-in-out;
+	-webkit-transform-origin: 50% bottom;
+	-moz-transform-origin: 50% bottom;
+	transform-origin: 50% bottom;
+	z-index: 4;
+}
+.cinema .read-more .plate {
+	width: 200px;
+	height: 80px;
+	background: #F8F8F8;
+	border: 10px solid #C1836A;
+}
+.cinema .read-more .plate h6 {
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 62px;
+	font-size: 18px;
+	color: #666;
+	font-weight: normal;
+	margin: 0;
+}
+.cinema .read-more .pole {
+	width: 10px;
+	height: 100px;
+	background: #5b3526;
+	margin: 0 auto;
+}
+
+@-webkit-keyframes waveSign {
+	0% { -webkit-transform: rotate(-10deg); }
+	50% { -webkit-transform: rotate(10deg); }
+	100% { -webkit-transform: rotate(-10deg); }
+}
+@-moz-keyframes waveSign {
+	0% { -moz-transform: rotate(-10deg); }
+	50% { -moz-transform: rotate(10deg); }
+	100% { -moz-transform: rotate(-10deg); }
+}
+@keyframes waveSign {
+	0% { transform: rotate(-10deg); }
+	50% { transform: rotate(10deg); }
+	100% { transform: rotate(-10deg); }
+}
