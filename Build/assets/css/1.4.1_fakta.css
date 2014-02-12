@@ -1,5 +1,5 @@
 #fakta1-4-1 {
-	background: #EDBED2;
+	background: #699C9E;
 	padding: 500px 0 0;
 	position: relative;
 	height: 10000px;
@@ -7,6 +7,9 @@
 }
 #fakta1-4-1 .large-6 {
 	max-width: 720px;
+}
+#fakta1-4-1 h2, #fakta1-4-1 p.light {
+	color: #F8F8F8;
 }
 #matkasse-1,
 #matkasse-2,
