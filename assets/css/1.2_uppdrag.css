@@ -1,0 +1,195 @@
+.mission {
+  width: 100%;
+  background: #8AC6CF;
+  border-top: 1px solid #699C9E;
+}
+.mission-container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 200px 0;
+  position: relative;
+}
+
+
+/* === SLIDESHOW === */
+.slideshow {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+.slideshow .overflow {
+  width: 100%;
+  overflow: hidden;
+}
+.slideshow .slides {
+  margin-bottom: 40px;
+}
+.slideshow .slides .inner {
+  width: 3000px;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+.slideshow .slides article {
+  width: 1000px;
+  height: 550px;
+  float: left;
+  background: rgba(255,255,255,0.1);
+  padding: 70px 80px;
+  position: relative;
+}
+.slideshow .slides h2,
+.slideshow .slides p {
+  text-align: left;
+  color: #F8F8F8;
+}
+
+.slideshow #slide1:checked ~ .slides .inner {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.slideshow #slide2:checked ~ .slides .inner {
+  -webkit-transform: translate3d(-1000px,0,0);
+  -ms-transform: translate3d(-1000px,0,0);
+  transform: translate3d(-1000px,0,0);
+}
+.slideshow #slide3:checked ~ .slides .inner {
+  -webkit-transform: translate3d(-2000px,0,0);
+  -ms-transform: translate3d(-2000px,0,0);
+  transform: translate3d(-2000px,0,0);
+}
+
+.slideshow input[type="radio"] {
+  display: none;
+}
+.slideshow label {
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 2px solid #F8F8F8;
+  margin: 0 6px;
+  -webkit-transition: 0.35s ease;
+  transition: 0.35s ease;
+}
+.slideshow label:hover {
+  background: rgba(255,255,255,0.5);
+}
+.slideshow #slide1:checked ~ label[for="slide1"],
+.slideshow #slide2:checked ~ label[for="slide2"],
+.slideshow #slide3:checked ~ label[for="slide3"],
+.slideshow #slide4:checked ~ label[for="slide4"] {
+  background: #F8F8F8;
+}
+.slideshow .nav {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  margin-top: -60px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 30px 40px 30px 0;
+  border-color: transparent #95CCD4 transparent transparent;
+  cursor: pointer;
+}
+.slideshow .nav.nav-right {
+  left: auto;
+  right: -40px;
+  border-width: 30px 0 30px 40px;
+  border-color: transparent transparent transparent #95CCD4;
+}
+.slideshow .nav-arrow {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 16px 12px 0;
+  border-color: transparent #8AC6CF transparent transparent;
+  -webkit-transition: 0.35s all;
+  transition: 0.35s all;
+}
+.slideshow .nav-right .nav-arrow {
+  left: auto;
+  right: 24px;
+  border-width: 12px 0 12px 16px;
+  border-color: transparent transparent transparent #8AC6CF;
+}
+.slideshow .nav:hover .nav-arrow {
+  border-color: transparent rgba(255,255,255,0.75) transparent transparent;
+}
+.slideshow .nav-right:hover .nav-arrow {
+  border-color: transparent transparent transparent rgba(255,255,255,0.75);
+}
+
+
+/* === SLIDES CONTENT === */
+.mission-1 p {
+  width: 350px;
+}
+.mission-1 .man {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+}
+.mission-1 .apple {
+  position: absolute;
+  bottom: 50px;
+  right: 430px;
+}
+.mission-1 .gum {
+  position: absolute;
+  bottom: 257px;
+  right: 304px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.mission-1 .gum-piece {
+  position: absolute;
+  top: 184px;
+  right: 334px;
+}
+.mission-1 .notebook {
+  position: absolute;
+  bottom: 200px;
+  right: 400px;
+}
+
+.mission-2 p {
+  width: 500px;
+}
+.mission-2 .scale {
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+}
+.mission-2 .clock {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+.mission-2 .temp {
+  position: absolute;
+  top: 80px;
+  right: 240px;
+}
+
+.mission-3 p {
+  width: 300px;
+}
+.mission-3 .micro {
+  position: absolute;
+  top: 170px;
+  right: 170px;
+}
