@@ -1,11 +1,11 @@
-html {
+body, html {
 	overflow-x: hidden;
 }
 
-#fakta1-1 p, #fakta1-1 h2 {
+p, h2 {
 	color: rgba(255, 255, 255, 0.95);
 }
-#fakta1-1 h2 {
+h2 {
 	text-transform: uppercase;
 	font-weight: normal;
 }
@@ -44,6 +44,21 @@ html {
 	right: -968px;
 	top: 50%;
 	margin-top: -170px;
+	z-index: 1;
+}
+#basket-vikt {
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -92px;
+	margin-top: -74px;
+	width: 217px;
+	height: 262px;
+	background:red;
+	background: url(../img/Matavfallspase_blot_vikt.svg);
+	background-repeat: no-repeat;
+	background-size: 87%;
+	opacity: 0;
 }
 #basket-1 {
 	position:absolute;
@@ -55,6 +70,15 @@ html {
 	width: 217px;
 	height: 262px;
 	background: url(../img/matavfallspase-sprite.svg) -1928px 0px;
+}
+#basket-1:after {
+	position: absolute;
+	content: ' ';
+	width: 166px;
+	height: 58px;
+	bottom: 0;
+	background: url(../img/fukt.svg) 0px 0px;
+	left: 3px;
 }
 .fruit-container {
 	position: absolute;
@@ -69,8 +93,10 @@ html {
 #fakta1-1 {
 	overflow: hidden;
 	width: 100%;
-	padding-top: 1000px;	
-	background: #8AC6CF;
+	padding-top: 1000px;
+	/*background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");
+*/
+	background: #8ac6cf;
 }
 #basket {
 	position: relative;
@@ -81,6 +107,24 @@ html {
 	width: 217px;
 	height: 262px;
 	background: url(../img/matavfallspase-sprite.svg) 0px 0px;
+}
+#basket:after {
+	position: absolute;
+	content: ' ';
+	width: 166px;
+	height: 58px;
+	bottom: 0;
+	background: url(../img/fukt.svg) 0px 0px;
+	left: 3px;
+	transition: all .7s;
+	-webkit-transition:all .7s;
+	-webkit-transform: scaleY(0);
+	-webkit-transform-origin:bottom left; 
+}
+
+#basket.hello:after {
+	-webkit-transform: scaleY(1.1);
+
 }
 #basket.addFruits0 {
 	background-position: -1678px 0px;
@@ -112,7 +156,6 @@ h3 {
 .large-8 {
 	z-index: 1000;
 }
-
 #bananskal, 
 #tomathalva, 
 #appelskrutt, 
@@ -148,7 +191,6 @@ h3 {
 #bananfluga-4{
 	position: absolute;
 }
-
 .space400 {
 	padding-bottom: 400px;
 }
@@ -194,7 +236,7 @@ h3 {
 #burk {
 	top: 2370px;
 	left: -10px;
--webkit-transform: rotate(-298deg);
+	-webkit-transform: rotate(-298deg);
 }
 #plastpase {
 	top: 1650px;
@@ -209,10 +251,13 @@ h3 {
 	-webkit-transform: rotate(-78deg);
 }
 #ostron {
-	top: 2090px;
+	top: 1970px;
 	right: 30px;
-	transform:rotate(53deg);
+	width: 169px;
+	height: auto;
+	transform: rotate(53deg);
 	-webkit-transform: rotate(53deg);
+	
 }
 #plastflaska {
 	top: 2220px;
@@ -242,6 +287,8 @@ h3 {
 #kokosskal {
 	top: 2489px;
 	right: 80px;
+	width: 345px;
+	height: auto;
 }
 #snus {
 	top: 3080px;
@@ -252,8 +299,10 @@ h3 {
 	left: 100px;
 }
 #tuggummi {
-	top: 3180px;
-	left: 100px;
+	top: 2950px;
+	left: 30px;
+	width: 370px;
+	height: auto;
 }
 #ost {
 
@@ -297,6 +346,8 @@ h3 {
 #mussla {
 	top: 2110px;
 	right: 260px;
+	width: 103px;
+	height: auto;
 	transform: rotate(-53deg);
 	-webkit-transform: rotate(-53deg);
 }
@@ -306,9 +357,85 @@ h3 {
 	transform:rotate(53deg);
 	-webkit-transform: rotate(53deg);
 }
+#vaskskrapa-fylld {
+	position: absolute;
+	top: 3860px;
+	right: -430px;
+	display: block;
+
+}
+#vaskskrapa-fylld #vaskskrapa {
+	width: 430px;
+}
+#vaskskrapa-fylld ul {
+	position: relative;
+	margin-top: 0;
+	top: -20px;
+
+}
+#vaskskrapa-fylld li {
+	display: inline;
+	list-style-type: none;
+}
+#vaskskrapa-fylld li img {
+	width: 30px;
+}
+
+#vaskskrapa-fylld #droppe-1 {
+	position: relative;
+	margin-left: 60px;
+	opacity: 0;
+	-webkit-animation: waterDrops 2.3s infinite;
+	 
+}
+#vaskskrapa-fylld #droppe-2 {
+	position: relative;
+	margin-left: 70px;
+	opacity: 0;
+	-webkit-animation: waterDrops 2s 1s infinite ;
+}
+#vaskskrapa-fylld #droppe-3 {
+	position: relative;
+	margin-left: 40px;
+	opacity: 0;
+	-webkit-animation: waterDrops 1.5s .5s infinite;
+}
+
+@-webkit-keyframes waterDrops {
+    0% {
+        top:0px;
+    }
+    10% {
+    	opacity: 1;
+    }
+    80% {
+    	opacity: 1;
+    }
+    100% {
+        top:200px;
+        opacity: 0;
+    }
+}
+
+#fakta1-1 .tips {
+	position: absolute;
+	top: 70%;
+	margin-left: -360px;
+	max-width: 720px;
+	left: 50%;
+}
+#bananfluga,
+#bananfluga-1,
+#bananfluga-2,
+#bananfluga-3,
+#bananfluga-4 {
+	width: 20px;
+	height: auto;
+}
 #bananfluga {
-	top: 4000px;
-	right: 200px;
+	top: 100px;
+	left: 47%;
+	opacity: 0;
 -moz-animation-duration: 4000ms;
 -moz-animation-delay: 0ms;
 -moz-animation-fill-mode: forwards;
@@ -331,8 +458,9 @@ animation-iteration-count: infinite;
 transform-origin: 0 0;
 }
 #bananfluga-1 {
-	top: 3970px;
-	right: 360px;
+	top: 170px;
+	left: 39%;
+	opacity: 0;
 -moz-animation-duration: 2000ms;
 -moz-animation-delay: 0ms;
 -moz-animation-fill-mode: forwards;
@@ -355,8 +483,9 @@ animation-iteration-count: infinite;
 transform-origin: 0 0;
 }
 #bananfluga-2 {
-	top: 3930px;
-	right: 370px;
+	top: 130px;
+	left: 53%;
+	opacity: 0;
 -moz-animation-duration: 1000ms;
 -moz-animation-delay: 0ms;
 -moz-animation-fill-mode: forwards;
@@ -379,8 +508,9 @@ animation-iteration-count: infinite;
 transform-origin: 0 0;
 }
 #bananfluga-3 {
-	top: 3980px;
-	right: 430px;
+	top: 180px;
+	left: 42%;
+	opacity: 0;
 -moz-animation-duration: 7000ms;
 -moz-animation-delay: 0ms;
 -moz-animation-fill-mode: forwards;
@@ -403,8 +533,9 @@ animation-iteration-count: infinite;
 transform-origin: 0 0;
 }
 #bananfluga-4 {
-	top: 3900px;
-	right: 500px;
+	top: 100px;
+	left: 50%;
+	opacity: 0;
 -moz-animation-name: bananflugaflyger;
 -moz-animation-duration:3000ms;
 -moz-animation-delay: 0ms;

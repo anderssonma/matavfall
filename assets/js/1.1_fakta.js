@@ -11,26 +11,31 @@ function getOffset( el ) {
 
 
 //onComplete: function(){$('#basket').addClass('addFruits1');}, onReverseComplete: function(){$('#basket').removeClass('addFruits1');}),
-var windowHeight;
+var windowHeightSplit;
 
 $(document).ready(function() {
- 	windowHeight = $(window).height() / 2;
-	$('#stage-1').css('height', windowHeight * 2);
+ 	windowHeightSplit = $(window).height() / 2;
+	$('#stage-1').css('height', windowHeightSplit * 2);
 
 
-var kycklingklubba = getOffset( document.getElementById('kycklingklubba')).top - windowHeight;
-var bananskal = getOffset( document.getElementById('bananskal')).top - windowHeight;
-var appelskrutt = getOffset( document.getElementById('appelskrutt')).top - windowHeight;
-var fiskben = getOffset( document.getElementById('fiskben')).top - windowHeight;
-var grapefrukt = getOffset( document.getElementById('grapefrukt')).top - windowHeight;
-var pasta = getOffset (document.getElementById('pasta')).top - windowHeight;
-var ostmacka = getOffset (document.getElementById('ostmacka')).top - windowHeight;
-var aggskal = getOffset( document.getElementById('aggskal')).top - windowHeight; 
-var pasta = getOffset( document.getElementById('pasta')).top - windowHeight;
-var mussla = getOffset( document.getElementById('mussla')).top - windowHeight; 
+var kycklingklubba = getOffset( document.getElementById('kycklingklubba')).top - windowHeightSplit;
+var bananskal = getOffset( document.getElementById('bananskal')).top - windowHeightSplit;
+var appelskrutt = getOffset( document.getElementById('appelskrutt')).top - windowHeightSplit;
+var fiskben = getOffset( document.getElementById('fiskben')).top - windowHeightSplit;
+var grapefrukt = getOffset( document.getElementById('grapefrukt')).top - windowHeightSplit;
+var pasta = getOffset (document.getElementById('pasta')).top - windowHeightSplit;
+var ostmacka = getOffset (document.getElementById('ostmacka')).top - windowHeightSplit;
+var aggskal = getOffset( document.getElementById('aggskal')).top - windowHeightSplit; 
+var pasta = getOffset( document.getElementById('pasta')).top - windowHeightSplit;
+var mussla = getOffset( document.getElementById('mussla')).top - windowHeightSplit; 
 
-var tomathalva = getOffset( document.getElementById('tomathalva')).top - windowHeight;
-var rakskal = getOffset( document.getElementById('rakskal')).top - windowHeight; 
+var drain_paper = getOffset( document.getElementById('drain-paper')).top - windowHeightSplit; 
+
+var tomathalva = getOffset( document.getElementById('tomathalva')).top - windowHeightSplit;
+var rakskal = getOffset( document.getElementById('rakskal')).top - windowHeightSplit;
+var vaskskrapa_fylld = getOffset( document.getElementById('vaskskrapa-fylld')).top - windowHeightSplit; 
+
+var widthOffset = $(window).width() / 2 + 100;
 
 var controller = $.superscrollorama();
 	var scrollDuration = 500; 
@@ -69,19 +74,27 @@ var controller = $.superscrollorama();
 	controller.addTween(mussla, TweenMax.to($('#mussla'), 3, {css: {opacity:0}, ease:Expo.easeInOut}), scrollDuration , 120);
 	controller.addTween(mussla, TweenMax.to($('#mussla'), .1, {css: {}, onReverseComplete: function(){$('#basket').removeClass('addFruits7');}, ease:Expo.easeInOut}), scrollDuration , 500);
 
-	var widthOffset = $(window).width() / 2 + 100;
+	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onComplete: function(){$('#basket').addClass('hello');}, ease:Expo.easeInOut}), scrollDuration , -600);
+	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onReverseComplete: function(){$('#basket').removeClass('hello');}, ease:Expo.easeInOut}), scrollDuration , 100);
 
+	controller.addTween(vaskskrapa_fylld, TweenMax.to($('#vaskskrapa-fylld'), 1 , {css:{right:  '+=' + (widthOffset - 300)}, ease:Power4.easeIn}) , scrollDuration, -400);
+
+
+	var bananfluga = TweenMax.to($('#bananfluga, #bananfluga-1, #bananfluga-2, #bananfluga-3, #bananfluga-4, #bananfluga-5'), 1, {css:{opacity: 1}, ease:Expo.easeOut});
 	var handplocka_step_1 = TweenMax.to($('#hand-plocka'), 5, {css:{right:  '+=' + widthOffset}, ease:Expo.easeOut});
-	var handplocka_step_2 = TweenMax.to($('#basket-1'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
+	var basket_1 = TweenMax.to($('#basket-1'), 1, {css:{display:'none'}, ease:Expo.easeOut});
+	var basket_vikt = TweenMax.to($('#basket-vikt'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
+	var basket_vikt_1 = TweenMax.to($('#basket-vikt'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
 	var handplocka_step_3 = TweenMax.to($('#hallare'), 3, {css:{top:'+=800', opacity: 0}, ease:Expo.easeIn});
-	var handplocka_step_4 = TweenMax.to($('#hand-plocka'), 5, {css:{right: '-968' }, ease:Expo.easeOut});
+	var handplocka_step_4 = TweenMax.to($('#hand-plocka'), 5, {css:{right: '-968'}, ease:Expo.easeOut});
 	var handplocka_step_5 = TweenMax.to($('#hallare-bak'), 3, {css:{top:'+=800', opacity: 0}, ease:Expo.easeIn});
 
 	controller.pin($('#stage-1'), 3000, {
 		anim: (new TimelineLite())
+		.add(bananfluga)
 		.add(handplocka_step_1)
-		.add([handplocka_step_3, handplocka_step_5])
-		.add([handplocka_step_2, handplocka_step_4]),
+		.add([handplocka_step_3, basket_1, basket_vikt_1, handplocka_step_5])
+		.add([basket_vikt, handplocka_step_4]),
 		onPin: function() {
 			$('#stage-1').addClass('active-stage');
 			$('#basket').hide();
@@ -96,7 +109,7 @@ var controller = $.superscrollorama();
 
 $(window).scroll(function() {
     if ($(this).scrollTop() > 150) { 
-       $("#basket").css({ "position": "fixed", "top": windowHeight - 131, "opacity": "1",  "left":"50%", "margin-left":"-85px"}); 
+       $("#basket").css({ "position": "fixed", "top": windowHeightSplit - 131, "opacity": "1",  "left":"50%", "margin-left":"-85px"}); 
     } 
     if ($(this).scrollTop() > 5000) { 
        $("#basket").css("position", "relative" ); 
