@@ -8,20 +8,6 @@ html {
 	position: absolute;
 }
 
-
-#stage-1 {
-	position: relative;
-	width: 100%;
-}
-#stage-1.active-stage {
-	z-index: 100;
-}
-
-#stage-1.active-stage #basket-1 {
-	opacity: 1;
-}
-
-
 .fakta_1-1 {
 	overflow: hidden;
 	width: 100%;
@@ -34,6 +20,17 @@ html {
 	h2 {
 		text-transform: uppercase;
 		font-weight: normal;
+	}
+
+	#stage-1 {
+		position: relative;
+		width: 100%;
+	}
+	#stage-1.active-stage {
+		z-index: 100;
+	}
+	#stage-1.active-stage #basket-1 {
+		opacity: 1;
 	}
 
 	#hallare {
@@ -132,10 +129,10 @@ html {
 		-ms-transform-origin: bottom left; 
 		transform-origin: bottom left; 
 	}
-
 	#basket.hello:after {
 		-webkit-transform: scaleY(1.1);
-
+		-ms-transform: scaleY(1.1);
+		transform: scaleY(1.1);
 	}
 	#basket.addFruits0 {
 		background-position: -1678px 0px;
@@ -353,6 +350,7 @@ html {
 		top: 2300px;
 		right: -80px;
 		transform: rotate(-19deg);
+		-ms-transform: rotate(-19deg);
 		-webkit-transform: rotate(-19deg);
 	}
 	#mussla {
@@ -361,12 +359,14 @@ html {
 		width: 103px;
 		height: auto;
 		transform: rotate(-53deg);
+		-ms-transform: rotate(-53deg);
 		-webkit-transform: rotate(-53deg);
 	}
 	#kycklingklubba {
 		top: 450px;
 		right: 300px;
 		transform:rotate(53deg);
+		-ms-transform: rotate(53deg);
 		-webkit-transform: rotate(53deg);
 	}
 	#vaskskrapa-fylld {
@@ -374,7 +374,6 @@ html {
 		top: 3860px;
 		right: -430px;
 		display: block;
-
 	}
 	#vaskskrapa-fylld #vaskskrapa {
 		width: 430px;
@@ -383,7 +382,6 @@ html {
 		position: relative;
 		margin-top: 0;
 		top: -20px;
-
 	}
 	#vaskskrapa-fylld li {
 		display: inline;
@@ -392,14 +390,12 @@ html {
 	#vaskskrapa-fylld li img {
 		width: 30px;
 	}
-
 	#vaskskrapa-fylld #droppe-1 {
 		position: relative;
 		margin-left: 60px;
 		opacity: 0;
 		-webkit-animation: waterDrops 2.3s infinite;
 		animation: waterDrops 2.3s infinite;
-		 
 	}
 	#vaskskrapa-fylld #droppe-2 {
 		position: relative;
