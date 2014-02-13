@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 	var controller = $.superscrollorama();
 	var scrollDuration = 500; 
-	
+
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), 2 , {bezier:{curviness:1, values:[ {x:'-=300', y:'0'}, {x:'-330', y:'+=400'}], autoRotate:233}, onComplete: function(){$('#basket').addClass('addFruits0');}, ease:Power4.easeIn}) , scrollDuration , 0);
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), 3, {css: {opacity:0}, ease:Expo.easeInOut}), scrollDuration , 250);
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), .1, {css: {}, onReverseComplete: function(){$('#basket').removeClass('addFruits0');}, ease:Expo.easeInOut}), scrollDuration , 500);
@@ -105,19 +105,19 @@ $(document).ready(function() {
 		}
 	});
 
-	// DONT WANT TO REPEATEDLY UPDATE INLINE STYLES
-	var basketIsFixed = false;
-	$(window).scroll(function() {
-		if ($(this).scrollTop() < 5000 && !basketIsFixed) {
+	var basketIsFixed = false; // DONT WANT TO REPEATEDLY UPDATE INLINE STYLES
+	var $window = $(window); // CACHE WINDOW
+	$window.on('scroll', function() {
+		var pixelsFromTop = $window.scrollTop();
+		if (pixelsFromTop > 10 && pixelsFromTop < 5000 && !basketIsFixed) {
 			$("#basket").css({ "position": "fixed", "top": windowHeightSplit - 131, "opacity": "1",	"left":"50%", "margin-left":"-85px"}); 
 			basketIsFixed = true;
 		}
-		if ($(this).scrollTop() > 5000 && basketIsFixed) {
+		if (pixelsFromTop > 5000 && basketIsFixed || pixelsFromTop < 10 && basketIsFixed) {
 			$("#basket").css("position", "relative" ); 
 			basketIsFixed = false;
 		}
 	});
-	// TRIGGER ONCE TO MAKE SURE IT'S VISIBLE
-	$(window).trigger('scroll');
+	$window.trigger('scroll'); // TRIGGER ONCE TO MAKE SURE BASKET IS VISIBLE
 
 });
