@@ -112,6 +112,7 @@ h3 {
 .large-8 {
 	z-index: 1000;
 }
+
 #bananskal, 
 #tomathalva, 
 #appelskrutt, 
@@ -147,6 +148,7 @@ h3 {
 #bananfluga-4{
 	position: absolute;
 }
+
 .space400 {
 	padding-bottom: 400px;
 }
