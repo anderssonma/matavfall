@@ -249,7 +249,10 @@ var Quiz = {
 						for (var i = 0; i < this.validItems.length; i++) {
 							answerArr.push($(allImages[i]).data('item'));
 						}
-						return answerArr.join(', ');
+						var replacement = ' och';
+						answerArr = answerArr.join(', ').toLowerCase();
+						answerArr = answerArr.replace(/,([^,]*)$/,replacement+'$1');
+						return answerArr;
 					} else {
 						var index = parseInt(this.validItems.join(), 10) + 1; // NTH-CHILD ISN'T ZERO-BASED SO ADD 1
 						var answerString = $(thisSlide + ' div:nth-child(' + index + ')').data('item');
