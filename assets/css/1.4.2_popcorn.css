@@ -1,14 +1,14 @@
-#fakta1-4-1 {
+#fakta-popcorn {
 	background: #699C9E;
 	padding: 500px 0 0;
 	position: relative;
 	height: 10000px;
 	overflow: hidden;
 }
-#fakta1-4-1 .large-6 {
+#fakta-popcorn .large-6 {
 	max-width: 720px;
 }
-#fakta1-4-1 h2, #fakta1-4-1 p.light {
+#fakta-popcorn h2, #fakta-popcorn p.light {
 	color: #F8F8F8;
 }
 #matkasse-1,
