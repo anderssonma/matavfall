@@ -1,12 +1,12 @@
 function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y, left: _x };
+		var _x = 0;
+		var _y = 0;
+		while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+				_x += el.offsetLeft - el.scrollLeft;
+				_y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+		}
+		return { top: _y, left: _x };
 }
 
 
@@ -17,28 +17,28 @@ $(document).ready(function() {
  	windowHeightSplit = $(window).height() / 2;
 	$('#stage-1').css('height', windowHeightSplit * 2);
 
+	var kycklingklubba = getOffset( document.getElementById('kycklingklubba')).top - windowHeightSplit;
+	var bananskal = getOffset( document.getElementById('bananskal')).top - windowHeightSplit;
+	var appelskrutt = getOffset( document.getElementById('appelskrutt')).top - windowHeightSplit;
+	var fiskben = getOffset( document.getElementById('fiskben')).top - windowHeightSplit;
+	var grapefrukt = getOffset( document.getElementById('grapefrukt')).top - windowHeightSplit;
+	var pasta = getOffset (document.getElementById('pasta')).top - windowHeightSplit;
+	var ostmacka = getOffset (document.getElementById('ostmacka')).top - windowHeightSplit;
+	var aggskal = getOffset( document.getElementById('aggskal')).top - windowHeightSplit; 
+	var pasta = getOffset( document.getElementById('pasta')).top - windowHeightSplit;
+	var mussla = getOffset( document.getElementById('mussla')).top - windowHeightSplit; 
 
-var kycklingklubba = getOffset( document.getElementById('kycklingklubba')).top - windowHeightSplit;
-var bananskal = getOffset( document.getElementById('bananskal')).top - windowHeightSplit;
-var appelskrutt = getOffset( document.getElementById('appelskrutt')).top - windowHeightSplit;
-var fiskben = getOffset( document.getElementById('fiskben')).top - windowHeightSplit;
-var grapefrukt = getOffset( document.getElementById('grapefrukt')).top - windowHeightSplit;
-var pasta = getOffset (document.getElementById('pasta')).top - windowHeightSplit;
-var ostmacka = getOffset (document.getElementById('ostmacka')).top - windowHeightSplit;
-var aggskal = getOffset( document.getElementById('aggskal')).top - windowHeightSplit; 
-var pasta = getOffset( document.getElementById('pasta')).top - windowHeightSplit;
-var mussla = getOffset( document.getElementById('mussla')).top - windowHeightSplit; 
+	var drain_paper = getOffset( document.getElementById('drain-paper')).top - windowHeightSplit; 
 
-var drain_paper = getOffset( document.getElementById('drain-paper')).top - windowHeightSplit; 
+	var tomathalva = getOffset( document.getElementById('tomathalva')).top - windowHeightSplit;
+	var rakskal = getOffset( document.getElementById('rakskal')).top - windowHeightSplit;
+	var vaskskrapa_fylld = getOffset( document.getElementById('vaskskrapa-fylld')).top - windowHeightSplit; 
 
-var tomathalva = getOffset( document.getElementById('tomathalva')).top - windowHeightSplit;
-var rakskal = getOffset( document.getElementById('rakskal')).top - windowHeightSplit;
-var vaskskrapa_fylld = getOffset( document.getElementById('vaskskrapa-fylld')).top - windowHeightSplit; 
+	var widthOffset = $(window).width() / 2 + 100;
 
-var widthOffset = $(window).width() / 2 + 100;
-
-var controller = $.superscrollorama();
+	var controller = $.superscrollorama();
 	var scrollDuration = 500; 
+	
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), 2 , {bezier:{curviness:1, values:[ {x:'-=300', y:'0'}, {x:'-330', y:'+=400'}], autoRotate:233}, onComplete: function(){$('#basket').addClass('addFruits0');}, ease:Power4.easeIn}) , scrollDuration , 0);
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), 3, {css: {opacity:0}, ease:Expo.easeInOut}), scrollDuration , 250);
 	controller.addTween(kycklingklubba, TweenMax.to($('#kycklingklubba'), .1, {css: {}, onReverseComplete: function(){$('#basket').removeClass('addFruits0');}, ease:Expo.easeInOut}), scrollDuration , 500);
@@ -77,11 +77,11 @@ var controller = $.superscrollorama();
 	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onComplete: function(){$('#basket').addClass('hello');}, ease:Expo.easeInOut}), scrollDuration , -600);
 	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onReverseComplete: function(){$('#basket').removeClass('hello');}, ease:Expo.easeInOut}), scrollDuration , 100);
 
-	controller.addTween(vaskskrapa_fylld, TweenMax.to($('#vaskskrapa-fylld'), 1 , {css:{right:  '+=' + (widthOffset - 300)}, ease:Power4.easeIn}) , scrollDuration, -400);
+	controller.addTween(vaskskrapa_fylld, TweenMax.to($('#vaskskrapa-fylld'), 1 , {css:{right:	'+=' + (widthOffset - 300)}, ease:Power4.easeIn}) , scrollDuration, -400);
 
 
 	var bananfluga = TweenMax.to($('#bananfluga, #bananfluga-1, #bananfluga-2, #bananfluga-3, #bananfluga-4, #bananfluga-5'), 1, {css:{opacity: 1}, ease:Expo.easeOut});
-	var handplocka_step_1 = TweenMax.to($('#hand-plocka'), 5, {css:{right:  '+=' + widthOffset}, ease:Expo.easeOut});
+	var handplocka_step_1 = TweenMax.to($('#hand-plocka'), 5, {css:{right:	'+=' + widthOffset}, ease:Expo.easeOut});
 	var basket_1 = TweenMax.to($('#basket-1'), 1, {css:{display:'none'}, ease:Expo.easeOut});
 	var basket_vikt = TweenMax.to($('#basket-vikt'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
 	var basket_vikt_1 = TweenMax.to($('#basket-vikt'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
@@ -104,14 +104,20 @@ var controller = $.superscrollorama();
 			$('#basket').show();
 		}
 	});
-});
 
+	// DONT WANT TO REPEATEDLY UPDATE INLINE STYLES
+	var basketIsFixed = false;
+	$(window).scroll(function() {
+		if ($(this).scrollTop() < 5000 && !basketIsFixed) {
+			$("#basket").css({ "position": "fixed", "top": windowHeightSplit - 131, "opacity": "1",	"left":"50%", "margin-left":"-85px"}); 
+			basketIsFixed = true;
+		}
+		if ($(this).scrollTop() > 5000 && basketIsFixed) {
+			$("#basket").css("position", "relative" ); 
+			basketIsFixed = false;
+		}
+	});
+	// TRIGGER ONCE TO MAKE SURE IT'S VISIBLE
+	$(window).trigger('scroll');
 
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 150) { 
-       $("#basket").css({ "position": "fixed", "top": windowHeightSplit - 131, "opacity": "1",  "left":"50%", "margin-left":"-85px"}); 
-    } 
-    if ($(this).scrollTop() > 5000) { 
-       $("#basket").css("position", "relative" ); 
-    }
 });
