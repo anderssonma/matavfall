@@ -680,17 +680,24 @@ var setupGame = function() {
 
 	var savedDir;
 	window.addEventListener('keydown', function(e) {
-		//console.log(e.keyCode);
+		// NEW BINDS:  A = 65 | S = 83 | D = 68
+		// OLD BINDS:  1 = 49 | 2 = 50 | 3 = 51
 		if (e.keyCode === 38 || e.keyCode === 40) {
 			e.preventDefault();
 		} else if (e.keyCode === 32) { // SPACE
 			e.preventDefault();
 		} else if ( e.keyCode === 37 || e.keyCode === 39) { // LEFT/RIGHT ARROW
 			keysDown[e.keyCode] = true;
-		} else if (e.keyCode === 49 || e.keyCode === 50 || e.keyCode === 51) { // '1','2','3'
+		} else if (e.keyCode === 65 || e.keyCode === 83 || e.keyCode === 68) { // 'A','S','D'
 			jumpTriggered = true;
 			player.nothingHitYet = true;
-			savedDir = e.keyCode - 49;
+			if (e.keyCode === 65) {
+				savedDir = 0; // LEFT PATH
+			} else if (e.keyCode === 83) {
+				savedDir = 1; // MIDDLE PATH
+			} else {
+				savedDir = 2; // RIGHT PATH
+			}
 		}
 	});
 

@@ -23,12 +23,13 @@ body {
 	width: 34px;
 	height: 34px;
 	border: 2px solid #222;
-	line-height: 34px;
+	line-height: 30px;
 	text-align: center;
 	color: #F6F6F6;
 	font-size: 22px;
 	border-radius: 5px;
 	background: #333;
+	font-weight: bold;
 }
 .key-binds img {
 	margin: -40px 20px 0;
@@ -54,6 +55,7 @@ body {
 	left: 50%;
 	margin: -19px 0 0 -19px;
 	line-height: 30px;
+	font-size: 18px;
 }
 .key-binds .key-left {
 	-webkit-animation: moveLeft 1s infinite alternate;
