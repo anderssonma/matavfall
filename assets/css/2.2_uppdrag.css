@@ -1,0 +1,79 @@
+.mission {
+  width: 100%;
+  background: #56aab7;
+  padding: 150px 0 200px;
+}
+.mission-container {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.mission h1 {
+  text-align: center;
+  color: #F8F8F8;
+  -webkit-font-smoothing: antialiased;
+  -mos-osx-font-smoothing: greyscale;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+/* === SLIDES CONTENT === */
+.mission-1 p {
+  width: 350px;
+}
+.mission-1 .man {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+}
+.mission-1 .apple {
+  position: absolute;
+  bottom: 50px;
+  right: 430px;
+}
+.mission-1 .gum {
+  position: absolute;
+  bottom: 257px;
+  right: 304px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.mission-1 .gum-piece {
+  position: absolute;
+  top: 184px;
+  right: 334px;
+}
+.mission-1 .notebook {
+  position: absolute;
+  bottom: 200px;
+  right: 400px;
+}
+
+.mission-2 p {
+  width: 500px;
+}
+.mission-2 .scale {
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+}
+.mission-2 .clock {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+.mission-2 .temp {
+  position: absolute;
+  top: 80px;
+  right: 240px;
+}
+
+.mission-3 p {
+  width: 300px;
+}
+.mission-3 .micro {
+  position: absolute;
+  top: 170px;
+  right: 170px;
+}
