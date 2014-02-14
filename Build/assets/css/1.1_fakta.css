@@ -46,11 +46,23 @@ html {
   #bananfluga-4{
   	position: absolute;
   }*/ }
+  .fakta_1-1 h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #F8F8F8;
+    -webkit-font-smoothing: antialiased;
+    -mos-osx-font-smoothing: grayscale; }
   .fakta_1-1 p, .fakta_1-1 h2 {
     color: rgba(255, 255, 255, 0.95); }
   .fakta_1-1 h2 {
     text-transform: uppercase;
     font-weight: normal; }
+  .fakta_1-1 .intro {
+    position: relative;
+    top: -1000px;
+    left: 0;
+    width: 50%;
+    margin: 0 auto; }
   .fakta_1-1 #stage-1 {
     position: relative;
     width: 100%; }

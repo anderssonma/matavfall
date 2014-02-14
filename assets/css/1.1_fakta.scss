@@ -14,6 +14,13 @@ html {
 	padding-top: 1000px;
 	/*background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");*/
 	background: #6CB4C1;
+	h1 {
+		text-transform: uppercase;
+		text-align: center;
+		color: #F8F8F8;
+		-webkit-font-smoothing: antialiased;
+		-mos-osx-font-smoothing: grayscale;
+	}
 	p, h2 {
 	color: rgba(255, 255, 255, 0.95);
 	}
@@ -21,7 +28,13 @@ html {
 		text-transform: uppercase;
 		font-weight: normal;
 	}
-
+	.intro {
+		position: relative;
+		top: -1000px;
+		left: 0;
+		width: 50%;
+		margin: 0 auto;
+	}
 	#stage-1 {
 		position: relative;
 		width: 100%;

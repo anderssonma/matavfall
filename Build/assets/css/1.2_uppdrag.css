@@ -1,12 +1,20 @@
 .mission {
   width: 100%;
   background: #56aab7;
+  padding: 150px 0 200px;
 }
 .mission-container {
   width: 1000px;
   margin: 0 auto;
-  padding: 200px 0;
   position: relative;
+}
+.mission h1 {
+  text-align: center;
+  color: #F8F8F8;
+  -webkit-font-smoothing: antialiased;
+  -mos-osx-font-smoothing: greyscale;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
 
 

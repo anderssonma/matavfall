@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	var scrollDuration = 200; 
 	
-	controller.addTween('.intro', TweenMax.to($('.intro'), .1, { onComplete: function(){$('#tarmometer-container').addClass('active');}, onReverseComplete: function(){$('#tarmometer-container').removeClass('active');},  ease:Expo.easeInOut}), scrollDuration , -200);
+	controller.addTween('#intro-fridge', TweenMax.to($('#intro-fridge'), .1, { onComplete: function(){$('#tarmometer-container').addClass('active');}, onReverseComplete: function(){$('#tarmometer-container').removeClass('active');},  ease:Expo.easeInOut}), scrollDuration , -200);
 
 
 	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);

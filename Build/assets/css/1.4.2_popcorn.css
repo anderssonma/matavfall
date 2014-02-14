@@ -8,8 +8,13 @@
 #fakta-popcorn .large-6 {
 	max-width: 720px;
 }
-#fakta-popcorn h2, #fakta-popcorn p.light {
+#fakta-popcorn h1, #fakta-popcorn p.light {
 	color: #F8F8F8;
+}
+#fakta-popcorn h1 {
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-mos-osx-font-smoothing: greyscale;
 }
 #matkasse-1,
 #matkasse-2,

@@ -6,7 +6,7 @@ body {
 .game-1 {
 	width: 100%;
 	position: relative;
-	padding: 200px 0 0;
+	padding: 300px 0 0;
 	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+CjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI0Y4QkNBOSAiPjwvcmVjdD4KPHJlY3QgeD0iMjUiIHdpZHRoPSIyNSIgaGVpZ2h0PSI1MCIgZmlsbD0iI0Y3QjM5QyAiPjwvcmVjdD4KPC9zdmc+");
 }
 
@@ -192,7 +192,7 @@ body {
 	height: 400px;
 	position: relative;
 	background: #6A9A98;
-	margin-top: -493px;
+	margin-top: -293px;
 	z-index: 1;
 }
 

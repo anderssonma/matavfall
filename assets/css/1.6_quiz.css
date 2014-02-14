@@ -13,6 +13,12 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+.quiz h1 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
 .quiz h2 {
 	font-size: 28px;
 	margin: 70px 0 0 70px;
@@ -31,6 +37,7 @@
 .quiz {
 	background: #9FCEC2;
 	overflow: hidden;
+	padding: 150px 0 200px;
 }
 
 .quiz h6 {
@@ -41,7 +48,7 @@
 
 .container {
 	width: 1000px;
-	margin: 200px auto;
+	margin: 0 auto;
 }
 
 .quiz-box {
