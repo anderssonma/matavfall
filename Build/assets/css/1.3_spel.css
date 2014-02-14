@@ -179,7 +179,9 @@ body {
 .game {
 	position: relative;
 	overflow-x: visible;
-	background: url(../img/kitchen_bg.png) no-repeat top center;
+	/* background: url(../img/kitchen_bg.png) no-repeat top center; */
+	background: url(../img/kok.svg) no-repeat top center;
+	background-size: 1000px 408px;
 	height: 700px;
 	width: 1000px;
 	margin: 0 auto;
