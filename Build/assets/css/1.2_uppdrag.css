@@ -1,7 +1,6 @@
 .mission {
   width: 100%;
-  background: #8AC6CF;
-  border-top: 1px solid #699C9E;
+  background: #56aab7;
 }
 .mission-container {
   width: 1000px;
@@ -98,14 +97,14 @@
   height: 0px;
   border-style: solid;
   border-width: 30px 40px 30px 0;
-  border-color: transparent #95CCD4 transparent transparent;
+  border-color: transparent rgba(255,255,255,0.1) transparent transparent;
   cursor: pointer;
 }
 .slideshow .nav.nav-right {
   left: auto;
   right: -40px;
   border-width: 30px 0 30px 40px;
-  border-color: transparent transparent transparent #95CCD4;
+  border-color: transparent transparent transparent rgba(255,255,255,0.1);
 }
 .slideshow .nav-arrow {
   position: absolute;

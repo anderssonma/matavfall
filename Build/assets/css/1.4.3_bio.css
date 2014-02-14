@@ -16,6 +16,7 @@
 	bottom: 0;
 	position: static;
 	overflow: hidden;
+	background: #F77A77;
 }
 .cinema .area {
 	position: absolute;

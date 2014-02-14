@@ -1,5 +1,5 @@
 body {
-	height: 42000px;
+	height: 41380px;
 	background: #699C9E;
 }
 
@@ -7,9 +7,7 @@ body {
 	width: 100%;
 	position: relative;
 	padding: 200px 0 0;
-	background: #8AC6CF;
-	border-top: 1px solid #699C9E;
-	border-bottom: 1px solid #8AC6CF;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+CjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI0Y4QkNBOSAiPjwvcmVjdD4KPHJlY3QgeD0iMjUiIHdpZHRoPSIyNSIgaGVpZ2h0PSI1MCIgZmlsbD0iI0Y3QjM5QyAiPjwvcmVjdD4KPC9zdmc+");
 }
 
 .key-binds {
@@ -181,7 +179,7 @@ body {
 .game {
 	position: relative;
 	overflow-x: visible;
-	background: url(../img/kitchen_bg.png) #8AC6CF no-repeat top center;
+	background: url(../img/kitchen_bg.png) no-repeat top center;
 	height: 700px;
 	width: 1000px;
 	margin: 0 auto;
@@ -191,7 +189,7 @@ body {
 	width: 100%;
 	height: 400px;
 	position: relative;
-	background: #699C9E;
+	background: #6A9A98;
 	margin-top: -493px;
 	z-index: 1;
 }
