@@ -56,7 +56,34 @@ body {
 	margin: -19px 0 0 -19px;
 	line-height: 30px;
 	font-size: 18px;
+	-webkit-animation: 3s scaleKey infinite;
+	animation: 3s scaleKey infinite;
 }
+
+@-webkit-keyframes scaleKey {
+  0%, 86%, 100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  93% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scaleKey {
+  0%, 80%, 100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  90% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
 .key-binds .key-left {
 	-webkit-animation: moveLeft 1s infinite alternate;
 	animation: moveLeft 1s infinite alternate;
@@ -132,13 +159,17 @@ body {
 }
 
 .key-stove .key {
-	margin-top: 3px;
+	margin: 3px 0 0 -18px;
 }
 .key-fridge .key {
-	margin: -35px 0 0 -15px;
+	margin: -35px 0 0 -13px;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
 }
 .key-waste .key {
-	margin-top: -8px;
+	margin: -6px 0 0 -16px;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
 }
 
 
