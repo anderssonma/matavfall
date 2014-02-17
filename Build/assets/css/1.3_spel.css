@@ -161,13 +161,13 @@ body {
 }
 .key-fridge .key {
 	margin: -35px 0 0 -13px;
-	-webkit-animation-delay: 1s;
-	animation-delay: 1s;
+	-webkit-animation-delay: 0.75s;
+	animation-delay: 0.75s;
 }
 .key-waste .key {
 	margin: -6px 0 0 -16px;
-	-webkit-animation-delay: 2s;
-	animation-delay: 2s;
+	-webkit-animation-delay: 1.25s;
+	animation-delay: 1.25s;
 }
 
 
