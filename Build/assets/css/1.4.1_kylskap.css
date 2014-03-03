@@ -8,6 +8,10 @@
 #fakta-kylskap .intro p{
 	color: #fff;
 	text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+#fakta-kylskap .intro p {
+	font-size: 18px;
 }
 #fakta-kylskap .intro h1 {
 	text-transform: uppercase;
@@ -25,42 +29,50 @@
 	/*margin-top: 4em;*/
 	
 	background: #fff;
-	padding: .5em 2em;
-	width: 50%;
-	right: -90px;
+	padding: 40px;
+	width: 35%;
+	right: 40px;
 	position: absolute;
-	top: 40px;
+	top: 41px;
+	height: 359px;
+	border-radius: 0 10px 10px 0;
 }
 .kyl-frys #text-block-2 {
 	/*margin-top: 17em;*/
 
 	background: #fff;
-	padding: .5em 2em;
-	width: 50%;
-	right: -90px;
+	padding: 40px;
+	width: 60%;
+	right: 40px;
 	position: absolute;
-	top: 530px;
+	top: 506px;
+	border-radius: 0 10px 0 0;
+	height: 274px;
 }
 .kyl-frys #text-block-3 {
 	/*margin-top: 29em;*/
 
 	background: #fff;
-	padding: .5em 2em;
+	padding: 40px;
 	width: 50%;
-	right: -90px;
+	right: 40px;
 	position: absolute;
-	top: 1120px;
+	top: 1108px;
+	border-radius: 10px 0 0 10px;
+	height: 192px;
 }
 .kyl-frys #text-block-4 {
 	/*margin-top: 11em;*/
 
 	background: #fff;
-	padding: .5em 2em;
+	padding: 40px;
 	width: 50%;
-	right: -90px;
+	right: 40px;
 	position: absolute;
 	z-index: 1;
-	top: 1350px;
+	top: 1342px;
+	height: 375px;
+	border-radius: 0 0 10px 0;
 }
 .kycklingklubba-1 {
 	position: absolute;
@@ -285,4 +297,13 @@
 .kyl-frys #tarmometer-container #stroke.step-3 {
 	height: 70%;
 	background: #E74D3C;
+}
+
+.kyl-frys .fridge-examples {
+	font-size: 12px;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+.kyl-frys .fridge-examples strong {
+	font-size: 11px;
+	font-weight: bold;
 }

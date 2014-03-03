@@ -8,6 +8,13 @@
 #fakta-popcorn .large-6 {
 	max-width: 720px;
 }
+#fakta-popcorn .del-2 {
+	width: 460px;
+	padding: 0 25px;
+}
+#fakta-popcorn .large-6 p {
+	text-align: left;
+}
 #fakta-popcorn h1, #fakta-popcorn p.light {
 	color: #F8F8F8;
 }

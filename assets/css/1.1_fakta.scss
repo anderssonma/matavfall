@@ -20,13 +20,19 @@ html {
 		color: #F8F8F8;
 		-webkit-font-smoothing: antialiased;
 		-mos-osx-font-smoothing: grayscale;
+		font-weight: normal;
 	}
 	p, h2 {
-	color: rgba(255, 255, 255, 0.95);
+		color: rgba(255, 255, 255, 0.95);
+		-webkit-font-smoothing: antialiased;
 	}
 	h2 {
 		text-transform: uppercase;
 		font-weight: normal;
+		line-height: 1.25em;
+	}
+	p {
+		font-size: 18px;
 	}
 	.intro {
 		position: relative;
@@ -34,6 +40,10 @@ html {
 		left: 0;
 		width: 50%;
 		margin: 0 auto;
+		p {
+			font-size: 20px;
+			-webkit-font-smoothing: antialiased;
+		}
 	}
 	#stage-1 {
 		position: relative;
