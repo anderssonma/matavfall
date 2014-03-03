@@ -1,0 +1,64 @@
+.recipes {
+	background: #F2DABE;
+	padding-top: 100px;
+}
+.recipes h2 {
+	color: rgba(0,0,0,0.5);
+}
+.recipes .book-wrapper {
+	margin-top: 100px;
+	position: relative;
+	overflow: hidden;
+}
+.recipes .book-right-bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.recipes .book-flipper,
+.recipes .book-flipper-inner {
+	z-index: 2;
+	width: 100%;
+	position: relative;
+	-webkit-transition: 0.5s all cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-webkit-backface-visibility: hidden;
+}
+.recipes .book-wrapper:hover .book-flipper {
+	-webkit-transform: rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+}
+
+.recipes .book-flipper-inner {
+	-webkit-transform: rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+}
+.recipes .book-wrapper:hover .book-flipper-inner {
+	-webkit-transform: rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+}
+
+.recipes .book-cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+}
+
+.recipes .book-ridge {
+	position: absolute;
+	top: 33px;
+	left: 50%;
+	width: 1px;
+	bottom: 14px;
+	border-left: 1px dashed rgba(0,0,0,0.1);
+	z-index: 1;
+}
+
+.recipes .intro {
+	position: absolute;
+	top: 140px;
+	left: 20px;
+	width: 360px;
+	color: rgba(0,0,0,0.5);
+}
