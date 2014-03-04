@@ -1,0 +1,221 @@
+#fakta-popcorn {
+	background: #87C1BF;
+	padding: 500px 0 0;
+	position: relative;
+	height: 10000px;
+	overflow: hidden;
+}
+#fakta-popcorn .large-6 {
+	max-width: 720px;
+}
+#fakta-popcorn .del-2 {
+	width: 460px;
+	padding: 0 25px;
+}
+#fakta-popcorn .large-6 p {
+	text-align: left;
+}
+#fakta-popcorn h1, #fakta-popcorn p.light {
+	color: #F8F8F8;
+}
+#fakta-popcorn h1 {
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-mos-osx-font-smoothing: greyscale;
+}
+#matkasse-1,
+#matkasse-2,
+#matkasse-3,
+#matkasse-4,
+#matkasse-5 {
+	position: absolute;
+	top: 50%;
+	left: -200px;
+	margin-top: -120px;
+}
+#explotion {
+	position: absolute;
+	top: 50%;
+	left: -200px;
+	margin-top: -230px;
+	-webkit-transfrom:scale(0);
+	transfrom:scale(0);
+	z-index: 1;
+}
+#matkassar {
+	position: relative;
+	width: 100%;
+	height: 1000px;
+	margin-bottom: 200px;
+}
+.del-1 {
+	position: absolute;
+	top: 70%;
+	margin-left: -420px;
+}
+.del-2 {
+	position: absolute;
+	top: 50%;
+	left: -300px;
+	z-index: 2;
+	background: #fff;
+	width: 400px;
+}
+.popcorn-container {
+	position: absolute;
+	height: 2000px;
+	top: 5500px;
+	max-width: 1440px;
+	width: 1440px;
+	margin: 0 auto;
+	left: 50%;
+	margin-left: -720px;
+
+}
+#money,
+#money-1, 
+#money-2,
+#money-3,
+#money-4,
+#money-5, 
+#money-6 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+#money-2 {
+	z-index: 10;
+}
+#money-popcorn-1 {
+	position: absolute;
+	left: 34%;
+	top: 30px;
+}
+#popcorn-1 {
+	position: absolute;
+	left: 32%;
+	top: -16px;
+}
+#money-popcorn-2 {
+	position: absolute;
+	left: 65%;
+	top: 300px;
+}
+#popcorn-2 {
+	position: absolute;
+	left: 64%;
+	top: 300px;
+	width: 200px;
+}
+#money-popcorn-3 {
+	position: absolute;
+	left: -100px;
+	top: 300px;
+}
+#popcorn-3 {
+	position: absolute;
+	left: 110px;
+	top: 300px;
+	width: 200px;
+}
+#money-popcorn-4 {
+	position: absolute;
+	left: 300px;
+	top: 400px;
+	
+}
+#popcorn-4 {
+	position: absolute;
+	left: 460px;
+	top: 400px;
+	
+}
+#money-popcorn-5 {
+	position: absolute;
+	left: 720px;
+	top: 100px;
+}
+#popcorn-5 {
+	position: absolute;
+	left: 840px;
+	top: 130px;
+}
+#money-popcorn-6 {
+	position: absolute;
+	left: -40px;
+	top: 700px;
+}
+#popcorn-6 {
+	position: absolute;
+	left: 0px;
+	top: 700px;
+}
+#money-popcorn-7 {
+	right: 100px;
+	position: absolute;
+	top: 550px;
+}
+#popcorn-7 {
+	position: absolute;
+	right: 100px;
+	top: 550px;
+}
+#money-popcorn-8 {
+	left: 28%;
+	position: absolute;
+	top: 790px;
+}
+#popcorn-8 {
+	position: absolute;
+	left: 28%;
+	top: 790px;
+}
+#money-popcorn-9 {
+	right: 10px;
+	position: absolute;
+	top: 750px;
+}
+#popcorn-9 {
+	position: absolute;
+	right: 10px;
+	top: 750px;
+	width: 200px;
+}
+#money-popcorn-10 {
+	left: 50%;
+	position: absolute;
+	top: 970px;
+	margin-left: -230px;
+}
+
+#money-popcorn-11 {
+	right: 30%;
+	position: absolute;
+	top: 850px;
+}
+#popcorn-11 {
+	position: absolute;
+	right: 30%;
+	top: 850px;
+}
+#money-popcorn-12 {
+	left: 3%;
+	position: absolute;
+	top: 1350px;
+}
+#popcorn-12 {
+	position: absolute;
+	left: 3%;
+	top: 1350px;
+}
+#stor-biljett {
+	position: relative;
+	width: 100%;
+	height: 1000px;
+	margin-bottom: 200px;
+	top: 550px;
+}
+#avslut-biljett {
+	position: absolute;
+	top: 0;
+}
