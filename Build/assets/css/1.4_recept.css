@@ -184,6 +184,7 @@
 	height: 0;
 	border-bottom: 4px solid #952A2C;
 	border-left: 40px solid transparent;
+	-webkit-transition: 0.35s all;
 }
 .recipes .close-book:hover:before {
 	border-bottom-color: #750D21;

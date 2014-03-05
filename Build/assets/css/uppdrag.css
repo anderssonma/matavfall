@@ -24,16 +24,31 @@
 
 .slideshow .slides article {
   width: 1000px;
-  height: 550px;
+  height: 580px;
   float: left;
   background: rgba(255,255,255,0.1);
-  padding: 70px 80px;
+  padding: 100px 80px 70px;
   position: relative;
 }
 .slideshow .slides h2,
 .slideshow .slides p {
   text-align: left;
   color: #F8F8F8;
+}
+.slideshow .slides h3 {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 116px;
+  padding: 6px 12px;
+  margin-left: -58px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #F8F8F8;
+  background: #56AAB7;
+  border-radius: 3px;
+  font-weight: normal;
 }
 
 .slideshow #slide1:checked ~ .slides .inner {
