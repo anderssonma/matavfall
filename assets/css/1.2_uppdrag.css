@@ -16,6 +16,11 @@
   text-transform: uppercase;
   margin-bottom: 50px;
 }
+.mission h2 {
+  text-transform: uppercase;
+  width: 360px;
+  line-height: 1.25em;
+}
 
 /* === SLIDES CONTENT === */
 .mission-1 p {
@@ -37,10 +42,10 @@
 }
 
 .mission-3 p {
-  width: 300px;
+  width: 360px;
 }
 .mission-3 .fridge {
   position: absolute;
   top: 170px;
-  right: 170px;
+  right: 140px;
 }

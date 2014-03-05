@@ -20,8 +20,6 @@
 }
 #fakta-popcorn h1 {
 	text-transform: uppercase;
-	-webkit-font-smoothing: antialiased;
-	-mos-osx-font-smoothing: greyscale;
 }
 #matkasse-1,
 #matkasse-2,

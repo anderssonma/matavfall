@@ -3,4 +3,13 @@ p {
   -webkit-font-smoothing: antialiased; }
 
 h2 {
-  -webkit-font-smoothing: antialiased; }
+  font-family: 'Bubbler One';
+  font-weight: normal;
+  font-size: 34px;
+  -webkit-font-smoothing: subpixel-antialiased !important; }
+
+h1 {
+  font-family: 'Bubbler One';
+  font-weight: normal;
+  font-size: 44px;
+  -webkit-font-smoothing: subpixel-antialiased !important; }
