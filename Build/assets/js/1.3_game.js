@@ -1178,4 +1178,13 @@ $(document).ready(function() {
 		setupGame();
 		GAME.paintBackground();
 	});
+
+	GAME.showInfoScreen = function() {
+		$('#game-start').fadeOut(350, function() {
+			$('#game-desc').addClass('show');
+		});
+	};
+	$('#game-start').on('click', function() {
+		GAME.showInfoScreen();
+	});
 });
