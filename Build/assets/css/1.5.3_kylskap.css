@@ -30,7 +30,7 @@
 	
 	background: #fff;
 	padding: 40px;
-	width: 35%;
+	width: 40%;
 	right: 40px;
 	position: absolute;
 	top: 41px;
@@ -57,9 +57,8 @@
 	width: 50%;
 	right: 40px;
 	position: absolute;
-	top: 1108px;
+	top: 1084px;
 	border-radius: 10px 0 0 10px;
-	height: 192px;
 }
 .kyl-frys #text-block-4 {
 	/*margin-top: 11em;*/
