@@ -66,7 +66,7 @@
 
 .recipes .intro {
 	position: absolute;
-	top: 140px;
+	top: 100px;
 	left: 20px;
 	width: 360px;
 	color: rgba(0,0,0,0.5);
@@ -185,6 +185,9 @@
 	border-bottom: 4px solid #952A2C;
 	border-left: 40px solid transparent;
 }
+.recipes .close-book:hover:before {
+	border-bottom-color: #750D21;
+} 
 
 .recipes .close-book:after {
 	content: '';
