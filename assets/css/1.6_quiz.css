@@ -140,6 +140,7 @@
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 	border: 8px solid transparent;
+	overflow: hidden;
 }
 .quiz-target.valid {
 	border-color: #F6F6F6;
