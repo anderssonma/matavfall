@@ -186,9 +186,14 @@
 	position: absolute;
 	bottom: -200px;
 	right: 100px;
+	/* TEMP CSS */
+	right: 40px;
+	-webkit-transform: rotate(10deg);
+	/*
 	-webkit-animation: waveSign 5s infinite alternate ease-in-out;
 	-moz-animation: waveSign 5s infinite alternate ease-in-out;
 	animation: waveSign 5s infinite alternate ease-in-out;
+	*/
 	-webkit-transform-origin: 50% bottom;
 	-moz-transform-origin: 50% bottom;
 	transform-origin: 50% bottom;
