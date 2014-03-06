@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="420px"
+	 height="298.048px" viewBox="0 0 420 298.048" enable-background="new 0 0 420 298.048" xml:space="preserve">
+<g id="TV">
+	<rect y="2.917" fill="#3E3D40" width="420" height="248"/>
+	<rect y="0" width="420" height="219.001"/>
+	<rect x="14.815" y="13.5" fill="#F6F6F6" width="390.369" height="193.333"/>
+	<polygon fill="#ECEDED" points="405.185,206.833 14.815,206.833 14.815,13.5 	"/>
+	<rect x="196.036" y="249.249" fill="#3E3D40" width="27.929" height="34.667"/>
+	
+		<rect x="92.639" y="283.916" fill="#3E3D40" stroke="#3E3D40" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="234.582" height="12.632"/>
+</g>
+<g id="TV-program">
+	
+		<line fill="none" stroke="#9C9E9F" stroke-width="6" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="175.046" x2="405.044" y2="175.046"/>
+	
+		<line fill="none" stroke="#9C9E9F" stroke-width="9.0871" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="49.25" x2="405.044" y2="49.25"/>
+	
+		<line fill="none" stroke="#9C9E9F" stroke-width="9.0871" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="136.926" x2="405.044" y2="136.926"/>
+	
+		<line fill="none" stroke="#9C9E9F" stroke-width="6" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="84.416" x2="405.044" y2="84.416"/>
+	
+		<line fill="none" stroke="#D9DADB" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="151.926" x2="405.044" y2="151.926"/>
+	
+		<line fill="none" stroke="#D9DADB" stroke-width="9.0871" stroke-linejoin="round" stroke-miterlimit="10" x1="14.815" y1="111.426" x2="405.044" y2="111.426"/>
+</g>
+<g id="On">
+	<circle opacity="0.2" fill="#53B06B" cx="401.893" cy="234.963" r="5.761"/>
+	<circle fill="#53B06B" cx="401.893" cy="234.961" r="3.645"/>
+</g>
+<g id="Off" display="none">
+	<circle display="inline" opacity="0.2" fill="#E74D3D" cx="401.893" cy="234.963" r="5.761"/>
+	<circle display="inline" fill="#E74D3D" cx="401.893" cy="234.961" r="3.645"/>
+</g>
+<g id="Knappar">
+	<g>
+		<circle cx="18.46" cy="234.961" r="3.645"/>
+		<circle cx="31.795" cy="234.961" r="3.645"/>
+		<circle cx="45.131" cy="234.961" r="3.645"/>
+		<circle cx="58.466" cy="234.961" r="3.645"/>
+	</g>
+	<rect x="189.263" y="230.962" fill="#58585A" width="41.333" height="8"/>
+</g>
+</svg>

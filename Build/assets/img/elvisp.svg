@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="474.977px" height="254.408px" viewBox="0 0 474.977 254.408" enable-background="new 0 0 474.977 254.408"
+	 xml:space="preserve">
+<g id="Lager_2" display="none">
+	
+		<rect x="-72.81" y="-100.683" display="inline" fill="#00A096" stroke="#00A096" stroke-width="4.8284" stroke-miterlimit="10" width="776.961" height="392.156"/>
+</g>
+<g id="Sladd">
+	<path fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-miterlimit="10" d="M278.149,122.399
+		c0,0,5.381,100.105-91.824,77.618C89.12,177.53,52.124,197.116,0.62,207.997"/>
+</g>
+<g id="Knappar">
+	<g>
+		<rect x="386.664" y="0" fill="#FFFFFF" width="19.709" height="18.146"/>
+		<rect x="386.664" y="0" fill="#F6F6F6" width="9.855" height="18.146"/>
+	</g>
+	<g>
+		<rect x="408.06" y="0" fill="#E74D3D" width="14" height="18.146"/>
+		<rect x="408.06" y="0" fill="#BF392A" width="7" height="18.146"/>
+	</g>
+</g>
+<g id="Elvisp">
+	
+		<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M437.698,18.593c-1.717-3.676-5.836-5.67-8.967-5.67H267.274c-3.131,0-5.669,2.538-5.669,5.67v95.346
+		c0,3.131,2.538,5.669,5.669,5.669h189.543c3.131,0,5.669-2.538,5.669-5.669V58.101L437.698,18.593z M345.927,67.999H297.06
+		c-11.119,0-20.133-9.014-20.133-20.133c0-11.12,9.014-20.133,20.133-20.133h48.867c11.119,0,20.133,9.014,20.133,20.133
+		C366.06,58.986,357.046,67.999,345.927,67.999z"/>
+	<g>
+		<path fill="#F9FAFA" d="M294.482,30.951c-8.298,1.254-14.555,8.526-14.555,16.915c0,9.447,7.685,17.133,17.133,17.133h48.867
+			c3.708,0,7.251-1.185,10.245-3.429l1.461-1.103l1.81,0.89l103.044,58.892c0,0-0.578,2.358-5.669,2.358H267.274
+			c-4.78,0-8.669-3.889-8.669-8.669V18.593c0-4.78,3.889-8.67,8.669-8.67c0.516,0,1.022,0.133,1.472,0.386l34.481,20.357"/>
+	</g>
+	<g>
+		<path fill="#B1B3B4" d="M465.477,85.999h-37.25c-1.105,0-2-0.896-2-2s0.895-2,2-2h37.25"/>
+		<path fill="#B1B3B4" d="M465.477,95.296h-37.25c-1.105,0-2-0.896-2-2s0.895-2,2-2h37.25"/>
+		<path fill="#B1B3B4" d="M465.477,104.593h-37.25c-1.105,0-2-0.896-2-2c0-1.104,0.895-2,2-2h37.25"/>
+	</g>
+</g>
+<g id="Vispar">
+	<rect x="448.727" y="122.4" fill="#C6C7C8" width="4" height="130.008"/>
+	<path fill="none" stroke="#D9DADB" stroke-width="4" stroke-miterlimit="10" d="M472.977,235.4c0,9.393-7.615,17.008-17.008,17.008
+		h-10.484c-9.393,0-17.008-7.614-17.008-17.008v-40.519c0-9.394,7.615-17.008,17.008-17.008h10.484
+		c9.393,0,17.008,7.614,17.008,17.008V235.4z"/>
+</g>
+</svg>

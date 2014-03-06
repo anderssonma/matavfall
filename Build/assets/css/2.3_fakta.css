@@ -1,0 +1,364 @@
+html {
+	overflow-x: hidden;
+}
+
+p, h2 {
+	color: rgba(255, 255, 255, 0.95);
+}
+h2 {
+	text-transform: uppercase;
+	font-weight: normal;
+}
+#fakta2-2 {
+	overflow: hidden;
+	max-width: 1440px;
+	background: #8ac6cf;
+	margin: 0 auto;
+}
+#fakta2-2 #matavfallspasar {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 900px;
+}
+#fakta2-2 #matavfallspase-container {
+	position: relative;
+	top: 50%;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+#matavfallspase-container-container {
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	text-align: center;
+	width: 100%;
+
+}
+#fakta2-2 #bil-bla {
+	position: absolute;
+	top: 50%;
+	margin-top: -70px;
+	text-align: center;
+	left: 50%;
+	margin-left: -137px;
+	width: 260px;
+	opacity: 0;
+	z-index: 10;
+	/*background: url(../img/vag-rak-vertikal.svg);
+	background-repeat: repeat-y;
+	background-size: 100%;
+	padding-bottom: 410px;*/
+}
+
+#fakta2-2 #vag, 
+#fakta2-2 #vag-1, 
+#fakta2-2 #vag-rak-vertikal {
+	background: url(../img/vag-rak-vertikal.svg);
+	background-repeat: repeat-y;
+	background-size: 100%;
+	width: 300px;
+	height: 3000px;
+	position: absolute;
+	left: 50%;
+	margin-left: -150px;
+}
+#fakta2-2 #vag {
+	top: -10px;
+	opacity: 0;
+}
+#fakta2-2 #vag-1 {
+	height: 521px;
+	top: -10px;
+}
+#fakta2-2 #skylt-10 {
+	left: 20%;
+	position: relative;
+	width: 160px;
+	height: auto;
+	top: -120px;
+}
+#fakta2-2 #vete-holder-1, 
+#fakta2-2 #vete-holder-2,
+#fakta2-2 #vete-holder-3,
+#fakta2-2 #vete-holder-4,
+#fakta2-2 #vete-holder-5 {
+	position: absolute;
+	opacity: 0;
+	-webkit-transform-origin:bottom center;
+	-webkit-backface-visibility: hidden;
+}
+#fakta2-2 #vete-holder-6,
+#fakta2-2 #vete-holder-7,
+#fakta2-2 #vete-holder-8,
+#fakta2-2 #vete-holder-9 {
+	position: absolute;	
+}
+#fakta2-2 #vete-holder-1 {
+	left: 100px;
+	width: 200px;
+	top: 750px;
+}
+#fakta2-2 #vete-holder-2 {
+	left: 350px;
+	width: 200px;
+	top: 950px;
+}
+#fakta2-2 #vete-holder-3 {
+	left: 100px;
+	width: 200px;
+	top: 1150px;
+}
+#fakta2-2 #vete-holder-4 {
+	left: 350px;
+	width: 200px;
+	top: 1350px;
+}
+#fakta2-2 #vete-holder-5 {
+	left: 100px;
+	width: 200px;
+	top: 1550px;
+}
+#fakta2-2 #vete-holder-6 {
+	left: 350px;
+	width: 200px;
+	top: 1750px;
+}
+#fakta2-2 #vete-holder-7 {
+	left: 100px;
+	width: 200px;
+	top: 1950px;
+}
+#fakta2-2 #vete-holder-8 {
+	left: 350px;
+	width: 200px;
+	top: 2150px;
+}
+#fakta2-2 #vete-holder-9 {
+	left: 100px;
+	width: 200px;
+	top: 2350px;
+}
+#fakta2-2 #fralla-1 {
+	position: absolute;
+	left: 350px;
+	width: 130px;
+	top: 1750px;
+}
+#fakta2-2 #fralla-2 {
+	position: absolute;
+	left: 100px;
+	width: 130px;
+	top: 1950px;
+}
+#fakta2-2 #fralla-3 {
+	position: absolute;
+	left: 350px;
+	width: 130px;
+	top: 2150px;
+}
+#fakta2-2 #fralla-4 {
+	position: absolute;
+	left: 100px;
+	width: 130px;
+	top: 2350px;
+}
+
+#fakta2-2 #vete-holder-1 img,
+#fakta2-2 #vete-holder-2 img,
+#fakta2-2 #vete-holder-3 img,
+#fakta2-2 #vete-holder-4 img,
+#fakta2-2 #vete-holder-5 img,
+#fakta2-2 #vete-holder-6 img, 
+#fakta2-2 #vete-holder-7 img,
+#fakta2-2 #vete-holder-8 img,
+#fakta2-2 #vete-holder-9 img {
+	width: 50px;
+}
+#fakta2-2 #gas-to-food {
+	position: relative;
+	width: 100%;
+	height: 3000px;
+	background:#786754;
+}
+#fakta2-2 #biogasgodsel_tank {
+	position: absolute;
+	left: 40px;
+	top: 300px;
+
+}
+#fakta2-2 #home-container {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 2500px;
+	background-color: rgba(126, 179, 110, 0.38); 
+}
+#fakta2-2 #home-container #text {
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	width: 100%;
+}
+#fakta2-2 #home-container #text h2{
+	font-size: 5em;
+	line-height: 0em;
+}
+#fakta2-2 #home-container #text p{
+	line-height: 0em;
+}
+#fakta2-2 #hus-1 {
+	display: inline-block;
+	background: #4a86ac;
+	height: 320px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 140px;
+	left: 20px;
+	-webkit-transition: background .7s;
+}
+#fakta2-2 #hus-2 {
+	display: inline-block;
+	background: #a3897b;
+	height: 320px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 140px;
+	left: 310px;
+	-webkit-transition: background .7s;
+}
+#fakta2-2 #hus-3 {
+	display: inline-block;
+	background: #b45f56;
+	height: 320px;
+	margin-bottom: 50px;
+	position: relative;
+	top: 140px;
+	left: 50%;
+	margin-left: -118px;
+	z-index: 20;
+
+	-webkit-transition: background .7s;
+}
+#fakta2-2 #hus-4 {
+	display: inline-block;
+	background: #a3897b;
+	height: 320px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 140px;
+	right: 20px;
+	-webkit-transition: background .7s;
+}
+#fakta2-2 #hus-5 {
+	display: inline-block;
+	background: #4a86ac;
+	height: 320px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 140px;
+	right: 310px;
+	-webkit-transition: background .7s;
+}
+
+#fakta2-2 #hus-1 img, 
+#fakta2-2 #hus-2 img,
+#fakta2-2 #hus-3 img,
+#fakta2-2 #hus-4 img,
+#fakta2-2 #hus-5 img{
+	top: -30px;
+	position: relative;
+}
+#fakta2-2 #tarmometer-container {
+	position: absolute;
+	top: 336px;
+	left: 260px;
+}
+#fakta2-2 #tarmometer-container #tarmometer {
+	width: 40px;
+	z-index: 10;
+}
+#fakta2-2 #tarmometer-container #cirkel {
+	width: 17px;
+	height: 17px;
+	border-radius: 1000px;
+	background: #277FB9;
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+	z-index: 1;
+	transition: all .7s;
+	-webkit-transition: all .7s;
+}
+
+#fakta2-2 #tarmometer-container #stroke {
+	width: 5px;
+	height: 10px;
+	background: #277FB9;
+	position: absolute;
+	bottom: 3px;
+	right: 9px;
+	z-index: 1;
+	transition: all .7s;
+	-webkit-transition: all .7s;
+}
+#fakta2-2 #text-1 {
+	bottom: 0;
+	position: absolute;
+	right: 36px;
+}
+#fakta2-2 #text-2 {
+	width: 300px;
+	right: 90px;
+	position: absolute;
+	top: 600px;
+}
+#fakta2-2 #el-container {
+	position: relative;
+	width: 100%;
+	height: 1700px;
+	background: #786754;
+}
+#fakta2-2 #el-container #brodrost {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+#fakta2-2 #el-container #dammsugare {
+	position: absolute;
+	top: 300px;
+	right: 150px;
+}
+#fakta2-2 #el-container #elvisp {
+	position: absolute;
+	top: 870px;
+	left: 360px;
+}
+#fakta2-2 #el-container #kaffekokare {
+	position: absolute;
+	top: 735px;
+	left: 10px;
+}
+#fakta2-2 #el-container #PC {
+	position: absolute;
+	top: 1030px;
+	right: 20px;
+}
+#fakta2-2 #el-container #X-box {
+	position: absolute;
+	top: 1280px;
+	left: 300px;
+}
+#fakta2-2 #el-container #TV {
+	position: absolute;
+	top: -60px;
+	right: 20px;
+}
+#fakta2-2 #el-container #text {
+	font-size: 7em;
+	position: absolute;
+	text-align: center;
+	top: 420px;
+	color: rgba(255, 255, 255, 0.5);
+}
