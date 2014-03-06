@@ -183,6 +183,7 @@
 	padding-bottom: 30px;
 	cursor: pointer;
 	-webkit-transition: 0.35s all;
+	transition: 0.35s all;
 }
 .recipes .close-book:hover {
 	background: #750D21;
@@ -200,6 +201,7 @@
 	border-bottom: 4px solid #952A2C;
 	border-left: 40px solid transparent;
 	-webkit-transition: 0.35s all;
+	transition: 0.35s all;
 }
 .recipes .close-book:hover:before {
 	border-bottom-color: #750D21;
@@ -220,5 +222,7 @@
 .recipes .close-book span {
 	display: block;
 	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
 	padding: 30px 5px;
 }
