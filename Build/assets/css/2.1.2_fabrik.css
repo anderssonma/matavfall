@@ -1313,19 +1313,19 @@ html, body {
 
 .biogas-70 {
 	position: absolute;
-	top: 465px;
+	top: 1465px;
 	left: 0;
 	z-index: 1;
 }
 .termometer-70 {
 	position: absolute;
-	top: 506px;
+	top: 1506px;
 	left: 370px;
 }
 
 .sysav {
 	position: absolute;
-	top: 320px;
+	top: 1320px;
 	right: 5px;
 	z-index: 1;
 }
@@ -1333,7 +1333,7 @@ html, body {
 
 .wire {
 	position: absolute;
-	top: 550px;
+	top: 1550px;
 	left: 853px;
 	width: 10px;
 	height: 100px;
@@ -1347,20 +1347,20 @@ html, body {
 }
 .biogas-37 {
 	position: absolute;
-	top: 1262px;
+	top: 2362px;
 	left: 0;
 	z-index: 1;
 }
 .biogas-wash {
 	position: absolute;
-	top: 1258px;
+	top: 2358px;
 	left: 340px;
 }
 
 
 .end-of-line {
 	position: absolute;
-	top: 1750px;
+	top: 2850px;
 	left: -40px;
 	right: -40px;
 }
@@ -1391,24 +1391,24 @@ html, body {
 
 /* SCROLLORAMA */
 #text1, #text2, #text3 {
-	position: relative;
+	position: absolute;
 	opacity: 0;
 	width: 500px;
 	left: -200px;
 }
 #text1 {
-	top: -10px;
+	top: -70px;
 }
 #text2 {
-	top: -130px;
+	top: 170px;
 }
 #text3 {
-	top: 20px;
+	top: 1200px;
 	left: -20px;
 }
 #text4 {
 	position: absolute;
-	top: 760px;
+	top: 1760px;
 	right: 40px;
 	opacity: 0;
 	width: 760px;

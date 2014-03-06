@@ -13,7 +13,7 @@ $(function() {
 		document.getElementById('end-video3')
 	];
 
-	factoryCtrl.addTween('#wire', TweenMax.to($('#wire'), 2, {css:{height: 1220},
+	factoryCtrl.addTween('#wire', TweenMax.to($('#wire'), 2, {css:{height: 1320},
 		onComplete: function() {
 			vidArray.forEach(function(video) {
 				video.play();
@@ -42,11 +42,9 @@ $(function() {
 		prevSlide: function() {
 			var currentEl = $('#slideshow input:checked');
 			currentEl.prop('checked', false);
-			console.log(currentEl);
 			if (currentEl.prev('input').length > 0) {
 				currentEl.prev().prop('checked', true);
 			} else {
-				console.log($('#slideshow input:last-child'));
 				$('#slideshow input:last-of-type').prop('checked', true);
 			}
 		},
