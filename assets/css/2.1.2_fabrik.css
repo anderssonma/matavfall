@@ -755,7 +755,7 @@ html, body {
 	top: 746px;
 	right: 0;
 	width: 120px;
-	height: 884px;
+	height: 750px;
 	overflow: hidden;
 }
 .conveyor .belt {
@@ -1163,7 +1163,7 @@ html, body {
 
 .slurry-drop {
 	width: 80px;
-	height: 620px;
+	height: 420px;
 	position: absolute;
 	top: 230px;
 	left: 40px;
@@ -1268,7 +1268,7 @@ html, body {
 		-webkit-transform: translateY(0);
 	}
 	100% {
-		-webkit-transform: translateY(600px);
+		-webkit-transform: translateY(500px);
 	}
 }
 @-webkit-keyframes flyingBlob2 {
@@ -1276,7 +1276,7 @@ html, body {
 		-webkit-transform: translateY(0);
 	}
 	95%, 100% {
-		-webkit-transform: translateY(600px);
+		-webkit-transform: translateY(500px);
 	}
 }
 
@@ -1285,7 +1285,7 @@ html, body {
 		-webkit-transform: translateY(0);
 	}
 	92%, 100% {
-		-webkit-transform: translateY(600px);
+		-webkit-transform: translateY(500px);
 	}
 }
 
@@ -1313,19 +1313,19 @@ html, body {
 
 .biogas-70 {
 	position: absolute;
-	top: 1465px;
+	top: 1405px;
 	left: 0;
 	z-index: 1;
 }
 .termometer-70 {
 	position: absolute;
-	top: 1506px;
+	top: 1446px;
 	left: 370px;
 }
 
 .sysav {
 	position: absolute;
-	top: 1320px;
+	top: 1260px;
 	right: 5px;
 	z-index: 1;
 }
@@ -1347,13 +1347,13 @@ html, body {
 }
 .biogas-37 {
 	position: absolute;
-	top: 2362px;
+	top: 2322px;
 	left: 0;
 	z-index: 1;
 }
 .biogas-wash {
 	position: absolute;
-	top: 2358px;
+	top: 2318px;
 	left: 340px;
 }
 
