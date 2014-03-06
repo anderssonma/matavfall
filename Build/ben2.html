@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  
+  <link rel='stylesheet' href='assets/css/vendor/normalize.css'>
+<link rel='stylesheet' href='assets/css/vendor/foundation.css'>
+  
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+
+  <link rel='stylesheet' href='assets/css/style.css'>
+<link rel='stylesheet' href='assets/css/1.1_fakta.css'>
+<link rel='stylesheet' href='assets/css/uppdrag.css'>
+<link rel='stylesheet' href='assets/css/1.2_uppdrag.css'>
+<link rel='stylesheet' href='assets/css/1.3_spel.css'>
+<link rel='stylesheet' href='assets/css/1.4_recept.css'>
+<link rel='stylesheet' href='assets/css/1.5.1_popcorn.css'>
+<link rel='stylesheet' href='assets/css/1.5.2_bio.css'>
+<link rel='stylesheet' href='assets/css/1.5.3_kylskap.css'>
+<link rel='stylesheet' href='assets/css/1.6_quiz.css'>
+<link rel='stylesheet' href='assets/css/1.6_quiz.slides.css'>
+<link rel='stylesheet' href='assets/css/1.7_diplom.css'>
+  
+  <title>MATAVFALLS-WEBB</title>
+  
+</head>
+
+<body>
+
+  <div id="top-img" style="width: 100%; height: 100%; background: #6CB4C1; border-bottom: 400px solid #6CB4C1;">
+	<img src="assets/img/temp_top1.png" style="width: 100%;">
+</div>
+
+	<!-- PROJECT DEPENDENCIES -->
+	<script src='assets/js/vendor/tweenmax.min.js'></script>
+<script src='assets/js/vendor/timelinelite.min.js'></script>
+	<script src='assets/js/vendor/jquery.min.js'></script>
+<script src='assets/js/vendor/jquery-ui.min.js'></script>
+	<script src='assets/js/vendor/jquery.superscrollorama.js'></script>
+<script src='assets/js/vendor/preloadjs-0.4.0.min.js'></script>
+<script src='assets/js/vendor/jquery.nicescroll.min.js'></script>
+
+	<!-- OUR FILES -->
+	<script src='assets/js/1.1_fakta.js'></script>
+	<script src='assets/js/1.2_uppdrag.js'></script>
+	<script src='assets/js/1.3_game.js'></script>
+<script src='assets/js/1.3_game.helpers.js'></script>
+	<script src='assets/js/1.4_recept.js'></script>
+	<script src='assets/js/1.5.1_popcorn.js'></script>
+<script src='assets/js/1.5.2_bio.js'></script>
+<script src='assets/js/1.5.3_kylskap.js'></script>
+	<script src='assets/js/1.6_quiz.js'></script>
+</body>
+</html>
