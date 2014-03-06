@@ -15,7 +15,6 @@ html, body {
 .fabrik h2, 
 .fabrik h3,
 .fabrik p {
-	
 	width: 380px;
 	color: #444;
 }
@@ -41,7 +40,6 @@ html, body {
 
 .fabrik h2, 
 .fabrik h3 {
-	font-family: 'Bubbler One';
 	margin: 10px 0 0;
 	line-height: 1.25em;
 	font-size: 30px;

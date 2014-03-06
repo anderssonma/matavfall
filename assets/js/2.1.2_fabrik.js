@@ -25,7 +25,7 @@ $(function() {
 				video.currentTime = 0;
 			});
 		}
-	}), 1000, 200);
+	}), 1200, 200);
 
 
 	var SimpleSlider = {
