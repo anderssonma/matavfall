@@ -11,7 +11,7 @@ html {
 .fakta_1-1 {
 	overflow: hidden;
 	width: 100%;
-	padding-top: 1000px;
+	padding-top: 800px;
 	/*background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");*/
 	background: #6CB4C1;
 	position: relative;
@@ -37,7 +37,7 @@ html {
 	}
 	.intro {
 		position: relative;
-		top: -1000px;
+		top: -800px;
 		left: 0;
 		width: 50%;
 		margin: 0 auto;
@@ -235,6 +235,10 @@ html {
 	.space400 {
 		padding-bottom: 400px;
 	}
+#drain-paper {
+	margin-top: -200px;
+}
+
 	#fruit-1 {
 		top: 600px;
 		left: 300px;

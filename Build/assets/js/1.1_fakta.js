@@ -105,19 +105,20 @@ $(document).ready(function() {
 		}
 	});
 
-	console.log($('#basket').offset())
-
 	var basketIsFixed = false; // DONT WANT TO REPEATEDLY UPDATE INLINE STYLES
 	var $window = $(window); // CACHE WINDOW
+
+	var basketStart = $('#basket').offset().top;
+	var basketEnd = basketStart + 5000;
 	$window.on('scroll', function() {
 		var pixelsFromTop = $window.scrollTop() + windowHeightSplit - 131;
 		// if (pixelsFromTop > 10 && pixelsFromTop < 5000 && !basketIsFixed) {
-		if (pixelsFromTop > 1700 && pixelsFromTop < 6700 && !basketIsFixed) {
+		if (pixelsFromTop > basketStart && pixelsFromTop < basketEnd && !basketIsFixed) {
 			$("#basket").addClass('fixed'); 
 			basketIsFixed = true;
 		}
 		// if (pixelsFromTop > 5000 && basketIsFixed || pixelsFromTop < 10 && basketIsFixed) {
-		if (pixelsFromTop > 6700 && basketIsFixed || pixelsFromTop < 1700 && basketIsFixed) {
+		if (pixelsFromTop > basketEnd && basketIsFixed || pixelsFromTop < basketStart && basketIsFixed) {
 			$("#basket").removeClass('fixed');
 			basketIsFixed = false;
 		}
