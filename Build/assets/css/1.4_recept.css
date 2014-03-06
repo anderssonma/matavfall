@@ -31,20 +31,35 @@
 	width: 100%;
 	position: relative;
 	-webkit-transition: 0.5s all cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	transition: 0.5s all cubic-bezier(0.770, 0.000, 0.175, 1.000);
 	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .recipes .book-wrapper.open .book-flipper {
 	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 	-webkit-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .recipes .book-flipper-inner {
 	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 	-webkit-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 .recipes .book-wrapper.open .book-flipper-inner {
 	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
 	-webkit-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 .recipes .book-cover {

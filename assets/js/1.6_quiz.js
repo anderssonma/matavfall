@@ -130,6 +130,11 @@ var Quiz = {
 			errors: this.activeSlide.errors.length
 		};
 		this.score[this.activeSlide.id] = pushScore;
+
+		if (this.nextSlide === this.slides.length - 2) {
+			$('#submit').text('AVSLUTA'); // CHANGE TEXT ON LAST Q'S SUBMIT LABEL
+		}
+
 		if (this.nextSlide >= this.slides.length - 1) {
 			this.makeSummaryScreen();
 		} else {
