@@ -12,13 +12,15 @@ html, body {
 	background: #6EAD97;
 }
 
-h2, h3, p {
+.fabrik h2, 
+.fabrik h3,
+.fabrik p {
 	
 	width: 380px;
 	color: #444;
 }
 
-p {
+.fabrik p {
 	font-family: 'Lato';
 	color: #666;
 	font-size: 17px;
@@ -26,35 +28,34 @@ p {
 	-webkit-font-smoothing: antialiased;
 }
 
-i {
+.fabrik i {
 	color: rgba(0,0,0,0.35);
 }
 
-p.two {
+.fabrik p.two {
 	width: 290px;
 }
-p.three {
+.fabrik p.three {
 	width: 370px;
 }
 
-h2, h3 {
+.fabrik h2, 
+.fabrik h3 {
 	font-family: 'Bubbler One';
 	margin: 10px 0 0;
 	line-height: 1.25em;
-	-webkit-font-smoothing: antialiased;
-}
-
-h2, h3 {
 	font-size: 30px;
+	font-weight: normal;
 }
 
-h3.subh-1 {
+
+.fabrik h3.subh-1 {
 	margin: 300px 0 -6px;
 }
-h3.subh-2 {
+.fabrik h3.subh-2 {
 	margin: -20px 0 -6px;
 }
-h3.subh-3 {
+.fabrik h3.subh-3 {
 	margin: 0 0 -6px 60px;
 }
 
@@ -62,7 +63,6 @@ h3.subh-3 {
 	width: 100%;
 	background: #F8F8F8;
 	padding: 100px 0 40px;
-	margin-top: 900px;
 }
 .fabrik {
 	width: 1000px;
@@ -1343,6 +1343,7 @@ h3.subh-3 {
 	position: absolute;
 	left: -20px;
 	bottom: -25px;
+	max-width: none;
 }
 .biogas-37 {
 	position: absolute;

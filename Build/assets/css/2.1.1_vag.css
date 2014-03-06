@@ -1,0 +1,131 @@
+
+p, h2 {
+	color: rgba(255, 255, 255, 0.95);
+}
+h2 {
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#fakta2-1 #stage-2 {
+	position: relative;
+	width: 100%;
+}
+#fakta2-1 #hand-plocka {
+	position: absolute;
+	left: -968px;
+	top: 50%;
+	margin-top: -170px;
+	z-index: 1;
+	-webkit-transform: rotateY(180deg);
+}
+#fakta2-1 #basket-vikt {
+	position:absolute;
+	top: 50%;
+	left: -92px;
+	margin-left: -92px;
+	margin-top: -74px;
+	width: 217px;
+	height: 262px;
+	background: url(../img/Matavfallspase_blot_vikt.svg);
+	background-repeat: no-repeat;
+	background-size: 87%;
+}
+#fakta2-1 {
+	overflow: hidden;
+	width: 100%;
+	padding-top: 1000px;
+	background: #8ac6cf;
+}
+#fakta2-1 .large-6 {
+	max-width: 720px;
+}
+#fakta2-1 .del-1 {
+	position: absolute;
+	top: 70%;
+	margin-left: -420px;
+	z-index: 1;
+}
+#fakta2-1 .del-2 {
+	position: absolute;
+	top: 70%;
+	margin-left: -420px;
+	z-index: 1;
+}
+#fakta2-1 #matavfallstunna-container {
+	position: absolute;
+	height:200px; 
+	margin-top: 50px;
+}
+#fakta2-1 #matavfallstunna-lock {
+	position: absolute;
+	width: 80%;
+	right: 0;
+	-webkit-transform-origin: 100% bottom;
+	-moz-transform-origin: 100% bottom;
+	transform-origin: 100% bottom;
+
+}
+#fakta2-1 #matavfallstunna {
+	width: 240px;
+	display: block;
+	position: relative;
+	top: 170px;
+}
+
+#fakta2-1 #avfallsbil {
+	position: absolute;
+	width: 500px;
+	left: -400px;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -69px;
+	z-index: 1;
+}
+#fakta2-1 #vagbana-container {
+	position: absolute;
+	left: 20px;
+	width: 1290px;
+	opacity: 0;
+	top: 200px;
+}
+#fakta2-1 #vagbana {
+	position: relative;
+	left: 20px;
+	width: 1290px;
+}
+#stage-2 #forbehandling_skylt {
+	position: relative;
+	left: -20px;
+	top: 27px;
+	width: 140px;
+	-webkit-animation: waveSign 5s infinite alternate ease-in-out;
+	-moz-animation: waveSign 5s infinite alternate ease-in-out;
+	animation: waveSign 5s infinite alternate ease-in-out;
+	-webkit-transform-origin: 50% bottom;
+	-moz-transform-origin: 50% bottom;
+	transform-origin: 50% bottom;
+}
+@-webkit-keyframes waveSign {
+	0% { -webkit-transform: rotate(-10deg); }
+	50% { -webkit-transform: rotate(10deg); }
+	100% { -webkit-transform: rotate(-10deg); }
+}
+@-moz-keyframes waveSign {
+	0% { -moz-transform: rotate(-10deg); }
+	50% { -moz-transform: rotate(10deg); }
+	100% { -moz-transform: rotate(-10deg); }
+}
+@keyframes waveSign {
+	0% { transform: rotate(-10deg); }
+	50% { transform: rotate(10deg); }
+	100% { transform: rotate(-10deg); }
+}
+#stage-2 #forbehandlingsandlagning {
+	position: relative;
+	top: 0;
+	left: 50%;
+	width: 450px;
+	margin-left: -83px;
+	z-index: 2;
+}
