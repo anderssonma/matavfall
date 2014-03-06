@@ -105,16 +105,20 @@ $(document).ready(function() {
 		}
 	});
 
+	console.log($('#basket').offset())
+
 	var basketIsFixed = false; // DONT WANT TO REPEATEDLY UPDATE INLINE STYLES
 	var $window = $(window); // CACHE WINDOW
 	$window.on('scroll', function() {
-		var pixelsFromTop = $window.scrollTop();
-		if (pixelsFromTop > 10 && pixelsFromTop < 5000 && !basketIsFixed) {
-			$("#basket").css({ "position": "fixed", "top": windowHeightSplit - 131, "opacity": "1",	"left":"50%", "margin-left":"-85px"}); 
+		var pixelsFromTop = $window.scrollTop() + windowHeightSplit - 131;
+		// if (pixelsFromTop > 10 && pixelsFromTop < 5000 && !basketIsFixed) {
+		if (pixelsFromTop > 1700 && pixelsFromTop < 6700 && !basketIsFixed) {
+			$("#basket").addClass('fixed'); 
 			basketIsFixed = true;
 		}
-		if (pixelsFromTop > 5000 && basketIsFixed || pixelsFromTop < 10 && basketIsFixed) {
-			$("#basket").css("position", "relative" ); 
+		// if (pixelsFromTop > 5000 && basketIsFixed || pixelsFromTop < 10 && basketIsFixed) {
+		if (pixelsFromTop > 6700 && basketIsFixed || pixelsFromTop < 1700 && basketIsFixed) {
+			$("#basket").removeClass('fixed');
 			basketIsFixed = false;
 		}
 	});

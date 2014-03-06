@@ -140,14 +140,20 @@ html {
     left: 50%;
     margin-left: -720px; }
   .fakta_1-1 #basket {
-    position: relative;
+    position: absolute;
     left: 50%;
-    margin-left: -50px;
-    top: 100%;
+    margin-left: -85px;
+    top: 400px;
     z-index: 10;
     width: 217px;
     height: 262px;
     background: url(../img/matavfallspase-sprite.svg) 0px 0px; }
+  .fakta_1-1 #basket.fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -131px 0 0 -85px;
+    opacity: 1; }
   .fakta_1-1 #basket:after {
     position: absolute;
     content: ' ';
