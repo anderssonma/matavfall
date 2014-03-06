@@ -63,57 +63,57 @@ $(document).ready(function() {
 	var popcorn_4 = getOffset( document.getElementById('popcorn-3')).top - windowHeightSplit;
 	var money_popcorn_5 = getOffset( document.getElementById('money-popcorn-3')).top - windowHeightSplit;
 	var popcorn_5 = getOffset( document.getElementById('popcorn-3')).top - windowHeightSplit;
-	var money_popcorn_6 = getOffset( document.getElementById('money-popcorn-6')).top - windowHeightSplit;
-	var popcorn_6 = getOffset( document.getElementById('popcorn-6')).top - windowHeightSplit;
+	var money_popcorn_6 = $('#money-popcorn-6').offset().top - windowHeightSplit;
+	var popcorn_6 = $('#popcorn-6').offset().top - windowHeightSplit;
 
-	var money_popcorn_7 = getOffset( document.getElementById('money-popcorn-7')).top - windowHeightSplit;
-	var popcorn_7 = getOffset( document.getElementById('popcorn-7')).top - windowHeightSplit;
+	var money_popcorn_7 = $('#money-popcorn-7').offset().top - windowHeightSplit;
+	var popcorn_7 = $('#popcorn-7').offset().top - windowHeightSplit;
 
-	var money_popcorn_8 = getOffset( document.getElementById('money-popcorn-9')).top - windowHeightSplit;
-	var popcorn_8 = getOffset( document.getElementById('popcorn-8')).top - windowHeightSplit;
+	var money_popcorn_8 = $('#money-popcorn-9').offset().top - windowHeightSplit;
+	var popcorn_8 = $('#popcorn-8').offset().top - windowHeightSplit;
 
-	var money_popcorn_9 = getOffset( document.getElementById('money-popcorn-9')).top - windowHeightSplit;
-	var popcorn_9 = getOffset( document.getElementById('popcorn-9')).top - windowHeightSplit;
+	var money_popcorn_9 = $('#money-popcorn-9').offset().top - windowHeightSplit;
+	var popcorn_9 = $('#popcorn-9').offset().top - windowHeightSplit;
 
-	var money_popcorn_10 = getOffset( document.getElementById('money-popcorn-10')).top - windowHeightSplit;
-	var popcorn_10 = getOffset( document.getElementById('popcorn-10')).top - windowHeightSplit;
+	var money_popcorn_10 = $('#money-popcorn-10').offset().top - windowHeightSplit;
+	//var popcorn_10 = $('#popcorn-10').offset().top - windowHeightSplit;
 
-	var money_popcorn_11 = getOffset( document.getElementById('money-popcorn-11')).top - windowHeightSplit;
-	var popcorn_11 = getOffset( document.getElementById('popcorn-11')).top - windowHeightSplit;
+	var money_popcorn_11 = $('#money-popcorn-11').offset().top - windowHeightSplit;
+	var popcorn_11 = $('#popcorn-11').offset().top - windowHeightSplit;
 
 	controller.addTween('#popcorn-1', TweenMax.fromTo($('#popcorn-1'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 100);
-	controller.addTween('#money-popcorn-1', TweenMax.fromTo($('#money-popcorn-1'), .6, {css:{transform: 'scale(1)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 100);
+	controller.addTween('#money-popcorn-1', TweenMax.fromTo($('#money-popcorn-1'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 100);
 	
 	controller.addTween('#popcorn-2', TweenMax.fromTo($('#popcorn-2'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2) rotate(45deg)'}, ease:Expo.easeOut}), scrollDuration, 100);
-	controller.addTween('#money-popcorn-2', TweenMax.fromTo($('#money-popcorn-2'), .6, {css:{transform: 'scale(1)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 100);
+	controller.addTween('#money-popcorn-2', TweenMax.fromTo($('#money-popcorn-2'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 100);
 
-	controller.addTween(popcorn_3, TweenMax.fromTo($('#popcorn-3'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2) rotate(10deg)'}, ease:Expo.easeOut}), scrollDuration);
-	controller.addTween( money_popcorn_3, TweenMax.fromTo($('#money-popcorn-3'), .6, {css:{transform: 'scale(1) rotate(-20deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration);
+	controller.addTween('#popcorn-3', TweenMax.fromTo($('#popcorn-3'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2) rotate(10deg)'}, ease:Expo.easeOut}), scrollDuration);
+	controller.addTween('#money-popcorn-3', TweenMax.fromTo($('#money-popcorn-3'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration);
 
-	controller.addTween(popcorn_4, TweenMax.fromTo($('#popcorn-4'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 100);
-	controller.addTween( money_popcorn_4, TweenMax.fromTo($('#money-popcorn-4'), .6, {css:{transform: 'scale(1) rotate(-120deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 100);
+	controller.addTween('#popcorn-4', TweenMax.fromTo($('#popcorn-4'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration);
+	controller.addTween('#money-popcorn-4', TweenMax.fromTo($('#money-popcorn-4'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration);
 
-	controller.addTween(popcorn_5, TweenMax.fromTo($('#popcorn-5'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2)'}, ease:Expo.easeOut}), 200, -150);
-	controller.addTween(money_popcorn_5, TweenMax.fromTo($('#money-popcorn-5'), .6, {css:{transform: 'scale(1) rotate( 75deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), 200, -150);
+	controller.addTween('#popcorn-5', TweenMax.fromTo($('#popcorn-5'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2)'}, ease:Expo.easeOut}), 200, -150);
+	controller.addTween('#money-popcorn-5', TweenMax.fromTo($('#money-popcorn-5'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), 200, -150);
 
-	controller.addTween(popcorn_6, TweenMax.fromTo($('#popcorn-6'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2)'}, ease:Expo.easeOut}), scrollDuration, -50);
-	controller.addTween(money_popcorn_6, TweenMax.fromTo($('#money-popcorn-6'), .6, {css:{transform: 'scale(1) rotate(-10deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, -50);
+	controller.addTween('#popcorn-6', TweenMax.fromTo($('#popcorn-6'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2)'}, ease:Expo.easeOut}), scrollDuration, -50);
+	controller.addTween('#money_popcorn-6', TweenMax.fromTo($('#money-popcorn-6'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, -50);
 
-	controller.addTween(popcorn_7, TweenMax.fromTo($('#popcorn-7'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
-	controller.addTween(money_popcorn_7, TweenMax.fromTo($('#money-popcorn-7'), .6, {css:{transform: 'scale(1) rotate(-10deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#popcorn-7', TweenMax.fromTo($('#popcorn-7'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#money-popcorn-7', TweenMax.fromTo($('#money-popcorn-7'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 0);
 
 	
 
-	controller.addTween(money_popcorn_8, TweenMax.fromTo($('#money-popcorn-8'), .6, {css:{transform: 'scale(1) rotate(7deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 0);
-	controller.addTween(popcorn_8, TweenMax.fromTo($('#popcorn-8'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#money-popcorn-8', TweenMax.fromTo($('#money-popcorn-8'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#popcorn-8', TweenMax.fromTo($('#popcorn-8'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
 
-	controller.addTween(money_popcorn_9, TweenMax.fromTo($('#money-popcorn-9'), .6, {css:{transform: 'scale(1) rotate(7deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 0);
-	controller.addTween(popcorn_9, TweenMax.fromTo($('#popcorn-9'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2) rotate(10deg)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#money-popcorn-9', TweenMax.fromTo($('#money-popcorn-9'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#popcorn-9', TweenMax.fromTo($('#popcorn-9'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(2) rotate(10deg)'}, ease:Expo.easeOut}), scrollDuration, 0);
 
-	controller.addTween(money_popcorn_10, TweenMax.fromTo($('#money-popcorn-10'), .6, {css:{transform: 'scale(1) rotate(35deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#money-popcorn-10', TweenMax.fromTo($('#money-popcorn-10'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 0);
 
-	controller.addTween(money_popcorn_11, TweenMax.fromTo($('#money-popcorn-11'), .6, {css:{transform: 'scale(1) rotate(-5deg)'}}, {css:{transform: 'scale(0)'}, ease:Expo.easeOut}), scrollDuration, 0);
-	controller.addTween(popcorn_11, TweenMax.fromTo($('#popcorn-11'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#money-popcorn-11', TweenMax.fromTo($('#money-popcorn-11'), .6, {css:{opacity: 1}}, {css:{opacity: 0}, ease:Expo.easeOut}), scrollDuration, 0);
+	controller.addTween('#popcorn-11', TweenMax.fromTo($('#popcorn-11'), .6, {css:{transform: 'scale(0)'}}, {css:{transform: 'scale(1)'}, ease:Expo.easeOut}), scrollDuration, 0);
 	
 
 	var avslut_biljett = TweenMax.fromTo( $('#avslut-biljett'), 1, {css:{transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{ transform: 'scale(10) rotate(-110deg)' }, ease:Quad.easeInOut}, scrollDuration);

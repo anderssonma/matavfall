@@ -109,6 +109,7 @@
 	position: absolute;
 	left: -100px;
 	top: 300px;
+	-webkit-transform: rotate(-20deg);
 }
 #popcorn-3 {
 	position: absolute;
@@ -120,18 +121,18 @@
 	position: absolute;
 	left: 300px;
 	top: 400px;
-	
+	-webkit-transform: rotate(-120deg);
 }
 #popcorn-4 {
 	position: absolute;
 	left: 460px;
 	top: 400px;
-	
 }
 #money-popcorn-5 {
 	position: absolute;
 	left: 720px;
 	top: 100px;
+	-webkit-transform: rotate(50deg);
 }
 #popcorn-5 {
 	position: absolute;
@@ -142,6 +143,7 @@
 	position: absolute;
 	left: -40px;
 	top: 700px;
+	-webkit-transform: rotate(-10deg);
 }
 #popcorn-6 {
 	position: absolute;
@@ -152,6 +154,7 @@
 	right: 100px;
 	position: absolute;
 	top: 550px;
+	-webkit-transform: rotate(-10deg);
 }
 #popcorn-7 {
 	position: absolute;
@@ -162,6 +165,7 @@
 	left: 28%;
 	position: absolute;
 	top: 790px;
+	-webkit-transform: rotate(7deg);
 }
 #popcorn-8 {
 	position: absolute;
@@ -172,6 +176,7 @@
 	right: 10px;
 	position: absolute;
 	top: 750px;
+	-webkit-transform: rotate(7deg);
 }
 #popcorn-9 {
 	position: absolute;
@@ -184,12 +189,14 @@
 	position: absolute;
 	top: 970px;
 	margin-left: -230px;
+	-webkit-transform: rotate(35deg);
 }
 
 #money-popcorn-11 {
 	right: 30%;
 	position: absolute;
 	top: 850px;
+	-webkit-transform: rotate(-5deg);
 }
 #popcorn-11 {
 	position: absolute;
