@@ -16,6 +16,11 @@ html, body {
 	background: #6EAD97;
 }
 
+.fabrik-container {
+	overflow: hidden;
+	height: 3700px;
+}
+
 .fabrik h2, 
 .fabrik h3,
 .fabrik p {

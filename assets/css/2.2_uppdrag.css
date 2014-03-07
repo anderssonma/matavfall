@@ -1,8 +1,7 @@
 .mission {
   position: relative;
-  top: 2600px;
   width: 1000px;
-  margin: 0 auto 200px;
+  margin: 200px auto 200px;
 }
 
 /* SLIDESHOW OVERRIDES */
