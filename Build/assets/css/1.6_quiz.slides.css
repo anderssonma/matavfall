@@ -4,6 +4,9 @@
 	 SLIDE #1 
 =========== */
 
+.quiz-slide-0 .quiz-target {
+	overflow: hidden;
+}
 .quiz-slide-0 .item-1 {
 	top: 370px;
 	left: 80px;

@@ -15,7 +15,7 @@ $(function() {
 
 	factoryCtrl.addTween('#pipe-nutrients', TweenMax.to($('#pipe-nutrients'), 2, {css:{height: 270}}), 400, -100);
 	factoryCtrl.addTween('#pipe-gas', TweenMax.to($('#pipe-gas'), 2, {css:{height: 270}}), 400, -100);
-	factoryCtrl.addTween('#wire', TweenMax.to($('#wire'), 2, {css:{height: 1320},
+	factoryCtrl.addTween('#wire', TweenMax.to($('#wire'), 2, {css:{height: 1410},
 		onComplete: function() {
 			vidArray.forEach(function(video) {
 				video.play();
@@ -27,7 +27,7 @@ $(function() {
 				video.currentTime = 0;
 			});
 		}
-	}), 1200, 200);
+	}), 1350, 200);
 
 
 	var SimpleSlider = {
