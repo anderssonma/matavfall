@@ -13,6 +13,8 @@ $(function() {
 		document.getElementById('end-video3')
 	];
 
+	factoryCtrl.addTween('#pipe-nutrients', TweenMax.to($('#pipe-nutrients'), 2, {css:{height: 270}}), 400, -100);
+	factoryCtrl.addTween('#pipe-gas', TweenMax.to($('#pipe-gas'), 2, {css:{height: 270}}), 400, -100);
 	factoryCtrl.addTween('#wire', TweenMax.to($('#wire'), 2, {css:{height: 1320},
 		onComplete: function() {
 			vidArray.forEach(function(video) {

@@ -1353,8 +1353,39 @@ html, body {
 	position: absolute;
 	top: 2318px;
 	left: 340px;
+	z-index: 1;
 }
 
+
+.pipe-gas {
+	position: absolute;
+	top: 2600px;
+	left: 485px;
+	width: 30px;
+	height: 0;
+	border-left: 10px solid #CACACA;
+	border-right: 10px solid #CACACA;
+	background: #D77F6E;
+}
+.pipe-gas .end {
+	position: absolute;
+	left: -13px;
+	right: -13px;
+	bottom: 0;
+	height: 8px;
+	background: #CACACA;
+	border-radius: 3px;
+}
+.pipe-gas.pipe-nutrients {
+	position: absolute;
+	top: 2600px;
+	left: 125px;
+	width: 30px;
+	height: 0;
+	border-left: 10px solid #CACACA;
+	border-right: 10px solid #CACACA;
+	background: #8D7D6C;
+}
 
 .end-of-line {
 	position: absolute;
