@@ -3,9 +3,8 @@
 	 QUIZ 1.6 
 	 SLIDE #1 
 =========== */
-
-.quiz-slide-0 .quiz-target {
-	overflow: hidden;
+.quiz-slide-0 .pase {
+	margin: 80px 0 0 20px;
 }
 .quiz-slide-0 .item-1 {
 	top: 370px;
@@ -51,6 +50,17 @@
 	left: 75%;
 }
 
+.quiz-slide-1 .gryta {
+	margin: 38px 0 0 -12px;
+}
+.quiz-slide-1 .kokskniv {
+	width: 160px;
+	margin: 50px 0 0 20px;
+	-webkit-transform: rotate(30deg);
+}
+.quiz-slide-1 .kylskap {
+	margin: 10px 0 0 30px;
+}
 .quiz-slide-1 .item-1 {
 	top: 360px;
 	left: 42%;
