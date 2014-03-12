@@ -34,7 +34,7 @@ body {
 }
 
 .key-binds {
-	margin: 66px 0 0 80px;
+	margin: 66px 0 30px 50px;
 	float: left;
 }
 .key-binds .key, .key-binds img {
@@ -57,7 +57,7 @@ body {
 }
 
 .key-numbers {
-	margin: 22px 0 0 70px;
+	margin: 22px 0 30px 50px;
 }
 .key-numbers .key {
 	margin-top: 0;
@@ -170,7 +170,7 @@ body {
 .key-binds span {
 	float: left;
 	clear: both;
-	color: #F6F6F6;
+	color: rgba(255,255,255,.6);
 	width: 200px;
 	margin-top: 20px;
 	line-height: 18px;
@@ -526,6 +526,10 @@ canvas#game-interactive {
 	z-index: 0;
 	-webkit-transition: all 0.5s;
 	transition: background 0.5s;
+	right: 165px;
+	left: 165px;
+	top: 30px;
+	bottom: 140px;
 }
 .game-desc.show {
 	z-index: 110;
@@ -533,18 +537,18 @@ canvas#game-interactive {
 }
 .game-desc h2 {
 	color: #F8F8F8;
-	margin: 50px 0 10px 50px;
+	margin: 50px 0 20px 50px;
 	font-size: 30px;
 	text-align: left;
 }
 .game-desc p {
 	margin: 15px 50px;
-	line-height: 24px;
-	font-size: 18px;
+	line-height: 20px;
+	font-size: 16px;
 	color: #F8F8F8;
 }
 .game-desc .btn {
-	color: #FFF;
+	color: rgba(255,255,255,.75);
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: center;
@@ -553,12 +557,12 @@ canvas#game-interactive {
 	float: left;
 	display: block;
 	position: absolute;
-	left: 0;
 	right: 0;
-	bottom: 0;
-	height: 60px;
-	line-height: 60px;
-	border-radius: 0 0 5px 5px;
+	top: 42px;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px 0 0 5px;
 	-webkit-transition: 0.35s background;
 	transition: 0.35s background;
 }
