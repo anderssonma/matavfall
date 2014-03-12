@@ -239,13 +239,16 @@ canvas#game-interactive {
 	top: 100px;
 	left: 104px;
 	width: 66px;
-	padding: 10px 14px;
+	height: 66px;
+	padding: 10px;
 	border-radius: 1000px;
 	opacity: 0;
 	background: #F8F8F8;
 	-webkit-animation: upDown 1.5s infinite alternate;
 	-ms-animation: upDown 1.5s infinite alternate;
 	animation: upDown 1.5s infinite alternate;
+	-webkit-transition: 0.35s opacity;
+	transition: 0.35s opacity;
 }
 #stove-bubble.broccoli,
 #stove-bubble.lemon {
@@ -258,9 +261,11 @@ canvas#game-interactive {
 }
 #stove-bubble.broccoli .item-1 {
 	display: block;
+	margin: 3px 0 0 3px;
 }
 #stove-bubble.lemon .item-2 {
 	display: block;
+	margin: 3px 0 0 3px;
 }
 #stove-bubble span {
 	position: absolute;

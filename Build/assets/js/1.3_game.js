@@ -102,6 +102,31 @@ var setupGame = function() {
 
 	var spawnPoints = [200, 350, 500, 650, 800];
 
+	// BEZIER PATHS FOR OBJECTS
+	var possibleRecipeItems = [['broccoli'], ['lemon']];
+	var pathArray = [
+		{	// PATH LEFT
+			accepts: ['broccoli'],
+			point1: {x:0, y:300},
+			point2: {x:80, y:90},
+			// goal: {x:140, y:150}
+			goal: {x:90, y:120}
+		},
+		{	// PATH MIDDLE
+			accepts: ['broccoli', 'lemon'],
+			point1: {x:400, y:300},
+			point2: {x:470, y:150},
+			// goal: {x:500, y:190}
+			goal: {x:520, y:190}
+		},
+		{	// PATH RIGHT
+			accepts: ['banana', 'lemon'],
+			point1: {x:840, y:400},
+			point2: {x:880, y:160},
+			goal: {x:738, y:270}
+		}
+	];
+
 	var occupiedSpawns,
 			availableSpawns = [],
 			activeTrash = [],
@@ -132,6 +157,11 @@ var setupGame = function() {
 		};
 		trashMaxUptime = 2; // 3 SECONDS + THIS VAL
 
+		var randomStartItem = Math.floor(Math.random() * 2);
+		console.log(randomStartItem);
+		pathArray[0].accepts = possibleRecipeItems[randomStartItem];
+		console.log(pathArray[0]);
+
 		stoveHandler = {
 			// DOESNT WORK WITH CORRECT SOUNDS RIGHT NOW
 			// OK SOUND BECOMES OUT OF SYNC, ISSUE ON THE TARGET MANAGING PART HOWEVER
@@ -139,7 +169,7 @@ var setupGame = function() {
 			elCount: $('#stove-bubble span'),
 			requiredHits: 3,
 			remainingHits: 3,
-			currentItem: 'broccoli',
+			currentItem: pathArray[0].accepts.toString(),
 			completedRecipes: 0,
 			changeItem: function() {
 
@@ -181,8 +211,12 @@ var setupGame = function() {
 					this.elCount.text(this.remainingHits);
 				}
 			},
+			hideBubble: function() {
+				this.el.removeClass()
+			},
 			init: function() {
-				this.el.removeClass().addClass('broccoli');
+				console.log(pathArray[0].accepts.toString());
+				this.el.removeClass().addClass(pathArray[0].accepts.toString());
 			}
 		};
 		stoveHandler.init();
@@ -229,30 +263,6 @@ var setupGame = function() {
 		loadImg.src = type.image;
 	});
 	crackedPhone.src = '../assets/img/mobil_paj.png';
-
-	// BEZIER PATHS FOR OBJECTS
-	var pathArray = [
-		{	// PATH LEFT
-			accepts: ['broccoli'],
-			point1: {x:0, y:300},
-			point2: {x:80, y:90},
-			// goal: {x:140, y:150}
-			goal: {x:90, y:120}
-		},
-		{	// PATH MIDDLE
-			accepts: ['broccoli', 'lemon'],
-			point1: {x:400, y:300},
-			point2: {x:470, y:150},
-			// goal: {x:500, y:190}
-			goal: {x:520, y:190}
-		},
-		{	// PATH RIGHT
-			accepts: ['banana', 'lemon'],
-			point1: {x:840, y:400},
-			point2: {x:880, y:160},
-			goal: {x:738, y:270}
-		}
-	];
 
 	// GAME SOUNDS
 	// ===========
@@ -732,6 +742,7 @@ var setupGame = function() {
 
 		GAME.pauseTimer();
 		$(gameOverBox).fadeIn(500);
+		stoveHandler.hideBubble();
 
 		// WE HAVE TO DISABLE CLICKS OTHERWISE THE NEXT SESSION WILL PAUSE RIGHT AWAY
 		$(document).off('click');
