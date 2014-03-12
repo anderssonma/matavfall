@@ -49,7 +49,11 @@ var GAME = {
 		var m = Math.floor(ms / 60000);
     ms -= m * 60000;
     var s = Math.round((ms / 1000));
-    return m + ' MIN, ' + s + ' S';
+    if (m > 0) {
+    	return m + ' MIN, ' + s + ' S';
+    } else {
+    	return s + ' SEKUNDER';
+    }
 	}
 
 };
@@ -715,6 +719,7 @@ var setupGame = function() {
 
 	// TEXT BINDINGS FOR GAME OVER STATE
 	var scoreText = document.getElementById('game-score-text'),
+			scoreTitle = document.getElementById('game-score-title'),
 			timerText = document.getElementById('game-timer-text'),
 			recipeText = document.getElementById('game-recipe-text');
 
@@ -740,11 +745,7 @@ var setupGame = function() {
 			removeTrash();
 		}
 
-		if (player.currentScore > 0) {
-			scoreText.innerHTML = player.currentScore;
-		} else {
-			scoreText.innerHTML = '<i style="color:#D21937">' + player.currentScore + '</i>';
-		}
+
 		timerText.innerHTML = GAME.getTimeTotal();
 		if (stoveHandler.completedRecipes > 0) {
 			var dishString = (stoveHandler.completedRecipes > 1) ? ' RÄTTER' : ' RÄTT';
@@ -754,14 +755,19 @@ var setupGame = function() {
 		}
 
 		if (player.currentScore > player.savedHighScore) {
+			scoreTitle.innerHTML = '<strong>NYTT REKORD!</strong>';
+			scoreText.innerHTML = '<i style="color:#94C11F;">' + player.currentScore + ' POÄNG</i>';
 			if (player.savedHighScore !== 0) { // IF NEW HIGHSCORE
 				playSound('highscore');
-				gameOverTitle.innerHTML = 'BRA JOBBAT, NYTT REKORD!';
 			}
 			if (HELPER.supportsLocalStorage()) { // SAVE TO LOCAL STORAGE IF POSS
 				localStorage.setItem('highScore', player.currentScore);
 			}
+		} else if (player.currentScore > 0) {
+			scoreText.innerHTML = player.currentScore + ' POÄNG';
+			playSound('gameover');
 		} else {
+			scoreText.innerHTML = '<i style="color:#D21937;">' + player.currentScore + ' POÄNG</i>';
 			playSound('gameover');
 		}
 	};

@@ -371,6 +371,7 @@ canvas#game-interactive {
 	margin-top: 40px;
 }
 .game-over h3 {
+	font-family: 'Lato';
 	display: inline-block;
 	background: #94C11F;
 	position: relative;
@@ -407,7 +408,7 @@ canvas#game-interactive {
 	font-size: 20px;
 }
 .game-over .score-box .small {
-	margin: 14px 0 0;
+	margin: 20px 0 4px;
 	font-size: 12px;
 }
 .game-over .score-box i {
@@ -665,6 +666,8 @@ canvas#game-interactive {
 	float: right;
 	width: auto;
 	padding: 6px 10px;
+	position: relative;
+	z-index: 100;
 }
 .game button:focus, button:hover {
 	outline: none;
