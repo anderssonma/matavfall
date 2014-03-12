@@ -252,7 +252,7 @@ canvas#game-interactive {
 	opacity: 1;
 }
 
-#stove-bubble img {
+#stove-bubble > img {
 	width: 40px;
 	display: none;
 }
@@ -261,6 +261,19 @@ canvas#game-interactive {
 }
 #stove-bubble.lemon .item-2 {
 	display: block;
+}
+#stove-bubble span {
+	position: absolute;
+	top: 40px;
+	right: -10px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #333;
+	color: #FFF;
+	border-radius: 100%;
+	z-index: 1;
 }
 
 #stove-bubble:after {

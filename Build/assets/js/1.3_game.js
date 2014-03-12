@@ -132,6 +132,7 @@ var setupGame = function() {
 			// DOESNT WORK WITH CORRECT SOUNDS RIGHT NOW
 			// OK SOUND BECOMES OUT OF SYNC, ISSUE ON THE TARGET MANAGING PART HOWEVER
 			el: $('#stove-bubble'),
+			elCount: $('#stove-bubble span'),
 			requiredHits: 3,
 			remainingHits: 3,
 			currentItem: 'broccoli',
@@ -166,6 +167,15 @@ var setupGame = function() {
 					}, 1500);
 				}
 				this.remainingHits = this.requiredHits;
+				this.elCount.text(this.remainingHits);
+			},
+			subtractItem: function() {
+				this.remainingHits--;
+				if (this.remainingHits <= 0) {
+					this.changeItem();
+				} else {
+					this.elCount.text(this.remainingHits);
+				}
 			},
 			init: function() {
 				this.el.removeClass().addClass('broccoli');
@@ -608,10 +618,7 @@ var setupGame = function() {
 						}
 
 						if (this.path === 0) { // IF IT'S A SAUCEPAN HIT
-							stoveHandler.remainingHits--;
-							if (stoveHandler.remainingHits <= 0) {
-								stoveHandler.changeItem();
-							}
+							stoveHandler.subtractItem();
 						}
 					} else { // IF MISS
 						playSound('miss');
