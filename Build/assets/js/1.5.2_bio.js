@@ -58,4 +58,10 @@ $(document).ready(function() {
 		}
 	});
 
+	$(cinemaVideo).on('ended onended', function() {
+		alert('VIDEO ENDS');
+		cinemaVideo.currentTime = 0;
+		cinemaPlayBtn.fadeIn(250);
+	})
+
 });
