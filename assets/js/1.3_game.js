@@ -102,18 +102,16 @@ var setupGame = function() {
 
 	var spawnPoints = [200, 350, 500, 650, 800];
 
-	/*
-	var svgURL = [
-		{id: 'image', src: '../assets/img/broccoli.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/tomathalva_spel.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/ost_spel.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/bananskal_spel.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/appelskrutt.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/fiskben_spel.svg', type:createjs.LoadQueue.IMAGE},
-		{id: 'image', src: '../assets/img/mobil.svg', type:createjs.LoadQueue.IMAGE}
-	];*/
-	var svgURL = [
+	var svgURLs = [
 		{src: '../assets/img/broccoli.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/tomathalva_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/ost_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/bananskal_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/appelskrutt.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/fiskben_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{src: '../assets/img/mobil.svg', type:createjs.LoadQueue.IMAGE},
+		// AND THE PLAYER HAND!
+		{src: '../assets/img/hand.svg', type:createjs.LoadQueue.IMAGE}
 	];
 
 	// IMAGE RESOURCES
@@ -352,7 +350,7 @@ var setupGame = function() {
 	};
 	*/
 	var gameSounds = {};
-	var soundURL = [
+	var soundURLs = [
 		'../assets/sound/error.mp3',
 		'../assets/sound/lostitem.mp3',
 		'../assets/sound/gotitem.mp3',
@@ -1245,11 +1243,9 @@ var setupGame = function() {
 			}, 1500);
 
 		});
-
-
-		queue.loadManifest(soundURL);
-		queue.loadManifest(svgURL);
-		//startGame();
+		// COMBINE IMAGERY AND AUDIO ARRAYS
+		var resourcesToPreload = svgURLs.concat(soundURLs);
+		queue.loadManifest(resourcesToPreload);
 	};
 
 	GAME.restart = function() {
