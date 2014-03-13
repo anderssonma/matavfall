@@ -122,16 +122,16 @@ var setupGame = function() {
 			type: 'cheese',
 			title: 'Ost',
 			isDish: true,
-			image: '../assets/img/ost.svg',
+			image: '../assets/img/ost_spel.svg',
 			width: 100,
-			height: 121
+			height: 104
 		}, {
 			type: 'banana',
 			title: 'Banan',
 			isDish: false,
 			image: '../assets/img/bananskal_spel.svg',
-			width: 120,
-			height: 79,
+			width: 100,
+			height: 101,
 		}, {
 			type: 'apple',
 			title: 'Äppleskrutt',
@@ -139,6 +139,13 @@ var setupGame = function() {
 			image: '../assets/img/appelskrutt.svg',
 			width: 58,
 			height: 120,
+		}, {
+			type: 'fish',
+			title: 'Fiskben',
+			isDish: false,
+			image: '../assets/img/fiskben_spel.svg',
+			width: 120,
+			height: 69
 		}, {
 			type: 'trash',
 			title: 'Telefon',
@@ -176,7 +183,7 @@ var setupGame = function() {
 			goal: {x:520, y:190}
 		},
 		{	// PATH RIGHT
-			accepts: ['banana', 'apple'],
+			accepts: ['banana', 'apple', 'fish'],
 			point1: {x:840, y:400},
 			point2: {x:880, y:160},
 			goal: {x:738, y:270}
