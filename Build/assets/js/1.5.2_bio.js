@@ -44,7 +44,7 @@ $(document).ready(function() {
 	});
 
 	// PAUSE VIDEO ON VIDEO CLICK
-	$('#video').on('click', function() {
+	$(cinemaVideo).on('click', function() {
 		if (!cinemaVideo.paused) {
 			cinemaVideo.pause();
 			cinemaPlayBtn.fadeIn(250);
@@ -59,8 +59,8 @@ $(document).ready(function() {
 	});
 
 	$(cinemaVideo).on('ended onended', function() {
-		alert('VIDEO ENDS');
 		cinemaVideo.currentTime = 0;
+		cinemaVideo.pause();
 		cinemaPlayBtn.fadeIn(250);
 	})
 
