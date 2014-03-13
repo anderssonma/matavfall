@@ -102,8 +102,64 @@ var setupGame = function() {
 
 	var spawnPoints = [200, 350, 500, 650, 800];
 
+	// IMAGE RESOURCES
+	var trashTypes = [
+		{
+			type: 'broccoli',
+			title: 'Broccoli',
+			isDish: true,
+			image: '../assets/img/broccoli.png',
+			width: 100,
+			height: 111
+		}, {
+			type: 'tomato',
+			title: 'Tomat',
+			isDish: true,
+			image: '../assets/img/tomat_50.svg',
+			width: 100,
+			height: 87
+		}, {
+			type: 'cheese',
+			title: 'Ost',
+			isDish: true,
+			image: '../assets/img/ost.svg',
+			width: 100,
+			height: 121
+		}, {
+			type: 'banana',
+			title: 'Banan',
+			isDish: false,
+			image: '../assets/img/bananer.svg',
+			width: 110,
+			height: 89,
+		}, {
+			type: 'apple',
+			title: 'Äppleskrutt',
+			isDish: false,
+			image: '../assets/img/appelskrutt.svg',
+			width: 58,
+			height: 120,
+		}, {
+			type: 'trash',
+			title: 'Telefon',
+			isDish: false,
+			image: '../assets/img/mobil.svg',
+			width: 54,
+			height: 104,
+		}
+	];
+
 	// BEZIER PATHS FOR OBJECTS
-	var possibleRecipeItems = [['broccoli'], ['lemon']];
+	var possibleRecipeItems = [];
+
+	for (var i = 0; i < trashTypes.length; i++) {
+		if (trashTypes[i].isDish) {
+			var newArr = [];
+			newArr.push(trashTypes[i].type);
+			possibleRecipeItems.push(newArr);
+		}
+	}
+
 	var pathArray = [
 		{	// PATH LEFT
 			accepts: ['broccoli'],
@@ -113,14 +169,14 @@ var setupGame = function() {
 			goal: {x:90, y:120}
 		},
 		{	// PATH MIDDLE
-			accepts: ['broccoli', 'lemon'],
+			accepts: ['broccoli', 'tomato', 'cheese'],
 			point1: {x:400, y:300},
 			point2: {x:470, y:150},
 			// goal: {x:500, y:190}
 			goal: {x:520, y:190}
 		},
 		{	// PATH RIGHT
-			accepts: ['banana', 'lemon'],
+			accepts: ['banana', 'apple'],
 			point1: {x:840, y:400},
 			point2: {x:880, y:160},
 			goal: {x:738, y:270}
@@ -157,7 +213,7 @@ var setupGame = function() {
 		};
 		trashMaxUptime = 2; // 3 SECONDS + THIS VAL
 
-		var randomStartItem = Math.floor(Math.random() * 2);
+		var randomStartItem = Math.floor(Math.random() * possibleRecipeItems.length);
 		console.log(randomStartItem);
 		pathArray[0].accepts = possibleRecipeItems[randomStartItem];
 		console.log(pathArray[0]);
@@ -167,10 +223,6 @@ var setupGame = function() {
 			// OK SOUND BECOMES OUT OF SYNC, ISSUE ON THE TARGET MANAGING PART HOWEVER
 			el: $('#stove-bubble'),
 			elCount: $('#stove-bubble span'),
-			requiredHits: 3,
-			remainingHits: 3,
-			currentItem: pathArray[0].accepts.toString(),
-			completedRecipes: 0,
 			changeItem: function() {
 
 				this.completedRecipes++;
@@ -183,25 +235,42 @@ var setupGame = function() {
 				newPopup.init();
 				activeScores.push(newPopup);
 
+				this.el.removeClass();
+				var newSelection = this.stoveCandidates.slice(0);
+				var currentItemIndex = $.inArray(this.currentItem, newSelection);
+				newSelection.splice(currentItemIndex, 1);
+
+				var newStoveItem = newSelection[Math.floor(Math.random() * newSelection.length)];
+				
+				pathArray[0].accepts[0] = '';
+				window.setTimeout(function() {
+					stoveHandler.currentItem = newStoveItem;
+					pathArray[0].accepts[0] = newStoveItem;
+					stoveHandler.el.addClass(newStoveItem);
+
+					stoveHandler.remainingHits = stoveHandler.requiredHits;
+					stoveHandler.elCount.text(stoveHandler.remainingHits);
+					}, 1500);
+
+				/*
 				if (this.currentItem === 'broccoli') {
 					this.el.removeClass('broccoli');
 					pathArray[0].accepts[0] = '';
 					window.setTimeout(function() {
-						stoveHandler.currentItem = 'lemon';
-						pathArray[0].accepts[0] = 'lemon';
-						stoveHandler.el.addClass('lemon');
+						stoveHandler.currentItem = 'tomat';
+						pathArray[0].accepts[0] = 'tomat';
+						stoveHandler.el.addClass('tomat');
 					}, 1500);
 				} else {
-					this.el.removeClass('lemon');
+					this.el.removeClass('tomat');
 					pathArray[0].accepts[0] = '';
 					window.setTimeout(function() {
 						stoveHandler.currentItem = 'broccoli';
 						pathArray[0].accepts[0] = 'broccoli';
 						stoveHandler.el.addClass('broccoli');
 					}, 1500);
-				}
-				this.remainingHits = this.requiredHits;
-				this.elCount.text(this.remainingHits);
+				}*/				
+				
 			},
 			subtractItem: function() {
 				this.remainingHits--;
@@ -215,7 +284,17 @@ var setupGame = function() {
 				this.el.removeClass()
 			},
 			init: function() {
-				console.log(pathArray[0].accepts.toString());
+				this.requiredHits = 2;
+				this.remainingHits = 2;
+				this.currentItem = pathArray[0].accepts.toString();
+				this.completedRecipes = 0;
+				this.stoveCandidates = [];
+				// PREPARE POSSIBLE RECIPE ITEMS
+				for (var i = 0; i < possibleRecipeItems.length; i++) {
+					this.stoveCandidates.push(possibleRecipeItems[i].toString());
+				}
+				// RESET / INIT HTML
+				this.elCount.text(this.remainingHits);
 				this.el.removeClass().addClass(pathArray[0].accepts.toString());
 			}
 		};
@@ -227,34 +306,6 @@ var setupGame = function() {
 	var	CANVAS_HEIGHT = canvas.height,
 			CANVAS_WIDTH	= canvas.width;
 
-	// IMAGE RESOURCES
-	var trashTypes = [
-		{
-			type: 'broccoli',
-			title: 'Brocoli',
-			image: '../assets/img/broccoli.png',
-			width: 100,
-			height: 111
-		}, {
-			type: 'lemon',
-			title: 'Citron',
-			image: '../assets/img/citron.png',
-			width: 100,
-			height: 100
-		}, {
-			type: 'banana',
-			title: 'Banan',
-			image: '../assets/img/bananer.svg',
-			width: 110,
-			height: 89,
-		}, {
-			type: 'trash',
-			title: 'Telefon',
-			image: '../assets/img/mobil.svg',
-			width: 54,
-			height: 104,
-		}
-	];
 	var crackedPhone = new Image();
 
 	// PRELOAD IMAGES, SHOULD PROBABLY DO IT LATER
@@ -621,6 +672,7 @@ var setupGame = function() {
 					this.y = newXY.y;
 				} else {
 					var typeOfHit = $.inArray(this.type, pathArray[this.path].accepts);
+					console.log(typeOfHit);
 					if (typeOfHit > -1) { // IF HIT
 						if (typeOfHit === 0) {
 							playSound('great');
@@ -629,6 +681,7 @@ var setupGame = function() {
 						} else {
 							playSound('ok');
 							player.updateScore(100, this.goal);
+							updateTime(1);
 						}
 
 						if (this.path === 0) { // IF IT'S A SAUCEPAN HIT
