@@ -266,7 +266,7 @@ canvas#game-interactive {
 }
 #stove-bubble.tomato .item-2 {
 	display: block;
-	margin: 4px 0 0 1px;
+	margin: 14px 0 0 0;
 	width: 50px;
 }
 #stove-bubble.cheese .item-3 {

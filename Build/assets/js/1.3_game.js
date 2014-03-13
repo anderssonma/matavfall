@@ -115,9 +115,9 @@ var setupGame = function() {
 			type: 'tomato',
 			title: 'Tomat',
 			isDish: true,
-			image: '../assets/img/tomat_50.svg',
+			image: '../assets/img/tomathalva_spel.svg',
 			width: 100,
-			height: 87
+			height: 59
 		}, {
 			type: 'cheese',
 			title: 'Ost',
@@ -129,9 +129,9 @@ var setupGame = function() {
 			type: 'banana',
 			title: 'Banan',
 			isDish: false,
-			image: '../assets/img/bananer.svg',
-			width: 110,
-			height: 89,
+			image: '../assets/img/bananskal_spel.svg',
+			width: 120,
+			height: 79,
 		}, {
 			type: 'apple',
 			title: 'Äppleskrutt',
@@ -672,7 +672,6 @@ var setupGame = function() {
 					this.y = newXY.y;
 				} else {
 					var typeOfHit = $.inArray(this.type, pathArray[this.path].accepts);
-					console.log(typeOfHit);
 					if (typeOfHit > -1) { // IF HIT
 						if (typeOfHit === 0) {
 							playSound('great');
