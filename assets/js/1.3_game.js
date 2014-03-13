@@ -102,13 +102,27 @@ var setupGame = function() {
 
 	var spawnPoints = [200, 350, 500, 650, 800];
 
+	/*
+	var svgURL = [
+		{id: 'image', src: '../assets/img/broccoli.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/tomathalva_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/ost_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/bananskal_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/appelskrutt.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/fiskben_spel.svg', type:createjs.LoadQueue.IMAGE},
+		{id: 'image', src: '../assets/img/mobil.svg', type:createjs.LoadQueue.IMAGE}
+	];*/
+	var svgURL = [
+		{src: '../assets/img/broccoli.svg', type:createjs.LoadQueue.IMAGE},
+	];
+
 	// IMAGE RESOURCES
 	var trashTypes = [
 		{
 			type: 'broccoli',
 			title: 'Broccoli',
 			isDish: true,
-			image: '../assets/img/broccoli.png',
+			image: '../assets/img/broccoli.svg',
 			width: 100,
 			height: 111
 		}, {
@@ -313,14 +327,16 @@ var setupGame = function() {
 	var	CANVAS_HEIGHT = canvas.height,
 			CANVAS_WIDTH	= canvas.width;
 
-	var crackedPhone = new Image();
-
 	// PRELOAD IMAGES, SHOULD PROBABLY DO IT LATER
+	/*
 	trashTypes.forEach(function(type) {
 		var loadImg = new Image();
 		loadImg.src = type.image;
 	});
-	crackedPhone.src = '../assets/img/mobil_paj.png';
+	*/
+
+	// var crackedPhone = new Image();
+	// crackedPhone.src = '../assets/img/mobil_paj.png';
 
 	// GAME SOUNDS
 	// ===========
@@ -874,10 +890,10 @@ var setupGame = function() {
 			activeTrash.forEach(function(trash) {
 				trash.update();
 				if (!trash.isFlung && jumpTriggered && collides(player, trash)) {
-					// IF YOU HIT THE PHONE CRACK IT
+					/* IF YOU HIT THE PHONE CRACK IT
 					if (trash.type === 'trash') {
 						//trash.image.src = crackedPhone.src;
-					}
+					} */
 					trash.isFlung = true;
 					player.nothingHitYet = false;
 					trash.path = savedDir;
@@ -1177,39 +1193,24 @@ var setupGame = function() {
 
 	};
 
-	var init = function() {
-		// PRELOAD ASSETS BEFORE START
-		// PERHAPS NO NEED TO USE A LIBRARY?
-		// DOING IT AT THE TOP RIGHT NOW
+	var init = function() { // PRELOAD ASSETS WITH PRELOAD.JS
 
-		var toLoad = [];
-		var ABSPATH = /http:\/\/dev.skolwebb.se\/spel\//g;
+		var loadProgressEl = document.getElementById('load-progress');
 
-		/*
-		soundURL.forEach(function(url) {
-			//var nextItem = soundURL[i].src; //.replace(ABSPATH, '');
-			toLoad.push(url);
-		});
-		*/
-
-		var queue = new createjs.LoadQueue();
+		// PASS IN FALSE TO USE <IMG> TAG TO PRELOAD SVG'S - CORS ERRORS OTHERWISE ON DEV
+		var queue = new createjs.LoadQueue(false);
 		queue.addEventListener('progress', function(e) {
 			var progress = e.progress;
 			if (progress.toString().length > 1) {
 				progress = progress.toFixed(2).substring(2);
-				//loadProgress.innerHTML = progress + '%';
+				loadProgressEl.innerHTML = progress + '%';
 			} else if (progress === 1) {
 				e.remove();
-				//loadProgress.innerHTML = 'KLART!';
-				window.setTimeout(function() {
-					//$(loadProgress).parent().fadeOut();
-				}, 500);
+				loadProgressEl.innerHTML = '100 %';
 			}
 		});
+
 		queue.addEventListener('complete', function() {
-			// POPULATE ASSESTS ARRAYS
-			// startGame();
-			console.log('DONE');
 
 			gameSounds = {
 				bad: new Audio('../assets/sound/error.mp3'),
@@ -1221,9 +1222,33 @@ var setupGame = function() {
 				highScore: new Audio('../assets/sound/newhighscore.mp3')
 			};
 
-			startGame();
+			window.setTimeout(function() {
+				// 3 x 1 SECS TO COUNT DOWN (1.., 2.., 3..)
+				$('#game-desc').addClass('countdown');
+				loadProgressEl.innerHTML = 'KLARA';
+				window.setTimeout(function() {
+					loadProgressEl.innerHTML = 'FÄRDIGA';
+					window.setTimeout(function() {
+						loadProgressEl.innerHTML = 'GÅ!';
+
+						// 1S + 1.5S TO LET THE CIRCLE FADE OUT BEFORE THE GAME BEGINS
+						window.setTimeout(function() {
+							$('#game-desc').addClass('out');
+							window.setTimeout(function() {
+								$('#game-desc').removeClass('show');
+								startGame();
+							}, 500);
+						}, 1000);
+
+					}, 1000);
+				}, 1000);
+			}, 1500);
+
 		});
+
+
 		queue.loadManifest(soundURL);
+		queue.loadManifest(svgURL);
 		//startGame();
 	};
 
@@ -1250,14 +1275,9 @@ $(document).ready(function() {
 	$('#start-btn').on('click', function() {
 		$('#game-desc').addClass('prepare');
 		window.setTimeout(function() {
-			$('#game-desc').addClass('out');
-			window.setTimeout(function() {
-				$('#game-desc').removeClass('show');
-				window.setTimeout(function() {
-					GAME.start();
-				}, 500);
-			}, 600);
-		}, 2000);
+			// FADE IN PRELOADER AND START GAME/PRELOADING
+			GAME.start();
+		}, 500);
 		setupGame();
 		GAME.paintBackground();
 	});

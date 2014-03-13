@@ -611,17 +611,41 @@ canvas#game-interactive {
 }
 
 /* GET RDY ANIMATION */
+
+.game-desc .get-ready {
+	-webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+.game-desc.out .get-ready {
+	opacity: 0;
+}
+
+.game-desc .get-ready span {
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	width: 200px;
+	margin: -15px 0 0 -100px;
+	text-align: center;
+	color: rgba(0,0,0,0.25);
+	font-size: 18px;
+	-webkit-font-smoothing: antialiased;
+}
+.game-desc.countdown .get-ready span {
+	top: 50%;
+	font-size: 30px;
+	color: #F8F8F8;
+}
+
 .game-desc .spinner {
   margin: 88px auto 0;
   width: 200px;
   text-align: center;
-  -webkit-transition: 1s opacity;
-  transition: 1s opacity;
+}
+.game-desc.countdown .spinner {
+	display: none;
 }
 
-.game-desc.out .spinner {
-	opacity: 0;
-}
 
 .game-desc .spinner > div {
   width: 28px;
