@@ -333,7 +333,7 @@
 				<div class="close-book" id="close-book">
 					<span>Stäng</span>
 				</div>
-				<div class="recipe-list">
+				<div class="recipe-list" id="recipe-list">
 					<!-- <h4>RECEPTSAMLING</h4> -->
 					<!--
 					<ul>
@@ -344,45 +344,103 @@
 						<li>Pytt i panna</li>
 						<li>Piroger</li>
 					</ul> -->
-					<div class="recipe-item">
+					<div class="recipe-item active" data-id="1">
 						<img src="assets/img/recept_pizza.svg">
 						<span>PIZZA</span>
 					</div>
-					<div class="recipe-item">
+					<div class="recipe-item" data-id="2">
 						<img src="assets/img/recept_makaroni.svg">
 						<span>MAKARONILÅDA</span>
 					</div>
-					<div class="recipe-item active">
+					<div class="recipe-item" data-id="3">
 						<img src="assets/img/recept_applepaj.svg">
-						<span>ÄPPELPAJ &rarr;</span>
+						<span>ÄPPELPAJ</span>
 					</div>
 				</div>
 
-				<div class="recipe-box">
-					<div class="ingredients">
-						<h4>INGREDIENSER</h4>
-						<p>En enkel äppelpaj med ett krispigt lock av smuldeg och en härlig fyllning av äpplen och kanel.</p>
-						<span>Fyllning</span>
-						<ul>
-							<li>5 äpplen (fasta, syrliga)</li>
-							<li>1 dl socker</li>
-							<li>1 msk kanel</li>
-						</ul>
-						<span>Pajdeg</span>
-						<ul>
-							<li>1 1/2 dl vetemjöl</li>
-							<li>1 1/2 dl socker</li>
-							<li>100 g smör eller margarin</li>
-						</ul>
+				<div class="recipe-box" id="recipe-box">
+
+					<div class="recipe active" data-id="1">
+						<div class="ingredients">
+							<h4>INGREDIENSER</h4>
+							<p>En enkel pizza med ett krispigt lock av smuldeg och en härlig fyllning av äpplen och kanel.</p>
+							<span>Fyllning</span>
+							<ul>
+								<li>5 äpplen (fasta, syrliga)</li>
+								<li>1 dl socker</li>
+								<li>1 msk kanel</li>
+							</ul>
+							<span>Pajdeg</span>
+							<ul>
+								<li>1 1/2 dl vetemjöl</li>
+								<li>1 1/2 dl socker</li>
+								<li>100 g smör eller margarin</li>
+							</ul>
+						</div>
+						<div class="instructions">
+							<h4>INSTRUKTIONER</h4>
+							<ol>
+								<li>Skölj, kärna ur och dela äpplena i bitar, ca 1x1 cm. Lägg dem i smord ugnssäker form. Strö över socker och kanel och blanda runt.</li>
+								<li>Blanda de torra ingredienserna till pajdegen. Arbeta in matfettet till en deg. Spritsa degen till ett lock och täck äpplena med det. Grädda i 225°C, ca 25 min tills den är gyllenbrun.</li>
+								<li>Servera med glass eller vaniljsås.</li>
+							</ol>
+						</div>
 					</div>
-					<div class="instructions">
-						<h4>INSTRUKTIONER</h4>
-						<ol>
-							<li>Skölj, kärna ur och dela äpplena i bitar, ca 1x1 cm. Lägg dem i smord ugnssäker form. Strö över socker och kanel och blanda runt.</li>
-							<li>Blanda de torra ingredienserna till pajdegen. Arbeta in matfettet till en deg. Spritsa degen till ett lock och täck äpplena med det. Grädda i 225°C, ca 25 min tills den är gyllenbrun.</li>
-							<li>Servera med glass eller vaniljsås.</li>
-						</ol>
+
+					<div class="recipe" data-id="2">
+						<div class="ingredients">
+							<h4>INGREDIENSER</h4>
+							<p>En enkel makaronilåda med ett krispigt lock av smuldeg och en härlig fyllning av äpplen och kanel.</p>
+							<span>Fyllning</span>
+							<ul>
+								<li>5 äpplen (fasta, syrliga)</li>
+								<li>1 dl socker</li>
+								<li>1 msk kanel</li>
+							</ul>
+							<span>Pajdeg</span>
+							<ul>
+								<li>1 1/2 dl vetemjöl</li>
+								<li>1 1/2 dl socker</li>
+								<li>100 g smör eller margarin</li>
+							</ul>
+						</div>
+						<div class="instructions">
+							<h4>INSTRUKTIONER</h4>
+							<ol>
+								<li>Skölj, kärna ur och dela äpplena i bitar, ca 1x1 cm. Lägg dem i smord ugnssäker form. Strö över socker och kanel och blanda runt.</li>
+								<li>Blanda de torra ingredienserna till pajdegen. Arbeta in matfettet till en deg. Spritsa degen till ett lock och täck äpplena med det. Grädda i 225°C, ca 25 min tills den är gyllenbrun.</li>
+								<li>Servera med glass eller vaniljsås.</li>
+							</ol>
+						</div>
 					</div>
+
+					<div class="recipe" data-id="3">
+						<div class="ingredients">
+							<h4>INGREDIENSER</h4>
+							<p>En enkel äppelpaj med ett krispigt lock av smuldeg och en härlig fyllning av äpplen och kanel.</p>
+							<span>Fyllning</span>
+							<ul>
+								<li>5 äpplen (fasta, syrliga)</li>
+								<li>1 dl socker</li>
+								<li>1 msk kanel</li>
+							</ul>
+							<span>Pajdeg</span>
+							<ul>
+								<li>1 1/2 dl vetemjöl</li>
+								<li>1 1/2 dl socker</li>
+								<li>100 g smör eller margarin</li>
+							</ul>
+						</div>
+						<div class="instructions">
+							<h4>INSTRUKTIONER</h4>
+							<ol>
+								<li>Skölj, kärna ur och dela äpplena i bitar, ca 1x1 cm. Lägg dem i smord ugnssäker form. Strö över socker och kanel och blanda runt.</li>
+								<li>Blanda de torra ingredienserna till pajdegen. Arbeta in matfettet till en deg. Spritsa degen till ett lock och täck äpplena med det. Grädda i 225°C, ca 25 min tills den är gyllenbrun.</li>
+								<li>Servera med glass eller vaniljsås.</li>
+							</ol>
+						</div>
+					</div>
+
 				</div>
 				
 				<img class="book-cover-open" src="assets/img/book-cover-open.svg" width="500">

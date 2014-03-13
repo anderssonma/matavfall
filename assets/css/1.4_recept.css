@@ -131,6 +131,25 @@
 .recipes .recipe-box ol li {
 	margin-bottom: 8px;
 }
+.recipe-box .recipe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	-webkit-transition: 0.35s all;
+	transition: 0.35s all;
+	-webkit-transform: translateY(-30px);
+	-ms-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+.recipe-box .recipe.active {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+
+
 
 .recipes .instructions {
 	margin-top: 34px;
@@ -151,28 +170,34 @@
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	color: #333;
 }
-.recipes .recipe-list .active {
-	font-weight: bold;
-	color: #666;
-}
-
 
 .recipes .recipe-item {
 	width: 160px;
 	float: left;
 	margin: 40px 40px 0 0;
 	position: relative;
+	text-align: center;
 }
 .recipes .recipe-item span {
 	text-align: center;
 	margin-top: 20px;
-	display: block;
+	display: inline-block;
 	color: #666;
+	background: transparent;
+	padding: 4px 10px;
+	border-radius: 3px;
+	-webkit-transition: 0.35s all;
+	transition: 0.35s all;
+}
+.recipes .recipe-item:hover span {
+	background: #CCC;
+	color: #F8F8F8;
 }
 .recipes .recipe-item.active span {
-	font-weight: bold;
-	color: #333;
+	background: #952A2C;
+	color: #F8F8F8;
 }
+
 .recipes .close-book {
 	position: absolute;
 	top: 16px;
