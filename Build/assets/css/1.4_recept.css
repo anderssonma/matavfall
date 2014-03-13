@@ -197,6 +197,10 @@
 	background: #952A2C;
 	color: #F8F8F8;
 }
+.recipes .recipe-item img {
+	width: 160px;
+	max-width: none;
+}
 
 .recipes .close-book {
 	position: absolute;
@@ -250,4 +254,21 @@
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 	padding: 30px 5px;
+}
+
+/* IE9 TRANSFORM FIXES */
+.ie9 .book-wrapper .intro {
+	z-index: 10;
+}
+.ie9 .book-wrapper.open .intro {
+	z-index: 0;
+}
+.ie9 .book-wrapper.open .book-cover {
+	display: none;
+}
+.ie9 .recipes .book-flipper-inner {
+	opacity: 0;
+}
+.ie9 .book-wrapper.open .book-flipper-inner {
+	opacity: 1;
 }

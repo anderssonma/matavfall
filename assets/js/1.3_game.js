@@ -85,7 +85,8 @@ var setupGame = function() {
 	/* FPS BINDINGS
 	var fps = 0, now, lastUpdate = (new Date()) * 1 - 1;
 	var fpsFilter = 60;
-	var fpsOut = document.getElementById('fps-meter'); */
+	var fpsOut = document.getElementById('fps-meter');
+	*/
 
 	// ELEMENT BINDINGS
 	var canvas						= document.getElementById('game-sort'),
@@ -993,10 +994,11 @@ var setupGame = function() {
 			});
 		}
 
-		/* FPS COUNTER 
+		/* FPS COUNTER
 		var thisFrameFPS = 1000 / ((now = new Date()) - lastUpdate);
 		fps += (thisFrameFPS - fps) / fpsFilter;
-		lastUpdate = now; */
+		lastUpdate = now;
+		*/
 
 	};
 
@@ -1099,24 +1101,26 @@ var setupGame = function() {
 
 	var startGame = function() {
 
-		window.requestAnimFrame = (function(){
+		var legacyTimeout;
+
+		window.requestAnimationFrame = (function(){
 			return  window.requestAnimationFrame	||
 				window.webkitRequestAnimationFrame	||
 				window.mozRequestAnimationFrame			||
-				window.oRequestAnimationFrame				||
-				window.msRequestAnimationFrame			||
-				function(callback){
-					// 1000 / 60 for 60 FPS
-					return window.setTimeout(callback, 1000 / 60);
+				function(callback) { // USE A TIMEOUT FOR OLD BROWSERS -> 1000 / 60 for 60 FPS
+					var legacyTimeout = window.setTimeout(callback, 1000 / 60);
+					return legacyTimeout;
 				};
 		})();
 
-		window.cancelAnimationFrame = 
-				window.cancelAnimationFrame					||
+		window.cancelAnimationFrame = (function(){
+			return window.cancelAnimationFrame		||
 				window.webkitCancelAnimationFrame		||
 				window.mozCancelAnimationFrame			||
-				window.oCancelAnimationFrame				||
-				window.msCancelAnimationFrame;
+				function() {
+					window.clearTimeout(legacyTimeout);
+				};
+		})();
 
 		// THESE NEEDS TO BE REINITIALIZED FOR EACH SESSION
 		GAME.keyParts = function() {
@@ -1130,7 +1134,7 @@ var setupGame = function() {
 			}
 
 			player.gameLoop = function() {
-				GAME.loop = window.requestAnimFrame(player.gameLoop);
+				GAME.loop = window.requestAnimationFrame(player.gameLoop);
 				update();
 				render();
 			};
