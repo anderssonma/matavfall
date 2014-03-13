@@ -17,6 +17,8 @@ var Quiz = {
 		}
 	}, */
 
+	firstItem: true,
+
 	checkValidity: function(id, target) {
 		if (typeof target === 'undefined' && this.activeSlide.validItems.indexOf(id) >= 0) { // IF MULTIPLE TARGETS AND CORRECT
 			this.activeSlide.remaining = this.activeSlide.remaining - 1;
@@ -24,6 +26,11 @@ var Quiz = {
 			this.activeSlide.remaining = this.activeSlide.remaining - 1;
 		} else { // IF IT'S A MISS
 			this.activeSlide.errors.push(id);
+		}
+
+		if (this.firstItem) {
+			this.startTime = new Date();
+			this.firstItem = false;
 		}
 	},
 
@@ -144,6 +151,10 @@ var Quiz = {
 	},
 
 	answerQuestion: function() {
+		if (this.firstItem) {
+			this.startTime = new Date();
+			this.firstItem = false;
+		}
 		// GO TO THE NEXT QUESTION
 		var nextQ = this.activeSlide.id + 1;
 		$(this.elQuiz + ', ' + this.elSlide).addClass('quiz-out');
@@ -158,9 +169,11 @@ var Quiz = {
 	makeSummaryScreen: function() {
 		var correctAnswers = 0;
 		var errorsArray = [];
+
 		// DEBUGGING
-		var missedScore = 0;
-		var errorsScore = 0;
+		// var missedScore = 0;
+		// var errorsScore = 0;
+		
 		// LOOP THROUGH EVERY QUESTION AND PRINT OUT ANY ERRORS
 		for (var i = 0; i < this.score.length; i++) {
 			if (this.score[i].remaining === 0) {
@@ -171,14 +184,18 @@ var Quiz = {
 				// IN CASE WE WANT TO DISPLAY THE ERRORS
 				errorsArray.push(this.score[i]);
 			}
+
 		// DEBUGGING
-			missedScore = missedScore + this.score[i].remaining;
-			errorsScore = errorsScore + this.score[i].errors;
+		// missedScore = missedScore + this.score[i].remaining;
+		// errorsScore = errorsScore + this.score[i].errors;
+
 		}
+		
 		// DEBUGGING
-		console.log('\n' + ':: QUIZ SUMMARY');
-		console.log('TOTAL MISSES: ' + missedScore);
-		console.log('TOTAL ERRORS: ' + errorsScore);
+		// console.log('\n' + ':: QUIZ SUMMARY');
+		// console.log('TOTAL MISSES: ' + missedScore);
+		// console.log('TOTAL ERRORS: ' + errorsScore);
+		
 		// PRINT SCORE MESSAGE AND # OF STARS
 		if (correctAnswers === this.slides.length) {
 			$('#quiz-stars').addClass('three-stars');
@@ -206,15 +223,22 @@ var Quiz = {
 
 	restart: function() {
 		this.slides.length = 0;
-		// REMOVE ALL ADDED CLASSES
-		$('#quiz-slides .quiz-slide, #quiz-sidebar .quiz-page').removeClass('quiz-in quiz-out');
-		$('#quiz-slides .vanish').removeAttr('style').removeClass('vanish');
-		$('#slide-recap').removeClass('quiz-in');
-		$('#quiz-end').removeClass('quiz-in');
-		$('#quiz-stars').removeClass();
-		// REMOVE ALL ADDED ELEMENTS
-		$('#quiz-errors h4, #quiz-errors p').remove();
-		$('#quiz-sidebar .in-trash').empty();
+		this.firstItem = true;
+		delete this.startTime;
+		// RESET TEXT
+		$('#submit').text('NÄSTA FRÅGA');
+		// TRY TO PREVENT LAGGY TRANSITION
+		window.setTimeout(function() {
+			// REMOVE ALL ADDED CLASSES
+			$('#quiz-slides .quiz-slide, #quiz-sidebar .quiz-page').removeClass('quiz-in quiz-out');
+			$('#quiz-slides .vanish').removeAttr('style').removeClass('vanish');
+			$('#slide-recap').removeClass('quiz-in');
+			$('#quiz-end').removeClass('quiz-in');
+			$('#quiz-stars').removeClass();
+			// REMOVE ALL ADDED ELEMENTS
+			$('#quiz-errors h4, #quiz-errors p').remove();
+			$('#quiz-sidebar .in-trash').empty();
+		}, 0);
 		// A LITTLE WAIT BEFORE WE RESTART AND FADE IN
 		window.setTimeout(function() {
 			$('#quiz-' + 0 + ', #slide-' + 0).addClass('quiz-in');
@@ -236,7 +260,6 @@ var Quiz = {
 		this.nextSlide = 0;
 		this.activeSlide = {};
 		this.score = [];
-		this.startTime = new Date();
 		$('#quiz-sidebar .quiz-page').each(function(i, el) {
 			var elem = $(el);
 			Quiz.slides.push({ // CONSTRUCT SLIDES ARRAY FROM DATA-VARS
@@ -271,7 +294,6 @@ var Quiz = {
 
 	setupEvents: function() {
 		$('#submit').on('click', function() {
-			console.log('hio');
 			Quiz.answerQuestion();
 		});
 		$('#restart').on('click', function() {
