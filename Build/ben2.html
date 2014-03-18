@@ -46,6 +46,7 @@
 <link rel='stylesheet' href='assets/css/2.2_uppdrag.css'>
 <link rel='stylesheet' href='assets/css/1.6_quiz.css'>
 <link rel='stylesheet' href='assets/css/2.4_quiz.slides.css'>
+<link rel='stylesheet' href='assets/css/2.9_dropdown.css'>
   
   <title>MATAVFALLS-WEBB</title>
   
@@ -87,7 +88,7 @@
     </div>
   </div>  
 </section>
-  <div class="fabrik-container">
+	<div class="fabrik-container">
 	<div class="fabrik-bg">
 		<div id="wrapper" class="wrapper fabrik">
 
@@ -466,7 +467,7 @@
 
 			</div>
 		</div>
-  <section class="quiz">
+	<section class="quiz">
 
 	<div class="intro">
 		<h1>Quiz</h1>
@@ -680,6 +681,48 @@
 	</div>
 
 </section>
+	<section class="sentence">
+
+  <form id="nl-form" class="nl-form">
+    Först så tog jag 
+    <select>
+      <option value="1" selected>...</option>
+      <option value="2">cykeln</option>
+      <option value="3">bilen</option>
+      <option value="4">mopeden</option>
+      <option value="2">hoverboarden</option>
+    </select>
+    till skolan. Till lunch åt vi pizza. Jag slängde faktiskt
+    <select>
+      <option value="1" selected>...</option>
+      <option value="2">inget alls</option>
+      <option value="3">bara kanterna</option>
+      <option value="4">hela pizzan</option>
+    </select> ! Under kvällen
+    <select>
+      <option value="1" selected>...</option>
+      <option value="1">at 7 p.m.</option>
+      <option value="2">at 8 p.m.</option>
+      <option value="3">at 9 p.m.</option>
+    </select>
+    in <input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>New York</em>"/>
+    <div class="nl-submit-wrap">
+      <button class="nl-submit" type="submit">
+        <div class="spinner"><img id="nl-spin" src="assets/img/icon_spin.svg"></div>Hur miljövänlig är jag?
+      </button>
+    </div>
+    <div class="nl-overlay"></div>
+  </form>
+
+  <div class="results">
+    <p id="score-temp"></p>
+    <img id="globe-1" src="assets/img/jordglob_1.svg">
+    <img id="globe-2" src="assets/img/jordglob_2.svg">
+    <img id="globe-3" src="assets/img/jordglob_3.svg">
+    <img id="globe-4" src="assets/img/jordglob_4.svg">
+  </div>
+
+</section>
 
 	<!-- PROJECT DEPENDENCIES -->
 	<script src='assets/js/vendor/tweenmax.min.js'></script>
@@ -695,5 +738,6 @@
 <script src='assets/js/2.1.2_fabrik.js'></script>
 <script src='assets/js/2.3_fakta.js'></script>
 <script src='assets/js/1.6_quiz.js'></script>
+<script src='assets/js/2.9_dropdown.js'></script>
 </body>
 </html>
