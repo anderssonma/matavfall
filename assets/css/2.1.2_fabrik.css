@@ -152,8 +152,6 @@ html, body {
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
 	-webkit-animation: ror1 2s linear infinite;
 	animation: ror1 2s linear infinite;
 }
@@ -1269,7 +1267,7 @@ html, body {
 	height: 60px;
 	width: 420px;
 	border-right: none;
-	border-b dottom: 18px solid #D6D6D6;
+	border-bottom: 18px solid #D6D6D6;
 	border-radius: 0;
 }
 .slurry .slurry-pipe-2 {
