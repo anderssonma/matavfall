@@ -199,17 +199,17 @@ var Quiz = {
 		// PRINT SCORE MESSAGE AND # OF STARS
 		if (correctAnswers === this.slides.length) {
 			$('#quiz-stars').addClass('three-stars');
-			$('#quiz-answers').text('Du lyckades svara rätt på alla frågor. Bra jobbat, proffset!');
+			$('#quiz-answers').html('Du lyckades svara rätt på alla frågor. <span class="subheader">Bra jobbat, proffset!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
 		} else if (correctAnswers > (this.slides.length / 2)) {
 			$('#quiz-stars').addClass('two-stars');
-			$('#quiz-answers').text('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. En gång till så blir det full pott!');
+			$('#quiz-answers').html('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. <span class="subheader">En gång till så blir det full pott!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
 		} else if (correctAnswers > 0) {
-			$('#quiz-stars').addClass('one-star');$('#quiz-answers').text('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. Bättre lycka nästa gång!');
+			$('#quiz-stars').addClass('one-star');$('#quiz-answers').html('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. <span class="subheader">Bättre lycka nästa gång!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
 		} else {
-			$('#quiz-answers').text('Du lyckades tyvärr inte svara rätt på en enda fråga. Läs igenom texten igen och försök sedan en gång till.');
+			$('#quiz-answers').html('Du lyckades tyvärr inte svara rätt på en enda fråga. <span class="subheader">Läs igenom texten igen och försök sedan en gång till.</span>');
 			$('#quiz-errors h3').text('Inga korrekta svar :(');
 		}
 		$('#quiz-elapsed').text('DIN TID: ' + ((new Date() - this.startTime) / 1000).toFixed(1) + ' sekunder');

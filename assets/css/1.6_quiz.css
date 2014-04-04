@@ -26,6 +26,7 @@
 .quiz p {
 	margin-top: 0;
 	font-size: 16px;
+	line-height: 1.25em;
 }
 
 .quiz-page h3 {
@@ -269,9 +270,11 @@
 }
 .quiz-page ul li {
 	margin-bottom: 4px;
+	line-height: 1.25em;
 }
 .quiz-page ol li {
 	margin-bottom: 10px;
+	line-height: 1.25em;
 }
 
 
@@ -291,6 +294,16 @@
 }
 #quiz-errors p:first-letter {
 	text-transform: uppercase;
+}
+
+#quiz-answers {
+	line-height: 1.25em;
+}
+#quiz-answers .subheader {
+	display: block;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #DFE9E7;
 }
 
 #quiz-stars {
