@@ -1,15 +1,34 @@
 .mission {
-  position: relative;
-  width: 1000px;
-  margin: 200px auto 200px;
+  width: 100%;
+  background: #51B07A;
+  padding: 150px 0 200px;
 }
+.mission-container {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.mission h1 {
+  text-align: center;
+  color: #F8F8F8;
+  -webkit-font-smoothing: antialiased;
+  -mos-osx-font-smoothing: greyscale;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.mission h2 {
+  text-transform: uppercase;
+  width: 360px;
+  line-height: 1.25em;
+}
+
 
 /* SLIDESHOW OVERRIDES */
 .slideshow .nav-arrow {
-  border-color: transparent #6EAD97 transparent transparent;
+  border-color: transparent #99D1B1 transparent transparent;
 }
 .slideshow .nav-right .nav-arrow {
-  border-color: transparent transparent transparent #6EAD97;
+  border-color: transparent transparent transparent #99D1B1;
 }
 
 .slideshow p {
