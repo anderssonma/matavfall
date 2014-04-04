@@ -1789,9 +1789,158 @@ html, body {
 
 .biogas-wash {
   position: absolute;
-  top: 1278px;
-  left: 340px;
+  top: 1284px;
+  left: 360px;
   z-index: 1; }
+  .biogas-wash img {
+    position: relative;
+    z-index: 1; }
+  .biogas-wash .back {
+    position: absolute;
+    top: 88px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    background: #FFF;
+    overflow: hidden; }
+    .biogas-wash .back .shower {
+      width: 60px;
+      height: 30px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: -30px; }
+      .biogas-wash .back .shower .water {
+        position: absolute;
+        top: 0;
+        left: 17px;
+        width: 26px;
+        height: 26px;
+        background: #CDE9F4; }
+        .biogas-wash .back .shower .water:before {
+          position: absolute;
+          top: 0;
+          right: -18px;
+          display: block;
+          content: '';
+          height: 0;
+          width: 0;
+          border-style: solid;
+          border-width: 26px 0 0 18px;
+          border-color: transparent transparent transparent #CDE9F4; }
+        .biogas-wash .back .shower .water:after {
+          position: absolute;
+          top: 0;
+          left: -18px;
+          display: block;
+          content: '';
+          height: 0;
+          width: 0;
+          border-style: solid;
+          border-width: 0 0 26px 18px;
+          border-color: transparent transparent #CDE9F4 transparent; }
+      .biogas-wash .back .shower .mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #FFF;
+        -webkit-animation: 2s moveWater ease-in infinite; }
+    .biogas-wash .back .cloud {
+      position: absolute;
+      top: 60%;
+      left: -72px;
+      width: 72px;
+      height: 50px;
+      -webkit-transform: translateX(0);
+      -webkit-animation: 9s moveCloud linear infinite forwards; }
+      .biogas-wash .back .cloud .part {
+        position: absolute;
+        border-radius: 100%;
+        background: #B29A80;
+        -webkit-animation: 9s washCloudPart linear infinite forwards; }
+      .biogas-wash .back .cloud .part-1 {
+        top: 0;
+        left: 20px;
+        width: 30px;
+        height: 30px; }
+      .biogas-wash .back .cloud .part-2 {
+        bottom: 6px;
+        left: 0;
+        width: 34px;
+        height: 34px; }
+      .biogas-wash .back .cloud .part-3 {
+        top: 20px;
+        left: 20px;
+        width: 28px;
+        height: 32px; }
+      .biogas-wash .back .cloud .part-4 {
+        top: 24px;
+        left: 44px;
+        width: 22px;
+        height: 22px; }
+      .biogas-wash .back .cloud .part-5 {
+        top: 6px;
+        right: 0;
+        width: 28px;
+        height: 28px; }
+    .biogas-wash .back .cloud-2 {
+      -webkit-animation-delay: 3s; }
+      .biogas-wash .back .cloud-2 .part {
+        -webkit-animation-delay: 3s; }
+    .biogas-wash .back .cloud-3 {
+      -webkit-animation-delay: 6s; }
+      .biogas-wash .back .cloud-3 .part {
+        -webkit-animation-delay: 6s; }
+
+@-webkit-keyframes moveWater {
+  0%, 40% {
+    -webkit-transform: translateY(0); }
+
+  60%, 100% {
+    -webkit-transform: translateY(30px); } }
+
+@-webkit-keyframes moveCloud {
+  0% {
+    -webkit-transform: translateX(0) translateY(0); }
+
+  20% {
+    -webkit-transform: translateX(64px) translateY(-20px); }
+
+  40% {
+    -webkit-transform: translateX(128px) translateY(20px); }
+
+  60% {
+    -webkit-transform: translateX(192px) translateY(-16px); }
+
+  80% {
+    -webkit-transform: translateX(256px) translateY(14px); }
+
+  100% {
+    -webkit-transform: translateX(320px) translateY(-10px); } }
+
+@-webkit-keyframes washCloudPart {
+  0% {
+    -webkit-transform: scale(1); }
+
+  20% {
+    -webkit-transform: scale(1.25); }
+
+  40% {
+    -webkit-transform: scale(1.05);
+    background: #B29A80; }
+
+  60% {
+    -webkit-transform: scale(1.1);
+    background: #ADDCEC; }
+
+  80% {
+    -webkit-transform: scale(1); }
+
+  100% {
+    -webkit-transform: scale(1.25);
+    background: #ADDCEC; } }
 
 .pipe-gas {
   position: absolute;
@@ -1868,10 +2017,11 @@ html, body {
 
 #text4 {
   position: absolute;
-  top: 720px;
+  top: 660px;
   right: 40px;
+  left: auto;
   opacity: 0;
-  width: 760px; }
+  width: 630px; }
 
 #text4 .left-col,
 #text4 .right-col {
