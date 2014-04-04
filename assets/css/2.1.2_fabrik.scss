@@ -19,7 +19,206 @@ html, body {
 .fabrik-container {
 	overflow: hidden;
 	height: 3700px;
+	position: relative;
 }
+
+
+/* BG */
+.fabrik-container {
+	.controller {
+		position: absolute;
+		width: 24px;
+		height: 36px;
+		background: #EEE;
+		.button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 10px;
+			height: 10px;
+			margin: -5px 0 0 -5px;
+			background: #D77F6E;
+			border-radius: 100%;
+		}
+	}
+	.clock {
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		border: 3px solid #CACACA;
+		border-radius: 100%;
+		.pointer {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -11px 0 0 -1px;
+			width: 2px;
+			height: 2px;
+			border-top: 10px solid #CACACA;
+			border-bottom: 12px solid #F8F8F8;
+			background: #CACACA;
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+
+		}
+		.circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 4px;
+			height: 4px;
+			margin: -2px 0 0 -2px;
+			border-radius: 100%;
+			background: #CACACA;
+		}
+	}
+
+	.top-wire {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		right: 0;
+		height: 100px;
+		border-bottom: 5px solid #EEE;
+		.part {
+			position: absolute;
+		}
+		.part-1 {
+			left: -200px;
+			width: 200px;
+			height: 50px;
+			border-left: 5px solid #EEE;
+			border-bottom: 5px solid #EEE;
+		}
+		.part-2 {
+			top: 50px;
+			left: -5px;
+			height: 50px;
+			width: 0;
+			border-left: 5px solid #EEE;
+		}
+		.controller {
+			left: -14px;
+			bottom: -20px;
+		}
+		.fan {
+			position: absolute;
+			top: 63px;
+			left: 360px;
+			width: 120px;
+			height: 70px;
+			background: #EEE;
+			.supports {
+				position: absolute;
+				top: -63px;
+				left: 30px;
+				width: 30px;
+				height: 63px;
+				border-left: 10px solid #EEE;
+				border-right: 10px solid #EEE;
+			}
+			.circle {
+				width: 48px;
+				height: 48px;
+				float: right;
+				background: #E0DFE1;
+				margin: 11px;
+				border-radius: 100%;
+			}
+		}
+	}
+
+	.left-wire {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 50%;
+		bottom: 0;
+		.part {
+			position: absolute;
+		}
+		.part-1 {
+			top: 0;
+			right: 560px;
+			height: 380px; //1080px;
+			border-left: 5px solid #EEE;
+		}
+		.part-2 {
+			top: 260px;
+			right: 560px;
+			height: 120px;
+			width: 140px;
+			border-left: 5px solid #EEE;
+			border-bottom: 5px solid #EEE;
+		}
+		.controller {
+			top: 296px;
+			right: 686px;
+		}
+		.clock {
+			top: 297px;
+			right: 636px;
+		}
+		.part-3 {
+			top: 255px;
+			left: 0;
+			right: 695px;
+			height: 0;
+			border-bottom: 5px solid #EEE;
+		}
+	}
+
+	.right-wire {
+		position: absolute;
+		top: 740px;
+		right: 0;
+		left: 50%;
+		.part-1 {
+			position: absolute;
+			left: 420px;
+			right: 0;
+			border-bottom: 5px solid #EEE;
+		}
+		.controller {
+			top: -16px;
+			left: 420px;
+		}
+		.clock {
+			top: -68px;
+			left: 414px;
+			.pointer {
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	.mid-wire {
+		position: absolute;
+		top: 400px;
+		left: 540px;
+		width: 5px;
+		height: 240px;
+		background: #EEE;
+		.controller {
+			top: 100px;
+			left: -10px;
+		}
+		.clock {
+			top: -160px;
+			left: -14px;
+			.pointer {
+				-webkit-transform: none;
+				-ms-transform: none;
+				transform: none;
+			}
+		}
+	}
+
+}
+
 
 .fabrik-container h2, 
 .fabrik-container h3,
@@ -70,7 +269,7 @@ html, body {
 .fabrik-bg {
 	width: 100%;
 	background: #F8F8F8;
-	padding: 100px 0 40px;
+	padding: 40px 0 40px;
 }
 .fabrik {
 	width: 1000px;
@@ -444,7 +643,6 @@ html, body {
 	height: 150px;
 	background: #E3E3E3;
 	border-radius: 75px;
-	border: 6px solid #999;
 	z-index: 10;
 	overflow: hidden;
 	-webkit-transform: translate3d(0,0,0);
@@ -452,8 +650,8 @@ html, body {
 	transform: translate3d(0,0,0);
 }
 .zoom-bubble-2 {
-	top: 610px;
-	right: 430px;
+	top: 600px;
+	right: 444px;
 }
 .zoom-bubble img {
 	position: absolute;
@@ -492,22 +690,22 @@ html, body {
 	border-radius: 100%;
 }
 .zoom-bubble .sludge-1 {
-	left: 40px;
-	bottom: 10px;
+	left: 48px;
+	bottom: 20px;
 	background: #4B3B32;
 	width: 20px;
 	height: 20px;
 }
 .zoom-bubble .sludge-2 {
-	left: 70px;
-	bottom: 10px;
+	left: 78px;
+	bottom: 20px;
 	background: #C89D64;
 	width: 14px;
 	height: 14px;
 }
 .zoom-bubble .sludge-3 {
-	left: 90px;
-	bottom: 22px;
+	left: 98px;
+	bottom: 32px;
 	background: #634E42;
 	width: 16px;
 	height: 16px;
@@ -524,22 +722,22 @@ html, body {
 	background: #967954;
 }
 .zoom-bubble-2 .sludge {
-	top: 110px;
-	left: 58px;
+	top: 114px;
+	left: 66px;
 	background: #634E42;
 	width: 16px;
 	height: 16px;
 }
 .zoom-bubble-2 .sludge-5 {
-	top: 108px;
-	left: 86px;
+	top: 112px;
+	left: 94px;
 	background: #634E42;
 	width: 13px;
 	height: 13px;
 }
 .zoom-bubble-2 .sludge-6 {
-	top: 107px;
-	left: 36px;
+	top: 111px;
+	left: 44px;
 	background: #634E42;
 	width: 10px;
 	height: 10px;
