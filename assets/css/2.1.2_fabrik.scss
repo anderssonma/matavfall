@@ -1939,7 +1939,86 @@ html, body {
 	top: 365px;
 	left: 0;
 	z-index: 1;
+	.back {
+		position: absolute;
+		top: 79px;
+		left: 17px;
+		right: 17px;
+		bottom: 18px;
+		overflow: hidden;
+	}
+	.liquid {
+		position: absolute;
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+		height: 60px;
+		background: #957053;
+		z-index: 1;
+		-webkit-animation: 2s rotateLiquid infinite alternate ease-in-out;
+	}
+	.bubble {
+		position: absolute;
+		border-radius: 100%;
+		background: #A77F62;
+		-webkit-animation: 2s burstBubbles infinite;
+	}
+	.bubble-1 {
+		left: 30px;
+		bottom:20px;
+		width: 30px;
+		height: 30px;
+	}
+	.bubble-2 {
+		left: 90px;
+		bottom: 20px;
+		width: 20px;
+		height: 20px;
+		background: #83736A;
+		-webkit-animation-delay: 1s;
+	}
+	.bubble-3 {
+		left: 160px;
+		bottom: 15px;
+		width: 35px;
+		height: 35px;
+		background: #B19A83;
+		-webkit-animation-delay: 1.5s;
+	}
+	.bubble-4 {
+		left: 240px;
+		bottom: 20px;
+		width: 25px;
+		height: 25px;
+		background: #746855;
+		-webkit-animation-delay: 0.5s;
+	}
 }
+
+@-webkit-keyframes rotateLiquid {
+	from {
+		-webkit-transform: translate3d(0,0,0);
+	}
+	to {
+		-webkit-transform: translate3d(0,-4px,0);
+	}
+}
+
+@-webkit-keyframes burstBubbles {
+	0% {
+		-webkit-transform: scale(1) translate3d(0,0,0);
+		opacity: 1;
+	}
+	65% {
+		-webkit-transform: scale(1) translate3d(0,-50px,0);
+		opacity: 1;
+	}
+	75%, 100% {
+		-webkit-transform: scale(2) translate3d(0,-25px,0);
+		opacity: 0;
+	}
+}
+
 .termometer-70 {
 	position: absolute;
 	top: 406px;
@@ -2146,12 +2225,13 @@ html, body {
 
 .biogas-pipe {
 	position: absolute;
-	top: 1530px;
-	left: 278px;
+	top: 1516px;
+	left: 240px;
 	height: 40px;
-	width: 84px;
+	width: 160px;
 	background: #E3E3E3;
 	border-bottom: 14px solid #CACACA;
+	-webkit-transform: rotate(-20deg);
 }
 
 .biogas-wash {
