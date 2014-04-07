@@ -2161,7 +2161,22 @@ html, body {
 	height: 0;
 	border-left: 10px solid #CACACA;
 	border-right: 10px solid #CACACA;
-	background: #D77F6E;
+	background: #79CAD4;
+	.track {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.sep {
+		top: -6px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 6px;
+		background: #CACACA;
+		-webkit-animation: moveGas 2s linear infinite;
+	}
 }
 .pipe-gas .end {
 	position: absolute;
@@ -2181,6 +2196,9 @@ html, body {
 	border-left: 10px solid #CACACA;
 	border-right: 10px solid #CACACA;
 	background: #8D7D6C;
+	.sep {
+		-webkit-animation-delay: 1s;
+	}
 }
 
 .end-of-line {
@@ -2210,6 +2228,15 @@ html, body {
 	margin: 40px 0 -6px 0;
 		text-align: center;
 
+}
+
+@-webkit-keyframes moveGas {
+	from {
+		-webkit-transform: translate3d(0,0,0);
+	}
+	to {
+		-webkit-transform: translate3d(0,270px,0);
+	}
 }
 
 
