@@ -2,6 +2,8 @@ $(function() {
 	var factoryCtrl = $.superscrollorama();
 
 	factoryCtrl.addTween('#zoomb-1', TweenMax.from($('#zoomb-1'), 2, {css:{opacity: 0, right: '-=200'}}), 200, -160);
+	factoryCtrl.addTween('#zoomb-2', TweenMax.from($('#zoomb-2'), 2, {css:{opacity: 0, right: '-=200'}}), 200, -160);
+
 	factoryCtrl.addTween('#text1', TweenMax.to($('#text1'), 2, {css:{opacity: 1, left: '+=200'}}), 200);
 	factoryCtrl.addTween('#text2', TweenMax.to($('#text2'), 2, {css:{opacity: 1, left: '+=200'}}), 200);
 	factoryCtrl.addTween('#text3', TweenMax.to($('#text3'), 1, {css:{opacity: 1, left: '+=200'}}), 200, false);

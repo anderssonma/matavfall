@@ -1786,6 +1786,156 @@ html, body {
   top: 1282px;
   left: 0;
   z-index: 1; }
+  .biogas-37 .back {
+    position: absolute;
+    top: 93px;
+    left: 21px;
+    right: 21px;
+    bottom: 19px;
+    overflow: hidden; }
+  .biogas-37 .liquid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    background: #8D6348;
+    -webkit-animation: moveLiquid 2s ease-in-out infinite alternate; }
+    .biogas-37 .liquid .circle {
+      position: absolute;
+      border-radius: 100%;
+      background: #8D6348; }
+    .biogas-37 .liquid .circle-1 {
+      top: -15px;
+      left: 0;
+      width: 40px;
+      height: 30px; }
+    .biogas-37 .liquid .circle-2 {
+      top: -30px;
+      left: 30px;
+      width: 70px;
+      height: 70px; }
+    .biogas-37 .liquid .circle-3 {
+      top: -15px;
+      left: 90px;
+      width: 30px;
+      height: 30px; }
+    .biogas-37 .liquid .circle-4 {
+      top: -20px;
+      left: 110px;
+      width: 60px;
+      height: 40px; }
+    .biogas-37 .liquid .circle-5 {
+      top: -10px;
+      left: 166px;
+      width: 30px;
+      height: 30px; }
+    .biogas-37 .liquid .circle-6 {
+      top: -30px;
+      left: 190px;
+      width: 70px;
+      height: 70px; }
+  .biogas-37 .cloud {
+    position: absolute;
+    top: 30px;
+    left: 22px;
+    width: 62px;
+    height: 50px;
+    -webkit-animation: rotateClouds 2s ease-in-out infinite alternate; }
+    .biogas-37 .cloud .part {
+      position: absolute;
+      border-radius: 100%;
+      background: #8D7D71; }
+    .biogas-37 .cloud .part-1 {
+      top: 0;
+      left: 20px;
+      width: 26px;
+      height: 26px; }
+    .biogas-37 .cloud .part-2 {
+      bottom: 6px;
+      left: 0;
+      width: 30px;
+      height: 30px; }
+    .biogas-37 .cloud .part-3 {
+      top: 20px;
+      left: 20px;
+      width: 24px;
+      height: 28px; }
+    .biogas-37 .cloud .part-4 {
+      top: 24px;
+      left: 40px;
+      width: 18px;
+      height: 18px; }
+    .biogas-37 .cloud .part-5 {
+      top: 6px;
+      right: 0;
+      width: 26px;
+      height: 26px; }
+  .biogas-37 .cloud-2 {
+    left: 120px;
+    top: 14px;
+    -webkit-animation: rotateClouds-2 2s 1s ease-in-out infinite alternate; }
+  .biogas-37 .cloud-3 {
+    top: 66px;
+    left: 78px;
+    -webkit-animation: rotateClouds-3 2s 1s ease-in-out infinite alternate; }
+    .biogas-37 .cloud-3 .part {
+      background: #B19A83; }
+    .biogas-37 .cloud-3 .part-1 {
+      width: 46px;
+      height: 46px; }
+    .biogas-37 .cloud-3 .part-2 {
+      width: 36px;
+      height: 36px; }
+    .biogas-37 .cloud-3 .part-3 {
+      top: 14px;
+      width: 36px;
+      height: 40px; }
+    .biogas-37 .cloud-3 .part-4 {
+      top: 20px;
+      width: 31px;
+      height: 31px; }
+    .biogas-37 .cloud-3 .part-5 {
+      left: 56px;
+      height: 36px;
+      width: 36px; }
+
+@-webkit-keyframes moveLiquid {
+  from {
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 10px, 0); } }
+
+@-webkit-keyframes rotateClouds {
+  from {
+    -webkit-transform: rotate(0) scale(1); }
+
+  to {
+    -webkit-transform: rotate(8deg) scale(1.1); } }
+
+@-webkit-keyframes rotateClouds-2 {
+  from {
+    -webkit-transform: rotate(0) scale(1); }
+
+  to {
+    -webkit-transform: rotate(-5deg) scale(1.2); } }
+
+@-webkit-keyframes rotateClouds-3 {
+  from {
+    -webkit-transform: scale(1); }
+
+  to {
+    -webkit-transform: scale(0.8); } }
+
+.biogas-pipe {
+  position: absolute;
+  top: 1530px;
+  left: 278px;
+  height: 40px;
+  width: 84px;
+  background: #E3E3E3;
+  border-bottom: 14px solid #CACACA; }
 
 .biogas-wash {
   position: absolute;
@@ -1883,8 +2033,8 @@ html, body {
       .biogas-wash .back .cloud .part-5 {
         top: 6px;
         right: 0;
-        width: 28px;
-        height: 28px; }
+        width: 30px;
+        height: 30px; }
     .biogas-wash .back .cloud-2 {
       -webkit-animation-delay: 3s; }
       .biogas-wash .back .cloud-2 .part {
