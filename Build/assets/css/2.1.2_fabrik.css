@@ -1826,7 +1826,13 @@ html, body {
 .termometer-70 {
   position: absolute;
   top: 406px;
-  left: 370px; }
+  left: 370px;
+  display: none; }
+
+.trees-sysav {
+  position: absolute;
+  top: 468px;
+  left: 420px; }
 
 .sysav {
   position: absolute;
@@ -2189,7 +2195,7 @@ html, body {
   right: -13px;
   bottom: 0;
   height: 8px;
-  background: #CACACA;
+  background: #E0E0E0;
   border-radius: 3px; }
 
 .pipe-gas.pipe-nutrients {
