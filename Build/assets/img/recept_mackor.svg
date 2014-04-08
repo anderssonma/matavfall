@@ -5,9 +5,10 @@
 	 width="203.532px" height="203.775px" viewBox="0 0 203.532 203.775" enable-background="new 0 0 203.532 203.775"
 	 xml:space="preserve">
 <g>
-	<circle fill="#FAFAFA" stroke="#FAFAFA" stroke-width="0.5063" stroke-miterlimit="10" cx="101.766" cy="101.766" r="101.513"/>
-	<path fill="#F8F7F7" stroke="#F5F5F6" stroke-width="0.5063" stroke-miterlimit="10" d="M102.673,203.522
-		c-56.064,0-101.513-45.449-101.513-101.514S46.608,0.496,102.673,0.496V203.522z"/>
+	<circle fill="#FFFFFF" stroke="#FAFAFA" stroke-width="0.5063" stroke-miterlimit="10" cx="101.766" cy="101.766" r="101.513"/>
+</g>
+<g>
+	<circle fill="#EFEFEF" stroke="#FAFAFA" stroke-width="0.5063" stroke-miterlimit="10" cx="102.921" cy="101.529" r="56.153"/>
 </g>
 <g>
 	<g>
