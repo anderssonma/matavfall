@@ -38,8 +38,6 @@ GÖR OM TID TILL BARA TEXT, ANVÄND PAUSE/LJUD AV STYLING
 // ATTACH THINGS WE NEED GLOBALLY TO THE GAME OBJECT
 // LOOP, GLOBALS ETC
 var GAME = {
-	gameInProgress: true,
-	timerIntervals: [],
 	pauseTimer: function() {
 		this.elapsed = new Date((new Date()) -  this.startTime);
 		//console.log(this.getTimeTotal());
@@ -217,6 +215,9 @@ var setupGame = function() {
 			trashMaxUptime,
 			stoveHandler;
 	GAME.initGlobals = function() {
+		GAME.gameInProgress = true,
+		//GAME.timerIntervals = [],
+
 		occupiedSpawns = [false, false, false, false, false];
 		availableSpawns.length = 0;
 		activeTrash.length = 0;
@@ -234,9 +235,9 @@ var setupGame = function() {
 		trashMaxUptime = 2; // 3 SECONDS + THIS VAL
 
 		var randomStartItem = Math.floor(Math.random() * possibleRecipeItems.length);
-		console.log(randomStartItem);
+		//console.log(randomStartItem);
 		pathArray[0].accepts = possibleRecipeItems[randomStartItem];
-		console.log(pathArray[0]);
+		//console.log(pathArray[0]);
 
 		stoveHandler = {
 			// DOESNT WORK WITH CORRECT SOUNDS RIGHT NOW
@@ -564,7 +565,7 @@ var setupGame = function() {
 				required: 3,
 				progress: 0
 			};
-			console.log(this.y);
+			//console.log(this.y);
 		}
 	};
 	player.init();
