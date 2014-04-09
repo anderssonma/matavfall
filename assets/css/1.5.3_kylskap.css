@@ -36,6 +36,7 @@
 	top: 41px;
 	height: 359px;
 	border-radius: 0 10px 10px 0;
+	z-index: 1;
 }
 .kyl-frys #text-block-2 {
 	/*margin-top: 17em;*/
@@ -48,6 +49,7 @@
 	top: 506px;
 	border-radius: 0 10px 0 0;
 	height: 274px;
+	z-index: 1;
 }
 .kyl-frys #text-block-3 {
 	/*margin-top: 29em;*/
@@ -60,6 +62,7 @@
 	top: 1084px;
 	height: 270px;
 	border-radius: 10px 0 0 10px;
+	z-index: 1;
 }
 .kyl-frys #text-block-4 {
 	/*margin-top: 11em;*/
@@ -73,6 +76,7 @@
 	top: 1342px;
 	height: 375px;
 	border-radius: 0 0 10px 0;
+	z-index: 1;
 }
 .kycklingklubba-1 {
 	position: absolute;
@@ -249,11 +253,12 @@
 	right: -100px;
 	width: 200px;
 	margin-top: -150px;
+	margin-left: 420px;
 	transition: all .7s;
 	-webkit-transition:all .7s;
 }
 .kyl-frys #tarmometer-container.active {
-	right: 40px;
+	left: 50%;
 }
 .kyl-frys #tarmometer-container #tarmometer {
 	position: relative;

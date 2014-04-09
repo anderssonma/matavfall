@@ -86,7 +86,7 @@ $(document).ready(function() {
 	var basket_vikt = TweenMax.to($('#basket-vikt'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
 	var basket_vikt_1 = TweenMax.to($('#basket-vikt'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
 	var handplocka_step_3 = TweenMax.to($('#hallare'), 3, {css:{top:'+=800', opacity: 0}, ease:Expo.easeIn});
-	var handplocka_step_4 = TweenMax.to($('#hand-plocka'), 5, {css:{right: '-968'}, ease:Expo.easeOut});
+	var handplocka_step_4 = TweenMax.to($('#hand-plocka'), 5, {css:{right: '-1600'}, ease:Expo.easeOut});
 	var handplocka_step_5 = TweenMax.to($('#hallare-bak'), 3, {css:{top:'+=800', opacity: 0}, ease:Expo.easeIn});
 
 	controller.pin($('#stage-1'), 3000, {
