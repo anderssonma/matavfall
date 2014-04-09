@@ -1193,23 +1193,22 @@ var setupGame = function() {
 			} else {
 				$(soundToggle).removeClass('off');
 			}
-			// EASIER WITH AN ICON
-			//this.innerHTML = (this.innerHTML === 'LJUD PÅ') ? 'LJUD AV' : 'LJUD PÅ';
+
 		});
 		// PAUSE BTN
 		$(pauseToggle).on('click', function() {
-			//console.log(this.innerHTML);
 			GAME.handleState();
-			/*
-			if (this.innerHTML === 'PAUSA') {
-				GAME.pauseGame();
-				this.innerHTML = 'SPELA';
-			} else {
-				GAME.resumeGame();
-				this.innerHTML = 'PAUSA';
-			}
-			*/
 			this.blur();
+		});
+
+		// HELP BTN
+		$(helpToggle).on('click', function() {
+			$('#start-btn').on('click', function() {
+				$('#game-desc').removeClass('show');
+				$('#start-btn').off();
+			}).html('Stäng &nbsp;&rarr;');
+			$('#game-desc').removeClass();
+			$('#game-desc').addClass('game-screen game-desc show');
 		});
 		// PAUSE IF CLICK OUTSIDE OF CANVAS
 		var cnvs = $(canvas2);
@@ -1316,6 +1315,7 @@ $(document).ready(function() {
 		}, 500);
 		setupGame();
 		GAME.paintBackground();
+		$('#start-btn').off();
 	});
 
 	GAME.showInfoScreen = function() {
