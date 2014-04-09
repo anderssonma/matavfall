@@ -695,12 +695,12 @@ canvas#game-interactive {
 .game button {
 	font-family: 'Lato';
 	font-weight: bold;
-	background: rgba(255,255,255,.5);
 	border: none;
 	width: 70px;
 	padding: 6px 0;
 	color: #FFF;
-	-webkit-transition: 0.5s all;
+	outline: none;
+	/* -webkit-transition: 0.5s all; */
 }
 .game button.clear-score {
 	margin: 615px 0 0 0;
@@ -712,20 +712,61 @@ canvas#game-interactive {
 }
 .game button:focus, button:hover {
 	outline: none;
-	color: #F7B39C;
-	background: rgba(255,255,255,.85);
 }
 .game .pause-btn {
 	position: absolute;
-	top: -2px;
-	right: 0px;
+	top: 0;
+	right: 0;
 	z-index: 20;
 	font-size: 12px;
+	display: block;
+	width: 70px;
+	height: 70px;
+	background: url(../img/spelknappar_sprite.svg) no-repeat -279px 0;
+	background-size: 350px 140px;
 }
+.game .pause-btn:hover {
+	background-position: -279px -70px;
+}
+.game .pause-btn.paused {
+	background-position: -209px 0;
+}
+.game .pause-btn.paused:hover {
+	background-position: -209px -70px;
+}
+
 .game .sound-btn {
 	position: absolute;
-	top: 28px;
-	right: 0px;
+	top: 76px;
+	right: 0;
 	z-index: 20;
 	font-size: 12px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/spelknappar_sprite.svg) no-repeat -30px 0;
+	background-size: 150px 60px;
+}
+.game .sound-btn:hover {
+	background-position: -30px -30px;
+}
+.game .sound-btn.off {
+	background-position: -60px 0;
+}
+.game .sound-btn.off:hover {
+	background-position: -60px -30px;
+}
+
+.game .help-btn {
+	position: absolute;
+	top: 76px;
+	right: 40px;
+	z-index: 20;
+	font-size: 12px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/spelknappar_sprite.svg) no-repeat 0 0;
+	background-size: 150px 60px;
+}
+.game .help-btn:hover {
+	background-position: 0 -30px;
 }

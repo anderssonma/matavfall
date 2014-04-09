@@ -93,7 +93,8 @@ var setupGame = function() {
 			gameOverBox				= document.getElementById('game-over'),
 			gameOverTitle			= document.getElementById('game-over-title'),
 			soundToggle				= document.getElementById('sound-toggle'),
-			pauseToggle				= document.getElementById('pause-toggle');
+			pauseToggle				= document.getElementById('pause-toggle'),
+			helpToggle				= document.getElementById('help-toggle');
 
 	// KEY GLOBALS
 	var	bgLayer = canvas.getContext('2d');
@@ -216,6 +217,7 @@ var setupGame = function() {
 			stoveHandler;
 	GAME.initGlobals = function() {
 		GAME.gameInProgress = true,
+		GAME.isPaused = false,
 		//GAME.timerIntervals = [],
 
 		occupiedSpawns = [false, false, false, false, false];
@@ -950,20 +952,20 @@ var setupGame = function() {
 
 	GAME.paintTime = function() {
 		// CIRCLE DIAG = 72 px
-		bgLayer.clearRect(CANVAS_WIDTH - 72, 70, 72, 72);
+		bgLayer.clearRect(CANVAS_WIDTH - 70, 112, 72, 72);
 		bgLayer.fillStyle = '#699C9E';
 		if (remainingTime < 5) {
 			bgLayer.fillStyle = '#D21937';
 		}
 		bgLayer.beginPath();
-		bgLayer.arc(CANVAS_WIDTH - 36, 106, 36, 0, 2*Math.PI);
+		bgLayer.arc(CANVAS_WIDTH - 35, 148, 35, 0, 2*Math.PI);
 		bgLayer.fill();
 		bgLayer.closePath();
 		// TEXT
 		bgLayer.fillStyle = '#FFF';
 		bgLayer.font = "30px Lato";
 		bgLayer.textAlign = 'center';
-		bgLayer.fillText(remainingTime, CANVAS_WIDTH - 37, 118);
+		bgLayer.fillText(remainingTime, CANVAS_WIDTH - 36, 159);
 		repaintRemainingTime = false;
 	};
 
@@ -1024,7 +1026,8 @@ var setupGame = function() {
 	};
 
 	GAME.pauseGame = function() {
-		if (GAME.gameInProgress) {
+		if (!GAME.isPaused) {
+			GAME.isPaused = true;
 			$(gamePauseBox).fadeIn(500);
 			window.cancelAnimationFrame(GAME.loop);
 			GAME.clock.pause();
@@ -1035,7 +1038,8 @@ var setupGame = function() {
 	};
 
 	GAME.resumeGame = function() {
-		if (GAME.gameInProgress) {
+		if (GAME.isPaused) {
+			GAME.isPaused = false;
 			$(gamePauseBox).fadeOut(500, function() {
 				window.setTimeout(function() {
 					player.gameLoop();
@@ -1046,6 +1050,22 @@ var setupGame = function() {
 				}, 1000);
 			});
 		}
+	};
+
+	GAME.handleState = function() {
+		if (GAME.gameInProgress) {
+			if (GAME.isPaused) {
+				GAME.resumeGame();
+				$(pauseToggle).removeClass('paused');
+			} else {
+				GAME.pauseGame();
+				$(pauseToggle).addClass('paused');
+			}
+		}
+	};
+
+	GAME.handleSound = function() {
+
 	};
 
 	GAME.paintBackground = function() {
@@ -1146,8 +1166,15 @@ var setupGame = function() {
 			window.setTimeout(function() {
 				// NEED TO WAIT A LITTLE HERE, OR THE GAME IMMDEDIATELY PAUSES
 				$(document).on('click', function (e) {
-					if (!cnvs.is(e.target) && !pauseBox.is(e.target) && !pauseBtn.is(e.target) && !soundBtn.is(e.target)) {
-						GAME.pauseGame();
+					if (
+						!cnvs.is(e.target) &&
+						!pauseBox.is(e.target) && 
+						!pauseBtn.is(e.target) && 
+						!soundBtn.is(e.target)
+					) {
+						if (GAME.gameInProgress) {
+							GAME.pauseGame();
+						}
 					}
 				});
 			}, 500);
@@ -1161,12 +1188,19 @@ var setupGame = function() {
 		// SOUND TOGGLE BTN
 		$(soundToggle).on('click', function() {
 			player.soundEnabled = (player.soundEnabled === true) ? false : true;
+			if (!player.soundEnabled) {
+				$(soundToggle).addClass('off');
+			} else {
+				$(soundToggle).removeClass('off');
+			}
 			// EASIER WITH AN ICON
-			this.innerHTML = (this.innerHTML === 'LJUD PÅ') ? 'LJUD AV' : 'LJUD PÅ';
+			//this.innerHTML = (this.innerHTML === 'LJUD PÅ') ? 'LJUD AV' : 'LJUD PÅ';
 		});
 		// PAUSE BTN
 		$(pauseToggle).on('click', function() {
 			//console.log(this.innerHTML);
+			GAME.handleState();
+			/*
 			if (this.innerHTML === 'PAUSA') {
 				GAME.pauseGame();
 				this.innerHTML = 'SPELA';
@@ -1174,6 +1208,7 @@ var setupGame = function() {
 				GAME.resumeGame();
 				this.innerHTML = 'PAUSA';
 			}
+			*/
 			this.blur();
 		});
 		// PAUSE IF CLICK OUTSIDE OF CANVAS
