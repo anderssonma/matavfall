@@ -1,0 +1,99 @@
+html {
+	height: 100%;
+	&.intro-up {
+		//overflow: hidden;
+	}
+}
+body {
+	height: 100%;
+}
+.start {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #DBECF9;
+	h1 {
+		position: absolute;
+		top: 18%;
+		width: 100%;
+		text-align: center;
+		color: rgba(0,0,0,.5);
+	}
+	.earth {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -203px 0 0 -200px;
+		z-index: 1;
+		-webkit-animation: 40s rotateEarth linear infinite;
+	}
+	button {
+		padding: 10px;
+		width: 100px;
+		background: rgba(0,0,0,.25);
+		border: none;
+		position: absolute;
+		left: 50%;
+		bottom: 20%;
+		margin-left: -50px;
+		text-align: center;
+		border-radius: 3px;
+		color: #FFF;
+		font-family: 'Bubbler One';
+		-webkit-transition: 0.35s all;
+		&:hover {
+			background: rgba(255,255,255,.75);
+			color: rgba(0,0,0,.5);
+		}
+	}
+
+	.cloud {
+		position: absolute;
+		z-index: 1;
+		opacity: 0;
+	}
+	.cloud-1 {
+		top: 40%;
+		left: 30%;
+		margin: -86px 0 0 -288px;
+	}
+	.cloud-2 {
+		top: 60%;
+		left: 70%;
+		margin: -86px 0 0 -288px;
+	}
+
+	.bg {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		-webkit-transform: translateY(100%);
+
+	}
+	&.out {
+		h1, button {
+			-webkit-transition: 0.5s opacity;
+			opacity: 0;
+		}
+		.earth {
+			-webkit-transition: 1s 0.5s all ease-in-out;
+			top: -50%;
+		}
+		.bg {
+			-webkit-transition: 1s 0.5s all ease-in-out;
+			-webkit-transform: translateY(0);
+		}
+	}
+}
+.start.active {
+	opacity: 1;
+}
+
+@-webkit-keyframes rotateEarth {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}

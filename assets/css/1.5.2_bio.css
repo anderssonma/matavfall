@@ -11,7 +11,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	position: static;
+	position: relative;
 	overflow: hidden;
 	background: #F77A77;
 }
