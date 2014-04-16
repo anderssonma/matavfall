@@ -156,11 +156,15 @@ input:focus::-ms-input-placeholder {
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 10px;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  width: 430px; }
   .nl-form .nl-submit:hover {
     background: #4A7567; }
   .nl-form .nl-submit:focus, .nl-form .nl-submit:active {
     outline: none; }
+  .nl-form .nl-submit span {
+    float: left;
+    display: block; }
 
 /*
 .nl-submit:before {

@@ -189,11 +189,16 @@ input:focus::-ms-input-placeholder {
     letter-spacing: 3px;
     margin-bottom: 10px;
     -webkit-font-smoothing: antialiased;
+    width: 430px;
     &:hover {
     	background: #4A7567;
     }
     &:focus, &:active {
     	outline: none;
+    }
+    span {
+        float: left;
+        display: block;
     }
 }
  
