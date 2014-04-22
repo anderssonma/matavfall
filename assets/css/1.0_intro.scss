@@ -1,5 +1,5 @@
 html {
-	height: 100%;
+	height: 100% !important;
 	&.intro-up {
 		//overflow: hidden;
 	}
@@ -14,7 +14,7 @@ body {
 	background: #DBECF9;
 	h1 {
 		position: absolute;
-		top: 18%;
+		top: 14%;
 		width: 100%;
 		text-align: center;
 		color: rgba(0,0,0,.5);
@@ -23,7 +23,7 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin: -203px 0 0 -200px;
+		margin: -133px 0 0 -150px;
 		z-index: 1;
 		-webkit-animation: 40s rotateEarth linear infinite;
 	}
@@ -34,7 +34,7 @@ body {
 		border: none;
 		position: absolute;
 		left: 50%;
-		bottom: 20%;
+		bottom: 16%;
 		margin-left: -50px;
 		text-align: center;
 		border-radius: 3px;

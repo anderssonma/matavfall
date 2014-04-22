@@ -26,7 +26,7 @@ var controller = $.superscrollorama();
 	var matavfallstunna_container = TweenMax.fromTo($('#matavfallstunna-container'), 5, {css:{left: (widthOffset - 200) , top: windowHeight}, immediateRender:true, ease:Expo.easeIn}, {css:{top: (windowHeightSplit - 300)}, ease:Expo.easeOut});
 	var matavfallstunna_lock = TweenMax.to($('#matavfallstunna-lock'), 6, {css:{transform: 'rotate(50deg)'}, ease:Power3.easeOut});
 	
-	var handplocka_step_2 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '-968'}, ease:Expo.easeOut});
+	var handplocka_step_2 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '-1521'}, ease:Expo.easeOut});
 	var basket_vikt_1 = TweenMax.to($('#basket-vikt'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
 
 	var matavfallstunna_lock_1 = TweenMax.to($('#matavfallstunna-lock'), 3, {css:{transform: 'rotate(-42deg)', top: - 40}, ease:Power3.easeOut});
