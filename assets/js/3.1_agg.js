@@ -151,7 +151,7 @@ $(document).ready(function() {
 		}, delay: 1.1
 	});
 
-	var bgToGreen = TweenMax.to($('#bg-1'), 1, {css: {backgroundColor: '#84B688'}});
+	var bgToGreen = TweenMax.to($('#bg-1'), 1, {css: {backgroundColor: '#62B987'}});
 
 	var corn1Out = TweenMax.to($('#corn-1'), 1, {
 		css: {left: '100%', marginTop: '-120px', rotation: 360}});
@@ -224,9 +224,9 @@ $(document).ready(function() {
 	var henOut = TweenMax.to($('#flying-hen'), 1, {css: {top: '-50%'}});
 
 	var eggCarton = TweenMax.to($('#egg-carton'), 1, {css: {bottom: '50%'}});
-	var eggCartonTop = TweenMax.to($('#egg-carton-top'), 1, {css: {top: '50%'}
-		
-	});
+	var eggCartonTop = TweenMax.to($('#egg-carton-top'), 1, {css: {top: '50%'}});
+	var eggCartonLogo = TweenMax.to($('#egg-carton-logo'), 1, {css: {top: '50%'}});
+
 	var chickenFloorOut = TweenMax.to($('#chicken-farm-floor'), 1, {css: {bottom: '120%', height: '150%'},
 		onStart: function() {
 			$('#bg-2').addClass('blue');
@@ -238,7 +238,7 @@ $(document).ready(function() {
 
 	var eggCartonBg = TweenMax.to($('#egg-carton-bg'), 1, {css: {height: '118px'}});
 	var eggCartonBgWiden = TweenMax.to($('#egg-carton-bg'), 1, {css: {width: '325px', marginLeft: '-162px'}});
-
+	var eggCartonLogoLarge = TweenMax.to($('#egg-carton-logo'), 1, {css: {transform: 'scale(1.5) translateY(20px)'}});
 
 	// PART 3
 	// ==========
@@ -309,6 +309,7 @@ $(document).ready(function() {
 	var carBg2 = TweenMax.to($('#car-bg'), 1, {css: {bottom: '25px'}});
 	var carBg3 = TweenMax.to($('#car-bg'), 1, {css: {width: '100%'}});
 
+	var carBgEggs = TweenMax.to($('#egg-holder'), 1, {css: {opacity: '1'}});
 	var carBg4 = TweenMax.to($('#car-bg'), 1, {css: {backgroundColor: '#E4E2D8', borderRadius: '20px'}});
 	var carOut = TweenMax.to($('#car'), 1, {css: {opacity: 0},
 
@@ -346,11 +347,19 @@ $(document).ready(function() {
 		}
 	});
 
-	var carBoxOut = TweenMax.to($('#car-box'), 1, {css: {top: '-50%'}});
+	var carBoxOut = TweenMax.to($('#car-box'), 1, {css: {top: '-50%'},
+		onStart: function() {
+			$('#eggcircle-6').addClass('hide');
+		},
+		onReverseComplete: function() {
+			$('#eggcircle-6').removeClass('hide');
+		}
+	});
 	var tarmacOut = TweenMax.to($('#tarmac'), 1, {css: {bottom: '100%'}});
+	/*
 	var eggCenter = TweenMax.to($('#egg-boil'), 1, {css: {marginTop: '-=4px'}});
 	var handCenter = TweenMax.to($('#hand'), 1, {css: {marginTop: '-=2px'}});
-
+	*/
 
 	// PART 5
 	// ======
@@ -374,7 +383,7 @@ $(document).ready(function() {
 	var eggTossBack = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(1) rotateX(360deg)', marginTop: '+=40px'}});
 	var eggWhiteTossBack = TweenMax.to($('#egg-white'), 2, {css: {transform: 'scale(1) rotateX(360deg)'}});
 
-	var stoveOut = TweenMax.to($('#stove'), 1, {css: {bottom: '-100%'}, 
+	var stoveOut = TweenMax.to($('#stove'), 1, {css: {bottom: '150%'}, 
 		onStart: function() {
 			$('body').addClass('orange');
 		},
@@ -388,7 +397,7 @@ $(document).ready(function() {
 	// ===========
 	// TIME TO EAT
 
-	var saucepanOut = TweenMax.to($('#saucepan'), 1, {css: {right: '-100%'}});
+	var saucepanOut = TweenMax.to($('#saucepan'), 1, {css: {top: '-50%'}});
 
 	var bg2Collapse = TweenMax.to($('#bg-2'), 1, {css: {height: 0}});
 	var plateIn = TweenMax.to($('#plate'), 1, {css: {bottom: '50%'}});
@@ -414,10 +423,11 @@ $(document).ready(function() {
 			.add([circle1, circle2])
 			.add([chickenFarmOut, chickenFarmBGOut, chickenLampOut, chickenFloorFull, henOut])
 			.add(eggCarton)
-			.add(eggCartonTop)
+			.add([eggCartonTop, eggCartonLogo])
 			.add(chickenFloorOut)
 			.add(eggCartonBg)
 			.add(eggCartonBgWiden)
+			.add(eggCartonLogoLarge)
 			// PART 3
 			.add(truckBot)
 			.add(truckFront)
@@ -433,9 +443,10 @@ $(document).ready(function() {
 			.add(carBg3)
 			.add([carOut, eggCloud1, eggCloud2, eggCloud3, eggCloud4, eggCloud5, eggCloud6, eggCloud7, eggCloud8])
 			.add([carBg4, carBgExpand, carCenter])
+			.add(carBgEggs)
 			.add([wheel1Carton, wheel2Carton, eggCloud1In, eggCloud2In, eggCloud3In, eggCloud4In, eggCloud5In, eggCloud6In, eggCloud7In, eggCloud8In])
 			.add(handIn)
-			.add([carBoxOut, tarmacOut, eggCenter, handCenter])
+			.add([carBoxOut, tarmacOut]) //, eggCenter, handCenter])
 			// PART 5
 			.add(stoveIn)
 			.add(saucepanIn)
