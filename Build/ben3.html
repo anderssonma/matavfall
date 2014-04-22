@@ -40,6 +40,7 @@
   <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
 
   <link rel='stylesheet' href='assets/css/3.1_agg.css'>
+<link rel='stylesheet' href='assets/css/3.2_tidslinjen.css'>
   
   <title>MATAVFALLS-WEBB</title>
   
@@ -52,8 +53,14 @@
 
 	<div id="bg-1" class="backdrop bg-1"></div>
 	<div id="bg-2" class="backdrop bg-2">
-		
+		<!--
+		<div class="temptext">
+			<h1>Från höna till ägg</h1>
+			<p>Varje ägg, bröd, frukt, grönsak eller annan mat som inte äts upp utan slängs är ett enormt slöseri när man tänker på arbetet bakom maten. Ett enda litet ägg har krävt massor av resurser att ta fram. En höna måste ha foder vatten, värme och någon som tar hand om henne hela tiden.</p>
+		</div>
+		-->
 	</div>
+
 
 	<div id="chicken-lamp" class="lightning">
 		<div class="line"></div>
@@ -71,6 +78,7 @@
 	<div id="transformer" class="transformer">
 		<img id="egg-carton" class="egg-carton" src="assets/img/agg_kartong.svg">
 		<img id="egg-carton-top" class="egg-carton-top" src="assets/img/agg_kartong_top.svg" width="325">
+		<img id="egg-carton-logo" class="egg-carton-logo" src="assets/img/agg_kartong_logo.svg" width="160">
 		<img id="truck-front" class="truck-front" src="assets/img/truck_front.svg">
 		<img id="truck-bot" class="truck-bot" src="assets/img/truck_bot.svg">
 		<div id="egg-carton-bg" class="egg-carton-bg"></div>
@@ -165,7 +173,22 @@
 
 	<div id="car-box" class="car-box">
 		<img id="car" class="car" src="assets/img/bil.svg">
-		<div id="car-bg" class="car-bg"></div>
+		<div id="car-bg" class="car-bg">
+			<div id="egg-holder" class="egg-holder">
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle last"></div>
+
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle last"></div>
+			</div>
+		</div>
+
 		<div id="wheel-1" class="wheel">
 			<div class="bg"></div>
 		</div>
@@ -221,6 +244,11 @@
 </div>
 
 <div class="spacer"></div>
+	<div id="timeline" class="timeline">
+	<img id="timeline-bg" src="assets/img/tidslinje.svg" height="740">
+</div>
+
+<div class="bot"></div>
 
 	<!-- PROJECT DEPENDENCIES -->
 	<script src='assets/js/vendor/tweenmax.min.js'></script>
@@ -233,5 +261,6 @@
 
 	<!-- OUR FILES -->
 	<script src='assets/js/3.1_agg.js'></script>
+<script src='assets/js/3.2_tidslinjen.js'></script>
 </body>
 </html>
