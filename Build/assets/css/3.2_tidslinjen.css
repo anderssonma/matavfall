@@ -4,14 +4,301 @@
   height: 100%;
   background: #9FCDC3;
   overflow: hidden;
-  margin-bottom: 320px; }
-  .timeline img {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    border-bottom: 40px solid #645747; }
+  margin-bottom: 320px;
+  /*
+  #timeline-bg {
+  	height: 100%;
+  	width: 10402px;
+  	.bg {
+  		position: absolute;
+  		left: 0;
+  		bottom: 0;
+  		border-bottom: 40px solid #645747;
+  		z-index: 1;
+  	}
+  }
+  */ }
 
 .bot {
   width: 100%;
   height: 2000px;
   background: #645747; }
+
+#bg-clouds {
+  margin-top: 100px; }
+
+.stamp {
+  position: absolute;
+  right: -100%;
+  bottom: 0;
+  width: 1000px;
+  height: 700px;
+  margin-right: -500px; }
+
+#stamp-1 {
+  right: 50%; }
+
+.textbox {
+  font-family: 'Lato';
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  width: 440px;
+  z-index: 3;
+  padding: 20px;
+  border-radius: 3px;
+  line-height: 22px;
+  opacity: 0; }
+  .textbox.box-bot {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.85); }
+  .textbox.box-top {
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.15); }
+
+#sign-1, #sign-2, #sign-3, #sign-4 {
+  position: absolute;
+  left: 0;
+  bottom: 215px;
+  z-index: 1; }
+
+#pig {
+  position: absolute;
+  left: 50%;
+  bottom: 214px;
+  z-index: 1;
+  margin-left: -370px; }
+
+#tl-bg-2 {
+  position: absolute;
+  right: 50%;
+  margin-right: -500px;
+  z-index: 1;
+  bottom: 214px; }
+
+#house-1 {
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+
+#house-2 {
+  position: absolute;
+  left: 215px;
+  bottom: 0; }
+
+#house-3 {
+  position: absolute;
+  left: 450px;
+  bottom: 0; }
+
+#dirtpile {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+#stamp-1 #tl-text-01 {
+  bottom: 460px;
+  left: 100px;
+  opacity: 1; }
+#stamp-1 #tl-text-02 {
+  right: 60px;
+  bottom: 40px;
+  opacity: 1; }
+
+#tl-text-2 {
+  right: 60px;
+  bottom: -60px; }
+
+#tl-text-1 {
+  bottom: 560px;
+  left: 100px; }
+
+#stamp-2 #tl-bg-6 {
+  position: absolute;
+  left: 20px;
+  bottom: 182px; }
+
+.stamp-3 .bg-1 {
+  position: absolute;
+  left: 70px;
+  bottom: 215px; }
+.stamp-3 .bg-2 {
+  position: absolute;
+  right: 0;
+  bottom: 200px; }
+.stamp-3 #house-4 {
+  position: absolute;
+  right: 580px;
+  bottom: 0px; }
+.stamp-3 #house-5 {
+  position: absolute;
+  right: 380px;
+  bottom: 0; }
+.stamp-3 #house-6 {
+  position: absolute;
+  right: 190px;
+  bottom: 0; }
+.stamp-3 #house-7 {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+.stamp-3 #house-8 {
+  position: absolute;
+  right: 454px;
+  bottom: 0; }
+.stamp-3 #house-9 {
+  position: absolute;
+  right: 258px;
+  bottom: 0; }
+.stamp-3 #house-10 {
+  position: absolute;
+  right: 64px;
+  bottom: 0; }
+.stamp-3 #tl-text-5 {
+  right: 60px;
+  bottom: -60px;
+  width: 360px; }
+.stamp-3 #tl-text-4 {
+  right: 460px;
+  bottom: -60px; }
+.stamp-3 #tl-text-3 {
+  bottom: 620px;
+  left: 60px; }
+
+#stamp-4 #tl-bg-6 {
+  position: absolute;
+  left: 20px;
+  bottom: 182px; }
+#stamp-4 #outhouse {
+  position: absolute;
+  left: 160px;
+  bottom: 0; }
+#stamp-4 #flies-1 {
+  position: absolute;
+  bottom: 0;
+  left: 80px; }
+#stamp-4 #flies-2 {
+  position: absolute;
+  bottom: 0;
+  left: 260px; }
+#stamp-4 #factory-1950 {
+  position: absolute;
+  right: 120px;
+  bottom: -20px; }
+#stamp-4 #factory-silo1 {
+  position: absolute;
+  right: 0;
+  bottom: -20px; }
+#stamp-4 #factory-silo2 {
+  position: absolute;
+  right: 80px;
+  bottom: -20px; }
+#stamp-4 #tl-text-6 {
+  bottom: 590px;
+  left: 60px; }
+#stamp-4 #tl-text-7 {
+  bottom: -40px;
+  left: 500px; }
+
+#stamp-5 #tl-bg-6 {
+  position: absolute;
+  left: 20px;
+  bottom: 182px; }
+#stamp-5 #trash-glass {
+  position: absolute;
+  left: 250px;
+  bottom: 0; }
+#stamp-5 #trash-metal {
+  position: absolute;
+  left: 480px;
+  bottom: 0; }
+#stamp-5 #trash-food {
+  position: absolute;
+  left: 690px;
+  bottom: 0; }
+#stamp-5 #tl-text-8 {
+  bottom: 590px;
+  left: 60px;
+  width: 300px; }
+#stamp-5 #tl-text-9 {
+  bottom: -40px;
+  left: 500px; }
+
+#stamp-6 .bg-1 {
+  position: absolute;
+  right: 70px;
+  bottom: 215px; }
+#stamp-6 .bg-2 {
+  position: absolute;
+  left: 140px;
+  bottom: 200px; }
+#stamp-6 #foodstore {
+  position: absolute;
+  left: 200px;
+  bottom: 0; }
+#stamp-6 #house-11 {
+  position: absolute;
+  right: 290px;
+  bottom: -80px; }
+#stamp-6 #restaurant {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+#stamp-6 #bush-1 {
+  position: absolute;
+  right: 260px;
+  bottom: 0; }
+#stamp-6 #bush-2 {
+  position: absolute;
+  right: 316px;
+  bottom: 0; }
+#stamp-6 #tl-text-10 {
+  bottom: 550px;
+  left: 60px;
+  width: 340px; }
+
+#stamp-7 #tl-bg-6 {
+  position: absolute;
+  left: 20px;
+  bottom: 182px; }
+#stamp-7 #flag {
+  position: absolute;
+  left: 0;
+  bottom: -200px; }
+#stamp-7 #fuelpump {
+  position: absolute;
+  left: 60px;
+  bottom: 0; }
+#stamp-7 #lorry-exhaust {
+  position: absolute;
+  left: 220px;
+  bottom: 0; }
+#stamp-7 #lorry {
+  position: absolute;
+  left: 330px;
+  bottom: 0; }
+#stamp-7 #trees {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+#stamp-7 #tl-text-11 {
+  bottom: -40px;
+  left: 60px; }
+
+.dirt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 218px;
+  background: #625747;
+  z-index: 2; }
+
+.thegrid {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 1000px;
+  height: 700px;
+  border: 1px dashed #FFF;
+  border-bottom: none;
+  margin: 0 0 0 -500px; }
