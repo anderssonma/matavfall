@@ -11,23 +11,6 @@ body {
 body.orange {
   background: #EA6A43; }
 
-.temptext {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 340px;
-  color: #FFF;
-  font-family: 'Lato';
-  margin-left: -500px;
-  margin-top: -115px; }
-  .temptext p {
-    font-size: 18px;
-    -webkit-font-smoothing: antialiased; }
-  .temptext h1 {
-    font-family: 'Bubbler One';
-    font-size: 34px;
-    text-transform: uppercase; }
-
 .stage {
   position: relative;
   width: 100%;
