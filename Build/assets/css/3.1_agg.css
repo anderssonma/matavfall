@@ -8,9 +8,6 @@ html {
 body {
   height: 100%; }
 
-body.orange {
-  background: #EA6A43; }
-
 .stage {
   position: relative;
   width: 100%;
@@ -36,6 +33,9 @@ body.orange {
   background: #EADABE; }
   .back-2.blue {
     background: #DBEBF9; }
+
+.back-3 {
+  background: #EA6A43; }
 
 .lightning {
   position: absolute;
@@ -307,7 +307,8 @@ body.orange {
   top: 0;
   left: 0;
   width: 400%;
-  height: 100%; }
+  height: 100%;
+  z-index: 3; }
 
 .box-inner-1 {
   position: absolute;
@@ -590,14 +591,21 @@ body.orange {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 4;
+  z-index: 5;
   width: 55px;
   height: 55px;
-  background: #FFF;
   margin: -2px 0 0 -27px;
-  border-radius: 50%;
-  display: none;
-  overflow: hidden; }
+  display: none; }
+  .egg-boil .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #FFF;
+    z-index: 1; }
   .egg-boil .bg {
     position: absolute;
     top: 0;
@@ -608,14 +616,28 @@ body.orange {
   .egg-boil.active {
     display: block; }
 
+/*
+.egg-white {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 4;
+	margin: -92px 0 0 -73px;
+	-webkit-transform: scale(0.2);
+	opacity: 0;
+}
+*/
 .egg-white {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 4;
-  margin: -92px 0 0 -73px;
+  top: 0;
+  left: 0;
+  margin: -90px 0 0 -46px;
   -webkit-transform: scale(0.2);
-  opacity: 0; }
+  opacity: 0;
+  /*
+  -webkit-transform: scale(0.2);
+  opacity: 0;
+  */ }
 
 .stove {
   position: absolute;
