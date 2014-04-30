@@ -694,7 +694,6 @@ canvas#game-interactive {
 
 .game button {
 	font-family: 'Lato';
-	font-weight: bold;
 	border: none;
 	width: 70px;
 	padding: 6px 0;
@@ -709,7 +708,15 @@ canvas#game-interactive {
 	padding: 6px 10px;
 	position: relative;
 	z-index: 100;
+	background: #608B89;
+	color: #ACC2C2;
+	-webkit-transition: 0.35s all;
+	transition: 0.35s all;
 }
+.game button.clear-score:hover {
+	color: #FFF;
+}
+
 .game button:focus, button:hover {
 	outline: none;
 }

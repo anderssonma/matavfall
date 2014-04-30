@@ -1210,6 +1210,7 @@ var setupGame = function() {
 			$('#game-desc').removeClass();
 			$('#game-desc').addClass('game-screen game-desc show');
 		});
+		
 		// PAUSE IF CLICK OUTSIDE OF CANVAS
 		var cnvs = $(canvas2);
 		var pauseBtn = $(pauseToggle);
