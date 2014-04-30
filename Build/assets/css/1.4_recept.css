@@ -87,6 +87,13 @@
 	color: rgba(0,0,0,0.5);
 }
 
+.recipes .book-cover-open {
+	-moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .recipes .recipe-box {
 	width: 380px;
 	position: absolute;
