@@ -161,6 +161,15 @@ margin: -40px 0 0 -80px;
 	margin: -57px 0 0 -140px;
 	border-radius: 3px;
 }
+.lorry-exhaust {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	left: 50%;
+	margin-top: 42px;
+	margin-left: -280px;
+	opacity: 0;
+}
 
 .truck-bot {
 	position: absolute;
@@ -298,6 +307,15 @@ margin: -40px 0 0 -80px;
 			position: relative;
 			z-index: 2;
 		}
+		#hen {
+			z-index: 3;
+		}
+		#feathers {
+			position: absolute;
+			top: 70px;
+			left: 330px;
+		}
+
 		.bg {
 			position: absolute;
 			top: 0;
@@ -774,6 +792,15 @@ margin: -40px 0 0 -80px;
 	}
 }
 
+.spatula {
+	position: absolute;
+	top: 70%;
+	left: -50%;
+	z-index: 3;
+	margin-left: -264px;
+	margin-top: -30px;
+}
+
 .plate {
 	position: absolute;
 	bottom: -100%;
@@ -781,4 +808,16 @@ margin: -40px 0 0 -80px;
 	z-index: 2;
 	margin-left: -200px;
 	margin-bottom: -153px;
+}
+
+.egg-cover {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 76px;
+	height: 194px;
+	background: #F5F5F6;
+	z-index: 99;
+	margin-top: -100px;
+	opacity: 0;
 }

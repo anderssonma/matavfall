@@ -143,6 +143,15 @@ body.orange {
   margin: -57px 0 0 -140px;
   border-radius: 3px; }
 
+.lorry-exhaust {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 50%;
+  margin-top: 42px;
+  margin-left: -280px;
+  opacity: 0; }
+
 .truck-bot {
   position: absolute;
   z-index: 2;
@@ -247,6 +256,12 @@ body.orange {
   .flying-hen > img {
     position: relative;
     z-index: 2; }
+  .flying-hen #hen {
+    z-index: 3; }
+  .flying-hen #feathers {
+    position: absolute;
+    top: 70px;
+    left: 330px; }
   .flying-hen .bg {
     position: absolute;
     top: 0;
@@ -643,6 +658,14 @@ body.orange {
     margin-top: -30px;
     border-radius: 0 15px 15px 0; }
 
+.spatula {
+  position: absolute;
+  top: 70%;
+  left: -50%;
+  z-index: 3;
+  margin-left: -264px;
+  margin-top: -30px; }
+
 .plate {
   position: absolute;
   bottom: -100%;
@@ -650,3 +673,14 @@ body.orange {
   z-index: 2;
   margin-left: -200px;
   margin-bottom: -153px; }
+
+.egg-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 194px;
+  background: #F5F5F6;
+  z-index: 99;
+  margin-top: -100px;
+  opacity: 0; }

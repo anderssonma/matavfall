@@ -194,6 +194,7 @@ $(document).ready(function() {
 			$('#corns, #flying-hen .bg').removeClass('hide');
 		}
 	});
+	var hideFeathers = TweenMax.to($('#feathers'), 1, {css: {top: '80px', left: '100px', transform: 'scale(0.5)'}});
 
 
 	// PART 2
@@ -252,6 +253,7 @@ $(document).ready(function() {
 	var cloud3 = TweenMax.to($('#cloud-3'), 1, {css: {bottom: '80%'}});
 
 	var tarmac = TweenMax.to($('#tarmac'), 1, {css: {bottom: '-50%'}});
+	var exhaustIn = TweenMax.to($('#lorry-exhaust'), 1, {css: {opacity: '1'}});
 
 	var cloudBox = TweenMax.to($('#cloud-box'), 3, {css: {left: '-100%'}, ease:Expo.easeInOut});
 	var tarmacSilhouette = TweenMax.to($('#tarmac img'), 3, {css: {left: '-10%'}, ease:Expo.easeInOut});
@@ -377,13 +379,15 @@ $(document).ready(function() {
 
 	var eggWhiteCook = TweenMax.to($('#egg-white'), 2, {css: {opacity: 1}});
 
+	var spatulaIn = TweenMax.to($('#spatula'), 2, {css: {top: '50%', left: '50%'}});
+
 	var eggToss = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(2) rotateX(180deg)', marginTop: '-=40px'}});
 	var eggWhiteToss = TweenMax.to($('#egg-white'), 2, {css: {transform: 'scale(2) rotateX(180deg)'}});
 
 	var eggTossBack = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(1) rotateX(360deg)', marginTop: '+=40px'}});
 	var eggWhiteTossBack = TweenMax.to($('#egg-white'), 2, {css: {transform: 'scale(1) rotateX(360deg)'}});
 
-	var stoveOut = TweenMax.to($('#stove'), 1, {css: {bottom: '150%'}, 
+	var stoveOut = TweenMax.to($('#stove'), 1, {css: {bottom: '150%'}, delay: 1, 
 		onStart: function() {
 			$('body').addClass('orange');
 		},
@@ -392,16 +396,19 @@ $(document).ready(function() {
 		}
 	});
 
+	var saucepanOut = TweenMax.to($('#saucepan'), 1, {css: {top: '-50%'}, delay: 1});
+	var spatulaToss = TweenMax.to($('#spatula'), 1, {css: {transform: 'scale(1.5)'}});
+	var spatulaOut = TweenMax.to($('#spatula'), 1, {css: {top: '-50%'}, delay: 1});
+
 
 	// PART 6
 	// ===========
 	// TIME TO EAT
 
-	var saucepanOut = TweenMax.to($('#saucepan'), 1, {css: {top: '-50%'}});
-
 	var bg2Collapse = TweenMax.to($('#bg-2'), 1, {css: {height: 0}});
 	var plateIn = TweenMax.to($('#plate'), 1, {css: {bottom: '50%'}});
 
+	var eatEgg = TweenMax.to($('#egg-cover'), 1, {css: {opacity: '1'}});
 
 	// TEMPORARY SPACER //
 	var spacer = TweenMax.to($('body'), 5, {css: {opacity: '1'}});
@@ -415,7 +422,7 @@ $(document).ready(function() {
 			.add([corn1, corn4, corn2, corn10, corn3, corn7, corn8, corn5, corn11, corn9, corn12, corn6])
 			.add(bgToGreen, '+=2')
 			.add([corn1Out, corn2Out, corn3Out, corn4Out, corn5Out, corn6Out, corn7Out, corn8Out, corn9Out, corn10Out, corn11Out, corn12Out, kamikazeHen])
-			.add(scaleHen)
+			.add([scaleHen, hideFeathers])
 			.add(bgCollapse)
 			// PART 2
 			.add([chickenFarm, chickenFarmBG, chickenEgg, chickenFloor])
@@ -432,7 +439,7 @@ $(document).ready(function() {
 			.add(truckBot)
 			.add(truckFront)
 			.add([cloud1, cloud2, cloud3, tarmac])
-			.add([cloudBox, tarmacSilhouette])
+			.add([cloudBox, tarmacSilhouette, exhaustIn])
 			.add(signIn)
 			.add(carIn, '+=1')
 			.add([cloudBox2, tarmacSilhouette2], '+=1')
@@ -453,9 +460,11 @@ $(document).ready(function() {
 			.add([handOut, eggDrop])
 			.add([eggSplode, eggSplodeInner, eggWhite])
 			.add(eggWhiteCook)
+			.add(spatulaIn)
 			// PART 6
-			.add([eggToss, eggWhiteToss, stoveOut, saucepanOut])
+			.add([eggToss, eggWhiteToss, stoveOut, saucepanOut, spatulaToss, spatulaOut])
 			.add([eggTossBack, eggWhiteTossBack, bg2Collapse, plateIn])
+			.add(eatEgg)
 			.add(spacer)
 	});
 
