@@ -1,13 +1,3 @@
-* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-html {
-  height: 100% !important; }
-
-body {
-  height: 100%; }
-
 .stage {
   position: relative;
   width: 100%;
