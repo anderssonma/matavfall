@@ -462,5 +462,8 @@ $(document).ready(function() {
 			.add(eatEgg)
 			.add(spacer)
 	});
+	
+	// EXPAND PIN ON PAGE LOAD, TEMP!
+	$(window).scrollTop(4);
 
 });

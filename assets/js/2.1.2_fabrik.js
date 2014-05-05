@@ -31,7 +31,6 @@ $(function() {
 		}
 	}), 1350, 200);
 
-
 	var SimpleSlider = {
 
 		nextSlide: function() {

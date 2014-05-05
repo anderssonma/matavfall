@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]>    <html class="ie8 lte8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9 lte9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
-
-  <link rel='stylesheet' href='assets/css/style.css'>
-<link rel='stylesheet' href='assets/css/vendor/foundation.css'>
-    
-  <link href="assets/favicon.ico" rel="shortcut icon">
-  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
-  <script src="//use.edgefonts.net/bubbler-one.js"></script>
-
-  <link rel='stylesheet' href='assets/css/2.1.1_vag.css'>
-<link rel='stylesheet' href='assets/css/2.1.2_fabrik.css'>
-<link rel='stylesheet' href='assets/css/uppdrag.css'>
-<link rel='stylesheet' href='assets/css/2.2_uppdrag.css'>
-<link rel='stylesheet' href='assets/css/1.6_quiz.css'>
-<link rel='stylesheet' href='assets/css/2.4_quiz.slides.css'>
-<link rel='stylesheet' href='assets/css/2.9_dropdown.css'>
-  
-  <title>MATAVFALLS-WEBB</title>
-  
-</head>
-
-<body>
-
-	<div id="top-img" style="width: 100%; height: 100%; background: #6CB4C1;">
+<div id="top-img" style="width: 100%; height: 100%; background: #6CB4C1;">
 	<img src="assets/img/temp_top2.png" style="width: 100%;">
 </div>
 	<section id="fakta2-1">
@@ -856,20 +799,9 @@
 
 </section>
 
-	<!-- PROJECT DEPENDENCIES -->
-	<script src='assets/js/vendor/tweenmax.min.js'></script>
-<script src='assets/js/vendor/timelinelite.min.js'></script>
-	<script src='assets/js/vendor/jquery.min.js'></script>
-<script src='assets/js/vendor/jquery-ui.min.js'></script>
-	<script src='assets/js/vendor/jquery.superscrollorama.js'></script>
-<script src='assets/js/vendor/preloadjs-0.4.0.min.js'></script>
-<script src='assets/js/vendor/jquery.nicescroll.min.js'></script>
-
 	<!-- OUR FILES -->
-	<script src='assets/js/2.1.1_vag.js'></script>
+<script src='assets/js/2.1.1_vag.js'></script>
 <script src='assets/js/2.1.2_fabrik.js'></script>
 <script src='assets/js/2.3_fakta.js'></script>
 <script src='assets/js/1.6_quiz.js'></script>
 <script src='assets/js/2.9_dropdown.js'></script>
-</body>
-</html>

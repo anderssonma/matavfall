@@ -1,19 +1,23 @@
-* {
+*,
+*:before,
+*:after {
+	webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-html {
-	height: 100% !important;
+.text-center {
+  text-align: center !important; 
 }
+
 body {
 	height: 100%;
-	overflow: hidden;
+	font-family: 'Lato';
+	//overflow: hidden;
 	&.scroll {
 		overflow: auto;
 	}
 }
-
 
 .loader {
 	position: fixed;
@@ -43,4 +47,9 @@ body {
 
 body.scroll .loader {
 	opacity: 0;
+}
+
+#content {
+	height: 100%;
+	width: 100%;
 }

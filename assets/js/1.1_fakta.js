@@ -110,7 +110,7 @@ $(document).ready(function() {
 
 	var basketStart = $('#basket').offset().top;
 	var basketEnd = basketStart + 5000;
-	$window.on('scroll', function() {
+	$(window).on('scroll', function() {
 		var pixelsFromTop = $window.scrollTop() + windowHeightSplit - 131;
 		// if (pixelsFromTop > 10 && pixelsFromTop < 5000 && !basketIsFixed) {
 		if (pixelsFromTop > basketStart && pixelsFromTop < basketEnd && !basketIsFixed) {

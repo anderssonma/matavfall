@@ -15,7 +15,6 @@ $(document).ready(function() {
  	windowHeight = $(window).height();
 	$('#stage-2').css('height', windowHeightSplit * 2);
 
-
 var widthOffset = $(window).width() / 2 + 100;
 
 var controller = $.superscrollorama();

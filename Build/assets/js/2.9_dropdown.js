@@ -273,7 +273,7 @@ var finalJudgement = function() {
 };
 
 
-document.addEventListener('DOMContentLoaded', function(){
+$(document).ready(function() {
 	var formEl = document.getElementById('nl-form');
 	var nlForm = new NLForm(formEl);
 	formEl.addEventListener('submit', function(evt) {
