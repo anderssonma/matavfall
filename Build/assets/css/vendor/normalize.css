@@ -35,14 +35,6 @@ video {
 }
 
 /*
- * Prevents modern browsers from displaying 'audio' without controls
- */
-
-audio:not([controls]) {
-  display: none;
-}
-
-/*
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
  * Known issue: no IE6 support
  */
@@ -152,120 +144,6 @@ h6 {
   margin: 0;
 }
 
-/*
- * Addresses styling not present in IE7/8/9, S5, Chrome
- */
-
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/*
- * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
-*/
-
-b,
-strong {
-  font-weight: bold;
-}
-
-blockquote {
-  margin: 1em 40px;
-}
-
-/*
- * Addresses styling not present in S5, Chrome
- */
-
-dfn {
-  font-style: italic;
-}
-
-/*
- * Addresses styling not present in IE6/7/8/9
- */
-
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/*
- * Addresses margins set differently in IE6/7
- */
-
-p,
-pre {
-  margin: 1em 0;
-}
-
-/*
- * Corrects font family set oddly in IE6, S4/5, Chrome
- * en.wikipedia.org/wiki/User:Davidgothberg/Test59
- */
-
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
-  font-size: 1em;
-}
-
-/*
- * Improves readability of pre-formatted text in all browsers
- */
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/*
- * 1. Addresses CSS quotes not supported in IE6/7
- * 2. Addresses quote property not supported in S4
- */
-
-/* 1 */
-
-q {
-  quotes: none;
-}
-
-/* 2 */
-
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-small {
-  font-size: 75%;
-}
-
-/*
- * Prevents sub and sup affecting line-height in all browsers
- * gist.github.com/413930
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
 
 
 /* =============================================================================
@@ -283,10 +161,6 @@ ul {
   margin: 1em 0;
 }
 
-dd {
-  margin: 0 0 0 40px;
-}
-
 /*
  * Addresses paddings set differently in IE6/7
  */
@@ -296,17 +170,6 @@ ol,
 ul {
   padding: 0 0 0 40px;
 }
-
-/*
- * Corrects list images handled incorrectly in IE7
- */
-
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
-}
-
 
 /* =============================================================================
    Embedded content
@@ -331,55 +194,9 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-
-/* =============================================================================
-   Figures
-   ========================================================================== */
-
-/*
- * Addresses margin not present in IE6/7/8/9, S5, O11
- */
-
-figure {
-  margin: 0;
-}
-
-
 /* =============================================================================
    Forms
    ========================================================================== */
-
-/*
- * Corrects margin displayed oddly in IE6/7
- */
-
-form {
-  margin: 0;
-}
-
-/*
- * Define consistent border, margin, and padding
- */
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/*
- * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects text not wrapping in FF3 
- * 3. Corrects alignment displayed oddly in IE6/7
- */
-
-legend {
-  border: 0; /* 1 */
-  padding: 0;
-  white-space: normal; /* 2 */
-  *margin-left: -7px; /* 3 */
-}
-
 /*
  * 1. Corrects font size not being inherited in all browsers
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
@@ -475,28 +292,4 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
-}
-
-/*
- * 1. Removes default vertical scrollbar in IE6/7/8/9
- * 2. Improves readability and alignment in all browsers
- */
-
-textarea {
-  overflow: auto; /* 1 */
-  vertical-align: top; /* 2 */
-}
-
-
-/* =============================================================================
-   Tables
-   ========================================================================== */
-
-/*
- * Remove most spacing between table cells
- */
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
