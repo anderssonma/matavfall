@@ -99,6 +99,7 @@ PAGER.setup();
 PAGER.el.addEventListener('transitionend', function(e) {
 	if (e.target.className === 'page-wrapper') {
 		disabler.enable_scrolling();
+		$('.nav').removeClass('disabled');
 	}
 }, true);
 
@@ -333,6 +334,21 @@ window.addEventListener('hashchange', function() {
 	APP.goTo(location.hash.slice(1) || '/');
 }, false);
 
+var navDisabled = false;
+var updateNav = function(pageNum, item) {
+	if (APP.currentPage != pageNum && !navDisabled) {
+		window.location.hash = '#' + pageNum;
+		$('.nav li').removeClass('active');
+		$(item).addClass('active');
+		$('.nav').addClass('disabled');
+	}
+};
+
+document.getElementById('nav-page1').addEventListener('click', function() { updateNav(1, this); });
+document.getElementById('nav-page2').addEventListener('click', function() { updateNav(2, this); });
+document.getElementById('nav-page3').addEventListener('click', function() { updateNav(3, this); });
+
+/* DISABLE NUM KEYS
 window.addEventListener('keyup', function(e) {
 	switch (e.keyCode) {
 		case 49: // 1
@@ -348,3 +364,4 @@ window.addEventListener('keyup', function(e) {
 			return;
 	}
 });
+*/
