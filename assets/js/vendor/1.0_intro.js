@@ -1,13 +1,3 @@
-function supports_local_storage() {
-  try {
-    return 'localStorage' in window && window['localStorage'] !== null;
-  } catch(e){
-    return false;
-  }
-}
-
-console.log(supports_local_storage())
-
 $(document).ready(function() {
 
 	$('#intro-btn').on('click', function() {

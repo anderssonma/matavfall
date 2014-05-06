@@ -119,7 +119,8 @@ h1 {
     height: 400px;
     background: #786854; }
     .pager .page.page-2 {
-      left: calc(100% / 3); }
+      left: calc(100% / 3);
+      background: #62B987; }
     .pager .page.page-3 {
       left: calc(100% / 3 * 2); }
     .pager .page h2 {
