@@ -9,14 +9,9 @@ var supportsLocalStorage = function(){
 
 var AL = function(type, url, callback) {
 
-	//	Usage:
-	//	AL('css', 'http://somewhe.re/css/glam.css');
-	//	AL('js', '/js/something.js', function(e) { alert('LOADED'); });
-
 	var el, doc = document;
 
 	switch(type) {
-		/*
 		case 'js':
 			el = doc.createElement('script');
 			if (callback) {
@@ -25,7 +20,6 @@ var AL = function(type, url, callback) {
 			el.src = url;
 			doc.getElementsByTagName('body')[0].appendChild(el);
 			break;
-		*/
 		case 'css':
 			el = doc.createElement('link');
 			if (callback) {
@@ -38,7 +32,6 @@ var AL = function(type, url, callback) {
 		default:
 			return;
 	}
-
 	
 };
 
@@ -47,32 +40,29 @@ var APP = {
 	currentPage: 2,
 	insertPage: function() {
 		// THIS ONE IS ASYNCHRONOUS, HANDLERS HAVE TO CALL EACH OTHER UPON COMPLETION
-		window.setTimeout(function() {
+		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			CSSHandler.start(); // CALLS -> HTMLHandler.start() :: CALLS -> JSHandler.start()
 		}, 500);
 	},
 	removePage: function() {
 		// HIDE THE PAGE
 		$('#body').removeClass('scroll');
-		// this.updateLoadProgress('0% …');
 		$('.loader').show();
 		// THEN REMOVE HTML/JS/CSS
-		// JSHandler.remove();
 		HTMLHandler.remove();
 		CSSHandler.remove();
 	},
 	goTo: function(pageNum) {
-		this.progressText.innerHTML = 'LADDAR SIDA ' + pageNum + ': 0% …';
+		this.progressText.innerHTML = 'LADDAR SIDA ' + pageNum + ': 0%';
 		$('.loader').show();
 		$('body').removeClass('scroll').scrollTop(0);
 		this.removePage();
 		this.currentPage = pageNum;
+		this.setLoadCount();
 		this.insertPage();
 	},
-	// SHOW PAGE
 	pageReady: function() {
 		window.location.hash = '#' + APP.currentPage;
-		this.updateLoadProgress('100%');
 		// GET SAVED SCROLL POS IF IT EXISTS
 		var prevPos = 0;
 		var savedPos = localStorage.getItem('scrollpos_3');
@@ -89,15 +79,22 @@ var APP = {
 			}, 1000);
 		}, 250);
 	},
-	updateLoadProgress: function(percentText) {
-		this.progressText.innerHTML = 'LADDAR SIDA ' + APP.currentPage + ': ' + percentText;
+	setLoadCount: function() {
+		this.filesLoaded = 0;
+		this.filesToLoad = CSSHandler.files[this.currentPage].length + 1; // 1 HTML FILE PER PAGE
+	},
+	updateLoadProgress: function() {
+		this.filesLoaded++;
+		var percentLoaded = Math.round(((this.filesLoaded / this.filesToLoad).toFixed(2)) * 100);
+		this.progressText.innerHTML = 'LADDAR SIDA ' + APP.currentPage + ': ' + percentLoaded + '%';
 	},
 	init: function() {
-		this.progressText = document.getElementById('progress-text');1
+		this.progressText = document.getElementById('progress-text');
 		if (window.location.hash) {
   		this.currentPage = location.hash.slice(1) || '/';
   	}
-  	this.updateLoadProgress('0% …');
+  	this.setLoadCount();
+  	this.progressText.innerHTML = 'LADDAR SIDA ' + this.currentPage + ': 0%';
 		window.setTimeout(function() {
 			APP.insertPage();
 		}, 1000);
@@ -166,10 +163,11 @@ var HTMLHandler = {
 		'ben3.html'
 	],
 	loaded: function() {
+		APP.updateLoadProgress();
 		APP.pageReady();
 	},
 	start: function() {
-		APP.updateLoadProgress('50% …');
+		//APP.updateLoadProgress('50% …');
 		$.get(this.files[APP.currentPage - 1], function(data) {
 			$('#content').append(data);
 			HTMLHandler.loaded();
@@ -214,15 +212,16 @@ var CSSHandler = {
 		]
 	},
 	loaded: function() {
+		APP.updateLoadProgress();
 		this.count = this.count - 1;
 		if (this.count === 0) {
-			window.setTimeout(function() {
+			window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 				HTMLHandler.start();
 			}, 500);
 		}
 	},
 	start: function() {
-		APP.updateLoadProgress('25% …')
+		//APP.updateLoadProgress('25% …')
 		var data = this.files[APP.currentPage];
 		this.count = data.length;
 		data.forEach(function(item) { // IE9+
@@ -245,32 +244,17 @@ var CSSHandler = {
 // START LOADING
 // =============
 $(function() {
-
 	APP.init();
 	console.log(localStorage.getItem('scrollpos_3'));
-	/*
-	window.setTimeout(function() {
-		$('.loader').show();
-		$('body').removeClass('scroll').scrollTop(0);
-		APP.goTo(1);
-	}, 10000);
-	/*
-	window.setTimeout(function() {
-		$('.loader').show();
-		$('body').removeClass('scroll').scrollTop(0);
-		APP.goTo(3);
-	}, 20000);
-*/
-
 });
 
-window.onbeforeunload = function() {
+window.addEventListener('onbeforeunload', function() {
 	// SAVE THE SCROLL POS ON EXIT/RELOAD
 	// TODO: TRY TO RESTORE IT LATER
-	localStorage.setItem( 'scrollpos_3', $(document).scrollTop());
-};
+	localStorage.setItem('scrollpos_3', $(document).scrollTop());
+});
 
-window.addEventListener('hashchange', function(e) {
+window.addEventListener('hashchange', function() {
 	APP.goTo(location.hash.slice(1) || '/');
 }, false);
 
@@ -282,7 +266,7 @@ window.addEventListener('keyup', function(e) {
 		case 50: // 2
 			window.location.hash = '#' + 2;
 			break;
-		case 51:
+		case 51: // 3
 			window.location.hash = '#' + 3;
 			break;
 		default:
