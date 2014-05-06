@@ -11,8 +11,6 @@
 body {
   height: 100%;
   font-family: 'Lato'; }
-  body.scroll {
-    overflow: auto; }
 
 .loader {
   position: fixed;
