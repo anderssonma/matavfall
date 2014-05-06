@@ -1,88 +1,14 @@
-var UserScrollDisabler = function() {
-
-    // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-    // left: 37, up: 38, right: 39, down: 40
-    this.scrollEventKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
-    this.$window = $(window);
-    this.$document = $(document);
-
-};
-UserScrollDisabler.prototype = {
-
-    disable_scrolling : function() {
-        var t = this;
-        t.$window.on("mousewheel.UserScrollDisabler DOMMouseScroll.UserScrollDisabler", this._handleWheel);
-        t.$document.on("mousewheel.UserScrollDisabler touchmove.UserScrollDisabler", this._handleWheel);
-        t.$document.on("keydown.UserScrollDisabler", function(event) {
-            t._handleKeydown.call(t, event);
-        });
-    },
-
-    enable_scrolling : function() {
-        var t = this;
-        t.$window.off(".UserScrollDisabler");
-        t.$document.off(".UserScrollDisabler");
-    },
-
-    _handleKeydown : function(event) {
-        for (var i = 0; i < this.scrollEventKeys.length; i++) {
-            if (event.keyCode === this.scrollEventKeys[i]) {
-                event.preventDefault();
-                return;
-            }
-        }
-    },
-
-    _handleWheel : function(event) {
-        event.preventDefault();
-    }
-
-};
-
-var supportsLocalStorage = function(){
-	try {
-		return 'localStorage' in window && window['localStorage'] !== null;
-	} catch(e) {
-		return false;
-	}
-};
 
 
-var AL = function(type, url, callback) {
 
-	var el, doc = document;
-
-	switch(type) {
-		case 'js':
-			el = doc.createElement('script');
-			if (callback) {
-				el.addEventListener('load', function (e) { callback(e); }, false);
-			}
-			el.src = url;
-			doc.getElementsByTagName('body')[0].appendChild(el);
-			break;
-		case 'css':
-			el = doc.createElement('link');
-			if (callback) {
-				el.addEventListener('load', function (e) { callback(e); }, false);
-			}
-			el.href= url;
-			el.rel='stylesheet';
-			doc.getElementsByTagName('head')[0].appendChild(el);
-			break;
-		default:
-			return;
-	}
-	
-};
 
 var disabler = new UserScrollDisabler();
 
-var PAGER = {
-	changeView: function(nextPage) {
+var WORLD = {
+	changeBackground: function(nextPage) {
 		$(this.el).removeClass(function (index, css) {
 			return (css.match (/\bpage-\S+/g) || []).join(' ');
-		}).addClass('page-' + APP.currentPage + '-active');
+		}).addClass('page-' + PAGER.currentPage + '-active');
 	},
 	setup: function() {
 		this.el = document.getElementById('pager');
@@ -90,23 +16,19 @@ var PAGER = {
 			document.getElementById('page-1'),
 			document.getElementById('page-2'),
 			document.getElementById('page-3')
-		]
+		];
+		this.el.addEventListener('transitionend', function(e) {
+			if (e.target.className === 'page-wrapper') {
+				disabler.enable_scrolling();
+				$('.nav').removeClass('disabled');
+			}
+		}, true);
 	}
 }
-
-PAGER.setup();
-
-PAGER.el.addEventListener('transitionend', function(e) {
-	if (e.target.className === 'page-wrapper') {
-		disabler.enable_scrolling();
-		$('.nav').removeClass('disabled');
-	}
-}, true);
-
-console.dir(PAGER.pages);
+WORLD.setup();
 
 
-var APP = {
+var PAGER = {
 	currentPage: 2,
 	insertPage: function() {
 		// THIS ONE IS ASYNCHRONOUS, HANDLERS HAVE TO CALL EACH OTHER UPON COMPLETION
@@ -136,7 +58,7 @@ var APP = {
 		this.insertPage();
 	},
 	pageReady: function() {
-		window.location.hash = '#' + APP.currentPage;
+		window.location.hash = '#' + PAGER.currentPage;
 		// GET SAVED SCROLL POS IF IT EXISTS
 		var prevPos = 0;
 		var savedPos = localStorage.getItem('scrollpos_3');
@@ -149,7 +71,7 @@ var APP = {
 			 //.scrollTop(0);
 			window.setTimeout(function() {
 				$('body').addClass('scroll');
-				PAGER.changeView();
+				WORLD.changeBackground();
 				window.setTimeout(function() {
 					$('.loader').hide();
 				}, 1000);
@@ -167,12 +89,13 @@ var APP = {
 	init: function() {
 		this.progressText = document.getElementById('progress-text');
 		if (window.location.hash) {
-  		this.currentPage = location.hash.slice(1) || '/';
-  	}
-  	this.setLoadCount();
-  	this.progressText.innerHTML = '0%';
+			this.currentPage = location.hash.slice(1) || '/';
+		}
+		$('#nav-page' + this.currentPage).addClass('active');
+		this.setLoadCount();
+		this.progressText.innerHTML = '0%';
 		window.setTimeout(function() {
-			APP.insertPage();
+			PAGER.insertPage();
 		}, 1000);
 	}
 };
@@ -208,21 +131,21 @@ var JSHandler = {
 	loaded: function() {
 		this.count = this.count - 1;
 		if (this.count === 0) {
-			APP.pageReady();
+			PAGER.pageReady();
 		}
 	},
 	start: function() {
 		$('.loader h6').text('LADDAR BEN 3: 100% …');
-		var data = this.files[APP.currentPage];
+		var data = this.files[PAGER.currentPage];
 		this.count = data.length;
 		data.forEach(function(item) { // IE9+
-			AL('js', item, function() {
+			ResourceLoader('js', item, function() {
 				JSHandler.loaded();
 			});
 		});
 	},
 	remove: function() {
-		var data = this.files[APP.currentPage];
+		var data = this.files[PAGER.currentPage];
 		data.forEach(function(item) { // IE9+
 			$('script[src~="' + item + '"]').remove();
 		});
@@ -239,12 +162,12 @@ var HTMLHandler = {
 		'ben3.html'
 	],
 	loaded: function() {
-		APP.updateLoadProgress();
-		APP.pageReady();
+		PAGER.updateLoadProgress();
+		PAGER.pageReady();
 	},
 	start: function() {
-		//APP.updateLoadProgress('50% …');
-		$.get(this.files[APP.currentPage - 1], function(data) {
+		//PAGER.updateLoadProgress('50% …');
+		$.get(this.files[PAGER.currentPage - 1], function(data) {
 			$('#content').append(data);
 			HTMLHandler.loaded();
 		});
@@ -288,7 +211,7 @@ var CSSHandler = {
 		]
 	},
 	loaded: function() {
-		APP.updateLoadProgress();
+		PAGER.updateLoadProgress();
 		this.count = this.count - 1;
 		if (this.count === 0) {
 			window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
@@ -297,17 +220,17 @@ var CSSHandler = {
 		}
 	},
 	start: function() {
-		//APP.updateLoadProgress('25% …')
-		var data = this.files[APP.currentPage];
+		//PAGER.updateLoadProgress('25% …')
+		var data = this.files[PAGER.currentPage];
 		this.count = data.length;
 		data.forEach(function(item) { // IE9+
-			AL('css', item, function() {
+			ResourceLoader('css', item, function() {
 				CSSHandler.loaded();
 			});
 		});
 	},
 	remove: function() {
-		var data = this.files[APP.currentPage];
+		var data = this.files[PAGER.currentPage];
 		data.forEach(function(item) { // IE9+
 			$('link[href~="' + item + '"]').remove();
 		});
@@ -320,7 +243,7 @@ var CSSHandler = {
 // START LOADING
 // =============
 $(function() {
-	APP.init();
+	PAGER.init();
 	console.log(localStorage.getItem('scrollpos_3'));
 });
 
@@ -331,12 +254,12 @@ window.addEventListener('onbeforeunload', function() {
 });
 
 window.addEventListener('hashchange', function() {
-	APP.goTo(location.hash.slice(1) || '/');
+	PAGER.goTo(location.hash.slice(1) || '/');
 }, false);
 
 var navDisabled = false;
 var updateNav = function(pageNum, item) {
-	if (APP.currentPage != pageNum && !navDisabled) {
+	if (PAGER.currentPage != pageNum && !navDisabled) {
 		window.location.hash = '#' + pageNum;
 		$('.nav li').removeClass('active');
 		$(item).addClass('active');

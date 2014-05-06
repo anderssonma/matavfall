@@ -5,6 +5,7 @@
 	webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	font-family: 'Avenir' !important;
 }
 html {
 	height: 100%;
@@ -127,7 +128,7 @@ h1 {
 		bottom: 0;
 		left: 0;
 		width: calc(100% / 3);
-		height: 400px;
+		height: 200px;
 		background: #786854;
 		&.page-2 {
 			left: calc(100% / 3);
@@ -137,7 +138,7 @@ h1 {
 			left: calc(100% / 3 * 2);
 		}
 		h2 {
-			line-height: 400px;
+			line-height: 200px;
 			text-align: center;
 			color: rgba(255,255,255,.5);
 		}
