@@ -1,11 +1,7 @@
-
-
-
-
-var disabler = new UserScrollDisabler();
+var scrollDisabler = new UserScrollDisabler();
 
 var WORLD = {
-	changeBackground: function(nextPage) {
+	changeBackground: function() {
 		$(this.el).removeClass(function (index, css) {
 			return (css.match (/\bpage-\S+/g) || []).join(' ');
 		}).addClass('page-' + PAGER.currentPage + '-active');
@@ -19,12 +15,12 @@ var WORLD = {
 		];
 		this.el.addEventListener('transitionend', function(e) {
 			if (e.target.className === 'page-wrapper') {
-				disabler.enable_scrolling();
+				scrollDisabler.reenable();
 				$('.nav').removeClass('disabled');
 			}
 		}, true);
 	}
-}
+};
 WORLD.setup();
 
 
@@ -33,7 +29,7 @@ var PAGER = {
 	insertPage: function() {
 		// THIS ONE IS ASYNCHRONOUS, HANDLERS HAVE TO CALL EACH OTHER UPON COMPLETION
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
-			CSSHandler.start(); // CALLS -> HTMLHandler.start() :: CALLS -> JSHandler.start()
+			CSSHandler.load(); // CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
 		}, 500);
 	},
 	removePage: function() {
@@ -44,14 +40,11 @@ var PAGER = {
 		HTMLHandler.remove();
 		CSSHandler.remove();
 	},
-	goTo: function(pageNum) {
+	loadPage: function(pageNum) {
 		this.progressText.innerHTML = '0%';
-		$('.loader').show();
-
-		disabler.disable_scrolling();
+		//$('.loader').show();
+		scrollDisabler.disable();
 		$('body').removeClass('scroll').scrollTop(0);
-		
-
 		this.removePage();
 		this.currentPage = pageNum;
 		this.setLoadCount();
@@ -59,32 +52,38 @@ var PAGER = {
 	},
 	pageReady: function() {
 		window.location.hash = '#' + PAGER.currentPage;
+		window.setTimeout(function() {
+			$('body').addClass('scroll');
+			WORLD.changeBackground();
+			window.setTimeout(function() {
+				$('.loader').hide();
+			}, 1000);
+		}, 1000);
+
+		/* BONUS TODO: SCROLL TO PREVIOUS SPOT
+		// ==========
 		// GET SAVED SCROLL POS IF IT EXISTS
 		var prevPos = 0;
 		var savedPos = localStorage.getItem('scrollpos_3');
 		if (supportsLocalStorage() && savedPos !== null) {
 			prevPos = savedPos;
-		}
-		// SHOW PAGE 
-		// =========
-		// TODO: SCROLL TO PREVIOUS SPOT
-			 //.scrollTop(0);
-			window.setTimeout(function() {
-				$('body').addClass('scroll');
-				WORLD.changeBackground();
-				window.setTimeout(function() {
-					$('.loader').hide();
-				}, 1000);
-			}, 1000);
+		} */
 	},
 	setLoadCount: function() {
 		this.filesLoaded = 0;
-		this.filesToLoad = CSSHandler.files[this.currentPage].length + 1; // 1 HTML FILE PER PAGE
+		this.filesToLoad = CSSHandler.files[this.currentPage].length + 1; // +1 HTML FILE PER PAGE
 	},
 	updateLoadProgress: function() {
 		this.filesLoaded++;
-		var percentLoaded = Math.round(((this.filesLoaded / this.filesToLoad).toFixed(2)) * 100);
-		this.progressText.innerHTML = percentLoaded + '%';
+		this.progressText.innerHTML = Math.round(((this.filesLoaded / this.filesToLoad).toFixed(2)) * 100) + '%';
+	},
+	updateNavigation: function(pageNum, item) {
+		if (this.currentPage != pageNum) {
+			window.location.hash = '#' + pageNum;
+			$('.nav li').removeClass('active');
+			$(item).addClass('active');
+			$('.nav').addClass('disabled');
+		}
 	},
 	init: function() {
 		this.progressText = document.getElementById('progress-text');
@@ -100,58 +99,6 @@ var PAGER = {
 	}
 };
 
-// JAVASCRIPT LOADER
-// =================
-/*
-var JSHandler = {
-	files: {
-		1: [
-			'assets/js/1.1_fakta.js',
-			'assets/js/1.2_uppdrag.js',
-			'assets/js/1.3_game.helpers.js',
-			'assets/js/1.3_game.js',
-			'assets/js/1.4_recept.js',
-			'assets/js/1.5.1_popcorn.js',
-			'assets/js/1.5.2_bio.js',
-			'assets/js/1.5.3_kylskap.js',
-			'assets/js/1.6_quiz.js',
-		],
-		2: [
-			'assets/js/2.1.1_vag.js',
-			'assets/js/2.1.2_fabrik.js',
-			'assets/js/2.3_fakta.js',
-			'assets/js/1.6_quiz.js',
-			'assets/js/2.9_dropdown.js'
-		],
-		3: [
-			'assets/js/3.1_agg.js',
-			'assets/js/3.2_tidslinjen.js'
-		]
-	},
-	loaded: function() {
-		this.count = this.count - 1;
-		if (this.count === 0) {
-			PAGER.pageReady();
-		}
-	},
-	start: function() {
-		$('.loader h6').text('LADDAR BEN 3: 100% …');
-		var data = this.files[PAGER.currentPage];
-		this.count = data.length;
-		data.forEach(function(item) { // IE9+
-			ResourceLoader('js', item, function() {
-				JSHandler.loaded();
-			});
-		});
-	},
-	remove: function() {
-		var data = this.files[PAGER.currentPage];
-		data.forEach(function(item) { // IE9+
-			$('script[src~="' + item + '"]').remove();
-		});
-	}
-};
-*/
 
 // HTML LOADER
 // ===========
@@ -161,15 +108,14 @@ var HTMLHandler = {
 		'ben2.html',
 		'ben3.html'
 	],
-	loaded: function() {
+	done: function() {
 		PAGER.updateLoadProgress();
 		PAGER.pageReady();
 	},
-	start: function() {
-		//PAGER.updateLoadProgress('50% …');
+	load: function() {
 		$.get(this.files[PAGER.currentPage - 1], function(data) {
 			$('#content').append(data);
-			HTMLHandler.loaded();
+			HTMLHandler.done();
 		});
 	},
 	remove: function() {
@@ -210,22 +156,24 @@ var CSSHandler = {
 			'/assets/css/3.2_tidslinjen.css'
 		]
 	},
-	loaded: function() {
+	done: function() {
+		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
+			HTMLHandler.load();
+		}, 500);
+	},
+	completedFile: function() {
 		PAGER.updateLoadProgress();
 		this.count = this.count - 1;
 		if (this.count === 0) {
-			window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
-				HTMLHandler.start();
-			}, 500);
+			this.done();
 		}
 	},
-	start: function() {
-		//PAGER.updateLoadProgress('25% …')
+	load: function() {
 		var data = this.files[PAGER.currentPage];
 		this.count = data.length;
 		data.forEach(function(item) { // IE9+
 			ResourceLoader('css', item, function() {
-				CSSHandler.loaded();
+				CSSHandler.completedFile();
 			});
 		});
 	},
@@ -238,53 +186,29 @@ var CSSHandler = {
 };
 
 
-
-
 // START LOADING
 // =============
-$(function() {
-	PAGER.init();
-	console.log(localStorage.getItem('scrollpos_3'));
-});
 
-window.addEventListener('onbeforeunload', function() {
-	// SAVE THE SCROLL POS ON EXIT/RELOAD
-	// TODO: TRY TO RESTORE IT LATER
-	localStorage.setItem('scrollpos_3', $(document).scrollTop());
+window.addEventListener('DOMContentLoaded', function() {
+	PAGER.init();
 });
 
 window.addEventListener('hashchange', function() {
-	PAGER.goTo(location.hash.slice(1) || '/');
+	PAGER.loadPage(location.hash.slice(1) || '/');
 }, false);
 
-var navDisabled = false;
-var updateNav = function(pageNum, item) {
-	if (PAGER.currentPage != pageNum && !navDisabled) {
-		window.location.hash = '#' + pageNum;
-		$('.nav li').removeClass('active');
-		$(item).addClass('active');
-		$('.nav').addClass('disabled');
-	}
-};
+document.getElementById('nav-page1').addEventListener('click', function() { PAGER.updateNavigation(1, this); });
+document.getElementById('nav-page2').addEventListener('click', function() { PAGER.updateNavigation(2, this); });
+document.getElementById('nav-page3').addEventListener('click', function() { PAGER.updateNavigation(3, this); });
 
-document.getElementById('nav-page1').addEventListener('click', function() { updateNav(1, this); });
-document.getElementById('nav-page2').addEventListener('click', function() { updateNav(2, this); });
-document.getElementById('nav-page3').addEventListener('click', function() { updateNav(3, this); });
+/*
+$(function() {
+	PAGER.init();
+	// console.log(localStorage.getItem('scrollpos_3'));
+});
 
-/* DISABLE NUM KEYS
-window.addEventListener('keyup', function(e) {
-	switch (e.keyCode) {
-		case 49: // 1
-			window.location.hash = '#' + 1;
-			break;
-		case 50: // 2
-			window.location.hash = '#' + 2;
-			break;
-		case 51: // 3
-			window.location.hash = '#' + 3;
-			break;
-		default:
-			return;
-	}
+window.addEventListener('onbeforeunload', function() {
+	// SAVE THE SCROLL POS ON EXIT/RELOAD || TODO: TRY TO RESTORE IT LATER
+	localStorage.setItem('scrollpos_3', $(document).scrollTop());
 });
 */
