@@ -1,5 +1,15 @@
 var scrollDisabler = new UserScrollDisabler();
 
+var ELEM = {
+	setup: function() {
+		this.body = $('body');
+		this.nav = $('#nav');
+		this.navItems = $('#nav li');
+		this.loader = $('#loader');
+		this.content = $('#content');
+	}
+}
+
 var WORLD = {
 	changeBackground: function() {
 		$(this.el).removeClass(function (index, css) {
@@ -9,7 +19,7 @@ var WORLD = {
 		if (!Modernizr.csstransitions) {
 			window.setTimeout(function() {
 				scrollDisabler.reenable();
-				$('.nav').removeClass('disabled');
+				ELEM.nav.removeClass('disabled');
 			}, 500);
 		}
 	},
@@ -25,59 +35,42 @@ var WORLD = {
 			this.el.addEventListener('transitionend', function(e) {
 				if (e.target.className === 'page-wrapper') {
 					scrollDisabler.reenable();
-					$('.nav').removeClass('disabled');
+					ELEM.nav.removeClass('disabled');
 				}
 			}, true);
 		}
 	}
 };
-WORLD.setup();
-
 
 var PAGER = {
 	currentPage: 1,
 	insertPage: function() {
-		// THIS ONE IS ASYNCHRONOUS, HANDLERS HAVE TO CALL EACH OTHER UPON COMPLETION
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
-			CSSHandler.load(); // CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
+			CSSHandler.load(); // (ASYNC) CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
 		}, 500);
 	},
 	removePage: function() {
-		// HIDE THE PAGE
-		$('#body').removeClass('scroll');
-		$('.loader').show();
-		// THEN REMOVE HTML/JS/CSS
+		ELEM.loader.show();
 		HTMLHandler.remove();
 		CSSHandler.remove();
 	},
 	loadPage: function(pageNum) {
 		this.progressText.innerHTML = '0%';
-		//$('.loader').show();
 		scrollDisabler.disable();
-		$('body').removeClass('scroll').scrollTop(0);
+		ELEM.body.removeClass('scroll').scrollTop(0);
 		this.removePage();
 		this.currentPage = pageNum;
 		this.setLoadCount();
 		this.insertPage();
 	},
-	pageReady: function() {
-		//window.location.hash = '#' + PAGER.currentPage;
+	pageReady: function() { // GIVE THE PAGE SOME BREATHING ROOM
 		window.setTimeout(function() {
-			$('body').addClass('scroll');
+			ELEM.body.addClass('scroll');
 			WORLD.changeBackground();
 			window.setTimeout(function() {
-				$('.loader').hide();
+				ELEM.loader.hide();
 			}, 1000);
 		}, 1000);
-
-		/* BONUS TODO: SCROLL TO PREVIOUS SPOT
-		// ==========
-		// GET SAVED SCROLL POS IF IT EXISTS
-		var prevPos = 0;
-		var savedPos = localStorage.getItem('scrollpos_3');
-		if (supportsLocalStorage() && savedPos !== null) {
-			prevPos = savedPos;
-		} */
 	},
 	setLoadCount: function() {
 		this.filesLoaded = 0;
@@ -90,9 +83,9 @@ var PAGER = {
 	updateNavigation: function(pageNum, item) {
 		if (this.currentPage != pageNum) {
 			window.location.hash = '#' + pageNum;
-			$('.nav li').removeClass('active');
+			ELEM.nav.addClass('disabled');
+			ELEM.navItems.removeClass('active');
 			$(item).addClass('active');
-			$('.nav').addClass('disabled');
 		}
 	},
 	setupBinds: function() {
@@ -112,7 +105,7 @@ var PAGER = {
 			var self = this;
 			window.location.hash = '#' + 1;
 			window.setTimeout(function() {
-				self.setupBinds();
+				self.setupBinds(); // WAIT 1 CYCLE, OR IT WILL TRIGGER TWICE ON LOAD
 			}, 0);
 		}
 		$('#nav-page' + this.currentPage).addClass('active');
@@ -138,14 +131,15 @@ var HTMLHandler = {
 		PAGER.pageReady();
 	},
 	load: function() {
+		var self = this;
 		$.get(this.files[PAGER.currentPage - 1], function(data) {
-			$('#content').append(data);
-			HTMLHandler.done();
+			ELEM.content.append(data);
+			self.done();
 		});
 	},
 	remove: function() {
-		$('#content').empty();
-	}
+		ELEM.content.empty();
+	},
 };
 
 // CSS LOADER
@@ -215,6 +209,8 @@ var CSSHandler = {
 // =============
 
 window.addEventListener('DOMContentLoaded', function() {
+	ELEM.setup();
+	WORLD.setup();
 	PAGER.init();
 });
 
@@ -223,6 +219,15 @@ $(function() {
 	PAGER.init();
 	// console.log(localStorage.getItem('scrollpos_3'));
 });
+
+var saveScrollPos = function() {
+	// BONUS TODO: SCROLL TO PREVIOUS SPOT && GET SAVED SCROLL POS IF IT EXISTS
+	var prevPos = 0;
+	var savedPos = localStorage.getItem('scrollpos_3');
+	if (supportsLocalStorage() && savedPos !== null) {
+		prevPos = savedPos;
+	}
+}
 
 window.addEventListener('onbeforeunload', function() {
 	// SAVE THE SCROLL POS ON EXIT/RELOAD || TODO: TRY TO RESTORE IT LATER
