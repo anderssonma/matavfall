@@ -5,6 +5,13 @@ var WORLD = {
 		$(this.el).removeClass(function (index, css) {
 			return (css.match (/\bpage-\S+/g) || []).join(' ');
 		}).addClass('page-' + PAGER.currentPage + '-active');
+
+		if (!Modernizr.csstransitions) {
+			window.setTimeout(function() {
+				scrollDisabler.reenable();
+				$('.nav').removeClass('disabled');
+			}, 500);
+		}
 	},
 	setup: function() {
 		this.el = document.getElementById('pager');
@@ -13,19 +20,22 @@ var WORLD = {
 			document.getElementById('page-2'),
 			document.getElementById('page-3')
 		];
-		this.el.addEventListener('transitionend', function(e) {
-			if (e.target.className === 'page-wrapper') {
-				scrollDisabler.reenable();
-				$('.nav').removeClass('disabled');
-			}
-		}, true);
+
+		if (Modernizr.csstransitions) {
+			this.el.addEventListener('transitionend', function(e) {
+				if (e.target.className === 'page-wrapper') {
+					scrollDisabler.reenable();
+					$('.nav').removeClass('disabled');
+				}
+			}, true);
+		}
 	}
 };
 WORLD.setup();
 
 
 var PAGER = {
-	currentPage: 2,
+	currentPage: 1,
 	insertPage: function() {
 		// THIS ONE IS ASYNCHRONOUS, HANDLERS HAVE TO CALL EACH OTHER UPON COMPLETION
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
@@ -51,7 +61,7 @@ var PAGER = {
 		this.insertPage();
 	},
 	pageReady: function() {
-		window.location.hash = '#' + PAGER.currentPage;
+		//window.location.hash = '#' + PAGER.currentPage;
 		window.setTimeout(function() {
 			$('body').addClass('scroll');
 			WORLD.changeBackground();
@@ -85,10 +95,25 @@ var PAGER = {
 			$('.nav').addClass('disabled');
 		}
 	},
+	setupBinds: function() {
+		window.addEventListener('hashchange', function() {
+			PAGER.loadPage(location.hash.slice(1) || '/');
+		}, false);
+		document.getElementById('nav-page1').addEventListener('click', function() { PAGER.updateNavigation(1, this); });
+		document.getElementById('nav-page2').addEventListener('click', function() { PAGER.updateNavigation(2, this); });
+		document.getElementById('nav-page3').addEventListener('click', function() { PAGER.updateNavigation(3, this); });
+	},
 	init: function() {
 		this.progressText = document.getElementById('progress-text');
 		if (window.location.hash) {
 			this.currentPage = location.hash.slice(1) || '/';
+			this.setupBinds();
+		} else {
+			var self = this;
+			window.location.hash = '#' + 1;
+			window.setTimeout(function() {
+				self.setupBinds();
+			}, 0);
 		}
 		$('#nav-page' + this.currentPage).addClass('active');
 		this.setLoadCount();
@@ -192,14 +217,6 @@ var CSSHandler = {
 window.addEventListener('DOMContentLoaded', function() {
 	PAGER.init();
 });
-
-window.addEventListener('hashchange', function() {
-	PAGER.loadPage(location.hash.slice(1) || '/');
-}, false);
-
-document.getElementById('nav-page1').addEventListener('click', function() { PAGER.updateNavigation(1, this); });
-document.getElementById('nav-page2').addEventListener('click', function() { PAGER.updateNavigation(2, this); });
-document.getElementById('nav-page3').addEventListener('click', function() { PAGER.updateNavigation(3, this); });
 
 /*
 $(function() {

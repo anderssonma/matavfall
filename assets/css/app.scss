@@ -5,7 +5,6 @@
 	webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: 'Avenir' !important;
 }
 html {
 	height: 100%;
@@ -117,11 +116,14 @@ h1 {
 		width: 300%;
 		height: 700px;
 		-webkit-transform: translateZ(0);
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
 		opacity: 0;
 	}
 	&[class*="-active"] .page-wrapper {
 		opacity: 1;
 		-webkit-transition: 0.5s left, 0.5s 0.65s opacity;
+		transition: 0.5s left, 0.5s 0.65s opacity;
 	}
 	.page {
 		position: absolute;
@@ -163,6 +165,7 @@ h1 {
 	border-radius: 100px;
 	margin: -100px 0 0 -100px;
 	background: #FFF;
+	-webkit-transition: 0.5s 0.75s opacity;
 	transition: 0.5s 0.75s opacity;
 	z-index: 1;
 	img {
@@ -204,6 +207,7 @@ body.scroll {
 	margin-top: -95px; // (50 * 3 + 20 * 2) / 2
 	z-index: 1;
 	padding: 0;
+	-webkit-transition: 0.35s 0.5s left;
 	transition: 0.35s 0.5s left;
 	li {
 		display: block;
@@ -216,6 +220,7 @@ body.scroll {
 		font-weight: bold;
 		color: #999;
 		margin-bottom: 20px;
+		-webkit-transition: 0.35s background;
 		transition: 0.35s background;
 		&:hover {
 			background: rgba(255,255,255,.75);
