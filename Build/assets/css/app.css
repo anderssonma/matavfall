@@ -67,10 +67,12 @@ h1 {
 
 .column,
 .columns {
-  position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
+  	/*
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 100%;
+    */
   float: left; }
 
 .large-4 {
