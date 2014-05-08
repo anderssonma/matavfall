@@ -1,28 +1,16 @@
-function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y, left: _x };
-}
-var windowHeightSplit;
-
 $(document).ready(function() {
- 	windowHeightSplit = $(window).height() / 2;
- 	windowHeight = $(window).height();
+
+ 	var windowHeightSplit = $(window).height() / 2;
 	$('#stage-2').css('height', windowHeightSplit * 2);
 
-var widthOffset = $(window).width() / 2 + 100;
+	var widthOffset = $(window).width() / 2 + 100;
 
-var controller = $.superscrollorama();
+	var controller = $.superscrollorama();
 	var scrollDuration = 500; 
 	
 	var handplocka_step_1 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
 	var basket_vikt = TweenMax.to($('#basket-vikt'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
-	var matavfallstunna_container = TweenMax.fromTo($('#matavfallstunna-container'), 5, {css:{left: (widthOffset - 200) , top: windowHeight}, immediateRender:true, ease:Expo.easeIn}, {css:{top: (windowHeightSplit - 300)}, ease:Expo.easeOut});
+	var matavfallstunna_container = TweenMax.fromTo($('#matavfallstunna-container'), 5, {css:{left: (widthOffset - 200) , top: $(window).height()}, immediateRender:true, ease:Expo.easeIn}, {css:{top: (windowHeightSplit - 300)}, ease:Expo.easeOut});
 	var matavfallstunna_lock = TweenMax.to($('#matavfallstunna-lock'), 6, {css:{transform: 'rotate(50deg)'}, ease:Power3.easeOut});
 	
 	var handplocka_step_2 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '-1521'}, ease:Expo.easeOut});
@@ -41,8 +29,8 @@ var controller = $.superscrollorama();
 	var avfallsbil_1 = TweenMax.to($('#avfallsbil'), 5, {css:{top: 220, width: '-=300', left: 240}, ease:Expo.easeOut});
 	var vagbana = TweenMax.to($('#vagbana-container'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
 	var avfallsbil_2 = TweenMax.to($('#avfallsbil'), 5, {css:{left: '+=840'}, ease:Expo.easeOut});
-	var avfallsbil_3 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'+=250', y:'+=70'} , {x:'+=250', y:'+=400'} , {x:'-=350', y:'+=490'}] , autoRotate:0}, ease:Expo.easeOut});
-	var avfallsbil_4 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'-=250', y:'+=40'} , {x:'-=250', y:'+=200'} , {x:'+=50', y:'+=260'},  {x:'+=140', y:'+=460'}, {x:'+=140', y:'+=650'}] , autoRotate:0}, ease:Expo.easeOut});
+	var avfallsbil_3 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'+=250', y:'+=70'} , {x:'+=250', y:'+=400'} , {x:'-=350', y:'+=490'}] , autoRotate:0}, ease: Linear.ease});
+	var avfallsbil_4 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'-=250', y:'+=40'} , {x:'-=250', y:'+=200'} , {x:'+=50', y:'+=260'},  {x:'+=140', y:'+=460'}, {x:'+=140', y:'+=650'}] , autoRotate:0}, ease: Linear.ease});
 	var avfallsbil_5 = TweenMax.to($('#avfallsbil'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
 	
 	var vagbana_flytta_up = TweenMax.to($('#vagbana-container'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
@@ -59,25 +47,20 @@ var controller = $.superscrollorama();
 
 	controller.pin($('#stage-2'), 4500, {
 		anim: (new TimelineLite())
-		
-		.add([handplocka_step_1, basket_vikt])
-		.add([matavfallstunna_container, matavfallstunna_lock])
-		.add([handplocka_step_2])
-		.add(del_1)
-		.add([matavfallstunna_container_1 , matavfallstunna_lock_1, matavfallstunna, basket_vikt_1])
-		.add([avfallsbil, matavfallstunna_container_2, matavfallstunna_lock_2, del_1_1, del_2 ])
-		.add([avfallsbil_1, matavfallstunna_container_3, vagbana, del_2_1])
-		.add([avfallsbil_2])
-		.add([avfallsbil_3])
-		.add([avfallsbil_flytta_up, vagbana_flytta_up])
-		.add([avfallsbil_4])
-		.add([avfallsbil_flytta_up_1, vagbana_flytta_up_1])
-		.add(avfallsbil_5)
-		.add(forbehandlingsandlagning),
-		
-		onPin: function() {
-		},
-		onUnpin: function() {
-		}
+			.add([handplocka_step_1, basket_vikt])
+			.add([matavfallstunna_container, matavfallstunna_lock])
+			.add([handplocka_step_2])
+			.add(del_1)
+			.add([matavfallstunna_container_1 , matavfallstunna_lock_1, matavfallstunna, basket_vikt_1])
+			.add([avfallsbil, matavfallstunna_container_2, matavfallstunna_lock_2, del_1_1, del_2 ])
+			.add([avfallsbil_1, matavfallstunna_container_3, vagbana, del_2_1])
+			.add([avfallsbil_2])
+			.add([avfallsbil_3])
+			.add([avfallsbil_flytta_up, vagbana_flytta_up])
+			.add([avfallsbil_4])
+			.add([avfallsbil_flytta_up_1, vagbana_flytta_up_1])
+			.add(avfallsbil_5)
+			.add(forbehandlingsandlagning)
 	});
+
 });
