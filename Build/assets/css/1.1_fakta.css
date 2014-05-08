@@ -67,7 +67,7 @@ html {
     position: relative;
     top: -800px;
     left: 0;
-    width: 50%;
+    width: 700px;
     margin: 0 auto; }
     .fakta_1-1 .intro p {
       font-size: 20px;
@@ -196,6 +196,9 @@ html {
     z-index: 1000; }
   .fakta_1-1 .space400 {
     padding-bottom: 400px; }
+  .fakta_1-1 .text-small-1 {
+    margin-top: 60px;
+    padding-bottom: 340px; }
   .fakta_1-1 #drain-paper {
     margin-top: -200px; }
   .fakta_1-1 #fruit-1 {
@@ -338,7 +341,9 @@ html {
   .fakta_1-1 #vaskskrapa-fylld {
     position: absolute;
     top: 3860px;
-    right: -430px;
+    right: 0;
+    opacity: 0;
+    margin-right: -600px;
     display: block; }
   .fakta_1-1 #vaskskrapa-fylld #vaskskrapa {
     width: 430px; }

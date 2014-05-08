@@ -4,11 +4,10 @@
 	margin: 0;
 	background: #65AAA7;
 }
-#fakta-kylskap .intro h1,
-#fakta-kylskap .intro p{
+#fakta-kylskap .intro {
 	color: #fff;
-	text-align: center;
 	-webkit-font-smoothing: antialiased;
+	width: 620px;
 }
 #fakta-kylskap .intro p {
 	font-size: 18px;
@@ -16,13 +15,14 @@
 #fakta-kylskap .intro h1 {
 	text-transform: uppercase;
 	font-weight: normal;
+	text-align: center;
 }
 .kyl-frys {
 	background: url(../img/kylskap-oppet-utan-lador.svg);
 	background-size: contain;
 	height: 1758px;
 	width: 1000px;
-	margin: 400px auto;
+	margin: 200px auto 300px;
 	position: relative;
 }
 .kyl-frys #text-block-1 {
@@ -250,15 +250,16 @@
 .kyl-frys #tarmometer-container {
 	position: fixed;
 	top: 50%;
-	right: -100px;
+	left: 50%;
 	width: 200px;
 	margin-top: -150px;
 	margin-left: 420px;
-	transition: all .7s;
-	-webkit-transition:all .7s;
+	transition: opacity 0.35s;
+	-webkit-transition: opacity 0.35s;
+	opacity: 0;
 }
 .kyl-frys #tarmometer-container.active {
-	left: 50%;
+	opacity: 1;
 }
 .kyl-frys #tarmometer-container #tarmometer {
 	position: relative;

@@ -8,16 +8,50 @@ $(document).ready(function() {
 
 
 	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
-	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), .1, {css: {}, onComplete: function(){$('#stroke').addClass('step-1'), $('#cirkel').addClass('step-1');}, onReverseComplete: function(){$('#stroke').removeClass('step-1'), $('#cirkel').removeClass('step-1');} , ease:Expo.easeInOut}), scrollDuration , 100);
+	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), .1, {css: {},
+		onComplete: function() {
+			$('#stroke').addClass('step-1'); 
+			$('#cirkel').addClass('step-1');
+		}, 
+		onReverseComplete: function() {
+			$('#stroke').removeClass('step-1');
+			$('#cirkel').removeClass('step-1');
+		}, 
+		ease:Expo.easeInOut
+	}), scrollDuration , 100);
 
 	controller.addTween('#text-block-2', TweenMax.to($('#text-block-2'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
-	controller.addTween('#text-block-2', TweenMax.to($('#text-block-2'), .1, {css: {}, onComplete: function(){$('#stroke').addClass('step-2');}, onReverseComplete: function(){$('#stroke').removeClass('step-2');}, ease:Expo.easeInOut}), scrollDuration , 100);
+	controller.addTween('#text-block-2', TweenMax.to($('#text-block-2'), .1, {css: {},
+		onComplete: function() {
+			$('#stroke').addClass('step-2');
+		}, 
+		onReverseComplete: function() {
+			$('#stroke').removeClass('step-2');
+		}, 
+		ease:Expo.easeInOut
+	}), scrollDuration , 100);
 
 	controller.addTween('#text-block-3', TweenMax.to($('#text-block-3'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
-	controller.addTween('#text-block-3', TweenMax.to($('#text-block-3'), .1, {css: {}, onComplete: function(){$('#stroke').addClass('step-3');}, onReverseComplete: function(){$('#stroke').removeClass('step-3');}, ease:Expo.easeInOut}), scrollDuration , 100);
+	controller.addTween('#text-block-3', TweenMax.to($('#text-block-3'), .1, {css: {},
+		onComplete: function() {
+			$('#stroke').addClass('step-3');
+		},
+		onReverseComplete: function() {
+			$('#stroke').removeClass('step-3');
+		},
+		ease:Expo.easeInOut
+	}), scrollDuration , 100);
 
 	controller.addTween('#text-block-4', TweenMax.to($('#text-block-4'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
-	controller.addTween('#text-block-4', TweenMax.to($('#text-block-4'), .1, {css: {}, onComplete: function(){$('#stroke').addClass('step-4');}, onReverseComplete: function(){$('#stroke').removeClass('step-4');}, ease:Expo.easeInOut}), scrollDuration , 100);
+	controller.addTween('#text-block-4', TweenMax.to($('#text-block-4'), .1, {css: {},
+		onComplete: function() {
+			$('#stroke').addClass('step-4');
+		},
+		onReverseComplete: function() {
+			$('#stroke').removeClass('step-4');
+		},
+		ease:Expo.easeInOut
+	}), scrollDuration , 100);
 
 	controller.addTween('#fryspase-kotlett', TweenMax.fromTo( $('#fryspase-kotlett'), .25, {css:{opacity:0, transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, transform: 'scale(1) rotate(-70deg)' }, ease:Quad.easeInOut}), scrollDuration , -100);
 	controller.addTween('#fryspase-rakor', TweenMax.fromTo( $('#fryspase-rakor'), .25, {css:{opacity:0, transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, transform: 'scale(1) rotate(-170deg)' }, ease:Quad.easeInOut}) , scrollDuration , -100);

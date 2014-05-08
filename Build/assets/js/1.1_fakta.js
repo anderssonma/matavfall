@@ -77,7 +77,7 @@ $(document).ready(function() {
 	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onComplete: function(){$('#basket').addClass('hello');}, ease:Expo.easeInOut}), scrollDuration , -600);
 	controller.addTween(drain_paper, TweenMax.to($('#drain-paper'), .1, {onReverseComplete: function(){$('#basket').removeClass('hello');}, ease:Expo.easeInOut}), scrollDuration , 100);
 
-	controller.addTween(vaskskrapa_fylld, TweenMax.to($('#vaskskrapa-fylld'), 1 , {css:{right:	'+=' + (widthOffset - 300)}, ease:Power4.easeIn}) , scrollDuration, -400);
+	controller.addTween(vaskskrapa_fylld, TweenMax.to($('#vaskskrapa-fylld'), 1 , {css:{right: '50%', opacity: 1}, ease:Power4.easeIn}) , scrollDuration, -400);
 
 
 	var bananfluga = TweenMax.to($('#bananfluga, #bananfluga-1, #bananfluga-2, #bananfluga-3, #bananfluga-4, #bananfluga-5'), 1, {css:{opacity: 1}, ease:Expo.easeOut});

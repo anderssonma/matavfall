@@ -75,11 +75,10 @@ h1 {
 
 .large-4 {
   position: relative;
-  width: 33.33333%; }
+  width: 330px; }
 
 .large-6 {
-  position: relative;
-  width: 50%; }
+  position: relative; }
 
 .large-offset-8 {
   float: right; }

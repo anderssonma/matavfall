@@ -39,7 +39,7 @@ html {
 		position: relative;
 		top: -800px;
 		left: 0;
-		width: 50%;
+		width: 700px;
 		margin: 0 auto;
 		p {
 			font-size: 20px;
@@ -235,6 +235,10 @@ html {
 	.space400 {
 		padding-bottom: 400px;
 	}
+	.text-small-1 {
+		margin-top: 60px;
+		padding-bottom: 340px;
+	}
 #drain-paper {
 	margin-top: -200px;
 }
@@ -407,7 +411,9 @@ html {
 	#vaskskrapa-fylld {
 		position: absolute;
 		top: 3860px;
-		right: -430px;
+		right: 0;
+		opacity: 0;
+		margin-right: -600px;
 		display: block;
 	}
 	#vaskskrapa-fylld #vaskskrapa {
