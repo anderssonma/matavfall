@@ -31,20 +31,17 @@ p {
   line-height: 1.5em; }
 
 h3 {
-  font-family: 'Bubbler One', Avenir;
-  -webkit-font-smoothing: subpixel-antialiased !important; }
+  font-family: 'Bubbler One', Avenir; }
 
 h2 {
   font-family: 'Bubbler One', Avenir;
   font-weight: normal;
-  font-size: 34px;
-  -webkit-font-smoothing: subpixel-antialiased !important; }
+  font-size: 34px; }
 
 h1 {
   font-family: 'Bubbler One', Avenir;
   font-weight: normal;
-  font-size: 44px;
-  -webkit-font-smoothing: subpixel-antialiased !important; }
+  font-size: 44px; }
 
 .text-center {
   text-align: center !important; }

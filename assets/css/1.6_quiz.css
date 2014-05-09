@@ -240,9 +240,13 @@
 	transform: translateY(-100px);
 }
 
+.quiz-page .in-trash {
+	list-style: none;
+	padding: 0;
+}
 .quiz-page .in-trash li {
 	position: relative;
-	width: 180px;
+	width: 210px;
 	font-size: 14px;
 	text-transform: none;
 	-webkit-transition: 0.35s opacity;
@@ -263,7 +267,7 @@
 	cursor: pointer;
 }
 .quiz-page .in-trash li span:hover {
-	color: red;
+	color: #FFF;
 }
 
 .quiz-page ol, .quiz-page ul {

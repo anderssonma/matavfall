@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="92.744px" height="92.744px" viewBox="0 0 92.744 92.744" enable-background="new 0 0 92.744 92.744" xml:space="preserve">
+<g>
+	
+		<path fill="#007D40" stroke="#007D40" stroke-width="2.8712" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M-628.437,167.93c0,25.368-20.568,45.937-45.936,45.937l0,0c-25.368,0-45.937-20.568-45.937-45.937v-546.098
+		c0-25.37,20.568-45.936,45.937-45.936l0,0c25.367,0,45.936,20.566,45.936,45.936V167.93z"/>
+	
+		<path fill="#006633" stroke="#006633" stroke-width="2.9908" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M-674.373-424.104L-674.373-424.104c-25.368,0-45.937,20.566-45.937,45.936V167.93c0,25.368,20.568,45.937,45.937,45.937l0,0
+		V-424.104z"/>
+</g>
+<g>
+	<g>
+		
+			<circle fill="#007D40" stroke="#007D40" stroke-width="1.7447" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="46.372" cy="46.372" r="45.5"/>
+		
+			<path fill="#95C11F" stroke="#95C11F" stroke-width="1.7447" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M46.373,86.872c-22.332,0-40.5-18.168-40.5-40.5s18.168-40.5,40.5-40.5c22.332,0,40.5,18.168,40.5,40.5
+			S68.704,86.872,46.373,86.872z"/>
+	</g>
+	<g>
+		
+			<path fill="#DAE49B" stroke="#DAE49B" stroke-width="1.7972" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M46.372,82.942c-20.164,0-36.57-16.404-36.57-36.57c0-20.165,16.406-36.57,36.57-36.57c20.166,0,36.57,16.405,36.57,36.57
+			C82.942,66.538,66.538,82.942,46.372,82.942z"/>
+		<g>
+			<g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_1_" opacity="0.4" points="26.646,24.52 44.986,42.992 45.038,16.55 						"/>
+					</defs>
+					<clipPath id="SVGID_2_">
+						<use xlink:href="#SVGID_1_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_2_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M44.941,63.443C33.665,63.42,24.51,54.227,24.534,42.951c0.024-11.279,9.215-20.433,20.492-20.41
+						c11.278,0.024,20.434,9.216,20.41,20.493C65.411,54.311,56.219,63.467,44.941,63.443z"/>
+				</g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_3_" opacity="0.4" points="16.889,44.993 42.916,44.983 24.184,26.323 						"/>
+					</defs>
+					<clipPath id="SVGID_4_">
+						<use xlink:href="#SVGID_3_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_4_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M57.406,59.417c-7.96,7.99-20.933,8.014-28.923,0.057c-7.989-7.959-8.016-20.934-0.056-28.924
+						c7.959-7.989,20.933-8.013,28.922-0.054S65.363,51.428,57.406,59.417z"/>
+				</g>
+			</g>
+			<g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_5_" opacity="0.4" points="24.514,65.993 42.986,47.655 16.544,47.602 						"/>
+					</defs>
+					<clipPath id="SVGID_6_">
+						<use xlink:href="#SVGID_5_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_6_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M63.438,47.698c-0.024,11.276-9.219,20.432-20.492,20.408c-11.279-0.023-20.434-9.217-20.41-20.493
+						C22.56,36.335,31.753,27.18,43.03,27.204C54.306,27.227,63.46,36.421,63.438,47.698z"/>
+				</g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_7_" opacity="0.4" points="44.988,75.753 44.978,49.724 26.316,68.455 						"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_8_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M59.41,35.234c7.991,7.958,8.016,20.933,0.058,28.921c-7.959,7.991-20.933,8.017-28.922,0.057
+						c-7.99-7.958-8.014-20.932-0.057-28.921C38.449,27.301,51.422,27.275,59.41,35.234z"/>
+				</g>
+			</g>
+			<g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_9_" opacity="0.4" points="66.098,68.224 47.759,49.752 47.706,76.193 						"/>
+					</defs>
+					<clipPath id="SVGID_10_">
+						<use xlink:href="#SVGID_9_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_10_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M47.803,29.3c11.277,0.023,20.432,9.217,20.407,20.493c-0.024,11.278-9.215,20.433-20.492,20.409
+						c-11.277-0.023-20.434-9.216-20.409-20.493C27.333,38.433,36.525,29.277,47.803,29.3z"/>
+				</g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_11_" opacity="0.4" points="75.855,47.751 49.829,47.761 68.561,66.421 						"/>
+					</defs>
+					<clipPath id="SVGID_12_">
+						<use xlink:href="#SVGID_11_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_12_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M35.338,33.326c7.959-7.989,20.933-8.014,28.922-0.056c7.989,7.959,8.016,20.934,0.057,28.923
+						c-7.96,7.989-20.933,8.013-28.923,0.055C27.405,54.29,27.381,41.316,35.338,33.326z"/>
+				</g>
+			</g>
+			<g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_13_" opacity="0.4" points="68.23,26.75 49.758,45.089 76.2,45.143 						"/>
+					</defs>
+					<clipPath id="SVGID_14_">
+						<use xlink:href="#SVGID_13_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_14_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M29.307,45.046c0.024-11.277,9.219-20.433,20.492-20.408c11.279,0.023,20.434,9.216,20.409,20.493S60.991,65.563,49.714,65.54
+						C38.439,65.517,29.284,56.323,29.307,45.046z"/>
+				</g>
+				<g opacity="0.4">
+					<defs>
+						<polyline id="SVGID_15_" opacity="0.4" points="47.756,16.991 47.767,43.021 66.428,24.289 						"/>
+					</defs>
+					<clipPath id="SVGID_16_">
+						<use xlink:href="#SVGID_15_"  overflow="visible"/>
+					</clipPath>
+					
+						<path clip-path="url(#SVGID_16_)" fill="#95C11F" stroke="#95C11F" stroke-width="1.005" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+						M33.334,57.51c-7.992-7.958-8.016-20.933-0.059-28.921c7.959-7.991,20.933-8.017,28.922-0.057
+						c7.989,7.958,8.014,20.932,0.057,28.92C54.295,65.442,41.322,65.469,33.334,57.51z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

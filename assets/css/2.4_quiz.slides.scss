@@ -1,0 +1,181 @@
+.quiz.page-2 {
+	background: #F8BCA9;
+}
+.quiz.page-2 .quiz-page, .quiz.page-2 .quiz-page-end {
+	background: #CA9989;
+}
+.quiz.page-2 .quiz-sidebar button.btn {
+	color: #F8BCA9;
+}
+.quiz.page-2 .quiz-sidebar .quiz-page > span {
+	color: #F8BCA9;
+}
+.quiz.page-2 .quiz-target.valid {
+	background: #CA9989;
+}
+.quiz.page-2 #quiz-answers .subheader {
+	color: #FFF;
+}
+
+.quiz.page-2 .small {
+	font-size: 14px;
+	strong {
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+}
+
+// SLIDE 1,2,3,5,6,8
+.quiz-slide-0 .quiz-target,
+.quiz-slide-1 .quiz-target,
+.quiz-slide-2 .quiz-target,
+.quiz-slide-4 .quiz-target,
+.quiz-slide-5 .quiz-target,
+.quiz-slide-7 .quiz-target {
+	left: 25%;
+	&:nth-child(2) {
+		left: 50%;
+	}
+	&:nth-child(3) {
+		left: 75%;
+	}
+}
+
+// SLIDE 1
+.quiz-slide-0 {
+	.mikroorg-liten {
+		margin: 30px 0 0 -15px;
+	}
+	.mikroorg-ytor {
+		margin: 18px 0 0 16px;
+	}
+	.gas-varm {
+		margin: -6px 0 0 18px;
+	}
+	.draggable {
+		top: 380px;
+		left: 41%;
+	}
+}
+
+// SLIDE 2
+.quiz-slide-1 {
+	.syre {
+		margin-left: 15px;
+	}
+	.vatten {
+		margin: 30px 0 0 5px;
+	}
+	.metan {
+		margin: 10px 0 0 15px;
+	}
+	.draggable {
+		top: 380px;
+		left: 43%;
+	}
+}
+
+// SLIDE 3
+.quiz-slide-2 {
+	.mikroorg-sol {
+		margin: 22px 0 0 0;
+	}
+	.mikroorg-dod {
+		margin: 25px 0 0 3px;
+	}
+	.matavfall-flytande {
+		margin-top: 22px;
+	}
+	.draggable {
+		top: 320px;
+		left: 37%;
+	}
+}
+
+// SLIDE 4
+.quiz-slide-3 {
+	.quiz-target img {
+		margin: 45px 0 0 20px;
+	}
+	.item-1 {
+		top: 350px;
+		left: 26%;
+	}
+	.item-2 {
+		top: 440px;
+		left: 10%;
+	}
+	.item-3 {
+		top: 360px;
+		left: 69%;
+	}
+	.item-4 {
+		top: 440px;
+		left: 48%;
+	}
+}
+
+// SLIDE 5
+.quiz-slide-4 {
+	.temperatur-jamn {
+		margin: 20px 0 0 -18px;
+	}
+	.termometer-10 {
+		margin: -58px 0 0 34px;
+	}
+	.ph-varde {
+		margin: 12px 0 0 -20px;
+	}
+	.draggable {
+		top: 340px;
+		left: 43%;
+	}
+}
+
+// SLIDE 6
+.quiz-slide-5 {
+	.kalender-12 {
+		margin: 28px 0 0 0;
+	}
+	.kalender-2540 {
+		margin: 28px 0 0 0;
+	}
+	.kalender-2m {
+		margin: 28px 0 0 -8px;
+	}
+	.draggable {
+		top: 340px;
+		left: 43%;
+	}
+}
+
+// SLIDE 7
+.quiz-slide-6 {
+	.quiz-target img {
+		margin: 45px 0 0 20px;
+	}
+	.item-1 {
+		top: 470px;
+		left: 10%;
+	}
+	.item-2 {
+		top: 420px;
+		left: 62%;
+	}
+	.item-3 {
+		top: 380px;
+		left: 40%;
+	}
+	.item-4 {
+		top: 350px;
+		left: 27%;
+	}
+}
+
+// SLIDE 8
+.quiz-slide-7 {
+	.draggable {
+		top: 400px;
+		left: 31%;
+	}
+}

@@ -20,7 +20,7 @@ var WORLD = {
 			window.setTimeout(function() {
 				scrollDisabler.reenable();
 				ELEM.nav.removeClass('disabled');
-			}, 500);
+			}, 0); // DEBUG: 0, LIVE: 500
 		}
 	},
 	setup: function() {
@@ -47,7 +47,7 @@ var PAGER = {
 	insertPage: function() {
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			CSSHandler.load(); // (ASYNC) CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
-		}, 500);
+		}, 0); // DEBUG: 0, LIVE: 500
 	},
 	removePage: function() {
 		ELEM.loader.show();
@@ -69,8 +69,8 @@ var PAGER = {
 			WORLD.changeBackground();
 			window.setTimeout(function() {
 				ELEM.loader.hide();
-			}, 1000);
-		}, 1000);
+			}, 0); // DEBUG: 0, LIVE: 1000
+		}, 0); // DEBUG: 0, LIVE: 1000
 	},
 	setLoadCount: function() {
 		this.filesLoaded = 0;
@@ -113,7 +113,7 @@ var PAGER = {
 		this.progressText.innerHTML = '0%';
 		window.setTimeout(function() {
 			PAGER.insertPage();
-		}, 1000);
+		}, 0); // DEBUG: 0, LIVE: 1000
 	}
 };
 
@@ -178,7 +178,7 @@ var CSSHandler = {
 	done: function() {
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			HTMLHandler.load();
-		}, 500);
+		}, 0); // DEBUG: 0, LIVE: 500
 	},
 	completedFile: function() {
 		PAGER.updateLoadProgress();
