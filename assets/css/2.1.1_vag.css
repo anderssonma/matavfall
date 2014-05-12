@@ -56,6 +56,7 @@ h2 {
 	position: absolute;
 	height:200px; 
 	margin-top: 50px;
+	width: 240px;
 }
 #fakta2-1 #matavfallstunna-lock {
 	position: absolute;
@@ -67,7 +68,7 @@ h2 {
 
 }
 #fakta2-1 #matavfallstunna {
-	width: 240px;
+	width: 94%;
 	display: block;
 	position: relative;
 	top: 170px;

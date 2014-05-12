@@ -271,8 +271,8 @@ html, body {
   border-radius: 3px; }
 
 .waste-container .pipe-ring {
-  -webkit-animation: pipeExpand 1s 1s ease infinite;
-  animation: pipeExpand 1s 1s ease infinite; }
+  -webkit-animation: pipeExpand 1s 2s ease infinite;
+  animation: pipeExpand 1s 2s ease infinite; }
 
 .pipe-ring-2 {
   top: 173px;
@@ -284,8 +284,8 @@ html, body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-animation: pipeExpand2 1s ease infinite;
-  animation: pipeExpand2 1s ease infinite; }
+  -webkit-animation: pipeExpand2 1s 1s ease infinite;
+  animation: pipeExpand2 1s 1s ease infinite; }
 
 .fabrik .waste {
   position: absolute;
@@ -296,8 +296,8 @@ html, body {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
-  -webkit-animation: ror1 2s linear infinite;
-  animation: ror1 2s linear infinite; }
+  -webkit-animation: ror1 2s 1s linear infinite;
+  animation: ror1 2s 1s linear infinite; }
 
 .fabrik .waste-upper {
   width: 90px;
@@ -316,8 +316,8 @@ html, body {
   border-top-left-radius: 0; }
 
 .fabrik .waste-2 {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s; }
+  -webkit-animation: ror1 2s 2s linear infinite;
+  animation: ror1 2s 2s linear infinite; }
 
 @-webkit-keyframes ror1 {
   0% {
@@ -1456,8 +1456,8 @@ html, body {
   background: rgba(99, 78, 66, 0.75);
   border-radius: 5px;
   z-index: 2;
-  -webkit-animation: 1.5s slurryVertical linear infinite;
-  animation: 1.5s slurryVertical linear infinite; }
+  -webkit-animation: 1.5s 1s  slurryVertical linear infinite;
+  animation: 1.5s 1s slurryVertical linear infinite; }
 
 @-webkit-keyframes slurryVertical {
   0% {
@@ -1490,8 +1490,8 @@ html, body {
   right: 279px; }
 
 .slurry .stream-track-horizontal.track-h-2 .stream {
-  -webkit-animation-delay: 1.75s;
-  animation-delay: 1.75s; }
+  -webkit-animation: 1.5s 2.75s slurryHorizontal linear infinite;
+  animation: 1.5s 2.75s slurryHorizontal linear infinite; }
 
 .slurry .stream-track-horizontal .stream {
   position: absolute;
@@ -1502,8 +1502,8 @@ html, body {
   background: rgba(99, 78, 66, 0.75);
   z-index: 2;
   border-radius: 5px;
-  -webkit-animation: 1.5s 1.06s slurryHorizontal linear infinite;
-  animation: 1.5s 1.06s slurryHorizontal linear infinite; }
+  -webkit-animation: 1.5s 2.06s slurryHorizontal linear infinite;
+  animation: 1.5s 2.06s slurryHorizontal linear infinite; }
 
 @-webkit-keyframes slurryHorizontal {
   0% {
@@ -1536,8 +1536,8 @@ html, body {
   width: 80px;
   height: 80px;
   border-radius: 0 0 90px 0;
-  -webkit-animation: 1.5s 0.72s slurryTurn linear infinite;
-  animation: 1.5s 0.72s slurryTurn linear infinite;
+  -webkit-animation: 1.5s 1.72s slurryTurn linear infinite;
+  animation: 1.5s 0172s slurryTurn linear infinite;
   -webkit-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
@@ -1774,34 +1774,34 @@ html, body {
   .biogas-70 .bubble {
     position: absolute;
     border-radius: 100%;
-    background: #A77F62;
-    -webkit-animation: 2s burstBubbles infinite; }
+    background: #A77F62; }
   .biogas-70 .bubble-1 {
     left: 30px;
     bottom: 20px;
     width: 30px;
-    height: 30px; }
+    height: 30px;
+    -webkit-animation: 2s burstBubbles infinite; }
   .biogas-70 .bubble-2 {
     left: 90px;
     bottom: 20px;
     width: 20px;
     height: 20px;
     background: #83736A;
-    -webkit-animation-delay: 1s; }
+    -webkit-animation: 2s 1s burstBubbles infinite; }
   .biogas-70 .bubble-3 {
     left: 160px;
     bottom: 15px;
     width: 35px;
     height: 35px;
     background: #B19A83;
-    -webkit-animation-delay: 1.5s; }
+    -webkit-animation: 2s 1.5s burstBubbles infinite; }
   .biogas-70 .bubble-4 {
     left: 240px;
     bottom: 20px;
     width: 25px;
     height: 25px;
     background: #746855;
-    -webkit-animation-delay: 0.5s; }
+    -webkit-animation: 2s 0.5s burstBubbles infinite; }
 
 @-webkit-keyframes rotateLiquid {
   from {
@@ -2177,7 +2177,7 @@ html, body {
   background: #79CAD4; }
   .pipe-gas .track {
     position: absolute;
-    width: 100%;
+    width: 11px;
     height: 100%;
     overflow: hidden; }
   .pipe-gas .sep {

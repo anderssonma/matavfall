@@ -29,8 +29,8 @@ $(document).ready(function() {
 	var avfallsbil_1 = TweenMax.to($('#avfallsbil'), 5, {css:{top: 220, width: '-=300', left: 240}, ease:Expo.easeOut});
 	var vagbana = TweenMax.to($('#vagbana-container'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
 	var avfallsbil_2 = TweenMax.to($('#avfallsbil'), 5, {css:{left: '+=840'}, ease:Expo.easeOut});
-	var avfallsbil_3 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'+=250', y:'+=70'} , {x:'+=250', y:'+=400'} , {x:'-=350', y:'+=490'}] , autoRotate:0}, ease: Linear.ease});
-	var avfallsbil_4 = TweenMax.to($('#avfallsbil'), 10, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'-=250', y:'+=40'} , {x:'-=250', y:'+=200'} , {x:'+=50', y:'+=260'},  {x:'+=140', y:'+=460'}, {x:'+=140', y:'+=650'}] , autoRotate:0}, ease: Linear.ease});
+	var avfallsbil_3 = TweenMax.to($('#avfallsbil'), 20, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'+=250', y:'+=70'} , {x:'+=250', y:'+=400'} , {x:'-=350', y:'+=490'}] , autoRotate:0}, ease: Linear.ease});
+	var avfallsbil_4 = TweenMax.to($('#avfallsbil'), 20, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'-=250', y:'+=40'} , {x:'-=250', y:'+=200'} , {x:'+=50', y:'+=260'},  {x:'+=140', y:'+=460'}, {x:'+=140', y:'+=650'}] , autoRotate:0}, ease: Linear.ease});
 	var avfallsbil_5 = TweenMax.to($('#avfallsbil'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
 	
 	var vagbana_flytta_up = TweenMax.to($('#vagbana-container'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
@@ -45,7 +45,7 @@ $(document).ready(function() {
 	var del_2 = TweenMax.fromTo($('#fakta2-1 .del-2'), 1, {css:{opacity: 0,left: (widthOffset)}, immediateRender:true, ease:Expo.easeIn}, {css:{opacity: 1 }, ease:Expo.easeOut});
 	var del_2_1 = TweenMax.to($('#fakta2-1 .del-2'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
 
-	controller.pin($('#stage-2'), 4500, {
+	controller.pin($('#stage-2'), 10000, {
 		anim: (new TimelineLite())
 			.add([handplocka_step_1, basket_vikt])
 			.add([matavfallstunna_container, matavfallstunna_lock])
