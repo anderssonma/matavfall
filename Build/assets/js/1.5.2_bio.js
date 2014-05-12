@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
 	var cinemaCtrl = $.superscrollorama(),
-			cinemaVideo = document.getElementById('video'),
+			cinemaVideo = document.getElementById('cinema-video'),
 			cinemaPlayBtn = document.getElementById('play-btn'),
 			pauseVideo = function() {
 				if (!cinemaVideo.paused) {
 					cinemaVideo.pause();
-					cinemaPlayBtn.show();
+					$(cinemaPlayBtn).show();
 				}
 			};
 
@@ -50,15 +50,17 @@ $(document).ready(function() {
 	$(cinemaVideo).on('click', function() {
 		if (!cinemaVideo.paused) {
 			cinemaVideo.pause();
-			cinemaPlayBtn.fadeIn(250);
+			$(cinemaPlayBtn).fadeIn(250);
 		}
+		return false;
 	});
 	// PLAY ON PLAY CLICK
 	$(cinemaPlayBtn).on('click', function() {
 		if (cinemaVideo.paused) {
 			cinemaVideo.play();
-			$(this).fadeOut(250);
+			$(cinemaPlayBtn).fadeOut(250);
 		}
+		return false;
 	});
 
 });
