@@ -107,7 +107,7 @@ h1 {
 .pager {
 	width: 100%;
 	height: 100%;
-	background: #6CB4C1;
+	background: #DBECF9;
 	overflow: hidden;
 	position: relative;
 	.page-wrapper {
@@ -123,8 +123,8 @@ h1 {
 	}
 	&[class*="-active"] .page-wrapper {
 		opacity: 1;
-		-webkit-transition: 0.5s left, 0.5s 0.65s opacity;
-		transition: 0.5s left, 0.5s 0.65s opacity;
+		-webkit-transition: 1s left, 0.5s 1.15s opacity;
+		transition: 1s left, 0.5s 1.15s opacity;
 	}
 	.page {
 		position: absolute;
@@ -234,5 +234,62 @@ body.scroll {
 	}
 	&.disabled {
 		left: -100px;
+	}
+}
+
+.landscape {
+	position: absolute;
+	width: 1000px;
+	height: 700px;
+	left: 50%;
+	bottom: 0;
+	margin: 0 0 0 -500px;
+	.city {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 170px;
+	}
+}
+
+.seascape {
+	position: absolute;
+	width: 100%;
+	height: 220px;
+	background: #4CB37F;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	.road {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 70px;
+		background: #333;
+		.stripes {
+			position: absolute;
+			top: 32px;
+			left: 0;
+			width: 100%;
+			height: 8px;
+			background: url(../img/vagstreck.svg) repeat-x;
+		}
+	}
+	.sea-back {
+		position: absolute;
+		width: 100%;
+		height: 120px;
+		left: 0;
+		bottom: 0;
+		background: url(../img/hav_bak.svg);
+	}
+	.sea-front {
+		position: absolute;
+		width: 100%;
+		height: 80px;
+		left: 0;
+		bottom: 0;
+		background: url(../img/hav_fram.svg);
 	}
 }
