@@ -1754,7 +1754,7 @@ html, body {
   position: absolute;
   top: 365px;
   left: 0;
-  z-index: 1; }
+  z-index: 2; }
   .biogas-70 .back {
     position: absolute;
     top: 79px;
@@ -1856,7 +1856,7 @@ html, body {
 
 .biogas-37 {
   position: absolute;
-  top: 1282px;
+  top: 1382px;
   left: 0;
   z-index: 1; }
   .biogas-37 .back {
@@ -2001,9 +2001,113 @@ html, body {
   to {
     -webkit-transform: scale(0.8); } }
 
+.bucket-line {
+  position: absolute;
+  top: 580px;
+  left: 90px;
+  height: 820px;
+  width: 5px; }
+  .bucket-line .line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #666;
+    z-index: 1; }
+  .bucket-line .bucket {
+    position: absolute;
+    top: -100px;
+    left: -33px; }
+    .bucket-line .bucket img {
+      -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-animation: 1.5s ease-in-out swingBucket infinite alternate;
+      animation: 1.5s ease-in-out swingBucket infinite alternate; }
+    .bucket-line .bucket.bucket-1 {
+      -webkit-animation: 10s 2.5s linear moveBucket infinite;
+      animation: 10s 2.5s linear moveBucket infinite; }
+    .bucket-line .bucket.bucket-2 {
+      -webkit-animation: 10s 5s linear moveBucket infinite;
+      animation: 10s 5s linear moveBucket infinite; }
+      .bucket-line .bucket.bucket-2 img {
+        -webkit-animation: 1.5s ease-in-out swingBucketAltDir infinite alternate;
+        animation: 1.5s ease-in-out swingBucketAltDir infinite alternate; }
+    .bucket-line .bucket.bucket-3 {
+      -webkit-animation: 10s 7.5s linear moveBucket infinite;
+      animation: 10s 7.5s linear moveBucket infinite; }
+    .bucket-line .bucket.bucket-4 {
+      -webkit-animation: 10s 10s linear moveBucket infinite;
+      animation: 10s 10s linear moveBucket infinite; }
+      .bucket-line .bucket.bucket-4 img {
+        -webkit-animation: 1.5s ease-in-out swingBucketAltDir infinite alternate;
+        animation: 1.5s ease-in-out swingBucketAltDir infinite alternate; }
+  .bucket-line .bucket-knob {
+    position: absolute;
+    top: -104px;
+    left: -3px;
+    height: 12px;
+    width: 12px;
+    background: #B1B1B1;
+    border-radius: 50%;
+    z-index: 1; }
+    .bucket-line .bucket-knob.knob-1 {
+      -webkit-animation: 10s 2.5s linear moveBucket infinite;
+      animation: 10s 2.5s linear moveBucket infinite; }
+    .bucket-line .bucket-knob.knob-2 {
+      -webkit-animation: 10s 5s linear moveBucket infinite;
+      animation: 10s 5s linear moveBucket infinite; }
+    .bucket-line .bucket-knob.knob-3 {
+      -webkit-animation: 10s 7.5s linear moveBucket infinite;
+      animation: 10s 7.5s linear moveBucket infinite; }
+    .bucket-line .bucket-knob.knob-4 {
+      -webkit-animation: 10s 10s linear moveBucket infinite;
+      animation: 10s 10s linear moveBucket infinite; }
+
+@keyframes moveBucket {
+  0% {
+    transform: translateY(0); }
+
+  100% {
+    transform: translateY(940px); } }
+
+@-webkit-keyframes moveBucket {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  100% {
+    -webkit-transform: translateY(940px); } }
+
+@keyframes swingBucket {
+  0% {
+    transform: rotate(30deg); }
+
+  100% {
+    transform: rotate(-30deg); } }
+
+@-webkit-keyframes swingBucket {
+  0% {
+    -webkit-transform: rotate(30deg); }
+
+  100% {
+    -webkit-transform: rotate(-30deg); } }
+
+@keyframes swingBucketAltDir {
+  0% {
+    transform: rotate(-30deg); }
+
+  100% {
+    transform: rotate(30deg); } }
+
+@-webkit-keyframes swingBucketAltDir {
+  0% {
+    -webkit-transform: rotate(-30deg); }
+
+  100% {
+    -webkit-transform: rotate(30deg); } }
+
 .biogas-pipe {
   position: absolute;
-  top: 1516px;
+  top: 1616px;
   left: 240px;
   height: 40px;
   width: 160px;
@@ -2013,7 +2117,7 @@ html, body {
 
 .biogas-wash {
   position: absolute;
-  top: 1284px;
+  top: 1384px;
   left: 360px;
   z-index: 1; }
   .biogas-wash img {
@@ -2267,7 +2371,7 @@ html, body {
   right: 40px;
   left: auto;
   opacity: 0;
-  width: 630px; }
+  width: 570px; }
 
 #text4 .left-col,
 #text4 .right-col {
