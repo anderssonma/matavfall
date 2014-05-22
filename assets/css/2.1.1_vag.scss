@@ -27,6 +27,9 @@
 		margin-left: -90px;
 		margin-top: -20px;
 		z-index: 1;
+		&.hide {
+			display: none;
+		}
 	}
 	.road {
 		position: absolute;

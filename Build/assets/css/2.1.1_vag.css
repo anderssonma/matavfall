@@ -25,6 +25,8 @@
     margin-left: -90px;
     margin-top: -20px;
     z-index: 1; }
+    #truck-road #wastebag.hide {
+      display: none; }
   #truck-road .road {
     position: absolute;
     top: 0;
