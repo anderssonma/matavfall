@@ -1,66 +1,52 @@
 $(document).ready(function() {
 
- 	var windowHeightSplit = $(window).height() / 2;
-	$('#stage-2').css('height', windowHeightSplit * 2);
-
-	var widthOffset = $(window).width() / 2 + 100;
-
 	var controller = $.superscrollorama();
-	var scrollDuration = 500; 
-	
-	var handplocka_step_1 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
-	var basket_vikt = TweenMax.to($('#basket-vikt'), 5, {css:{left: '+=' + widthOffset}, ease:Expo.easeOut});
-	var matavfallstunna_container = TweenMax.fromTo($('#matavfallstunna-container'), 5, {css:{left: (widthOffset - 200) , top: $(window).height()}, immediateRender:true, ease:Expo.easeIn}, {css:{top: (windowHeightSplit - 300)}, ease:Expo.easeOut});
-	var matavfallstunna_lock = TweenMax.to($('#matavfallstunna-lock'), 6, {css:{transform: 'rotate(50deg)'}, ease:Power3.easeOut});
-	
-	var handplocka_step_2 = TweenMax.to($('#hand-plocka'), 5, {css:{left: '-1521'}, ease:Expo.easeOut});
-	var basket_vikt_1 = TweenMax.to($('#basket-vikt'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
 
-	var matavfallstunna_lock_1 = TweenMax.to($('#matavfallstunna-lock'), 3, {css:{transform: 'rotate(-42deg)', top: - 40}, ease:Power3.easeOut});
-	var matavfallstunna = TweenMax.to($('#matavfallstunna'), 6, {css:{top : 10}, ease:Expo.easeOut});
-
-	var matavfallstunna_container_1 = TweenMax.to($('#matavfallstunna-container'), 5, {css:{left: 250, width: 60, top:'+=290', marginTop:0}, ease:Expo.easeOut});
-	var avfallsbil = TweenMax.to($('#avfallsbil'), 5, {css:{left: '+=' + (widthOffset + 150) }, ease:Expo.easeOut});
+	var text1Out = TweenMax.to($('#text-intro'), 4, {css:{top: '-20%'}, delay: 2, ease:Expo.easeOut});
 	
-	var matavfallstunna_container_2 = TweenMax.to($('#matavfallstunna-container'), 6, {css:{transform: 'rotate(50deg)', left: '+=40'}, ease:Power3.easeOut});
-	var matavfallstunna_lock_2 = TweenMax.to($('#matavfallstunna-lock'), 6, {css:{transform: 'rotate(50deg)'}, ease:Power3.easeOut});
+	var hand1In = TweenMax.to($('#hand'), 2, {css:{left: '50%'}, ease:Expo.easeOut});
+	var waste1In = TweenMax.to($('#wastebag'), 2, {css:{left: '50%'}, ease:Expo.easeOut});
 
-	var matavfallstunna_container_3 = TweenMax.to($('#matavfallstunna-container'), 6, {css:{transform: 'rotate(-20deg)', left: '-=300', opacity: 0 }, ease:Power3.easeOut});
-	var avfallsbil_1 = TweenMax.to($('#avfallsbil'), 5, {css:{top: 220, width: '-=300', left: 240}, ease:Expo.easeOut});
-	var vagbana = TweenMax.to($('#vagbana-container'), 5, {css:{opacity: 1}, ease:Expo.easeOut});
-	var avfallsbil_2 = TweenMax.to($('#avfallsbil'), 5, {css:{left: '+=840'}, ease:Expo.easeOut});
-	var avfallsbil_3 = TweenMax.to($('#avfallsbil'), 20, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'+=250', y:'+=70'} , {x:'+=250', y:'+=400'} , {x:'-=350', y:'+=490'}] , autoRotate:0}, ease: Linear.ease});
-	var avfallsbil_4 = TweenMax.to($('#avfallsbil'), 20, {bezier:{curviness:1, values:[{x:'+=0', y:'+=0'}, {x:'-=250', y:'+=40'} , {x:'-=250', y:'+=200'} , {x:'+=50', y:'+=260'},  {x:'+=140', y:'+=460'}, {x:'+=140', y:'+=650'}] , autoRotate:0}, ease: Linear.ease});
-	var avfallsbil_5 = TweenMax.to($('#avfallsbil'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
-	
-	var vagbana_flytta_up = TweenMax.to($('#vagbana-container'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
-	var avfallsbil_flytta_up = TweenMax.to($('#avfallsbil'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
-	var vagbana_flytta_up_1 = TweenMax.to($('#vagbana-container'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
-	var avfallsbil_flytta_up_1 = TweenMax.to($('#avfallsbil'), 5, {css:{top:'-=500'}, ease:Expo.easeOut});
-	var forbehandlingsandlagning = TweenMax.to($('#forbehandlingsandlagning'), 5, {css:{transform: 'scale(7)'}, ease:Power3.easeOut});
-	
-	var del_1 = TweenMax.fromTo($('#fakta2-1 .del-1'), 1, {css:{opacity: 0,left: (widthOffset)}, immediateRender:true, ease:Expo.easeIn}, {css:{opacity: 1 }, ease:Expo.easeOut});
-	var del_1_1 = TweenMax.to($('#fakta2-1 .del-1'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
+	var hand1Out = TweenMax.to($('#hand'), 2, {css:{left: '-1530px'}, ease:Expo.easeIn});
+	var waste1Drop = TweenMax.to($('#wastebag'), 2, {css:{top: '50%', transform: 'scale(0.35)'}, ease:Expo.easeIn});
 
-	var del_2 = TweenMax.fromTo($('#fakta2-1 .del-2'), 1, {css:{opacity: 0,left: (widthOffset)}, immediateRender:true, ease:Expo.easeIn}, {css:{opacity: 1 }, ease:Expo.easeOut});
-	var del_2_1 = TweenMax.to($('#fakta2-1 .del-2'), 1, {css:{opacity: 0}, ease:Expo.easeOut});
+	var caskBox = TweenMax.to($('#matavfallstunna-container'), 2, {css:{bottom: '50%'}, ease:Expo.easeOut});
+	var caskLid = TweenMax.to($('#matavfallstunna-lock'), 1, {css:{transform: 'rotate(50deg)'}, ease:Expo.easeOut});
+	var caskBoxSmall = TweenMax.to($('#matavfallstunna-container'), 2, {css:{transform: 'scale(0.25)', marginLeft: '-300px', marginBottom: '-95px'}, ease:Expo.easeOut});
+	var caskLidClose = TweenMax.to($('#matavfallstunna-lock'), 2, {css:{transform: 'rotate(-40deg)'}, ease:Expo.easeOut,
+		onStart: function() {
+			$('#wastebag').hide();
+		},
+		onReverseComplete: function() {
+			$('#wastebag').show();
+		}
+	});
+	var house1In = TweenMax.to($('#house-1'), 2, {css:{top: '50%', opacity: 1}, ease:Expo.easeOut});
+	var roadIn = TweenMax.to($('#road-bio'), 2, {css:{opacity: '1', top: '-100px'}, ease:Expo.easeOut});
 
-	controller.pin($('#stage-2'), 10000, {
+	var truckIn = TweenMax.to($('#waste-truck'), 2, {css:{top: '50%'}, ease:Expo.easeOut});
+	var text2In = TweenMax.to($('#text-twoboxes'), 2, {css:{top: '50%', opacity: 1}, ease:Expo.easeOut});
+
+	// PART X: DRIVE
+	// =============
+	var moveRoad = TweenMax.to($('#road-bio'), 4, {css:{ top: '-190%'}, ease:Expo.easeInOut});
+	var house1Out = TweenMax.to($('#house-1'), 2, {css:{top: '-50%'}, ease:Expo.easeIn});
+	var caskBoxOut = TweenMax.to($('#matavfallstunna-container'), 2, {css:{bottom: '150%'}, ease:Expo.easeIn});
+	var text2Out = TweenMax.to($('#text-twoboxes'), 2, {css:{top: '-50%'}, ease:Expo.easeIn});
+	var factoryIn = TweenMax.to($('#bio-factory'), 2, {css:{bottom: 0}, delay: 2, ease:Expo.easeOut});
+
+	var truckOut = TweenMax.to($('#waste-truck'), 4, {css:{top: '100%'}, ease:Expo.easeOut});
+
+	controller.pin($('#truck-road'), 4000, {
 		anim: (new TimelineLite())
-			.add([handplocka_step_1, basket_vikt])
-			.add([matavfallstunna_container, matavfallstunna_lock])
-			.add([handplocka_step_2])
-			.add(del_1)
-			.add([matavfallstunna_container_1 , matavfallstunna_lock_1, matavfallstunna, basket_vikt_1])
-			.add([avfallsbil, matavfallstunna_container_2, matavfallstunna_lock_2, del_1_1, del_2 ])
-			.add([avfallsbil_1, matavfallstunna_container_3, vagbana, del_2_1])
-			.add([avfallsbil_2])
-			.add([avfallsbil_3])
-			.add([avfallsbil_flytta_up, vagbana_flytta_up])
-			.add([avfallsbil_4])
-			.add([avfallsbil_flytta_up_1, vagbana_flytta_up_1])
-			.add(avfallsbil_5)
-			.add(forbehandlingsandlagning)
+			.add(text1Out)
+			.add([hand1In, waste1In])
+			.add([hand1Out, waste1Drop, caskBox, caskLid])
+			.add([caskBoxSmall, caskLidClose, house1In, roadIn])
+			.add([truckIn, text2In])
+			// PART X: DRIVE
+			.add([moveRoad, house1Out, caskBoxOut, text2Out, factoryIn])
+			.add([truckOut])
 	});
 
 });
