@@ -54,6 +54,16 @@
 			</div>
 		</div>
 
+		<div id="welcome" class="welcome">
+			<div class="inner-box">
+				<h1><span>Välkommen till</span>Smart Med Mat</h1>
+				<p>För att kunna göra biogas, värme och el av matresterna som du sorterar måste matavfallet behandlas i en biogasanläggning. Det som händer där är samma sak som sker i din mage och i kons mage när bakterier äter där.</p>
+				<div class="circle">STÄNG</div>
+			</div>
+		</div>
+
+		<button class="temp" onclick="localStorage.removeItem('lastVisit')">RESET</button>
+
 		<div id="loader" class="loader">
 			<img src="<!-- @path preloader -->">
 			<h6 id="progress-text"></h6>
@@ -75,6 +85,6 @@
 	<!-- @javascript jquery.superscrollorama preloadjs-0.4.0.min jquery.nicescroll.min -->
 
 	<!-- OUR FILES -->
-	<!-- @javascript modernizr.min app.helpers app -->
+	<!-- @javascript modernizr.min jquery.cookie.min app.helpers app -->
 </body>
 </html>

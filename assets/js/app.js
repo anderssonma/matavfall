@@ -205,10 +205,59 @@ var CSSHandler = {
 };
 
 
+var INTROMSG = {
+	HTML5Storage: false,
+	createDateString: function() {
+		var today = new Date();
+		return today.getDate() + (today.getMonth() + 1) + today.getFullYear();
+	},
+	getLastVisit: function() {
+		return localStorage.getItem('lastVisit');
+	},
+	setLastVisit: function() {
+		localStorage.setItem('lastVisit', this.createDateString());
+	},
+	isFirstVisit: function() {
+		return localStorage.getItem('lastVisit') === null ? true : false;
+	},
+	close: function() {
+		// SET THE LAST VISIT ON OVERLAY CLOSE
+		// THEN WE KNOW THAT THE USER HAVE AT LEAST SEEN IT ONCE
+		this.setLastVisit();
+		$('#welcome').hide();
+	},
+
+
+	init: function() {
+		$('#welcome').on('click', function() {
+			$('#welcome').off('click').hide();
+		})
+		this.HTML5Storage = (supportsLocalStorage()) ? true : false;
+		if (supportsLocalStorage()) {
+			//alert(this.isFirstVisit());
+			if (!this.isFirstVisit()) {
+				this.close();
+			} else {
+				this.setLastVisit();
+				if (this.getLastVisit() + 10 < this.createDateString()) {
+					// FIRST VISIT IN 10 DAYS, SHOW OVERLAY?
+				} else {
+					// HIDE OVERLAY
+					// this.close();
+				}
+			}
+		} else {
+			// COOKIES?
+		}
+	}
+}
+
+
 // START LOADING
 // =============
 
 window.addEventListener('DOMContentLoaded', function() {
+	INTROMSG.init();
 	ELEM.setup();
 	WORLD.setup();
 	PAGER.init();

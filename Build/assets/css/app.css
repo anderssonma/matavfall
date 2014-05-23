@@ -171,6 +171,43 @@ body.scroll .loader {
 body.scroll #content {
   height: 100%; }
 
+.welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 20; }
+  .welcome .inner-box {
+    width: 600px;
+    margin: 0 auto;
+    height: 100%;
+    background: #333;
+    padding: 100px; }
+  .welcome h1 {
+    text-align: center;
+    color: #FFF;
+    font-size: 50px; }
+    .welcome h1 span {
+      font-family: 'Lato';
+      font-size: 20px;
+      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px; }
+  .welcome p {
+    color: #FFF; }
+  .welcome .circle {
+    margin: 200px auto 0;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    background: #DC5753;
+    color: #FFF; }
+
 .nav {
   position: fixed;
   top: 50%;
