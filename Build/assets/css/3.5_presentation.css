@@ -1,0 +1,313 @@
+body {
+  background: #63A272; }
+
+#image-counter {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  color: #FFF;
+  -webkit-font-smoothing: antialiased; }
+
+#layer-help {
+  position: absolute;
+  top: 150px;
+  right: 20px;
+  color: #FFF;
+  opacity: 0;
+  transition: 0.2s all;
+  -webkit-font-smoothing: antialiased; }
+  #layer-help.show {
+    opacity: 1;
+    transition: 0.2s 0.15s all; }
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 130px;
+  width: 200px;
+  background: #36895B; }
+  .controls .pager {
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #FFF;
+    word-spacing: 4pxfdrop;
+    font-size: 12px;
+    border-bottom: 1px solid #77AD7C;
+    background: #36895B;
+    position: relative; }
+    .controls .pager .left, .controls .pager .right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50px;
+      font-weight: bold;
+      color: #286644;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      cursor: pointer; }
+      .controls .pager .left:hover, .controls .pager .right:hover {
+        background: #286644;
+        color: #FFF; }
+    .controls .pager .left {
+      left: 0;
+      border-right: 1px solid #77AD7C; }
+    .controls .pager .right {
+      right: 0;
+      border-left: 1px solid #77AD7C; }
+  .controls .image-mode,
+  .controls .word-mode {
+    float: left;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #77AD7C;
+    cursor: pointer; }
+    .controls .image-mode:hover,
+    .controls .word-mode:hover {
+      color: #CCC;
+      background: #286644;
+      color: #FFF; }
+  .controls.images-active .image-mode {
+    color: #FFF; }
+  .controls.words-active .word-mode {
+    color: #FFF; }
+  .controls .image-mode {
+    border-right: 1px solid #77AD7C; }
+
+.tools {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  font-size: 12px;
+  height: 40px;
+  width: 200px;
+  background: #36895B; }
+  .tools div {
+    float: left;
+    margin: 0 0 0 0;
+    text-align: center;
+    color: #FFF;
+    line-height: 40px;
+    width: calc(100%/3);
+    border-left: 1px solid #63A272;
+    cursor: pointer; }
+    .tools div:first-child {
+      border-left: none; }
+    .tools div:hover {
+      background: #286644; }
+
+.color-swatches {
+  position: absolute;
+  right: 20px;
+  bottom: 20px; }
+  .color-swatches .color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #333;
+    float: left;
+    margin-left: 8px;
+    border: 2px solid transparent;
+    cursor: pointer; }
+    .color-swatches .color.green {
+      background: #77AD7C; }
+    .color-swatches .color.blue {
+      background: #D2ECF8; }
+    .color-swatches .color.red {
+      background: #E7BEA9; }
+    .color-swatches .color.beige {
+      background: #F4F4E3; }
+    .color-swatches .color.selected, .color-swatches .color:hover {
+      border-color: #FFF; }
+
+.presentation {
+  position: relative;
+  height: 810px;
+  width: 1000px;
+  margin: 60px auto;
+  overflow: hidden;
+  border-radius: 5px; }
+  .presentation #drop-zone {
+    margin-top: 130px;
+    height: 680px;
+    width: 100%;
+    border-radius: 0 0 5px 5px; }
+  .presentation .image-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 130px;
+    background: #36895B;
+    border-right: 1px solid #77AD7C;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; }
+    .presentation .image-drawer .draggable {
+      height: 40px;
+      margin: 16px 0 0 15px;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none; }
+    .presentation .image-drawer .ui-draggable-dragging {
+      z-index: 9999; }
+  .presentation .word-drawer {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #444; }
+    .presentation .word-drawer img {
+      display: block;
+      float: left;
+      margin: 18px 0 0 15px; }
+  .presentation .moveable-img {
+    position: absolute;
+    height: 40px; }
+  .presentation .toast {
+    position: absolute;
+    top: 150px;
+    right: -200px;
+    background: #FFF;
+    border-radius: 3px;
+    padding: 10px;
+    color: #666;
+    transition: 0.35s right; }
+    .presentation .toast.show {
+      right: 20px; }
+  .presentation .overlay {
+    position: absolute;
+    top: 50%;
+    background: #63A272;
+    border-radius: 3px;
+    opacity: 0;
+    left: -9999px;
+    -webkit-transition: 0.35s opacity, 0s 0.35s left; }
+    .presentation .overlay.show {
+      opacity: 1;
+      left: 50%;
+      -webkit-transition: 0.35s opacity; }
+    .presentation .overlay h6 {
+      color: #FFF;
+      font-size: 20px;
+      margin: 40px 0 0 40px;
+      -webkit-font-smoothing: antialiased; }
+    .presentation .overlay p {
+      color: #FFF;
+      font-size: 14px;
+      padding: 0 40px; }
+    .presentation .overlay button {
+      width: 50%;
+      border: none;
+      float: left;
+      background: #36895B;
+      padding: 18px 0;
+      font-family: 'Lato';
+      color: #FFF;
+      border-radius: 0 0 3px 0;
+      -webkit-font-smoothing: antialiased; }
+      .presentation .overlay button.first {
+        border-right: 1px solid #63A272;
+        border-radius: 0 0 0 3px; }
+      .presentation .overlay button:hover {
+        background: #286644; }
+    .presentation .overlay .bg-picker {
+      padding: 0 20px 16px;
+      overflow: hidden; }
+      .presentation .overlay .bg-picker .bg-choice {
+        width: 75px;
+        height: 75px;
+        background: #36895B;
+        float: left;
+        margin: 20px;
+        border-radius: 3px;
+        border: 3px solid transparent;
+        transition: 0.35s border-color; }
+        .presentation .overlay .bg-picker .bg-choice.bg-1 {
+          border-color: #77AD7C;
+          background: #77AD7C; }
+        .presentation .overlay .bg-picker .bg-choice.bg-2 {
+          border-color: #D2ECF8;
+          background: #D2ECF8; }
+        .presentation .overlay .bg-picker .bg-choice.bg-3 {
+          border-color: #E7BEA9;
+          background: #E7BEA9; }
+        .presentation .overlay .bg-picker .bg-choice.bg-4 {
+          border-color: #F4F4E3;
+          background: #F4F4E3; }
+        .presentation .overlay .bg-picker .bg-choice:hover, .presentation .overlay .bg-picker .bg-choice.selected {
+          border-color: #FFF; }
+    .presentation .overlay.import {
+      width: 500px;
+      margin: -10px 0 0 -250px; }
+      .presentation .overlay.import button {
+        margin-top: 34px; }
+    .presentation .overlay.intro {
+      width: 500px;
+      margin: -100px 0 0 -250px; }
+      .presentation .overlay.intro button {
+        width: 100%;
+        border-radius: 0 0 3px 3px; }
+
+.draggable-melon {
+  background: url(../img/melon.svg) no-repeat center;
+  background-size: cover; }
+
+#drop-zone {
+  background: #77AD7C; }
+  #drop-zone.bg-1 {
+    background: url(../img/pres_bg1.svg) #77ad7c no-repeat center;
+    background-size: 1000px 600px;
+    transition: 0.35s background-color; }
+  #drop-zone.bg-2 {
+    background: url(../img/pres_bg2.svg) #d2ecf8 no-repeat bottom center;
+    background-size: 1000px 600px;
+    transition: 0.35s background-color; }
+  #drop-zone.bg-3 {
+    background: url(../img/pres_bg3.svg) #e7bea9 no-repeat center;
+    background-size: 1000px 600px;
+    transition: 0.35s background-color; }
+  #drop-zone.bg-4 {
+    background: url(../img/pres_bg4.svg) #f4f4e3 no-repeat center;
+    background-size: 1000px 600px;
+    transition: 0.35s background-color; }
+
+#drop-zone .ui-draggable {
+  cursor: move;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+  #drop-zone .ui-draggable:hover {
+    opacity: 0.75; }
+
+@media print {
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: #77AD7C; }
+
+  .no-print-pres {
+    display: none; }
+
+  .image-drawer,
+  .word-drawer,
+  #layer-help,
+  #image-counter,
+  .controls,
+  .tools {
+    display: none; }
+
+  .presentation {
+    height: 680px;
+    background: #77AD7C;
+    margin: 0; }
+    .presentation #drop-zone {
+      margin-top: 0; }
+      .presentation #drop-zone .ui-draggable {
+        margin-top: -106px; } }
