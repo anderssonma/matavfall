@@ -142,10 +142,9 @@ PRES.changeImageType = function(clickedMode) {
 	if (this.mode === clickedMode) {
 		return false;
 	}
-	$('.presentation .image-drawer').empty();
+	$('#presentation .image-drawer').empty().removeClass().addClass('image-drawer mode-' + clickedMode);
 	this.mode = (this.mode === 'images') ? 'words' : 'images';
-	console.log(this.mode);
-	$('.presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
+	$('#presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
 	$('#presentation .image-drawer').append(this.createImageDOMString());
 	this.setupDraggables('.image-drawer .draggable');
 };

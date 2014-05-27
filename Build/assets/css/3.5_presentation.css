@@ -153,6 +153,10 @@ body {
       -moz-user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none; }
+    .presentation .image-drawer.mode-words {
+      padding-top: 18px; }
+      .presentation .image-drawer.mode-words .draggable {
+        margin-top: -8px; }
     .presentation .image-drawer .ui-draggable-dragging {
       z-index: 9999; }
   .presentation .word-drawer {

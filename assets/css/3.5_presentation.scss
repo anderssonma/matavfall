@@ -181,6 +181,12 @@ body {
 		  -webkit-user-select: none;
 		  -ms-user-select: none;
 		}
+		&.mode-words {
+			padding-top: 18px;
+			.draggable {
+				margin-top: -8px;
+			}
+		}
 		.ui-draggable-dragging {
 			z-index: 9999;
 		}

@@ -45,6 +45,27 @@ var imageData = {
 		}, {
 			src: 'ord_biodrivmedel.svg',
 			height: 50
+		},
+		{
+			src: 'ord_biogas.svg',
+			height: 50
+		}, {
+			src: 'ord_biodrivmedel.svg',
+			height: 50
+		},
+		{
+			src: 'ord_biogas.svg',
+			height: 50
+		}, {
+			src: 'ord_biodrivmedel.svg',
+			height: 50
+		},
+		{
+			src: 'ord_biogas.svg',
+			height: 50
+		}, {
+			src: 'ord_biodrivmedel.svg',
+			height: 50
 		}
 	]
 };
