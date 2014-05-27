@@ -130,7 +130,8 @@ PRES.closeIntroOverlay = function(self) {
 PRES.createImageDOMString = function(pageNum) { // MAKE A LONG STRING WITH ALL IMAGES IN SET
 	var imageString = '';
 	//var imageSet = shuffleArray(imageData[PRES.mode].concat(imageData[PRES.mode]));
-	var imageSet = imageData[PRES.mode].concat(imageData[PRES.mode]);
+	// COPY THE ARRAY, REVERSE IT THEN CONCATENATE ANOTHER INSTANCE ONTO IT
+	var imageSet = imageData[PRES.mode].slice().reverse().concat(imageData[PRES.mode]);
 	imageSet.forEach(function(item) {
 		imageString = imageString + '<img class="draggable" src="' + '/assets/img/' + item.src + '" data-height="' + item.height + '">';
 	});
