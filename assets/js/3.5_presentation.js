@@ -104,7 +104,13 @@ PRES.getSavedData = function(self) {
 	$('#presentation #drop-zone').append(savedData.data).addClass(savedData.background);
 	$('#drop-zone .ui-draggable').draggable({
 		cursor: 'move',
-		containment: 'parent'
+		containment: '#remove-wrap',
+		start: function() {
+			$('#presentation').addClass('show-delete');
+		},
+		stop: function() {
+			$('#presentation').removeClass('show-delete');
+		}
 	}).hover(function() {
 		PRES.imageControls(this);
 	}, function() {
@@ -170,6 +176,7 @@ PRES.setupDraggables = function(selector) {
 	$('#presentation ' + selector).draggable({
 		cursor: 'move',
 		revert: function(valid) {
+			console.log(valid);
 			if (!valid) {
 				PRES.removePlaceholder();
 			}
@@ -292,7 +299,13 @@ PRES.setup = function() {
 				PRES.removeImageControls(this);
 			}).draggable({
 				cursor: 'move',
-				containment: 'parent'
+				containment: '#remove-wrap',
+				start: function() {
+					$('#presentation').addClass('show-delete');
+				},
+				stop: function() {
+					$('#presentation').removeClass('show-delete');
+				}
 			});
 
 			PRES.removePlaceholder();
@@ -300,6 +313,19 @@ PRES.setup = function() {
 
 		}
 		});
+
+	$('#trash-can').droppable({
+		hoverClass: 'remove',
+		drop: function(ev, ui) {
+			console.log(ui.draggable[0])
+			if (typeof $(ui.draggable[0]).attr('data-off-left') !== 'undefined'){
+				return false;
+			}
+			$(ui.draggable[0]).addClass('shrink').fadeOut(250, function() {
+				$(this).remove();
+			});
+		}
+	});
 };
 
 $(document).ready(function() {

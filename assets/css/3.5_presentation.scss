@@ -121,7 +121,7 @@ body {
 .color-swatches {
 	position: absolute;
 	right: -150px;
-	bottom: 20px;
+	bottom: 40px;
 	transition: 0.35s right;
 	.color {
 		width: 30px;
@@ -151,21 +151,25 @@ body {
 	}
 }
 .editing .color-swatches {
-	right: 20px;
+	right: 0px;
 }
 
 .presentation {
 	position: relative;
-	height: 810px;
+	height: 900px;
 	width: 1000px;
 	margin: 60px auto;
 	overflow: hidden;
 	border-radius: 5px;
+	.remove-wrap {
+		margin-top: 130px;
+		height: 770px;
+		width: 100%;
+	}
 	#drop-zone {
 		margin-top: 130px;
 		height: 680px;
 		width: 100%;
-		border-radius: 0 0 5px 5px;
 	}
 	.image-drawer {
 		position: absolute;
@@ -362,6 +366,48 @@ body {
   -ms-user-select: none;
 	&:hover {
 		opacity: 0.75;
+	}
+}
+
+.trash-can {	
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -170px;
+	width: 340px;
+	border-radius: 0 0 5px 5px;
+	height: 90px;
+	background: #63A272;
+	border: 1px dashed #63A272;
+	border-top: none;
+	color: #36895B;
+	font-size: 18px;
+	line-height: 74px;
+	text-align: center;
+	transition: 0.35s all;
+	&.remove {
+		color: #FFF !important;
+		border-color: #36895B;
+		border-top: none;
+		line-height: 90px;
+		
+	}
+}
+.show-delete .trash-can {
+	display: block;
+	color: #36895B;
+}
+
+.shrink {
+	-webkit-animation: deleteAnim 1s;
+}
+
+@-webkit-keyframes deleteAnim {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(0);
 	}
 }
 
