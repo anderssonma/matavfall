@@ -62,9 +62,9 @@
 		<div class="image-mode" onclick="PRES.changeImageType('images');">Bilder</div>
 		<div class="word-mode" onclick="PRES.changeImageType('words');">Ord</div>
 		<div class="pager">
-			<div class="left">&larr;</div>
-			1 &nbsp;&nbsp;av&nbsp;&nbsp; 2
-			<div class="right">&rarr;</div>
+			<div onclick="PRES.changeImagePage(-1);" class="left">&larr;</div>
+			<div id="page-count">1&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;1</div>
+			<div onclick="PRES.changeImagePage(1);" class="right">&rarr;</div>
 		</div>
 	</div>
 
@@ -80,10 +80,10 @@
 	<div id="pres-toast" class="toast">SPARAT!</div>
 
 	<div id="color-swatches" class="color-swatches">
-		<div onclick="PRES.changeBg(this, 'bg-1');" class="color green selected"></div>
-		<div onclick="PRES.changeBg(this, 'bg-2');" class="color blue"></div>
-		<div onclick="PRES.changeBg(this, 'bg-3');" class="color red"></div>
-		<div onclick="PRES.changeBg(this, 'bg-4');" class="color beige"></div>
+		<div onclick="PRES.changeBg(this, 'bg-1');" class="color bg-1"></div>
+		<div onclick="PRES.changeBg(this, 'bg-2');" class="color bg-2"></div>
+		<div onclick="PRES.changeBg(this, 'bg-3');" class="color bg-3"></div>
+		<div onclick="PRES.changeBg(this, 'bg-4');" class="color bg-4"></div>
 	</div>
 
 	<div id="overlay-import" class="overlay import">

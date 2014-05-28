@@ -4,9 +4,13 @@ body {
 #image-counter {
   position: absolute;
   top: 150px;
-  left: 20px;
+  left: -150px;
   color: #FFF;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  transition: 0.35s left; }
+
+.editing #image-counter {
+  left: 20px; }
 
 #layer-help {
   position: absolute;
@@ -26,16 +30,16 @@ body {
   right: 0;
   height: 130px;
   width: 200px;
-  background: #36895B; }
+  background: #FFF; }
   .controls .pager {
     height: 40px;
     text-align: center;
     line-height: 40px;
-    color: #FFF;
+    color: #CCC;
     word-spacing: 4pxfdrop;
     font-size: 12px;
     border-bottom: 1px solid #77AD7C;
-    background: #36895B;
+    background: #FFF;
     position: relative; }
     .controls .pager .left, .controls .pager .right {
       position: absolute;
@@ -43,7 +47,7 @@ body {
       bottom: 0;
       width: 50px;
       font-weight: bold;
-      color: #286644;
+      color: #77AD7C;
       font-size: 18px;
       -webkit-font-smoothing: antialiased;
       cursor: pointer; }
@@ -72,9 +76,9 @@ body {
       background: #286644;
       color: #FFF; }
   .controls.images-active .image-mode {
-    color: #FFF; }
+    color: #77AD7C; }
   .controls.words-active .word-mode {
-    color: #FFF; }
+    color: #77AD7C; }
   .controls .image-mode {
     border-right: 1px solid #77AD7C; }
 
@@ -85,12 +89,12 @@ body {
   font-size: 12px;
   height: 40px;
   width: 200px;
-  background: #36895B; }
+  background: #FFF; }
   .tools div {
     float: left;
     margin: 0 0 0 0;
     text-align: center;
-    color: #FFF;
+    color: #77AD7C;
     line-height: 40px;
     width: calc(100%/3);
     border-left: 1px solid #63A272;
@@ -102,8 +106,9 @@ body {
 
 .color-swatches {
   position: absolute;
-  right: 20px;
-  bottom: 20px; }
+  right: -150px;
+  bottom: 20px;
+  transition: 0.35s right; }
   .color-swatches .color {
     width: 30px;
     height: 30px;
@@ -113,16 +118,19 @@ body {
     margin-left: 8px;
     border: 2px solid transparent;
     cursor: pointer; }
-    .color-swatches .color.green {
+    .color-swatches .color.bg-1 {
       background: #77AD7C; }
-    .color-swatches .color.blue {
+    .color-swatches .color.bg-2 {
       background: #D2ECF8; }
-    .color-swatches .color.red {
+    .color-swatches .color.bg-3 {
       background: #E7BEA9; }
-    .color-swatches .color.beige {
+    .color-swatches .color.bg-4 {
       background: #F4F4E3; }
     .color-swatches .color.selected, .color-swatches .color:hover {
       border-color: #FFF; }
+
+.editing .color-swatches {
+  right: 20px; }
 
 .presentation {
   position: relative;
@@ -142,7 +150,7 @@ body {
     left: 0;
     width: 800px;
     height: 130px;
-    background: #36895B;
+    background: #FFF;
     border-right: 1px solid #77AD7C;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -152,11 +160,12 @@ body {
       margin: 16px 0 0 15px;
       -moz-user-select: none;
       -webkit-user-select: none;
-      -ms-user-select: none; }
+      -ms-user-select: none;
+      cursor: move; }
     .presentation .image-drawer.mode-words {
       padding-top: 18px; }
       .presentation .image-drawer.mode-words .draggable {
-        margin-top: -8px; }
+        margin: -8px -12px 0 0; }
     .presentation .image-drawer .ui-draggable-dragging {
       z-index: 9999; }
   .presentation .word-drawer {
@@ -314,4 +323,4 @@ body {
     .presentation #drop-zone {
       margin-top: 0; }
       .presentation #drop-zone .ui-draggable {
-        margin-top: -106px; } }
+        margin-top: -130px; } }

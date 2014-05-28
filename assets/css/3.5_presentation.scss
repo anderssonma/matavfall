@@ -5,9 +5,13 @@ body {
 #image-counter {
 	position: absolute;
 	top: 150px;
-	left: 20px;
+	left: -150px;
 	color: #FFF;
 	-webkit-font-smoothing: antialiased;
+	transition: 0.35s left;
+}
+.editing #image-counter {
+	left: 20px;
 }
 
 #layer-help {
@@ -30,16 +34,16 @@ body {
 	right: 0;
 	height: 130px;
 	width: 200px;
-	background: #36895B;
+	background: #FFF;
 	.pager {
 		height: 40px;
 		text-align: center;
 		line-height: 40px;
-		color: #FFF;
+		color: #CCC;
 		word-spacing: 4pxfdrop;
 		font-size: 12px;
 		border-bottom: 1px solid #77AD7C;
-		background: #36895B;
+		background: #FFF;
 		position: relative;
 		.left, .right {
 			position: absolute;
@@ -47,7 +51,7 @@ body {
 			bottom: 0;
 			width: 50px;
 			font-weight: bold;
-			color: #286644;
+			color: #77AD7C;
 			font-size: 18px;
 			-webkit-font-smoothing: antialiased;
 			cursor: pointer;
@@ -82,10 +86,10 @@ body {
 		}
 	}
 	&.images-active .image-mode {
-		color: #FFF;
+		color: #77AD7C;
 	}
 	&.words-active .word-mode {
-		color: #FFF;
+		color: #77AD7C;
 	}
 	.image-mode {
 		border-right: 1px solid #77AD7C;
@@ -99,12 +103,12 @@ body {
 	font-size: 12px;
 	height: 40px;
 	width: 200px;
-	background: #36895B;
+	background: #FFF;
 	div {
 		float: left;
 		margin: 0 0 0 0;
 		text-align: center;
-		color: #FFF;
+		color: #77AD7C;
 		line-height: 40px;
 		width: calc(100%/3);
 		border-left: 1px solid #63A272;
@@ -120,8 +124,9 @@ body {
 
 .color-swatches {
 	position: absolute;
-	right: 20px;
+	right: -150px;
 	bottom: 20px;
+	transition: 0.35s right;
 	.color {
 		width: 30px;
 		height: 30px;
@@ -131,16 +136,16 @@ body {
 		margin-left: 8px;
 		border: 2px solid transparent;
 		cursor: pointer;
-		&.green {
+		&.bg-1 {
 			background: #77AD7C;
 		}
-		&.blue {
+		&.bg-2 {
 			background: #D2ECF8;
 		}
-		&.red {
+		&.bg-3 {
 			background: #E7BEA9;
 		}
-		&.beige {
+		&.bg-4 {
 			background: #F4F4E3;
 		}
 		&.selected,
@@ -148,6 +153,9 @@ body {
 			border-color: #FFF;
 		}
 	}
+}
+.editing .color-swatches {
+	right: 20px;
 }
 
 .presentation {
@@ -169,7 +177,7 @@ body {
 		left: 0;
 		width: 800px;
 		height: 130px;
-		background: #36895B;
+		background: #FFF;
 		border-right: 1px solid #77AD7C;
 		-moz-user-select: none;
 		-webkit-user-select: none;
@@ -180,11 +188,12 @@ body {
 			-moz-user-select: none;
 		  -webkit-user-select: none;
 		  -ms-user-select: none;
+		  cursor: move;
 		}
 		&.mode-words {
 			padding-top: 18px;
 			.draggable {
-				margin-top: -8px;
+				margin: -8px -12px 0 0;
 			}
 		}
 		.ui-draggable-dragging {
@@ -385,7 +394,7 @@ body {
 		#drop-zone {
 			margin-top: 0;
 			.ui-draggable {
-				margin-top: -106px;
+				margin-top: -130px;
 			}
 		}
 	}

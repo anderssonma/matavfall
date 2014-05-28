@@ -23,7 +23,8 @@ var shuffleArray = function(array) {
 var PRES = {
 	imgRemaining: 50,
 	imgAllowed: 50,
-	mode: 'images',
+	imgArrayPage: 0,
+	mode: 'images'
 };
 
 PRES.removePlaceholder = function() {
@@ -111,6 +112,8 @@ PRES.getSavedData = function(self) {
 		PRES.removeImageControls(this);
 	});
 	this.imgRemaining = this.imgRemaining - countImg;
+	$('#presentation .color-swatches .' + savedData.background).addClass('selected');
+	$('#presentation').addClass('editing');
 	$('#image-counter').text('BILDER KVAR: ' + this.imgRemaining);
 };
 
@@ -124,6 +127,8 @@ PRES.closeIntroOverlay = function(self) {
 	$(self).parent().removeClass('show');
 	var selectedBg = $('#overlay-intro .selected').attr('class').match(/bg-[0-9]/)[0];
 	$('#drop-zone').addClass(selectedBg);
+	$('#presentation .color-swatches .' + selectedBg).addClass('selected');
+	$('#presentation').addClass('editing');
 };
 
 
@@ -131,7 +136,7 @@ PRES.createImageDOMString = function(pageNum) { // MAKE A LONG STRING WITH ALL I
 	var imageString = '';
 	//var imageSet = shuffleArray(imageData[PRES.mode].concat(imageData[PRES.mode]));
 	// COPY THE ARRAY, REVERSE IT THEN CONCATENATE ANOTHER INSTANCE ONTO IT
-	var imageSet = imageData[PRES.mode].slice().reverse().concat(imageData[PRES.mode]);
+	var imageSet = imageData[PRES.mode][PRES.imgArrayPage]; //.slice().reverse().concat(imageData[PRES.mode]);
 	imageSet.forEach(function(item) {
 		imageString = imageString + '<img class="draggable" src="' + '/assets/img/' + item.src + '" data-height="' + item.height + '">';
 	});
@@ -146,7 +151,21 @@ PRES.changeImageType = function(clickedMode) {
 	this.mode = (this.mode === 'images') ? 'words' : 'images';
 	$('#presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
 	$('#presentation .image-drawer').append(this.createImageDOMString());
+	$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 	this.setupDraggables('.image-drawer .draggable');
+};
+
+PRES.changeImagePage = function(num) {
+	if ((this.imgArrayPage + num < 0) || (this.imgArrayPage + num > imageData[this.mode].length - 1)) {
+		console.log('OUT OF BOUNDS');
+		return false;
+	} else {
+		console.log('IN BOUNDS');
+		this.imgArrayPage = this.imgArrayPage + num;
+		$('#presentation .image-drawer').empty().append(this.createImageDOMString);
+		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
+		this.setupDraggables('.image-drawer .draggable');
+	}
 };
 
 PRES.setupDraggables = function(selector) {
