@@ -45,7 +45,17 @@
 /* MOVIE */
 .cinema .movie { /* 840px x 490px är maxupplösning på skärmen (Det som garanterat syns). Behövs några extra px i sidled/höjdled */
 	position: relative;
-	background: #333;
+	background: #EC628D;
+	height: 100%;
+}
+.cinema .movie .video {
+	width: 840px;
+	margin-left: 60px;
+}
+.cinema .movie .video::cue {
+	font-family: 'Lato';
+	background: rgba(255,255,255,.25);
+	line-height: 1.5em;
 }
 
 .cinema .play-button {
