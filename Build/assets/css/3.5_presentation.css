@@ -28,7 +28,6 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  height: 130px;
   width: 200px;
   background: #FFF; }
   .controls .pager {
@@ -38,7 +37,7 @@ body {
     color: #CCC;
     word-spacing: 4pxfdrop;
     font-size: 12px;
-    border-bottom: 1px solid #77AD7C;
+    border-bottom: 1px solid #63A272;
     background: #FFF;
     position: relative; }
     .controls .pager .left, .controls .pager .right {
@@ -52,14 +51,13 @@ body {
       -webkit-font-smoothing: antialiased;
       cursor: pointer; }
       .controls .pager .left:hover, .controls .pager .right:hover {
-        background: #286644;
-        color: #FFF; }
+        color: #333; }
     .controls .pager .left {
       left: 0;
-      border-right: 1px solid #77AD7C; }
+      border-right: 1px solid #63A272; }
     .controls .pager .right {
       right: 0;
-      border-left: 1px solid #77AD7C; }
+      border-left: 1px solid #63A272; }
   .controls .image-mode,
   .controls .word-mode {
     float: left;
@@ -68,19 +66,17 @@ body {
     text-align: center;
     line-height: 50px;
     color: rgba(0, 0, 0, 0.25);
-    border-bottom: 1px solid #77AD7C;
+    border-bottom: 1px solid #63A272;
     cursor: pointer; }
     .controls .image-mode:hover,
     .controls .word-mode:hover {
-      color: #CCC;
-      background: #286644;
-      color: #FFF; }
+      color: #333 !important; }
   .controls.images-active .image-mode {
-    color: #77AD7C; }
+    color: #63A272; }
   .controls.words-active .word-mode {
-    color: #77AD7C; }
+    color: #63A272; }
   .controls .image-mode {
-    border-right: 1px solid #77AD7C; }
+    border-right: 1px solid #63A272; }
 
 .tools {
   position: absolute;
@@ -88,9 +84,9 @@ body {
   right: 0;
   font-size: 12px;
   height: 40px;
-  width: 200px;
-  background: #FFF; }
+  width: 200px; }
   .tools div {
+    background: #FFF;
     float: left;
     margin: 0 0 0 0;
     text-align: center;
@@ -102,7 +98,7 @@ body {
     .tools div:first-child {
       border-left: none; }
     .tools div:hover {
-      background: #286644; }
+      color: #333; }
 
 .color-swatches {
   position: absolute;
