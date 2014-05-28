@@ -64,7 +64,6 @@ PRES.pickBg = function(self) {
 	$(self).addClass('selected');
 };
 PRES.changeBg = function(self, bgNum) {
-	console.log(bgNum);
 	$('#color-swatches .color').removeClass('selected');
 	$(self).addClass('selected');
 	$('#presentation #drop-zone').removeClass(function (i, css) {
@@ -132,7 +131,7 @@ PRES.closeIntroOverlay = function(self) {
 };
 
 
-PRES.createImageDOMString = function(pageNum) { // MAKE A LONG STRING WITH ALL IMAGES IN SET
+PRES.createImageDOMString = function() { // MAKE A LONG STRING WITH ALL IMAGES IN SET
 	var imageString = '';
 	//var imageSet = shuffleArray(imageData[PRES.mode].concat(imageData[PRES.mode]));
 	// COPY THE ARRAY, REVERSE IT THEN CONCATENATE ANOTHER INSTANCE ONTO IT
@@ -147,6 +146,7 @@ PRES.changeImageType = function(clickedMode) {
 	if (this.mode === clickedMode) {
 		return false;
 	}
+	this.imgArrayPage = 0;
 	$('#presentation .image-drawer').empty().removeClass().addClass('image-drawer mode-' + clickedMode);
 	this.mode = (this.mode === 'images') ? 'words' : 'images';
 	$('#presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
@@ -157,12 +157,10 @@ PRES.changeImageType = function(clickedMode) {
 
 PRES.changeImagePage = function(num) {
 	if ((this.imgArrayPage + num < 0) || (this.imgArrayPage + num > imageData[this.mode].length - 1)) {
-		console.log('OUT OF BOUNDS');
 		return false;
 	} else {
-		console.log('IN BOUNDS');
 		this.imgArrayPage = this.imgArrayPage + num;
-		$('#presentation .image-drawer').empty().append(this.createImageDOMString);
+		$('#presentation .image-drawer').empty().append(this.createImageDOMString());
 		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 		this.setupDraggables('.image-drawer .draggable');
 	}
