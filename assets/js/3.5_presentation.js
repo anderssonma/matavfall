@@ -299,13 +299,7 @@ PRES.setup = function() {
 				PRES.removeImageControls(this);
 			}).draggable({
 				cursor: 'move',
-				containment: '#remove-wrap',
-				start: function() {
-					$('#presentation').addClass('show-delete');
-				},
-				stop: function() {
-					$('#presentation').removeClass('show-delete');
-				}
+				containment: '#remove-wrap'
 			});
 
 			PRES.removePlaceholder();

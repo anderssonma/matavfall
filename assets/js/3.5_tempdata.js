@@ -102,12 +102,12 @@ var imageData = {
 			}, {
 				src: 'ord_matavfall.svg',
 				height: 50
-			}, {
-				src: 'ord_matavfallspase.svg',
-				height: 50
 			}
 		], [ // PAGE 2
 			{
+				src: 'ord_matavfallspase.svg',
+				height: 50
+			}, {
 				src: 'ord_mikroorganismer.svg',
 				height: 50
 			}, {
@@ -139,6 +139,62 @@ var imageData = {
 				height: 50
 			}, {
 				src: 'ord_samhalle.svg',
+				height: 50
+			}, {
+				src: 'ord_slurry.svg',
+				height: 50
+			}, {
+				src: 'ord_slanga.svg',
+				height: 50
+			}, {
+				src: 'ord_slosa.svg',
+				height: 50
+			}, {
+				src: 'ord_sopor.svg',
+				height: 50
+			}, {
+				src: 'ord_soptipp.svg',
+				height: 50
+			}, {
+				src: 'ord_sortera.svg',
+				height: 50
+			}, {
+				src: 'ord_spara.svg',
+				height: 50
+			}, {
+				src: 'ord_sverige.svg',
+				height: 50
+			}
+		], [ // PAGE 3
+			{
+				src: 'ord_tanka.svg',
+				height: 50
+			}, {
+				src: 'ord_temperatur.svg',
+				height: 50
+			}, {
+				src: 'ord_transport.svg',
+				height: 50
+			}, {
+				src: 'ord_tvafacksbil.svg',
+				height: 50
+			}, {
+				src: 'ord_utslapp.svg',
+				height: 50
+			}, {
+				src: 'ord_varlden.svg',
+				height: 50
+			}, {
+				src: 'ord_varme.svg',
+				height: 50
+			}, {
+				src: 'ord_vaxa.svg',
+				height: 50
+			}, {
+				src: 'ord_ata.svg',
+				height: 50
+			}, {
+				src: 'ord_ateranvanda.svg',
 				height: 50
 			}
 		]

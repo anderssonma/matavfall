@@ -162,9 +162,10 @@ body {
       -ms-user-select: none;
       cursor: move; }
     .presentation .image-drawer.mode-words {
-      padding-top: 18px; }
+      padding-top: 18px;
+      padding-right: 18px; }
       .presentation .image-drawer.mode-words .draggable {
-        margin: -8px -12px 0 0; }
+        margin: -8px -12px 0 8px; }
     .presentation .image-drawer .ui-draggable-dragging {
       z-index: 9999; }
   .presentation .word-drawer {
@@ -257,12 +258,12 @@ body {
           border-color: #FFF; }
     .presentation .overlay.import {
       width: 500px;
-      margin: -10px 0 0 -250px; }
+      margin: -50px 0 0 -250px; }
       .presentation .overlay.import button {
         margin-top: 34px; }
     .presentation .overlay.intro {
       width: 500px;
-      margin: -100px 0 0 -250px; }
+      margin: -150px 0 0 -250px; }
       .presentation .overlay.intro button {
         width: 100%;
         border-radius: 0 0 3px 3px; }
@@ -316,13 +317,9 @@ body {
   transition: 0.35s all; }
   .trash-can.remove {
     color: #FFF !important;
-    border-color: #36895B;
+    border-color: #FFF;
     border-top: none;
     line-height: 90px; }
-
-.show-delete .trash-can {
-  display: block;
-  color: #36895B; }
 
 .shrink {
   -webkit-animation: deleteAnim 1s; }
