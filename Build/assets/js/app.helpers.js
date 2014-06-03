@@ -1,3 +1,24 @@
+var isMobile = {
+  Android: function() {
+      return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+  },
+  any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+  }
+};
+
 // DISABLE ALL SCROLLING TEMPORARILY WITHOUT SETTING OVERFLOW:HIDDEN (WHICH BREAKS SCROLLORAMA)
 var UserScrollDisabler = function() {
 	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -53,7 +74,11 @@ var ResourceLoader = function(type, url, callback) {
 		case 'js':
 			el = doc.createElement('script');
 			if (callback) {
-				el.addEventListener('load', function (e) { callback(e); }, false);
+				if (document.addEventListener) {
+					el.addEventListener('load', function (e) { callback(e); }, false);
+				} else {
+					el.attachEvent('onload', function (e) { callback(e); });
+				}
 			}
 			el.src = url;
 			doc.getElementsByTagName('body')[0].appendChild(el);
@@ -61,7 +86,11 @@ var ResourceLoader = function(type, url, callback) {
 		case 'css':
 			el = doc.createElement('link');
 			if (callback) {
-				el.addEventListener('load', function (e) { callback(e); }, false);
+				if (document.addEventListener) {
+					el.addEventListener('load', function (e) { callback(e); }, false);
+				} else {
+					el.attachEvent('onload', function (e) { callback(e); });
+				}
 			}
 			el.href= url;
 			el.rel='stylesheet';

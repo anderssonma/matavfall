@@ -256,11 +256,26 @@ var INTROMSG = {
 // START LOADING
 // =============
 
-window.addEventListener('DOMContentLoaded', function() {
-	INTROMSG.init();
-	ELEM.setup();
-	WORLD.setup();
-	PAGER.init();
+$(document).ready(function() {
+	if (isMobile.any() && document.addEventListener) {
+		INTROMSG.init();
+		ELEM.setup();
+		WORLD.setup();
+		PAGER.init();
+	} else {
+		ELEM.setup();
+		console.log('MOBILE');
+		INTROMSG.close();
+		ELEM.loader.hide();
+		$('#pager').addClass('page-1-active')
+		$.get('mobile.html', function(data) {
+			ELEM.content.append(data);
+			ResourceLoader('css', '/assets/css/mobile.css', function() {
+				// DONE
+			});
+		});
+	}
+	
 });
 
 /*
