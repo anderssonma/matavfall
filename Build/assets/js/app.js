@@ -257,7 +257,7 @@ var INTROMSG = {
 // =============
 
 $(document).ready(function() {
-	if (isMobile.any() && document.addEventListener) {
+	if (!isMobile.any() && document.addEventListener) {
 		INTROMSG.init();
 		ELEM.setup();
 		WORLD.setup();

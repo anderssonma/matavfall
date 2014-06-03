@@ -290,19 +290,22 @@ body.scroll #content {
     bottom: 0;
     background: url(../img/hav_fram.svg); }
 
-.page-1 .city-left {
+.pager .city-left {
   position: absolute;
-  top: -78px;
+  bottom: 178px;
   right: 50%;
-  width: 50%;
+  left: 0;
   height: 100px;
   background: #4CB37F;
   border-top: 26px solid #3B8655; }
-.page-1 .city-right {
+.pager .city-right {
   position: absolute;
-  top: -87px;
+  bottom: 178px;
   left: 50%;
-  width: 50%;
+  right: 0;
   height: 100px;
-  background: #4CB37F;
-  border-top: 32px solid #3B8655; }
+  background: #786855;
+  border-top: 26px solid #635646; }
+
+.mobile-intro {
+  display: none; }

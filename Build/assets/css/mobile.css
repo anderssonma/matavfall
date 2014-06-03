@@ -6,7 +6,8 @@
   bottom: 0;
   color: #FFF;
   z-index: 1;
-  background: #333; }
+  background: #333;
+  display: block; }
   .mobile-intro .inner {
     padding: 20% 10%; }
 

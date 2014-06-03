@@ -341,23 +341,27 @@ body.scroll {
 	}
 }
 
-.page-1 {
+.pager {
 	.city-left {
 		position: absolute;
-		top: -78px;
+		bottom: 178px;
 		right: 50%;
-		width: 50%;
+		left: 0;
 		height: 100px;
 		background: #4CB37F;
 		border-top: 26px solid #3B8655;
 	}
 	.city-right {
 		position: absolute;
-		top: -87px;
+		bottom: 178px;
 		left: 50%;
-		width: 50%;
+		right: 0;
 		height: 100px;
-		background: #4CB37F;
-		border-top: 32px solid #3B8655;
+		background: #786855;
+		border-top: 26px solid #635646;
 	}
+}
+
+.mobile-intro {
+	display: none;
 }
