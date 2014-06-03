@@ -676,7 +676,10 @@
 #stamp-1 #tl-text-01 {
   bottom: 460px;
   left: 0;
-  opacity: 1; }
+  opacity: 1;
+  width: 500px; }
+  #stamp-1 #tl-text-01 h2 {
+    margin: 6px 0 14px; }
 #stamp-1 #tl-text-02 {
   right: 0;
   bottom: 40px;
@@ -690,11 +693,15 @@
   bottom: 460px;
   left: 0; }
 
+#stamp-2 #tl-text-1 {
+  width: 460px; }
 #stamp-2 #tl-bg-6 {
   position: absolute;
   left: 20px;
   bottom: 182px; }
 
+.stamp-3 #tl-text-3 {
+  width: 480px; }
 .stamp-3 .bg-1 {
   position: absolute;
   left: 70px;
