@@ -1,5 +1,14 @@
-body {
+.pres-wrap {
 	background: #63A272;
+	padding: 200px 0;
+	h1 {
+		text-align: center;
+		color: #F8F8F8;
+		-webkit-font-smoothing: antialiased;
+		-mos-osx-font-smoothing: greyscale;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+	}
 }
 
 #image-counter {
@@ -34,6 +43,7 @@ body {
 	right: 0;
 	width: 200px;
 	background: #FFF;
+	border-radius: 0 5px 0 0;
 	.pager {
 		height: 40px;
 		text-align: center;
@@ -158,9 +168,8 @@ body {
 	position: relative;
 	height: 900px;
 	width: 1000px;
-	margin: 60px auto;
+	margin: 0 auto;
 	overflow: hidden;
-	border-radius: 5px;
 	.remove-wrap {
 		margin-top: 130px;
 		height: 770px;
@@ -170,6 +179,7 @@ body {
 		margin-top: 130px;
 		height: 680px;
 		width: 100%;
+		border-radius: 0 0 5px 5px;
 	}
 	.image-drawer {
 		position: absolute;
@@ -179,6 +189,7 @@ body {
 		height: 130px;
 		background: #FFF;
 		border-right: 3px solid #77AD7C;
+		border-radius: 5px 0 0 0;
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		-ms-user-select: none;
@@ -385,6 +396,9 @@ body {
 	line-height: 74px;
 	text-align: center;
 	transition: 0.35s all;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	&.remove {
 		color: #FFF !important;
 		border-color: #FFF;

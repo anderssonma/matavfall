@@ -1,5 +1,13 @@
-body {
-  background: #63A272; }
+.pres-wrap {
+  background: #63A272;
+  padding: 200px 0; }
+  .pres-wrap h1 {
+    text-align: center;
+    color: #F8F8F8;
+    -webkit-font-smoothing: antialiased;
+    -mos-osx-font-smoothing: greyscale;
+    text-transform: uppercase;
+    margin-bottom: 50px; }
 
 #image-counter {
   position: absolute;
@@ -29,7 +37,8 @@ body {
   top: 0;
   right: 0;
   width: 200px;
-  background: #FFF; }
+  background: #FFF;
+  border-radius: 0 5px 0 0; }
   .controls .pager {
     height: 40px;
     text-align: center;
@@ -132,9 +141,8 @@ body {
   position: relative;
   height: 900px;
   width: 1000px;
-  margin: 60px auto;
-  overflow: hidden;
-  border-radius: 5px; }
+  margin: 0 auto;
+  overflow: hidden; }
   .presentation .remove-wrap {
     margin-top: 130px;
     height: 770px;
@@ -142,7 +150,8 @@ body {
   .presentation #drop-zone {
     margin-top: 130px;
     height: 680px;
-    width: 100%; }
+    width: 100%;
+    border-radius: 0 0 5px 5px; }
   .presentation .image-drawer {
     position: absolute;
     top: 0;
@@ -151,6 +160,7 @@ body {
     height: 130px;
     background: #FFF;
     border-right: 3px solid #77AD7C;
+    border-radius: 5px 0 0 0;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none; }
@@ -313,7 +323,10 @@ body {
   font-size: 18px;
   line-height: 74px;
   text-align: center;
-  transition: 0.35s all; }
+  transition: 0.35s all;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
   .trash-can.remove {
     color: #FFF !important;
     border-color: #FFF;

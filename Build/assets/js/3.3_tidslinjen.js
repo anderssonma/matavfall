@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 
 	// PART 5
-	var dirtGreen = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#54B171'}, delay: 1,
+	var dirtGreen = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#63A272'}, delay: 1,
 		onComplete: function() {
 			$('#stamp-5').addClass('animate');
 		},
@@ -216,7 +216,7 @@ $(document).ready(function() {
 	var treesIn = TweenMax.to($('#trees'), 1.4, {css: {transform: 'translateY(-215px)'}});
 	// var text11In = TweenMax.to($('#tl-text-11'), 1, {css: {transform: 'translateY(-100px)', opacity: 1}});
 
-	var dirtGreenReverse = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#54B171'},
+	var dirtGreenReverse = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#63A272'},
 		// MAKE SURE THE GROUND IS GREEN ON REVERSE
 		// ALSO ACTS AS A SPACER SO THAT WE CAN TOGGLE STAGE-7 ANIMATIONS LIKE THE REST
 		onComplete: function() {

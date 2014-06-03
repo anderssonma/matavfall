@@ -4,7 +4,6 @@
 	height: 100%;
 	background: #9FCDC3;
 	overflow: hidden;
-	margin-bottom: 320px;
 	/*
 	#timeline-bg {
 		height: 100%;
@@ -608,11 +607,18 @@
 	bottom: 214px;
 }
 
-
-#tl-bg-1, #tl-bg-2, #tl-bg-3, #tl-bg-4, #tl-bg-5, #tl-bg-6, .bg-1, .bg-2 {
-	display: none;
+.timeline {
+	#tl-bg-1,
+	#tl-bg-2,
+	#tl-bg-3,
+	#tl-bg-4,
+	#tl-bg-5,
+	#tl-bg-6,
+	.bg-1,
+	.bg-2 {
+		display: none;
+	}
 }
-
 
 #house-1 {
 	position: absolute;
