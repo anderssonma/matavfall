@@ -14,7 +14,6 @@ $(document).ready(function() {
 		prevSlide: function() {
 			var currentEl = $('#slideshow input:checked');
 			currentEl.prop('checked', false);
-			console.log(currentEl);
 			if (currentEl.prev('input').length > 0) {
 				currentEl.prev().prop('checked', true);
 			} else {

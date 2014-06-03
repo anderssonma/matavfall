@@ -378,7 +378,6 @@ body {
 	width: 340px;
 	border-radius: 0 0 5px 5px;
 	height: 90px;
-	background: #63A272;
 	border: 1px dashed #63A272;
 	border-top: none;
 	color: #36895B;
@@ -391,6 +390,7 @@ body {
 		border-color: #FFF;
 		border-top: none;
 		line-height: 90px;
+		z-index: 9999;
 	}
 }
 

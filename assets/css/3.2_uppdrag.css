@@ -1,0 +1,70 @@
+.mission {
+  width: 100%;
+  background: #E55C46;
+  padding: 150px 0 200px;
+}
+.slideshow .slides article {
+  background: #EA694B;
+}
+.mission-container {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.mission h1 {
+  text-align: center;
+  color: #F8F8F8;
+  -webkit-font-smoothing: antialiased;
+  -mos-osx-font-smoothing: greyscale;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.mission h2 {
+  text-transform: uppercase;
+  width: 360px;
+  line-height: 1.25em;
+}
+
+
+/* SLIDESHOW OVERRIDES */
+.slideshow .slides h3 {
+  background: #E55C46;
+}
+.slideshow .nav {
+  border-color: transparent #EA694B transparent transparent;
+}
+.slideshow .nav-arrow {
+  border-color: transparent #E55C46 transparent transparent;
+}
+
+.slideshow .nav.nav-right {
+  border-color: transparent transparent transparent #EA694B;
+}
+.slideshow .nav-right .nav-arrow {
+  border-color: transparent transparent transparent #E55C46;
+}
+
+.slideshow p {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+
+/* === SLIDES CONTENT === */
+.mission-1 p {
+  width: 500px;
+}
+.mission-1 .old-groceries {
+  position: absolute;
+  right: 100px;
+  bottom: 80px;
+}
+
+.mission-2 p {
+  width: 380px;
+}
+.mission-2 .future-car {
+  position: absolute;
+  top: 170px;
+  right: 90px;
+}

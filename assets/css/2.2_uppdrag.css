@@ -24,8 +24,21 @@
 
 
 /* SLIDESHOW OVERRIDES */
+.slideshow .slides article {
+  background: #62B987;
+}
+.slideshow .slides h3 {
+  background: #51B07A;
+}
+.slideshow .nav {
+  border-color: transparent #62B987 transparent transparent;
+}
 .slideshow .nav-arrow {
   border-color: transparent #99D1B1 transparent transparent;
+}
+
+.slideshow .nav.nav-right {
+  border-color: transparent transparent transparent #62B987;
 }
 .slideshow .nav-right .nav-arrow {
   border-color: transparent transparent transparent #99D1B1;

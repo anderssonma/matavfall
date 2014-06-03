@@ -172,7 +172,9 @@ var CSSHandler = {
 		],
 		3: [ 
 			'/assets/css/3.1_agg.css',
-			'/assets/css/3.2_tidslinjen.css'
+			'/assets/css/uppdrag.css',
+			'/assets/css/3.2_uppdrag.css',
+			'/assets/css/3.3_tidslinjen.css'
 		]
 	},
 	done: function() {
