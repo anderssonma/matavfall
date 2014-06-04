@@ -282,20 +282,51 @@ body.scroll #content {
       width: 100%;
       height: 8px;
       background: url(../img/vagstreck.svg) repeat-x; }
-  .seascape .sea-back {
-    position: absolute;
-    width: 100%;
-    height: 120px;
-    left: 0;
-    bottom: 0;
-    background: url(../img/hav_bak.svg); }
-  .seascape .sea-front {
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    left: 0;
-    bottom: 0;
-    background: url(../img/hav_fram.svg); }
+
+.sea-back {
+  position: absolute;
+  height: 120px;
+  left: -20%;
+  width: 140%;
+  bottom: 0;
+  background: url(../img/hav_bak.svg);
+  -webkit-animation: 4s 1.5s backWaves infinite linear; }
+
+.sea-front {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: -20%;
+  width: 140%;
+  bottom: 0;
+  background: url(../img/hav_fram.svg);
+  -webkit-animation: 4s frontWaves infinite linear; }
+
+@-webkit-keyframes backWaves {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  25% {
+    -webkit-transform: translate3d(10px, 7px, 0); }
+
+  50% {
+    -webkit-transform: translate3d(0, 14px, 0); }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 7px, 0); } }
+
+@-webkit-keyframes frontWaves {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  25% {
+    -webkit-transform: translate3d(10px, 12px, 0); }
+
+  50% {
+    -webkit-transform: translate3d(0, 24px, 0); }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 12px, 0); } }
 
 .pager .city-left {
   position: absolute;
