@@ -42,7 +42,7 @@
 	top: 0;
 	right: 0;
 	width: 200px;
-	background: #FFF;
+	background: #333;
 	border-radius: 0 5px 0 0;
 	.pager {
 		height: 40px;
@@ -51,7 +51,7 @@
 		color: #FFF;
 		font-size: 12px;
 		border-bottom: 3px solid #63A272;
-		background: #63A272;
+		background: #333;
 		position: relative;
 		.left, .right {
 			position: absolute;
@@ -63,7 +63,7 @@
 			font-size: 18px;
 			-webkit-font-smoothing: antialiased;
 			cursor: pointer;
-			background: #FFF;
+			background: #333;
 			&:hover {
 				color: #333;
 			}
@@ -84,7 +84,7 @@
 		height: 50px;
 		text-align: center;
 		line-height: 50px;
-		color: rgba(0,0,0,.25);
+		color: #63A272;
 		border-bottom: 1px solid #63A272;
 		cursor: pointer;
 		&:hover {
@@ -92,10 +92,10 @@
 		}
 	}
 	&.images-active .image-mode {
-		color: #63A272;
+		color: #FFF;
 	}
 	&.words-active .word-mode {
-		color: #63A272;
+		color: #FFF;
 	}
 	.image-mode {
 		border-right: 1px solid #63A272;
@@ -109,7 +109,7 @@
 	font-size: 12px;
 	height: 40px;
 	width: 200px;
-	background: #FFF;
+	background: #333;
 	div {
 		float: left;
 		margin: 0 0 0 0;
@@ -187,7 +187,7 @@
 		left: 0;
 		width: 800px;
 		height: 130px;
-		background: #FFF;
+		background: #333;
 		border-right: 3px solid #77AD7C;
 		border-radius: 5px 0 0 0;
 		-moz-user-select: none;
@@ -332,7 +332,7 @@
 		}
 		&.intro {
 			width: 500px;
-			margin: -150px 0 0 -250px; 
+			margin: -150px 0 0 -250px;
 			button {
 				width: 100%;
 				border-radius: 0 0 3px 3px;

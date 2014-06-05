@@ -2,41 +2,313 @@ var imageData = {
 	images: [
 		[ // PAGE 1
 			{
-				src: 'banan.svg',
+				src: 'agg_knackt.svg',
 				height: 100
 			}, {
-				src: 'tomat.svg',
+				src: 'anlaggning.svg',
+				height: 100
+			}, {
+				src: 'recept_applepaj.svg',
+				height: 130
+			}, {
+				src: 'appelskrutt.svg',
+				height: 130
+			}, {
+				src: 'apple_mogligt.svg',
+				height: 130
+			}, {
+				src: 'apple_gron.svg',
+				height: 130
+			}, {
+				src: 'aubergine.svg',
+				height: 130
+			}, {
+				src: 'avfallsbil-bla.svg',
+				height: 130
+			}, {
+				src: 'bananbat.svg',
+				height: 130
+			}, {
+				src: 'bananer.svg',
+				height: 130
+			}, {
+				src: 'bananskal.svg',
+				height: 130
+			}, {
+				src: 'batteri.svg',
+				height: 130
+			}, {
+				src: 'bensindunk.svg',
+				height: 130
+			}, {
+				src: 'bil_avgaser.svg',
+				height: 130
+			}, {
+				src: 'biljett.svg',
+				height: 130
+			}, {
+				src: 'biogas_tvatt.svg',
+				height: 130
+			}, {
+				src: 'biogas_37g.svg',
+				height: 130
+			}, {
+				src: 'biogas_anl.svg',
+				height: 130
+			}, {
+				src: 'biogasbil.svg',
+				height: 130
+			}, {
+				src: 'biogasbuss.svg',
+				height: 130
+			}
+		], [ // PAGE 2
+			{
+				src: 'biogasgodsel_lass.svg',
+				height: 100
+			}, {
+				src: 'blomma_gul.svg',
+				height: 100
+			}, {
+				src: 'blomma_lila.svg',
+				height: 100
+			}, {
+				src: 'blomma_rod.svg',
+				height: 100
+			}, {
+				src: 'brannbart_tunna.svg',
+				height: 100
+			}, {
+				src: 'burk.svg',
+				height: 100
+			}, {
+				src: 'domarklubba.svg',
+				height: 100
+			}, {
+				src: 'explotion.svg',
+				height: 100
+			}, {
+				src: 'fisk-hel.svg',
+				height: 100
+			}, {
+				src: 'fiskben_spel.svg',
+				height: 100
+			}, {
+				src: 'foder.svg',
+				height: 100
+			}, {
+				src: 'fralla.svg',
+				height: 100
+			}, {
+				src: 'metan.svg',
+				height: 100
+			}, {
+				src: 'pase_geggig.svg',
+				height: 100
+			}, {
+				src: 'gift.svg',
+				height: 100
+			}, {
+				src: 'glas_atervinning.svg',
+				height: 100
+			}, {
+				src: 'gran.svg',
+				height: 100
+			}, {
+				src: 'gris.svg',
+				height: 100
+			}, {
+				src: 'groda.svg',
 				height: 100
 			}, {
 				src: 'gurka_alt.svg',
-				height: 130
+				height: 100
+			}, {
+				src: 'pase_hallare.svg',
+				height: 100
+			}, {
+				src: 'hona.svg',
+				height: 100
+			}, {
+				src: 'stuga_beige_alt.svg',
+				height: 100
 			}, {
 				src: 'stuga_rod_alt.svg',
-				height: 130
+				height: 100
 			}, {
-				src: 'slurry.svg',
-				height: 130
+				src: 'stuga_vit_alt.svg',
+				height: 100
+			}
+		], [ // PAGE 3
+			{
+				src: 'hoghus_brun.svg',
+				height: 100
 			}, {
-				src: 'mikroorg_dod.svg',
-				height: 130
+				src: 'hoghus_rod_alt.svg',
+				height: 100
+			}, {
+				src: 'hoghus_vit_alt.svg',
+				height: 100
+			}, {
+				src: 'jordglob.svg',
+				height: 100
 			}, {
 				src: 'ko.svg',
-				height: 130
+				height: 100
 			}, {
-				src: 'jordglob_1.svg',
-				height: 130
+				src: 'konservburk.svg',
+				height: 100
 			}, {
-				src: 'gift.svg',
-				height: 130
+				src: 'korv.svg',
+				height: 100
 			}, {
-				src: 'forbjudet.svg',
-				height: 130
+				src: 'kotlett.svg',
+				height: 100
+			}, {
+				src: 'kycklingklubba.svg',
+				height: 100
+			}, {
+				src: 'kylskap-oppet-utan-lador.svg',
+				height: 100
+			}, {
+				src: 'lampa.svg',
+				height: 100
+			}, {
+				src: 'lastbil_bio.svg',
+				height: 100
+			}, {
+				src: 'lastbil_transport.svg',
+				height: 100
+			}, {
+				src: 'recept_makaroni.svg',
+				height: 100
+			}, {
+				src: 'matavfallspase_full_1.svg',
+				height: 100
+			}, {
+				src: 'matavfallstunna.svg',
+				height: 100
+			}, {
+				src: 'matbutik_bananer.svg',
+				height: 100
+			}, {
+				src: 'matkasse_1.svg',
+				height: 100
+			}, {
+				src: 'melon.svg',
+				height: 100
+			}, {
+				src: 'mikroorg_glad.svg',
+				height: 100
+			}, {
+				src: 'mikroorg_dod.svg',
+				height: 100
+			}, {
+				src: 'mjolk.svg',
+				height: 100
+			}, {
+				src: 'moglig_ost.svg',
+				height: 100
+			}, {
+				src: 'morot.svg',
+				height: 100
+			}, {
+				src: 'musslor.svg',
+				height: 100
+			}, {
+				src: 'mynt_5.svg',
+				height: 100
+			}, {
+				src: 'mynt_10.svg',
+				height: 100
+			}
+		], [ // PAGE 4
+			{
+				src: 'ostmacka.svg',
+				height: 100
+			}, {
+				src: 'palm.svg',
+				height: 100
+			}, {
+				src: 'pasta.svg',
+				height: 100
+			}, {
+				src: 'sack.svg',
+				height: 100
+			}, {
+				src: 'recept_pizza.svg',
+				height: 100
+			}, {
+				src: 'plastflaska.svg',
+				height: 100
+			}, {
+				src: 'raka.svg',
+				height: 100
+			}, {
+				src: 'rodlok.svg',
+				height: 100
+			}, {
+				src: 'sedel_100.svg',
+				height: 100
+			}, {
+				src: 'sedel_500.svg',
+				height: 100
+			}, {
+				src: 'slurry_kran.svg',
+				height: 100
+			}, {
+				src: 'sol.svg',
+				height: 100
+			}, {
+				src: 'sol_moln.svg',
+				height: 100
+			}, {
+				src: 'sol_moln_gra.svg',
+				height: 100
+			}, {
+				src: 'sopor.svg',
+				height: 100
 			}, {
 				src: 'syre.svg',
-				height: 130
+				height: 100
 			}, {
-				src: 'bil-bla.svg',
-				height: 130
+				src: 'sysav.svg',
+				height: 100
+			}, {
+				src: 'tallrik_agg.svg',
+				height: 100
+			}, {
+				src: 'tankstation_alt.svg',
+				height: 100
+			}, {
+				src: 'termometer_kallt.svg',
+				height: 100
+			}, {
+				src: 'termometer_varmt.svg',
+				height: 100
+			}, {
+				src: 'klocka.svg',
+				height: 100
+			}, {
+				src: 'tv.svg',
+				height: 100
+			}
+		], [ // PAGE 5
+			{
+				src: 'recept_mackor.svg',
+				height: 100
+			}, {
+				src: 'vaskskrapa-fylld.svg',
+				height: 100
+			}, {
+				src: 'vatten.svg',
+				height: 100
+			}, {
+				src: 'vete.svg',
+				height: 100
+			}, {
+				src: 'xbox.svg',
+				height: 100
 			}
 		]
 	],

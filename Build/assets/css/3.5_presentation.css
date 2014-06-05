@@ -37,7 +37,7 @@
   top: 0;
   right: 0;
   width: 200px;
-  background: #FFF;
+  background: #333;
   border-radius: 0 5px 0 0; }
   .controls .pager {
     height: 40px;
@@ -46,7 +46,7 @@
     color: #FFF;
     font-size: 12px;
     border-bottom: 3px solid #63A272;
-    background: #63A272;
+    background: #333;
     position: relative; }
     .controls .pager .left, .controls .pager .right {
       position: absolute;
@@ -58,7 +58,7 @@
       font-size: 18px;
       -webkit-font-smoothing: antialiased;
       cursor: pointer;
-      background: #FFF; }
+      background: #333; }
       .controls .pager .left:hover, .controls .pager .right:hover {
         color: #333; }
     .controls .pager .left {
@@ -74,16 +74,16 @@
     height: 50px;
     text-align: center;
     line-height: 50px;
-    color: rgba(0, 0, 0, 0.25);
+    color: #63A272;
     border-bottom: 1px solid #63A272;
     cursor: pointer; }
     .controls .image-mode:hover,
     .controls .word-mode:hover {
       color: #333 !important; }
   .controls.images-active .image-mode {
-    color: #63A272; }
+    color: #FFF; }
   .controls.words-active .word-mode {
-    color: #63A272; }
+    color: #FFF; }
   .controls .image-mode {
     border-right: 1px solid #63A272; }
 
@@ -94,7 +94,7 @@
   font-size: 12px;
   height: 40px;
   width: 200px;
-  background: #FFF; }
+  background: #333; }
   .tools div {
     float: left;
     margin: 0 0 0 0;
@@ -158,7 +158,7 @@
     left: 0;
     width: 800px;
     height: 130px;
-    background: #FFF;
+    background: #333;
     border-right: 3px solid #77AD7C;
     border-radius: 5px 0 0 0;
     -moz-user-select: none;

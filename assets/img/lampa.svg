@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="153.72px" height="263.695px" viewBox="0 0 153.72 263.695" enable-background="new 0 0 153.72 263.695"
+	 xml:space="preserve">
+<g id="Grön">
+	<g id="Ljus">
+	</g>
+	<g>
+		<polyline fill="none" stroke="#707173" stroke-width="6.5996" stroke-linejoin="round" stroke-miterlimit="10" points="
+			64.466,254.419 96.085,163.379 7.496,114.99 70.402,29.749 		"/>
+		<rect x="24.637" y="251.413" fill="#37B097" width="78.913" height="12.283"/>
+		<g>
+			<g>
+				
+					<rect x="56.407" y="5.124" transform="matrix(0.5892 -0.808 0.808 0.5892 16.5807 50.9495)" fill="#D9DADB" width="3.974" height="8.092"/>
+				
+					<rect x="56.815" y="5.927" transform="matrix(0.5892 -0.808 0.808 0.5892 15.6895 50.8044)" fill="#C6C7C8" width="1.986" height="8.092"/>
+			</g>
+			<path fill="#37B097" d="M100.886,21.477L71.426,0l-1.938,2.659l-2.163-1.576L53.429,20.146l2.162,1.576l-1.94,2.661L83.111,45.86
+				c-5.45,18.054,0.712,38.351,16.815,50.088l53.793-73.791C137.618,10.419,116.409,10.763,100.886,21.477z"/>
+			<path fill="#13A085" d="M126.823,59.055L99.927,95.949C83.824,84.211,77.662,63.914,83.111,45.86L53.65,24.383l1.94-2.661
+				l-2.162-1.576l6.948-9.532L126.823,59.055z"/>
+		</g>
+		<rect x="24.637" y="251.413" fill="#13A085" width="39.653" height="12.283"/>
+		<g>
+			<circle fill="#707173" cx="9.563" cy="112.285" r="9.563"/>
+			<path fill="#646567" d="M9.563,121.848c-5.281,0-9.563-4.282-9.563-9.563c0-5.282,4.282-9.563,9.563-9.563V121.848z"/>
+		</g>
+		<g>
+			<circle fill="#707173" cx="96.086" cy="163.616" r="9.564"/>
+			<path fill="#646567" d="M96.085,173.18c-5.281,0-9.563-4.283-9.563-9.564s4.282-9.563,9.563-9.563V173.18z"/>
+		</g>
+	</g>
+</g>
+<g id="Blå">
+</g>
+<g id="Vit">
+</g>
+</svg>
