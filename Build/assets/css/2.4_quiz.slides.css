@@ -5,19 +5,19 @@
   background: rgba(255, 255, 255, 0.1); }
 
 .quiz.page-2 .quiz-page, .quiz.page-2 .quiz-page-end {
-  background: #CA9989; }
+  background: #F4A592; }
 
 .quiz.page-2 .quiz-sidebar {
-  background: #CA9989; }
+  background: #F4A592; }
 
 .quiz.page-2 .quiz-sidebar button.btn {
-  color: #F8BCA9; }
+  color: #FAD2C4; }
 
 .quiz.page-2 .quiz-sidebar .quiz-page > span {
-  color: #F8BCA9; }
+  color: #FAD2C4; }
 
 .quiz.page-2 .quiz-target.valid {
-  background: #CA9989; }
+  background: #F4A592; }
 
 .quiz.page-2 #quiz-answers .subheader {
   color: #FFF; }
