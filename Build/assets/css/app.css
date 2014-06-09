@@ -286,49 +286,78 @@ body.scroll #content {
 
 .sea-back {
   position: absolute;
-  height: 120px;
+  height: 130px;
   left: -20%;
   width: 140%;
-  bottom: 0;
+  bottom: -140px;
   background: url(../img/hav_bak.svg);
-  -webkit-animation: 4s 1.5s backWaves infinite linear; }
+  -webkit-animation: 6s 0.1s wave infinite linear;
+  opacity: 0; }
 
 .sea-front {
   position: absolute;
   width: 100%;
-  height: 80px;
+  height: 90px;
   left: -20%;
   width: 140%;
-  bottom: 0;
+  bottom: -100px;
   background: url(../img/hav_fram.svg);
-  -webkit-animation: 4s frontWaves infinite linear; }
+  -webkit-animation: 4s wave2 infinite linear;
+  opacity: 0; }
 
+.pager[class*="-active"] .sea-back, .pager[class*="-active"] .sea-front {
+  opacity: 1;
+  bottom: -10px; }
+.pager[class*="-active"] .sea-back {
+  transition: 0.5s 1.15s opacity, 0.5s 1.15s bottom; }
+.pager[class*="-active"] .sea-front {
+  transition: 0.5s 1.35s opacity, 0.5s 1.35s bottom; }
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 6px, 0) rotateZ(0deg); }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 6px, 0) rotateZ(-360deg); } }
+
+@-webkit-keyframes wave2 {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 8px, 0) rotateZ(0deg); }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 8px, 0) rotateZ(-360deg); } }
+
+/*
 @-webkit-keyframes backWaves {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0); }
-
-  25% {
-    -webkit-transform: translate3d(10px, 7px, 0); }
-
-  50% {
-    -webkit-transform: translate3d(0, 14px, 0); }
-
-  75% {
-    -webkit-transform: translate3d(-10px, 7px, 0); } }
+	0%, 100% {
+		-webkit-transform: translate3d(0,0,0);
+	}
+	25% {
+		-webkit-transform: translate3d(10px, 7px,0);
+	}
+	50% {
+		-webkit-transform: translate3d(0, 14px,0);
+	}
+	75% {
+		-webkit-transform: translate3d(-10px, 7px,0);
+	}
+}
 
 @-webkit-keyframes frontWaves {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0); }
-
-  25% {
-    -webkit-transform: translate3d(10px, 12px, 0); }
-
-  50% {
-    -webkit-transform: translate3d(0, 24px, 0); }
-
-  75% {
-    -webkit-transform: translate3d(-10px, 12px, 0); } }
-
+	0%, 100% {
+		-webkit-transform: translate3d(0,0,0);
+	}
+	25% {
+		-webkit-transform: translate3d(10px, 12px,0);
+	}
+	50% {
+		-webkit-transform: translate3d(0, 24px,0);
+	}
+	75% {
+		-webkit-transform: translate3d(-10px, 12px,0);
+	}
+}
+*/
 .pager .city-left {
   position: absolute;
   bottom: 178px;
@@ -348,3 +377,16 @@ body.scroll #content {
 
 .mobile-intro {
   display: none; }
+
+.page-1 .citybus {
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+  z-index: 3;
+  margin-left: -170px; }
+.page-1 .family {
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+  margin-left: 170px;
+  z-index: 3; }

@@ -61,7 +61,7 @@ h1 {
 	//-webkit-font-smoothing: subpixel-antialiased !important;
 }
 .text-center {
-  text-align: center !important; 
+  text-align: center !important;
 }
 
 // FOUNDATION STUFF
@@ -89,7 +89,7 @@ h1 {
   padding-right: 0.9375em;
   width: 100%;
   */
-  float: left; 
+  float: left;
 }
 .large-4 {
   position: relative;
@@ -339,24 +339,59 @@ body.scroll {
 
 .sea-back {
 	position: absolute;
-	height: 120px;
+	height: 130px;
 	left: -20%;
 	width: 140%;
-	bottom: 0;
+	bottom: -140px;
 	background: url(../img/hav_bak.svg);
-	-webkit-animation: 4s 1.5s backWaves infinite linear;
+	-webkit-animation: 6s 0.1s wave infinite linear;
+  opacity: 0;
 }
 .sea-front {
 	position: absolute;
 	width: 100%;
-	height: 80px;
+	height: 90px;
 	left: -20%;
 	width: 140%;
-	bottom: 0;
+	bottom: -100px;
 	background: url(../img/hav_fram.svg);
-	-webkit-animation: 4s frontWaves infinite linear;
+	-webkit-animation: 4s wave2 infinite linear;
+  opacity: 0;
+
 }
 
+.pager[class*="-active"] {
+  .sea-back, .sea-front {
+    opacity: 1;
+    bottom: -10px;
+  }
+  .sea-back {
+    transition: 0.5s 1.15s opacity, 0.5s 1.15s bottom;
+  }
+  .sea-front {
+    transition: 0.5s 1.35s opacity, 0.5s 1.35s bottom;
+  }
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,6px,0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,6px,0) rotateZ(-360deg);
+  }
+}
+
+@-webkit-keyframes wave2 {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,8px,0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,8px,0) rotateZ(-360deg);
+  }
+}
+
+/*
 @-webkit-keyframes backWaves {
 	0%, 100% {
 		-webkit-transform: translate3d(0,0,0);
@@ -386,6 +421,7 @@ body.scroll {
 		-webkit-transform: translate3d(-10px, 12px,0);
 	}
 }
+*/
 
 .pager {
 	.city-left {
@@ -410,4 +446,21 @@ body.scroll {
 
 .mobile-intro {
 	display: none;
+}
+
+.page-1 {
+  .citybus {
+    position: absolute;
+    left: 50%;
+    bottom: 200px;
+    z-index: 3;
+    margin-left: -170px;
+  }
+  .family {
+    position: absolute;
+    left: 50%;
+    bottom: 200px;
+    margin-left: 170px;
+    z-index: 3;
+  }
 }
