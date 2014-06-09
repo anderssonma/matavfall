@@ -278,6 +278,20 @@ $(document).ready(function() {
 			});
 		});
 	}
+
+	var topIsAnimating = true;
+	$(window).on('scroll', function(e) {
+		var sTop = $(this).scrollTop();
+		var wHeight = $(window).height();
+		if (topIsAnimating && sTop > wHeight) { // STOP TOP ANIM
+			$('#pager').removeClass('pager-animate');
+			topIsAnimating = false;
+		} else if (!topIsAnimating && sTop < wHeight) { // RESTART TOP ANIM
+			$('#pager').addClass('pager-animate');
+			topIsAnimating = true;
+		}
+		// console.log($(this).scrollTop());
+	});
 	
 });
 
