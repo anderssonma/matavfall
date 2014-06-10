@@ -1,30 +1,11 @@
-var shuffleArray = function(array) {
-	var currentIndex = array.length,
-			temporaryValue,
-			randomIndex;
-
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
-
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
-
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
-
-	return array;
-};
-
-
 var PRES = {
 	imgRemaining: 50,
 	imgAllowed: 50,
 	imgArrayPage: 0,
-	mode: 'images'
+	mode: 'images',
+	undoMode: false,
+	htmlBackup: '',
+	bgBackup: ''
 };
 
 PRES.removePlaceholder = function() {
@@ -214,33 +195,29 @@ PRES.setupDraggables = function(selector) {
 	});
 };
 
-var undoMode = false;
-var lastBoard = {
-	html: '',
-	bg: ''
-};
-
 PRES.removeBoardImages = function() {
-	lastBoard.html = $('#presentation #drop-zone').html();
-	lastBoard.bg = $('#drop-zone').attr('class').match(/bg-[0-9]/);
+	PRES.htmlBackup = $('#presentation #drop-zone').html();
+	PRES.bgBackup = $('#drop-zone').attr('class').match(/bg-[0-9]/);
 	$('#presentation #drop-zone').empty();
 	$('.tools .restart').addClass('undo-mode');
-	undoMode = true;
+	PRES.imgRemaining = PRES.imgAllowed;
+	PRES.undoMode = true;
 };
 
 PRES.clearBoard = function() {
-	if (!undoMode) { // CLEAR BOARD
+	if (!PRES.undoMode) { // CLEAR BOARD
 		if (!$('#presentation #drop-zone').is(':empty') && confirm('Vill du verkligen ta bort alla bilder?')) {
 			PRES.removeBoardImages();
-			//localStorage.removeItem('MAT_BEN3_PRES');
 			PRES.toastMessage('Data rensat. Klicka igen för att ångra');
+			//localStorage.removeItem('MAT_BEN3_PRES');
 		} else {
 			PRES.toastMessage('Inget att rensa');
 		}
 	} else { // RESTORE PREVIOUS BOARD
-		$('#presentation #drop-zone').empty().append(lastBoard.html).addClass(lastBoard.bg);
+		$('#presentation #drop-zone').empty().append(PRES.htmlBackup).addClass(PRES.bgBackup);
 		$('.tools .restart').removeClass('undo-mode');
-		undoMode = false;
+		PRES.toastMessage('Data återställt');
+		PRES.undoMode = false;
 	}
 };
 
