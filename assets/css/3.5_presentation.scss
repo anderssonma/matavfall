@@ -193,6 +193,7 @@
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		-ms-user-select: none;
+		padding-right: 10px;
 		.draggable {
 			height: 40px;
 			margin: 16px 0 0 15px;
@@ -201,15 +202,32 @@
 		  -ms-user-select: none;
 		  cursor: move;
 		}
+		.word-spacer {
+			width: 0;
+			height: 40px;
+			margin: 0 10px 0 30px;
+			position: relative;
+			display: inline-block;
+			border-right: 1px dashed #77AD7C;
+			cursor: not-allowed;
+		}
 		&.mode-words {
-			padding-top: 18px;
-			padding-right: 18px;
+			padding-top: 8px;
+			padding-right: 8px;
 			.draggable {
-				margin: -8px -12px 0 8px;
+				height: 34px;
+				margin: 0px 0px 4px 8px;
 			}
 		}
 		.ui-draggable-dragging {
 			z-index: 9999;
+		}
+		img {
+			opacity: 0;
+			transition: 0.35s opacity ease-in;
+		}
+		&.show img {
+			opacity: 1;
 		}
 	}
 	.word-drawer {
@@ -253,6 +271,7 @@
 		opacity: 0;
 		left: -9999px;
 		-webkit-transition: 0.35s opacity, 0s 0.35s left;
+		z-index: 10;
 		&.show {
 			opacity: 1;
 			left: 50%;

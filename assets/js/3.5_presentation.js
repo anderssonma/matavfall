@@ -143,7 +143,8 @@ PRES.createImageDOMString = function() { // MAKE A LONG STRING WITH ALL IMAGES I
 	// COPY THE ARRAY, REVERSE IT THEN CONCATENATE ANOTHER INSTANCE ONTO IT
 	var imageSet = imageData[PRES.mode][PRES.imgArrayPage]; //.slice().reverse().concat(imageData[PRES.mode]);
 	imageSet.forEach(function(item) {
-		imageString = imageString + '<img class="draggable" src="' + '/assets/img/' + item.src + '" data-height="' + item.height + '">';
+		var spacerString = (item.hasOwnProperty('lastInSet') && item.lastInSet) ? '<div class="word-spacer"></div>' : '';
+		imageString = imageString + '<img class="draggable" src="' + '/assets/img/' + item.src + '" data-height="' + item.height + '">' + spacerString; 
 	});
 	return imageString;
 };
@@ -159,6 +160,8 @@ PRES.changeImageType = function(clickedMode) {
 	$('#presentation .image-drawer').append(this.createImageDOMString());
 	$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 	this.setupDraggables('.image-drawer .draggable');
+	$('#presentation .image-drawer').addClass('show');
+
 };
 
 PRES.changeImagePage = function(num) {
@@ -166,9 +169,10 @@ PRES.changeImagePage = function(num) {
 		return false;
 	} else {
 		this.imgArrayPage = this.imgArrayPage + num;
-		$('#presentation .image-drawer').empty().append(this.createImageDOMString());
+		$('#presentation .image-drawer').empty().removeClass('show').append(this.createImageDOMString());
 		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 		this.setupDraggables('.image-drawer .draggable');
+		$('#presentation .image-drawer').addClass('show');
 	}
 };
 
