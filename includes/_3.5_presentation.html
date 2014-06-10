@@ -21,7 +21,10 @@
 	<div class="tools">
 		<div class="print" onclick="window.print();"><img src="<!-- @path icon_print.svg -->" height="18"></div>
 		<div class="save" onclick="PRES.saveData();"><img src="<!-- @path icon_save.svg -->" height="18"></div>
-		<div class="restart" onclick="PRES.clearBoard();"><img src="<!-- @path icon_clear.svg -->" height="18"></div>
+		<div class="restart" onclick="PRES.clearBoard();">
+			<img class="icon-clear" src="<!-- @path icon_clear.svg -->" height="18">
+			<img class="icon-undo" src="<!-- @path icon_reset.svg -->" height="18">
+		</div>
 	</div>
 
 	<div id="image-counter">BILDER KVAR: 50</div>

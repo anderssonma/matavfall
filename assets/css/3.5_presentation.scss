@@ -132,6 +132,19 @@
 			opacity: 0.5;
 		}
 	}
+	.restart {
+		.icon-undo {
+			display: none;
+		}
+		&.undo-mode {
+			.icon-clear {
+				display: none;
+			}
+			.icon-undo {
+				display: inline-block;
+			}
+		}
+	}
 }
 
 .color-swatches {
@@ -258,12 +271,12 @@
 	.toast {
 		position: absolute;
 		top: 150px;
-		right: -200px;
+		right: -300px;
 		background: #FFF;
 		border-radius: 3px;
 		padding: 10px;
 		color: #666;
-		transition: 0.35s right;
+		transition: 0.5s right;
 		&.show {
 			right: 20px;
 		}

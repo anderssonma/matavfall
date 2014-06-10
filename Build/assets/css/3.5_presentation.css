@@ -113,6 +113,12 @@
       transition: 0.35s opacity; }
     .tools div:hover img {
       opacity: 0.5; }
+  .tools .restart .icon-undo {
+    display: none; }
+  .tools .restart.undo-mode .icon-clear {
+    display: none; }
+  .tools .restart.undo-mode .icon-undo {
+    display: inline-block; }
 
 .color-swatches {
   position: absolute;
@@ -216,12 +222,12 @@
   .presentation .toast {
     position: absolute;
     top: 150px;
-    right: -200px;
+    right: -300px;
     background: #FFF;
     border-radius: 3px;
     padding: 10px;
     color: #666;
-    transition: 0.35s right; }
+    transition: 0.5s right; }
     .presentation .toast.show {
       right: 20px; }
   .presentation .overlay {

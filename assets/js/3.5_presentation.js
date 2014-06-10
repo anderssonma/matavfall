@@ -55,7 +55,7 @@ PRES.toastMessage = function(msg) {
 	}, 0);
 	window.setTimeout(function() {
 		$(toastEl).removeClass('show');
-	}, 1500);
+	}, 2000);
 };
 
 
@@ -82,9 +82,9 @@ PRES.saveData = function() {
 			data: imageData
 		};
 		localStorage.setItem('MAT_BEN3_PRES', JSON.stringify(saveObject));
-		this.toastMessage('DATA SPARAT!');
+		this.toastMessage('Data sparat!');
 	} else {
-		this.toastMessage('INGET ATT SPARA!');
+		this.toastMessage('Inget att spara');
 	}
 };
 
@@ -97,6 +97,9 @@ PRES.checkSavedData = function() {
 };
 
 PRES.getSavedData = function(self) {
+	if (!$('#presentation #drop-zone').is(':empty')) {
+		this.removeBoardImages();
+	}
 	$(self).parent().removeClass('show');
 	var savedData = localStorage.getItem('MAT_BEN3_PRES');
 	var countImg = savedData.match(/<img/g).length;
@@ -120,6 +123,7 @@ PRES.getSavedData = function(self) {
 	$('#presentation .color-swatches .' + savedData.background).addClass('selected');
 	$('#presentation').addClass('editing');
 	$('#image-counter').text('BILDER KVAR: ' + this.imgRemaining);
+	this.toastMessage('Data importerat');
 };
 
 
@@ -210,13 +214,33 @@ PRES.setupDraggables = function(selector) {
 	});
 };
 
+var undoMode = false;
+var lastBoard = {
+	html: '',
+	bg: ''
+};
+
+PRES.removeBoardImages = function() {
+	lastBoard.html = $('#presentation #drop-zone').html();
+	lastBoard.bg = $('#drop-zone').attr('class').match(/bg-[0-9]/);
+	$('#presentation #drop-zone').empty();
+	$('.tools .restart').addClass('undo-mode');
+	undoMode = true;
+};
+
 PRES.clearBoard = function() {
-	if (confirm('Vill du verkligen ta bort alla bilder?')) {
-		$('#presentation #drop-zone').empty();
-		localStorage.removeItem('MAT_BEN3_PRES');
-		PRES.toastMessage('DATA RENSAT');
-	} else {
-		return false;
+	if (!undoMode) { // CLEAR BOARD
+		if (!$('#presentation #drop-zone').is(':empty') && confirm('Vill du verkligen ta bort alla bilder?')) {
+			PRES.removeBoardImages();
+			//localStorage.removeItem('MAT_BEN3_PRES');
+			PRES.toastMessage('Data rensat. Klicka igen för att ångra');
+		} else {
+			PRES.toastMessage('Inget att rensa');
+		}
+	} else { // RESTORE PREVIOUS BOARD
+		$('#presentation #drop-zone').empty().append(lastBoard.html).addClass(lastBoard.bg);
+		$('.tools .restart').removeClass('undo-mode');
+		undoMode = false;
 	}
 };
 
