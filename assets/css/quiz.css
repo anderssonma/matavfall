@@ -142,6 +142,7 @@
 	transition: all 0.25s;
 	/* border: 8px solid transparent; */
 	overflow: hidden;
+	-webkit-transform: translateZ(0);
 }
 .quiz-target.valid {
 	/* border-color: #F6F6F6; */

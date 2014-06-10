@@ -156,7 +156,7 @@ var CSSHandler = {
 			'/assets/css/1.5.1_popcorn.css',
 			'/assets/css/1.5.2_bio.css',
 			'/assets/css/1.5.3_kylskap.css',
-			'/assets/css/1.6_quiz.css',
+			'/assets/css/quiz.css',
 			'/assets/css/1.6_quiz.slides.css',
 			'/assets/css/1.7_diplom.css'
 		],
@@ -166,7 +166,7 @@ var CSSHandler = {
 			'/assets/css/uppdrag.css',
 			'/assets/css/2.2_uppdrag.css',
 			'/assets/css/2.3_fakta.css',
-			'/assets/css/1.6_quiz.css',
+			'/assets/css/quiz.css',
 			'/assets/css/2.4_quiz.slides.css',
 			'/assets/css/2.9_dropdown.css'
 		],
@@ -175,6 +175,8 @@ var CSSHandler = {
 			'/assets/css/uppdrag.css',
 			'/assets/css/3.2_uppdrag.css',
 			'/assets/css/3.3_tidslinjen.css',
+			'/assets/css/quiz.css',
+			'/assets/css/3.4_quiz.slides.css',
 			'/assets/css/3.5_presentation.css'
 		]
 	},
