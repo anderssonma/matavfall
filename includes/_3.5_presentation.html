@@ -12,16 +12,16 @@
 		<div class="image-mode" onclick="PRES.changeImageType('images');">Bilder</div>
 		<div class="word-mode" onclick="PRES.changeImageType('words');">Ord</div>
 		<div class="pager">
-			<div onclick="PRES.changeImagePage(-1);" class="left">&larr;</div>
-			<div id="page-count">1&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;5</div>
-			<div onclick="PRES.changeImagePage(1);" class="right">&rarr;</div>
+			<div onclick="PRES.changeImagePage(-1);" class="left"><img src="<!-- @path pil_vanster.svg -->" width="18"></div>
+			<div id="page-count">1&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;5</div>
+			<div onclick="PRES.changeImagePage(1);" class="right"><img src="<!-- @path pil_hoger.svg -->" width="18"></div>
 		</div>
 	</div>
 
 	<div class="tools">
-		<div class="print" onclick="window.print();">Skriv ut</div>
-		<div class="save" onclick="PRES.saveData();">Spara</div>
-		<div class="restart" onclick="PRES.clearBoard();">Rensa</div>
+		<div class="print" onclick="window.print();"><img src="<!-- @path icon_print.svg -->" height="18"></div>
+		<div class="save" onclick="PRES.saveData();"><img src="<!-- @path icon_save.svg -->" height="18"></div>
+		<div class="restart" onclick="PRES.clearBoard();"><img src="<!-- @path icon_clear.svg -->" height="18"></div>
 	</div>
 
 	<div id="image-counter">BILDER KVAR: 50</div>

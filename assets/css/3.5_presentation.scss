@@ -47,9 +47,9 @@
 	.pager {
 		height: 40px;
 		text-align: center;
-		line-height: 40px;
+		line-height: 38px;
 		color: #FFF;
-		font-size: 12px;
+		font-size: 14px;
 		border-bottom: 3px solid #63A272;
 		background: #42684B;
 		position: relative;
@@ -64,8 +64,9 @@
 			-webkit-font-smoothing: antialiased;
 			cursor: pointer;
 			background: #42684B;
+			transition: 0.35s opacity;
 			&:hover {
-				color: #333;
+				opacity: 0.5;
 			}
 		}
 		.left {
@@ -87,8 +88,9 @@
 		color: #63A272;
 		border-bottom: 1px solid #63A272;
 		cursor: pointer;
+		transition: 0.35s color;
 		&:hover {
-			color: #333 !important;
+			color: #FFF !important;
 		}
 	}
 	&.images-active .image-mode {
@@ -110,20 +112,24 @@
 	height: 40px;
 	width: 200px;
 	background: #42684B;
+	overflow: hidden;
 	div {
 		float: left;
 		margin: 0 0 0 0;
 		text-align: center;
 		color: #77AD7C;
-		line-height: 40px;
+		line-height: 52px;
 		width: calc(100%/3);
 		border-left: 1px solid #63A272;
 		cursor: pointer;
 		&:first-child {
 			border-left: none;
 		}
-		&:hover {
-			color: #333;
+		img {
+			transition: 0.35s opacity;
+		}
+		&:hover img {
+			opacity: 0.5;
 		}
 	}
 }

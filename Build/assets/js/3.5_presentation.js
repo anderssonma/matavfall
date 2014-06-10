@@ -158,7 +158,7 @@ PRES.changeImageType = function(clickedMode) {
 	this.mode = (this.mode === 'images') ? 'words' : 'images';
 	$('#presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
 	$('#presentation .image-drawer').append(this.createImageDOMString());
-	$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
+	$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 	this.setupDraggables('.image-drawer .draggable');
 	$('#presentation .image-drawer').addClass('show');
 
@@ -170,7 +170,7 @@ PRES.changeImagePage = function(num) {
 	} else {
 		this.imgArrayPage = this.imgArrayPage + num;
 		$('#presentation .image-drawer').empty().removeClass('show').append(this.createImageDOMString());
-		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;av&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
+		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 		this.setupDraggables('.image-drawer .draggable');
 		$('#presentation .image-drawer').addClass('show');
 	}
@@ -283,10 +283,10 @@ PRES.setup = function() {
 			var imageWidth = item.width;
 
 			// CALC NEW WIDTH BASED ON NEW HEIGHT
-			var compensateWidth = imageWidth * (imageHeight / 40);
+			var compensateWidth = imageWidth * (imageHeight / item.height);
 			// CALC DIFF BETWEEN NEW & OLD WIDTH
 			compensateWidth = (compensateWidth - imageWidth) / 2;
-			var compensateHeight = (imageHeight - 40) / 2;
+			var compensateHeight = (imageHeight - item.height) / 2;
 
 			var newImage = new Image();
 			newImage.src = imageSrc;
@@ -315,7 +315,6 @@ PRES.setup = function() {
 	$('#trash-can').droppable({
 		hoverClass: 'remove',
 		drop: function(ev, ui) {
-			console.log(ui.draggable[0])
 			if (typeof $(ui.draggable[0]).attr('data-off-left') !== 'undefined'){
 				return false;
 			}

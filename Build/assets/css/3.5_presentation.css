@@ -42,9 +42,9 @@
   .controls .pager {
     height: 40px;
     text-align: center;
-    line-height: 40px;
+    line-height: 38px;
     color: #FFF;
-    font-size: 12px;
+    font-size: 14px;
     border-bottom: 3px solid #63A272;
     background: #42684B;
     position: relative; }
@@ -58,9 +58,10 @@
       font-size: 18px;
       -webkit-font-smoothing: antialiased;
       cursor: pointer;
-      background: #42684B; }
+      background: #42684B;
+      transition: 0.35s opacity; }
       .controls .pager .left:hover, .controls .pager .right:hover {
-        color: #333; }
+        opacity: 0.5; }
     .controls .pager .left {
       left: 0;
       border-right: 1px solid #63A272; }
@@ -76,10 +77,11 @@
     line-height: 50px;
     color: #63A272;
     border-bottom: 1px solid #63A272;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: 0.35s color; }
     .controls .image-mode:hover,
     .controls .word-mode:hover {
-      color: #333 !important; }
+      color: #FFF !important; }
   .controls.images-active .image-mode {
     color: #FFF; }
   .controls.words-active .word-mode {
@@ -94,20 +96,23 @@
   font-size: 12px;
   height: 40px;
   width: 200px;
-  background: #42684B; }
+  background: #42684B;
+  overflow: hidden; }
   .tools div {
     float: left;
     margin: 0 0 0 0;
     text-align: center;
     color: #77AD7C;
-    line-height: 40px;
+    line-height: 52px;
     width: calc(100%/3);
     border-left: 1px solid #63A272;
     cursor: pointer; }
     .tools div:first-child {
       border-left: none; }
-    .tools div:hover {
-      color: #333; }
+    .tools div img {
+      transition: 0.35s opacity; }
+    .tools div:hover img {
+      opacity: 0.5; }
 
 .color-swatches {
   position: absolute;

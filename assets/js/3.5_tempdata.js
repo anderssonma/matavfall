@@ -5,89 +5,89 @@ var imageData = {
 			// MAT
 			{
 				src: 'apple_gron.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'bananer.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'melon.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'morot.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'aubergine.svg',
-				height: 130
+				height: 80
 			}, {
 				src: 'fralla.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'fisk-hel.svg',
-				height: 300
+				height: 70
 			}, {
 				src: 'pasta.svg',
-				height: 100
+				height: 40
 			}, {
 				src: 'korv.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'kotlett.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'mjolk.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'recept_makaroni.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'recept_pizza.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'recept_mackor.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'recept_applepaj.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'tallrik_agg.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'matkasse_1.svg',
-				height: 100,
+				height: 95,
 				lastInSet: true
 			},
 
 			// MATAVFALL
 			 {
 				src: 'bananskal.svg',
-				height: 130
+				height: 55
 			}, {
 				src: 'apple_mogligt.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'appelskrutt.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'rodlok.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'tomathalva.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'broccoli_mask.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'gurka_alt.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'agg_knackt.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'moglig_ost.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'ostmacka.svg',
-				height: 100
+				height: 70
 			}
 
 		], [ // PAGE 2
@@ -95,78 +95,78 @@ var imageData = {
 			// MATAVFALL FORTS.
 			{
 				src: 'fiskben_spel.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'musslor.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'raka.svg',
-				height: 100
+				height: 35
 			}, {
 				src: 'kycklingklubba.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'vaskskrapa-fylld.svg',
-				height: 100
+				height: 85
 			}, {
 				src: 'pase_hallare.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'pase_geggig.svg',
-				height: 100
+				height: 85
 			}, {
 				src: 'matavfallspase_full_1.svg',
-				height: 100
+				height: 95
 			}, {
 				src: 'matavfallstunna.svg',
-				height: 100,
+				height: 110,
 				lastInSet: true
 			},
 
 			// ÖVRIGT AVFALL
 			{
 				src: 'konservburk.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'burk.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'plastflaska.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'sopor.svg',
-				height: 100
+				height: 75
 			}, {
 				src: 'batteri.svg',
-				height: 130
+				height: 75
 			}, {
 				src: 'glas_atervinning.svg',
-				height: 100
+				height: 90
 			}, {
 				src: 'brannbart_tunna.svg',
-				height: 100,
+				height: 70,
 				lastInSet: true
 			},
 
 			// NATUR
 			{
 				src: 'groda.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'blomma_gul.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'blomma_lila.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'blomma_rod.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'foder.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'vete.svg',
-				height: 100
+				height: 90
 			}, {
 				src: 'gran.svg',
 				height: 100
@@ -175,16 +175,16 @@ var imageData = {
 				height: 100
 			}, {
 				src: 'vatten.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'syre.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'metan.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'biogas.svg',
-				height: 100,
+				height: 65,
 			}, 
 
 		], [ // PAGE 3
@@ -192,135 +192,136 @@ var imageData = {
 			// NATUR FORTS.
 			{
 				src: 'sol.svg',
-				height: 100
+				height: 85
 			}, {
 				src: 'sol_moln.svg',
-				height: 100
+				height: 65
 			}, {
 				src: 'sol_moln_gra.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'jordglob.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'mikroorg_glad.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'mikroorg_dod.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'slurry_kran.svg',
-				height: 100,
+				height: 90,
 				lastInSet: true
 			},
 
 			// SAMHÄLLE
 			{
 				src: 'mynt_5.svg',
-				height: 100
+				height: 50
 			}, {
 				src: 'mynt_10.svg',
-				height: 100
+				height: 45
 			}, {
 				src: 'sedel_100.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'sedel_500.svg',
-				height: 100
+				height: 60
 			}, {
 				src: 'sack.svg',
-				height: 100
+				height: 120
 			}, {
 				src: 'biljett.svg',
-				height: 130
+				height: 65
 			}, {
 				src: 'domarklubba.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'explotion.svg',
 				height: 100
 			}, {
 				src: 'gift.svg',
-				height: 100,
+				height: 85,
 				lastInSet: true
 			}, 
 
 			// DJUR
 			{
 				src: 'hona.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'gris.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'ko.svg',
-				height: 100
+				height: 90,
+				lastInSet: true
 			},
 
 			// BYGGNADER
 			{
 				src: 'anlaggning.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'sysav.svg',
-				height: 100
+				height: 105
 			}
 
 		], [ // PAGE 4
 
 			// BYGGNADER FORTS.
 			{
-				src: 'biogas_tvatt.svg',
-				height: 130
+				src: 'biogas_tvatt_2.svg',
+				height: 85
 			}, {
 				src: 'biogas_37g.svg',
-				height: 130
+				height: 85
 			}, {
 				src: 'biogas_anl.svg',
-				height: 130
+				height: 70
 			}, {
 				src: 'stuga_beige_alt.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'stuga_rod_alt.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'stuga_vit_alt.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'hoghus_brun.svg',
-				height: 100
+				height: 115
 			}, {
 				src: 'hoghus_rod_alt.svg',
-				height: 100
+				height: 115
 			}, {
 				src: 'hoghus_vit_alt.svg',
-				height: 100
+				height: 115
 			}, {
 				src: 'matbutik_bananer.svg',
-				height: 100,
+				height: 80,
 				lastInSet: true
 			},
 
 			// FORDON
 			{
 				src: 'avfallsbil-bla.svg',
-				height: 130
+				height: 75
 			}, {
 				src: 'lastbil_bio.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'lastbil_transport.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'biogasbuss.svg',
-				height: 130
+				height: 65
 			}, {
 				src: 'biogasgodsel_lass.svg',
-				height: 100
+				height: 70
 			}, {
 				src: 'bil_avgaser.svg',
-				height: 130
+				height: 60
 			}
 
 		], [ // PAGE 5
@@ -328,16 +329,16 @@ var imageData = {
 			// FORDON FORTS.
 			{
 				src: 'biogasbil.svg',
-				height: 130
+				height: 60
 			}, {
 				src: 'bananbat.svg',
-				height: 130
+				height: 85
 			}, {
 				src: 'bensindunk.svg',
-				height: 130
+				height: 85
 			}, {
 				src: 'tankstation_alt.svg',
-				height: 100,
+				height: 90,
 				lastInSet: true
 			},
 
@@ -350,19 +351,19 @@ var imageData = {
 				height: 100
 			}, {
 				src: 'klocka.svg',
-				height: 100
+				height: 85
 			}, {
 				src: 'kylskap-oppet-utan-lador.svg',
-				height: 100
+				height: 120
 			}, {
 				src: 'lampa.svg',
-				height: 100
+				height: 120
 			}, {
 				src: 'tv.svg',
-				height: 100
+				height: 80
 			}, {
 				src: 'xbox.svg',
-				height: 100
+				height: 65
 			}
 
 		]
@@ -371,161 +372,161 @@ var imageData = {
 		[ // PAGE 1
 			{
 				src: 'ord_affar.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_bakterier.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_bil.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_biodrivmedel.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_biogas.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_biogasanlaggning.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_biogodsel.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_bastfore.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_el.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_energi.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_framtid.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_fukt.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_fornybar.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_forvaring.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_gas.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_hallbar.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_jorden.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_koldioxid.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_kyla.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_mat.svg',
-				height: 50
+				height: 40
 			}
 		], [ // PAGE 2
 			{
 				src: 'ord_matavfall.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_matavfallspase.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_mikroorganismer.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_miljo.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_mogel.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_naring.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_odla.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_organiskt.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_pengar.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_rester.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_resurs.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_rotning.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_samhalle.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_slurry.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_slanga.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_slosa.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_sopor.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_soptipp.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_sortera.svg',
-				height: 50
+				height: 40
 			}
 		], [ // PAGE 3
 			{
 				src: 'ord_spara.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_sverige.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_tanka.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_temperatur.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_transport.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_tvafacksbil.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_utslapp.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_varlden.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_varme.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_vaxa.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_ata.svg',
-				height: 50
+				height: 40
 			}, {
 				src: 'ord_ateranvanda.svg',
-				height: 50
+				height: 40
 			}
 		]
 	]
