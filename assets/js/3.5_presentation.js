@@ -290,12 +290,18 @@ PRES.setup = function() {
 	$('#drop-zone').droppable({
 		hoverClass: 'valid',
 		drop: function(ev, ui) {
-	
+
 			var endPos = ui.position;
 			var item = ui.draggable[0];
 			var startLeft = $(item).attr('data-off-left');
-			if (typeof startLeft === 'undefined'){
+			if (typeof startLeft === 'undefined') {
 				return false;
+			} else {
+				if (PRES.imgRemaining <= 0){
+					PRES.removePlaceholder();
+					PRES.toastMessage('Du har redan för många bilder');
+					return false;
+				}
 			}
 			startLeft = parseInt(startLeft, 10);
 			var startTop = parseInt($(item).attr('data-off-top'), 10); // STANDARD TOP MARGIN

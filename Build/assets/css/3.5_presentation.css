@@ -227,7 +227,8 @@
     border-radius: 3px;
     padding: 10px;
     color: #666;
-    transition: 0.5s right; }
+    transition: 0.5s right;
+    z-index: 10; }
     .presentation .toast.show {
       right: 20px; }
   .presentation .overlay {

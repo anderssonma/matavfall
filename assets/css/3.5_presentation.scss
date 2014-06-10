@@ -277,6 +277,7 @@
 		padding: 10px;
 		color: #666;
 		transition: 0.5s right;
+		z-index: 10;
 		&.show {
 			right: 20px;
 		}
