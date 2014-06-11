@@ -3,6 +3,19 @@
   width: 100%;
   height: 100%;
   overflow: hidden; }
+  .stage h3 {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: normal; }
+  .stage p {
+    font-size: 18px; }
+    .stage p.small {
+      font-size: 14px;
+      opacity: 0.5; }
+  .stage ol {
+    font-size: 14px;
+    opacity: 0.5;
+    -webkit-font-smoothing: antialiased; }
 
 .backdrop {
   width: 100%;
@@ -84,6 +97,16 @@
   margin-bottom: -96px;
   z-index: 1; }
 
+.chicken-farm-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 700px;
+  margin-left: -350px;
+  margin-top: 100px;
+  z-index: 1;
+  opacity: 0; }
+
 .chicken-egg {
   position: absolute;
   z-index: 1;
@@ -95,6 +118,16 @@
 
 .transformer.hide {
   display: none; }
+
+.transformer-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 700px;
+  margin-left: -350px;
+  margin-top: 100px;
+  z-index: 1;
+  opacity: 0; }
 
 .egg-carton {
   position: absolute;
@@ -160,6 +193,30 @@
   margin: 0 auto;
   height: 100%;
   z-index: 3; }
+  .part-1 .text-intro-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 700px;
+    background: #786854;
+    margin: -350px 0 0 -300px; }
+    .part-1 .text-intro-bg div {
+      margin-top: 250px; }
+  .part-1 .text-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    margin-left: -350px;
+    opacity: 0; }
+  .part-1 .text-2 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width: 700px;
+    margin-left: -350px;
+    opacity: 0; }
   .part-1 .straw {
     position: absolute;
     border-radius: 5px;
@@ -308,6 +365,26 @@
   width: 400%;
   height: 100%;
   z-index: 3; }
+  .cloud-box .cloud-text-1,
+  .cloud-box .cloud-text-2,
+  .cloud-box .cloud-text-3 {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    width: 940px;
+    margin-left: -470px;
+    margin-top: 100px;
+    z-index: 1;
+    opacity: 0; }
+    .cloud-box .cloud-text-1 .small,
+    .cloud-box .cloud-text-2 .small,
+    .cloud-box .cloud-text-3 .small {
+      float: right;
+      width: 550px;
+      margin-top: 20px; }
+  .cloud-box .cloud-text-2,
+  .cloud-box .cloud-text-3 {
+    opacity: 1; }
 
 .box-inner-1 {
   position: absolute;
@@ -588,6 +665,15 @@
   #car-box.egg-mode .circle .bg {
     background: #F8F7F7; }
 
+.egg-text {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 740px;
+  margin-left: -370px;
+  opacity: 0;
+  z-index: 1; }
+
 .hand {
   position: absolute;
   top: 50%;
@@ -714,3 +800,12 @@
   z-index: 99;
   margin-top: -100px;
   opacity: 0; }
+
+.final-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 740px;
+  margin-left: -370px;
+  opacity: 0;
+  z-index: 1; }
