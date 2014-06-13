@@ -290,9 +290,9 @@ PRES.setup = function() {
 			var imageWidth = item.width;
 
 			// CALC NEW WIDTH BASED ON NEW HEIGHT
-			var compensateWidth = imageWidth * (imageHeight / item.height);
+			var newImageWidth = imageWidth * (imageHeight / item.height);
 			// CALC DIFF BETWEEN NEW & OLD WIDTH
-			compensateWidth = (compensateWidth - imageWidth) / 2;
+			var compensateWidth = (newImageWidth - imageWidth) / 2;
 			var compensateHeight = (imageHeight - item.height) / 2;
 
 			var newImage = new Image();
@@ -302,7 +302,7 @@ PRES.setup = function() {
 				left: endPos.left + startLeft - compensateWidth,
 				top: endPos.top + startTop - compensateHeight, // TOP MARGIN
 				zIndex: 10
-			}).attr('height', imageHeight);
+			}).attr('height', imageHeight).attr('width', newImageWidth);
 			$('#drop-zone').append(newImage);
 			$(newImage).hover(function() {
 				PRES.imageControls(this);

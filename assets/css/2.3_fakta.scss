@@ -1,8 +1,12 @@
 #fakta2-2 {
 	overflow: hidden;
 	width: 100%;
+	min-height: 100%;
 	background: #8ac6cf;
 	margin: 0 auto;
+	img {
+		max-width: 100%;
+	}
 	#matavfallspasar {
 		width: 100%;
 		margin: 0 auto;
@@ -79,7 +83,9 @@
 	position: absolute;
 	opacity: 0;
 	-webkit-transform-origin:bottom center;
+	transform-origin:bottom center;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 #fakta2-2 #vete-holder-6,
 #fakta2-2 #vete-holder-7,
@@ -195,6 +201,7 @@
 	left: 50%;
 	margin-left: -450px;
 	-webkit-transition: background .7s;
+	transition: background .7s;
 	z-index: 3;
 }
 #fakta2-2 #hus-2 {
@@ -208,6 +215,7 @@
 	margin-left: -225px;
 	z-index: 3;
 	-webkit-transition: background .7s 0.2s;
+	transition: background .7s 0.2s;
 }
 #fakta2-2 #hus-3 {
 	display: inline-block;
@@ -219,6 +227,7 @@
 	left: 50%;
 	z-index: 3;
 	-webkit-transition: background .7s 0.6s;
+	transition: background .7s 0.6s;
 }
 #fakta2-2 #hus-4 {
 	display: inline-block;
@@ -230,6 +239,7 @@
 	left: 50%;
 	margin-left: 225px;
 	-webkit-transition: background .7s 0.4s;
+	transition: background .7s 0.4s;
 	z-index: 3;
 }
 
@@ -391,29 +401,49 @@
 	left: 15px;
 	top: 56px;
 	-webkit-animation: expnad_vatten 3s infinite;
+	animation: expnad_vatten 3s infinite;
 	-webkit-transform-origin: bottom left;
+	transform-origin: bottom left;
 }
 @-webkit-keyframes expnad_vatten {
-  0%   	{ -webkit-transform:scaleY(1)}
-  40%  	{ -webkit-transform:scaleY(1)}
-  60% 	{ -webkit-transform:scaleY(0)}
-  90% 	{ -webkit-transform:scaleY(0)}
-  100% 	{ -webkit-transform:scaleY(1)}
+  0%   	{ -webkit-transform:scaleY(1); }
+  40%  	{ -webkit-transform:scaleY(1); }
+  60% 	{ -webkit-transform:scaleY(0); }
+  90% 	{ -webkit-transform:scaleY(0); }
+  100% 	{ -webkit-transform:scaleY(1); }
 }
+@keyframes expnad_vatten {
+  0%   	{ transform:scaleY(1); }
+  40%  	{ transform:scaleY(1); }
+  60% 	{ transform:scaleY(0); }
+  90% 	{ transform:scaleY(0); }
+  100% 	{ transform:scaleY(1); }
+}
+
 #fakta2-2 #el-container #kaffekokare-container #kaffe {
 	position: absolute;
 	top: 189px;
 	right: 34px;
 	-webkit-animation: expnad_kaffe 3s infinite;
+	animation: expnad_kaffe 3s infinite;
 	-webkit-transform-origin: bottom left;
+	transform-origin: bottom left;
 }
 @-webkit-keyframes expnad_kaffe {
-  0%  	{ -webkit-transform:scaleY(0)}
-  40% 	{ -webkit-transform:scaleY(0)}
-  60% 	{ -webkit-transform:scaleY(1)}
-  90%	{ -webkit-transform:scaleY(1)}
-  100%	{ -webkit-transform:scaleY(0)}
+  0%  	{ -webkit-transform:scaleY(0); }
+  40% 	{ -webkit-transform:scaleY(0); }
+  60% 	{ -webkit-transform:scaleY(1); }
+  90% 	{ -webkit-transform:scaleY(1); }
+  100%	{ -webkit-transform:scaleY(0); }
 }
+@keyframes expnad_kaffe {
+  0%  	{ transform:scaleY(0); }
+  40% 	{ transform:scaleY(0); }
+  60% 	{ transform:scaleY(1); }
+  90% 	{ transform:scaleY(1); }
+  100%	{ transform:scaleY(0); }
+}
+
 #fakta2-2 #el-container #PC {
 	position: absolute;
 	top: 1270px;
@@ -471,7 +501,7 @@
 	top: 0;
 	z-index: -1;
 	-webkit-animation: rostbrod 2s infinite;
-
+	animation: rostbrod 2s infinite;
 }
 #fakta2-2 #el-container #brodrost #rostbrod-2 {
 	position: absolute;
@@ -479,8 +509,15 @@
 	top: 0;
 	z-index: -1;
 	-webkit-animation: rostbrod 2s .5s infinite;
+	animation: rostbrod 2s .5s infinite;
 }
 @-webkit-keyframes rostbrod {
+   0% { top: 0}
+   20% { top: -130px}
+   90% {top: -130px}
+   100% {top: 0}
+}
+@keyframes rostbrod {
    0% { top: 0}
    20% { top: -130px}
    90% {top: -130px}
@@ -519,8 +556,8 @@
 	left: 50%;
 	width: 150px;
 	margin-top: -340px;
-	-webkit-transform:scale(0);
-
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-2 {
 	position: absolute;
@@ -530,7 +567,8 @@
 	margin-left: 90px;
 	margin-top: -290px;
 	z-index: 1;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-3 {
 	position: absolute;
@@ -540,7 +578,8 @@
 	z-index: 2;
 	margin-left: -90px;
 	margin-top: -240px;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-4 {
 	position: absolute;
@@ -550,7 +589,8 @@
 	margin-left: 20px;
 	margin-top: -180px;
 	z-index: 3;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-5 {
 	position: absolute;
@@ -560,7 +600,8 @@
 	margin-left: -110px;
 	margin-top: -110px;
 	z-index: 4;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-6 {
 	position: absolute;
@@ -570,7 +611,8 @@
 	margin-left: -190px;
 	margin-top: 50px;
 	z-index: 5;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-7 {
 	position: absolute;
@@ -580,7 +622,8 @@
 	margin-left: -70px;
 	margin-top: 0;
 	z-index: 6;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-8 {
 	position: absolute;
@@ -590,7 +633,8 @@
 	margin-left: -120px;
 	margin-top: 150px;
 	z-index: 7;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #matavfallspase-9 {
 	position: absolute;
@@ -600,7 +644,8 @@
 	margin-left: -200px;
 	margin-top: 200px;
 	z-index: 8;
-	-webkit-transform:scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 #fakta2-2 #sverige-container #text {
 	width: 340px;

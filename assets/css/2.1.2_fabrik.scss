@@ -20,6 +20,9 @@ html, body {
 	overflow: hidden;
 	height: 3900px;
 	position: relative;
+	img {
+		max-width: 100%;
+	}
 }
 
 
@@ -500,9 +503,9 @@ html, body {
 	position: absolute;
 	top: 15px;
 	left: -80px;
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
+	-webkit-transform: translate3d(0,0,0) rotate(90deg);
+	-ms-transform: translate3d(0,0,0) rotate(90deg);
+	transform: translate3d(0,0,0) rotate(90deg);
 	-webkit-animation: dropWaste 2s 1.7s linear infinite;
 	animation: dropWaste 2s 1.7s linear infinite;
 }
@@ -579,28 +582,28 @@ html, body {
 		transform: translate3d(0,0,0) rotate(90deg);
 	}
 	10% {
-		-webkit-transform: translate3d(60px, 10px, 0) rotate(120deg);
-		transform: translate3d(60px, 10px, 0) rotate(120deg);
+		-webkit-transform: translate3d(70px, 10px, 0) rotate(120deg);
+		transform: translate3d(70px, 10px, 0) rotate(120deg);
 	}
 	20% {
-		-webkit-transform: translate3d(80px, 30px, 0) rotate(170deg);
-		transform: translate3d(80px, 30px, 0) rotate(170deg);
+		-webkit-transform: translate3d(90px, 30px, 0) rotate(170deg);
+		transform: translate3d(90px, 30px, 0) rotate(170deg);
 	}
 	30% {
-		-webkit-transform: translate3d(90px, 60px, 0) rotate(240deg);
-		transform: translate3d(90px, 60px, 0) rotate(240deg);
+		-webkit-transform: translate3d(100px, 60px, 0) rotate(240deg);
+		transform: translate3d(100px, 60px, 0) rotate(240deg);
 	}
 	40% {
-		-webkit-transform: translate3d(100px, 100px, 0) rotate(330deg);
-		transform: translate3d(100px, 100px, 0) rotate(330deg);
+		-webkit-transform: translate3d(110px, 100px, 0) rotate(330deg);
+		transform: translate3d(110px, 100px, 0) rotate(330deg);
 	}
 	50% {
-		-webkit-transform: translate3d(110px, 150px, 0) rotate(440deg);
-		transform: translate3d(110px, 150px, 0) rotate(440deg);
+		-webkit-transform: translate3d(120px, 150px, 0) rotate(440deg);
+		transform: translate3d(120px, 150px, 0) rotate(440deg);
 	}
 	100% {
-		-webkit-transform: translate3d(110px, 150px, 0) rotate(440deg);
-		transform: translate3d(110px, 150px, 0) rotate(440deg);
+		-webkit-transform: translate3d(130px, 150px, 0) rotate(440deg);
+		transform: translate3d(130px, 150px, 0) rotate(440deg);
 	}
 }
 
@@ -610,28 +613,28 @@ html, body {
 		transform: translate3d(0,0,0) rotate(90deg);
 	}
 	10% {
-		-webkit-transform: translate3d(60px, 10px, 0) rotate(120deg);
-		transform: translate3d(60px, 10px, 0) rotate(120deg);
+		-webkit-transform: translate3d(70px, 10px, 0) rotate(120deg);
+		transform: translate3d(70px, 10px, 0) rotate(120deg);
 	}
 	20% {
-		-webkit-transform: translate3d(80px, 30px, 0) rotate(170deg);
-		transform: translate3d(80px, 30px, 0) rotate(170deg);
+		-webkit-transform: translate3d(90px, 30px, 0) rotate(170deg);
+		transform: translate3d(90px, 30px, 0) rotate(170deg);
 	}
 	30% {
-		-webkit-transform: translate3d(90px, 60px, 0) rotate(240deg);
-		transform: translate3d(90px, 60px, 0) rotate(240deg);
+		-webkit-transform: translate3d(100px, 60px, 0) rotate(240deg);
+		transform: translate3d(100px, 60px, 0) rotate(240deg);
 	}
 	40% {
-		-webkit-transform: translate3d(100px, 100px, 0) rotate(330deg);
-		transform: translate3d(100px, 100px, 0) rotate(330deg);
+		-webkit-transform: translate3d(110px, 100px, 0) rotate(330deg);
+		transform: translate3d(110px, 100px, 0) rotate(330deg);
 	}
 	50% {
-		-webkit-transform: translate3d(110px, 150px, 0) rotate(440deg);
-		transform: translate3d(110px, 150px, 0) rotate(440deg);
+		-webkit-transform: translate3d(120px, 150px, 0) rotate(440deg);
+		transform: translate3d(120px, 150px, 0) rotate(440deg);
 	}
 	100% {
-		-webkit-transform: translate3d(110px, 150px, 0) rotate(440deg);
-		transform: translate3d(110px, 150px, 0) rotate(440deg);
+		-webkit-transform: translate3d(130px, 150px, 0) rotate(440deg);
+		transform: translate3d(130px, 150px, 0) rotate(440deg);
 	}
 }
 
@@ -1692,7 +1695,7 @@ html, body {
 	height:80px; 
 	border-radius: 0 0 90px 0;
 	-webkit-animation: 1.5s 1.72s slurryTurn linear infinite;
-	animation: 1.5s 0172s slurryTurn linear infinite;
+	animation: 1.5s 1.72s slurryTurn linear infinite;
 	-webkit-transform-origin: 0 0;
 	-ms-transform-origin: 0 0;
 	transform-origin: 0 0;
@@ -1956,6 +1959,7 @@ html, body {
 		background: #957053;
 		z-index: 1;
 		-webkit-animation: 2s rotateLiquid infinite alternate ease-in-out;
+		animation: 2s rotateLiquid infinite alternate ease-in-out;
 	}
 	.bubble {
 		position: absolute;
@@ -1968,6 +1972,7 @@ html, body {
 		width: 30px;
 		height: 30px;
 		-webkit-animation: 2s burstBubbles infinite;
+		animation: 2s burstBubbles infinite;
 	}
 	.bubble-2 {
 		left: 90px;
@@ -1976,6 +1981,7 @@ html, body {
 		height: 20px;
 		background: #83736A;
 		-webkit-animation: 2s 1s burstBubbles infinite;
+		animation: 2s 1s burstBubbles infinite;
 	}
 	.bubble-3 {
 		left: 160px;
@@ -1984,6 +1990,7 @@ html, body {
 		height: 35px;
 		background: #B19A83;
 		-webkit-animation: 2s 1.5s burstBubbles infinite;
+		animation: 2s 1.5s burstBubbles infinite;
 	}
 	.bubble-4 {
 		left: 240px;
@@ -1992,6 +1999,7 @@ html, body {
 		height: 25px;
 		background: #746855;
 		-webkit-animation: 2s 0.5s burstBubbles infinite;
+		animation: 2s 0.5s burstBubbles infinite;
 	}
 }
 
@@ -2001,6 +2009,14 @@ html, body {
 	}
 	to {
 		-webkit-transform: translate3d(0,-4px,0);
+	}
+}
+@keyframes rotateLiquid {
+	from {
+		transform: translate3d(0,0,0);
+	}
+	to {
+		transform: translate3d(0,-4px,0);
 	}
 }
 
@@ -2015,6 +2031,20 @@ html, body {
 	}
 	75%, 100% {
 		-webkit-transform: scale(2) translate3d(0,-25px,0);
+		opacity: 0;
+	}
+}
+@keyframes burstBubbles {
+	0% {
+		transform: scale(1) translate3d(0,0,0);
+		opacity: 1;
+	}
+	65% {
+		transform: scale(1) translate3d(0,-50px,0);
+		opacity: 1;
+	}
+	75%, 100% {
+		transform: scale(2) translate3d(0,-25px,0);
 		opacity: 0;
 	}
 }
@@ -2058,6 +2088,9 @@ html, body {
 	top: 1382px;
 	left: 0;
 	z-index: 1;
+	img {
+		width: 280px;
+	}
 	.back {
 		position: absolute;
 		top: 93px;
@@ -2074,6 +2107,7 @@ html, body {
 		height: 60px;
 		background: #8D6348;
 		-webkit-animation: moveLiquid 2s ease-in-out infinite alternate;
+		animation: moveLiquid 2s ease-in-out infinite alternate;
 		.circle {
 			position: absolute;
 			border-radius: 100%;
@@ -2123,6 +2157,7 @@ html, body {
 		width: 62px;
 		height: 50px;
 		-webkit-animation: rotateClouds 2s ease-in-out infinite alternate;
+		animation: rotateClouds 2s 1s ease-in-out infinite alternate;
 		.part {
 			position: absolute;
 			border-radius: 100%;
@@ -2163,11 +2198,13 @@ html, body {
 		left: 120px;
 		top: 14px;
 		-webkit-animation: rotateClouds-2 2s 1s ease-in-out infinite alternate;
+		animation: rotateClouds-2 2s 1s ease-in-out infinite alternate;
 	}
 	.cloud-3 {
 		top: 66px;
 		left: 78px;
 		-webkit-animation: rotateClouds-3 2s 1s ease-in-out infinite alternate;
+		animation: rotateClouds-3 2s 1s ease-in-out infinite alternate;
 		.part {
 			background: #B19A83;
 		}
@@ -2200,34 +2237,84 @@ html, body {
 @-webkit-keyframes moveLiquid {
 	from {
 		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
 	}
 	to {
 		-webkit-transform: translate3d(0,10px,0);
+		transform: translate3d(0,10px,0);
+	}
+}
+@keyframes moveLiquid {
+	from {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+	to {
+		-webkit-transform: translate3d(0,10px,0);
+		transform: translate3d(0,10px,0);
 	}
 }
 
 @-webkit-keyframes rotateClouds {
 	from {
 		-webkit-transform: rotate(0) scale(1);
+		transform: rotate(0) scale(1);
 	}
 	to {
 		-webkit-transform: rotate(8deg) scale(1.1);
+		transform: rotate(8deg) scale(1.1);
 	}
 }
+@keyframes rotateClouds {
+	from {
+		-webkit-transform: rotate(0) scale(1);
+		transform: rotate(0) scale(1);
+	}
+	to {
+		-webkit-transform: rotate(8deg) scale(1.1);
+		transform: rotate(8deg) scale(1.1);
+	}
+}
+
 @-webkit-keyframes rotateClouds-2 {
 	from {
 		-webkit-transform: rotate(0) scale(1);
+		transform: rotate(0) scale(1);
 	}
 	to {
 		-webkit-transform: rotate(-5deg) scale(1.2);
+		transform: rotate(-5deg) scale(1.2);
 	}
 }
+@keyframes rotateClouds-2 {
+	from {
+		-webkit-transform: rotate(0) scale(1);
+		transform: rotate(0) scale(1);
+	}
+	to {
+		-webkit-transform: rotate(-5deg) scale(1.2);
+		transform: rotate(-5deg) scale(1.2);
+	}
+}
+
 @-webkit-keyframes rotateClouds-3 {
 	from {
 		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 	to {
 		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+}
+@keyframes rotateClouds-3 {
+	from {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	to {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
 	}
 }
 
@@ -2369,6 +2456,7 @@ html, body {
 	background: #E3E3E3;
 	border-bottom: 14px solid #CACACA;
 	-webkit-transform: rotate(-20deg);
+	transform: rotate(-20deg);
 }
 
 .biogas-wash {
@@ -2435,6 +2523,7 @@ html, body {
 				left: 0;
 				background: #FFF;
 				-webkit-animation: 2s moveWater ease-in infinite;
+				animation: 2s moveWater ease-in infinite;
 			}
 		}
 		.cloud {
@@ -2444,12 +2533,15 @@ html, body {
 			width: 72px;
 			height: 50px;
 			-webkit-transform: translateX(0);
+			transform: translateX(0);
 			-webkit-animation: 9s moveCloud linear infinite forwards;
+			animation: 9s moveCloud linear infinite forwards;
 			.part {
 				position: absolute;
 				border-radius: 100%;
 				background: #B29A80;
 				-webkit-animation: 9s washCloudPart linear infinite forwards;
+				animation: 9s washCloudPart linear infinite forwards;
 			}
 			.part-1 {
 				top: 0;
@@ -2484,14 +2576,18 @@ html, body {
 		}
 		.cloud-2 {
 			-webkit-animation-delay: 3s;
+			animation-delay: 3s;
 			.part {
 				-webkit-animation-delay: 3s;
+				animation-delay: 3s;
 			}
 		}
 		.cloud-3 {
 			-webkit-animation-delay: 6s;
+			animation-delay: 6s;
 			.part {
 				-webkit-animation-delay: 6s;
+				animation-delay: 6s;
 			}
 		}
 	}
@@ -2503,6 +2599,14 @@ html, body {
 	}
 	60%, 100% {
 		-webkit-transform: translateY(30px);
+	}
+}
+@keyframes moveWater {
+	0%, 40% {
+		transform: translateY(0);
+	}
+	60%, 100% {
+		transform: translateY(30px);
 	}
 }
 
@@ -2526,6 +2630,27 @@ html, body {
 		-webkit-transform: translateX(320px) translateY(-10px);
 	}
 }
+@keyframes moveCloud {
+	0% {
+		transform: translateX(0) translateY(0);
+	}
+	20% {
+		transform: translateX(64px) translateY(-20px);
+	}
+	40% {
+		transform: translateX(128px) translateY(20px);
+	}
+	60% {
+		transform: translateX(192px) translateY(-16px);
+	}
+	80% {
+		transform: translateX(256px) translateY(14px);
+	}
+	100% {
+		transform: translateX(320px) translateY(-10px);
+	}
+}
+
 @-webkit-keyframes washCloudPart {
 	0% {
 		-webkit-transform: scale(1);
@@ -2549,7 +2674,29 @@ html, body {
 		background: #ADDCEC;
 	}
 }
-
+@keyframes washCloudPart {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.25);
+	}
+	40% {
+		transform: scale(1.05);
+		background: #B29A80;
+	}
+	60% {
+		transform: scale(1.1);
+		background: #ADDCEC;
+	}
+	80% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.25);
+		background: #ADDCEC;
+	}
+}
 
 
 .pipe-gas {
@@ -2575,6 +2722,7 @@ html, body {
 		height: 6px;
 		background: #CACACA;
 		-webkit-animation: moveGas 2s linear infinite;
+		animation: moveGas 2s linear infinite;
 	}
 }
 .pipe-gas .end {
@@ -2597,6 +2745,7 @@ html, body {
 	background: #8D7D6C;
 	.sep {
 		-webkit-animation-delay: 1s;
+		animation-delay: 1s;
 	}
 }
 
@@ -2635,6 +2784,14 @@ html, body {
 	}
 	to {
 		-webkit-transform: translate3d(0,270px,0);
+	}
+}
+@keyframes moveGas {
+	from {
+		transform: translate3d(0,0,0);
+	}
+	to {
+		transform: translate3d(0,270px,0);
 	}
 }
 

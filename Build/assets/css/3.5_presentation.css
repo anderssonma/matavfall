@@ -104,7 +104,7 @@
     text-align: center;
     color: #77AD7C;
     line-height: 52px;
-    width: calc(100%/3);
+    width: calc(100%/3 - 1px);
     border-left: 1px solid #63A272;
     cursor: pointer; }
     .tools div:first-child {
@@ -154,6 +154,8 @@
   width: 1000px;
   margin: 0 auto;
   overflow: hidden; }
+  .presentation img {
+    max-width: 100%; }
   .presentation .remove-wrap {
     margin-top: 130px;
     height: 770px;

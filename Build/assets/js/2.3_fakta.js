@@ -21,11 +21,12 @@ $(document).ready(function() {
 	var fixedCar = $('#bil-bla');
 	var houseBox = $('#hus-box');
 	$(window).on('scroll', function() { 
-		if (carIsVisible && getOffset(hus1).top < 100) {
+		var elOffTop = hus1.getBoundingClientRect().top;
+		if (carIsVisible && elOffTop < 100) {
 			fixedCar.css('display', 'none');
 			houseBox.addClass('lights');
 			carIsVisible = false;
-		} else if (!carIsVisible && getOffset(hus1).top > 100) {
+		} else if (!carIsVisible && elOffTop > 100) {
 			fixedCar.css('display', 'block');
 			houseBox.removeClass('lights');
 			carIsVisible = true;

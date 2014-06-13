@@ -804,6 +804,7 @@
 #tl-text-2 {
 	right: 0;
 	bottom: 40px; // -60px;
+	z-index: 5;
 }
 #tl-text-1 {
 	bottom: 460px; // 560px;
@@ -1410,6 +1411,7 @@
 		img {
 			position: relative;
 			z-index: 1;
+			max-width: 100%;
 		}
 	}
 	.back-rest {
