@@ -2455,13 +2455,19 @@ html, body {
   top: 1810px;
   left: -40px;
   right: -40px; }
+  .end-of-line .video-mask {
+    -webkit-mask: url(../img/video_mask.png);
+    overflow: hidden;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin: 0 40px;
+    float: left; }
   .end-of-line .circle {
     width: 280px;
     height: 280px;
-    border-radius: 100%;
-    float: left;
-    margin: 0 40px;
-    overflow: hidden; }
+    display: block;
+    position: relative; }
   .end-of-line .text {
     margin: 0 40px;
     width: 280px;
