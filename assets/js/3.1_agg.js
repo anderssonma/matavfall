@@ -268,8 +268,8 @@ $(document).ready(function() {
 	var cloud3 = TweenMax.to($('#cloud-3'), 1, {css: {bottom: '80%'}});
 
 	var tarmac = TweenMax.to($('#tarmac'), 1, {css: {bottom: '-50%'}});
-	var text5In = TweenMax.to($('#text-5'), 0.5, {css: {opacity: 1}});
-	var text5Out = TweenMax.to($('#text-5'), 0.5, {css: {opacity: 0}});
+	var text5In = TweenMax.to($('#text-5-top, #text-5-bot'), 0.5, {css: {opacity: 1}});
+	var text5Out = TweenMax.to($('#text-5-top, #text-5-bot'), 0.5, {css: {opacity: 0}});
 	var exhaustIn = TweenMax.to($('#lorry-exhaust'), 1, {css: {opacity: '1'}});
 
 	var cloudBox = TweenMax.to($('#cloud-box'), 3, {css: {left: '-100%'}, ease:Expo.easeInOut});
@@ -298,14 +298,7 @@ $(document).ready(function() {
 		}
 	});
 	var tarmacSilhouette2 = TweenMax.to($('#tarmac img'), 6, {css: {left: '-50%'}});
-	var text7Out = TweenMax.to($('#text-7'), 0.5, {css: {opacity: 0},
-		onStart: function() {
-			$('#car-box').addClass('bio-mode');
-		},
-		onReverseComplete: function() {
-			$('#car-box').removeClass('bio-mode');
-		}
-	});
+	var text7Out = TweenMax.to($('#text-7-top, #text-7-bot'), 0.5, {css: {opacity: 0}});
 	//var carBrake = TweenMax.to($('#car'), 6, {css: {left: '35%'}});
 
 	var tarmacTransition = TweenMax.to($('#tarmac'), 1, {css: {bottom: '0', marginBottom: 0}});
@@ -332,16 +325,15 @@ $(document).ready(function() {
 
 	var carBg1 = TweenMax.to($('#car-bg'), 1, {css: {left: 0}});
 
-
 	var carBg2 = TweenMax.to($('#car-bg'), 1, {css: {bottom: '25px'}});
 	var carBg3 = TweenMax.to($('#car-bg'), 1, {css: {width: '100%'}});
+	var biogasOut = TweenMax.to($('#bio-fuel'), 1, {css: {opacity: 0}});
 
 	var carBgEggs = TweenMax.to($('#egg-holder'), 1, {css: {opacity: '1'}});
 	var carBg4 = TweenMax.to($('#car-bg'), 1, {css: {backgroundColor: '#E4E2D8', borderRadius: '20px'}});
 	var carOut = TweenMax.to($('#car'), 1, {css: {opacity: 0},
-
 		onStart: function() {
-			$('#car-box').removeClass('bio-mode').addClass('egg-mode');
+			$('#car-box').addClass('egg-mode');
 		},
 		onReverseComplete: function() {
 			$('#car-box').removeClass('egg-mode');
@@ -408,7 +400,7 @@ $(document).ready(function() {
 
 	var eggWhiteCook = TweenMax.to($('#egg-white'), 2, {css: {opacity: 1}});
 
-	var spatulaIn = TweenMax.to($('#spatula'), 2, {css: {top: '50%', left: '50%'}});
+	var spatulaIn = TweenMax.to($('#spatula'), 2, {css: {top: '50%', left: '50%', transform: 'scale(1)'}});
 
 	var eggToss = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(2) rotateX(180deg)', marginTop: '-=40px'}});
 	var eggTossYolk = TweenMax.to($('#egg-boil-inner'), 1, {css: {transform: 'translateY(-10px)'}});
@@ -421,7 +413,8 @@ $(document).ready(function() {
 	var stoveOut = TweenMax.to($('#stove'), 1, {css: {bottom: '150%'}, delay: 1});
 	var saucepanOut = TweenMax.to($('#saucepan'), 1, {css: {top: '-50%'}, delay: 1});
 	var spatulaToss = TweenMax.to($('#spatula'), 1, {css: {transform: 'scale(1.5)'}});
-	var spatulaOut = TweenMax.to($('#spatula'), 1, {css: {top: '-50%'}, delay: 1});
+	//var spatulaTossBack = TweenMax.to($('#spatula'), 1, {css: {transform: 'scale(1)'}, delay: 0.5});
+	var spatulaOut = TweenMax.to($('#spatula'), 1, {css: {top: '-50%', transform: 'scale(1)'}, delay: 1});
 
 
 	// PART 6
@@ -487,7 +480,7 @@ $(document).ready(function() {
 			// PART 4
 			.add([wheel1, wheel2, carBg1])
 			.add(carBg2)
-			.add(carBg3)
+			.add([carBg3, biogasOut])
 			.add([carOut, eggCloud1, eggCloud2, eggCloud3, eggCloud4, eggCloud5, eggCloud6, eggCloud7, eggCloud8])
 			.add([carBg4, carBgExpand, carCenter])
 			.add(carBgEggs)
