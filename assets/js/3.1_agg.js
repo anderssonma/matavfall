@@ -298,7 +298,14 @@ $(document).ready(function() {
 		}
 	});
 	var tarmacSilhouette2 = TweenMax.to($('#tarmac img'), 6, {css: {left: '-50%'}});
-	var text7Out = TweenMax.to($('#text-7'), 0.5, {css: {opacity: 0}});
+	var text7Out = TweenMax.to($('#text-7'), 0.5, {css: {opacity: 0},
+		onStart: function() {
+			$('#car-box').addClass('bio-mode');
+		},
+		onReverseComplete: function() {
+			$('#car-box').removeClass('bio-mode');
+		}
+	});
 	//var carBrake = TweenMax.to($('#car'), 6, {css: {left: '35%'}});
 
 	var tarmacTransition = TweenMax.to($('#tarmac'), 1, {css: {bottom: '0', marginBottom: 0}});
@@ -334,7 +341,7 @@ $(document).ready(function() {
 	var carOut = TweenMax.to($('#car'), 1, {css: {opacity: 0},
 
 		onStart: function() {
-			$('#car-box').addClass('egg-mode');
+			$('#car-box').removeClass('bio-mode').addClass('egg-mode');
 		},
 		onReverseComplete: function() {
 			$('#car-box').removeClass('egg-mode');

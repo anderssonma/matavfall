@@ -632,6 +632,12 @@
   left: -42px;
   width: 10px;
   height: 10px; }
+.car-box .bio-fuel {
+  position: absolute;
+  top: 58px;
+  left: -54px;
+  opacity: 0;
+  transition: 0.35s opacity; }
 
 .wheel {
   position: absolute;
@@ -655,6 +661,13 @@
     background: #FFF;
     border-radius: 0 23px 23px 0;
     -webkit-transition: 0.4s border; }
+
+#car-box.bio-mode .circle {
+  background: #FFF; }
+  #car-box.bio-mode .circle .bg {
+    background: #FFF; }
+#car-box.bio-mode .bio-fuel {
+  opacity: 1; }
 
 #car-box.egg-mode .wheel {
   border-width: 0px;

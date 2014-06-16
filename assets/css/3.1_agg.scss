@@ -759,6 +759,14 @@ margin: -40px 0 0 -80px;
 		width: 10px;
 		height: 10px;
 	}
+
+	.bio-fuel {
+		position: absolute;
+		top: 58px;
+		left: -54px;
+		opacity: 0;
+		transition: 0.35s opacity;
+	}
 }
 
 
@@ -785,6 +793,18 @@ margin: -40px 0 0 -80px;
 		background: #FFF;
 		border-radius: 0 23px 23px 0;
 		-webkit-transition: 0.4s border;
+	}
+}
+
+#car-box.bio-mode {
+	.circle {
+		background: #FFF;
+		.bg {
+			background: #FFF;
+		}
+	}
+	.bio-fuel {
+		opacity: 1;
 	}
 }
 
