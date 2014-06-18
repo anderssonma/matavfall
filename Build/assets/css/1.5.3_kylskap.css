@@ -106,14 +106,16 @@
 .kyl-frys #fruit-section-1 #mjolk {
 	position: relative;
 	left: 220px;
+	top: -2px;
+	z-index: 1;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
 .kyl-frys #fruit-section-1 #korv {
 	position: relative;
 	width: 280px;
-	left: 190px;
-	top: 19px;
+	left: 170px;
+	top: 0;
 }
 .kyl-frys #fruit-section-1 #morot {
 	position: relative;
@@ -126,8 +128,8 @@
 .kyl-frys #fruit-section-1 #fisk-hel {
 	position: relative;
 	width: 240px;
-	left: 210px;
-	top: 55px;
+	left: 200px;
+	top: 3px;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
@@ -165,7 +167,8 @@
 }
 .kyl-frys #fruit-section-2 #kotlett {
 	position: relative;
-	width: 220px;
+	width: 180px;
+	margin-top: 50px;
 	left: 370px;
 	vertical-align: bottom;
 	transform-origin: 50% 100%;
@@ -182,18 +185,18 @@
 	position: relative;
 	transform-origin: 50% 78%;
 	-webkit-transform-origin:50% 78%;
-	left: 340px;
+	left: 280px;
 
 }
 .kyl-frys #fruit-section-3 #avokado {
 	position: relative;
 	vertical-align: bottom;
-	left: 330px;
+	left: 250px;
 }
 .kyl-frys #fruit-section-3 #lime {
 	position: relative;
 	vertical-align: bottom;
-	left: 320px;
+	left: 220px;
 }
 .kyl-frys #fruit-section-4 {
 	position: absolute;
@@ -205,8 +208,9 @@
 .kyl-frys #fruit-section-4 #banan {
 	position: relative;
 	vertical-align: bottom;
-	left: 102px;
+	left: 120px;
 	top: -63px;
+	width: 280px;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
@@ -214,22 +218,26 @@
 	position: relative;
 	vertical-align: bottom;
 	width: 110px;
-	left: 80px;
+	left: 90px;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
 .kyl-frys #fruit-section-4 #tomat {
 	position: relative;
 	vertical-align: bottom;
-	left: 250px;
+	left: 300px;
+	width: 120px;
+	top: 3px;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
 .kyl-frys #fruit-section-4 #gurka {
 	position: relative;
 	vertical-align: bottom;
-	left: 180px;
+	left: 210px;
 	top: -3px;
+	width: 50px;
+	margin-top: 53px;
 	transform-origin: 50% 100%;
 	-webkit-transform-origin:50% 100%;
 }
