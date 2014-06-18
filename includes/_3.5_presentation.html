@@ -1,62 +1,79 @@
 <div class="pres-wrap">
 
-<h1>PRESENTATION</h1>
-<div id="presentation" class="presentation">
-	<div id="remove-wrap" class="remove-wrap">
-		<div id="drop-zone"></div>
-		<div id="trash-can" class="trash-can">SLÄPP HÄR FÖR ATT TA BORT</div>
-	</div>
-	<div class="image-drawer show"></div>
-
-	<div class="controls images-active">
-		<div class="image-mode" onclick="PRES.changeImageType('images');">Bilder</div>
-		<div class="word-mode" onclick="PRES.changeImageType('words');">Ord</div>
-		<div class="pager">
-			<div onclick="PRES.changeImagePage(-1);" class="left"><img src="<!-- @path pil_vanster.svg -->" width="18"></div>
-			<div id="page-count">1&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;5</div>
-			<div onclick="PRES.changeImagePage(1);" class="right"><img src="<!-- @path pil_hoger.svg -->" width="18"></div>
+	<h1>PRESENTATION</h1>
+	<div id="presentation" class="presentation">
+		<div id="remove-wrap" class="remove-wrap">
+			<div id="drop-zone"></div>
+			<div id="trash-can" class="trash-can">
+				<span>SLÄPP HÄR FÖR ATT TA BORT</span>
+				<img src="<!-- @path icon_remove.svg -->" width="50">
+			</div>
 		</div>
-	</div>
+		<div class="image-drawer show"></div>
 
-	<div class="tools">
-		<div class="print" onclick="window.print();"><img src="<!-- @path icon_print.svg -->" height="18"></div>
-		<div class="save" onclick="PRES.saveData();"><img src="<!-- @path icon_save.svg -->" height="18"></div>
-		<div class="restart" onclick="PRES.clearBoard();">
-			<img class="icon-clear" src="<!-- @path icon_clear.svg -->" height="18">
-			<img class="icon-undo" src="<!-- @path icon_reset.svg -->" height="18">
+		<div class="controls images-active">
+			<div class="image-mode" onclick="PRES.changeImageType('images');">Bilder</div>
+			<div class="word-mode" onclick="PRES.changeImageType('words');">Ord</div>
+			<div class="pager">
+				<div onclick="PRES.changeImagePage(-1);" class="left"><img src="<!-- @path pil_vanster.svg -->" width="18"></div>
+				<div id="page-count">1&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;5</div>
+				<div onclick="PRES.changeImagePage(1);" class="right"><img src="<!-- @path pil_hoger.svg -->" width="18"></div>
+			</div>
 		</div>
-	</div>
 
-	<div id="image-counter">BILDER KVAR: 50</div>
-	<div id="layer-help"></div>
-
-	<div id="pres-toast" class="toast">SPARAT!</div>
-
-	<div id="color-swatches" class="color-swatches">
-		<div onclick="PRES.changeBg(this, 'bg-1');" class="color bg-1"></div>
-		<div onclick="PRES.changeBg(this, 'bg-2');" class="color bg-2"></div>
-		<div onclick="PRES.changeBg(this, 'bg-3');" class="color bg-3"></div>
-		<div onclick="PRES.changeBg(this, 'bg-4');" class="color bg-4"></div>
-	</div>
-
-	<div id="overlay-import" class="overlay import">
-		<h6>Vill du ladda din sparade presentation?</h6>
-		<button onclick="PRES.getSavedData(this);" class="first">Ja tack!</button>
-		<button onclick="PRES.showIntroOverlay(this);">Nej, &nbsp;jag vill börja om</button>
-	</div>
-
-	<div id="overlay-intro" class="overlay intro">
-		<h6>Välkommen till presentationen i ben 3</h6>
-		<p>Duis vitae lectus congue, mattis risus eu, scelerisque justo. Morbi lacinia ullamcorper purus et elementum. Mauris nec sapien velit. Nullam ut nisi in dolor tempus dapibus.</p>
-		<div class="bg-picker">
-			<div onclick="PRES.pickBg(this);" class="bg-choice bg-1 selected"></div>
-			<div onclick="PRES.pickBg(this);" class="bg-choice bg-2"></div>
-			<div onclick="PRES.pickBg(this);" class="bg-choice bg-3"></div>
-			<div onclick="PRES.pickBg(this);" class="bg-choice bg-4"></div>
+		<div class="tools">
+			<div class="print" onclick="PRES.print();"><img src="<!-- @path icon_print.svg -->" height="18"></div>
+			<div class="save" onclick="PRES.saveData();"><img src="<!-- @path icon_save.svg -->" height="18"></div>
+			<div class="restart" onclick="PRES.clearBoard();">
+				<img class="icon-clear" src="<!-- @path icon_clear.svg -->" height="18">
+				<img class="icon-undo" src="<!-- @path icon_reset.svg -->" height="18">
+			</div>
 		</div>
-		<button onclick="PRES.closeIntroOverlay(this);">Jag är redo!</button>
+
+		<div id="image-counter">BILDER KVAR: 50</div>
+		<div id="layer-help"></div>
+
+		<div id="pres-toast" class="toast">SPARAT!</div>
+
+		<div id="color-swatches" class="color-swatches">
+			<div onclick="PRES.changeBg(this, 'bg-1');" class="color bg-1"></div>
+			<div onclick="PRES.changeBg(this, 'bg-2');" class="color bg-2"></div>
+			<div onclick="PRES.changeBg(this, 'bg-3');" class="color bg-3"></div>
+			<div onclick="PRES.changeBg(this, 'bg-4');" class="color bg-4"></div>
+		</div>
+
+		<div id="overlay-import" class="overlay import">
+			<h6>Vill du ladda din sparade presentation?</h6>
+			<button onclick="PRES.getSavedData(this);" class="first">Ja tack!</button>
+			<button onclick="PRES.showIntroOverlay(this);">Nej, &nbsp;jag vill börja om</button>
+		</div>
+
+		<div id="overlay-intro" class="overlay intro">
+			<h6>Välkommen till presentationen i ben 3</h6>
+			<p>Duis vitae lectus congue, mattis risus eu, scelerisque justo. Morbi lacinia ullamcorper purus et elementum. Mauris nec sapien velit. Nullam ut nisi in dolor tempus dapibus.</p>
+			<div class="bg-picker">
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-1 selected"></div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-2"></div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-3"></div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-4"></div>
+			</div>
+			<button onclick="PRES.closeIntroOverlay(this);">Jag är redo!</button>
+		</div>
+
+		<div id="overlay-popup" class="overlay import popup">
+			<h6>Du måste tillåta popuper för att kunna skriva ut</h6>
+			<button onclick="PRES.closeOverlay(this);">Stäng</button>
+		</div>
+
+		<div id="overlay-print" class="overlay import print">
+			<h6>Din bild är redo för neddladnning eller utskrift</h6>
+			<a class="button first">Öppna bilden</a>
+			<button onclick="PRES.closeOverlay(this);">Stäng</button>
+		</div>
+
 	</div>
 
-</div>
+	<!-- PRESENTATION IS RENDERED ONTO THIS CANVAS AND EXPORTED WHEN PRINTING -->
+	<canvas id="canvas" style="display: none;"></canvas>
 
 </div>

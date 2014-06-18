@@ -151,7 +151,8 @@
 	position: absolute;
 	right: -150px;
 	bottom: 40px;
-	transition: 0.35s right;
+	transition: 0.35s all;
+	opacity: 0;
 	.color {
 		width: 30px;
 		height: 30px;
@@ -180,7 +181,8 @@
 	}
 }
 .editing .color-swatches {
-	right: 0px;
+	right: 0;
+	opacity: 1;
 }
 
 .presentation {
@@ -311,7 +313,7 @@
 			font-size: 14px;
 			padding: 0 40px;
 		}
-		button {
+		button, .button {
 			width: 50%;
 			border: none;
 			float: left;
@@ -328,6 +330,11 @@
 			&:hover {
 				background: #286644;
 			}
+		}
+		.button {
+			height: 55px;
+			text-align: center;
+			text-decoration: none;
 		}
 		.bg-picker {
 			padding: 0 20px 16px;
@@ -368,8 +375,13 @@
 		&.import {
 			width: 500px;
 			margin: -50px 0 0 -250px;
-			button {
+			button,
+			.button {
 				margin-top: 34px;
+			}
+			&.popup button {
+				width: 100%;
+				border-radius: 0 0 3px 3px;
 			}
 		}
 		&.intro {
@@ -393,22 +405,22 @@
 	background: #77AD7C;
 	&.bg-1 {
 		background: url(../img/pres_bg1.svg) #77AD7C no-repeat center;
-		background-size: 1000px 600px;
+		//background-size: 1000px 600px;
 		transition: 0.35s background-color;
 	}
 	&.bg-2 {
-		background: url(../img/pres_bg2.svg) #D2ECF8 no-repeat bottom center;
-		background-size: 1000px 600px;
+		background: url(../img/pres_bg2.svg) #D2ECF8 no-repeat center;
+		//background-size: 1000px 600px;
 		transition: 0.35s background-color;
 	}
 	&.bg-3 {
 		background: url(../img/pres_bg3.svg) #E7BEA9 no-repeat center;
-		background-size: 1000px 600px;
+		//background-size: 1000px 600px;
 		transition: 0.35s background-color;
 	}
 	&.bg-4 {
 		background: url(../img/pres_bg4.svg) #F4F4E3 no-repeat center;
-		background-size: 1000px 600px;
+		//background-size: 1000px 600px;
 		transition: 0.35s background-color;
 	}
 }
@@ -426,12 +438,10 @@
 .trash-can {
 	position: absolute;
 	bottom: 0;
-	left: 50%;
-	margin-left: -170px;
-	width: 340px;
+	left: 0;
+	right: 0;
 	border-radius: 0 0 5px 5px;
 	height: 90px;
-	border: 1px dashed #63A272;
 	border-top: none;
 	color: #36895B;
 	font-size: 18px;
@@ -441,13 +451,35 @@
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-	&.remove {
-		color: #FFF !important;
-		border-color: #FFF;
-		border-top: none;
-		line-height: 90px;
-		z-index: 9999;
+	background: #63A272;
+	span, img {
+		transition: 0.35s all;
 	}
+	span {
+		opacity: 1;
+		display: block;
+	}
+	img {
+		position: absolute;
+		top: 26px;
+		left: 50%;
+		margin-left: -25px;
+		opacity: 0;
+	}
+	&.remove {
+		border-top: none;
+		z-index: 3;
+		background: #36895B;
+		span {
+			opacity: 0;
+			margin-top: 6px;
+		}
+		img {
+			opacity: 1;
+			top: 20px;
+		}
+	}
+
 }
 
 .shrink {

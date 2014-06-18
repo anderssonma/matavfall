@@ -47,26 +47,25 @@ PRES.pickBg = function(self) {
 PRES.changeBg = function(self, bgNum) {
 	$('#color-swatches .color').removeClass('selected');
 	$(self).addClass('selected');
-	$('#presentation #drop-zone').removeClass(function (i, css) {
+	PRES.$dropZone.removeClass(function (i, css) {
 		return (css.match (/\bbg-\S+/g) || []).join(' ');
 	}).addClass(bgNum);
 };
 
 
 PRES.saveData = function() {
-	var imageData = $('#drop-zone').html();
-	var backgroundImage = $('#drop-zone').attr('class').match(/bg-[0-9]/);
-	//var backgroundImage = 'bg-1';
-	if (imageData !== '' && backgroundImage[0] !== null) {
+	var imageData = PRES.$dropZone.html();
+	var backgroundImage = PRES.$dropZone.attr('class').match(/bg-[0-9]/);
+	if (imageData === '' || backgroundImage == null || backgroundImage[0] == null) {
+		this.toastMessage('Inget att spara');
+	} else {
 		var saveObject = {
 			background: backgroundImage[0],
 			data: imageData
 		};
 		localStorage.setItem('MAT_BEN3_PRES', JSON.stringify(saveObject));
 		this.toastMessage('Data sparat!');
-	} else {
-		this.toastMessage('Inget att spara');
-	}
+	} 
 };
 
 PRES.checkSavedData = function() {
@@ -78,22 +77,22 @@ PRES.checkSavedData = function() {
 };
 
 PRES.getSavedData = function(self) {
-	if (!$('#presentation #drop-zone').is(':empty')) {
+	if (!PRES.$dropZone.is(':empty')) {
 		this.removeBoardImages();
 	}
 	$(self).parent().removeClass('show');
 	var savedData = localStorage.getItem('MAT_BEN3_PRES');
 	var countImg = savedData.match(/<img/g).length;
 	savedData = JSON.parse(savedData);
-	$('#presentation #drop-zone').append(savedData.data).addClass(savedData.background);
+	PRES.$dropZone.append(savedData.data).addClass(savedData.background);
 	$('#drop-zone .ui-draggable').draggable({
 		cursor: 'move',
 		containment: '#remove-wrap',
 		start: function() {
-			$('#presentation').addClass('show-delete');
+			PRES.$pres.addClass('show-delete');
 		},
 		stop: function() {
-			$('#presentation').removeClass('show-delete');
+			PRES.$pres.removeClass('show-delete');
 		}
 	}).hover(function() {
 		PRES.imageControls(this);
@@ -102,24 +101,33 @@ PRES.getSavedData = function(self) {
 	});
 	this.imgRemaining = this.imgRemaining - countImg;
 	$('#presentation .color-swatches .' + savedData.background).addClass('selected');
-	$('#presentation').addClass('editing');
+	this.$pres.addClass('editing');
 	$('#image-counter').text('BILDER KVAR: ' + this.imgRemaining);
 	this.toastMessage('Data importerat');
 };
 
+PRES.showOverlay = function(selector) {
+	$('#presentation ' + selector).addClass('show');
+};
 
-PRES.showIntroOverlay = function(self) {
+PRES.closeOverlay = function(self) {
 	$(self).parent().removeClass('show');
-	$('#presentation #overlay-intro').addClass('show');
+};
+
+PRES.showIntroOverlay = function(self, selector) {
+	PRES.closeOverlay(self);
+	PRES.showOverlay('#overlay-intro');
 };
 
 PRES.closeIntroOverlay = function(self) {
-	$(self).parent().removeClass('show');
+	PRES.closeOverlay(self);
 	var selectedBg = $('#overlay-intro .selected').attr('class').match(/bg-[0-9]/)[0];
-	$('#drop-zone').addClass(selectedBg);
+	PRES.$dropZone.addClass(selectedBg);
 	$('#presentation .color-swatches .' + selectedBg).addClass('selected');
-	$('#presentation').addClass('editing');
+	this.$pres.addClass('editing');
 };
+
+
 
 
 PRES.createImageDOMString = function() { // MAKE A LONG STRING WITH ALL IMAGES IN SET
@@ -139,13 +147,13 @@ PRES.changeImageType = function(clickedMode) {
 		return false;
 	}
 	this.imgArrayPage = 0;
-	$('#presentation .image-drawer').empty().removeClass().addClass('image-drawer mode-' + clickedMode);
+	this.$imageDrawer.empty().removeClass().addClass('image-drawer mode-' + clickedMode);
 	this.mode = (this.mode === 'images') ? 'words' : 'images';
 	$('#presentation .controls').removeClass().addClass('controls ' + this.mode + '-active');
-	$('#presentation .image-drawer').append(this.createImageDOMString());
+	this.$imageDrawer.append(this.createImageDOMString());
 	$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 	this.setupDraggables('.image-drawer .draggable');
-	$('#presentation .image-drawer').addClass('show');
+	this.$imageDrawer.addClass('show');
 
 };
 
@@ -154,10 +162,10 @@ PRES.changeImagePage = function(num) {
 		return false;
 	} else {
 		this.imgArrayPage = this.imgArrayPage + num;
-		$('#presentation .image-drawer').empty().removeClass('show').append(this.createImageDOMString());
+		this.$imageDrawer.empty().removeClass('show').append(this.createImageDOMString());
 		$('#presentation #page-count').html((this.imgArrayPage + 1) + '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;' + imageData[this.mode].length);
 		this.setupDraggables('.image-drawer .draggable');
-		$('#presentation .image-drawer').addClass('show');
+		this.$imageDrawer.addClass('show');
 	}
 };
 
@@ -186,7 +194,7 @@ PRES.setupDraggables = function(selector) {
 				top: ev.target.offsetTop,
 				left: ev.target.offsetLeft
 			}).addClass('placeholder').append(placeholderImage);
-			$('#presentation .image-drawer').append(placeholder);
+			PRES.$imageDrawer.append(placeholder);
 			$(this).attr('data-off-left', ev.target.offsetLeft).attr('data-off-top', ev.target.offsetTop);
 		},
 		stop: function() { 
@@ -196,9 +204,9 @@ PRES.setupDraggables = function(selector) {
 };
 
 PRES.removeBoardImages = function() {
-	PRES.htmlBackup = $('#presentation #drop-zone').html();
-	PRES.bgBackup = $('#drop-zone').attr('class').match(/bg-[0-9]/);
-	$('#presentation #drop-zone').empty();
+	PRES.htmlBackup = PRES.$dropZone.html();
+	PRES.bgBackup = PRES.$dropZone.attr('class').match(/bg-[0-9]/);
+	PRES.$dropZone.empty();
 	$('.tools .restart').addClass('undo-mode');
 	PRES.imgRemaining = PRES.imgAllowed;
 	PRES.undoMode = true;
@@ -206,7 +214,7 @@ PRES.removeBoardImages = function() {
 
 PRES.clearBoard = function() {
 	if (!PRES.undoMode) { // CLEAR BOARD
-		if (!$('#presentation #drop-zone').is(':empty') && confirm('Vill du verkligen ta bort alla bilder?')) {
+		if (!PRES.$dropZone.is(':empty') && confirm('Vill du verkligen ta bort alla bilder?')) {
 			PRES.removeBoardImages();
 			PRES.toastMessage('Data rensat. Klicka igen för att ångra');
 			//localStorage.removeItem('MAT_BEN3_PRES');
@@ -214,7 +222,7 @@ PRES.clearBoard = function() {
 			PRES.toastMessage('Inget att rensa');
 		}
 	} else { // RESTORE PREVIOUS BOARD
-		$('#presentation #drop-zone').empty().append(PRES.htmlBackup).addClass(PRES.bgBackup);
+		PRES.$dropZone.empty().append(PRES.htmlBackup).addClass(PRES.bgBackup);
 		$('.tools .restart').removeClass('undo-mode');
 		PRES.toastMessage('Data återställt');
 		PRES.undoMode = false;
@@ -260,11 +268,15 @@ PRES.removeImageControls = function(image) {
 
 PRES.setup = function() {
 
-	$('#presentation .image-drawer').append(this.createImageDOMString('images'));
+	this.$pres = $('#presentation');
+	this.$dropZone = $('#presentation #drop-zone');
+	this.$imageDrawer = $('#presentation .image-drawer');
+
+	this.$imageDrawer.append(this.createImageDOMString('images'));
 	this.checkSavedData();
 	this.setupDraggables('.draggable');
 
-	$('#drop-zone').droppable({
+	this.$dropZone.droppable({
 		hoverClass: 'valid',
 		drop: function(ev, ui) {
 
@@ -303,7 +315,7 @@ PRES.setup = function() {
 				top: endPos.top + startTop - compensateHeight, // TOP MARGIN
 				zIndex: 10
 			}).attr('height', imageHeight).attr('width', newImageWidth);
-			$('#drop-zone').append(newImage);
+			PRES.$dropZone.append(newImage);
 			$(newImage).hover(function() {
 				PRES.imageControls(this);
 			}, function() {
@@ -335,3 +347,111 @@ PRES.setup = function() {
 $(document).ready(function() {
 	PRES.setup();
 });
+
+
+
+
+PRES.rgbToHex = function(rgb) {
+  var a = rgb.match(/\d+/g);
+  return "#" + (((1 << 24) + (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2])).toString(16).slice(1));
+};
+
+PRES.print = function() {
+
+	var bgNum = PRES.$dropZone.attr('class').match(/bg-[0-9]/);
+	// DONT GENERATE PRINT IF BOARD IS EMPTY
+	if (PRES.$dropZone.html() === '' || bgNum == null || bgNum[0] == null) {
+		PRES.toastMessage('Inget att skriva ut');
+		return false;
+	}
+
+	var canvas = document.getElementById('canvas');
+	canvas.width = 1000 * 2;
+	canvas.height = 680 * 2;
+
+	// Copy the image contents to the canvas
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = PRES.rgbToHex(PRES.$dropZone.css('backgroundColor'));
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+	var images = [];
+	var preparedImages = [];
+	$('#drop-zone img').each(function(i, el) {
+		var imageObject = {
+			width: parseInt(el.width, 10) * 2,
+			height: parseInt(el.height, 10) * 2,
+			src: el.src,
+			top: (parseInt($(el).css('top').replace(/px/, ''), 10) - 130) * 2, // -130px = TOP BAR HEIGHT
+			left: parseInt($(el).css('left').replace(/px/, ''), 10) * 2,
+			zIndex: parseInt($(el).css('zIndex'), 10)
+		};
+		images.push(imageObject);
+	});
+
+	images.sort(function(a, b) { 
+		// MAKE SURE WE APPEND IN THE RIGHT ORDER
+		// FOR CORRECT IMAGE OVERLAPPING
+		if (a.zIndex === b.zIndex) {
+			return 0;
+		} else if (a.zIndex < b.zIndex) {
+			return -1;
+		} else if (a.zIndex > b.zIndex) {
+			return 1;
+		}
+	});
+
+	var callbackCounter = {};
+	callbackCounter.remaining = images.length + 1; // + THE BG IMAGE
+	callbackCounter.addCallback = function() {
+		callbackCounter.remaining--;
+		if (callbackCounter.remaining <= 0) { // DRAW IMAGES IN CORRECT ORDER/Z-INDEX ONCE EVERYTHING IS LOADED
+			$.each(preparedImages, function(i, el) {
+				ctx.drawImage(el.img, el.left, el.top, el.img.width, el.img.height);
+			});
+			PRES.exportCanvas();
+		}
+	};
+
+	var bgImage = new Image();
+	bgImage.onload = function() { // MAKE SURE WE ALWAYS DRAW THE BG FIRST
+		ctx.drawImage(bgImage, ((1000 - this.width) / 2) * 2, ((680 - this.height) / 2) * 2, (this.width * 2), (this.height * 2));
+		callbackCounter.addCallback();
+	};
+	bgImage.src = 'assets/img/pres_bg' + bgNum[0].replace(/bg-/g, '') + '.svg';
+	bgImage.setAttribute('crossOrigin','anonymous');
+
+	$.each(images, function(i, el) { // PRELOAD IMAGES
+		var img = new Image();
+		img.onload = function() {
+			preparedImages.push({
+				top: el.top,
+				left: el.left,
+				img: img
+			});
+			callbackCounter.addCallback();
+		};
+		img.src = el.src;
+		img.width = el.width;
+		img.height = el.height;
+		img.setAttribute('crossOrigin','anonymous');
+	});
+
+};
+
+PRES.exportCanvas = function() {
+	var imageData = canvas.toDataURL('image/png');
+	window.setTimeout(function() {
+		$('#overlay-print a').attr({
+			href: imageData,
+			target: '_blank'
+		});
+		PRES.showOverlay('#overlay-print');
+		/*
+		if (!printWindow || printWindow.closed || typeof printWindow.closed === 'undefined') {
+			PRES.showOverlay('#overlay-popup');
+		} else if (printWindow.document) {
+			printWindow.document.title = 'Skriv ut presentation';
+		}
+		*/
+	}, 0);
+};
