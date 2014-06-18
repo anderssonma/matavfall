@@ -26,8 +26,6 @@
 	position: relative;
 }
 .kyl-frys #text-block-1 {
-	/*margin-top: 4em;*/
-	
 	background: #fff;
 	padding: 40px;
 	width: 40%;
@@ -37,10 +35,9 @@
 	height: 359px;
 	border-radius: 0 10px 10px 0;
 	z-index: 1;
+	color: #333;
 }
 .kyl-frys #text-block-2 {
-	/*margin-top: 17em;*/
-
 	background: #fff;
 	padding: 40px;
 	width: 60%;
@@ -50,10 +47,10 @@
 	border-radius: 0 10px 0 0;
 	height: 274px;
 	z-index: 1;
+	color: #333;
 }
 .kyl-frys #text-block-3 {
-	/*margin-top: 29em;*/
-
+	color: #333;
 	background: #fff;
 	padding: 40px 60px 40px 40px;
 	width: 50%;
@@ -65,8 +62,7 @@
 	z-index: 1;
 }
 .kyl-frys #text-block-4 {
-	/*margin-top: 11em;*/
-
+	color: #333;
 	background: #fff;
 	padding: 40px;
 	width: 50%;
