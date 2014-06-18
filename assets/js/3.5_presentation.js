@@ -439,10 +439,10 @@ PRES.print = function() {
 };
 
 PRES.exportCanvas = function() {
-	var imageData = canvas.toDataURL('image/png');
+	var canvasData = canvas.toDataURL('image/png');
 	window.setTimeout(function() {
 		$('#overlay-print a').attr({
-			href: imageData,
+			href: canvasData,
 			target: '_blank'
 		});
 		PRES.showOverlay('#overlay-print');
