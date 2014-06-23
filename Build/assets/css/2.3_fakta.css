@@ -1,3 +1,14 @@
+.fakta-intro {
+  background: #8AC6CF;
+  padding-top: 200px; }
+  .fakta-intro h2 {
+    width: 800px;
+    margin: 0 auto 20px; }
+  .fakta-intro p {
+    text-transform: none;
+    width: 800px;
+    margin: 0 auto; }
+
 #fakta2-2 {
   overflow: hidden;
   width: 100%;
@@ -296,16 +307,15 @@
   margin-top: 0; }
 
 #fakta2-2 #text-bullar {
-  right: 140px;
+  right: 50px;
   position: absolute;
   top: 2000px;
-  text-align: center; }
+  width: 250px; }
 
 #fakta2-2 #text-bullar img {
   margin: 2px; }
 
 #fakta2-2 #text-bullar p {
-  text-align: center;
   margin-top: 0; }
 
 #fakta2-2 #text-godsel h2,
@@ -315,9 +325,6 @@
   font-size: 3em;
   margin-top: 20px;
   margin-bottom: 0; }
-
-#fakta2-2 #text-bullar h2 {
-  text-align: center; }
 
 #fakta2-2 #el-container-container {
   background: #786754;
@@ -563,12 +570,14 @@
 #fakta2-2 #el-container #big-text {
   position: absolute;
   text-align: center;
-  top: 1020px;
-  color: rgba(255, 255, 255, 0.5);
+  top: 1040px;
+  color: white;
   width: 100%; }
   #fakta2-2 #el-container #big-text h1 {
-    font-size: 100px;
-    font-weight: bold; }
+    font-size: 6em; }
+  #fakta2-2 #el-container #big-text p {
+    margin-top: -6px;
+    font-size: 36px; }
 
 #fakta2-2 #sverige-container {
   background: #f4f3e2;
