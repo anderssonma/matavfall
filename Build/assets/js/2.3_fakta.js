@@ -86,35 +86,84 @@ $(document).ready(function() {
 	controller.addTween('#TV', TweenMax.fromTo($('#TV'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 12deg)'}, ease:Back.easeOut}),scrollDuration);
 
 	//sektion Sverige
-	var sverige_mat_1 = TweenMax.to($('#sverige-container #matavfallspase-1'), 0.5, {css:{transform: 'scale(0.6)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_2 = TweenMax.to($('#sverige-container #matavfallspase-2'), 0.6, {css:{transform: 'scale(0.5)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_3 = TweenMax.to($('#sverige-container #matavfallspase-3'), 0.7, {css:{transform: 'scale(0.6)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_4 = TweenMax.to($('#sverige-container #matavfallspase-4'), 0.8, {css:{transform: 'scale(0.3)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_5 = TweenMax.to($('#sverige-container #matavfallspase-5'), 0.9, {css:{transform: 'scale(0.4)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_6 = TweenMax.to($('#sverige-container #matavfallspase-6'), 1, {css:{transform: 'scale(0.7)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_7 = TweenMax.to($('#sverige-container #matavfallspase-7'), 0.5, {css:{transform: 'scale(0.6)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_8 = TweenMax.to($('#sverige-container #matavfallspase-8'), 0.6, {css:{transform: 'scale(0.4)'}, ease:Expo.easeInOut}, scrollDuration);
-	var sverige_mat_9 = TweenMax.to($('#sverige-container #matavfallspase-9'), 0.8, {css:{transform: 'scale(0.6)'}, ease:Expo.easeInOut}, scrollDuration);
-	var ta_bort_mat = TweenMax.to($('#sverige-container #matavfallspase-9, #sverige-container #matavfallspase-8 '), 0.1, {css:{opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
-	var bilar = TweenMax.to($('#sverige-container #bilar-container'), 2, {css:{marginLeft: 0}, ease:Expo.easeInOut}, 500);
-	var bullar = TweenMax.to($('#sverige-container #bullar-container'), 2, {css:{opacity: 1}, ease:Expo.easeInOut}, scrollDuration);
-	var fralla_5 = TweenMax.fromTo($('#fralla-5, #fralla-10, #fralla-14, #fralla-16, #fralla-21, #fralla-30'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 10deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_6 = TweenMax.fromTo($('#fralla-6, #fralla-11'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1) rotate( -40deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_7 = TweenMax.fromTo($('#fralla-7, #fralla-17, #fralla-12, #fralla-23'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1.3) rotate( -60deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_8 = TweenMax.fromTo($('#fralla-8, #fralla-20, #fralla-24'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1.1) rotate( 20deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_9 = TweenMax.fromTo($('#fralla-9, #fralla-13, #fralla-18, #fralla-32'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1) rotate( -5deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_10 = TweenMax.fromTo($('#fralla-15'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1) rotate( 45deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_11 = TweenMax.fromTo($('#fralla-19, #fralla-22, #fralla-25, #fralla-26, #fralla-27, #fralla-28, #fralla-29, #fralla-31'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1) rotate( 95deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_12 = TweenMax.fromTo($('#fralla-21'), 0.6, {css:{transform: 'scale(0) rotate(-15deg)'}}, {css:{transform: 'scale(1) rotate( 173deg)'}, ease:Back.easeOut},scrollDuration);
-	var fralla_text = TweenMax.fromTo($('#fakta2-2 #sverige-container #bullar-container #text h2'), 1, {css:{fontSize:20, opacity: 0}}, {css:{fontSize:100, opacity: 1}, ease:Expo.easeOut},scrollDuration);
-	
-	controller.pin($('#sverige-container'), 1500, {
+	var sverige_mat_1 = TweenMax.to($('#sverige-container #matavfallspase-1'), 0.5, {css:{transform: 'scale(0.6)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_2 = TweenMax.to($('#sverige-container #matavfallspase-2'), 0.6, {css:{transform: 'scale(0.5)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_3 = TweenMax.to($('#sverige-container #matavfallspase-3'), 0.7, {css:{transform: 'scale(0.6)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_4 = TweenMax.to($('#sverige-container #matavfallspase-4'), 0.8, {css:{transform: 'scale(0.3)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_5 = TweenMax.to($('#sverige-container #matavfallspase-5'), 0.9, {css:{transform: 'scale(0.4)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_6 = TweenMax.to($('#sverige-container #matavfallspase-6'), 1, {css:{transform: 'scale(0.7)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_7 = TweenMax.to($('#sverige-container #matavfallspase-7'), 0.5, {css:{transform: 'scale(0.6)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_8 = TweenMax.to($('#sverige-container #matavfallspase-8'), 0.6, {css:{transform: 'scale(0.4)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_9 = TweenMax.to($('#sverige-container #matavfallspase-9'), 0.8, {css:{transform: 'scale(0.6)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
+
+	var sverige_out = TweenMax.to($('#sverige-container #sverige'), 1, {css:{transform: 'scale(0)', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_1_out = TweenMax.to($('#sverige-container #matavfallspase-1'), 0.5, {css:{transform: 'scale(0)', marginLeft: '-90px', marginTop: '-40px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_2_out = TweenMax.to($('#sverige-container #matavfallspase-2'), 0.6, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_3_out = TweenMax.to($('#sverige-container #matavfallspase-3'), 0.7, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_4_out = TweenMax.to($('#sverige-container #matavfallspase-4'), 0.6, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_5_out = TweenMax.to($('#sverige-container #matavfallspase-5'), 0.7, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_6_out = TweenMax.to($('#sverige-container #matavfallspase-6'), 0.5, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_7_out = TweenMax.to($('#sverige-container #matavfallspase-7'), 0.5, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_8_out = TweenMax.to($('#sverige-container #matavfallspase-8'), 0.8, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+	var sverige_mat_9_out = TweenMax.to($('#sverige-container #matavfallspase-9'), 0.8, {css:{transform: 'scale(0)', marginLeft: '-110px', marginTop: '-110px', opacity: 0}, ease:Expo.easeInOut}, scrollDuration);
+
+	var sverige_text_out = TweenMax.to($('#sverige-container #text'), 0.5, {css:{opacity: 0}, ease:Expo.easeInOut, delay: 0.25}, scrollDuration);
+
+	var bil1_in = TweenMax.to($('#sverige-container #bil-ovan-1'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut}, scrollDuration);
+	var bil2_in = TweenMax.to($('#sverige-container #bil-ovan-2'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.3}, scrollDuration);
+	var bil3_in = TweenMax.to($('#sverige-container #bil-ovan-3'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.2}, scrollDuration);
+	var bil4_in = TweenMax.to($('#sverige-container #bil-ovan-4'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+	var bil5_in = TweenMax.to($('#sverige-container #bil-ovan-5'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.4}, scrollDuration);
+	var bil6_in = TweenMax.to($('#sverige-container #bil-ovan-6'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.6}, scrollDuration);
+	var bil7_in = TweenMax.to($('#sverige-container #bil-ovan-7'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.7}, scrollDuration);
+	var bil8_in = TweenMax.to($('#sverige-container #bil-ovan-8'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.8}, scrollDuration);
+	var bil9_in = TweenMax.to($('#sverige-container #bil-ovan-9'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 1}, scrollDuration);
+	var bil10_in = TweenMax.to($('#sverige-container #bil-ovan-10'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 0.9}, scrollDuration);
+	var bil11_in = TweenMax.to($('#sverige-container #bil-ovan-11'), 1, {css:{bottom: '50%'}, ease:Expo.easeInOut, delay: 1.1}, scrollDuration);
+
+	var text_bilar_in = TweenMax.to($('#sverige-container #text-bilar'), 1.5, {css:{opacity: 1}, delay: 0.5, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+	var text_bilar_out = TweenMax.to($('#sverige-container #text-bilar'), 1.5, {css:{opacity: 0}, delay: 0.5, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+
+	var bil1_out = TweenMax.to($('#sverige-container #bil-ovan-1'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 1.1}, scrollDuration);
+	var bil2_out = TweenMax.to($('#sverige-container #bil-ovan-2'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 1}, scrollDuration);
+	var bil3_out = TweenMax.to($('#sverige-container #bil-ovan-3'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.9}, scrollDuration);
+	var bil4_out = TweenMax.to($('#sverige-container #bil-ovan-4'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.8}, scrollDuration);
+	var bil5_out = TweenMax.to($('#sverige-container #bil-ovan-5'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.7}, scrollDuration);
+	var bil6_out = TweenMax.to($('#sverige-container #bil-ovan-6'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.6}, scrollDuration);
+	var bil7_out = TweenMax.to($('#sverige-container #bil-ovan-7'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.4}, scrollDuration);
+	var bil8_out = TweenMax.to($('#sverige-container #bil-ovan-8'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+	var bil9_out = TweenMax.to($('#sverige-container #bil-ovan-9'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.3}, scrollDuration);
+	var bil10_out = TweenMax.to($('#sverige-container #bil-ovan-10'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut, delay: 0.2}, scrollDuration);
+	var bil11_out = TweenMax.to($('#sverige-container #bil-ovan-11'), 1, {css:{bottom: '200%'}, ease:Expo.easeInOut}, scrollDuration);
+
+	var text_bullar_in = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+
+	var fralla_5 = TweenMax.to($('#fralla-5'), 1, {css: {marginTop: '-=200px', marginLeft: '-=200px', transform: 'rotate(125deg) scale(1)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_6 = TweenMax.to($('#fralla-6'), 1, {delay: 0.2, css: {marginTop: '-=180px', marginLeft: '+=200px', transform: 'rotate(-45deg) scale(1.2)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_7 = TweenMax.to($('#fralla-7'), 1, {delay: 0.1, css: {marginTop: '-=160px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+
+	var fralla_8 = TweenMax.to($('#fralla-8'), 1, {css: {marginTop: '+=200px', marginLeft: '+=100px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_9 = TweenMax.to($('#fralla-9'), 1, {delay: 0.1, css: {marginTop: '+=160px', marginLeft: '-=50px', transform: 'rotate(230deg) scale(1.1)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_10 = TweenMax.to($('#fralla-10'), 1, {delay: 0.2, css: {marginTop: '+=40px', marginLeft: '-=150px', transform: 'rotate(20deg) scale(1.2)', opacity: 1}, ease: Expo.easeIn});
+
+	var fralla_11 = TweenMax.to($('#fralla-11'), 1.1, {delay: 0.2, css: {marginTop: '-=90px', marginLeft: '-=100px', transform: 'rotate(-80deg) scale(0.6)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_12 = TweenMax.to($('#fralla-12'), 1.1, {delay: 0.1, css: {marginTop: '-=90px', marginLeft: '-=240px', transform: 'rotate(30deg) scale(0.75)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_13 = TweenMax.to($('#fralla-13'), 1.1, {delay: 0.1, css: {marginTop: '+=160px', marginLeft: '+=220px', transform: 'rotate(-30deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
+
+	var fralla_14 = TweenMax.to($('#fralla-14'), 1.2, {delay: 0.1, css: {marginTop: '+=280px', marginLeft: '+=20px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_15 = TweenMax.to($('#fralla-15'), 1.2, {css: {marginTop: '-=120px', marginLeft: '+=110px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_16 = TweenMax.to($('#fralla-16'), 1.2, {css: {marginTop: '+=210px', marginLeft: '-=210px', transform: 'rotate(-130deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+
+	var text_bullar_spacer = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
+
+	controller.pin($('#sverige-container'), 3000, {
 		anim: (new TimelineLite())
 			.add([sverige_mat_1,sverige_mat_2,sverige_mat_3,sverige_mat_4,sverige_mat_5,sverige_mat_6,sverige_mat_7,sverige_mat_8,sverige_mat_9])
-			.add(bilar)
-			.add(bullar)
-			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12])
-			.add([ta_bort_mat, fralla_text])
+			.add([sverige_out, sverige_mat_1_out, sverige_mat_2_out, sverige_mat_3_out, sverige_mat_4_out, sverige_mat_5_out, sverige_mat_6_out, sverige_mat_7_out, sverige_mat_8_out, sverige_mat_9_out, sverige_text_out])
+			.add([bil1_in, bil2_in, bil3_in, bil4_in, bil5_in, bil6_in, bil7_in, bil8_in, bil9_in, bil10_in, bil11_in, text_bilar_in], '-=1')
+			.add([bil1_out, bil2_out, bil3_out, bil4_out, bil5_out, bil6_out, bil7_out, bil8_out, bil9_out, bil10_out, bil11_out, text_bilar_out, text_bullar_in], '+=4')
+			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12, fralla_13, fralla_14, fralla_15, fralla_16], '-=1')
+			.add(text_bullar_spacer)
 		});
 
 });
