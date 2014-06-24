@@ -72,6 +72,7 @@
 		.left {
 			left: 0;
 			border-right: 1px solid #63A272;
+			width: 51px;
 		}
 		.right {
 			right: 0;
@@ -119,7 +120,7 @@
 		text-align: center;
 		color: #77AD7C;
 		line-height: 52px;
-		width: calc(100%/3 - 1px);
+		width: calc(100%/4);
 		border-left: 1px solid #63A272;
 		cursor: pointer;
 		&:first-child {
@@ -312,6 +313,7 @@
 			color: #FFF;
 			font-size: 14px;
 			padding: 0 40px;
+			line-height: 20px;
 		}
 		button, .button {
 			width: 50%;
@@ -323,6 +325,8 @@
 			color: #FFF;
 			border-radius: 0 0 3px 0;
 			-webkit-font-smoothing: antialiased;
+			outline: none;
+			transition: 0.35s background;
 			&.first {
 				border-right: 1px solid #63A272;
 				border-radius: 0 0 0 3px;
@@ -336,37 +340,57 @@
 			text-align: center;
 			text-decoration: none;
 		}
+		.bg-text {
+			float: left;
+			width: 500px;
+		}
 		.bg-picker {
-			padding: 0 20px 16px;
+			float: right;
+			width: 200px;
 			overflow: hidden;
 			.bg-choice {
-				width: 75px;
-				height: 75px;
+				width: 100%;
+				height: 124px;
 				background: #36895B;
-				float: left;
-				margin: 20px;
-				border-radius: 3px;
-				border: 3px solid transparent;
+				//border-radius: 3px;
+				//border: 5px solid #63A272;
+				border-bottom: none;
 				transition: 0.35s border-color;
+				text-align: center;
+				line-height: 165px;
+				img {
+					opacity: 0;
+					transition: 0.35s opacity;
+				}
 				&.bg-1 {
-					border-color: #77AD7C;
-					background: #77AD7C;
+					border-top: 2px solid #63A272;
+					border-right: 2px solid #63A272;
+					border-radius: 0 3px 0 0;
+					background: url(../img/pres_bg1.svg) #77AD7C no-repeat center;
+					background-size: 500px;
+					background-position: -20px -265px;
 				}
 				&.bg-2 {
-					border-color: #D2ECF8;
-					background: #D2ECF8;
+					background: url(../img/pres_bg2.svg) #D2ECF8 no-repeat center;
+					background-size: 500px;
+					background-position: -315px -230px;
 				}
 				&.bg-3 {
-					border-color: #E7BEA9;
-					background: #E7BEA9;
+					background: url(../img/pres_bg3.svg) #E7BEA9 no-repeat center;
+					background-size: 500px;
+					background-position: 20px 22px;
 				}
 				&.bg-4 {
-					border-color: #F4F4E3;
-					background: #F4F4E3;
+					background: url(../img/pres_bg4.svg) #F4F4E3 no-repeat center;
+					background-size: 500px;
+					background-position: 20px -212px;
+					border-radius: 0 0 3px 0;
 				}
-				&:hover,
-				&.selected {
-					border-color: #FFF;
+				&:hover img {
+					opacity: 0.5;
+				}
+				&.selected img {
+					opacity: 1;
 				}
 
 			}
@@ -385,9 +409,23 @@
 			}
 		}
 		&.intro {
-			width: 500px;
-			margin: -150px 0 0 -250px;
+			width: 700px;
+			margin: -230px 0 0 -350px;
 			button {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 500px;
+				border-radius: 0 0 0 3px;
+			}
+		}
+
+		&.help {
+			width: 520px;
+			margin: -205px 0 0 -260px;
+			
+			button {
+				margin-top: 20px;
 				width: 100%;
 				border-radius: 0 0 3px 3px;
 			}

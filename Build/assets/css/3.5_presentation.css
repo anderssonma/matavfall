@@ -64,7 +64,8 @@
         opacity: 0.5; }
     .controls .pager .left {
       left: 0;
-      border-right: 1px solid #63A272; }
+      border-right: 1px solid #63A272;
+      width: 51px; }
     .controls .pager .right {
       right: 0;
       border-left: 1px solid #63A272; }
@@ -104,7 +105,7 @@
     text-align: center;
     color: #77AD7C;
     line-height: 52px;
-    width: calc(100%/3 - 1px);
+    width: calc(100%/4);
     border-left: 1px solid #63A272;
     cursor: pointer; }
     .tools div:first-child {
@@ -256,7 +257,8 @@
     .presentation .overlay p {
       color: #FFF;
       font-size: 14px;
-      padding: 0 40px; }
+      padding: 0 40px;
+      line-height: 20px; }
     .presentation .overlay button, .presentation .overlay .button {
       width: 50%;
       border: none;
@@ -266,7 +268,9 @@
       font-family: 'Lato';
       color: #FFF;
       border-radius: 0 0 3px 0;
-      -webkit-font-smoothing: antialiased; }
+      -webkit-font-smoothing: antialiased;
+      outline: none;
+      transition: 0.35s background; }
       .presentation .overlay button.first, .presentation .overlay .button.first {
         border-right: 1px solid #63A272;
         border-radius: 0 0 0 3px; }
@@ -276,32 +280,48 @@
       height: 55px;
       text-align: center;
       text-decoration: none; }
+    .presentation .overlay .bg-text {
+      float: left;
+      width: 500px; }
     .presentation .overlay .bg-picker {
-      padding: 0 20px 16px;
+      float: right;
+      width: 200px;
       overflow: hidden; }
       .presentation .overlay .bg-picker .bg-choice {
-        width: 75px;
-        height: 75px;
+        width: 100%;
+        height: 124px;
         background: #36895B;
-        float: left;
-        margin: 20px;
-        border-radius: 3px;
-        border: 3px solid transparent;
-        transition: 0.35s border-color; }
+        border-bottom: none;
+        transition: 0.35s border-color;
+        text-align: center;
+        line-height: 165px; }
+        .presentation .overlay .bg-picker .bg-choice img {
+          opacity: 0;
+          transition: 0.35s opacity; }
         .presentation .overlay .bg-picker .bg-choice.bg-1 {
-          border-color: #77AD7C;
-          background: #77AD7C; }
+          border-top: 2px solid #63A272;
+          border-right: 2px solid #63A272;
+          border-radius: 0 3px 0 0;
+          background: url(../img/pres_bg1.svg) #77ad7c no-repeat center;
+          background-size: 500px;
+          background-position: -20px -265px; }
         .presentation .overlay .bg-picker .bg-choice.bg-2 {
-          border-color: #D2ECF8;
-          background: #D2ECF8; }
+          background: url(../img/pres_bg2.svg) #d2ecf8 no-repeat center;
+          background-size: 500px;
+          background-position: -315px -230px; }
         .presentation .overlay .bg-picker .bg-choice.bg-3 {
-          border-color: #E7BEA9;
-          background: #E7BEA9; }
+          background: url(../img/pres_bg3.svg) #e7bea9 no-repeat center;
+          background-size: 500px;
+          background-position: 20px 22px; }
         .presentation .overlay .bg-picker .bg-choice.bg-4 {
-          border-color: #F4F4E3;
-          background: #F4F4E3; }
-        .presentation .overlay .bg-picker .bg-choice:hover, .presentation .overlay .bg-picker .bg-choice.selected {
-          border-color: #FFF; }
+          background: url(../img/pres_bg4.svg) #f4f4e3 no-repeat center;
+          background-size: 500px;
+          background-position: 20px -212px;
+          border-radius: 0 0 3px 0; }
+        .presentation .overlay .bg-picker .bg-choice:hover img {
+          opacity: 0.5; }
+        .presentation .overlay .bg-picker .bg-choice.selected img {
+          opacity: 1; }
     .presentation .overlay.import {
       width: 500px;
       margin: -50px 0 0 -250px; }
@@ -312,9 +332,19 @@
         width: 100%;
         border-radius: 0 0 3px 3px; }
     .presentation .overlay.intro {
-      width: 500px;
-      margin: -150px 0 0 -250px; }
+      width: 700px;
+      margin: -230px 0 0 -350px; }
       .presentation .overlay.intro button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 500px;
+        border-radius: 0 0 0 3px; }
+    .presentation .overlay.help {
+      width: 520px;
+      margin: -205px 0 0 -260px; }
+      .presentation .overlay.help button {
+        margin-top: 20px;
         width: 100%;
         border-radius: 0 0 3px 3px; }
 

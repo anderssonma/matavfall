@@ -28,6 +28,7 @@
 				<img class="icon-clear" src="<!-- @path icon_clear.svg -->" height="18">
 				<img class="icon-undo" src="<!-- @path icon_reset.svg -->" height="18">
 			</div>
+			<div class="help" onclick="PRES.showOverlay('#overlay-help');"><img src="<!-- @path icon_help.svg -->" height="18"></div>
 		</div>
 
 		<div id="image-counter">BILDER KVAR: 50</div>
@@ -49,13 +50,28 @@
 		</div>
 
 		<div id="overlay-intro" class="overlay intro">
-			<h6>Välkommen till presentationen i ben 3</h6>
-			<p>Duis vitae lectus congue, mattis risus eu, scelerisque justo. Morbi lacinia ullamcorper purus et elementum. Mauris nec sapien velit. Nullam ut nisi in dolor tempus dapibus.</p>
+			<div class="bg-text">
+				<h6>Välkommen till presentationen i ben 3</h6>
+				<p>Här kan du skapa din egen presentation av vad du hittills lärt dig om matavfall. Till din hjälp har du ett gäng bilder och ord ifrån sajten.</p>
+				<p>Byter mellan bilder och ord gör du i övre högra hörnet. Men tänk på att det finns flera sidor av både bilder och ord! Du kan bläddra mellan dessa med höger/vänster-pilarna under Bilder/Ord.</p>
+				<p>Om du vill slänga en bild är det bara att dra och släppa bilden på den stora ytan som ligger under presentationen.</p>
+				<p>I verktygsbältet kan du skriva ut din presentation, spara den i din webbläsare, rensa presentationen på alla bilder samt få lite mer hjälp/tips på hur du använder presentationen på bästa sätt.</p>
+				<p>För att komma igång välj en bakgrundsbild nedan och klicka på knappen. Du kan du alltid byta bild senare (nedre högra hörnet).</p>
+				<p><strong>Lycka till!</strong></p>
+			</div>
 			<div class="bg-picker">
-				<div onclick="PRES.pickBg(this);" class="bg-choice bg-1 selected"></div>
-				<div onclick="PRES.pickBg(this);" class="bg-choice bg-2"></div>
-				<div onclick="PRES.pickBg(this);" class="bg-choice bg-3"></div>
-				<div onclick="PRES.pickBg(this);" class="bg-choice bg-4"></div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-1 selected">
+					<img src="<!-- @path icon_check.sv -->" width="50">
+				</div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-2">
+					<img src="<!-- @path icon_check.sv -->" width="50">
+				</div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-3">
+					<img src="<!-- @path icon_check.sv -->" width="50">
+				</div>
+				<div onclick="PRES.pickBg(this);" class="bg-choice bg-4">
+					<img src="<!-- @path icon_check.sv -->" width="50">
+				</div>
 			</div>
 			<button onclick="PRES.closeIntroOverlay(this);">Jag är redo!</button>
 		</div>
@@ -68,6 +84,16 @@
 		<div id="overlay-print" class="overlay import print">
 			<h6>Din bild är redo för neddladnning eller utskrift</h6>
 			<a class="button first">Öppna bilden</a>
+			<button onclick="PRES.closeOverlay(this);">Stäng</button>
+		</div>
+
+		<div id="overlay-help" class="overlay help">
+			<h6>Tips och tricks för presentationen</h6>
+			<p>Här har du lite mer tips på hur du kan jobba med din presentation.</p>
+			<p><strong>Ta bort bilder:</strong> &nbsp;Dra och släpp bilden i området under presentation eller klicka på Escape-tangenten när muspekaren är över bilden. Du kan också klicka på krysset i verktygsbältet om du vill ta bort alla bilder i din presentation och börja om ifrån början!</p>
+			<p><strong>Justera i höjdled:</strong> &nbsp;Om en bild täcker över en annan och du vill lägga den överst för du muspekaren över bilden och klickar på Upp-tangenten tills den ligger överst. Ned-tangenten har motsatt effekt. En liten ruta i högra hörnet visar dig vilket lager/nivå bilden ligger på när du för musen över en bild. Om bilderna ligger på samma lager är det den bild som du senast placerade ut som kommer att ligga överst.</p>
+			<p><strong>Skriva ut:</strong> &nbsp;För bästa möjliga utskrift klicka på 'Skriv ut'-knappen i verktygsbältet. Då kan vi snygga till din presentation för ett A4!</p>
+			</ul>
 			<button onclick="PRES.closeOverlay(this);">Stäng</button>
 		</div>
 
