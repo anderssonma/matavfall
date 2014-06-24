@@ -2341,6 +2341,7 @@ html, body {
 			transform-origin: top center;
 			-webkit-animation: 1.5s ease-in-out swingBucket infinite alternate;
 			animation: 1.5s ease-in-out swingBucket infinite alternate;
+			max-width: none;
 		}
 		&.bucket-1 {
 			-webkit-animation: 10s 2.5s linear moveBucket infinite;
