@@ -168,7 +168,7 @@ var CSSHandler = {
 			'/assets/css/2.3_fakta.css',
 			'/assets/css/quiz.css',
 			'/assets/css/2.4_quiz.slides.css',
-			'/assets/css/2.9_dropdown.css'
+			'/assets/css/2.5_wordbuilder.css'
 		],
 		3: [ 
 			'/assets/css/3.1_agg.css',
