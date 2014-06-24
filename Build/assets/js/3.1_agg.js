@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	var ctrl = $.superscrollorama();
 
 	var textIntroOut = TweenMax.to($('#text-intro'), 0.5, {css: {opacity: 0}});
@@ -402,11 +403,22 @@ $(document).ready(function() {
 
 	var spatulaIn = TweenMax.to($('#spatula'), 2, {css: {top: '50%', left: '50%', transform: 'scale(1)'}});
 
-	var eggToss = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(2) rotateX(180deg)', marginTop: '-=40px'}});
+	var eggToss;
+	if (Modernizr.cssanimations) { // ROTATEX DOESNT WORK IN IE9
+		eggToss = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(2) rotateX(180deg)', marginTop: '-=40px'}});
+	} else {
+		eggToss = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(2.5)', marginTop: '-=40px'}});
+	}
+
 	var eggTossYolk = TweenMax.to($('#egg-boil-inner'), 1, {css: {transform: 'translateY(-10px)'}});
 	//var eggWhiteToss = TweenMax.to($('#egg-white'), 2, {css: {transform: 'scale(2) rotateX(180deg)'}});
 
-	var eggTossBack = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(1) rotateX(360deg)', marginTop: '+=40px'}});
+	var eggTossBack;
+	if (Modernizr.cssanimations) { // ROTATEX DOESNT WORK IN IE9
+		eggTossBack = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(1) rotateX(360deg)', marginTop: '+=40px'}});
+	} else {
+		eggTossBack = TweenMax.to($('#egg-boil'), 2, {css: {transform: 'scale(1)', marginTop: '+=40px'}});
+	}
 	var eggTossYolkBack = TweenMax.to($('#egg-boil-inner'), 1, {css: {transform: 'translateY(0)'}});
 	//var eggWhiteTossBack = TweenMax.to($('#egg-white'), 2, {css: {transform: 'scale(1) rotateX(360deg)'}});
 

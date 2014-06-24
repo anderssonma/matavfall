@@ -578,6 +578,11 @@
     -webkit-animation: 10s 0.4s showTomatoes infinite;
     animation: 10s 0.4s showTomatoes infinite; }
 
+.no-cssanimations .tomato-bush {
+  bottom: 200px; }
+  .no-cssanimations .tomato-bush .tomato {
+    opacity: 1; }
+
 @-webkit-keyframes growTomatoes {
   0%, 30%, 100% {
     -webkit-transform: translateY(0); }
@@ -704,6 +709,11 @@
     border-right: 10px solid #B08048;
     background: #905F37; }
 
+.no-cssanimations .pear-tree {
+  height: 252px; }
+  .no-cssanimations .pear-tree .apple {
+    margin-top: 12px; }
+
 @-webkit-keyframes growPearTree {
   0%, 31%, 100% {
     opacity: 0;
@@ -806,6 +816,11 @@
   -webkit-animation: 10s 0.2s carrotPop1 infinite;
   animation: 10s 0.2s carrotPop1 infinite; }
 
+.no-cssanimations .carrot-1 {
+  bottom: 180px; }
+.no-cssanimations .carrot-2 {
+  bottom: 174px; }
+
 @-webkit-keyframes carrotPop1 {
   0%, 35%, 95%, 100% {
     -webkit-transform: scale(0) translateY(0); }
@@ -907,6 +922,18 @@
   opacity: 0;
   -webkit-animation: 10s 2s wasteUpAlt2 infinite;
   animation: 10s 2s wasteUpAlt2 infinite; }
+
+.no-cssanimations #dirtpile {
+  bottom: 185px;
+  transform: scale(1); }
+.no-cssanimations #dirtpile-base,
+.no-cssanimations #dirtpile-small-1,
+.no-cssanimations #dirtpile-small-2,
+.no-cssanimations #dirtpile-small-3 {
+  margin-bottom: 40px; }
+.no-cssanimations #waste-small,
+.no-cssanimations #waste-large {
+  opacity: 1; }
 
 .dirt-below {
   position: absolute;
@@ -1371,6 +1398,17 @@
   bottom: 60px;
   right: 0; }
 
+.no-cssanimations #stamp-4.animate .smoke-1 {
+  display: block;
+  opacity: 1;
+  left: 494px;
+  bottom: 680px; }
+.no-cssanimations #stamp-4.animate .smoke-2 {
+  display: block;
+  opacity: 1;
+  left: 470px;
+  bottom: 580px; }
+
 @-webkit-keyframes flies1 {
   0%, 100% {
     -webkit-transform: translate3d(8px, 0, 0); }
@@ -1585,6 +1623,13 @@
 #stamp-5 #tl-text-9 {
   bottom: 60px;
   right: 0; }
+
+.no-cssanimations #stamp-5 #trash-glass .bottle,
+.no-cssanimations #stamp-5 #trash-metal .tin,
+.no-cssanimations #stamp-5 #trash-food .bag {
+  display: block !important;
+  opacity: 1 !important;
+  margin-top: 100px; }
 
 @-webkit-keyframes dropMetal {
   0% {
@@ -2016,6 +2061,10 @@
   #stamp-7 #tl-text-11 {
     bottom: 60px;
     left: 0; }
+
+.no-cssanimations #stamp-7 #lorry .truck {
+  display: block;
+  top: 8px; }
 
 @-webkit-keyframes pumpGas {
   0%, 14% {
