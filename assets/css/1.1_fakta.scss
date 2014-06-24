@@ -371,9 +371,9 @@ html {
 	#hammare {
 		top: 2410px;
 		right: 360px;
-		-webkit-transform: rotate(-60deg);
-		-ms-transform: rotate(-60deg);
-		transform: rotate(-60deg);
+		-webkit-transform: rotate(40deg);
+		-ms-transform: rotate(40deg);
+		transform: rotate(40deg);
 		-webkit-animation: 1s hamrar linear infinite; 
 		animation: 1s hamrar linear infinite; 
 	  -webkit-transform-origin: left 80%;
@@ -415,6 +415,7 @@ html {
 		opacity: 0;
 		margin-right: -600px;
 		display: block;
+		width: 430px;
 	}
 	#vaskskrapa-fylld #vaskskrapa {
 		width: 430px;

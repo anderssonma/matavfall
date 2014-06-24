@@ -36,6 +36,7 @@ body {
 .key-binds {
 	margin: 66px 0 30px 50px;
 	float: left;
+	width: 200px;
 }
 .key-binds .key, .key-binds img {
 	float: left;
@@ -58,6 +59,7 @@ body {
 
 .key-numbers {
 	margin: 22px 0 30px 50px;
+	width: auto;
 }
 .key-numbers .key {
 	margin-top: 0;

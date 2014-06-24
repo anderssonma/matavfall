@@ -1144,10 +1144,10 @@
 }
 @keyframes wasteUpSmall3 {
 	0%, 14% {
-		-webkit-transform: translateY(0);
+		transform: translateY(0);
 	}
 	20%, 95% {
-		-webkit-transform: translateY(-40px);
+		transform: translateY(-40px);
 	}
 }
 

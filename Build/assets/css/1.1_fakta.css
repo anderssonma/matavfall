@@ -307,9 +307,9 @@ html {
   .fakta_1-1 #hammare {
     top: 2410px;
     right: 360px;
-    -webkit-transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    transform: rotate(-60deg);
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
     -webkit-animation: 1s hamrar linear infinite;
     animation: 1s hamrar linear infinite;
     -webkit-transform-origin: left 80%;
@@ -344,7 +344,8 @@ html {
     right: 0;
     opacity: 0;
     margin-right: -600px;
-    display: block; }
+    display: block;
+    width: 430px; }
   .fakta_1-1 #vaskskrapa-fylld #vaskskrapa {
     width: 430px; }
   .fakta_1-1 #vaskskrapa-fylld ul {
