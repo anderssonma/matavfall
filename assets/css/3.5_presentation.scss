@@ -17,6 +17,7 @@
 	left: -150px;
 	color: #FFF;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	transition: 0.35s left;
 }
 .editing #image-counter {
@@ -31,6 +32,7 @@
 	opacity: 0;
 	transition: 0.2s all;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	&.show {
 		opacity: 1;
 		transition: 0.2s 0.15s all;
@@ -62,6 +64,7 @@
 			color: #77AD7C;
 			font-size: 18px;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 			cursor: pointer;
 			background: #36895B;
 			transition: 0.35s opacity;
@@ -297,23 +300,28 @@
 		opacity: 0;
 		left: -9999px;
 		-webkit-transition: 0.35s opacity, 0s 0.35s left;
+		transition: 0.35s opacity, 0s 0.35s left;
 		z-index: 10;
 		&.show {
 			opacity: 1;
 			left: 50%;
 			-webkit-transition: 0.35s opacity;
+			transition: 0.35s opacity;
 		}
 		h6 {
 			color: #FFF;
 			font-size: 20px;
 			margin: 40px 0 0 40px;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 		p {
 			color: #FFF;
 			font-size: 14px;
 			padding: 0 40px;
 			line-height: 20px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 		button, .button {
 			width: 50%;
@@ -325,6 +333,7 @@
 			color: #FFF;
 			border-radius: 0 0 3px 0;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 			outline: none;
 			transition: 0.35s background;
 			&.first {
@@ -522,6 +531,7 @@
 
 .shrink {
 	-webkit-animation: deleteAnim 1s;
+	animation: deleteAnim 1s;
 }
 
 @-webkit-keyframes deleteAnim {
@@ -530,6 +540,14 @@
 	}
 	100% {
 		-webkit-transform: scale(0);
+	}
+}
+@keyframes deleteAnim {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
 	}
 }
 
