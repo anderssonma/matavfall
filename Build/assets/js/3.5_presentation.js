@@ -8,6 +8,20 @@ var PRES = {
 	bgBackup: ''
 };
 
+PRES.preloadImages = function() { // PRELOAD ALL DRAGGABLE IMAGES JUST IN CASE
+	var imageArray = [];
+	imageArray.push(imageData.images);
+	imageArray.push(imageData.words);
+	imageArray.forEach(function(imageTypes) {
+		imageTypes.forEach(function(pageArrays) {
+			pageArrays.forEach(function(item) {
+				var img = new Image();
+				img.src = '/assets/img/' + item.src;
+			});
+		});
+	});
+};
+
 PRES.removePlaceholder = function() {
 	$('#presentation .image-drawer .placeholder').fadeOut(250, function() {
 		$(this).remove();
@@ -346,6 +360,7 @@ PRES.setup = function() {
 
 $(document).ready(function() {
 	PRES.setup();
+	PRES.preloadImages();
 });
 
 
