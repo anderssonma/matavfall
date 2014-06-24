@@ -291,7 +291,8 @@ body.scroll #content {
   width: 160%;
   bottom: -10px;
   background: url(../img/hav_bak.svg);
-  opacity: 0; }
+  opacity: 0;
+  z-index: 2; }
 
 .sea-front {
   position: absolute;
@@ -300,7 +301,8 @@ body.scroll #content {
   left: -20%;
   bottom: -10px;
   background: url(../img/hav_fram.svg);
-  opacity: 0; }
+  opacity: 0;
+  z-index: 2; }
 
 .pager[class*="-active"] .sea-back, .pager[class*="-active"] .sea-front {
   opacity: 1;

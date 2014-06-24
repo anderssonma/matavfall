@@ -374,6 +374,17 @@ html, body {
   border-top-left-radius: 0;
 }
 
+.no-cssanimations {
+	.fabrik .waste {
+		top: 60px;
+		left: 238px;
+	}
+	.fabrik .waste-2 {
+		top: 190px;
+		left: 108px;
+	}
+}
+
 .fabrik .waste-2 {
 	-webkit-animation: ror1 2s 2s linear infinite;
 	animation: ror1 2s 2s linear infinite;
@@ -510,8 +521,14 @@ html, body {
 	animation: dropWaste 2s 1.7s linear infinite;
 }
 .drop-container .bag-2 {
+
 	-webkit-animation: dropWasteAlt 2s 2.7s linear infinite;
 	animation: dropWasteAlt 2s 2.7s linear infinite;
+}
+
+.no-cssanimations .drop-container .bag-2 {
+	left: 80px;
+	-ms-transform: rotate(50deg);
 }
 
 @-webkit-keyframes dropWaste {
@@ -667,6 +684,7 @@ html, body {
 	-ms-transform: rotate(-20deg);
 	transform: rotate(-20deg);
 	z-index: 1;
+	max-width: none;
 }
 
 .zoom-bubble .banana {
@@ -850,6 +868,15 @@ html, body {
 	transform-origin: top right;
 }
 
+.no-cssanimations .crush-container {
+	.lid-left {
+		-ms-transform: rotate(90deg);
+	}
+	.lid-right {
+		-ms-transform: rotate(-90deg);
+	}
+}
+
 .crush-container .lid-hinge {
 	width: 10px;
 	height: 8px;
@@ -873,6 +900,10 @@ html, body {
 	-webkit-animation: 4s 1s ease-in dropCrushedWaste infinite;
 	animation: 4s 1s ease-in dropCrushedWaste infinite;
 	z-index: 1;
+}
+
+.no-cssanimations .crush-container .leftovers {
+	top: -10px;
 }
 
 .crush-container .pipe {
@@ -1418,6 +1449,10 @@ html, body {
 	transform: rotate(-20deg);
 }
 
+.no-cssanimations .burnable-arc {
+	-ms-transform: rotate(40deg);
+}
+
 @-webkit-keyframes conveyorArc {
 	0%, 50% {
 		-webkit-transform: rotate(-20deg);
@@ -1607,6 +1642,10 @@ html, body {
 	animation: 1.5s 1s slurryVertical linear infinite;
 }
 
+.no-cssanimations .slurry .stream-track .stream {
+	top: 80px;
+}
+
 @-webkit-keyframes slurryVertical {
 	0% {
 		-webkit-transform: translateY(0);
@@ -1657,6 +1696,15 @@ html, body {
 	border-radius: 5px;
 	-webkit-animation: 1.5s 2.06s slurryHorizontal linear infinite;
 	animation: 1.5s 2.06s slurryHorizontal linear infinite;
+}
+
+.no-cssanimations .slurry .stream-track-horizontal {
+	.stream {
+		right: 100px;
+	}
+	&.track-h-2 .stream {
+		display: none;
+	}
 }
 
 @-webkit-keyframes slurryHorizontal {
@@ -1851,6 +1899,10 @@ html, body {
 	border-bottom: 25px solid #A77E5E;
 }
 
+.no-cssanimations .slurry-blob {
+	top: 150px;
+}
+
 @-webkit-keyframes flyingBlob1 {
 	0% {
 		-webkit-transform: translateY(0);
@@ -2000,6 +2052,13 @@ html, body {
 		background: #746855;
 		-webkit-animation: 2s 0.5s burstBubbles infinite;
 		animation: 2s 0.5s burstBubbles infinite;
+	}
+}
+
+.no-cssanimations .biogas-70 .bubble {
+	bottom: 70px;
+	&.bubble-3 {
+		bottom: 65px;
 	}
 }
 
@@ -2335,6 +2394,7 @@ html, body {
 		position: absolute;
 		top: -100px;
 		left: -33px;
+		width: 70px;
 		img {
 			-webkit-transform-origin: top center;
 			-ms-transform-origin: top center;
@@ -2392,6 +2452,40 @@ html, body {
 		&.knob-4 {
 			-webkit-animation: 10s 10s linear moveBucket infinite;
 			animation: 10s 10s linear moveBucket infinite;
+		}
+	}
+}
+
+.no-cssanimations .bucket-line {
+	.bucket {
+		&.bucket-1 {
+			top: 160px;
+			img {
+				-ms-transform: rotate(-20deg);
+			}
+		}
+		&.bucket-2 {
+			top: 360px;
+			img {
+				-ms-transform: rotate(20deg);
+			}
+		}
+		&.bucket-3 {
+			top: 560px;
+			img {
+				-ms-transform: rotate(-20deg);
+			}
+		}
+	}
+	.bucket-knob {
+		&.knob-1 {
+			top: 156px;
+		}
+		&.knob-2 {
+			top: 356px;
+		}
+		&.knob-3 {
+			top: 556px;
 		}
 	}
 }
@@ -2590,6 +2684,22 @@ html, body {
 				-webkit-animation-delay: 6s;
 				animation-delay: 6s;
 			}
+		}
+	}
+}
+
+.no-cssanimations .biogas-wash {
+	.mask {
+		display: none;
+	}
+	.cloud-2 {
+		top: 55%;
+		left: 40px !important;
+	}
+	.cloud-3 {
+		left: 130px !important;
+		.part {
+			background: #ADDCEC !important;
 		}
 	}
 }

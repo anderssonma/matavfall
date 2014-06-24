@@ -345,6 +345,7 @@ body.scroll {
 	bottom: -10px;
 	background: url(../img/hav_bak.svg);
   opacity: 0;
+  z-index: 2;
 }
 .sea-front {
 	position: absolute;
@@ -354,8 +355,8 @@ body.scroll {
 	bottom: -10px;
 	background: url(../img/hav_fram.svg);
   opacity: 0;
+  z-index: 2;
 }
-
 
 .pager[class*="-active"] {
   .sea-back, .sea-front {
