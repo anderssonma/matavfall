@@ -722,36 +722,12 @@
     opacity: 0; }
     #fakta2-2 #sverige-container .fralla.fralla-top {
       margin-top: -200px; }
-  #fakta2-2 #sverige-container .frallhog-1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-transform: scale(0);
-    transform-origin: 50% 50%;
-    transform: scale(0);
-    margin-top: -90px;
-    margin-left: -115px; }
-  #fakta2-2 #sverige-container .frallhog-2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-transform: scale(0);
-    transform-origin: 50% 50%;
-    transform: scale(0);
-    margin-top: -80px;
-    margin-left: -100px; }
-  #fakta2-2 #sverige-container .frallhog-3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-transform: scale(0);
-    transform-origin: 50% 50%;
-    transform: scale(0);
-    margin-top: -65px;
-    margin-left: -50px; }
+    #fakta2-2 #sverige-container .fralla.frallhog-1 {
+      margin-top: -90px;
+      margin-left: -115px; }
+    #fakta2-2 #sverige-container .fralla.frallhog-2 {
+      margin-top: -80px;
+      margin-left: -100px; }
+    #fakta2-2 #sverige-container .fralla.frallhog-3 {
+      margin-top: -65px;
+      margin-left: -50px; }

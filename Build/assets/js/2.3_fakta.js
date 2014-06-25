@@ -154,9 +154,9 @@ $(document).ready(function() {
 	var fralla_15 = TweenMax.to($('#fralla-15'), 1.2, {css: {marginTop: '-=120px', marginLeft: '+=110px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_16 = TweenMax.to($('#fralla-16'), 1.2, {css: {marginTop: '+=210px', marginLeft: '-=210px', transform: 'rotate(-130deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
 
-	var fralla_17 = TweenMax.to($('#fralla-17'), 1, {delay: 0.2, css:{opacity: 1, marginTop: '-400px', marginLeft: '-130px', transform: 'rotate(178deg) scale(1)'}, ease: Expo.easeIn});
-	var fralla_18 = TweenMax.to($('#fralla-18'), 1.2, {css:{opacity: 1, marginTop: '0px', marginLeft: '-370px', transform: 'rotate(-65deg) scale(1)'}, ease: Expo.easeIn});
-	var fralla_19 = TweenMax.to($('#fralla-19'), 0.9, {delay: 0.3, css:{opacity: 1, marginTop: '260px', marginLeft: '-190px', transform: 'rotate(100deg) scale(1)'}, ease: Expo.easeIn});
+	var frallhog_1 = TweenMax.to($('#frallhog-1'), 1, {delay: 0.2, css:{opacity: 1, marginTop: '-400px', marginLeft: '-130px', transform: 'rotate(178deg) scale(1)'}, ease: Expo.easeIn});
+	var frallhog_2 = TweenMax.to($('#frallhog-2'), 1.2, {css:{opacity: 1, marginTop: '0px', marginLeft: '-370px', transform: 'rotate(-65deg) scale(1)'}, ease: Expo.easeIn});
+	var frallhog_3 = TweenMax.to($('#frallhog-3'), 0.9, {delay: 0.3, css:{opacity: 1, marginTop: '260px', marginLeft: '-190px', transform: 'rotate(100deg) scale(1)'}, ease: Expo.easeIn});
 
 	var text_bullar_spacer = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
 
@@ -166,7 +166,7 @@ $(document).ready(function() {
 			.add([sverige_out, sverige_mat_1_out, sverige_mat_2_out, sverige_mat_3_out, sverige_mat_4_out, sverige_mat_5_out, sverige_mat_6_out, sverige_mat_7_out, sverige_mat_8_out, sverige_mat_9_out, sverige_text_out])
 			.add([bil1_in, bil2_in, bil3_in, bil4_in, bil5_in, bil6_in, bil7_in, bil8_in, bil9_in, bil10_in, bil11_in, text_bilar_in], '-=1')
 			.add([bil1_out, bil2_out, bil3_out, bil4_out, bil5_out, bil6_out, bil7_out, bil8_out, bil9_out, bil10_out, bil11_out, text_bilar_out, text_bullar_in], '+=4')
-			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12, fralla_13, fralla_14, fralla_15, fralla_16, fralla_17, fralla_18, fralla_19], '-=1')
+			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12, fralla_13, fralla_14, fralla_15, fralla_16, frallhog_1, frallhog_2, frallhog_3], '-=1')
 			.add(text_bullar_spacer)
 		});
 

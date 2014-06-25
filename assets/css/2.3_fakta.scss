@@ -731,41 +731,17 @@
 		&.fralla-top {
 			margin-top: -200px;
 		}
-	}
-	.frallhog-1 {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		opacity: 0;
-		-webkit-transform-origin:50% 50%;
-		-webkit-transform: scale(0);
-		transform-origin:50% 50%;
-		transform: scale(0);
-		margin-top: -90px;
-		margin-left: -115px;
-	}
-	.frallhog-2 {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		opacity: 0;
-		-webkit-transform-origin:50% 50%;
-		-webkit-transform: scale(0);
-		transform-origin:50% 50%;
-		transform: scale(0);
-		margin-top: -80px;
-		margin-left: -100px;
-	}
-	.frallhog-3 {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		opacity: 0;
-		-webkit-transform-origin:50% 50%;
-		-webkit-transform: scale(0);
-		transform-origin:50% 50%;
-		transform: scale(0);
-		margin-top: -65px;
-		margin-left: -50px;
+		&.frallhog-1 {
+			margin-top: -90px;
+			margin-left: -115px;
+		}
+		&.frallhog-2 {
+			margin-top: -80px;
+			margin-left: -100px;
+		}
+		&.frallhog-3 {
+			margin-top: -65px;
+			margin-left: -50px;
+		}
 	}
 }
