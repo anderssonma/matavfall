@@ -1,3 +1,8 @@
+.dirt-spacer {
+  width: 100%;
+  height: 200px;
+  background: #786854; }
+
 .stage {
   position: relative;
   width: 100%;

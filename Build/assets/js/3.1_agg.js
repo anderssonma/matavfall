@@ -2,8 +2,8 @@ $(document).ready(function() {
 
 	var ctrl = $.superscrollorama();
 
-	var textIntroOut = TweenMax.to($('#text-intro'), 0.5, {css: {opacity: 0}});
-	var textIntroBgOut = TweenMax.to($('#text-intro-bg'), 1, {css: {opacity: 0}});
+	//var textIntroOut = TweenMax.to($('#text-intro'), 0.5, {css: {opacity: 0}});
+	//var textIntroBgOut = TweenMax.to($('#text-intro-bg'), 1, {css: {opacity: 0}});
 
 	var straw1Out = TweenMax.to($('#straw-1'), 0.5, {
 			css: {opacity: 0, marginTop: '+=200'}});
@@ -448,8 +448,8 @@ $(document).ready(function() {
 	ctrl.pin($('#eggs'), 50000, {
 		anim: (new TimelineLite())
 			// INTRO
-			.add(textIntroOut, '+=2')
-			.add(textIntroBgOut)
+			// .add(textIntroOut, '+=2')
+			// .add(textIntroBgOut)
 			// PART 1
 			.add([straw1Out, crown1Out])
 			.add([straw2Out, crown2Out], '-=0.25')

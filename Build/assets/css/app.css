@@ -260,6 +260,14 @@ body.scroll #content {
     width: 100%;
     left: 0;
     bottom: 170px; }
+  .landscape .text-intro {
+    width: 800px;
+    color: #666;
+    margin: 80px auto 0; }
+    .landscape .text-intro span {
+      font-size: 20px;
+      margin-left: 16px;
+      display: inline-block; }
 
 .seascape {
   position: absolute;
