@@ -138,21 +138,25 @@ $(document).ready(function() {
 
 	var text_bullar_in = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
 
-	var fralla_5 = TweenMax.to($('#fralla-5'), 1, {css: {marginTop: '-=200px', marginLeft: '-=200px', transform: 'rotate(125deg) scale(1)', opacity: 1}, ease: Expo.easeIn});
-	var fralla_6 = TweenMax.to($('#fralla-6'), 1, {delay: 0.2, css: {marginTop: '-=180px', marginLeft: '+=200px', transform: 'rotate(-45deg) scale(1.2)', opacity: 1}, ease: Expo.easeIn});
-	var fralla_7 = TweenMax.to($('#fralla-7'), 1, {delay: 0.1, css: {marginTop: '-=160px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_5 = TweenMax.to($('#fralla-5'), 1.1, {delay: 0.1, css: {marginTop: '-=200px', marginLeft: '-=200px', transform: 'rotate(125deg) scale(1)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_6 = TweenMax.to($('#fralla-6'), 1.1, {delay: 0.1, css: {marginTop: '-=180px', marginLeft: '+=200px', transform: 'rotate(-45deg) scale(1.2)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_7 = TweenMax.to($('#fralla-7'), 1.1, {delay: 0.1, css: {marginTop: '-=160px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
 
-	var fralla_8 = TweenMax.to($('#fralla-8'), 1, {css: {marginTop: '+=200px', marginLeft: '+=100px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
-	var fralla_9 = TweenMax.to($('#fralla-9'), 1, {delay: 0.1, css: {marginTop: '+=160px', marginLeft: '-=50px', transform: 'rotate(230deg) scale(1.1)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_8 = TweenMax.to($('#fralla-8'), 1, {delay: 0.2, css: {marginTop: '+=200px', marginLeft: '+=100px', transform: 'rotate(-170deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_9 = TweenMax.to($('#fralla-9'), 0.4, {delay: 0.8, css: {marginTop: '+=160px', marginLeft: '-=50px', transform: 'rotate(230deg) scale(1.1)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_10 = TweenMax.to($('#fralla-10'), 1, {delay: 0.2, css: {marginTop: '+=40px', marginLeft: '-=150px', transform: 'rotate(20deg) scale(1.2)', opacity: 1}, ease: Expo.easeIn});
 
-	var fralla_11 = TweenMax.to($('#fralla-11'), 1.1, {delay: 0.2, css: {marginTop: '-=90px', marginLeft: '-=100px', transform: 'rotate(-80deg) scale(0.6)', opacity: 1}, ease: Expo.easeIn});
-	var fralla_12 = TweenMax.to($('#fralla-12'), 1.1, {delay: 0.1, css: {marginTop: '-=90px', marginLeft: '-=240px', transform: 'rotate(30deg) scale(0.75)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_11 = TweenMax.to($('#fralla-11'), 1, {delay: 0.2, css: {marginTop: '-=90px', marginLeft: '-=100px', transform: 'rotate(-80deg) scale(0.6)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_12 = TweenMax.to($('#fralla-12'), 0.6, {delay: 0.6, css: {marginTop: '-=90px', marginLeft: '-=240px', transform: 'rotate(30deg) scale(0.75)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_13 = TweenMax.to($('#fralla-13'), 1.1, {delay: 0.1, css: {marginTop: '+=160px', marginLeft: '+=220px', transform: 'rotate(-30deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
 
-	var fralla_14 = TweenMax.to($('#fralla-14'), 1.2, {delay: 0.1, css: {marginTop: '+=280px', marginLeft: '+=20px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
+	var fralla_14 = TweenMax.to($('#fralla-14'), 1.1, {delay: 0.1, css: {marginTop: '+=280px', marginLeft: '+=20px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_15 = TweenMax.to($('#fralla-15'), 1.2, {css: {marginTop: '-=120px', marginLeft: '+=110px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_16 = TweenMax.to($('#fralla-16'), 1.2, {css: {marginTop: '+=210px', marginLeft: '-=210px', transform: 'rotate(-130deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
+
+	var fralla_17 = TweenMax.to($('#fralla-17'), 1.2, {css:{opacity: 1, marginTop: '-400px', marginLeft: '-130px', transform: 'rotate(178deg) scale(1)'}, ease: Expo.easeIn});
+	var fralla_18 = TweenMax.to($('#fralla-18'), 1.2, {css:{opacity: 1, marginTop: '0px', marginLeft: '-370px', transform: 'rotate(-65deg) scale(1)'}, ease: Expo.easeIn});
+	var fralla_19 = TweenMax.to($('#fralla-19'), 1.2, {css:{opacity: 1, marginTop: '260px', marginLeft: '-190px', transform: 'rotate(100deg) scale(1)'}, ease: Expo.easeIn});
 
 	var text_bullar_spacer = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
 
@@ -162,7 +166,7 @@ $(document).ready(function() {
 			.add([sverige_out, sverige_mat_1_out, sverige_mat_2_out, sverige_mat_3_out, sverige_mat_4_out, sverige_mat_5_out, sverige_mat_6_out, sverige_mat_7_out, sverige_mat_8_out, sverige_mat_9_out, sverige_text_out])
 			.add([bil1_in, bil2_in, bil3_in, bil4_in, bil5_in, bil6_in, bil7_in, bil8_in, bil9_in, bil10_in, bil11_in, text_bilar_in], '-=1')
 			.add([bil1_out, bil2_out, bil3_out, bil4_out, bil5_out, bil6_out, bil7_out, bil8_out, bil9_out, bil10_out, bil11_out, text_bilar_out, text_bullar_in], '+=4')
-			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12, fralla_13, fralla_14, fralla_15, fralla_16], '-=1')
+			.add([fralla_5, fralla_6, fralla_7, fralla_8, fralla_9, fralla_10, fralla_11, fralla_12, fralla_13, fralla_14, fralla_15, fralla_16, fralla_17, fralla_18, fralla_19], '-=1')
 			.add(text_bullar_spacer)
 		});
 
