@@ -154,9 +154,9 @@ $(document).ready(function() {
 	var fralla_15 = TweenMax.to($('#fralla-15'), 1.2, {css: {marginTop: '-=120px', marginLeft: '+=110px', transform: 'rotate(150deg) scale(0.8)', opacity: 1}, ease: Expo.easeIn});
 	var fralla_16 = TweenMax.to($('#fralla-16'), 1.2, {css: {marginTop: '+=210px', marginLeft: '-=210px', transform: 'rotate(-130deg) scale(0.9)', opacity: 1}, ease: Expo.easeIn});
 
-	var fralla_17 = TweenMax.to($('#fralla-17'), 1.2, {css:{opacity: 1, marginTop: '-400px', marginLeft: '-130px', transform: 'rotate(178deg) scale(1)'}, ease: Expo.easeIn});
+	var fralla_17 = TweenMax.to($('#fralla-17'), 1, {delay: 0.2, css:{opacity: 1, marginTop: '-400px', marginLeft: '-130px', transform: 'rotate(178deg) scale(1)'}, ease: Expo.easeIn});
 	var fralla_18 = TweenMax.to($('#fralla-18'), 1.2, {css:{opacity: 1, marginTop: '0px', marginLeft: '-370px', transform: 'rotate(-65deg) scale(1)'}, ease: Expo.easeIn});
-	var fralla_19 = TweenMax.to($('#fralla-19'), 1.2, {css:{opacity: 1, marginTop: '260px', marginLeft: '-190px', transform: 'rotate(100deg) scale(1)'}, ease: Expo.easeIn});
+	var fralla_19 = TweenMax.to($('#fralla-19'), 0.9, {delay: 0.3, css:{opacity: 1, marginTop: '260px', marginLeft: '-190px', transform: 'rotate(100deg) scale(1)'}, ease: Expo.easeIn});
 
 	var text_bullar_spacer = TweenMax.to($('#sverige-container #text-brod'), 2, {css:{opacity: 1}, delay: 1, ease:Expo.easeInOut, delay: 0.5}, scrollDuration);
 
