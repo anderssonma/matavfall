@@ -1,0 +1,313 @@
+.page-1, .page-2, .page-3 {
+	.hills-1440, .hills-1920 {
+		display: none;
+	}
+}
+
+@media (min-width: 1440px) {
+	.page-1 .hills-1440 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -720px;
+		width: 1440px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-hill {
+			position: absolute;
+			left: 30px;
+			bottom: 0;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 50px;
+			bottom: 26px;
+		}
+		.left-tree {
+			position: absolute;
+			left: 96px;
+			bottom: 45px;
+			-webkit-transform: rotate(-6deg);
+			transform: rotate(-6deg);
+		}
+		.left-tree-2 {
+			position: absolute;
+			left: 70px;
+			bottom: 51px;
+			-webkit-transform: rotate(10deg);
+			transform: rotate(10deg);
+		}
+
+		.right-hill {
+			position: absolute;
+			right: 40px;
+			bottom: 0;
+		}
+		.right-hill-2 {
+			position: absolute;
+			right: 120px;
+			bottom: 0;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 40px;
+			bottom: 26px;
+		}
+
+		.right-trees {
+			position: absolute;
+			right: 160px;
+			bottom: 1px;
+		}
+	}
+
+	.page-2 .hills-1440 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -720px;
+		width: 1440px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-hill {
+			position: absolute;
+			left: 30px;
+			bottom: 0;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 50px;
+			bottom: 26px;
+		}
+		.left-tree {
+			position: absolute;
+			left: 96px;
+			bottom: 45px;
+			-webkit-transform: rotate(-6deg);
+			transform: rotate(-6deg);
+		}
+		.left-tree-2 {
+			position: absolute;
+			left: 70px;
+			bottom: 51px;
+			-webkit-transform: rotate(10deg);
+			transform: rotate(10deg);
+		}
+
+		.silo {
+			position: absolute;
+			right: 90px;
+			bottom: 40px;
+		}
+		.silo-2 {
+			position: absolute;
+			right: 120px;
+			bottom: 40px;
+		}
+		.right-hill {
+			position: absolute;
+			right: 40px;
+			bottom: 0;
+		}
+		.right-hill-2 {
+			position: absolute;
+			right: 120px;
+			bottom: 0;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 40px;
+			bottom: 26px;
+		}
+
+		.right-trees {
+			position: absolute;
+			right: 160px;
+			bottom: 1px;
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.page-1 .hills-1920 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -960px;
+		width: 1920px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-tree {
+			position: absolute;
+			left: 20px;
+			bottom: 33px;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 140px;
+			bottom: 26px;
+		}
+		.left-hill {
+			position: absolute;
+			left: 10px;
+			bottom: 0;
+		}
+		.house-left {
+			position: absolute;
+			left: 120px;
+			bottom: 0;
+		}
+		.house-left-2 {
+			position: absolute;
+			left: 204px;
+			bottom: 0;
+		}
+
+		.right-tree {
+			position: absolute;
+			bottom: 27px;
+			right: 270px;
+			-webkit-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+		.cabin-red {
+			position: absolute;
+			bottom: 0;
+			right: 100px;
+		}
+		.cabin-beige {
+			position: absolute;
+			bottom: 0;
+			right: 40px;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 120px;
+			bottom: 26px;
+		}
+		.right-hill {
+			position: absolute;
+			right: 190px;
+			bottom: 0;
+		}
+	}
+
+	.page-2	 .hills-1920 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -960px;
+		width: 1920px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-tree {
+			position: absolute;
+			left: 20px;
+			bottom: 33px;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 210px;
+			bottom: 26px;
+		}
+		.left-hill {
+			position: absolute;
+			left: 240px;
+			bottom: 0;
+		}
+		.house-left {
+			position: absolute;
+			left: 120px;
+			bottom: 0;
+		}
+		.house-left-2 {
+			position: absolute;
+			left: 204px;
+			bottom: 0;
+		}
+		.cyclist {
+			position: absolute;
+			left: 100px;
+			bottom: 40px;
+			-webkit-transform: rotate(10deg);
+			transform: rotate(10deg);
+		}
+		.bush {
+			position: absolute;
+			left: 170px;
+			bottom: 24px;
+		}
+		.bush-alt {
+			position: absolute;
+			left: 190px;
+			bottom: 24px;
+		}
+		.flowers {
+			position: absolute;
+			left: 50px;
+			bottom: 0;
+		}
+
+		.right-tree {
+			position: absolute;
+			bottom: 27px;
+			right: 270px;
+			-webkit-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+		.cabin-red {
+			position: absolute;
+			bottom: 0;
+			right: 100px;
+		}
+		.cabin-beige {
+			position: absolute;
+			bottom: 0;
+			right: 40px;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 120px;
+			bottom: 26px;
+		}
+		.right-hill {
+			position: absolute;
+			right: 190px;
+			bottom: 0;
+		}
+		.cyclist-right {
+			position: absolute;
+			right: 184px;
+			bottom: 54px;
+			-webkit-transform: rotate(-10deg);
+		}
+	}
+}

@@ -310,7 +310,7 @@ body.scroll {
 		bottom: 170px;
 	}
 	.text-intro {
-		width: 800px;
+		width: 730px;
 		color: #666;
 		margin: 80px auto 0;
 		span {
@@ -469,6 +469,7 @@ body.scroll {
     z-index: 3;
     margin-left: -170px;
     -webkit-transform: translateZ(0);
+    display: none;
   }
   .family {
     position: absolute;
@@ -479,12 +480,13 @@ body.scroll {
   }
 }
 
+/*
 .pager-animate {
 	.sky {
 		-webkit-animation: moveClouds 8s infinite alternate;
 	}
 	.citybus {
-		-webkit-animation: 14s 2s driveBus infinite ease-out;
+		//-webkit-animation: 14s 2s driveBus infinite ease-out;
 	}
 	.family {
 		-webkit-animation: 14s 2s busFamily infinite ease-out;
@@ -497,6 +499,7 @@ body.scroll {
 		-webkit-animation: 4s wave2 infinite linear;
 	}
 }
+*/
 
 
 @-webkit-keyframes moveClouds {

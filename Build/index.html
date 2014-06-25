@@ -7,8 +7,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
   <link rel='stylesheet' href='assets/css/vendor/normalize.css'>
 <link rel='stylesheet' href='assets/css/app.css'>
+<link rel='stylesheet' href='assets/css/landscape.css'>
 
   <link href="assets/favicon.ico" rel="shortcut icon">
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
@@ -41,6 +66,35 @@
 			</div>
 
 			<div class="page page-1">
+
+				<div class="hills-1440">
+					<img class="left-hill-back" src="assets/img/hill_green_large.svg" width="140">
+					<img class="left-hill-back-2" src="assets/img/hill_green_medium.svg" width="140">
+					<img class="left-hill" src="assets/img/hill_lightgreen_medium.svg" width="170">
+					<img class="left-tree" src="assets/img/gran.svg" width="30">
+					<img class="left-tree-2" src="assets/img/gran.svg" width="22">
+
+					<img class="right-hill-back" src="assets/img/hill_green_large.svg" width="160">
+					<img class="right-hill" src="assets/img/hill_lightgreen_small.svg" width="100">
+					<img class="right-trees" src="assets/img/trad.svg" width="50">
+				</div>
+
+				<div class="hills-1920">
+
+					<img class="left-tree" src="assets/img/trad_outline.svg" width="60">
+					<img class="left-hill-back" src="assets/img/hill_green_small.svg" width="140">
+					<img class="left-hill-back-2" src="assets/img/hill_green_small.svg" width="80">
+					<img class="left-hill" src="assets/img/hill_lightgreen_medium.svg" width="110">
+					<img class="house-left" src="assets/img/stuga_beige_alt.svg" width="60">
+					<img class="house-left-2" src="assets/img/stuga_vit_alt.svg" width="60">
+
+					<img class="right-tree" src="assets/img/gran_outline.svg" width="28">
+					<img class="right-hill-back" src="assets/img/hill_green_medium.svg" width="160">
+					<img class="right-hill" src="assets/img/hill_lightgreen_small.svg" width="90">
+					<img class="cabin-red" src="assets/img/hoghus_rod.svg" width="46">
+					<img class="cabin-beige" src="assets/img/hoghus_brun.svg" width="46">
+				</div>
+
 				<div class="landscape">
 					<div class="text-intro">
 						<h1>Vad är matavfall? <span>DEL 1</span></h1>
@@ -54,6 +108,37 @@
 				<h2>BEN 1</h2>
 			</div>
 			<div class="page page-2">
+
+				<div class="hills-1440">
+					<img class="left-hill-back" src="assets/img/hill_green_large.svg" width="140">
+					<img class="left-hill-back-2" src="assets/img/hill_green_medium.svg" width="140">
+					<img class="left-hill" src="assets/img/hill_lightgreen_medium.svg" width="170">
+					<img class="left-tree" src="assets/img/gran.svg" width="30">
+					<img class="left-tree-2" src="assets/img/gran.svg" width="22">
+
+					<img class="silo" src="assets/img/fabrik_1950_silo1.svg" width="40">
+					<img class="silo-2" src="assets/img/fabrik_1950_silo2.svg" width="40">
+					<img class="right-hill-back" src="assets/img/hill_brown_large.svg" width="160">
+					<img class="right-hill" src="assets/img/hill_lightbrown_small.svg" width="100">
+					<img class="right-trees" src="assets/img/trad.svg" width="50">
+				</div>
+
+				<div class="hills-1920">
+					<img class="left-tree" src="assets/img/trad_outline.svg" width="60">
+					<img class="left-hill-back" src="assets/img/hill_green_small.svg" width="140">
+					<img class="left-hill-back-2" src="assets/img/hill_green_small.svg" width="80">
+					<img class="left-hill" src="assets/img/hill_lightgreen_medium.svg" width="110">
+					<img class="cyclist" src="assets/img/cyklist.svg" width="50">
+					<img class="bush" src="assets/img/buske.svg" width="30">
+					<img class="bush-alt" src="assets/img/buske_alt.svg" width="30">
+					<img class="flowers" src="assets/img/blommor.svg" width="40">
+
+					<img class="right-tree" src="assets/img/gran_outline.svg" width="28">
+					<img class="right-hill-back" src="assets/img/hill_brown_medium.svg" width="160">
+					<img class="right-hill" src="assets/img/hill_lightbrown_small.svg" width="90">
+					<img class="cyclist-right" src="assets/img/cyklist_alt.svg" width="50">
+				</div>
+
 				<div class="landscape">
 					<div class="text-intro">
 				    <h1>Vad händer med matavfallet?<span>DEL 2</span></h1>
