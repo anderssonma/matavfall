@@ -34,7 +34,7 @@ $(document).ready(function() {
 	});
 
 	var matavfallspase_container_img = TweenMax.to($('#matavfallspase-container img'), 1, {css:{width: 100}, ease:Expo.easeIn}, scrollDuration);
-	var matavfallspase_container = TweenMax.to($('#matavfallspase-container'), 1, {css:{width: 300, marginTop: '-=50px'}, ease:Expo.easeIn}, scrollDuration);
+	var matavfallspase_container = TweenMax.to($('#matavfallspase-container'), 1, {css:{width: 300, marginTop: '+=20px'}, ease:Expo.easeIn}, scrollDuration);
 
 	var bil = TweenMax.to($('#bil-bla'), 1.2,
 		{css:{opacity: 1},
