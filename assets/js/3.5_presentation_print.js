@@ -1,5 +1,7 @@
 // DEPENDS ON SVG-TODATAURL.JS IN IE / SAFARI
 
+
+// DEFINE SOME HELPER VARS & FUNCTIONS
 PRES.rgbToHex = function(rgb) {
   var a = rgb.match(/\d+/g);
   return "#" + (((1 << 24) + (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2])).toString(16).slice(1));
@@ -18,9 +20,14 @@ PRES.whichBrowser = (function(){
   }
   M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
   if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+  
   return M.join(' ');
 })();
 
+PRES.printModeModern = false;
+
+
+// MAIN "APP"
 PRES.print = function() {
 
 	var bgNum = PRES.$dropZone.attr('class').match(/bg-[0-9]/);
@@ -30,10 +37,9 @@ PRES.print = function() {
 		return false;
 	}
 
-	var easyMode = true;
-	var browser = PRES.whichBrowser.split(' ')[0].toLowerCase();
-	if (browser === 'ie' || browser === 'safari') {
-		easyMode = false;
+	PRES.browser = PRES.whichBrowser.split(' ')[0].toLowerCase();
+	if (PRES.browser === 'msie' || PRES.browser === 'ie' || PRES.browser === 'safari') {
+		PRES.printModeModern = false;
 	}
 
 	var canvas = document.getElementById('canvas');
@@ -72,19 +78,20 @@ PRES.print = function() {
 	});
 
 	var callbackCounter = {};
-	// callbackCounter.remaining = images.length + 1; // + THE BG IMAGE
-	callbackCounter.remaining = 1; // + THE BG IMAGE
+	callbackCounter.remaining = images.length + 1; // + THE BG IMAGE
 	callbackCounter.addCallback = function() {
 		callbackCounter.remaining--;
 		if (callbackCounter.remaining <= 0) { // DRAW IMAGES IN CORRECT ORDER/Z-INDEX ONCE EVERYTHING IS LOADED
-			$.each(preparedImages, function(i, el) {
-				ctx.drawImage(el.img, el.left, el.top, el.img.width, el.img.height);
-			});
+			if (PRES.printModeModern) {
+				$.each(preparedImages, function(i, el) {
+					ctx.drawImage(el.img, el.left, el.top, el.img.width, el.img.height);
+				});
+			}
 			PRES.exportCanvas();
 		}
 	};
 
-	if (1 === 0) {
+	if (PRES.printModeModern) {
 
 		var bgImage = new Image();
 		bgImage.onload = function() { // MAKE SURE WE ALWAYS DRAW THE BG FIRST
@@ -96,6 +103,8 @@ PRES.print = function() {
 
 	} else { // IN IE/SAFARI WE CANT RENDER SVG'S TO CANVAS, SO CONVERT SVG'S TO PNG'S
 
+		// NEED TO TOGGLE ASYNC IN THIS MODE TO KEEP THE IMAGE ORDER
+		$.ajaxSetup({async: false});
 		$('#svg-export').load('assets/img/pres_bg' + bgNum[0].replace(/bg-/g, '') + '.svg', function() {
 			var bgSVG = $("#svg-export svg")[0];
 			var oldW = parseInt(bgSVG.getAttribute('width'), 10);
@@ -113,27 +122,52 @@ PRES.print = function() {
 				}
 			});
 		});
+		$.ajaxSetup({async: true});
 
 	}
 
-	$.each(images, function(i, el) { // PRELOAD IMAGES
-		var img = new Image();
-		img.onload = function() {
-			preparedImages.push({
-				top: el.top,
-				left: el.left,
-				img: img
-			});
-			callbackCounter.addCallback();
-		};
-		img.src = el.src;
-		img.width = el.width;
-		img.height = el.height;
-		img.setAttribute('crossOrigin','anonymous');
-	});
+	if (PRES.printModeModern) {
 
-	if (1 === 0) {
+		$.each(images, function(i, el) { // PRELOAD IMAGES
+			var img = new Image();
+			img.onload = function() {
+				preparedImages.push({
+					top: el.top,
+					left: el.left,
+					img: img
+				});
+				callbackCounter.addCallback();
+			};
+			img.src = el.src;
+			img.width = el.width;
+			img.height = el.height;
+			img.setAttribute('crossOrigin','anonymous');
+		});
+
+	} else {
+
+		// NEED TO TOGGLE ASYNC IN THIS MODE TO KEEP THE IMAGE ORDER
+		$.ajaxSetup({async: false});
 		$('#svg-export').empty(); // REMOVE BG IMAGE
+		$.each(images, function(i, img) {
+			$('#svg-export').load(img.src, function(data) {
+				var imageSVG = $("#svg-export svg")[0];
+				imageSVG.setAttribute('width', img.width);
+				imageSVG.setAttribute('height', img.height);
+				imageSVG.toDataURL('image/png', {
+					callback: function(data) {
+						var imagePNG = new Image();
+						imagePNG.onload = function() {
+							ctx.drawImage(imagePNG, img.left, img.top, img.width, img.height);
+							callbackCounter.addCallback();
+						};
+						imagePNG.src = data;
+					}
+				});
+			});
+		});
+		$.ajaxSetup({async: true});
+
 	}
 
 };
@@ -141,10 +175,15 @@ PRES.print = function() {
 PRES.exportCanvas = function() {
 	var canvasData = canvas.toDataURL('image/png');
 	window.setTimeout(function() {
+		$('#overlay-print img').remove();
 		$('#overlay-print a').attr({
 			href: canvasData,
 			target: '_blank'
 		});
+		if (PRES.browser === 'msie' || PRES.browser === 'ie') {
+			$('#overlay-print').addClass('ie'); // SOME HELPER TEXT SINCE IE CAN'T OPEN DATA URLS IN NEW TABS
+		}
+		$('#overlay-print').append('<img src="' + canvasData + '">');
 		PRES.showOverlay('#overlay-print');
 		/*
 		if (!printWindow || printWindow.closed || typeof printWindow.closed === 'undefined') {

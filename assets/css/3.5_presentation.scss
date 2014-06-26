@@ -429,10 +429,50 @@
 			}
 		}
 
+		&.print {
+			margin-top: -210px;
+			text-align: center;
+			h6 {
+				text-align: left;
+			}
+			.ie-text {
+				text-align: left;
+				margin-bottom: 0;
+				display: none;
+			}
+			img {
+				width: 420px;
+				margin: 30px 0 90px;
+				border-radius: 3px;
+			}
+			.button {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			button {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+
+			&.ie {
+				margin-top: -260px;
+				.ie-text {
+					display: block;
+				}
+				.button {
+					display: none;
+				}
+				button {
+					width: 100%;
+				}
+			}
+		}
+
 		&.help {
 			width: 520px;
 			margin: -205px 0 0 -260px;
-			
 			button {
 				margin-top: 20px;
 				width: 100%;
@@ -551,6 +591,7 @@
 	}
 }
 
+/*
 @media print {
 	body {
 		margin: 0;
@@ -581,3 +622,4 @@
 		}
 	}
 }
+*/
