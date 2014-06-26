@@ -5,6 +5,22 @@ PRES.rgbToHex = function(rgb) {
   return "#" + (((1 << 24) + (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2])).toString(16).slice(1));
 };
 
+PRES.whichBrowser = (function(){
+  var ua= navigator.userAgent, tem, 
+  M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+  if(/trident/i.test(M[1])){
+      tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return 'IE '+(tem[1] || '');
+  }
+  if(M[1]=== 'Chrome'){
+      tem= ua.match(/\bOPR\/(\d+)/)
+      if(tem!= null) return 'Opera '+tem[1];
+  }
+  M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+  if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+  return M.join(' ');
+})();
+
 PRES.print = function() {
 
 	var bgNum = PRES.$dropZone.attr('class').match(/bg-[0-9]/);
@@ -12,6 +28,12 @@ PRES.print = function() {
 	if (PRES.$dropZone.html() === '' || bgNum == null || bgNum[0] == null) {
 		PRES.toastMessage('Inget att skriva ut');
 		return false;
+	}
+
+	var easyMode = true;
+	var browser = PRES.whichBrowser.split(' ')[0].toLowerCase();
+	if (browser === 'ie' || browser === 'safari') {
+		easyMode = false;
 	}
 
 	var canvas = document.getElementById('canvas');
@@ -50,7 +72,8 @@ PRES.print = function() {
 	});
 
 	var callbackCounter = {};
-	callbackCounter.remaining = images.length + 1; // + THE BG IMAGE
+	// callbackCounter.remaining = images.length + 1; // + THE BG IMAGE
+	callbackCounter.remaining = 1; // + THE BG IMAGE
 	callbackCounter.addCallback = function() {
 		callbackCounter.remaining--;
 		if (callbackCounter.remaining <= 0) { // DRAW IMAGES IN CORRECT ORDER/Z-INDEX ONCE EVERYTHING IS LOADED
@@ -61,13 +84,37 @@ PRES.print = function() {
 		}
 	};
 
-	var bgImage = new Image();
-	bgImage.onload = function() { // MAKE SURE WE ALWAYS DRAW THE BG FIRST
-		ctx.drawImage(bgImage, ((1000 - this.width) / 2) * 2, ((680 - this.height) / 2) * 2, (this.width * 2), (this.height * 2));
-		callbackCounter.addCallback();
-	};
-	bgImage.src = 'assets/img/pres_bg' + bgNum[0].replace(/bg-/g, '') + '.svg';
-	bgImage.setAttribute('crossOrigin','anonymous');
+	if (1 === 0) {
+
+		var bgImage = new Image();
+		bgImage.onload = function() { // MAKE SURE WE ALWAYS DRAW THE BG FIRST
+			ctx.drawImage(bgImage, ((1000 - this.width) / 2) * 2, ((680 - this.height) / 2) * 2, (this.width * 2), (this.height * 2));
+			callbackCounter.addCallback();
+		};
+		bgImage.src = 'assets/img/pres_bg' + bgNum[0].replace(/bg-/g, '') + '.svg';
+		bgImage.setAttribute('crossOrigin','anonymous');
+
+	} else { // IN IE/SAFARI WE CANT RENDER SVG'S TO CANVAS, SO CONVERT SVG'S TO PNG'S
+
+		$('#svg-export').load('assets/img/pres_bg' + bgNum[0].replace(/bg-/g, '') + '.svg', function() {
+			var bgSVG = $("#svg-export svg")[0];
+			var oldW = parseInt(bgSVG.getAttribute('width'), 10);
+			var oldH = parseInt(bgSVG.getAttribute('height'), 10);
+			bgSVG.setAttribute('width', oldW * 2);
+			bgSVG.setAttribute('height', oldH * 2);
+			bgSVG.toDataURL('image/png', { //svg+xml', {
+				callback: function(data) {
+					var bgImage = new Image();
+					bgImage.onload = function() { // MAKE SURE WE ALWAYS DRAW THE BG FIRST
+						ctx.drawImage(bgImage, ((1000 - oldW) / 2) * 2, ((680 - oldH) / 2) * 2, this.width, this.height);
+						callbackCounter.addCallback();
+					};
+					bgImage.src = data;
+				}
+			});
+		});
+
+	}
 
 	$.each(images, function(i, el) { // PRELOAD IMAGES
 		var img = new Image();
@@ -84,6 +131,10 @@ PRES.print = function() {
 		img.height = el.height;
 		img.setAttribute('crossOrigin','anonymous');
 	});
+
+	if (1 === 0) {
+		$('#svg-export').empty(); // REMOVE BG IMAGE
+	}
 
 };
 
