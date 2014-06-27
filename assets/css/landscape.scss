@@ -140,6 +140,69 @@
 			bottom: 1px;
 		}
 	}
+
+	.page-3 .hills-1440 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -720px;
+		width: 1440px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-hill {
+			position: absolute;
+			left: 30px;
+			bottom: 0;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 50px;
+			bottom: 26px;
+		}
+		.left-tree {
+			position: absolute;
+			left: 96px;
+			bottom: 45px;
+			-webkit-transform: rotate(-6deg);
+			transform: rotate(-6deg);
+		}
+		.left-tree-2 {
+			position: absolute;
+			left: 70px;
+			bottom: 51px;
+			-webkit-transform: rotate(10deg);
+			transform: rotate(10deg);
+		}
+
+		.right-hill {
+			position: absolute;
+			right: 40px;
+			bottom: 0;
+		}
+		.right-hill-2 {
+			position: absolute;
+			right: 120px;
+			bottom: 0;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 40px;
+			bottom: 26px;
+		}
+
+		.right-trees {
+			position: absolute;
+			right: 160px;
+			bottom: 1px;
+		}
+	}
 }
 
 @media (min-width: 1920px) {
@@ -308,6 +371,71 @@
 			right: 184px;
 			bottom: 54px;
 			-webkit-transform: rotate(-10deg);
+		}
+	}
+
+	.page-3 .hills-1920 {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 251px;
+		margin-left: -960px;
+		width: 1920px;
+		height: 200px;
+		//border-left: 1px dashed rgba(0,0,0,.25);
+		//border-right: 1px dashed rgba(0,0,0,.25);
+		.left-tree {
+			position: absolute;
+			left: 20px;
+			bottom: 33px;
+		}
+		.left-hill-back {
+			position: absolute;
+			left: 0;
+			bottom: 26px;
+		}
+		.left-hill-back-2 {
+			position: absolute;
+			left: 140px;
+			bottom: 26px;
+		}
+		.left-hill {
+			position: absolute;
+			left: 10px;
+			bottom: 0;
+		}
+		.house-left {
+			position: absolute;
+			left: 120px;
+			bottom: 0;
+		}
+
+		.palm-tree {
+			position: absolute;
+			bottom: 46px;
+			right: 160px;
+		}
+		.right-tree {
+			position: absolute;
+			bottom: 27px;
+			right: 270px;
+			-webkit-transform: rotate(4deg);
+			transform: rotate(4deg);
+		}
+		.dirt-pile {
+			position: absolute;
+			bottom: -10px;
+			right: 40px;
+		}
+		.right-hill-back {
+			position: absolute;
+			right: 120px;
+			bottom: 26px;
+		}
+		.right-hill {
+			position: absolute;
+			right: 190px;
+			bottom: 0;
 		}
 	}
 }

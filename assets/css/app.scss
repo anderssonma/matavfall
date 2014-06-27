@@ -480,13 +480,12 @@ body.scroll {
   }
 }
 
-/*
 .pager-animate {
 	.sky {
 		-webkit-animation: moveClouds 8s infinite alternate;
 	}
 	.citybus {
-		//-webkit-animation: 14s 2s driveBus infinite ease-out;
+		-webkit-animation: 14s 2s driveBus infinite ease-out;
 	}
 	.family {
 		-webkit-animation: 14s 2s busFamily infinite ease-out;
@@ -499,7 +498,6 @@ body.scroll {
 		-webkit-animation: 4s wave2 infinite linear;
 	}
 }
-*/
 
 
 @-webkit-keyframes moveClouds {
