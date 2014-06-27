@@ -24,7 +24,7 @@ PRES.whichBrowser = (function(){
   return M.join(' ');
 })();
 
-PRES.printModeModern = false;
+PRES.printModeModern = true;
 
 
 // MAIN "APP"
@@ -36,6 +36,9 @@ PRES.print = function() {
 		PRES.toastMessage('Inget att skriva ut');
 		return false;
 	}
+
+	console.log($('#presentation .tools .print'));
+	$('#presentation .tools .print').addClass('loading');
 
 	PRES.browser = PRES.whichBrowser.split(' ')[0].toLowerCase();
 	if (PRES.browser === 'msie' || PRES.browser === 'ie' || PRES.browser === 'safari') {
@@ -184,7 +187,10 @@ PRES.exportCanvas = function() {
 			$('#overlay-print').addClass('ie'); // SOME HELPER TEXT SINCE IE CAN'T OPEN DATA URLS IN NEW TABS
 		}
 		$('#overlay-print').append('<img src="' + canvasData + '">');
-		PRES.showOverlay('#overlay-print');
+		window.setTimeout(function() {
+			PRES.showOverlay('#overlay-print');
+			$('#presentation .tools .print').removeClass('loading');
+		}, 750);
 		/*
 		if (!printWindow || printWindow.closed || typeof printWindow.closed === 'undefined') {
 			PRES.showOverlay('#overlay-popup');
