@@ -41,9 +41,10 @@ $(document).ready(function() {
 
 	// REVERT TO START ON 'END'
 	$(cinemaVideo).on('ended onended', function() {
-		cinemaVideo.currentTime = 0;
+		console.log('ended');
+		cinemaVideo.currentTime = 0.2;
 		cinemaVideo.pause();
-		cinemaPlayBtn.fadeIn(250);
+		$(cinemaPlayBtn).fadeIn(250);
 	});
 
 	// PAUSE VIDEO ON VIDEO CLICK

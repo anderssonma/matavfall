@@ -45,16 +45,18 @@
 /* MOVIE */
 .cinema .movie { /* 840px x 490px är maxupplösning på skärmen (Det som garanterat syns). Behövs några extra px i sidled/höjdled */
 	position: relative;
-	background: #EC628D;
+	background: #E3648A;
 	height: 100%;
 }
 .cinema .movie .video {
 	width: 840px;
 	margin-left: 60px;
+	background: #E3648A;
 }
 .cinema .movie .video::cue {
 	font-family: 'Lato';
-	background: rgba(255,255,255,.25);
+	/* background: rgba(0,0,0,.25); */
+	background: rgba(183,53,93,0.75);
 	line-height: 1.5em;
 }
 
@@ -66,13 +68,13 @@
 	z-index: 1;
   height: 80px;
   width: 120px;    
-  background: #7D261D;
+  background: #C44068;
   border-radius: 5px;
   -webkit-transition: background 0.35s;
   transition: background 0.35s;
 }
 .cinema .play-button:hover {
-  background: #D93939;
+  background: #EE9DB5;
 }
 .cinema .play-button:after {
   content: "";
@@ -103,11 +105,11 @@
 	position: relative;
 	display: inline-block;
 	text-align: center;
-	width: 200px;
+	width: 290px;
 	left: 50%;
 	background: #7D261D;
 	font-size: 40px;
-	margin: 6px 0 0 -100px;
+	margin: 6px 0 0 -145px;
 	padding: 20px 0;
 }
 
