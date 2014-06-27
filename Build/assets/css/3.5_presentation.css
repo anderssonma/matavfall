@@ -206,7 +206,7 @@
         height: 34px;
         margin: 0px 0px 4px 8px; }
     .presentation .image-drawer .ui-draggable-dragging {
-      z-index: 9999; }
+      z-index: 30; }
     .presentation .image-drawer img {
       opacity: 0;
       transition: 0.35s opacity ease-in; }
@@ -248,7 +248,7 @@
     left: -9999px;
     -webkit-transition: 0.35s opacity, 0s 0.35s left;
     transition: 0.35s opacity, 0s 0.35s left;
-    z-index: 10; }
+    z-index: 40; }
     .presentation .overlay.show {
       opacity: 1;
       left: 50%;

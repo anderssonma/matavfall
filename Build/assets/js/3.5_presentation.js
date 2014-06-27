@@ -256,8 +256,13 @@ PRES.imageControls = function(image) {
 
 			case 38: // UP = (Z-INDEX+1)
 				e.preventDefault();
-				$(self).css('zIndex', (parseInt($(self).css('zIndex'), 10) + 1));
-				PRES.displayLayerHelper(self);
+				var zIndex = parseInt($(self).css('zIndex'), 10);
+				if (zIndex >= 20) {
+					return false;
+				} else {
+					$(self).css('zIndex', (zIndex + 1));
+					PRES.displayLayerHelper(self);
+				}
 				break;
 
 			case 40: // DOWN = (Z-INDEX-1)

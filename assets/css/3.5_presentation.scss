@@ -248,7 +248,7 @@
 			}
 		}
 		.ui-draggable-dragging {
-			z-index: 9999;
+			z-index: 30;
 		}
 		img {
 			opacity: 0;
@@ -301,7 +301,7 @@
 		left: -9999px;
 		-webkit-transition: 0.35s opacity, 0s 0.35s left;
 		transition: 0.35s opacity, 0s 0.35s left;
-		z-index: 10;
+		z-index: 40;
 		&.show {
 			opacity: 1;
 			left: 50%;
