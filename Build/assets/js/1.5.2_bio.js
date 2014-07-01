@@ -2,12 +2,12 @@ $(document).ready(function() {
 
 	var cinemaCtrl = $.superscrollorama(),
 			cinemaVideo = document.getElementById('cinema-video'),
-			cinemaPlayBtn = document.getElementById('play-btn'),
+			cinemaPlayOverlay = document.getElementById('play-overlay'),
 			cinemaMuteBtn = document.getElementById('mute-btn'),
 			pauseVideo = function() {
 				if (!cinemaVideo.paused) {
 					cinemaVideo.pause();
-					$(cinemaPlayBtn).show();
+					$(cinemaPlayOverlay).removeClass('hidden');
 				}
 			};
 
@@ -37,25 +37,19 @@ $(document).ready(function() {
 
 	// REVERT TO START ON 'END'
 	$(cinemaVideo).on('ended onended', function() {
-		console.log('ended');
 		cinemaVideo.currentTime = 0.2;
 		cinemaVideo.pause();
-		$(cinemaPlayBtn).fadeIn(250);
+		$(cinemaPlayOverlay).removeClass('hidden');
 	});
 
-	// PAUSE VIDEO ON VIDEO CLICK
-	$(cinemaVideo).on('click', function() {
-		if (!cinemaVideo.paused) {
-			cinemaVideo.pause();
-			$(cinemaPlayBtn).fadeIn(250);
-		}
-		return false;
-	});
 	// PLAY ON PLAY CLICK
-	$(cinemaPlayBtn).on('click', function() {
+	$(cinemaPlayOverlay).on('click', function() {
 		if (cinemaVideo.paused) {
 			cinemaVideo.play();
-			$(cinemaPlayBtn).fadeOut(250);
+			$(cinemaPlayOverlay).addClass('hidden');
+		} else {
+			cinemaVideo.pause();
+			$(cinemaPlayOverlay).removeClass('hidden');
 		}
 		return false;
 	});
@@ -82,10 +76,5 @@ $(document).ready(function() {
 			cueBackgroundColour: [183,53,93,0.75]
 	  });
 	}
-
-	/*
-	if ($('html').hasClass('ie9')) {
-		captionator.captionify();
-	}*/
 
 });
