@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var cinemaCtrl = $.superscrollorama(),
 			cinemaVideo = document.getElementById('cinema-video'),
 			cinemaPlayBtn = document.getElementById('play-btn'),
+			cinemaMuteBtn = document.getElementById('mute-btn'),
 			pauseVideo = function() {
 				if (!cinemaVideo.paused) {
 					cinemaVideo.pause();
@@ -57,6 +58,20 @@ $(document).ready(function() {
 			$(cinemaPlayBtn).fadeOut(250);
 		}
 		return false;
+	});
+	//
+	$(cinemaMuteBtn).on('click', function() {
+		if (cinemaVideo.paused) {
+			return false;
+		}
+
+		if (cinemaVideo.muted) {
+			cinemaVideo.muted = false;
+			$(this).removeClass('muted');
+		} else {
+			cinemaVideo.muted = true;
+			$(this).addClass('muted');
+		}
 	});
 
 	if (typeof Modernizr.track === 'undefined') {
