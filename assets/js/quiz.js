@@ -62,7 +62,7 @@ var Quiz = {
 							item.addClass('vanish');
 							// APPEND IT TO THE SIDEBAR LIST SO IT CAN BE REMOVED BY THE USER
 							var label = (Quiz.activeSlide.isTargetMultiple === true ? target.data('item') : item.data('item'));
-							$(Quiz.elQuiz + ' .in-trash').append('<li class="hide">' + label + '<span data-id="' + item.data('id') + '" onclick="Quiz.resetQuizItem(this)">+</span></li>');
+							$(Quiz.elQuiz + ' .in-trash').append('<li class="hide">' + label + '<span data-id="' + item.data('id') + '" onclick="Quiz.resetQuizItem(this)"><i>+</i></span></li>');
 							window.setTimeout(function() {
 								item.css({display: 'none'});
 								$(Quiz.elQuiz + ' .in-trash li').removeClass('hide');
@@ -244,6 +244,7 @@ var Quiz = {
 			$('#quiz-' + 0 + ', #slide-' + 0).addClass('quiz-in');
 			$('#submit').removeClass('disabled');
 			Quiz.init();
+			Quiz.nextQuestion();
 		}, 350);
 
 	},
@@ -289,7 +290,13 @@ var Quiz = {
 				}
 			});
 		});
+		//this.nextQuestion();
+	},
+
+	firstSlide: function(self) {
+		$(self).parent().addClass('start');
 		this.nextQuestion();
+		// $(this.elSlide).addClass('quiz-in');
 	},
 
 	setupEvents: function() {
@@ -298,6 +305,10 @@ var Quiz = {
 		});
 		$('#restart').on('click', function() {
 			Quiz.restart();
+		});
+		$('#quiz-start button').on('click', function() {
+			Quiz.firstSlide(this);
+			$('#quiz-start button').off('click');
 		});
 	},
 
@@ -310,5 +321,7 @@ var Quiz = {
 
 
 $(document).ready(function() {
-	Quiz.startQuiz();
+	window.setTimeout(function() {
+		Quiz.startQuiz();
+	}, 0);
 });

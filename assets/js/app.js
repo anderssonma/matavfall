@@ -292,7 +292,6 @@ $(document).ready(function() {
 			$('#pager').addClass('pager-animate');
 			topIsAnimating = true;
 		}
-		// console.log($(this).scrollTop());
 	});
 	
 });

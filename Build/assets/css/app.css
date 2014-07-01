@@ -404,16 +404,25 @@ body.scroll #content {
   margin-left: -80px;
   z-index: 3; }
 
-.pager-animate .sky {
-  -webkit-animation: moveClouds 8s infinite alternate; }
-.pager-animate .citybus {
-  -webkit-animation: 14s 2s driveBus infinite ease-out; }
-.pager-animate .family {
-  -webkit-animation: 14s 2s busFamily infinite ease-out; }
-.pager-animate .sea-back {
-  -webkit-animation: 6s 0.1s wave infinite linear; }
-.pager-animate .sea-front {
-  -webkit-animation: 4s wave2 infinite linear; }
+.pager-animate {
+  	/*
+  	.sky {
+  		-webkit-animation: moveClouds 8s infinite alternate;
+  	}
+  	.citybus {
+  		-webkit-animation: 14s 2s driveBus infinite ease-out;
+  	}
+  	.family {
+  		-webkit-animation: 14s 2s busFamily infinite ease-out;
+  	}
+  
+  	.sea-back {
+  		-webkit-animation: 6s 0.1s wave infinite linear;
+  	}
+  	.sea-front {
+  		-webkit-animation: 4s wave2 infinite linear;
+  	}
+  	*/ }
 
 @-webkit-keyframes moveClouds {
   0% {
