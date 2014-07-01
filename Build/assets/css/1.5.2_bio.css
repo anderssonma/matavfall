@@ -37,27 +37,35 @@
 	right: 0;
 	bottom: 0;
 	top: 100px;
-	background: #F8F8F8;
+	background: #E3648A;
 }
 
 
 
 /* MOVIE */
-.cinema .movie { /* 840px x 490px är maxupplösning på skärmen (Det som garanterat syns). Behövs några extra px i sidled/höjdled */
+.cinema .movie {
 	position: relative;
 	background: #E3648A;
-	height: 100%;
+	width: 840px;
+	margin-left: 60px;
 }
 .cinema .movie .video {
 	width: 840px;
-	margin-left: 60px;
 	background: #E3648A;
 }
 .cinema .movie .video::cue {
 	font-family: 'Lato';
-	/* background: rgba(0,0,0,.25); */
+	background: #333;
 	background: rgba(183,53,93,0.75);
 	line-height: 1.5em;
+}
+
+.captionator-cue-canvas {
+	z-index: 1 !important;
+	margin-top: -22px !important;
+}
+.captionator-cue-canvas .captionator-cue {
+	font-family: 'Lato' !important;
 }
 
 .cinema .play-button {
@@ -65,7 +73,7 @@
 	top: 250px;
 	left: 50%;
 	margin: -40px 0 0 -60px;
-	z-index: 1;
+	z-index: 2;
   height: 80px;
   width: 120px;    
   background: #C44068;
@@ -88,6 +96,18 @@
   border-color: transparent transparent transparent rgba(255, 255, 255, 1);
 }
 
+.cinema .mute-button {
+	position: absolute;
+	top: 76px;
+	right: 0;
+	z-index: 20;
+	font-size: 12px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/spelknappar_sprite.svg) no-repeat -30px 0;
+	background-size: 150px 60px;
+}
+
 
 
 /* CINEMA TOP & LIGHTS */
@@ -99,7 +119,7 @@
 	width: 956px;
 	top: 10px;
 	border-bottom: 12px solid #7D261D;
-	z-index: 3;
+	z-index: 4;
 }
 .cinema .top-bar h1 {
 	position: relative;
@@ -146,7 +166,7 @@
 	bottom: 0;
 	width: 580px;
 	background: #A24442;
-	z-index: 2;
+	z-index: 3;
 }
 .cinema .curtain-left {
 	left: -100px;
@@ -179,7 +199,7 @@
 	float: left;
 }
 .cinema .seats2 {
-	bottom: -185px;
+	bottom: -200px;
 	left: 78px;
 	z-index: 3;
 }

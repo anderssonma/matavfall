@@ -12,6 +12,25 @@
       window.location = "http://www.smartmedmat.se";
     </script>
 	<![endif]-->
+	<!--[if IE 9 ]>
+		<script src="assets/js/vendor/captionator-min.js"></script>
+		<script type="text/javascript">
+	    window.addEventListener("load",function(eventData) {
+	    	window.setTimeout(function() {
+	    		console.log(Modernizr.track);
+	    		/*
+	        captionator.captionify(null, null, {
+						degubMode: true,
+						appendCueCanvasTo: document.getElementById('cinema-movie'),
+						controlHeight: 6,
+						sizeCuesByTextBoundingBox: true,
+						cueBackgroundColour: [183,53,93,0.75]
+	        });
+	        */
+	      }, 5000);
+	    });
+		</script>
+	<![endif]-->
 
   <link rel='stylesheet' href='assets/css/vendor/normalize.css'>
 <link rel='stylesheet' href='assets/css/app.css'>
@@ -209,6 +228,7 @@
 	<script src='assets/js/vendor/jquery.min.js'></script>
 <script src='assets/js/vendor/jquery-ui.min.js'></script>
 <script src='assets/js/vendor/jquery.ui.touchpunch.min.js'></script>
+<script src='assets/js/vendor/captionator-min.js'></script>
 	<script src='assets/js/vendor/jquery.superscrollorama.js'></script>
 <script src='assets/js/vendor/preloadjs-0.4.0.min.js'></script>
 	<script src='assets/js/vendor/svg-todataurl.js'></script>

@@ -22,19 +22,14 @@ $(document).ready(function() {
 			leftCurtainOut = TweenMax.to($('#curtain-left'), 5, {css:{left: -520}, ease:Back.easeIn}),
 			rightCurtainOut = TweenMax.to($('#curtain-right'), 5, {css:{right: -520}, ease:Back.easeIn, onReverseComplete: pauseVideo}),
 			leftCurtainIn = TweenMax.to($('#curtain-left'), 5, {css:{left: -100}, ease:Back.easeOut}),
-			rightCurtainIn = TweenMax.to($('#curtain-right'), 5, {css:{right: -100}, ease:Back.easeOut, onComplete: pauseVideo}),
-			// READ MORE IN & OUT
-			signIn = TweenMax.to($('#sign'), 2, {css:{bottom: 40}, ease: Expo.easeOut}),
-			signOut = TweenMax.to($('#sign'), 2, {css:{bottom: -200}, ease: Expo.easeIn});
+			rightCurtainIn = TweenMax.to($('#curtain-right'), 5, {css:{right: -100}, ease:Back.easeOut, onComplete: pauseVideo});
 
 	cinemaCtrl.pin($('#cinema'), 12000, {
 		anim: (new TimelineLite())
 			.add([row1In, row2In], '+=0.5', 'sequence')
 			.add(screenIn)
 			.add([leftCurtainOut, rightCurtainOut], '+=0.5','start')
-			.add(signIn, '+=1')
-			.add(signOut, '+=5')
-			.add([leftCurtainIn, rightCurtainIn], '+=0.5', 'start')
+			.add([leftCurtainIn, rightCurtainIn], '+=2.5', 'start')
 			.add(screenOut)
 			.add([row2Out, row1Out], '+=0.5', 'sequence')
 	});
@@ -63,5 +58,19 @@ $(document).ready(function() {
 		}
 		return false;
 	});
+
+	if (typeof Modernizr.track === 'undefined') {
+		captionator.captionify(null, null, {
+			degubMode: true,
+			appendCueCanvasTo: document.getElementById('cinema-movie'),
+			sizeCuesByTextBoundingBox: true,
+			cueBackgroundColour: [183,53,93,0.75]
+	  });
+	}
+
+	/*
+	if ($('html').hasClass('ie9')) {
+		captionator.captionify();
+	}*/
 
 });

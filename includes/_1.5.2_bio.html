@@ -32,9 +32,10 @@
 			<div class="content">
 				<div id="curtain-left" class="curtain curtain-left"></div>
 				<div id="curtain-right" class="curtain curtain-right"></div>
-				<div class="movie">
+				<div class="movie" id="cinema-movie">
 					<video id="cinema-video" class="video" preload poster="<!-- @path bio_bg -->">
-			      <source src="<!-- @path lukta-smaka.mp4 -->">
+						<source src="<!-- @path lukta-smaka.webm -->" type="video/webm">
+			      <source src="<!-- @path lukta-smaka.mp4 -->" type="video/mp4">
 			      <track kind="subtitles" label="sv" src="<!-- @path lukta-smaka.vtt -->" srclang="sv" default></track>
 			    </video>
 			    <div id="play-btn" class="play-button"></div>
