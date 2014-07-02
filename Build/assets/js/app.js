@@ -235,7 +235,8 @@ var INTROMSG = {
 
 	init: function() {
 		$('#welcome').on('click', function() {
-			$('#welcome').off('click').hide();
+			$('#welcome').off('click');
+			$('#pager').addClass('out');
 		})
 		this.HTML5Storage = (supportsLocalStorage()) ? true : false;
 		if (supportsLocalStorage()) {
@@ -243,7 +244,14 @@ var INTROMSG = {
 			if (!this.isFirstVisit()) {
 				this.close();
 			} else {
-				this.setLastVisit();
+
+				/*
+				window.setTimeout(function() {
+					$('#pager').addClass('out');
+				}, 5000); */
+				
+				//$('#welcome').fadeIn();
+				//this.setLastVisit();
 				if (this.getLastVisit() + 10 < this.createDateString()) {
 					// FIRST VISIT IN 10 DAYS, SHOW OVERLAY?
 				} else {

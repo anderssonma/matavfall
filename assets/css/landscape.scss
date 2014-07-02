@@ -24,6 +24,16 @@
 	}
 }
 
+.pager .landscape .text-intro {
+	opacity: 0;
+	-webkit-transform: translateY(-20px);
+}
+.pager.out .landscape .text-intro {
+	opacity: 1;
+	transition: 0.35s 1.35s -webkit-transform ease-out, 0.7s 1.35s opacity;
+	-webkit-transform: translateY(0);
+}
+
 .seascape {
 	position: absolute;
 	width: 100%;
@@ -31,6 +41,7 @@
 	background: #4CB37F;
 	left: 0;
 	bottom: 0;
+	-webkit-transform: translateY(100px);
 	z-index: 1;
 	.road {
 		position: absolute;
@@ -56,8 +67,8 @@
 	left: -20%;
 	width: 160%;
 	bottom: -10px;
+	-webkit-transform: translateY(100px);
 	background: url(../img/hav_bak.svg);
-  opacity: 0;
   z-index: 2;
 }
 .sea-front {
@@ -66,22 +77,21 @@
 	height: 90px;
 	left: -20%;
 	bottom: -10px;
+	-webkit-transform: translateY(100px);
 	background: url(../img/hav_fram.svg);
-  opacity: 0;
   z-index: 2;
 }
 
-.pager[class*="-active"] {
+.pager[class*="-active"].out {
+	.seascape {
+		-webkit-transform: translateY(0);
+		transition: 1.5s ease-out -webkit-transform;
+	}
   .sea-back, .sea-front {
-    opacity: 1;
-    bottom: -10px;
+    -webkit-transform: translateY(0);
+    transition: 1.5s ease-out -webkit-transform;
   }
-  .sea-back {
-    transition: 0.5s 1s opacity;
-  }
-  .sea-front {
-    transition: 0.5s 1s opacity;
-  }
+
 }
 
 @-webkit-keyframes wave {
@@ -138,26 +148,35 @@
 	.city-left {
 		position: absolute;
 		bottom: 178px;
+		-webkit-transform: translateY(100px);
 		right: 50%;
 		left: 0;
 		height: 100px;
 		background: #4CB37F;
 		border-top: 26px solid #3B8655;
+		-webkit-transition: 1.5s ease-out -webkit-transform;
 	}
 	.city-right {
 		position: absolute;
 		bottom: 178px;
+		-webkit-transform: translateY(100px);
 		left: 50%;
 		right: 0;
 		height: 100px;
 		background: #786855;
 		border-top: 26px solid #635646;
+		-webkit-transition: 1.5s ease-out -webkit-transform;
 	}
 	.sky {
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
+}
+
+.pager.out .city-left,
+.pager.out .city-right {
+	-webkit-transform: translateY(0);
 }
 
 .mobile-intro {
@@ -179,7 +198,6 @@
     left: 50%;
     bottom: 220px;
     margin-left: -80px;
-    z-index: 3;
   }
 }
 
