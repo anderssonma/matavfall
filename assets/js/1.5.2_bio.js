@@ -76,7 +76,7 @@ $(document).ready(function() {
 		}
 		return false;
 	});
-	//
+
 	$(cinemaMuteBtn).on('click', function() {
 		if (cinemaVideo.paused) {
 			return false;
@@ -97,7 +97,7 @@ $(document).ready(function() {
 			appendCueCanvasTo: document.getElementById('cinema-movie'),
 			sizeCuesByTextBoundingBox: true,
 			cueBackgroundColour: [183,53,93,0.75]
-	  });
+		});
 	}
 
 });
