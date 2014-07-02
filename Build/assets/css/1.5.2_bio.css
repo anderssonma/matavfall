@@ -14,7 +14,12 @@
 	position: relative;
 	overflow: hidden;
 	background: #F77A77;
+	transition: 3s background;
 }
+.cinema.darken {
+	background: #C44B4B;
+}
+
 .cinema .area {
 	position: absolute;
 	width: 1200px;
@@ -173,7 +178,118 @@
 	background: #FCF7EC;
 	margin: 0 23px 0 -2px;
 	border-radius: 20px;
+	-webkit-transition: 0.5s ease-out all;
+	transition: 0.5s ease-out all;
 }
+.cinema.lights-on .top-bar .bulb {
+	background: #FFDA40;
+	border-color: #F9B618;
+	border-width: 6px;
+}
+
+.cinema .top-bar .bulb-left-10,
+.cinema .top-bar .bulb-right-10 {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.cinema .top-bar .bulb-left-9,
+.cinema .top-bar .bulb-right-9 {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+.cinema .top-bar .bulb-left-8,
+.cinema .top-bar .bulb-right-8 {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+.cinema .top-bar .bulb-left-7,
+.cinema .top-bar .bulb-right-7 {
+	-webkit-transition-delay: 0.28s;
+	transition-delay: 0.28s;
+}
+.cinema .top-bar .bulb-left-6,
+.cinema .top-bar .bulb-right-6 {
+	-webkit-transition-delay: 0.36s;
+	transition-delay: 0.36s;
+}
+.cinema .top-bar .bulb-left-5,
+.cinema .top-bar .bulb-right-5 {
+	-webkit-transition-delay: 0.44s;
+	transition-delay: 0.44s;
+}
+.cinema .top-bar .bulb-left-4,
+.cinema .top-bar .bulb-right-4 {
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.cinema .top-bar .bulb-left-3,
+.cinema .top-bar .bulb-right-3 {
+	-webkit-transition-delay: 0.56s;
+	transition-delay: 0.56s;
+}
+.cinema .top-bar .bulb-left-2,
+.cinema .top-bar .bulb-right-2 {
+	-webkit-transition-delay: 0.62s;
+	transition-delay: 0.62s;
+}
+.cinema .top-bar .bulb-left-1,
+.cinema .top-bar .bulb-right-1 {
+	-webkit-transition-delay: 0.68s;
+	transition-delay: 0.68s;
+}
+
+.cinema.lights-on .top-bar .bulb-left-1,
+.cinema.lights-on .top-bar .bulb-right-1 {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.cinema.lights-on .top-bar .bulb-left-2,
+.cinema.lights-on .top-bar .bulb-right-2 {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+.cinema.lights-on .top-bar .bulb-left-3,
+.cinema.lights-on .top-bar .bulb-right-3 {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+.cinema.lights-on .top-bar .bulb-left-4,
+.cinema.lights-on .top-bar .bulb-right-4 {
+	-webkit-transition-delay: 0.28s;
+	transition-delay: 0.28s;
+}
+.cinema.lights-on .top-bar .bulb-left-5,
+.cinema.lights-on .top-bar .bulb-right-5 {
+	-webkit-transition-delay: 0.36s;
+	transition-delay: 0.36s;
+}
+.cinema.lights-on .top-bar .bulb-left-6,
+.cinema.lights-on .top-bar .bulb-right-6 {
+	-webkit-transition-delay: 0.44s;
+	transition-delay: 0.44s;
+}
+.cinema.lights-on .top-bar .bulb-left-7,
+.cinema.lights-on .top-bar .bulb-right-7 {
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.cinema.lights-on .top-bar .bulb-left-8,
+.cinema.lights-on .top-bar .bulb-right-8 {
+	-webkit-transition-delay: 0.56s;
+	transition-delay: 0.56s;
+}
+.cinema.lights-on .top-bar .bulb-left-9,
+.cinema.lights-on .top-bar .bulb-right-9 {
+	-webkit-transition-delay: 0.62s;
+	transition-delay: 0.62s;
+}
+.cinema.lights-on .top-bar .bulb-left-10,
+.cinema.lights-on .top-bar .bulb-right-10 {
+	-webkit-transition-delay: 0.68s;
+	transition-delay: 0.68s;
+}
+
+
 .cinema .bulb.bulb-lastleft {
 	margin-right: 0;
 }
@@ -182,6 +298,49 @@
 	margin: 0 -2px 0 0;
 }
 
+.cinema .searchlight {
+	position: absolute;
+	top: -900px;
+	left: 50%;
+	margin-left: -30px;
+	-webkit-transition: 0.5s ease-out opacity;
+	transition: 0.5s ease-out opacity;
+	-webkit-transform-origin: bottom center;
+	transform-origin: bottom center;
+	-webkit-transform: rotate(35deg);
+	opacity: 0;
+}
+.cinema .searchlight.searchlight-right {
+	margin-left: -140px;
+	-webkit-transform: rotate(-35deg);
+}
+
+.cinema.search-on .searchlight {
+	opacity: 1;
+	-webkit-animation: 3.75s searchLightAlt 2 alternate ease-in-out forwards;
+}
+.cinema.search-on .searchlight.searchlight-right {
+	opacity: 0.5;
+	-webkit-animation: 4s searchLight 2 alternate ease-in-out forwards;
+}
+
+
+@-webkit-keyframes searchLight {
+	0%, 100% {
+		-webkit-transform: rotate(-35deg);
+	}
+	50% {
+		-webkit-transform: rotate(35deg);
+	}
+}
+@-webkit-keyframes searchLightAlt {
+	0%, 100% {
+		-webkit-transform: rotate(35deg);
+	}
+	50% {
+		-webkit-transform: rotate(-35deg);
+	}
+}
 
 
 /* CURTAINS */
