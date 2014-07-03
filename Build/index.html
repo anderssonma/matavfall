@@ -169,31 +169,48 @@
 		</div>
 
 		<div class="seascape">
-				<div class="road">
-					<div class="stripes"></div>
-				</div>
+			<div class="road">
+				<div class="stripes"></div>
 			</div>
+		</div>
 
 		<div class="sea-back"></div>
 		<div class="sea-front"></div>
 
 		<div id="welcome" class="welcome">
-			<div class="inner-box">
-				<h1><span>Välkommen till</span>Smart Med Mat</h1>
-				<p>För att kunna göra biogas, värme och el av matresterna som du sorterar måste matavfallet behandlas i en biogasanläggning. Det som händer där är samma sak som sker i din mage och i kons mage när bakterier äter där.</p>
-				<div class="circle">STÄNG</div>
+			<h1><span>Välkommen till</span>Smart Med Mat</h1>
+			<p>De flesta i Sverige har börjat sortera sitt matavfall – om du inte har några bruna påsar för det hemma än så är de nog snart på väg. Genom att slänga mindre och samla in det som inte går att äta, typ möglig broccoli, och omvandla den till bland annat biogas, kan vi få en renare och bättre värld. Här får du koll på hur! Det börjar med sortering.</p>
+			<div class="circle">
+				<img src="assets/img/jordglob.svg" width="200">
+				<button id="start-btn">STARTA!</button>
 			</div>
-
-			<!--
-			<div class="mask-top"></div>
-			<div class="mask-bottom"></div>
-			<div class="mask-left"></div>
-			<div class="mask-right"></div>
-			<img class="mask" src="assets/img/welcome_mask.svg" width="200">
-			-->
-
 			<img class="mask-alt" src="assets/img/welcome_mask_alt.svg" width="2600">
 		</div>
+
+		<!--
+		<script>
+			// INLINE JS FOR SPEED
+			var lastVisit = localStorage.getItem('lastVisit'),
+					firstVisit = lastVisit === null ? true : false,
+					welcomeBox = document.getElementById('welcome');
+
+			var createDateString = function() {
+				var today = new Date();
+				return parseInt(today.getDate() + (today.getMonth() + 1) + today.getFullYear(), 10);
+			};
+			
+			// IF FIRST VISIT EVER OR IN 10 DAYS
+			if (firstVisit || parseInt(lastVisit, 10) + 10 < createDateString()) {
+				localStorage.setItem('lastVisit', createDateString());
+			} else { // HIDE OVERLAY
+				if (welcomeBox.classList) {
+					welcomeBox.classList.add('hide');
+				} else {
+					welcomeBox.className += ' ' + 'hide';
+				}
+			}
+		</script>
+		-->
 
 		<button class="temp" onclick="localStorage.removeItem('lastVisit')">RESET</button>
 

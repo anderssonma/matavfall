@@ -1,3 +1,23 @@
+function transitionEndEventName () {
+  var i,
+      undefined,
+      el = document.createElement('div'),
+      transitions = {
+          'transition':'transitionend',
+          'OTransition':'otransitionend',  // oTransitionEnd in very old Opera
+          'MozTransition':'transitionend',
+          'WebkitTransition':'webkitTransitionEnd'
+      };
+
+  for (i in transitions) {
+      if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+          return transitions[i];
+      }
+  }
+
+  //TODO: throw 'TransitionEnd event is not supported in this browser'; 
+}
+
 var scrollDisabler = new UserScrollDisabler();
 
 var ELEM = {
@@ -50,7 +70,10 @@ var PAGER = {
 		}, 0); // DEBUG: 0, LIVE: 500
 	},
 	removePage: function() {
-		ELEM.loader.show();
+		ELEM.loader.removeClass('disabled');
+		window.setTimeout(function() {
+			ELEM.loader.removeClass('hide');
+		}, 0);
 		HTMLHandler.remove();
 		CSSHandler.remove();
 	},
@@ -68,7 +91,10 @@ var PAGER = {
 			ELEM.body.addClass('scroll');
 			WORLD.changeBackground();
 			window.setTimeout(function() {
-				ELEM.loader.hide();
+				ELEM.loader.addClass('hide');
+				window.setTimeout(function() {
+					ELEM.loader.addClass('disabled');
+				}, 500);
 			}, 0); // DEBUG: 0, LIVE: 1000
 		}, 0); // DEBUG: 0, LIVE: 1000
 	},
@@ -211,6 +237,7 @@ var CSSHandler = {
 
 
 var INTROMSG = {
+	/*
 	HTML5Storage: false,
 	createDateString: function() {
 		var today = new Date();
@@ -229,15 +256,20 @@ var INTROMSG = {
 		// SET THE LAST VISIT ON OVERLAY CLOSE
 		// THEN WE KNOW THAT THE USER HAVE AT LEAST SEEN IT ONCE
 		this.setLastVisit();
-		$('#welcome').hide();
 	},
 
-
+	*/
 	init: function() {
-		$('#welcome').on('click', function() {
-			$('#welcome').off('click');
+		var transitionEnd = transitionEndEventName();
+		$('#welcome .mask-alt').on(transitionEnd, function() {
+			$('#welcome').hide();
+		});
+		$('#welcome .circle').on('click', function() {
+			$('#welcome .circle').off('click');
 			$('#pager').addClass('out');
-		})
+		});
+
+		/*
 		this.HTML5Storage = (supportsLocalStorage()) ? true : false;
 		if (supportsLocalStorage()) {
 			//alert(this.isFirstVisit());
@@ -245,10 +277,6 @@ var INTROMSG = {
 				this.close();
 			} else {
 
-				/*
-				window.setTimeout(function() {
-					$('#pager').addClass('out');
-				}, 5000); */
 				
 				//$('#welcome').fadeIn();
 				//this.setLastVisit();
@@ -262,6 +290,7 @@ var INTROMSG = {
 		} else {
 			// COOKIES?
 		}
+		*/
 	}
 }
 
@@ -270,6 +299,7 @@ var INTROMSG = {
 // =============
 
 $(document).ready(function() {
+
 	if (!isMobile.any() && document.addEventListener) {
 		INTROMSG.init();
 		ELEM.setup();
@@ -278,8 +308,11 @@ $(document).ready(function() {
 	} else {
 		ELEM.setup();
 		console.log('MOBILE');
-		INTROMSG.close();
-		ELEM.loader.hide();
+		//INTROMSG.close();
+		ELEM.loader.addClass('hide');
+		window.setTimeout(function() {
+			ELEM.loader.addClass('disabled');
+		}, 500);
 		$('#pager').addClass('page-1-active')
 		$.get('mobile.html', function(data) {
 			ELEM.content.append(data);
@@ -301,7 +334,7 @@ $(document).ready(function() {
 			topIsAnimating = true;
 		}
 	});
-	
+
 });
 
 /*
