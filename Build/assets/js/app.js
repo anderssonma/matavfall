@@ -1,5 +1,5 @@
-// var scrollDisabler = new UserScrollDisabler();
-scrollDisabler.disable(); // DISABLE SCROLL RIGHT AWAY!
+// scrollDisabler.disable(); // DISABLE SCROLL RIGHT AWAY!
+// DISABLE WHILE DEBUGGING
 
 var ELEM = {
 	setup: function() {
@@ -126,6 +126,7 @@ var PAGER = {
 		$('#welcome .mask-alt').on(transitionEnd, function() {
 			$('#welcome').hide();
 			scrollDisabler.reenable();
+			ELEM.nav.removeClass('disabled');
 			PAGER.initialLoad = false;
 		});
 		$('#welcome .circle').on('click', function() {

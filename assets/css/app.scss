@@ -284,6 +284,8 @@ body.scroll {
 		margin: -100px 0 0 -100px;
 		z-index: 1;
 		cursor: pointer;
+		width: 200px;
+		height: 200px;
 		img {
 			transition: 0.5s -webkit-transform ease-in-out;
 		}

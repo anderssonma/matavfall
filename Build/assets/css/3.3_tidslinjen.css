@@ -48,16 +48,15 @@
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   width: 440px;
+  font-size: 18px;
   z-index: 3;
-  padding: 20px;
   border-radius: 3px;
-  line-height: 22px; }
+  padding: 0;
+  margin: 0; }
   .textbox.box-bot {
-    background: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.85); }
   .textbox.box-top {
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(255, 255, 255, 0.15); }
+    color: #628077; }
 
 #sign-1, #sign-2, #sign-3, #sign-4 {
   position: absolute;
@@ -1096,25 +1095,29 @@
   bottom: 460px;
   left: 0;
   opacity: 1;
-  width: 500px; }
+  width: 530px; }
+  #stamp-1 #tl-text-01 p {
+    margin: 0;
+    padding: 0; }
   #stamp-1 #tl-text-01 h2 {
-    margin: 6px 0 14px; }
+    margin: 0 0 8px; }
 #stamp-1 #tl-text-02 {
   right: 0;
-  bottom: 40px;
-  opacity: 1; }
+  bottom: 60px;
+  opacity: 1;
+  width: 480px; }
 
 #tl-text-2 {
   right: 0;
-  bottom: 40px;
-  z-index: 5; }
+  bottom: 60px;
+  z-index: 5;
+  width: 480px; }
 
 #tl-text-1 {
-  bottom: 460px;
-  left: 0; }
+  bottom: 480px;
+  left: 0;
+  width: 490px; }
 
-#stamp-2 #tl-text-1 {
-  width: 460px; }
 #stamp-2 #tl-bg-6 {
   position: absolute;
   left: 20px;
@@ -1186,12 +1189,13 @@
   right: 64px;
   bottom: 215px; }
 .stamp-3 #tl-text-5 {
-  right: 0;
-  bottom: 40px;
-  width: 360px; }
+  right: 60px;
+  bottom: 60px;
+  width: 370px; }
 .stamp-3 #tl-text-4 {
-  right: 410px;
-  bottom: 40px; }
+  left: 0;
+  bottom: 60px;
+  width: 490px; }
 .stamp-3 #tl-text-3 {
   bottom: 520px;
   left: 0; }
@@ -1393,10 +1397,12 @@
   animation: 8s 4s smoke2 linear infinite; }
 #stamp-4 #tl-text-6 {
   bottom: 490px;
-  left: 0; }
+  left: 0;
+  width: 360px; }
 #stamp-4 #tl-text-7 {
   bottom: 60px;
-  right: 0; }
+  right: 0;
+  width: 700px; }
 
 .no-cssanimations #stamp-4.animate .smoke-1 {
   display: block;
@@ -1806,7 +1812,7 @@
 #stamp-6 #tl-text-10 {
   bottom: 450px;
   left: 0;
-  width: 340px; }
+  width: 420px; }
 
 @-webkit-keyframes moveMan {
   0%, 80% {

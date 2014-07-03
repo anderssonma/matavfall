@@ -26,7 +26,7 @@
   width: 1000px;
   height: 580px;
   float: left;
-  background: #6CB4C1;
+  background: #84C9A2;
   padding: 100px 80px 70px;
   position: relative;
 }
@@ -40,13 +40,13 @@
   top: 60px;
   left: 50%;
   width: 116px;
-  padding: 6px 12px;
+  padding: 8px 12px 4px;
   margin-left: -58px;
   text-align: center;
   text-transform: uppercase;
   font-size: 16px;
   color: #F8F8F8;
-  background: #56AAB7;
+  background: #62B987;
   border-radius: 3px;
   font-weight: normal;
 }
@@ -100,14 +100,14 @@
   height: 0px;
   border-style: solid;
   border-width: 30px 40px 30px 0;
-  border-color: transparent #6CB4C1 transparent transparent;
+  border-color: transparent #84C9A2 transparent transparent;
   cursor: pointer;
 }
 .slideshow .nav.nav-right {
   left: auto;
   right: -40px;
   border-width: 30px 0 30px 40px;
-  border-color: transparent transparent transparent #6CB4C1;
+  border-color: transparent transparent transparent #84C9A2;
 }
 .slideshow .nav-arrow {
   position: absolute;
@@ -117,7 +117,7 @@
   height: 0;
   border-style: solid;
   border-width: 12px 16px 12px 0;
-  border-color: transparent #8AC6CF transparent transparent;
+  border-color: transparent rgba(255,255,255,0.35) transparent transparent;
   -webkit-transition: 0.35s all;
   transition: 0.35s all;
 }
@@ -125,7 +125,7 @@
   left: auto;
   right: 24px;
   border-width: 12px 0 12px 16px;
-  border-color: transparent transparent transparent #8AC6CF;
+  border-color: transparent transparent transparent rgba(255,255,255,0.35);
 }
 .slideshow .nav:hover .nav-arrow {
   border-color: transparent rgba(255,255,255,0.75) transparent transparent;

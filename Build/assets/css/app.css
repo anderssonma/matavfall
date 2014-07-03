@@ -233,7 +233,9 @@ body.scroll .loader {
     left: 50%;
     margin: -100px 0 0 -100px;
     z-index: 1;
-    cursor: pointer; }
+    cursor: pointer;
+    width: 200px;
+    height: 200px; }
     .welcome .circle img {
       transition: 0.5s -webkit-transform ease-in-out; }
     .welcome .circle button {
