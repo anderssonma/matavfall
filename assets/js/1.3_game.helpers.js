@@ -26,11 +26,3 @@ HELPER.handleVisibilityChange = function() {
     // GAME.resumeGame();
   }
 };
-
-HELPER.supportsLocalStorage = function() {
-  try {
-    return 'localStorage' in window && window['localStorage'] !== null;
-  } catch (e) {
-    return false;
-  }
-};

@@ -194,8 +194,6 @@ body.scroll .loader {
   background: #1D3853;
   z-index: 20;
   overflow: hidden; }
-  .welcome.hide {
-    display: none; }
   .welcome .inner-box {
     position: relative;
     width: 600px;

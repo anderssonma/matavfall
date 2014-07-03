@@ -238,9 +238,6 @@ body.scroll {
 	background: #1D3853;
 	z-index: 20;
 	overflow: hidden;
-	&.hide {
-		display: none;
-	}
 	.inner-box {
 		position: relative;
 		width: 600px;

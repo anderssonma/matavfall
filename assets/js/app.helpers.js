@@ -54,17 +54,6 @@ UserScrollDisabler.prototype = {
 	}
 };
 
-
-// TEST FOR LOCALSTORAGE SUPPORT
-var supportsLocalStorage = function(){
-	try {
-		return 'localStorage' in window && window['localStorage'] !== null;
-	} catch(e) {
-		return false;
-	}
-};
-
-
 // LOAD CSS & JS ASYNCHRONOUSLY
 var ResourceLoader = function(type, url, callback) {
 

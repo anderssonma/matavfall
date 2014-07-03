@@ -848,9 +848,7 @@ var setupGame = function() {
 			if (player.savedHighScore !== 0) { // IF NEW HIGHSCORE
 				playSound('highscore');
 			}
-			if (HELPER.supportsLocalStorage()) { // SAVE TO LOCAL STORAGE IF POSS
-				localStorage.setItem('highScore', player.currentScore);
-			}
+			localStorage.setItem('highScore', player.currentScore);
 		} else if (player.currentScore > 0) {
 			scoreText.innerHTML = player.currentScore + ' POÄNG';
 			playSound('gameover');
@@ -1146,13 +1144,11 @@ var setupGame = function() {
 		// THESE NEEDS TO BE REINITIALIZED FOR EACH SESSION
 		GAME.keyParts = function() {
 
-			if (HELPER.supportsLocalStorage()) {
-				player.savedHighScore = localStorage.getItem('highScore');
-				if (!player.savedHighScore) {
-					player.savedHighScore = 0;
-				}
-				repaintScoreboard = true;
+			player.savedHighScore = localStorage.getItem('highScore');
+			if (!player.savedHighScore) {
+				player.savedHighScore = 0;
 			}
+			repaintScoreboard = true;
 
 			player.gameLoop = function() {
 				GAME.loop = window.requestAnimationFrame(player.gameLoop);
