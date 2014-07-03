@@ -1,24 +1,5 @@
-function transitionEndEventName () {
-  var i,
-      undefined,
-      el = document.createElement('div'),
-      transitions = {
-          'transition':'transitionend',
-          'OTransition':'otransitionend',  // oTransitionEnd in very old Opera
-          'MozTransition':'transitionend',
-          'WebkitTransition':'webkitTransitionEnd'
-      };
-
-  for (i in transitions) {
-      if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
-          return transitions[i];
-      }
-  }
-
-  //TODO: throw 'TransitionEnd event is not supported in this browser'; 
-}
-
-var scrollDisabler = new UserScrollDisabler();
+// var scrollDisabler = new UserScrollDisabler();
+scrollDisabler.disable(); // DISABLE SCROLL RIGHT AWAY!
 
 var ELEM = {
 	setup: function() {
@@ -28,7 +9,7 @@ var ELEM = {
 		this.loader = $('#loader');
 		this.content = $('#content');
 	}
-}
+};
 
 var WORLD = {
 	changeBackground: function() {
@@ -52,8 +33,9 @@ var WORLD = {
 		];
 
 		if (Modernizr.csstransitions) {
-			this.el.addEventListener('transitionend', function(e) {
-				if (e.target.className === 'page-wrapper') {
+			var transitionEnd = transitionEndEventName();
+			this.el.addEventListener(transitionEnd, function(e) {
+				if (e.target.className === 'page-wrapper' && !PAGER.initialLoad) {
 					scrollDisabler.reenable();
 					ELEM.nav.removeClass('disabled');
 				}
@@ -64,6 +46,7 @@ var WORLD = {
 
 var PAGER = {
 	currentPage: 1,
+	initialLoad: true,
 	insertPage: function() {
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			CSSHandler.load(); // (ASYNC) CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
@@ -122,6 +105,7 @@ var PAGER = {
 		document.getElementById('nav-page2').addEventListener('click', function() { PAGER.updateNavigation(2, this); });
 		document.getElementById('nav-page3').addEventListener('click', function() { PAGER.updateNavigation(3, this); });
 	},
+
 	init: function() {
 		this.progressText = document.getElementById('progress-text');
 		if (window.location.hash) {
@@ -137,6 +121,18 @@ var PAGER = {
 		$('#nav-page' + this.currentPage).addClass('active');
 		this.setLoadCount();
 		this.progressText.innerHTML = '0%';
+
+		var transitionEnd = transitionEndEventName();
+		$('#welcome .mask-alt').on(transitionEnd, function() {
+			$('#welcome').hide();
+			scrollDisabler.reenable();
+			PAGER.initialLoad = false;
+		});
+		$('#welcome .circle').on('click', function() {
+			$('#welcome .circle').off('click');
+			$('#pager').addClass('out');
+		});
+
 		window.setTimeout(function() {
 			PAGER.insertPage();
 		}, 0); // DEBUG: 0, LIVE: 1000
@@ -235,9 +231,8 @@ var CSSHandler = {
 	}
 };
 
-
+/*
 var INTROMSG = {
-	/*
 	HTML5Storage: false,
 	createDateString: function() {
 		var today = new Date();
@@ -258,18 +253,8 @@ var INTROMSG = {
 		this.setLastVisit();
 	},
 
-	*/
 	init: function() {
-		var transitionEnd = transitionEndEventName();
-		$('#welcome .mask-alt').on(transitionEnd, function() {
-			$('#welcome').hide();
-		});
-		$('#welcome .circle').on('click', function() {
-			$('#welcome .circle').off('click');
-			$('#pager').addClass('out');
-		});
 
-		/*
 		this.HTML5Storage = (supportsLocalStorage()) ? true : false;
 		if (supportsLocalStorage()) {
 			//alert(this.isFirstVisit());
@@ -290,9 +275,9 @@ var INTROMSG = {
 		} else {
 			// COOKIES?
 		}
-		*/
 	}
-}
+};
+*/
 
 
 // START LOADING
@@ -301,23 +286,21 @@ var INTROMSG = {
 $(document).ready(function() {
 
 	if (!isMobile.any() && document.addEventListener) {
-		INTROMSG.init();
 		ELEM.setup();
 		WORLD.setup();
 		PAGER.init();
 	} else {
 		ELEM.setup();
 		console.log('MOBILE');
-		//INTROMSG.close();
 		ELEM.loader.addClass('hide');
 		window.setTimeout(function() {
 			ELEM.loader.addClass('disabled');
 		}, 400);
-		$('#pager').addClass('page-1-active')
+		$('#pager').addClass('page-1-active');
 		$.get('mobile.html', function(data) {
 			ELEM.content.append(data);
 			ResourceLoader('css', '/assets/css/mobile.css', function() {
-				// DONE
+				// DONE CALLBACK
 			});
 		});
 	}
@@ -329,6 +312,11 @@ $(document).ready(function() {
 		if (topIsAnimating && sTop > wHeight) { // STOP TOP ANIM
 			$('#pager').removeClass('pager-animate');
 			topIsAnimating = false;
+			if (PAGER.initialLoad) {
+				PAGER.initialLoad = false;
+				scrollDisabler.reenable();
+				$('#welcome .circle').trigger('click');
+			}
 		} else if (!topIsAnimating && sTop < wHeight) { // RESTART TOP ANIM
 			$('#pager').addClass('pager-animate');
 			topIsAnimating = true;

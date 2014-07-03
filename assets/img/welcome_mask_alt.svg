@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="2441.582px" height="1307.893px" viewBox="0 0 2441.582 1307.893" enable-background="new 0 0 2441.582 1307.893"
 	 xml:space="preserve">
-<path fill="#1D3853" d="M0,0v1307.893h2441.582V0H0z M1220.791,747.365c-51.596,0-93.422-41.823-93.422-93.421
-	c0-51.595,41.826-93.421,93.422-93.421s93.422,41.826,93.422,93.421C1314.213,705.542,1272.387,747.365,1220.791,747.365z"/>
+<path fill="#1D3853" d="M0,0v1307.893h2441.582V0H0z M1220.791,747.365c-51.599,0-93.425-41.822-93.425-93.421
+	c0-51.595,41.826-93.421,93.425-93.421c51.596,0,93.422,41.826,93.422,93.421C1314.213,705.542,1272.387,747.365,1220.791,747.365z"
+	/>
 <g opacity="0">
 	<circle fill="#BFD2E2" cx="1407.635" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="1220.791" cy="467.104" r="93.421"/>
@@ -18,7 +19,7 @@
 	<circle fill="#BFD2E2" cx="1784.477" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="1974.477" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="2161.319" cy="653.946" r="93.421"/>
-	<circle fill="#BFD2E2" cx="2348.159" cy="653.946" r="93.421"/>
+	<circle fill="#BFD2E2" cx="2348.156" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="843.948" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="1033.948" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="467.107" cy="653.946" r="93.421"/>
@@ -26,10 +27,67 @@
 	<circle fill="#BFD2E2" cx="93.421" cy="653.946" r="93.421"/>
 	<circle fill="#BFD2E2" cx="657.107" cy="653.946" r="93.421"/>
 </g>
-<circle fill="#FFFFFF" cx="500.291" cy="435.447" r="11"/>
-<circle fill="#FFFFFF" cx="720.062" cy="736.366" r="11"/>
-<circle fill="#FFFFFF" cx="1691.056" cy="747.366" r="11"/>
-<circle fill="#FFFFFF" cx="2056.898" cy="617.262" r="11"/>
-<circle fill="#FFFFFF" cx="887.077" cy="398.24" r="11"/>
-<circle fill="#FFFFFF" cx="560.528" cy="146.215" r="11"/>
+<circle fill="#FFFFFF" cx="404.345" cy="364.505" r="6.154"/>
+<circle fill="#FFFFFF" cx="560.41" cy="346.149" r="6.154"/>
+<circle fill="#FFFFFF" cx="766.232" cy="349.277" r="6.154"/>
+<circle fill="#FFFFFF" cx="1115.799" cy="127.27" r="6.154"/>
+<circle fill="#FFFFFF" cx="868.676" cy="491.387" r="6.153"/>
+<circle fill="#FFFFFF" cx="1155.469" cy="371.984" r="6.154"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="544.784" cy="87.556" r="5.865"/>
+<circle fill="#FFFFFF" cx="1875.877" cy="729.493" r="6.106"/>
+<circle fill="#FFFFFF" cx="1938.103" cy="603.819" r="6.106"/>
+<circle fill="#FFFFFF" cx="1736.451" cy="597.714" r="6.106"/>
+<circle fill="#FFFFFF" cx="1811.505" cy="501.889" r="6.106"/>
+<circle fill="#FFFFFF" cx="1730.347" cy="382.323" r="6.106"/>
+<circle fill="#FFFFFF" cx="1769.998" cy="250.929" r="6.106"/>
+<circle opacity="0.8" fill="#FFFFFF" enable-background="new    " cx="808.398" cy="687.841" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="491.611" cy="943.157" r="5.361"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1653.93" cy="76.447" r="5.361"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1826.549" cy="990.195" r="5.361"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2369.291" cy="333.808" r="5.361"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="161.434" cy="928.849" r="5.361"/>
+<circle opacity="0.8" fill="#FFFFFF" enable-background="new    " cx="843.823" cy="1075.049" r="6.826"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="161.435" cy="1127.131" r="5.865"/>
+<circle opacity="0.8" fill="#FFFFFF" enable-background="new    " cx="515.51" cy="717.972" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="186.842" cy="727.275" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="858.916" cy="127.328" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1413.5" cy="221.558" r="5.865"/>
+<circle opacity="0.8" fill="#FFFFFF" enable-background="new    " cx="742.156" cy="1137.956" r="6.827"/>
+<circle opacity="0.8" fill="#FFFFFF" enable-background="new    " cx="899.108" cy="979.9" r="6.828"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1591.77" cy="1085.874" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1295.512" cy="1214.473" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1552.134" cy="461.238" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1163.385" cy="995.556" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2254.738" cy="1192.145" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2027.475" cy="949.024" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2307.961" cy="821.53" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1844.351" cy="1214.473" r="5.866"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="1504.215" cy="760.644" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2155.453" cy="417.459" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="2286.963" cy="119.97" r="5.865"/>
+<circle fill="#FFFFFF" cx="1881.984" cy="154.607" r="6.106"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="183.765" cy="288.406" r="5.865"/>
+<circle opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="150.618" cy="119.97" r="5.865"/>
+<circle fill="#FFFFFF" cx="269.239" cy="492.129" r="6.154"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="269.24" cy="492.129" r="9.76"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="404.347" cy="364.505" r="9.76"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="515.511" cy="717.973" r="9.302"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="808.397" cy="687.841" r="9.302"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="899.111" cy="979.901" r="10.826"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="843.823" cy="1075.048" r="10.826"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="742.156" cy="1137.957" r="10.826"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="560.41" cy="346.147" r="9.76"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="766.232" cy="349.277" r="9.76"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1155.469" cy="371.983" r="9.76"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1938.103" cy="603.819" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1875.875" cy="729.493" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1736.45" cy="597.713" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1811.504" cy="501.889" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1730.347" cy="382.323" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1769.998" cy="250.929" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="1881.985" cy="154.608" r="9.684"/>
+<circle opacity="0.4" fill="#FFFFFF" enable-background="new    " cx="868.677" cy="491.389" r="9.76"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="1125.847,131.91 1143.682,127.27 1125.847,122.629 1129.616,113.453 1120.44,117.222 
+	1115.799,99.387 1111.158,117.223 1101.982,113.453 1105.751,122.629 1087.916,127.271 1105.751,131.911 1101.982,141.087 
+	1111.158,137.318 1115.799,155.153 1120.44,137.318 1129.616,141.087 "/>
 </svg>

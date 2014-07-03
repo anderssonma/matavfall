@@ -19,40 +19,6 @@ var isMobile = {
   }
 };
 
-// DISABLE ALL SCROLLING TEMPORARILY WITHOUT SETTING OVERFLOW:HIDDEN (WHICH BREAKS SCROLLORAMA)
-var UserScrollDisabler = function() {
-	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-	// left: 37, up: 38, right: 39, down: 40
-	this.scrollEventKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
-	this.$window = $(window);
-	this.$document = $(document);
-};
-
-UserScrollDisabler.prototype = {
-	disable: function() {
-		var self = this;
-		self.$window.on("mousewheel.UserScrollDisabler DOMMouseScroll.UserScrollDisabler", this._handleWheel);
-		self.$document.on("mousewheel.UserScrollDisabler touchmove.UserScrollDisabler", this._handleWheel);
-		self.$document.on("keydown.UserScrollDisabler", function(event) {
-			self._handleKeydown.call(self, event);
-		});
-	},
-	reenable: function() {
-		this.$window.off(".UserScrollDisabler");
-		this.$document.off(".UserScrollDisabler");
-	},
-	_handleKeydown : function(event) {
-		for (var i = 0; i < this.scrollEventKeys.length; i++) {
-			if (event.keyCode === this.scrollEventKeys[i]) {
-				event.preventDefault();
-				return;
-			}
-		}
-	},
-	_handleWheel : function(event) {
-		event.preventDefault();
-	}
-};
 
 // LOAD CSS & JS ASYNCHRONOUSLY
 var ResourceLoader = function(type, url, callback) {
@@ -102,4 +68,61 @@ var getOffset = function(el) {
 		el = el.offsetParent;
 	}
 	return {top: _y, left: _x};
+};
+
+
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+// left: 37, up: 38, right: 39, down: 40,
+var scrollDisabler = {
+	keys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
+	preventDefault: function(e) {
+		e = e || window.event;
+		if (e.preventDefault) {
+			e.preventDefault();
+		}
+		e.returnValue = false;	
+	},
+	keydown: function(e) {
+		for (var i = scrollDisabler.keys.length; i--;) {
+			if (e.keyCode === scrollDisabler.keys[i]) {
+				this.preventDefault(e);
+				return;
+			}
+		}
+	},
+	wheel: function(e) {
+		scrollDisabler.preventDefault(e);
+	},
+	disable: function() {
+		if (window.addEventListener) {
+			window.addEventListener('DOMMouseScroll', scrollDisabler.wheel, false);
+		}
+		window.onmousewheel = document.onmousewheel = scrollDisabler.wheel;
+		document.onkeydown = this.keydown;
+	},
+	reenable: function() {
+		if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', scrollDisabler.wheel, false);
+		}
+		window.onmousewheel = document.onmousewheel = document.onkeydown = null;	
+	}
+};
+
+
+var transitionEndEventName = function() {
+	var i,
+			undefined,
+			el = document.createElement('div'),
+			transitions = {
+				'transition':'transitionend',
+				'OTransition':'otransitionend',	// oTransitionEnd in very old Opera
+				'MozTransition':'transitionend',
+				'WebkitTransition':'webkitTransitionEnd'
+			};
+
+	for (i in transitions) {
+		if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+			return transitions[i];
+		}
+	}
 };
