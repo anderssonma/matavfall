@@ -8,14 +8,16 @@ body {
 }
 
 .daybuilder {
+	position: relative;
 	h1 {
-		margin-top: 100px;
-		text-align: center;
+		width: 520px;
+		margin: 100px auto 0;
+		color: rgba(255,255,255,0.85);
 	}
 	> p {
-		text-align: center;
 		width: 520px;
-		margin: 30px auto 0;
+		margin: 10px auto 0;
+		color: rgba(255,255,255,0.85);
 	}
 	.buildarea {
 		width: 800px;
@@ -91,6 +93,8 @@ body {
 		ul {
 			padding: 0;
 			list-style: none;
+			display: block;
+			overflow: hidden;
 		}
 		li {
 			-webkit-font-smoothing: antialiased;
@@ -115,6 +119,7 @@ body {
 			&:hover {
 				background: rgba(255,255,255,.15);
 				color: rgba(255,255,255,.75);
+				border-bottom-color: transparent;
 			}
 		}
 		.show li {
@@ -123,14 +128,26 @@ body {
 			pointer-events: auto;
 			cursor: pointer;
 			&:nth-child(2) {
-				transition-delay: 0.05s;
+				transition: 0.55s 0.05s opacity ease-in, 0.25s background, 0.25s color;
 			}
 			&:nth-child(3) {
-				transition-delay: 0.1s;
+				transition: 0.55s 0.1s opacity ease-in, 0.25s background, 0.25s color;
 			}
 			&:nth-child(4) {
-				transition-delay: 0.15s;
+				transition: 0.55s 0.15s opacity ease-in, 0.25s background, 0.25s color;
 			}
+			&:nth-child(5) {
+				transition: 0.55s 0.4s opacity ease-in, 0.25s background, 0.25s color;
+			}
+		}
+
+		.undo-button {
+			margin-top: 30px;
+			font-size: 14px;
+			background: rgba(0,0,0,.1);
+			padding: 10px 12px;
+			border: none;
+			outline: none;
 		}
 	}
 }

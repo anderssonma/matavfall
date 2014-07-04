@@ -148,9 +148,14 @@ var SB = {
 		this.elList.offsetHeight;
 	},
 
+	insertInProgress: false,
 	pickWord: function(i) {
-		this.elList.classList.remove('show');
+		if (this.undoInProgress || this.insertInProgress) {
+			return false;
+		}
+		this.insertInProgress = true;
 
+		this.elList.classList.remove('show');
 		var choice = this.wordChoices[this.currentSet][i];
 		var item = document.getElementById('part-' + (this.currentSet + 1));
 
@@ -174,10 +179,12 @@ var SB = {
 		listItems.forEach(function(item, i) {
 			htmlString = htmlString + '<li onclick="SB.pickWord(' + i + ')">' + item + '</li>';
 		});
+		if (this.currentSet > 0) {
+			htmlString = htmlString + '<li class="undo-button" onclick="SB.undo();">ÅNGRA SENASTE</li>';
+		}
 		this.elList.innerHTML = htmlString;
 		this.forceReflow();
 		this.elList.classList.add('show');
-		
 	},
 
 	nextSentence: function() {
@@ -194,16 +201,40 @@ var SB = {
 
 		window.setTimeout(function() {
 			SB.populateChoices();
+			SB.insertInProgress = false;
 		}, 250);
 		
+	},
+
+	undoInProgress: false,
+	undo: function() {
+		if (this.currentSet === 0 || this.undoInProgress || this.insertInProgress) {
+			return false;
+		}
+		this.undoInProgress = true;
+
+		this.elList.classList.remove('show');
+		var el = document.getElementById('part-' + (this.currentSet + 1));
+		var prevEl = document.getElementById('part-' + this.currentSet);
+		el.classList.remove('in');
+
+		window.setTimeout(function() {
+			el.classList.remove('show');
+			var prevChoice = prevEl.getElementsByTagName('span')[0];
+			prevChoice.classList.remove('show');
+			window.setTimeout(function() {
+				prevChoice.parentNode.removeChild(prevChoice);
+				SB.currentSet--;
+				SB.populateChoices();
+				SB.undoInProgress = false;
+			}, 750);
+		}, 750);
 	},
 
 	init: function() {
 		this.wordChoices = wordChoices;
 		this.currentSet = 0;
-
 		this.elList = document.getElementById('sentence-choices');
-
 		this.populateChoices();
 	}
 };
