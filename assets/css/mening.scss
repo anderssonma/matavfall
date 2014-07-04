@@ -19,15 +19,24 @@ body {
 		margin: 10px auto 0;
 		color: rgba(255,255,255,0.85);
 	}
+	.wrap {
+		background: rgba(255,255,255,.15);
+	}
+	.clock {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -115px 0 0 -115px;
+	}
 	.buildarea {
 		width: 800px;
-		margin: 100px auto 0;
+		margin: 300px auto 0;
 		text-align: left;
 		p {
 			display: none;
 			position: relative;
-			font-size: 22px;
-			line-height: 30px;
+			font-size: 46px;
+			line-height: 54px;
 			margin-top: 16px;
 			transition: 0.35s opacity;
 			opacity: 0;

@@ -155,7 +155,11 @@ var SB = {
 		}
 		this.insertInProgress = true;
 
+		var bigWord = document.getElementById('part-' + (this.currentSet + 1));
+		bigWord.classList.remove('in');
 		this.elList.classList.remove('show');
+
+		/*
 		var choice = this.wordChoices[this.currentSet][i];
 		var item = document.getElementById('part-' + (this.currentSet + 1));
 
@@ -171,7 +175,18 @@ var SB = {
 				SB.nextSentence();
 			}, 1500)
 		}, 250);
-		
+		*/
+
+		window.setTimeout(function() {
+			$('body').addClass('part-2');
+			window.setTimeout(function() {
+				bigWord.classList.remove('show');
+				// SHOW CLOCK
+				SB.currentSet++;
+				SB.nextSentence();
+			}, 2500);
+		}, 500);
+
 	},
 	populateChoices: function() {
 		var htmlString = '';
