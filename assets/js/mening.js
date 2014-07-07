@@ -143,7 +143,7 @@ PointerEventsPolyfill.prototype.register_mouse_events = function(){
 
 
 var SB = {
-
+	score: 0,
 	forceReflow: function() {
 		this.elList.offsetHeight;
 	},
@@ -154,6 +154,9 @@ var SB = {
 			return false;
 		}
 		this.insertInProgress = true;
+
+		this.score = this.score + i;
+		console.log(this.score);
 
 		var bigWord = document.getElementById('part-' + (this.currentSet + 1));
 		bigWord.classList.remove('in');
@@ -176,16 +179,15 @@ var SB = {
 			}, 1500)
 		}, 250);
 		*/
-
 		window.setTimeout(function() {
-			$('body').addClass('part-2');
+			$('.daybuilder').addClass('step-' + (SB.currentSet + 2));
 			window.setTimeout(function() {
 				bigWord.classList.remove('show');
 				// SHOW CLOCK
 				SB.currentSet++;
 				SB.nextSentence();
-			}, 2500);
-		}, 500);
+			}, 1250);
+		}, 250);
 
 	},
 	populateChoices: function() {
@@ -194,10 +196,7 @@ var SB = {
 		listItems.forEach(function(item, i) {
 			htmlString = htmlString + '<li onclick="SB.pickWord(' + i + ')">' + item + '</li>';
 		});
-		if (this.currentSet > 0) {
-			htmlString = htmlString + '<li class="undo-button" onclick="SB.undo();">ÅNGRA SENASTE</li>';
-		}
-		this.elList.innerHTML = htmlString;
+		this.elList.innerHTML = htmlString + '<li class="undo-button" onclick="SB.undo();">&larr;</li>';
 		this.forceReflow();
 		this.elList.classList.add('show');
 	},
@@ -206,6 +205,7 @@ var SB = {
 
 		if (this.currentSet === this.wordChoices.length) {
 			// SHOW END SCREEN
+			this.finalScore();
 			return false;
 		}
 
@@ -224,6 +224,7 @@ var SB = {
 	undoInProgress: false,
 	undo: function() {
 		if (this.currentSet === 0 || this.undoInProgress || this.insertInProgress) {
+			
 			return false;
 		}
 		this.undoInProgress = true;
@@ -246,7 +247,20 @@ var SB = {
 		}, 750);
 	},
 
+	finalScore: function() {
+		$('.daybuilder').addClass('final');
+		var maxScore = this.wordChoices.length * 3;
+		if (this.score >= Math.floor(maxScore * 0.8)) { // 80% or more correct
+			// HJÄLTE
+		} else if (this.score >= Math.floor(maxScore * 0.4)) { // 40%-80% correct
+			// NEUTRAL
+		} else {
+			// SKURK
+		}
+	},
+
 	init: function() {
+		wordChoices.length = 2;
 		this.wordChoices = wordChoices;
 		this.currentSet = 0;
 		this.elList = document.getElementById('sentence-choices');

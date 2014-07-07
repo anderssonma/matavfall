@@ -4,7 +4,7 @@ var wordChoices = [
 		'…och tvättar mig, men står kvar 5 minuter och låter duschvärmen göra mig pigg.',
 		'…och duschar snabbt, som jag gör varje dag.',
 		'…och tar en dusch, men inte varje dag. Ibland räcker det med att tvätta sig ordentligt i handfatet.'
-	], [ // PART 3
+	], [ // PART 2
 		'Jag gillar varmt bröd och värmer alltid brödet i micron eller ugnen.',
 		'Jag ber mamma sätta på spisen och steka ett ägg. Ibland får hon steka två gånger.',
 		'Jag äter en tallrik ekologisk filmjölk.',
