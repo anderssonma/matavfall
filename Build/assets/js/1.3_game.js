@@ -834,10 +834,18 @@ var setupGame = function() {
 		}
 
 
-		timerText.innerHTML = GAME.getTimeTotal();
+		timerText.innerHTML =  GAME.getTimeTotal();
+		var timePlayed = Math.floor(GAME.elapsed);
+		console.log(timePlayed);
+		if (timePlayed > player.savedTime) {
+			localStorage.setItem('SMM_GAME_TIME', timePlayed);
+		}
+
 		if (stoveHandler.completedRecipes > 0) {
 			var dishString = (stoveHandler.completedRecipes > 1) ? ' RÄTTER' : ' RÄTT';
 			recipeText.innerHTML = stoveHandler.completedRecipes + dishString;
+			var previousRecipes = localStorage.getItem('SMM_GAME_RECIPES');
+			localStorage.setItem('SMM_GAME_RECIPES', parseInt(previousRecipes + stoveHandler.completedRecipes, 10));
 		} else {
 			recipeText.innerHTML = 'INGET ALLS &nbsp;;..(';
 		}
@@ -848,7 +856,7 @@ var setupGame = function() {
 			if (player.savedHighScore !== 0) { // IF NEW HIGHSCORE
 				playSound('highscore');
 			}
-			localStorage.setItem('highScore', player.currentScore);
+			localStorage.setItem('SMM_GAME_HIGHSCORE', player.currentScore);
 		} else if (player.currentScore > 0) {
 			scoreText.innerHTML = player.currentScore + ' POÄNG';
 			playSound('gameover');
@@ -856,6 +864,11 @@ var setupGame = function() {
 			scoreText.innerHTML = '<i style="color:#D21937;">' + player.currentScore + ' POÄNG</i>';
 			playSound('gameover');
 		}
+
+		// DEBUGGING
+		console.log('SCORE: ' + localStorage.getItem('SMM_GAME_HIGHSCORE'));
+		console.log('RECIPES: ' + localStorage.getItem('SMM_GAME_RECIPES'));
+		console.log('TIME PLAYED: ' + localStorage.getItem('SMM_GAME_TIME') + 'ms');
 	};
 
 	var nextSpawnPoint;
@@ -1144,10 +1157,19 @@ var setupGame = function() {
 		// THESE NEEDS TO BE REINITIALIZED FOR EACH SESSION
 		GAME.keyParts = function() {
 
-			player.savedHighScore = localStorage.getItem('highScore');
-			if (!player.savedHighScore) {
-				player.savedHighScore = 0;
+			player.savedHighScore = localStorage.getItem('SMM_GAME_HIGHSCORE') || 0;
+			if (player.savedHighScore === 0) {
+				localStorage.setItem('SMM_GAME_HIGHSCORE', player.savedHighScore);
 			}
+			player.savedRecipes = localStorage.getItem('SMM_GAME_RECIPES') || 0;
+			if (player.savedRecipes === 0) {
+				localStorage.setItem('SMM_GAME_RECIPES', player.savedRecipes);
+			}
+			player.savedTime = localStorage.getItem('SMM_GAME_TIME') || 0;
+			if (player.savedTime === 0) {
+				localStorage.setItem('SMM_GAME_TIME', player.savedTime);
+			}
+
 			repaintScoreboard = true;
 
 			player.gameLoop = function() {
@@ -1199,9 +1221,9 @@ var setupGame = function() {
 
 		// HELP BTN
 		$(helpToggle).on('click', function() {
-			$('#start-btn').on('click', function() {
+			$('#start-game-btn').on('click', function() {
 				$('#game-desc').removeClass('show');
-				$('#start-btn').off();
+				$('#start-game-btn').off();
 			}).html('Stäng &nbsp;&rarr;');
 			$('#game-desc').removeClass();
 			$('#game-desc').addClass('game-screen game-desc show');
@@ -1304,20 +1326,18 @@ var setupGame = function() {
 };
 
 $(document).ready(function() {
-	$('#start-btn').on('click', function() {
-		$('#game-desc').addClass('prepare');
-		window.setTimeout(function() {
-			// FADE IN PRELOADER AND START GAME/PRELOADING
-			GAME.start();
-		}, 500);
-		setupGame();
-		GAME.paintBackground();
-		$('#start-btn').off();
-	});
-
 	GAME.showInfoScreen = function() {
 		$('#game-start').fadeOut(350, function() {
 			$('#game-desc').addClass('show');
+			window.setTimeout(function() {
+				$('#start-game-btn').on('click', function() {
+					$('#game-desc').addClass('prepare');
+					setupGame();
+					GAME.paintBackground();
+					GAME.start();
+				});
+			}, 0);
+			
 		});
 	};
 	$('#game-start').on('click', function() {
