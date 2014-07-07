@@ -865,6 +865,8 @@ var setupGame = function() {
 			playSound('gameover');
 		}
 
+		$('#diploma').trigger('rerender', ['game']);
+
 		// DEBUGGING
 		console.log('SCORE: ' + localStorage.getItem('SMM_GAME_HIGHSCORE'));
 		console.log('RECIPES: ' + localStorage.getItem('SMM_GAME_RECIPES'));
