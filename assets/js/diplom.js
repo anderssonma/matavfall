@@ -23,6 +23,9 @@ DPLM.paintStoryData = function() {
 
 DPLM.paintPresData = function() {
 	console.log('RE-RENDER PRESENTATION DATA');
+	var imgWords = localStorage.getItem('SMM_PRES_WORDS');
+	var imgTotal = localStorage.getItem('SMM_PRES_TOTAL');
+	console.log('WORDS: ' + imgWords + ' || TOTAL: ' + imgTotal);
 };
 
 DPLM.paintQuizData = function(which) {

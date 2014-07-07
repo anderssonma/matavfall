@@ -200,7 +200,8 @@ var CSSHandler = {
 			'/assets/css/3.3_tidslinjen.css',
 			'/assets/css/quiz.css',
 			'/assets/css/3.4_quiz.slides.css',
-			'/assets/css/3.5_presentation.css'
+			'/assets/css/3.5_presentation.css',
+			'/assets/css/1.7_diplom.css'
 		]
 	},
 	done: function() {
