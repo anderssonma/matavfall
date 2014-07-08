@@ -221,7 +221,7 @@ body {
 	z-index: 1;
 }
 
-canvas {
+.game-1 canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -229,7 +229,7 @@ canvas {
 }
 
 /* MAKE SURE IT'S ON TOP OF THE BG CANVAS */
-canvas#game-interactive {
+.game-1 canvas#game-interactive {
 	z-index: 10;
 	background: transparent;
 }

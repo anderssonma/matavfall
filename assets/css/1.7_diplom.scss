@@ -1,0 +1,80 @@
+.diploma {
+	width: 100%;
+	padding: 150px 0;
+	transition: 0.35s background;
+	&.color-1 {
+		background: #E6BEAA;
+	}
+	&.color-2 {
+		background: #78AD7C;
+	}
+	&.color-3 {
+		background: #AAD3E8;
+	}
+	h1 {
+		color: #F8F8F8;
+		text-align: center;
+	}
+	.diploma-controls {
+		position: absolute;
+		top: 320px;
+		right: 0;
+		width: 280px;
+		.circle {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: rgba(0,0,0,.25);
+			float: left;
+			margin: 10px 16px 0 0;
+			transition: 0.35s all;
+			outline: none;
+			border: 3px solid rgba(255,255,255,0);
+			&:hover {
+				background: rgba(0,0,0,.5);
+			}
+			&.c-1 {
+				background: #E6BEAA;
+			}
+			&.c-2 {
+				background: #78AD7C;
+			}
+			&.c-3 {
+				background: #DBEAF8;
+			}
+			&.active {
+				border-color: rgba(255,255,255,1);
+			}
+		}
+		button.export {
+			background: transparent;
+			padding: 8px;
+			color: #FFF;
+			outline: none;
+			border: 1px solid #FFF;
+			border-radius: 3px;
+			margin-top: 30px;
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+	h2 {
+		font-size: 30px;
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 16px;
+	}
+	.diploma-container {
+		width: 1000px;
+		margin: 100px auto 0;
+		height: 1000px;
+		overflow: hidden;
+		position: relative;
+	}
+	canvas {
+		background: #FFF;
+		-webkit-transform-origin: top left;
+		-webkit-transform: scale(0.425);
+		transform: scale(0.425);
+	}
+}

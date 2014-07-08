@@ -1,10 +1,63 @@
 .diploma {
-	background: #36AF96;
-	width: 100%;
-	height: 900px;
-	padding-top: 150px;
-}
-.diploma h1 {
-	color: #F8F8F8;
-	text-align: center;
-}
+  width: 100%;
+  padding: 150px 0;
+  transition: 0.35s background; }
+  .diploma.color-1 {
+    background: #E6BEAA; }
+  .diploma.color-2 {
+    background: #78AD7C; }
+  .diploma.color-3 {
+    background: #AAD3E8; }
+  .diploma h1 {
+    color: #F8F8F8;
+    text-align: center; }
+  .diploma .diploma-controls {
+    position: absolute;
+    top: 320px;
+    right: 0;
+    width: 280px; }
+    .diploma .diploma-controls .circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.25);
+      float: left;
+      margin: 10px 16px 0 0;
+      transition: 0.35s all;
+      outline: none;
+      border: 3px solid rgba(255, 255, 255, 0); }
+      .diploma .diploma-controls .circle:hover {
+        background: rgba(0, 0, 0, 0.5); }
+      .diploma .diploma-controls .circle.c-1 {
+        background: #E6BEAA; }
+      .diploma .diploma-controls .circle.c-2 {
+        background: #78AD7C; }
+      .diploma .diploma-controls .circle.c-3 {
+        background: #DBEAF8; }
+      .diploma .diploma-controls .circle.active {
+        border-color: white; }
+    .diploma .diploma-controls button.export {
+      background: transparent;
+      padding: 8px;
+      color: #FFF;
+      outline: none;
+      border: 1px solid #FFF;
+      border-radius: 3px;
+      margin-top: 30px;
+      -webkit-font-smoothing: antialiased; }
+  .diploma h2 {
+    font-size: 30px;
+    margin-bottom: 0; }
+  .diploma p {
+    font-size: 16px; }
+  .diploma .diploma-container {
+    width: 1000px;
+    margin: 100px auto 0;
+    height: 1000px;
+    overflow: hidden;
+    position: relative; }
+  .diploma canvas {
+    background: #FFF;
+    -webkit-transform-origin: top left;
+    -webkit-transform: scale(0.425);
+    transform: scale(0.425); }

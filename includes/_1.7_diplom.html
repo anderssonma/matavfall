@@ -1,4 +1,14 @@
-<section class="diploma upcoming">
+<section id="diploma" class="diploma upcoming color-1">
 	<h1>DIPLOM</h1>
-	<div id="diploma"></div>
+	<div class="diploma-container">
+		<canvas id="diploma-canvas" width="1600" height="2244"></canvas>
+		<div class="diploma-controls">
+			<h2>Skräddarsy ditt diplom</h2>
+			<p>Nästan allt som blir över när du lagar mat plus oätliga matrester är matavfall som ska slängas i den bruna matavfallspåsen. Gamla pizzakanter, sega sega råttor och ruttna tomater – allt det kan omvandlas till värdefull energi.</p>
+			<button class="circle c-1 active" onclick="DPLM.setColor(this, 0);"></button>
+			<button class="circle c-2" onclick="DPLM.setColor(this, 1);"></button>
+			<button class="circle c-3" onclick="DPLM.setColor(this, 2);"></button>
+			<button class="export" onclick="DPLM.exportCanvas()">Exportera</button>
+		</div>
+	</div>
 </section>
