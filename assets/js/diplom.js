@@ -26,6 +26,7 @@ var DPLM = {
 		}
 	],
 
+	/*
 	drawGrid: function() {
 
 		// PLACEHOLDER LINES
@@ -81,6 +82,8 @@ var DPLM = {
 		this.ctx.stroke();
 
 	},
+
+	*/
 
 	paintTextBox: function(col, y, string) {
 		var boxWidth = 292;
@@ -278,7 +281,7 @@ var DPLM = {
 
 	renderAll: function() {
 		// TEMP/DEBUG!
-		this.drawGrid();
+		// this.drawGrid();
 
 		this.drawStatics();
 		this.paintGameData();
