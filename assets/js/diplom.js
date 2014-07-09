@@ -128,7 +128,7 @@ var DPLM = {
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
 		ctx.font = '80px Bubbler One';
 		ctx.textBaseline = 'middle';
-		ctx.fillText(text, this.columns[col], 1050);
+		ctx.fillText(text, this.columns[col], y + 4);
 
 		// RESET
 		this.setContextDefaults(ctx);
@@ -254,6 +254,45 @@ var DPLM = {
 	},
 
 	paintQuizData: function(ctx, col) {
+
+		var quizPageNum,
+				totalQuestions,
+				totalCorrectAnswers;
+
+		switch (col) {
+			case 'left':
+				quizPageNum = 1;
+				totalQuestions = parseInt(localStorage.getItem('SMM_QUIZ_1_TOTALQ') || 0, 10);
+				totalCorrectAnswers = parseInt(localStorage.getItem('SMM_QUIZ_1_CORRECT') || 0, 10);
+				break;
+			case 'mid':
+				quizPageNum = 2;
+				totalQuestions = parseInt(localStorage.getItem('SMM_QUIZ_2_TOTALQ') || 0, 10);
+				totalCorrectAnswers = parseInt(localStorage.getItem('SMM_QUIZ_2_CORRECT') || 0, 10);
+				break;
+			case 'right':
+				quizPageNum = 3;
+				totalQuestions = parseInt(localStorage.getItem('SMM_QUIZ_3_TOTALQ') || 0, 10);
+				totalCorrectAnswers = parseInt(localStorage.getItem('SMM_QUIZ_3_CORRECT') || 0, 10);
+				break;
+		}
+
+		console.log(totalCorrectAnswers);
+		var medalValue;
+		if (totalCorrectAnswers === 0) {
+			this.paintPlaceholder(ctx, col, 1800, 'BEN ' + quizPageNum);
+			return false;
+		} else if (totalCorrectAnswers === totalQuestions) {
+			// GOLD!
+			medalValue = 'guld';
+		} else if (totalCorrectAnswers > 4) {
+			// SILVER
+			medalValue = 'silver';
+		} else {
+			// BRONZE
+			medalValue = 'brons';
+		}
+
 		var quizCup = new Image();
 		quizCup.onload = function() {
 			DPLM.activeImages.push({
@@ -270,8 +309,8 @@ var DPLM = {
 		// ====
 		// DECIDE ON WHICH MEDAL
 		// PARSE TOTAL SCORE
-		quizCup.src = '/assets/img/diplom_pokal_guld.svg';
-		this.paintTextBox(ctx, col, 1964, '– 8/8 RÄTT –');
+		quizCup.src = '/assets/img/diplom_pokal_' + medalValue + '.svg';
+		this.paintTextBox(ctx, col, 1964, '– ' + totalCorrectAnswers + '/' + totalQuestions + ' RÄTT –');
 	},
 
 	paintStaticBackground: function(ctx) {

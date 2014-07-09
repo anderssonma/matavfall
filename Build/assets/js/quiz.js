@@ -188,9 +188,16 @@ var Quiz = {
 		// DEBUGGING
 		// missedScore = missedScore + this.score[i].remaining;
 		// errorsScore = errorsScore + this.score[i].errors;
-
 		}
-		
+
+		// ONLY SAVE IF NEW HIGHSCORE
+		var oldHighScore = parseInt(localStorage.getItem('SMM_QUIZ_' + PAGER.currentPage + '_CORRECT') || 0, 10);
+		if (oldHighScore === 0 || correctAnswers > oldHighScore) {
+			localStorage.setItem('SMM_QUIZ_' + PAGER.currentPage + '_TOTALQ', this.slides.length);
+			localStorage.setItem('SMM_QUIZ_' + PAGER.currentPage + '_CORRECT', correctAnswers);
+			$('#diploma').trigger('rerender', ['quiz-1']);
+		}
+
 		// DEBUGGING
 		// console.log('\n' + ':: QUIZ SUMMARY');
 		// console.log('TOTAL MISSES: ' + missedScore);
