@@ -9,9 +9,25 @@
 			<button class="circle c-1 active" onclick="DPLM.setColor(this, 0);"></button>
 			<button class="circle c-2" onclick="DPLM.setColor(this, 1);"></button>
 			<button class="circle c-3" onclick="DPLM.setColor(this, 2);"></button>
-			<button class="export" onclick="DPLM.exportCanvas()">Exportera</button>
+			<button class="export" onclick="DPLM.exportCanvas()">
+				<img class="spin" src="assets/img/icon_spin.svg" height="32">
+				<img class="printer" src="assets/img/icon_print.svg" height="18">
+			</button>
+			<button class="export" onclick="DPLM.reRender(DPLM.ctx)">Uppdatera</button>
+		</div>
+
+		<div class="diploma-overlay">
+			<h6>Ditt diplom är klart. Skriv ut eller spara det!</h6>
+			<p class="ie-text">Internet Explorer (din webbläsare) stödjer tyvärr inte den teknik som krävs för att skriva ut din presentation direkt i webbläsaren. För att skriva ut bilden, högerklicka och välj 'Spara som...'. Öppna sedan bilden i valfritt program och skriv ut den därifrån.</p>
+			<a class="button left" id="diploma-open">Öppna bilden</a>
+			<a class="button" onclick="DPLM.closePrintOverlay();">Stäng</button>
 		</div>
 	</div>
+
+	<!-- DIPLOMA IS RENDERED ONTO THIS CANVAS AND EXPORTED WHEN PRINTING IN "OLD" BROWSERS -->
+	<canvas id="print-canvas" style="display: none;" width="1600" height="2244"></canvas>
+	<!-- SVGS ARE EXPORTED INTO THIS DIV WHEN CONVERTED DO PNG // FOR "OLD" BROWSERS -->
+	<div id="svg-export" style="display: none;"></div>
 </section>
 
 <!-- @todo 1.0_intro 1.1_fakta uppdrag 1.3_game 1.3_game.helpers 1.4_recept 1.5.1_popcorn 1.5.2_bio 1.5.3_kylskap quiz -->

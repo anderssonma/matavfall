@@ -13,6 +13,10 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
 
 var DPLM = {
 	activeColor: 0,
+	activeImages: [],
+	activeTextboxes: [],
+	activePlaceholders: [],
+	borderWidth: 46,
 	colors: [
 		{	// RED
 			darkColor: '#BA4A3C',
@@ -33,94 +37,110 @@ var DPLM = {
 		// DEVELOPMENT ONLY
 
 		// MIDDLE COL
-		this.ctx.strokeStyle = '#DBECF9';
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width / 2), 0);
-		this.ctx.lineTo((this.canvas.width / 2), this.canvas.height);
-		this.ctx.stroke();
+		ctx.strokeStyle = '#DBECF9';
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width / 2), 0);
+		ctx.lineTo((this.canvas.width / 2), this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width / 2) - (73 * 2), 0);
-		this.ctx.lineTo((this.canvas.width / 2) - (73 * 2), this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width / 2) - (73 * 2), 0);
+		ctx.lineTo((this.canvas.width / 2) - (73 * 2), this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width / 2) + (73 * 2), 0);
-		this.ctx.lineTo((this.canvas.width / 2) + (73 * 2), this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width / 2) + (73 * 2), 0);
+		ctx.lineTo((this.canvas.width / 2) + (73 * 2), this.canvas.height);
+		ctx.stroke();
 
 		// LEFT COL
-		this.ctx.beginPath();
-		this.ctx.moveTo(175 * 2, 0);
-		this.ctx.lineTo(175 * 2, this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(175 * 2, 0);
+		ctx.lineTo(175 * 2, this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((175 - 73) * 2, 0);
-		this.ctx.lineTo((175 - 73) * 2, this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((175 - 73) * 2, 0);
+		ctx.lineTo((175 - 73) * 2, this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((175 + 73) * 2, 0);
-		this.ctx.lineTo((175 + 73) * 2, this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((175 + 73) * 2, 0);
+		ctx.lineTo((175 + 73) * 2, this.canvas.height);
+		ctx.stroke();
 
 		// RIGHT COL
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width - (175 * 2)), 0);
-		this.ctx.lineTo((this.canvas.width - (175 * 2)), this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width - (175 * 2)), 0);
+		ctx.lineTo((this.canvas.width - (175 * 2)), this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width - (175 * 2)) - (73 * 2), 0);
-		this.ctx.lineTo((this.canvas.width - (175 * 2)) - (73 * 2), this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width - (175 * 2)) - (73 * 2), 0);
+		ctx.lineTo((this.canvas.width - (175 * 2)) - (73 * 2), this.canvas.height);
+		ctx.stroke();
 
-		this.ctx.beginPath();
-		this.ctx.moveTo((this.canvas.width - (175 * 2)) + (73 * 2), 0);
-		this.ctx.lineTo((this.canvas.width - (175 * 2)) + (73 * 2), this.canvas.height);
-		this.ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo((this.canvas.width - (175 * 2)) + (73 * 2), 0);
+		ctx.lineTo((this.canvas.width - (175 * 2)) + (73 * 2), this.canvas.height);
+		ctx.stroke();
 
 	},
 
 	*/
 
-	paintTextBox: function(col, y, string) {
+	paintTextBox: function(ctx, col, y, string) {
 		var boxWidth = 292;
 		var boxHeight = 52;
 		var x = this.columns[col];
 		// PAINT BG BOX
-		this.ctx.fillStyle = this.colors[this.activeColor].darkColor;
-		this.ctx.roundRect(x - (boxWidth / 2), y, boxWidth, boxHeight, (boxHeight / 2)).fill();
+		ctx.fillStyle = this.colors[this.activeColor].darkColor;
+		ctx.roundRect(x - (boxWidth / 2), y, boxWidth, boxHeight, (boxHeight / 2)).fill();
 		// PAINT TEXT
-		this.ctx.fillStyle = '#FFF';
-		this.ctx.fillText(string, x, y + boxHeight - 13);
-		this.setContextDefaults();
+		ctx.fillStyle = '#FFF';
+		ctx.fillText(string, x, y + boxHeight - 13);
+
+		this.activeTextboxes.push({
+			col: col,
+			top: y,
+			text: string
+		});
+		this.setContextDefaults(ctx);
 	},
 
-	paintPlaceholder: function(col, y, text) {
+	makePlaceholder: function(ctx, col, y, text) {
+		this.activePlaceholders.push({
+			col: col,
+			top: y,
+			text: text
+		});
+		this.paintPlaceholder(ctx, col, y, text);
+	},
+
+	paintPlaceholder: function(ctx, col, y, text) {
 		// PAINT CIRCLE
-		this.ctx.fillStyle = this.colors[this.activeColor].lightColor;
-		this.ctx.beginPath();
-		this.ctx.arc(this.columns[col], y, 150, 0, 2*Math.PI);
-		this.ctx.fill();
-		this.ctx.closePath();
+		ctx.fillStyle = this.colors[this.activeColor].lightColor;
+		ctx.beginPath();
+		ctx.arc(this.columns[col], y, 150, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
 		// PAINT TEXT
-		this.ctx.fillStyle = this.colors[this.activeColor].darkColor;
-		this.ctx.font = '80px Bubbler One';
-		this.ctx.textBaseline = 'middle';
-		this.ctx.fillText(text, this.columns[col], 1050);
+		ctx.fillStyle = this.colors[this.activeColor].darkColor;
+		ctx.font = '80px Bubbler One';
+		ctx.textBaseline = 'middle';
+		ctx.fillText(text, this.columns[col], 1050);
+
 		// RESET
-		this.setContextDefaults();
+		this.setContextDefaults(ctx);
 	},
 
-	paintGameData: function() {
+	paintGameData: function(ctx) {
 		var score = parseInt(localStorage.getItem('SMM_GAME_HIGHSCORE') || 0, 10);
 		var recipes = parseInt(localStorage.getItem('SMM_GAME_RECIPES') || 0, 10);
 		var timePlayed = parseInt(localStorage.getItem('SMM_GAME_TIME') || 0, 10);
 
 		if (score <= 0 || timePlayed <= 0) {
-			this.paintPlaceholder('left', 1050, 'BEN 1');
+			this.makePlaceholder(ctx, 'left', 1050, 'BEN 1');
 			return false;
 		}
 
@@ -136,7 +156,15 @@ var DPLM = {
 
 		var gameMedal = new Image();
 		gameMedal.onload = function() {
-			DPLM.ctx.drawImage(gameMedal, DPLM.columns.left - (278 / 2), 904, 278, 278);
+			DPLM.activeImages.push({
+				type: 'image',
+				src: this.src,
+				top: 904,
+				left: DPLM.columns.left - 139,
+				width: 278,
+				height: 278
+			});
+			ctx.drawImage(gameMedal, DPLM.columns.left - 139, 904, 278, 278);
 		};
 		gameMedal.src = '/assets/img/medalj_' + medalType + '.svg';
 
@@ -144,7 +172,7 @@ var DPLM = {
 		if (score > 999999) { // IF STRING IS TOO LONG TO FIT
 			pointString = 'P';
 		}
-		this.paintTextBox('left', 1226, '– ' + score + ' ' + pointString + ' –');
+		this.paintTextBox(ctx, 'left', 1226, '– ' + score + ' ' + pointString + ' –');
 
 		var time = Math.ceil(timePlayed / 1000),
 				minutes, seconds;
@@ -160,39 +188,47 @@ var DPLM = {
 		} else {
 			time = time + ' SEKUNDER';
 		}
-		this.paintTextBox('left', 1304, '– ' + time + ' –');
+		this.paintTextBox(ctx, 'left', 1304, '– ' + time + ' –');
 
 		if (recipes > 0) {
-			this.paintTextBox('left', 1382, '– ' + recipes + ' RECEPT –');
+			this.paintTextBox(ctx, 'left', 1382, '– ' + recipes + ' RECEPT –');
 		}
 
 	},
 
-	paintStoryData: function() {
-		this.paintTextBox('mid', 1226, '– MILJÖHJÄLTEN –');
+	paintStoryData: function(ctx) {
+		this.paintTextBox(ctx, 'mid', 1226, '– MILJÖHJÄLTEN –');
 	},
 
-	paintPresData: function() {
+	paintPresData: function(ctx) {
 		var imgWords = parseInt(localStorage.getItem('SMM_PRES_WORDS') || 0, 10);
 		var imgTotal = parseInt(localStorage.getItem('SMM_PRES_TOTAL') || 0, 10);
 		if (imgWords === 0 && imgTotal === 0) {
-			this.paintPlaceholder('right', 1050, 'BEN 2');
+			this.makePlaceholder(ctx, 'right', 1050, 'BEN 2');
 			return false;
 		}
 
 		var imgPics = imgTotal - imgWords;
 		// ONLY PAINT IF THERE'S DATA
 		if (imgWords > 0) {
-			this.paintTextBox('right', 1226, '– ' + imgWords + ' ORD –');
+			this.paintTextBox(ctx, 'right', 1226, '– ' + imgWords + ' ORD –');
 		}
 		if (imgPics > 0) {
-			this.paintTextBox('right', 1304, '– ' + imgPics + ' BILDER –');
+			this.paintTextBox(ctx, 'right', 1304, '– ' + imgPics + ' BILDER –');
 		}
 	},
 
-	paintQuizData: function(col) {
+	paintQuizData: function(ctx, col) {
 		var quizCup = new Image();
 		quizCup.onload = function() {
+			DPLM.activeImages.push({
+				type: 'image',
+				src: this.src,
+				top: 1656,
+				left: DPLM.columns[col] - 114,
+				width: 228,
+				height: 236
+			});
 			DPLM.ctx.drawImage(quizCup, DPLM.columns[col] - 114, 1656, 228, 236);
 		};
 		// TODO
@@ -200,97 +236,89 @@ var DPLM = {
 		// DECIDE ON WHICH MEDAL
 		// PARSE TOTAL SCORE
 		quizCup.src = '/assets/img/diplom_pokal_guld.svg';
-		this.paintTextBox(col, 1964, '– 8/8 RÄTT –');
+		this.paintTextBox(ctx, col, 1964, '– 8/8 RÄTT –');
 	},
 
-	drawStatics: function() {
+	paintStaticBackground: function(ctx) {
 
-		var borderWidth = 46;
 		var circleRadii = 50;
-		this.ctx.fillStyle = this.colors[this.activeColor].lightColor;
+		ctx.fillStyle = this.colors[this.activeColor].lightColor;
 
-		this.ctx.fillRect(0, 0, this.canvas.width, borderWidth); // TOP
-		this.ctx.fillRect(0, this.canvas.height - borderWidth, this.canvas.width, borderWidth); // BOTTOM
+		ctx.fillRect(0, 0, this.canvas.width, this.borderWidth); // TOP
+		ctx.fillRect(0, this.canvas.height - this.borderWidth, this.canvas.width, this.borderWidth); // BOTTOM
 
-		this.ctx.fillRect(0, 0, borderWidth, this.canvas.height); // LEFT
-		this.ctx.fillRect(this.canvas.width - borderWidth, 0, borderWidth, this.canvas.height); // RIGHT
+		ctx.fillRect(0, 0, this.borderWidth, this.canvas.height); // LEFT
+		ctx.fillRect(this.canvas.width - this.borderWidth, 0, this.borderWidth, this.canvas.height); // RIGHT
 
 		// TOP LEFT CIRCLE
-		this.ctx.beginPath();
-		this.ctx.arc(circleRadii, circleRadii, circleRadii, 0, 2*Math.PI);
-		this.ctx.fill();
-		this.ctx.closePath();
+		ctx.beginPath();
+		ctx.arc(circleRadii, circleRadii, circleRadii, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
 
 		// TOP RIGHT CIRCLE
-		this.ctx.beginPath();
-		this.ctx.arc(this.canvas.width - circleRadii, circleRadii, circleRadii, 0, 2*Math.PI);
-		this.ctx.fill();
-		this.ctx.closePath();
+		ctx.beginPath();
+		ctx.arc(this.canvas.width - circleRadii, circleRadii, circleRadii, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
 
 		// BOTTOM LEFT CIRCLE
-		this.ctx.beginPath();
-		this.ctx.arc(circleRadii, this.canvas.height - circleRadii, circleRadii, 0, 2*Math.PI);
-		this.ctx.fill();
-		this.ctx.closePath();
+		ctx.beginPath();
+		ctx.arc(circleRadii, this.canvas.height - circleRadii, circleRadii, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
 
 		// BOTTOM RIGHT CIRCLE
-		this.ctx.beginPath();
-		this.ctx.arc(this.canvas.width - circleRadii, this.canvas.height - circleRadii, circleRadii, 0, 2*Math.PI);
-		this.ctx.fill();
-		this.ctx.closePath();
+		ctx.beginPath();
+		ctx.arc(this.canvas.width - circleRadii, this.canvas.height - circleRadii, circleRadii, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
 
 		// RESET CTX VARS
-		this.setContextDefaults();
+		this.setContextDefaults(ctx);
+	},
 
-		// PAINT SOME STATIC IMAGERY
-		var topBG = new Image();
-		topBG.onload = function() {
-			DPLM.ctx.drawImage(topBG, (DPLM.canvas.width / 2) - (544 / 2), borderWidth, 544, 404);
-		};
-		topBG.src = '/assets/img/diplom_top.svg';
-
-		var topStrap = new Image();
-		topStrap.onload = function() {
-			DPLM.ctx.drawImage(topStrap, (DPLM.canvas.width / 2) - (970 / 2), 540, 970, 106);
-		};
-		topStrap.src = '/assets/img/diplom_strip_red.svg';
-
-		var labelsTop = new Image();
-		labelsTop.onload = function() {
-			DPLM.ctx.drawImage(labelsTop, 274, 774, 1132, 42);
-		};
-		labelsTop.src = '/assets/img/diplom_categories_top.svg';
-
-		var labelsBottom = new Image();
-		labelsBottom.onload = function() {
-			DPLM.ctx.drawImage(labelsBottom, 274, 1528, 1058, 42);
-		};
-		labelsBottom.src = '/assets/img/diplom_categories_bot.svg';
-
-
+	paintStaticImages: function(ctx) {
+			// PAINT SOME STATIC IMAGERY
+		this.staticImages.forEach(function(item){
+			var img = new Image();
+			img.onload = function() {
+				ctx.drawImage(img, item.left, item.top, item.width, item.height);
+			};
+			img.src = item.src;
+		});
 	},
 
 	exportCanvas: function() { // SIMPLIFIED DURING DEVELOPMENT
-		var data = this.canvas.toDataURL('image/png');
-		window.open(data);
+		//var data = this.canvas.toDataURL('image/png');
+		//window.open(data);
+		this.print();
 	},
 
-	clearAll: function() {
-		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	clearAll: function(ctx) {
+		this.activePlaceholders.length = 0;
+		this.activeTextboxes.length = 0;
+		this.activeImages.length = 0;
+		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	},
 
-	renderAll: function() {
+	renderAll: function(ctx) {
 		// TEMP/DEBUG!
 		// this.drawGrid();
 
-		this.drawStatics();
-		this.paintGameData();
-		this.paintStoryData();
-		this.paintPresData();
+		ctx.fillStyle = '#FFFFFF';
+		ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+		this.setContextDefaults(ctx);
 
-		this.paintQuizData('left');
-		this.paintQuizData('mid');
-		this.paintQuizData('right');
+		this.paintStaticBackground(ctx);
+		this.paintStaticImages(ctx);
+		this.paintGameData(ctx);
+		this.paintStoryData(ctx);
+		this.paintPresData(ctx);
+
+		this.paintQuizData(ctx, 'left');
+		this.paintQuizData(ctx, 'mid');
+		this.paintQuizData(ctx, 'right');
 	},
 
 	setColor: function(self, color) {
@@ -303,15 +331,19 @@ var DPLM = {
 		$(self).addClass('active');
 
 		this.activeColor = color;
-		this.clearAll();
-		this.renderAll();
+		this.reRender(this.ctx);
 	},
 
-	setContextDefaults: function() {
-		this.ctx.font = '36px Bubbler One';
-		this.ctx.textAlign = 'center';
-		this.ctx.textBaseline = 'alphabetic';
-		this.ctx.fillStyle = this.colors[this.activeColor].lightColor;
+	setContextDefaults: function(ctx) {
+		ctx.font = '36px Bubbler One';
+		ctx.textAlign = 'center';
+		ctx.textBaseline = 'alphabetic';
+		ctx.fillStyle = this.colors[this.activeColor].lightColor;
+	},
+
+	reRender: function(ctx) {
+		this.clearAll(ctx);
+		this.renderAll(ctx);
 	},
 
 	init: function() {
@@ -323,24 +355,162 @@ var DPLM = {
 			right: this.canvas.width - 350
 		};
 
-		this.ctx = this.canvas.getContext('2d');
-		this.setContextDefaults();
+		this.staticImages = [
+			{
+				type: 'image',
+				src: '/assets/img/diplom_top.svg',
+				top: this.borderWidth,
+				left: (this.canvas.width / 2) - 272,
+				width: 544,
+				height: 404,
+			}, {
+				type: 'image',
+				src: '/assets/img/diplom_strip_red.svg',
+				top: 540,
+				left: (this.canvas.width / 2) - 485,
+				width: 970,
+				height: 106,
+			}, {
+				type: 'image',
+				src: '/assets/img/diplom_categories_top.svg',
+				top: 774,
+				left: 274,
+				width: 1132,
+				height: 42,
+			}, {
+				type: 'image',
+				src: '/assets/img/diplom_categories_bot.svg',
+				top: 1528,
+				left: 274,
+				width: 1058,
+				height: 42,
+			}
+		];
 
-		this.renderAll();
+		this.ctx = this.canvas.getContext('2d');
+		this.renderAll(this.ctx);
 	}
 };
 
+
+// DEPENDS ON SVG-TODATAURL.JS IN IE / SAFARI
+DPLM.whichBrowser = (function(){
+  var ua= navigator.userAgent, tem, 
+  M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+  if(/trident/i.test(M[1])){
+      tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return 'IE '+(tem[1] || '');
+  }
+  if(M[1]=== 'Chrome'){
+      tem= ua.match(/\bOPR\/(\d+)/);
+      if(tem!= null) return 'Opera '+tem[1];
+  }
+  M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+  if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+  
+  return M.join(' ');
+})();
+
+DPLM.closePrintOverlay = function() {
+	$('#diploma').removeClass('loading print');
+};
+
+DPLM.print = function() {
+
+	$('#diploma').addClass('loading');
+	$('#diploma .diploma-controls a').remove();
+	this.browser = DPLM.whichBrowser.split(' ')[0].toLowerCase();
+	this.printModeModern = true;
+
+	var fallbackCanvas = document.getElementById('print-canvas');
+	var fallbackCtx = fallbackCanvas.getContext("2d");
+	this.setContextDefaults(fallbackCtx);
+
+	try {
+		var testData = this.canvas.toDataURL('image/png');
+	} catch (e) {
+		this.printModeModern = false;
+		console.log('Couldn\'t export canvas to DataURL. Using fallback mode...');
+	}
+
+	var exportImage = function(canvas) {
+		$('#diploma .diploma-overlay img').remove();
+		window.setTimeout(function() {
+			var data = canvas.toDataURL('image/png');
+			if (DPLM.browser === 'msie' || DPLM.browser === 'ie') {
+				$('#diploma .diploma-overlay').addClass('ie'); // SOME HELPER TEXT SINCE IE CAN'T OPEN DATA URLS IN NEW TABS
+			}
+			$('#diploma .diploma-overlay').append('<img src="' + data + '">');
+			$('#diploma .diploma-overlay #diploma-open').attr({
+				href: data,
+				target: '_blank'
+			});
+			$('#diploma').removeClass('loading');
+			window.setTimeout(function() {
+				$('#diploma').addClass('print');
+			}, 250);
+		}, 1500);
+	};
+
+	if (DPLM.printModeModern) {
+		exportImage(this.canvas);
+	} else {
+		// PAINT STATIC BG
+		fallbackCtx.fillStyle = '#FFFFFF';
+		fallbackCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+		this.setContextDefaults(fallbackCtx);
+
+		this.paintStaticBackground(fallbackCtx);
+		// PAINT PLACEHOLDERS
+		this.activePlaceholders.forEach(function(item) {
+			DPLM.paintPlaceholder(fallbackCtx, item.col, item.top, item.text);
+		});
+		// PAINT TEXBOXES
+		this.activeTextboxes.forEach(function(item) {
+			DPLM.paintTextBox(fallbackCtx, item.col, item.top, item.text);
+		});
+
+		var loadCounter = 0;
+		var $elExport = $('#svg-export');
+		// NEED TO TOGGLE ASYNC IN THIS MODE TO KEEP THE IMAGE ORDER
+		$elExport.empty(); // REMOVE BG IMAGE
+		var imagesToConvert = this.staticImages.concat(this.activeImages);
+		imagesToConvert.forEach(function(img) {
+			$elExport.load(img.src, function() {
+				var imageSVG = $("#svg-export svg")[0];
+				imageSVG.setAttribute('width', img.width);
+				imageSVG.setAttribute('height', img.height);
+				imageSVG.toDataURL('image/png', {
+					callback: function(data) {
+						var imagePNG = new Image();
+						imagePNG.onload = function() {
+							loadCounter++;
+							fallbackCtx.drawImage(imagePNG, img.left, img.top, img.width, img.height);
+							if (loadCounter === DPLM.activeImages.length) {
+								exportImage(fallbackCanvas);
+							}
+						};
+						imagePNG.src = data;
+					}
+				});
+			});
+		});
+	}
+};
+
+
 $(document).ready(function() {
+	PointerEventsPolyfill.initialize({});
 	$('#diploma').on('rerender', function(e, source) {
 		// var type = source.split('-')[0];
 		console.log('DIPLOMA RERENDER :: SOURCE -> ' + source);
 		// JUST RE-RENDER EVERYTHING ON CHANGE
-		DPLM.clearAll();
-		DPLM.renderAll();
+		DPLM.reRender(DPLM.ctx);
 	});
 
 	DPLM.init();
 
+	/*
 	window.setTimeout(function() {
 		var oldVal = localStorage.getItem('SMM_GAME_HIGHSCORE') || 0;
 		localStorage.setItem('SMM_GAME_HIGHSCORE', (Math.floor(Math.random() * (3500 - 1) + 1)));
@@ -349,4 +519,5 @@ $(document).ready(function() {
 			localStorage.setItem('SMM_GAME_HIGHSCORE', oldVal);
 		}, 2000);
 	}, 5000);
+*/
 });

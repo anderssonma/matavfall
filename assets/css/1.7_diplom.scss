@@ -20,6 +20,7 @@
 		top: 320px;
 		right: 0;
 		width: 280px;
+		transition: 0.35s opacity;
 		.circle {
 			width: 60px;
 			height: 60px;
@@ -29,34 +30,207 @@
 			margin: 10px 16px 0 0;
 			transition: 0.35s all;
 			outline: none;
-			border: 3px solid rgba(255,255,255,0);
+			border: 2px solid rgba(0,0,0,0.15);
 			&:hover {
 				background: rgba(0,0,0,.5);
 			}
 			&.c-1 {
 				background: #E6BEAA;
+				border-color: #DEA58D;
 			}
 			&.c-2 {
 				background: #78AD7C;
+				border-color: #578357;
 			}
 			&.c-3 {
-				background: #DBEAF8;
+				background: #AAD3E8;
+				border-color: #87B7DC;
 			}
-			&.active {
-				border-color: rgba(255,255,255,1);
+			&.active, &:hover {
+				border-color: rgba(255,255,255,1) !important;
 			}
 		}
 		button.export {
-			background: transparent;
-			padding: 8px;
+			position: relative;
+			background: #DEA58D;
+			border: none;
+			padding: 0 16px;
+			height: 44px;
 			color: #FFF;
 			outline: none;
-			border: 1px solid #FFF;
 			border-radius: 3px;
 			margin-top: 30px;
+			margin-right: 12px;
 			-webkit-font-smoothing: antialiased;
+			transition: 0.35s background, 0.35s opacity, 0.35s color;
+			vertical-align: text-bottom;
+			.spin {
+				position: absolute;
+				top: 6px;
+				left: 9px;
+				opacity: 0;
+				-webkit-transition: 0.35s opacity;
+				transition: 0.35s opacity;
+			}
+			.printer {
+				-webkit-transition: 0.35s 0.25s opacity;
+				transition: 0.35s 0.25s opacity;
+				margin: 1px 0 0 -1px;
+			}
+			&:hover {
+				background: rgba(255,255,255,.5) !important;
+			}
 		}
 	}
+	&.color-1 .diploma-controls button.export {
+		background: #DEA58D;
+		&:hover {
+			color: #DEA58D;
+		}
+	}
+	&.color-2 .diploma-controls button.export {
+		background: #578357;
+		&:hover {
+			color: #578357;
+		}
+	}
+	&.color-3 .diploma-controls button.export {
+		background: #87B7DC;
+		&:hover {
+			color: #87B7DC;
+		}
+	}
+
+	.diploma-overlay {
+		position: absolute;
+		top: 80px;
+		left: 90px;
+		width: 500px;
+		border-radius: 3px;
+		padding: 40px 40px 120px;
+		opacity: 0;
+		transition: 0.5s opacity;
+		background: #FFF;
+		h6 {
+			color: #666;
+			font-size: 20px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		.ie-text {
+			display: none;
+			position: absolute;
+			bottom: 106px;
+			left: 40px;
+			right: 40px;
+			background: #DEA58D;
+			padding: 20px 24px;
+		}
+		img {
+			margin: 24px 0 0;
+			max-width: 420px;
+		}
+		.button {
+			position: absolute;
+			bottom: 40px;
+			right: 40px;
+			width: calc(50% - 40px);
+			height: 55px;
+			text-align: center;
+			text-decoration: none;
+			border: none;
+			float: left;
+			padding: 18px 0;
+			font-family: 'Lato';
+			color: #FFF;
+			border-radius: 0 3px 3px 0;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			outline: none;
+			transition: 0.35s background;
+			&.left {
+				left: 40px;
+				right: auto;
+				border-radius: 3px 0 0 3px;
+			}
+			&:hover {
+				background: rgba(255,255,255,.25);
+			}
+		}
+
+		&.ie {
+			.ie-text {
+				display: block;
+			}
+			.button {
+				width: calc(100% - 80px);
+				&.left {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.color-1 {
+		.diploma-overlay {
+			h6 {
+				color: #BA4A3C;
+			}
+			.ie-text {
+				background: #DEA58D;
+			}
+		}
+		.button {
+			background: #DEA58D;
+			&.left {
+				border-right: 1px solid #E6BEAA;
+			}
+			&:hover {
+				background: #E6BEAA;
+			}
+		}
+	}
+
+	&.color-2 {
+		.diploma-overlay {
+			h6 {
+				color: #3B6336;
+			}
+			.ie-text {
+				background: #578357;
+			}
+		}
+		.button {
+			background: #578357;
+			&.left {
+				border-right: 1px solid #78AD7C;
+			}
+			&:hover {
+				background: #78AD7C;
+			}
+		}
+	}
+
+	&.color-3 {
+		.diploma-overlay {
+			h6 {
+				color: #5188B1;
+			}
+			.ie-text {
+				background: #87B7DC;
+			}
+		}
+		.button {
+			background: #87B7DC;
+			&.left {
+				border-right: 1px solid #AAD3E8;
+			}
+			&:hover {
+				background: #AAD3E8;
+			}
+		}
+	}
+
 	h2 {
 		font-size: 30px;
 		margin-bottom: 0;
@@ -74,7 +248,58 @@
 	canvas {
 		background: #FFF;
 		-webkit-transform-origin: top left;
+		transform-origin: top left;
 		-webkit-transform: scale(0.425);
 		transform: scale(0.425);
+		transition: 0.5s opacity;
+	}
+
+	&.print {
+		canvas {
+			opacity: 0;
+		}
+		.diploma-controls {
+			opacity: 0.35;
+			button {
+				pointer-events: none;
+			}
+		}
+		.diploma-overlay {
+			opacity: 1;
+		}
+	}
+
+	&.loading .diploma-controls button.export {
+		.spin {
+			opacity: 1;
+			-webkit-transition: 0.25s opacity;
+			transition: 0.25s opacity;
+			-webkit-animation: loadPrint 0.5s linear infinite;
+			animation: loadPrint 0.5s linear infinite;
+		}
+		.printer {
+			opacity: 0;
+			-webkit-transition: 0.35s opacity;
+			transition: 0.35s opacity;
+		}
+	}
+
+}
+
+
+@keyframes loadPrint {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes loadPrint {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
 	}
 }
