@@ -46,7 +46,7 @@
 				background: #AAD3E8;
 				border-color: #87B7DC;
 			}
-			&.active, &:hover {
+			&:hover {
 				border-color: rgba(255,255,255,1) !important;
 			}
 		}
@@ -82,22 +82,37 @@
 			}
 		}
 	}
-	&.color-1 .diploma-controls button.export {
-		background: #DEA58D;
-		&:hover {
-			color: #DEA58D;
+	&.color-1 .diploma-controls {
+		.circle.c-1 {
+			border-color: rgba(255,255,255,1) !important;
+		}
+		button.export {
+			background: #DEA58D;
+			&:hover {
+				color: #DEA58D;
+			}
 		}
 	}
-	&.color-2 .diploma-controls button.export {
-		background: #578357;
-		&:hover {
-			color: #578357;
+	&.color-2 .diploma-controls {
+		.circle.c-2 {
+			border-color: rgba(255,255,255,1) !important;
+		}
+		button.export {
+			background: #578357;
+			&:hover {
+				color: #578357;
+			}
 		}
 	}
-	&.color-3 .diploma-controls button.export {
-		background: #87B7DC;
-		&:hover {
-			color: #87B7DC;
+	&.color-3 .diploma-controls {
+		.circle.c-3 {
+			border-color: rgba(255,255,255,1) !important;
+		}
+		button.export {
+			background: #87B7DC;
+			&:hover {
+				color: #87B7DC;
+			}
 		}
 	}
 

@@ -400,9 +400,6 @@ var DPLM = {
 			return false;
 		}
 		$('#diploma').removeClass('color-1 color-2 color-3').addClass('color-' + (parseInt(color, 10) + 1));
-		$('#diploma .diploma-controls .circle').removeClass('active');
-		$(self).addClass('active');
-
 		this.activeColor = color;
 		this.reRender(this.ctx);
 	},
