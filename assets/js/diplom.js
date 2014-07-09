@@ -201,6 +201,7 @@ var DPLM = {
 	},
 
 	paintPresData: function(ctx) {
+		var imgBackground = localStorage.getItem('SMM_PRES_BGNUM');
 		var imgWords = parseInt(localStorage.getItem('SMM_PRES_WORDS') || 0, 10);
 		var imgTotal = parseInt(localStorage.getItem('SMM_PRES_TOTAL') || 0, 10);
 		if (imgWords === 0 && imgTotal === 0) {
@@ -216,6 +217,40 @@ var DPLM = {
 		if (imgPics > 0) {
 			this.paintTextBox(ctx, 'right', 1304, '– ' + imgPics + ' BILDER –');
 		}
+
+		var bgNum;
+		switch (imgBackground) {
+			case 'bg-1':
+				bgNum = 1;
+				// PAINT GREEN IMAGE
+				break;
+			case 'bg-2':
+				bgNum = 2;
+				// PAING ... IMAGE
+				break;
+			case 'bg-3':
+				bgNum = 3;
+				// PAING ... IMAGE
+				break;
+			case 'bg-4':
+				bgNum = 4;
+				// PAING ... IMAGE
+				break;
+		}
+
+		var presImage = new Image();
+		presImage.onload = function() {
+			DPLM.activeImages.push({
+				type: 'image',
+				src: this.src,
+				top: 904,
+				left: DPLM.columns.right - 102,
+				width: 204,
+				height: 209
+			});
+			ctx.drawImage(presImage, DPLM.columns.right - 102, 904, 204, 209);
+		};
+		presImage.src = '/assets/img/diplom_presbg_' + bgNum + '.svg';
 	},
 
 	paintQuizData: function(ctx, col) {

@@ -79,14 +79,15 @@ PRES.saveData = function() {
 		};
 		localStorage.setItem('MAT_BEN3_PRES', JSON.stringify(saveObject));
 		this.toastMessage('Data sparat!');
-	}
 
-	// PUSH DATA TO DIPLOMA
-	var imgWords = imageData.match(/ord\_/g) ? imageData.match(/ord\_/g).length : 0;
-	var imgTotal = imageData.match(/\<img/g).length;
-	localStorage.setItem('SMM_PRES_WORDS', imgWords);
-	localStorage.setItem('SMM_PRES_TOTAL', imgTotal);
-	$('#diploma').trigger('rerender', ['pres']);
+		// PUSH DATA TO DIPLOMA
+		var imgWords = imageData.match(/ord\_/g) ? imageData.match(/ord\_/g).length : 0;
+		var imgTotal = imageData.match(/\<img/g).length;
+		localStorage.setItem('SMM_PRES_BGNUM', backgroundImage[0]);
+		localStorage.setItem('SMM_PRES_WORDS', imgWords);
+		localStorage.setItem('SMM_PRES_TOTAL', imgTotal);
+		$('#diploma').trigger('rerender', ['pres']);
+	}
 };
 
 PRES.checkSavedData = function() {
