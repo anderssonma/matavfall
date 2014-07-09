@@ -322,7 +322,6 @@ var DPLM = {
 	},
 
 	setColor: function(self, color) {
-		console.log(self);
 		if (parseInt(color, 10) === this.activeColor) {
 			return false;
 		}
@@ -501,7 +500,24 @@ DPLM.print = function() {
 
 $(document).ready(function() {
 	PointerEventsPolyfill.initialize({});
-	$('#diploma').on('rerender', function(e, source) {
+
+	var bgColor;
+	switch (parseInt(PAGER.currentPage, 10)) {
+		case 1: // PAGE 1
+			DPLM.activeColor = 0;
+			bgColor = 'color-1';
+			break;
+		case 2: // PAGE 2
+		DPLM.activeColor = 1;
+			bgColor = 'color-2';
+			break;
+		case 3: // PAGE 3
+			DPLM.activeColor = 2;
+			bgColor = 'color-3';
+			break;
+	}
+
+	$('#diploma').addClass(bgColor).on('rerender', function(e, source) {
 		// var type = source.split('-')[0];
 		console.log('DIPLOMA RERENDER :: SOURCE -> ' + source);
 		// JUST RE-RENDER EVERYTHING ON CHANGE

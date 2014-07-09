@@ -170,7 +170,6 @@ var HTMLHandler = {
 var CSSHandler = {
 	files: {
 		1: [
-			'/assets/css/1.0_intro.css',
 			'/assets/css/1.1_fakta.css',
 			'/assets/css/uppdrag.css',
 			'/assets/css/1.2_uppdrag.css',
@@ -181,7 +180,7 @@ var CSSHandler = {
 			'/assets/css/1.5.3_kylskap.css',
 			'/assets/css/quiz.css',
 			'/assets/css/1.6_quiz.slides.css',
-			'/assets/css/1.7_diplom.css'
+			'/assets/css/diplom.css'
 		],
 		2: [
 			'/assets/css/2.1.1_vag.css',
@@ -191,7 +190,8 @@ var CSSHandler = {
 			'/assets/css/2.3_fakta.css',
 			'/assets/css/quiz.css',
 			'/assets/css/2.4_quiz.slides.css',
-			'/assets/css/2.5_wordbuilder.css'
+			'/assets/css/2.5_wordbuilder.css',
+			'/assets/css/diplom.css'
 		],
 		3: [ 
 			'/assets/css/3.1_agg.css',
@@ -201,7 +201,7 @@ var CSSHandler = {
 			'/assets/css/quiz.css',
 			'/assets/css/3.4_quiz.slides.css',
 			'/assets/css/3.5_presentation.css',
-			'/assets/css/1.7_diplom.css'
+			'/assets/css/diplom.css'
 		]
 	},
 	done: function() {
