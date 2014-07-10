@@ -99,7 +99,7 @@ var DPLM = {
 		ctx.roundRect(x - (boxWidth / 2), (y - this.topMargin), boxWidth, boxHeight, (boxHeight / 2)).fill();
 		// PAINT TEXT
 		ctx.fillStyle = '#FFF';
-		ctx.fillText(string, x, (y + boxHeight - 15 - this.topMargin));
+		ctx.fillText('–  ' + string + '  –', x, (y + boxHeight - 15 - this.topMargin));
 
 		this.activeTextboxes.push({
 			col: col,
@@ -173,7 +173,7 @@ var DPLM = {
 		if (score > 999999) { // IF STRING IS TOO LONG TO FIT
 			pointString = 'P';
 		}
-		this.paintTextBox(ctx, 'left', 1196, '– ' + score + ' ' + pointString + ' –'); // 1226
+		this.paintTextBox(ctx, 'left', 1196, score + ' ' + pointString); // 1226
 
 		var time = Math.ceil(timePlayed / 1000),
 				minutes, seconds;
@@ -189,16 +189,16 @@ var DPLM = {
 		} else {
 			time = time + ' SEKUNDER';
 		}
-		this.paintTextBox(ctx, 'left', 1264, '– ' + time + ' –'); // 1304
+		this.paintTextBox(ctx, 'left', 1264, time ); // 1304
 
 		if (recipes > 0) {
-			this.paintTextBox(ctx, 'left', 1332, '– ' + recipes + ' RECEPT –'); // 1382
+			this.paintTextBox(ctx, 'left', 1332, recipes + ' RECEPT'); // 1382
 		}
 
 	},
 
 	paintStoryData: function(ctx) {
-		this.paintTextBox(ctx, 'mid', 1196, '– MILJÖHJÄLTE –'); // 1226
+		this.paintTextBox(ctx, 'mid', 1196, 'MILJÖHJÄLTE'); // 1226
 	},
 
 	paintPresData: function(ctx) {
@@ -213,10 +213,10 @@ var DPLM = {
 		var imgPics = imgTotal - imgWords;
 		// ONLY PAINT IF THERE'S DATA
 		if (imgWords > 0) {
-			this.paintTextBox(ctx, 'right', 1196, '– ' + imgWords + ' ORD –'); // 1226
+			this.paintTextBox(ctx, 'right', 1196, imgWords + ' ORD'); // 1226
 		}
 		if (imgPics > 0) {
-			this.paintTextBox(ctx, 'right', 1264, '– ' + imgPics + ' BILDER –'); // 1304
+			this.paintTextBox(ctx, 'right', 1264, imgPics + ' BILDER'); // 1304
 		}
 
 		var bgNum;
@@ -311,7 +311,7 @@ var DPLM = {
 		// DECIDE ON WHICH MEDAL
 		// PARSE TOTAL SCORE
 		quizCup.src = '/assets/img/diplom_pokal_' + medalValue + '.svg';
-		this.paintTextBox(ctx, col, 1890, '– ' + totalCorrectAnswers + '/' + totalQuestions + ' RÄTT –'); // 1964
+		this.paintTextBox(ctx, col, 1890, totalCorrectAnswers + '/' + totalQuestions + ' RÄTT'); // 1964
 	},
 
 	paintStaticBackground: function(ctx) {
