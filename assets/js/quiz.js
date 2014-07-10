@@ -208,12 +208,13 @@ var Quiz = {
 			$('#quiz-stars').addClass('three-stars');
 			$('#quiz-answers').html('Du lyckades svara rätt på alla frågor. <span class="subheader">Bra jobbat, proffset!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
-		} else if (correctAnswers > (this.slides.length / 2)) {
+		} else if (correctAnswers > 4) {
 			$('#quiz-stars').addClass('two-stars');
 			$('#quiz-answers').html('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. <span class="subheader">En gång till så blir det full pott!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
 		} else if (correctAnswers > 0) {
-			$('#quiz-stars').addClass('one-star');$('#quiz-answers').html('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. <span class="subheader">Bättre lycka nästa gång!</span>');
+			$('#quiz-stars').addClass('one-star');
+			$('#quiz-answers').html('Du lyckades svara rätt på ' + correctAnswers + ' av ' + this.slides.length + ' frågor. <span class="subheader">Bättre lycka nästa gång!</span>');
 			$('#quiz-errors h3').text('Dina korrekta svar:');
 		} else {
 			$('#quiz-answers').html('Du lyckades tyvärr inte svara rätt på en enda fråga. <span class="subheader">Läs igenom texten igen och försök sedan en gång till.</span>');
