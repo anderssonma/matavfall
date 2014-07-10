@@ -556,7 +556,7 @@ DPLM.print = function() {
 						imagePNG.onload = function() {
 							loadCounter++;
 							fallbackCtx.drawImage(imagePNG, img.left, img.top, img.width, img.height);
-							if (loadCounter === DPLM.activeImages.length) {
+							if (loadCounter === imagesToConvert.length) {
 								exportImage(fallbackCanvas);
 							}
 						};
