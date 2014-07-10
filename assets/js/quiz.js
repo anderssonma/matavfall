@@ -319,9 +319,35 @@ var Quiz = {
 		});
 	},
 
+	checkPreviousData: function() {
+		var oldHighScore = parseInt(localStorage.getItem('SMM_QUIZ_' + PAGER.currentPage + '_CORRECT') || 0, 10);
+		console.log(oldHighScore);
+		if (oldHighScore === 0) {
+			return false;
+		}
+
+		var starClass;
+		if (oldHighScore === this.slides.length) {
+			// GOLD!
+			starClass = 'three-stars';
+		} else if (oldHighScore > 4) {
+			// SILVER
+			starClass = 'two-stars';
+		} else {
+			// BRONZE
+			starClass = 'one-star';
+		}
+		$('#quiz-start').addClass('active');
+		$('#quiz-saved-stars').addClass(starClass);
+		$('#quiz-saved-stars h5').text(oldHighScore + ' / ' + this.slides.length + ' RÄTT');
+
+	},
+
 	startQuiz: function() {
+		
 		this.setupEvents(); // WE ONLY WANT TO SETUP THE HANDLERS ONCE
 		this.init();
+		this.checkPreviousData();
 	}
 
 };

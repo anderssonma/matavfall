@@ -117,6 +117,31 @@
 	top: 100%;
 	opacity: 0;
 }
+.quiz-start .quiz-stars {
+	display: none;
+}
+.quiz-start.active {
+	button {
+		top: 65%;
+	}
+	.quiz-stars {
+		display: block;
+		width: 200px;
+		position: absolute;
+		top: 120px;
+		left: 50%;
+		margin-left: -100px;
+		h6 {
+			text-align: center;
+			margin-bottom: 12px;
+		}
+		h5 {
+			text-align: center;
+			font-size: 26px;
+			margin-bottom: 20px;
+		}
+	}
+}
 
 .quiz-slides {
 	position: absolute;
@@ -380,47 +405,47 @@
 	color: #DFE9E7;
 }
 
-#quiz-stars {
+.quiz-stars {
 	width: 100%;
 	overflow: hidden;
 	margin: 30px 0 20px;
 }
-#quiz-stars img {
+.quiz-stars img {
 	margin: 0 5px;
 	float: left;
 	display: block;
 }
-#quiz-stars .lit {
+.quiz-stars .lit {
 	display: none;
 }
-#quiz-stars .unlit {
+.quiz-stars .unlit {
 	opacity: 0.35;
 }
 
 /* === ONE STAR === */
-#quiz-stars.one-star .lit-1 {
+.quiz-stars.one-star .lit-1 {
 	display: block;
 }
-#quiz-stars.one-star .unlit-1 {
+.quiz-stars.one-star .unlit-1 {
 	display: none;
 }
 /* === TWO STARS === */
-#quiz-stars.two-stars .lit-1,
-#quiz-stars.two-stars .lit-2 {
+.quiz-stars.two-stars .lit-1,
+.quiz-stars.two-stars .lit-2 {
 	display: block;
 }
-#quiz-stars.two-stars .unlit-1,
-#quiz-stars.two-stars .unlit-2 {
+.quiz-stars.two-stars .unlit-1,
+.quiz-stars.two-stars .unlit-2 {
 	display: none;
 }
 /* === THREE STAR === */
-#quiz-stars.three-stars .lit-1,
-#quiz-stars.three-stars .lit-2,
-#quiz-stars.three-stars .lit-3 {
+.quiz-stars.three-stars .lit-1,
+.quiz-stars.three-stars .lit-2,
+.quiz-stars.three-stars .lit-3 {
 	display: block;
 }
-#quiz-stars.three-stars .unlit-1,
-#quiz-stars.three-stars .unlit-2,
-#quiz-stars.three-stars .unlit-3 {
+.quiz-stars.three-stars .unlit-1,
+.quiz-stars.three-stars .unlit-2,
+.quiz-stars.three-stars .unlit-3 {
 	display: none;
 }
