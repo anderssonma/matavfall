@@ -1,4 +1,230 @@
-<!-- _1.1_fakta _1.2_uppdrag _1.3_spel _1.4_recept _1.5.1_popcorn _1.5.2_bio _1.5.3_kylskap _1.6_quiz -->
+<!-- _1.1_fakta _1.2_uppdrag _1.3_spel _1.4_recept _1.5.1_popcorn _1.5.2_bio _1.5.3_kylskap -->
+<section class="quiz">
+
+	<div class="intro">
+		<h1>Quiz</h1>
+	</div>
+	<div class="container">
+		<div id="quiz-box" class="quiz-box">
+
+			<div id="quiz-start" class="quiz-start">
+				<div id="quiz-saved-stars" class="quiz-stars">
+					<h6>DITT BÄSTA RESULTAT</h6>
+					<h5></h5>
+						<img class="lit lit-1" src="assets/img/star_lit.svg" width="56">
+						<img class="lit lit-2" src="assets/img/star_lit.svg" width="56">
+						<img class="lit lit-3" src="assets/img/star_lit.svg" width="56">
+						<img class="unlit unlit-1" src="assets/img/star_unlit.svg" width="56">
+						<img class="unlit unlit-2" src="assets/img/star_unlit.svg" width="56">
+						<img class="unlit unlit-3" src="assets/img/star_unlit.svg" width="56">
+					</div>
+				<button>STARTA QUIZET</button>
+			</div>
+
+			<div id="quiz-slides" class="quiz-slides">
+				
+				<div id="slide-0" class="quiz-slide quiz-slide-0 quiz-in">
+					<div class="quiz-target">
+						<img width="110" class="pase" src="assets/img/matavfallspase.svg">
+					</div>
+					<div class="quiz-options">
+						<img src="assets/img/aggskal.svg" width="80" data-item="Äggskal" data-id="0" class="draggable item-1">
+						<img src="assets/img/appelskrutt.svg" width="60" data-item="Äppelskrutt" data-id="1" class="draggable item-2">
+						<img src="assets/img/bananskal.svg" width="170" data-item="Bananskal" data-id="2" class="draggable item-3">
+						<img src="assets/img/grapefrukt.svg" width="80" data-item="Apelsin" data-id="3" class="draggable item-4">
+						<img src="assets/img/tomathalva.svg" width="80" data-item="Tomat" data-id="4" class="draggable item-5">
+						<img src="assets/img/burk_45.svg" width="110" data-item="Metallburk" data-id="5" data-rotated class="draggable item-6 rotated">
+						<img src="assets/img/tuggummipaket.svg" width="140" data-item="Tuggummi" data-id="6" class="draggable item-7">
+						<img src="assets/img/medicin_alt.svg" width="60" data-item="Medicin" data-id="7" class="draggable item-8">
+					</div>
+				</div>
+
+				<div id="slide-1" class="quiz-slide quiz-slide-1">
+					<div class="quiz-target" data-item="1. Koka osten så försvinner möglet." data-target="false"><span>1</span><img class="gryta" src="assets/img/gryta_kokar.svg" width="100"></div>
+					<div class="quiz-target" data-item="2. Skär bort möglet och lite extra runt det, så kan du använda resten av osten." data-target="true"><span>2</span><img class="kokskniv" src="assets/img/kokskniv.svg"></div>
+					<div class="quiz-target" data-item="3. Frys osten i två dagar, sedan kan du äta den." data-target="false"><span>3</span><img class="kylskap" src="assets/img/kylskap-oppet-utan-lador.svg"></div>
+					<div class="quiz-options">
+						<img src="assets/img/moglig_ost.svg" width="100" data-item="Möglig ost" data-id="0" class="draggable item-1">
+					</div>
+				</div>
+
+				<div id="slide-2" class="quiz-slide quiz-slide-2">
+					<div class="quiz-target">
+						<img width="110" class="explosion" src="assets/img/explotion.svg">
+					</div>
+					<div class="quiz-options">
+						<img data-item="6 500" data-id="0" class="draggable item-1" src="assets/img/sack_6500.svg" width="130">
+						<img data-item="15 000" data-id="1" class="draggable item-2" src="assets/img/sack_15000.svg" width="180">
+						<img data-item="2 500" data-id="2" class="draggable item-3" src="assets/img/sack_2500.svg" width="90">
+						<img data-item="7 500" data-id="3" class="draggable item-4" src="assets/img/sack_7500.svg" width="120">
+						<img data-item="10 000" data-id="4" class="draggable item-5" src="assets/img/sack_10000.svg" width="150">
+					</div>
+				</div>
+
+				<div id="slide-3" class="quiz-slide quiz-slide-3">
+					<div class="quiz-target" data-item="1. Luften har gått ur moroten." data-target="false"><span>1</span><img class="pump" src="assets/img/pump.svg" width="100"></div>
+					<div class="quiz-target" data-item="2. För att moroten fick för lite vatten när den odlades." data-target="false"><span>2</span><img class="vattenkanna" src="assets/img/vattenkanna.svg" width="120"></div>
+					<div class="quiz-target" data-item="3. För att vattnet i moroten avdunstat." data-target="true"><span>3</span><img class="avdunstat" src="assets/img/avdunstat.svg" width="110"></div>
+					<div class="quiz-options">
+						<img src="assets/img/morot_skrumpen.svg" width="100" data-item="Skrumpen morot" data-id="0" class="draggable item-1">
+					</div>
+				</div>
+
+				<div id="slide-4" class="quiz-slide quiz-slide-4">
+					<div class="quiz-target" data-item="1. För att matavfallet inte ska bli geggigt och påsen gå sönder." data-target="true"><span>1</span><img class="geggig-pase" src="assets/img/pase_geggig.svg" width="120"></div>
+					<div class="quiz-target" data-item="2. För att vattnet kan omvandlas till gift." data-target="false"><span>2</span><img class="gift" src="assets/img/gift.svg" width="90"></div>
+					<div class="quiz-target" data-item="3. Mikroorganismerna riskerar att drunkna." data-target="false"><span>3</span><img class="mikroorg-dod" src="assets/img/mikroorg_dod.svg" width="80"></div>
+					<div class="quiz-options">
+						<img src="assets/img/matavfallspase_blot.svg" width="100" data-item="Blöt matavfallspåse" data-id="0" class="draggable item-1">
+					</div>
+				</div>
+
+				<div id="slide-5" class="quiz-slide quiz-slide-5">
+					<div class="quiz-target" data-item="1. Genom att titta på förpackningens bäst-före-datum." data-target="false"><span>1</span><img class="bast-fore" src="assets/img/bast_fore.svg" width="100"></div>
+					<div class="quiz-target" data-item="2. Genom att knäcka det och undersöka om det luktar äckligt." data-target="true"><span>2</span><img class="aggskal" src="assets/img/aggskal.svg" width="70"></div>
+					<div class="quiz-target" data-item="Genom att titta på äggets form, skalet blir avlångt när ägget blir gammalt." data-target="false"><span>3</span><img class="agg-avlangt" src="assets/img/agg_avlangt.svg" width="60"></div>
+					<div class="quiz-options">
+						<img src="assets/img/agg_knackt.svg" width="100" data-item="Gammalt ägg" data-id="0" class="draggable item-1">
+					</div>
+				</div>
+
+				<div id="slide-6" class="quiz-slide quiz-slide-6">
+					<div class="quiz-target" data-item="1. För att det ska bli bensin av matavfallet." data-target="false"><span>1</span><img class="bensindunk" src="assets/img/bensindunk.svg" width="90"></div>
+					<div class="quiz-target" data-item="2. För att Livsmedelsverket har bestämt det." data-target="false"><span>2</span><img class="domarklubba" src="assets/img/domarklubba.svg" width="210"></div>
+					<div class="quiz-target" data-item="3. För att det ska bli biogas, gödsel, el och värme av matavfallet." data-target="true"><span>3</span><img class="bio-produkter" src="assets/img/bio_produkter.svg" width="110"></div>
+					<div class="quiz-options">
+						<img src="assets/img/pase_full_temp.svg" width="140" data-item="Matavfall" data-id="0" class="draggable item-1">
+					</div>
+				</div>
+
+				<div id="slide-7" class="quiz-slide quiz-slide-7">
+					<div class="quiz-target" data-item="1. Den håller längre i kyla." data-target="true"><span>1</span><img class="kylskap" src="assets/img/kylskap-oppet-utan-lador.svg"></div>
+					<div class="quiz-target" data-item="2. Urrk för varm mjölk!" data-target="false"><span>2</span><img class="mjolk-varm" src="assets/img/varm_mjolk.svg" width="60"></div>
+					<div class="quiz-target" data-item="3. För att undvika bananflugor i mjölken." data-target="false"><span>3</span><img class="bananflugor" src="assets/img/bananflugor_alt.svg" width="80"></div>
+					<div class="quiz-options">
+						<img src="assets/img/mjolk.svg" width="70" data-item="Mjölk" data-id="0" data-rotated class="draggable item-1 rotated">
+					</div>
+				</div>
+
+				<div id="slide-recap" class="quiz-slide">
+					<div id="quiz-errors">
+						<h3></h3>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="quiz-sidebar" class="quiz-sidebar">
+
+				<div id="quiz-0" class="quiz-page quiz-0 quiz-in" data-valid="0,1,2,3,4" data-invalid="5,6,7" data-multitarget="false">
+					<span>Fråga 1 av 8</span>
+					<h3>Vad hör hemma i matavfallspåsen?</h3>
+					<p>Dra och släpp de saker som du tror hör hemma i matavfallspåsen, undvik det som inte hör hemma där. Råkar du slänga fel så klickar du på krysset i listan här nedan.</p>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-1" class="quiz-page quiz-1" data-valid="1" data-invalid="0,2" data-multitarget="true">
+					<span>Fråga 2 av 8</span>
+					<h3>Vad kan du göra för att ta vara på en ostbit som börjat mögla?</h3>
+					<ol>
+						<li>Koka osten så försvinner möglet.</li>
+						<li>Skär bort möglet och lite extra runt det, så kan du använda resten av osten.</li>
+						<li>Frys osten i två dagar, sedan kan du äta den.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-2" class="quiz-page quiz-2" data-valid="0" data-invalid="1,2,3,4" data-multitarget="false">
+					<span>Fråga 3 av 8</span>
+					<h3>Hur mycket har den mat kostat som en svensk tvåbarnsfamilj i genomsnitt slänger under ett år?</h3>
+					<p>Välj bara ett svar!</p>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-3" class="quiz-page quiz-3" data-valid="1" data-invalid="0,2" data-multitarget="true">
+					<span>Fråga 4 av 8</span>
+					<h3>Varför skrumpnar en morot?</h3>
+					<ol>
+						<li>För att luften gått ur moroten.</li>
+						<li>För att moroten fick för lite vatten när den odlades.</li>
+						<li>För att vattnet i moroten avdunstat.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-4" class="quiz-page quiz-4" data-valid="0" data-invalid="1,2" data-multitarget="true">
+					<span>Fråga 5 av 8</span>
+					<h3>Varför ska matavfallspåsen hållas torr?</h3>
+					<ol>
+						<li>För att matavfallet inte ska bli geggigt och påsen gå sönder.</li>
+						<li>För att vattnet kan omvandlas till gift.</li>
+						<li>För att viktiga mikroorganismer kan drunkna i vattnet.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-5" class="quiz-page quiz-5" data-valid="1" data-invalid="0,2" data-multitarget="true">
+					<span>Fråga 6 av 8</span>
+					<h3>Hur kollar du om ett ägg är för gammalt att äta?</h3>
+					<ol>
+						<li>Genom att titta på förpackningens bäst-före-datum.</li>
+						<li>Genom att knäcka det och undersöka om det luktar äckligt.</li>
+						<li>Genom att titta på äggets form, skalet blir avlångt när ägget blir gammalt.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-6" class="quiz-page quiz-6" data-valid="2" data-invalid="0,1" data-multitarget="true">
+					<span>Fråga 7 av 8</span>
+					<h3>Varför ska man sortera sitt matavfall?</h3>
+					<ol>
+						<li>För att det ska bli bensin av matavfallet.</li>
+						<li>För att Livsmedelsverket har bestämt det.</li>
+						<li>För att det ska bli biogas, gödsel, el och värme av matavfallet.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+				<div id="quiz-7" class="quiz-page quiz-7" data-valid="0" data-invalid="1,2" data-multitarget="true">
+					<span>Fråga 8 av 8</span>
+					<h3>Varför ska man förvara mjölk kallt?</h3>
+					<ol>
+						<li>För att den håller längre om den förvaras kallt.</li>
+						<li>För att den inte är god varm.</li>
+						<li>För att det bildas bananflugor i den om den inte hålls kall.</li>
+					</ol>
+					<h6>Du har valt</h6>
+					<ul class="in-trash"></ul>
+				</div>
+
+
+				<div id="quiz-end" class="quiz-page-end">
+					<h3 id="quiz-answers"></h3>
+					<div id="quiz-stars" class="quiz-stars">
+						<img class="lit lit-1" src="assets/img/star_lit.svg" width="56">
+						<img class="lit lit-2" src="assets/img/star_lit.svg" width="56">
+						<img class="lit lit-3" src="assets/img/star_lit.svg" width="56">
+						<img class="unlit unlit-1" src="assets/img/star_unlit.svg" width="56">
+						<img class="unlit unlit-2" src="assets/img/star_unlit.svg" width="56">
+						<img class="unlit unlit-3" src="assets/img/star_unlit.svg" width="56">
+					</div>
+					<p id="quiz-elapsed"></p>
+					<button class="btn btn-right" id="restart">STARTA OM QUIZET</button>
+				</div>
+
+				<button class="btn btn-right" id="submit">NÄSTA &nbsp;FRÅGA</button>
+			</div>
+		</div>
+	</div>
+
+</section>
 <section id="diploma" class="diploma upcoming">
 	<h1>DIPLOM</h1>
 	<div class="diploma-container">
@@ -30,5 +256,6 @@
 	<div id="svg-export" style="display: none;"></div>
 </section>
 
-<!-- 1.1_fakta uppdrag 1.3_game 1.3_game.helpers 1.4_recept 1.5.1_popcorn 1.5.2_bio 1.5.3_kylskap quiz -->
+<!-- 1.1_fakta uppdrag 1.3_game 1.3_game.helpers 1.4_recept 1.5.1_popcorn 1.5.2_bio 1.5.3_kylskap -->
+<script src='assets/js/quiz.js'></script>
 <script src='assets/js/diplom.js'></script>

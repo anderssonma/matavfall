@@ -122,14 +122,14 @@ var DPLM = {
 		// PAINT CIRCLE
 		ctx.fillStyle = this.colors[this.activeColor].lightColor;
 		ctx.beginPath();
-		ctx.arc(this.columns[col], (y - 48 - this.topMargin), 125, 0, 2*Math.PI);
+		ctx.arc(this.columns[col], (y - 56 - this.topMargin), 120, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		// PAINT TEXT
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
 		ctx.font = '70px Bubbler One';
 		ctx.textBaseline = 'middle';
-		ctx.fillText(text, this.columns[col], y + (4 - 48 - this.topMargin));
+		ctx.fillText(text, this.columns[col], y + (4 - 56 - this.topMargin));
 
 		// RESET
 		this.setContextDefaults(ctx);
@@ -175,6 +175,7 @@ var DPLM = {
 		}
 		this.paintTextBox(ctx, 'left', 1196, score + ' ' + pointString); // 1226
 
+		/*
 		var time = Math.ceil(timePlayed / 1000),
 				minutes, seconds;
 
@@ -190,15 +191,17 @@ var DPLM = {
 			time = time + ' SEKUNDER';
 		}
 		this.paintTextBox(ctx, 'left', 1264, time ); // 1304
+		*/
 
 		if (recipes > 0) {
-			this.paintTextBox(ctx, 'left', 1332, recipes + ' RECEPT'); // 1382
+			this.paintTextBox(ctx, 'left', 1264, recipes + ' RECEPT'); // 1332
 		}
 
 	},
 
 	paintStoryData: function(ctx) {
 		this.paintTextBox(ctx, 'mid', 1196, 'MILJÖHJÄLTE'); // 1226
+		this.paintTextBox(ctx, 'mid', 1264, '125 POÄNG'); // 1332
 	},
 
 	paintPresData: function(ctx) {
@@ -281,7 +284,7 @@ var DPLM = {
 		console.log(totalCorrectAnswers);
 		var medalValue;
 		if (totalCorrectAnswers === 0) {
-			this.makePlaceholder(ctx, col, 1770, 'BEN ' + quizPageNum); // 1800
+			this.makePlaceholder(ctx, col, 1680, 'BEN ' + quizPageNum); // 1770
 			return false;
 		} else if (totalCorrectAnswers === totalQuestions) {
 			// GOLD!
@@ -299,19 +302,19 @@ var DPLM = {
 			DPLM.activeImages.push({
 				type: 'image',
 				src: this.src,
-				top: 1596 - DPLM.topMargin, // 1656
+				top: 1506 - DPLM.topMargin, // 1596
 				left: DPLM.columns[col] - 114,
 				width: 228,
 				height: 236
 			});
-			DPLM.ctx.drawImage(quizCup, DPLM.columns[col] - 114, (1596 - DPLM.topMargin), 228, 236);
+			DPLM.ctx.drawImage(quizCup, DPLM.columns[col] - 114, (1506 - DPLM.topMargin), 228, 236);
 		};
 		// TODO
 		// ====
 		// DECIDE ON WHICH MEDAL
 		// PARSE TOTAL SCORE
 		quizCup.src = '/assets/img/diplom_pokal_' + medalValue + '.svg';
-		this.paintTextBox(ctx, col, 1890, totalCorrectAnswers + '/' + totalQuestions + ' RÄTT'); // 1964
+		this.paintTextBox(ctx, col, 1800, totalCorrectAnswers + '/' + totalQuestions + ' RÄTT'); // 1890
 	},
 
 	paintStaticBackground: function(ctx) {
@@ -463,7 +466,7 @@ var DPLM = {
 			}, {
 				type: 'image',
 				src: '/assets/img/diplom_categories_bot.svg',
-				top: 1498 - this.topMargin, // 1528
+				top: 1408 - this.topMargin, // 1498
 				left: 274,
 				width: 1058,
 				height: 42,
@@ -477,10 +480,10 @@ var DPLM = {
 			}, {
 				type: 'image',
 				src: '/assets/img/diplom_signatur.svg',
-				top: 1890,
-				left: (this.canvas.width / 2) - 368,
-				width: 736,
-				height: 224
+				top: 1830,
+				left: (this.canvas.width / 2) - 450,
+				width: 900,
+				height: 274
 			}
 		];
 
