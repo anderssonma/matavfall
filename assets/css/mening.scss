@@ -25,13 +25,13 @@ body {
 
 	.landscape-bg {
 		position: absolute;
-		left: 0;
+		left: 50%;
+		margin-left: -1280px;
 		bottom: 0;
 		transition: 2s -webkit-transform, 1s opacity;
+		opacity: 0.35;
 	}
-	&.final .landscape-bg {
-		opacity: 0;
-	}
+
 	.wrap {
 		//backround: rgba(255,255,255,.15);
 		position: absolute;
@@ -100,11 +100,14 @@ body {
 	}
 	&.step-2 {
 		background-color: #4D457F;
+		.landscape-bg {
+			opacity: 0.45;
+		}
 	}
 	&.step-3 {
-		background-color: #B5757F;
+		background-color: #6E5985;
 		.landscape-bg {
-			-webkit-transform: translateX(-200px);
+			opacity: 0.65;
 		}
 		/*
 		.pointer {
@@ -116,16 +119,41 @@ body {
 		}
 		*/
 	}
-	&.step-3 {
+	&.step-4 {
 		background-color: #E2AC96;
 		background-color: #4EB2BB;
+		background-color: #B5757F;
+		background-color: #E2AC96;
 		.landscape-bg {
+			opacity: 0.8;
 			//-webkit-transform: translateX(-400px);
 		}
 	}
 
-	&.step-4 {
+	&.step-5 {
 		background-color: #88C1C9;
+		.landscape-bg {
+			opacity: 1;
+		}
+	}
+
+	&.step-6 {
+		background-color: #E2AC96;
+		.landscape-bg {
+			opacity: 0.8;
+		}
+	}
+	&.step-7 {
+		background-color: #4D457F;
+		.landscape-bg {
+			opacity: 0.45;
+		}
+	}
+	&.final {
+		background: #273852;
+		.landscape-bg {
+			opacity: 0;
+		}
 	}
 
 
@@ -262,47 +290,11 @@ body {
 		}
 	}
 
-	.sun {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -50px 0 0 -50px;
-		z-index: 1;
-		.surface {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 60px;
-			height: 60px;
-			background: #F6E067;
-			border-radius: 50%;
-			margin: -30px 0 0 -30px;
-		}
-		.shaft-inner {
-
-			-webkit-animation: 10s sunSpin linear infinite;
-		}
-		.shaft-outer {
-			display: none;
-			-webkit-animation: 15s sunSpin linear infinite;
-		}
-	}
-	.sunshafts {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -600px 0 0 -600px;
-		width: 1200px;
-		height: 1200px;
-		background: radial-gradient(ellipse at center, rgba(246,162,71,0.85) 0%,rgba(246,162,71,0) 70%);
-		border-radius: 50%; 
-	}
-
 	.diploma {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		background: #327E85;
+		background: #425470;
 		width: 800px;
 		padding: 50px;
 		margin-left: -400px;
@@ -312,7 +304,6 @@ body {
 		
 		img {
 			float: left;
-			-webkit-animation: 5s globeSpin infinite linear;
 		}
 		.text {
 			width: 340px;
@@ -324,25 +315,7 @@ body {
 	}
 
 	&.final .diploma {
-		transition: 0.65s 1s opacity;
+		transition: 2s opacity;
 		opacity: 1;
-	}
-}
-
-@-webkit-keyframes sunSpin {
-	0% {
-		-webkit-transform: rotate(0);
-	}
-	100% {
-		-webkit-transform: rotate(180deg);
-	}
-}
-
-@-webkit-keyframes globeSpin {
-	0% {
-		-webkit-transform: rotate(0);
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
 	}
 }

@@ -1,4 +1,5 @@
 // CLASSLIST POLYFILL
+/*
 (function () {
 
 if (typeof window.Element === "undefined" || "classList" in document.documentElement) return;
@@ -69,10 +70,11 @@ defineElementGetter(Element.prototype, 'classList', function () {
 });
 
 })();
-
+*/
 
 var SB = {
 	score: 0,
+	scoreTable: [],
 	forceReflow: function() {
 		this.elList.offsetHeight;
 	},
@@ -84,12 +86,11 @@ var SB = {
 		}
 		this.insertInProgress = true;
 
-		this.score = this.score + i;
-		console.log(this.score);
+		this.scoreTable[this.currentSet + 1] = (i * 5);
 
-		var bigWord = document.getElementById('part-' + (this.currentSet + 1));
-		bigWord.classList.remove('in');
-		this.elList.classList.remove('show');
+		var bigWord = $('#part-' + (this.currentSet + 1));
+		bigWord.removeClass('in');
+		$(this.elList).removeClass('show');
 
 		/*
 		var choice = this.wordChoices[this.currentSet][i];
@@ -108,13 +109,14 @@ var SB = {
 			}, 1500)
 		}, 250);
 		*/
+
 		window.setTimeout(function() {
 			$('.daybuilder').addClass('step-' + (SB.currentSet + 2));
 			window.setTimeout(function() {
-				bigWord.classList.remove('show');
+				bigWord.removeClass('show');
 				// SHOW CLOCK
 				SB.currentSet++;
-				SB.nextSentence();
+				SB.nextSentence(1);
 			}, 1250);
 		}, 250);
 
@@ -127,10 +129,10 @@ var SB = {
 		});
 		this.elList.innerHTML = htmlString + '<li class="undo-button" onclick="SB.undo();">&larr;</li>';
 		this.forceReflow();
-		this.elList.classList.add('show');
+		$(this.elList).addClass('show');
 	},
 
-	nextSentence: function() {
+	nextSentence: function(nextIndex) {
 
 		if (this.currentSet === this.wordChoices.length) {
 			// SHOW END SCREEN
@@ -138,10 +140,10 @@ var SB = {
 			return false;
 		}
 
-		var el = document.getElementById('part-' + (this.currentSet + 1));
-		el.classList.add('show');
+		var el = $('#part-' + (this.currentSet + nextIndex));
+		el.addClass('show');
 		this.forceReflow();
-		el.classList.add('in');
+		el.addClass('in');
 
 		window.setTimeout(function() {
 			SB.populateChoices();
@@ -153,43 +155,59 @@ var SB = {
 	undoInProgress: false,
 	undo: function() {
 		if (this.currentSet === 0 || this.undoInProgress || this.insertInProgress) {
-			
 			return false;
 		}
 		this.undoInProgress = true;
 
-		this.elList.classList.remove('show');
-		var el = document.getElementById('part-' + (this.currentSet + 1));
-		var prevEl = document.getElementById('part-' + this.currentSet);
-		el.classList.remove('in');
+		this.scoreTable[this.currentSet] = 0;
+		var currentSet = this.currentSet + 1;
 
+		$(this.elList).removeClass('show');
+		$('#daybuilder').removeClass('step-' + currentSet);
+		$('#daybuilder #part-' + currentSet).removeClass('in');
 		window.setTimeout(function() {
-			el.classList.remove('show');
-			var prevChoice = prevEl.getElementsByTagName('span')[0];
-			prevChoice.classList.remove('show');
-			window.setTimeout(function() {
-				prevChoice.parentNode.removeChild(prevChoice);
-				SB.currentSet--;
-				SB.populateChoices();
-				SB.undoInProgress = false;
-			}, 750);
+			$('#daybuilder #part-' + currentSet).removeClass('show');
+			SB.nextSentence(0);
+			SB.currentSet--;
+			SB.undoInProgress = false;
 		}, 750);
+
 	},
 
 	finalScore: function() {
-		$('.daybuilder').addClass('final');
-		var maxScore = this.wordChoices.length * 3;
-		if (this.score >= Math.floor(maxScore * 0.8)) { // 80% or more correct
-			// HJÄLTE
-		} else if (this.score >= Math.floor(maxScore * 0.4)) { // 40%-80% correct
-			// NEUTRAL
+		var maxScore = this.wordChoices.length * 15;
+		var finalScore = 0;
+		this.scoreTable.forEach(function(points) {
+			finalScore += points;
+		});
+
+		var title, imageSrc, textVerdict;
+		if (finalScore >= Math.floor(maxScore * 0.8)) { // 80% or more correct
+			title = 'MILJÖKÄMPEN';
+			imageSrc = 'jordglob_bra';
+			textVerdict = 'BRA JOBB'
+		} else if (finalScore >= Math.floor(maxScore * 0.4)) { // 40%-80% correct
+			title = 'MILJÖTALANGEN';
+			imageSrc = 'jordglob_neutral';
+			textVerdict = 'LAGOM JOBB';
 		} else {
-			// SKURK
+			title = 'MILJÖBOVEN';
+			imageSrc = 'jordglob_dalig';
+			textVerdict = 'DÅLIGT JOBB';
 		}
+
+		// SET FINAL IMAGE
+		// SET FINAL TITLE
+		// SET FINAL TEXT VERDICT
+		// THEN SHOW
+		$('.daybuilder').addClass('final');
+
+		localStorage.setItem('SMM_DAYBUILDER_TITLE', title);
+		localStorage.setItem('SMM_DAYBUILDER_POINTS', finalScore);
 	},
 
 	init: function() {
-		wordChoices.length = 2;
+		//wordChoices.length = 2;
 		this.wordChoices = wordChoices;
 		this.currentSet = 0;
 		this.elList = document.getElementById('sentence-choices');

@@ -200,8 +200,17 @@ var DPLM = {
 	},
 
 	paintStoryData: function(ctx) {
-		this.paintTextBox(ctx, 'mid', 1196, 'MILJÖHJÄLTE'); // 1226
-		this.paintTextBox(ctx, 'mid', 1264, '125 POÄNG'); // 1332
+		//this.paintTextBox(ctx, 'mid', 1196, 'MILJÖHJÄLTE'); // 1226
+		//this.paintTextBox(ctx, 'mid', 1264, '125 POÄNG'); // 1332
+		var title = localStorage.getItem('SMM_DAYBUILDER_TITLE') || 0;
+		var points = localStorage.getItem('SMM_DAYBUILDER_POINTS') || 0;
+		if (title === 0) {
+			this.makePlaceholder(ctx, 'mid', 1050, 'BEN 2');
+			return false;
+		}
+
+		this.paintTextBox(ctx, 'mid', 1196, title); // 1226
+		this.paintTextBox(ctx, 'mid', 1264, points + ' POÄNG'); // 1332
 	},
 
 	paintPresData: function(ctx) {
