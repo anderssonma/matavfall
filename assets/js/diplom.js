@@ -17,6 +17,7 @@ var DPLM = {
 	activeTextboxes: [],
 	activePlaceholders: [],
 	borderWidth: 46,
+	topMargin: 140,
 	colors: [
 		{	// RED
 			darkColor: '#BA4A3C',
@@ -95,14 +96,14 @@ var DPLM = {
 		var x = this.columns[col];
 		// PAINT BG BOX
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
-		ctx.roundRect(x - (boxWidth / 2), y, boxWidth, boxHeight, (boxHeight / 2)).fill();
+		ctx.roundRect(x - (boxWidth / 2), (y - this.topMargin), boxWidth, boxHeight, (boxHeight / 2)).fill();
 		// PAINT TEXT
 		ctx.fillStyle = '#FFF';
-		ctx.fillText(string, x, y + boxHeight - 13);
+		ctx.fillText(string, x, (y + boxHeight - 15 - this.topMargin));
 
 		this.activeTextboxes.push({
 			col: col,
-			top: y,
+			top: y - this.topMargin,
 			text: string
 		});
 		this.setContextDefaults(ctx);
@@ -121,14 +122,14 @@ var DPLM = {
 		// PAINT CIRCLE
 		ctx.fillStyle = this.colors[this.activeColor].lightColor;
 		ctx.beginPath();
-		ctx.arc(this.columns[col], y, 150, 0, 2*Math.PI);
+		ctx.arc(this.columns[col], (y - 48 - this.topMargin), 125, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 		// PAINT TEXT
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
-		ctx.font = '80px Bubbler One';
+		ctx.font = '70px Bubbler One';
 		ctx.textBaseline = 'middle';
-		ctx.fillText(text, this.columns[col], y + 4);
+		ctx.fillText(text, this.columns[col], y + (4 - 48 - this.topMargin));
 
 		// RESET
 		this.setContextDefaults(ctx);
@@ -159,12 +160,12 @@ var DPLM = {
 			DPLM.activeImages.push({
 				type: 'image',
 				src: this.src,
-				top: 904,
+				top: 874 - DPLM.topMargin, // 904
 				left: DPLM.columns.left - 139,
 				width: 278,
 				height: 278
 			});
-			ctx.drawImage(gameMedal, DPLM.columns.left - 139, 904, 278, 278);
+			ctx.drawImage(gameMedal, DPLM.columns.left - 139, (874 - DPLM.topMargin), 278, 278);
 		};
 		gameMedal.src = '/assets/img/medalj_' + medalType + '.svg';
 
@@ -172,7 +173,7 @@ var DPLM = {
 		if (score > 999999) { // IF STRING IS TOO LONG TO FIT
 			pointString = 'P';
 		}
-		this.paintTextBox(ctx, 'left', 1226, '– ' + score + ' ' + pointString + ' –');
+		this.paintTextBox(ctx, 'left', 1196, '– ' + score + ' ' + pointString + ' –'); // 1226
 
 		var time = Math.ceil(timePlayed / 1000),
 				minutes, seconds;
@@ -188,16 +189,16 @@ var DPLM = {
 		} else {
 			time = time + ' SEKUNDER';
 		}
-		this.paintTextBox(ctx, 'left', 1304, '– ' + time + ' –');
+		this.paintTextBox(ctx, 'left', 1264, '– ' + time + ' –'); // 1304
 
 		if (recipes > 0) {
-			this.paintTextBox(ctx, 'left', 1382, '– ' + recipes + ' RECEPT –');
+			this.paintTextBox(ctx, 'left', 1332, '– ' + recipes + ' RECEPT –'); // 1382
 		}
 
 	},
 
 	paintStoryData: function(ctx) {
-		this.paintTextBox(ctx, 'mid', 1226, '– MILJÖHJÄLTEN –');
+		this.paintTextBox(ctx, 'mid', 1196, '– MILJÖHJÄLTE –'); // 1226
 	},
 
 	paintPresData: function(ctx) {
@@ -212,10 +213,10 @@ var DPLM = {
 		var imgPics = imgTotal - imgWords;
 		// ONLY PAINT IF THERE'S DATA
 		if (imgWords > 0) {
-			this.paintTextBox(ctx, 'right', 1226, '– ' + imgWords + ' ORD –');
+			this.paintTextBox(ctx, 'right', 1196, '– ' + imgWords + ' ORD –'); // 1226
 		}
 		if (imgPics > 0) {
-			this.paintTextBox(ctx, 'right', 1304, '– ' + imgPics + ' BILDER –');
+			this.paintTextBox(ctx, 'right', 1264, '– ' + imgPics + ' BILDER –'); // 1304
 		}
 
 		var bgNum;
@@ -243,12 +244,12 @@ var DPLM = {
 			DPLM.activeImages.push({
 				type: 'image',
 				src: this.src,
-				top: 904,
-				left: DPLM.columns.right - 102,
-				width: 204,
-				height: 209
+				top: 874 - DPLM.topMargin, // 904
+				left: DPLM.columns.right - 120, // - 102
+				width: 240, // 204
+				height: 246 // 209
 			});
-			ctx.drawImage(presImage, DPLM.columns.right - 102, 904, 204, 209);
+			ctx.drawImage(presImage, DPLM.columns.right - 120, (874 - DPLM.topMargin), 240, 246);
 		};
 		presImage.src = '/assets/img/diplom_presbg_' + bgNum + '.svg';
 	},
@@ -280,7 +281,7 @@ var DPLM = {
 		console.log(totalCorrectAnswers);
 		var medalValue;
 		if (totalCorrectAnswers === 0) {
-			this.paintPlaceholder(ctx, col, 1800, 'BEN ' + quizPageNum);
+			this.makePlaceholder(ctx, col, 1770, 'BEN ' + quizPageNum); // 1800
 			return false;
 		} else if (totalCorrectAnswers === totalQuestions) {
 			// GOLD!
@@ -298,19 +299,19 @@ var DPLM = {
 			DPLM.activeImages.push({
 				type: 'image',
 				src: this.src,
-				top: 1656,
+				top: 1596 - DPLM.topMargin, // 1656
 				left: DPLM.columns[col] - 114,
 				width: 228,
 				height: 236
 			});
-			DPLM.ctx.drawImage(quizCup, DPLM.columns[col] - 114, 1656, 228, 236);
+			DPLM.ctx.drawImage(quizCup, DPLM.columns[col] - 114, (1596 - DPLM.topMargin), 228, 236);
 		};
 		// TODO
 		// ====
 		// DECIDE ON WHICH MEDAL
 		// PARSE TOTAL SCORE
 		quizCup.src = '/assets/img/diplom_pokal_' + medalValue + '.svg';
-		this.paintTextBox(ctx, col, 1964, '– ' + totalCorrectAnswers + '/' + totalQuestions + ' RÄTT –');
+		this.paintTextBox(ctx, col, 1890, '– ' + totalCorrectAnswers + '/' + totalQuestions + ' RÄTT –'); // 1964
 	},
 
 	paintStaticBackground: function(ctx) {
@@ -405,7 +406,7 @@ var DPLM = {
 	},
 
 	setContextDefaults: function(ctx) {
-		ctx.font = '36px Bubbler One';
+		ctx.font = '32px Bubbler One';
 		ctx.textAlign = 'center';
 		ctx.textBaseline = 'alphabetic';
 		ctx.fillStyle = this.colors[this.activeColor].lightColor;
@@ -428,11 +429,13 @@ var DPLM = {
 		this.staticImages = [
 			{
 				type: 'image',
-				src: '/assets/img/diplom_top.svg',
+				src: '/assets/img/diplom_top_alt.svg',
 				top: this.borderWidth,
-				left: (this.canvas.width / 2) - 272,
-				width: 544,
-				height: 404,
+				left: (this.canvas.width / 2) - 240,
+				width: 480,
+				height: 371,
+
+			/*
 			}, {
 				type: 'image',
 				src: '/assets/img/diplom_strip_red.svg',
@@ -441,19 +444,43 @@ var DPLM = {
 				width: 970,
 				height: 106,
 			}, {
+			*/
+
+			}, {
+				type: 'image',
+				src: '/assets/img/diplom_strip.svg',
+				top: 476,
+				left: (this.canvas.width / 2) - 436,
+				width: 872,
+				height: 70,
+			}, {
 				type: 'image',
 				src: '/assets/img/diplom_categories_top.svg',
-				top: 774,
+				top: 774 - this.topMargin,
 				left: 274,
 				width: 1132,
 				height: 42,
 			}, {
 				type: 'image',
 				src: '/assets/img/diplom_categories_bot.svg',
-				top: 1528,
+				top: 1498 - this.topMargin, // 1528
 				left: 274,
 				width: 1058,
 				height: 42,
+			}, {
+				type: 'image',
+				src: '/assets/img/logo_vasyd_tfm.svg',
+				top: this.canvas.height - 84 - 116,
+				left: this.canvas.width - 125 - 93,
+				width: 93,
+				height: 116
+			}, {
+				type: 'image',
+				src: '/assets/img/diplom_signatur.svg',
+				top: 1890,
+				left: (this.canvas.width / 2) - 368,
+				width: 736,
+				height: 224
 			}
 		];
 
