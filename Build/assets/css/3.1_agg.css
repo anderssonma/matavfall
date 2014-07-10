@@ -604,7 +604,7 @@
   left: -50px;
   width: 30px;
   height: 30px;
-  background: #89CBA5;
+  background: #FFF;
   border-radius: 50%;
   overflow: hidden;
   -webkit-transition: 0.5s background; }
@@ -614,7 +614,7 @@
     left: 0;
     bottom: 0;
     width: 50%;
-    background: #89CBA5;
+    background: #FFF;
     -webkit-transition: 0.5s background; }
   .car-box > .circle.hide {
     opacity: 0; }
