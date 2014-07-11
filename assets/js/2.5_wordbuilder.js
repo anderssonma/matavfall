@@ -132,6 +132,7 @@ var SB = {
 
 		localStorage.setItem('SMM_DAYBUILDER_TITLE', title);
 		localStorage.setItem('SMM_DAYBUILDER_POINTS', finalScore);
+		$('#diploma').trigger('rerender', ['story']);
 	},
 
 	restart: function() {

@@ -209,6 +209,36 @@ var DPLM = {
 			return false;
 		}
 
+		var imageSrc, width, height;
+		if (title === 'MILJÖKÄMPEN') { // 80% or more correct
+			imageSrc = 'jorden_glad';
+			width = 280; // 426
+			height = 285; // 433
+		} else if (title === 'MILJÖTALANGEN') { // 40%-80% correct
+			imageSrc = 'jorden_neutral';
+			width = 300; // 422
+			height = 290; // 408
+		} else {
+			imageSrc = 'jorden_dyster';
+			width = 270; // 355
+			height = 290; // 382
+		}
+
+		
+		var globe = new Image();
+		globe.onload = function() {
+			DPLM.activeImages.push({
+				type: 'image',
+				src: this.src,
+				top: 864 - DPLM.topMargin, // 904
+				left: DPLM.columns.mid - (width / 2),
+				width: width,
+				height: height
+			});
+			ctx.drawImage(globe, DPLM.columns.mid - (width / 2), (864 - DPLM.topMargin), width, height);
+		};
+		globe.src = '/assets/img/' + imageSrc + '.svg';
+
 		this.paintTextBox(ctx, 'mid', 1196, title); // 1226
 		this.paintTextBox(ctx, 'mid', 1264, points + ' POÄNG'); // 1332
 	},
