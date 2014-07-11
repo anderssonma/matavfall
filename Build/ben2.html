@@ -1040,12 +1040,12 @@
 
 </div>
 <section id="diploma" class="diploma upcoming">
-	<h1>DIPLOM</h1>
-	<div class="diploma-container">
-		<canvas id="diploma-canvas" width="1600" height="2240"></canvas>
-		<div class="diploma-controls">
-			<h2>Utforma ditt diplom</h2>
-			<p>Nästan allt som blir över när du lagar mat plus oätliga matrester är matavfall som ska slängas i den bruna matavfallspåsen. Gamla pizzakanter, sega sega råttor och ruttna tomater – allt det kan omvandlas till värdefull energi.</p>
+	<h1>UTFORMA DITT DIPLOM</h1>
+
+	<div class="diploma-controls">
+		<!--<h2>Utforma ditt diplom</h2>-->
+		<p>Nästan allt som blir över när du lagar mat plus oätliga matrester är matavfall som ska slängas i den bruna matavfallspåsen. Gamla pizzakanter, sega sega råttor och ruttna tomater – allt det kan omvandlas till värdefull energi.</p>
+		<div class="buttons">
 			<button class="circle c-1" onclick="DPLM.setColor(this, 0);"></button>
 			<button class="circle c-2" onclick="DPLM.setColor(this, 1);"></button>
 			<button class="circle c-3" onclick="DPLM.setColor(this, 2);"></button>
@@ -1055,12 +1055,17 @@
 			</button>
 			<button class="export" onclick="DPLM.reRender(DPLM.ctx)">Uppdatera</button>
 		</div>
+	</div>
+
+	<div class="diploma-container">
+
+		<canvas id="diploma-canvas" width="1600" height="2240"></canvas>
 
 		<div class="diploma-overlay">
 			<h6>Ditt diplom är klart. Skriv ut eller spara det!</h6>
 			<p class="ie-text">Internet Explorer (din webbläsare) stödjer tyvärr inte den teknik som krävs för att skriva ut din presentation direkt i webbläsaren. För att skriva ut bilden, högerklicka och välj 'Spara som...'. Öppna sedan bilden i valfritt program och skriv ut den därifrån.</p>
 			<a class="button left" id="diploma-open">Öppna bilden</a>
-			<a class="button" onclick="DPLM.closePrintOverlay();">Stäng</button>
+			<a class="button" onclick="DPLM.closePrintOverlay();">Stäng</a>
 		</div>
 	</div>
 

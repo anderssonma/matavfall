@@ -44,14 +44,14 @@ body {
   	}
   }
   */
-  /*
-  &.loading {
-  	.clock {
-  		opacity: 1;
-  		-webkit-transform: translateY(-50%) scale(1);
-  		transition-delay: 0.5s;
-  	}
-  }*/ }
+  	/*
+  	&.loading {
+  		.clock {
+  			opacity: 1;
+  			-webkit-transform: translateY(-50%) scale(1);
+  			transition-delay: 0.5s;
+  		}
+         }*/ }
   .daybuilder h1 {
     width: 520px;
     margin: 100px auto 0;
