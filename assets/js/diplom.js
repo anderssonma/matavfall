@@ -436,6 +436,12 @@ var DPLM = {
 		this.paintQuizData(ctx, 'left');
 		this.paintQuizData(ctx, 'mid');
 		this.paintQuizData(ctx, 'right');
+
+		if (this.activePlaceholders.length === 0) {
+			$('#diploma').addClass('complete');
+		} else {
+			$('#diploma').removeClass('complete');
+		}
 	},
 
 	setColor: function(self, color) {

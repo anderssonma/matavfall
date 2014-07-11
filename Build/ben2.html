@@ -1044,17 +1044,25 @@
 
 	<div class="diploma-controls">
 		<!--<h2>Utforma ditt diplom</h2>-->
-		<p>Nästan allt som blir över när du lagar mat plus oätliga matrester är matavfall som ska slängas i den bruna matavfallspåsen. Gamla pizzakanter, sega sega råttor och ruttna tomater – allt det kan omvandlas till värdefull energi.</p>
-		<div class="buttons">
-			<button class="circle c-1" onclick="DPLM.setColor(this, 0);"></button>
-			<button class="circle c-2" onclick="DPLM.setColor(this, 1);"></button>
-			<button class="circle c-3" onclick="DPLM.setColor(this, 2);"></button>
-			<button class="export" onclick="DPLM.exportCanvas()">
-				<img class="spin" src="assets/img/icon_spin.svg" height="32">
-				<img class="printer" src="assets/img/icon_print.svg" height="18">
-			</button>
-			<button class="export" onclick="DPLM.reRender(DPLM.ctx)">Uppdatera</button>
+
+		<div class="controls-complete">
+			<p>Nu har du gjort alla uppgifter i den första delen av den här sajten. Vad mycket du har lärt dig! Fortsätt jobba på, när du är klar med alla uppgifter på sajtens tre delar kommer ditt diplom att vara fullsmockat med badgar och du får en underskrift på att du slutfört Smart med mat-kursen.</p>
+			<div class="buttons">
+				<button class="circle c-1" onclick="DPLM.setColor(this, 0);"></button>
+				<button class="circle c-2" onclick="DPLM.setColor(this, 1);"></button>
+				<button class="circle c-3" onclick="DPLM.setColor(this, 2);"></button>
+				<button class="export" onclick="DPLM.exportCanvas()">
+					<img class="spin" src="assets/img/icon_spin.svg" height="32">
+					<img class="printer" src="assets/img/icon_print.svg" height="18">
+				</button>
+				<button class="export" onclick="DPLM.reRender(DPLM.ctx)">Uppdatera</button>
+			</div>
 		</div>
+		<div class="controls-incomplete">
+			<p>Varje genomförd uppgift på den här delen av sajten ger en badge på ditt diplom. När du är klar med alla uppgifter på sajtens tre delar kommer ditt diplom att vara fullsmockat med badgar och du får en underskrift på att du slutfört Smart med mat-kursen.</p>
+			<p>Gå tillbaka och gör de uppgifter du missat så ses vi här igen om en stund. Då kan du färglägga diplomet innan du går vidare till nya utmaningar och dela det med dina kompisar!</p>
+		</div>
+
 	</div>
 
 	<div class="diploma-container">

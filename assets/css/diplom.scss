@@ -15,12 +15,17 @@
 		color: #F8F8F8;
 		text-align: center;
 	}
-	.diploma-controls {
+	.diploma-controls .controls-complete {
 		// position: absolute;
-		width: 670px;
+		width: 760px;
 		margin: 20px auto 0;
 		transition: 0.35s opacity;
 		overflow: hidden;
+		display: none;
+		p {
+			width: 490px;
+			float: right;
+		}
 		.buttons {
 			width: 240px;
 			float: left;
@@ -87,6 +92,13 @@
 			}
 		}
 	}
+
+	.diploma-controls .controls-incomplete {
+		width: 720px;
+		margin: 20px auto;
+		overflow: hidden;
+	}
+
 	&.color-1 .diploma-controls {
 		.circle.c-1 {
 			border-color: rgba(255,255,255,1) !important;
@@ -187,6 +199,17 @@
 		}
 	}
 
+	&.complete {
+		.diploma-controls {
+			.controls-complete {
+				display: block;
+			}
+			.controls-incomplete {
+				display: none;
+			}
+		}
+	}
+
 	&.color-1 {
 		.diploma-overlay {
 			h6 {
@@ -253,8 +276,6 @@
 	}
 	p {
 		font-size: 18px;
-		width: 400px;
-		float: right;
 	}
 	.diploma-container {
 		width: 1000px;
