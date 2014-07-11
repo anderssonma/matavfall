@@ -150,6 +150,14 @@ var SB = {
 		}, 500);
 	},
 
+	hideIntro: function(self) {
+		var $introBG = $(self).parent().parent();
+		$introBG.addClass('hide');
+		window.setTimeout(function() {
+			$introBG.addClass('remove');
+		}, 1800);
+	},
+
 	init: function() {
 		//wordChoices.length = 2;
 		this.insertInProgress = false;

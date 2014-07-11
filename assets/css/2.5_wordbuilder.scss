@@ -1,21 +1,51 @@
-body {
-	background: #52B17A;
-	
-	&.part-2 {
-		
-	}
-}
-
 .daybuilder {
 	background: #273852;
     position: relative;
 	height: 800px;
 	overflow: hidden;
 	transition: 2s background;
+
+	.day-intro {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 1000px;
+		height: 520px;
+		margin-left: -500px;
+		background: #273852;
+		padding: 0 200px;
+		z-index: 3;
+		text-align: center;
+		transition: 1s 0.75s all;
+		.text-wrapper {
+			position: relative;
+			transition: 0.5s all ease-in;
+		}
+		&.hide {
+			opacity: 0;
+			.text-wrapper {
+				opacity: 0;
+			}
+		}
+		&.remove {
+			display: none;
+		}
+		button {
+			margin-top: 4px;
+			padding: 14px 20px;
+			background: rgba(255,255,255,.15);
+			border: none;
+			outline: none;
+			border-radius: 3px;
+			color: #FFF;
+			transition: 0.35s background;
+			&:hover {
+				background: rgba(255,255,255,.35);
+			}
+		}
+	}
 	h1 {
-		width: 520px;
-		margin: 100px auto 0;
-		color: rgba(255,255,255,0.85);
+		margin: 220px auto 0;
 	}
 	> p {
 		width: 520px;
