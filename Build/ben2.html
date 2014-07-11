@@ -1006,51 +1006,40 @@
 		</div>
 
 	</section>
-<section class="sentence">
+<div id="daybuilder" class="daybuilder step-1">
+  <img class="landscape-bg" src="assets/img/landskap_temp.svg" width="2560">
+  <!--
+  <h1>Meningsbyggaren</h1>
+  <p>God morgon! Du har just vaknat. Under dagen och kvällen kommer du att påverka vår miljö genom att göra olika val. Ibland utan att tänka på det. Se själv:</p>
+  -->
+  <div class="wrap">
 
-  <form id="nl-form" class="nl-form">
-    Först så tog jag 
-    <select>
-      <option value="1" selected>...</option>
-      <option value="2">cykeln</option>
-      <option value="3">bilen</option>
-      <option value="4">mopeden</option>
-      <option value="2">hoverboarden</option>
-    </select>
-    till skolan. Till lunch åt vi pizza. Jag slängde faktiskt
-    <select>
-      <option value="1" selected>...</option>
-      <option value="2">inget alls</option>
-      <option value="3">bara kanterna</option>
-      <option value="4">hela pizzan</option>
-    </select> ! Under kvällen
-    <select>
-      <option value="1" selected>...</option>
-      <option value="1">at 7 p.m.</option>
-      <option value="2">at 8 p.m.</option>
-      <option value="3">at 9 p.m.</option>
-    </select>
-    in <input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>New York</em>"/>
-    <div class="nl-submit-wrap">
-      <button class="nl-submit" type="submit">
-        <div class="spinner">
-          <img id="nl-spin" src="assets/img/icon_spin.svg">
-        </div>
-        <span>Hur miljövänlig är jag?</span>
-      </button>
+    <div class="buildarea">
+      <p id="part-1">Det allra första jag gör på morgonen är att ta en dusch. Jag sätter på vattnet…</p>
+      <p id="part-2">Efter att jag har gjort mig i ordning är det dags för frukost.</p>
+      <p id="part-3">Jag får inte glömma att den här veckan har jag lovat att ta hand om hushållets sopor. Jag brukar…</p>
+      <p id="part-4">Sedan är det dags att ta sig till skolan och som vanligt…</p>
+      <p id="part-5">Under rasten i skolan äter jag…</p>
+      <p id="part-6">Efter en lång dag i skolan kommer jag hem och…</p>
+      <p id="part-7">När det är dags att sova…</p>
     </div>
-    <div class="nl-overlay"></div>
-  </form>
+    <div class="selectarea">
+      <ul id="sentence-choices"></ul>
+    </div>
 
-  <div class="results">
-    <p id="score-temp"></p>
-    <img id="globe-1" src="assets/img/jordglob_1.svg">
-    <img id="globe-2" src="assets/img/jordglob_2.svg">
-    <img id="globe-3" src="assets/img/jordglob_3.svg">
-    <img id="globe-4" src="assets/img/jordglob_4.svg">
   </div>
 
-</section>
+  <div class="certificate">
+    <img src="assets/img/jordglob_1.svg" width="300">
+    <div class="text">
+      <span>DIN MILJÖPROFIL</span>
+      <h2></h2>
+      <p></p>
+      <button onclick="SB.restart();">Börja om</button>
+    </div>
+  </div>
+
+</div>
 <section id="diploma" class="diploma upcoming">
 	<h1>DIPLOM</h1>
 	<div class="diploma-container">
@@ -1086,5 +1075,6 @@
 <script src='assets/js/uppdrag.js'></script>
 <script src='assets/js/2.3_fakta.js'></script>
 <script src='assets/js/quiz.js'></script>
+<script src='assets/js/2.5_wordbuilder_data.js'></script>
 <script src='assets/js/2.5_wordbuilder.js'></script>
 <script src='assets/js/diplom.js'></script>

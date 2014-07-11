@@ -1,285 +1,170 @@
-/**
- * nlform.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
-;( function( window ) {
-	
-	'use strict';
+var SB = {
+	scoreTable: [],
+	forceReflow: function() {
+		this.$elList[0].offsetHeight;
+	},
 
-	var document = window.document;
-
-	if (!String.prototype.trim) {
-		String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
-	}
-
-	function NLForm( el ) {	
-		this.el = el;
-		this.overlay = this.el.querySelector( '.nl-overlay' );
-		this.fields = [];
-		this.fldOpen = -1;
-		this._init();
-	}
-
-	NLForm.prototype = {
-		_init : function() {
-			var self = this;
-			Array.prototype.slice.call( this.el.querySelectorAll( 'select' ) ).forEach( function( el, i ) {
-				self.fldOpen++;
-				self.fields.push( new NLField( self, el, 'dropdown', self.fldOpen ) );
-			} );
-			Array.prototype.slice.call( this.el.querySelectorAll( 'input' ) ).forEach( function( el, i ) {
-				self.fldOpen++;
-				self.fields.push( new NLField( self, el, 'input', self.fldOpen ) );
-			} );
-			this.overlay.addEventListener( 'click', function(ev) { self._closeFlds(); } );
-			this.overlay.addEventListener( 'touchstart', function(ev) { self._closeFlds(); } );
-		},
-		_closeFlds : function() {
-			if( this.fldOpen !== -1 ) {
-				this.fields[ this.fldOpen ].close();
-			}
+	pickWord: function(i) {
+		console.log('UNDO: ' + this.undoInProgress + ' || INSERT: ' + this.insertInProgress);
+		if (this.undoInProgress || this.insertInProgress) {
+			return false;
 		}
-	}
+		this.insertInProgress = true;
 
-	function NLField( form, el, type, idx ) {
-		this.form = form;
-		this.elOriginal = el;
-		this.pos = idx;
-		this.type = type;
-		this._create();
-		this._initEvents();
-	}
+		this.scoreTable[this.currentSet + 1] = (i * 5);
 
-	NLField.prototype = {
-		_create : function() {
-			if( this.type === 'dropdown' ) {
-				this._createDropDown();	
-			}
-			else if( this.type === 'input' ) {
-				this._createInput();	
-			}
-		},
-		_createDropDown : function() {
-			var self = this;
-			this.fld = document.createElement( 'div' );
-			this.fld.className = 'nl-field nl-dd';
-			this.toggle = document.createElement( 'a' );
-			this.toggle.innerHTML = this.elOriginal.options[ this.elOriginal.selectedIndex ].innerHTML;
-			this.toggle.className = 'nl-field-toggle';
-			this.optionsList = document.createElement( 'ul' );
-			var ihtml = '';
-			Array.prototype.slice.call( this.elOriginal.querySelectorAll( 'option' ) ).forEach( function( el, i ) {
-				ihtml += self.elOriginal.selectedIndex === i ? '<li class="nl-dd-checked" data-score="0">' + el.innerHTML + '</li>' : '<li>' + el.innerHTML + '</li>';
-				// selected index value
-				if( self.elOriginal.selectedIndex === i ) {
-					self.selectedIdx = i;
-				}
-			} );
-			this.optionsList.innerHTML = ihtml;
-			this.fld.appendChild( this.toggle );
-			this.fld.appendChild( this.optionsList );
-			this.elOriginal.parentNode.insertBefore( this.fld, this.elOriginal );
-			this.elOriginal.style.display = 'none';
-		},
-		_createInput : function() {
-			var self = this;
-			this.fld = document.createElement( 'div' );
-			this.fld.className = 'nl-field nl-ti-text';
-			this.toggle = document.createElement( 'a' );
-			this.toggle.innerHTML = this.elOriginal.getAttribute( 'placeholder' );
-			this.toggle.className = 'nl-field-toggle';
-			this.optionsList = document.createElement( 'ul' );
-			this.getinput = document.createElement( 'input' );
-			this.getinput.setAttribute( 'type', 'text' );
-			this.getinput.setAttribute( 'placeholder', this.elOriginal.getAttribute( 'placeholder' ) );
-			this.getinputWrapper = document.createElement( 'li' );
-			this.getinputWrapper.className = 'nl-ti-input';
-			this.inputsubmit = document.createElement( 'button' );
-			this.inputsubmit.className = 'nl-field-go';
-			this.inputsubmit.innerHTML = 'Go';
-			this.getinputWrapper.appendChild( this.getinput );
-			this.getinputWrapper.appendChild( this.inputsubmit );
-			this.example = document.createElement( 'li' );
-			this.example.className = 'nl-ti-example';
-			this.example.innerHTML = this.elOriginal.getAttribute( 'data-subline' );
-			this.optionsList.appendChild( this.getinputWrapper );
-			this.optionsList.appendChild( this.example );
-			this.fld.appendChild( this.toggle );
-			this.fld.appendChild( this.optionsList );
-			this.elOriginal.parentNode.insertBefore( this.fld, this.elOriginal );
-			this.elOriginal.style.display = 'none';
-		},
-		_initEvents : function() {
-			var self = this;
-			this.toggle.addEventListener( 'click', function( ev ) { ev.preventDefault(); ev.stopPropagation(); self._open(); } );
-			this.toggle.addEventListener( 'touchstart', function( ev ) { ev.preventDefault(); ev.stopPropagation(); self._open(); } );
+		var $bigWord = $('#part-' + (this.currentSet + 1), this.$el);
+		$bigWord.removeClass('in');
+		this.$elList.removeClass('show');
 
-			if( this.type === 'dropdown' ) {
-				var opts = Array.prototype.slice.call( this.optionsList.querySelectorAll( 'li' ) );
-				opts.forEach( function( el, i ) {
-					el.addEventListener( 'click', function( ev ) { ev.preventDefault(); self.close( el, opts.indexOf( el ) ); } );
-					el.addEventListener( 'touchstart', function( ev ) { ev.preventDefault(); self.close( el, opts.indexOf( el ) ); } );
-				} );
-			}
-			else if( this.type === 'input' ) {
-				this.getinput.addEventListener( 'keydown', function( ev ) {
-					if ( ev.keyCode == 13 ) {
-						self.close();
-					}
-				} );
-				this.inputsubmit.addEventListener( 'click', function( ev ) { ev.preventDefault(); self.close(); } );
-				this.inputsubmit.addEventListener( 'touchstart', function( ev ) { ev.preventDefault(); self.close(); } );
-			}
-
-		},
-		_open : function() {
-			if( this.open ) {
-				return false;
-			}
-			this.open = true;
-			this.form.fldOpen = this.pos;
-			var self = this;
-			this.fld.className += ' nl-field-open';
-		},
-		close : function( opt, idx ) {
-			if( !this.open ) {
-				return false;
-			}
-			this.open = false;
-			this.form.fldOpen = -1;
-			this.fld.className = this.fld.className.replace(/\b nl-field-open\b/,'');
-
-			if( this.type === 'dropdown' ) {
-				if( opt ) {
-					// remove class nl-dd-checked from previous option
-					var selectedopt = this.optionsList.children[ this.selectedIdx ];
-					selectedopt.className = '';
-					opt.className = 'nl-dd-checked';
-					this.toggle.innerHTML = opt.innerHTML;
-					// update selected index value
-					this.selectedIdx = idx;
-					// update original select element´s value
-					this.elOriginal.value = this.elOriginal.children[ this.selectedIdx ].value;
-
-
-					// EDITS
-					// ==================
-					// TO TRACK THE SCORE
-					opt.setAttribute('data-score', idx);
-
-				}
-			}
-			else if( this.type === 'input' ) {
-				this.getinput.blur();
-				this.toggle.innerHTML = this.getinput.value.trim() !== '' ? this.getinput.value : this.getinput.getAttribute( 'placeholder' );
-				this.elOriginal.value = this.getinput.value;
-			}
-		}
-	}
-
-	// add to global namespace
-	window.NLForm = NLForm;
-
-} )( window );
-
-var lastEl,
-		lastMsg = '',
-		generationInProgress = false,
-		spinEl = document.getElementById('nl-spin'),
-		finalMessageEl = document.getElementById('score-temp');
-
-var globeArray = [
-	document.getElementById('globe-1'),
-	document.getElementById('globe-2'),
-	document.getElementById('globe-3'),
-	document.getElementById('globe-4')
-];
-
-var finalJudgement = function() {
-
-	var currentScore	 = 0,
-			finalMessage,
-			nextEl;
-
-	generationInProgress = true;
-
-	// Loop through all checked items
-	Array.prototype.forEach.call(document.querySelectorAll('.nl-dd-checked'), function(el, i){
-		currentScore = currentScore + parseInt(el.getAttribute('data-score'), 10);
-	});
-
-	// Set appropriate message (or image src!)
-	switch (true) {
-		case currentScore >= 10:
-			finalMessage = 'GREENPEACE';
-			nextEl = globeArray[0];
-			break;
-		case currentScore >= 7:
-			finalMessage = 'MILJÖPARTIET';
-			nextEl = globeArray[1];
-			break;
-		case currentScore >= 4:
-			finalMessage = 'MEDELSVENSSON';
-			nextEl = globeArray[2];
-			break;
-		default:
-			finalMessage = 'MILJÖBOV';
-			nextEl = globeArray[3];
-			break;
-	}
-
-	if (finalMessage !== lastMsg || 0 === 0) {
-
-		if (typeof lastEl !== 'undefined') {
-			lastEl.classList.add('out');
-			var savedEl = lastEl;
-			window.setTimeout(function() {
-				savedEl.classList.remove('active');
-				savedEl.classList.remove('out');
-			}, 700);
-		}
-
-		// START/RESUME SPINNER
-		spinEl.classList.remove('spin');
-		window.setTimeout(function() {
-			spinEl.classList.add('spin');
-		}, 0);
+		/*
+		var choice = this.wordChoices[this.currentSet][i];
+		var item = document.getElementById('part-' + (this.currentSet + 1));
 
 		window.setTimeout(function() {
-			if (typeof nextEl !== 'undefined') {
-				nextEl.classList.remove('active');
-				nextEl.classList.remove('out');
-			}
+			var spanClass = 'part-' + (SB.currentSet + 1) + '-span';
+			item.innerHTML = item.innerHTML.replace(/…/g, '') + ' <span id="' + spanClass + '">' + choice.replace(/…/g, '') + '</span>';
+			SB.forceReflow();
+			//$('#part-1 span').addClass('show');
+			document.getElementById(spanClass).classList.add('show');
+			$('body').addClass('part-2');
 			window.setTimeout(function() {
-				nextEl.classList.add('active');
-			}, 0);
-			// SAVE SOME STUFF
-			lastEl = nextEl;
-			lastMsg = finalMessage;
+				SB.currentSet++;
+				SB.nextSentence();
+			}, 1500)
+		}, 250);
+		*/
 
-			finalMessageEl.innerHTML = '<strong>DIN PROFIL:</strong> ' + finalMessage;
-			generationInProgress = false;
+		window.setTimeout(function() {
+			SB.$el.addClass('step-' + (SB.currentSet + 2));
+			window.setTimeout(function() {
+				$bigWord.removeClass('show');
+				// SHOW CLOCK
+				SB.currentSet++;
+				SB.nextSentence(1);
+			}, 500);
+		}, 250);
 
-		}, 1000);
+	},
+	populateChoices: function() {
+		var htmlString = '';
+		var listItems = this.wordChoices[this.currentSet];
+		listItems.forEach(function(item, i) {
+			htmlString = htmlString + '<li onclick="SB.pickWord(' + i + ')">' + item + '</li>';
+		});
+		this.$elList.html(htmlString + '<li class="undo-button" onclick="SB.undo();">&larr;</li>');
+		this.forceReflow();
+		this.$elList.addClass('show');
+	},
 
+	nextSentence: function(nextIndex) {
+
+		if (this.currentSet === this.wordChoices.length) {
+			// SHOW END SCREEN
+			this.finalScore();
+			return false;
+		}
+
+		var $elPart = $('#part-' + (this.currentSet + nextIndex), this.$el);
+		$elPart.addClass('show');
+		this.forceReflow();
+		$elPart.addClass('in');
+
+		window.setTimeout(function() {
+			SB.populateChoices();
+			SB.insertInProgress = false;
+		}, 250);
+		
+	},
+
+	undo: function() {
+		if (this.currentSet === 0 || this.undoInProgress || this.insertInProgress) {
+			return false;
+		}
+		this.undoInProgress = true;
+
+		this.scoreTable[this.currentSet] = 0;
+		var currentSet = this.currentSet + 1;
+
+		this.$elList.removeClass('show');
+		this.$el.removeClass('step-' + currentSet);
+		$('#part-' + currentSet, this.$el).removeClass('in');
+		window.setTimeout(function() {
+			$('#part-' + currentSet, this.$el).removeClass('show');
+			SB.nextSentence(0);
+			SB.currentSet--;
+			SB.undoInProgress = false;
+		}, 750);
+
+	},
+
+	finalScore: function() {
+		var maxScore = this.wordChoices.length * 15;
+		var finalScore = 0;
+		this.scoreTable.forEach(function(points) {
+			finalScore += points;
+		});
+
+		var title, imageSrc, textVerdict, classVerdict;
+		if (finalScore >= Math.floor(maxScore * 0.8)) { // 80% or more correct
+			title = 'MILJÖKÄMPEN';
+			imageSrc = 'jorden_glad';
+			textVerdict = 'Ett miljöhelgon både tänker rätt och gör rätt för en bättre miljö. Grattis! Fortsätt att tänka på hur du kan bidra till en bättre miljö, varje dag. Uppmana dina föräldrar att också bli miljöhelgon. Säg till din lärare att det är bra om ni alla tillsammans pratar om hur viktigt det är att välja ekologisk mat – hemma och i skolan.';
+			classVerdict = 'final-good';
+		} else if (finalScore >= Math.floor(maxScore * 0.4)) { // 40%-80% correct
+			title = 'MILJÖTALANGEN';
+			imageSrc = 'jorden_neutral';
+			textVerdict = 'En miljötalang tänker på miljön ibland, men inte alltid. Du kan med enkla medel bli ett ”miljöhelgon”. Ta gärna hjälp av dina föräldrar. Be att de handlar mer ekologisk mat hemma. Hjälps åt att sortera avfall. Prata mer om hur ni alla, även mamma och pappa, kan förbättra miljön. Det får vi alla glädje av.';
+			classVerdict = 'final-okay';
+		} else {
+			title = 'MILJÖBOVEN';
+			imageSrc = 'jorden_dyster';
+			textVerdict = 'En miljöbov bryr sig inte om att tänka på miljön över huvud taget. Du kan med enkla medel bli en ”miljötalang”. Spara energi genom att inte duscha onödigt länge, stäng av telefon, dator, tv och lampor när de inte används. Och hjälp både dig själv och andra med att sortera avfallet hemma.';
+			classVerdict = 'final-bad';
+		}
+
+		$('.certificate img', this.$el).attr('src', '/assets/img/' + imageSrc + '.svg');
+		$('.certificate h2', this.$el).text(title);
+		$('.certificate p', this.$el).text(textVerdict);
+		window.setTimeout(function() {
+			SB.$el.addClass(classVerdict);
+		}, 250);
+
+		localStorage.setItem('SMM_DAYBUILDER_TITLE', title);
+		localStorage.setItem('SMM_DAYBUILDER_POINTS', finalScore);
+	},
+
+	restart: function() {
+		var $titles = $('.buildarea p', this.$el),
+				$choices = $('#sentence-choices', this.$el);
+
+		this.$el.attr('class', 'daybuilder step-1');
+		$titles.removeClass('in');
+		$choices.removeClass('show');
+		window.setTimeout(function() {
+			$titles.removeClass('show');
+			$choices.empty();
+			SB.scoreTable.length = 0;
+			SB.init();
+		}, 500);
+	},
+
+	init: function() {
+		//wordChoices.length = 2;
+		this.insertInProgress = false;
+		this.undoInProgress = false;
+		this.wordChoices = wordChoices;
+		this.currentSet = 0;
+		this.$el = $('#daybuilder');
+		this.$elList = $('#sentence-choices', this.$el);
+
+		$('.buildarea #part-1', this.$el).addClass('show');
+		this.forceReflow();
+		$('.buildarea #part-1', this.$el).addClass('in');
+		this.populateChoices();
 	}
-
 };
 
-
 $(document).ready(function() {
-	var formEl = document.getElementById('nl-form');
-	var nlForm = new NLForm(formEl);
-	formEl.addEventListener('submit', function(evt) {
-		evt.preventDefault();
-		if (!generationInProgress) {
-			finalJudgement();
-		}
-	});
+	SB.init();
 });
