@@ -382,6 +382,8 @@
 			-moz-osx-font-smoothing: grayscale;
 			outline: none;
 			transition: 0.35s background;
+			text-transform: uppercase;
+			font-weight: bold;
 			&.first {
 				border-right: 1px solid #63A272;
 				border-radius: 0 0 0 3px;
@@ -391,7 +393,7 @@
 			}
 		}
 		.button {
-			height: 55px;
+			height: 52px;
 			text-align: center;
 			text-decoration: none;
 		}

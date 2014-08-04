@@ -33,15 +33,8 @@
 .slideshow .nav {
   border-color: transparent #EA694B transparent transparent;
 }
-.slideshow .nav-arrow {
-  border-color: transparent #E55C46 transparent transparent;
-}
-
 .slideshow .nav.nav-right {
   border-color: transparent transparent transparent #EA694B;
-}
-.slideshow .nav-right .nav-arrow {
-  border-color: transparent transparent transparent #E55C46;
 }
 
 .slideshow p {

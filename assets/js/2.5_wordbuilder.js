@@ -52,7 +52,7 @@ var SB = {
 		listItems.forEach(function(item, i) {
 			htmlString = htmlString + '<li onclick="SB.pickWord(' + i + ')">' + item + '</li>';
 		});
-		this.$elList.html(htmlString + '<li class="undo-button" onclick="SB.undo();">&larr;</li>');
+		this.$elList.html(htmlString + '<li class="undo-button" onclick="SB.undo();"><img src="assets/img/pil_vanster.svg" width="20"></li>');
 		this.forceReflow();
 		this.$elList.addClass('show');
 	},

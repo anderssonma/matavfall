@@ -313,14 +313,16 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       outline: none;
-      transition: 0.35s background; }
+      transition: 0.35s background;
+      text-transform: uppercase;
+      font-weight: bold; }
       .presentation .overlay button.first, .presentation .overlay .button.first {
         border-right: 1px solid #63A272;
         border-radius: 0 0 0 3px; }
       .presentation .overlay button:hover, .presentation .overlay .button:hover {
         background: #286644; }
     .presentation .overlay .button {
-      height: 55px;
+      height: 52px;
       text-align: center;
       text-decoration: none; }
     .presentation .overlay .bg-text {
