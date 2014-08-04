@@ -40,6 +40,9 @@
     font-size: 13px;
     text-transform: uppercase; }
 
+.quiz.page-2 #quiz-errors h3, .quiz.page-2 #quiz-errors h4, .quiz.page-2 #quiz-errors p {
+  color: #C38475 !important; }
+
 .quiz-slide-0 .quiz-target,
 .quiz-slide-1 .quiz-target,
 .quiz-slide-2 .quiz-target,
