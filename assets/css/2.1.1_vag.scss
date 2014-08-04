@@ -73,10 +73,13 @@
 		position: absolute;
 		top: 60%;
 		left: 50%;
-		width: 300px;
+		width: 350px;
 		margin-left: 200px;
-		margin-top: -100px;
+		margin-top: -90px;
 		opacity: 0;
+		p {
+			margin-bottom: 0;
+		}
 	}
 
 	#bio-factory {
