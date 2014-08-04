@@ -100,6 +100,10 @@
     .section_2-1 .img-bush.bush-2 {
       margin-left: -30px; }
 
+.section_3-1 {
+  background: #EA6A43;
+  color: #FFF; }
+
 .threes {
   width: 100%;
   float: left;
@@ -122,7 +126,12 @@ h2 {
 
 p {
   font-size: 16px;
+  line-height: 1.5em;
   -webkit-font-smoothing: antialiased; }
+  p.text-smaller {
+    font-size: 14px;
+    margin-top: -10px;
+    opacity: 0.75; }
 
 .textlead p {
   font-size: 18px; }

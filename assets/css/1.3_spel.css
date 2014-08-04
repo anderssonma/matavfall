@@ -23,6 +23,7 @@ body {
 	left: 0;
 	right: 0;
 	font-size: 60px;
+	text-transform: none;
 }
 .rest-sign p {
 	position: absolute;

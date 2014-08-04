@@ -55,7 +55,8 @@ h2 {
 h1 {
   font-family: 'Bubbler One', Avenir;
   font-weight: normal;
-  font-size: 44px; }
+  font-size: 44px;
+  text-transform: uppercase; }
 
 .text-center {
   text-align: center !important; }

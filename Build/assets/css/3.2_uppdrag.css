@@ -51,7 +51,7 @@
 
 
 /* === SLIDES CONTENT === */
-.mission-1 p {
+.mission-1 p, .mission-1 h2 {
   width: 500px;
 }
 .mission-1 .old-groceries {

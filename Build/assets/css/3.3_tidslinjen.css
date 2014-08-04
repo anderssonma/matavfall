@@ -1100,7 +1100,8 @@
     margin: 0;
     padding: 0; }
   #stamp-1 #tl-text-01 h2 {
-    margin: 0 0 8px; }
+    margin: 0 0 8px;
+    text-transform: uppercase; }
 #stamp-1 #tl-text-02 {
   right: 0;
   bottom: 60px;

@@ -121,7 +121,11 @@
 			margin-left: -30px;
 		}
 	}
+}
 
+.section_3-1 {
+	background: #EA6A43;
+	color: #FFF;
 }
 
 .threes {
@@ -152,7 +156,13 @@ h2 {
 
 p {
 	font-size: 16px;
+	line-height: 1.5em;
 	-webkit-font-smoothing: antialiased;
+	&.text-smaller {
+		font-size: 14px;
+		margin-top: -10px;
+		opacity: 0.75;
+	}
 }
 .textlead p {
 	font-size: 18px;

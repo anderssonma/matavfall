@@ -52,13 +52,12 @@
 .kyl-frys #text-block-3 {
 	color: #333;
 	background: #fff;
-	padding: 40px 60px 40px 40px;
+	padding: 58px 60px 40px 40px;
 	width: 50%;
 	right: 40px;
 	position: absolute;
-	top: 1084px;
-	height: 270px;
-	border-radius: 10px 0 0 10px;
+	top: 1056px;
+	height: 288px;
 	z-index: 1;
 }
 .kyl-frys #text-block-4 {
