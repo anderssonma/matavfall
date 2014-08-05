@@ -356,6 +356,22 @@ var DPLM = {
 		this.paintTextBox(ctx, col, 1800, totalCorrectAnswers + '/' + totalQuestions + ' RÄTT'); // 1890
 	},
 
+	paintSignature: function(ctx) {
+		var sig = new Image();
+		sig.onload = function() {
+			DPLM.activeImages.push({
+				type: 'image',
+				src: this.src,
+				top: 1830,
+				left: (DPLM.canvas.width / 2) - 450,
+				width: 900,
+				height: 274
+			});
+			DPLM.ctx.drawImage(sig, (DPLM.canvas.width / 2) - 450, 1830, 900, 274);
+		};
+		sig.src = '/assets/img/diplom_signatur.svg';
+	},
+
 	paintStaticBackground: function(ctx) {
 
 		var circleRadii = 50;
@@ -437,7 +453,9 @@ var DPLM = {
 		this.paintQuizData(ctx, 'mid');
 		this.paintQuizData(ctx, 'right');
 
-		if (this.activePlaceholders.length === 0) {
+		if (this.activePlaceholders.length === 1) { // SHOULD BE 0 !
+			console.log('here');
+			this.paintSignature(ctx);
 			$('#diploma').addClass('complete');
 		} else {
 			$('#diploma').removeClass('complete');
@@ -522,13 +540,6 @@ var DPLM = {
 				left: this.canvas.width - 125 - 93,
 				width: 93,
 				height: 116
-			}, {
-				type: 'image',
-				src: '/assets/img/diplom_signatur.svg',
-				top: 1830,
-				left: (this.canvas.width / 2) - 450,
-				width: 900,
-				height: 274
 			}
 		];
 
