@@ -17,7 +17,7 @@ var Quiz = {
 		}
 	}, */
 
-	firstItem: true,
+	//firstItem: true,
 
 	checkValidity: function(id, target) {
 		if (typeof target === 'undefined' && this.activeSlide.validItems.indexOf(id) >= 0) { // IF MULTIPLE TARGETS AND CORRECT
@@ -28,10 +28,12 @@ var Quiz = {
 			this.activeSlide.errors.push(id);
 		}
 
+		/*
 		if (this.firstItem) {
 			this.startTime = new Date();
 			this.firstItem = false;
 		}
+		*/
 	},
 
 	setupDroppable: function() {
@@ -151,10 +153,12 @@ var Quiz = {
 	},
 
 	answerQuestion: function() {
+		/*
 		if (this.firstItem) {
 			this.startTime = new Date();
 			this.firstItem = false;
 		}
+		*/
 		// GO TO THE NEXT QUESTION
 		var nextQ = this.activeSlide.id + 1;
 		$(this.elQuiz + ', ' + this.elSlide).addClass('quiz-out');
@@ -220,7 +224,7 @@ var Quiz = {
 			$('#quiz-answers').html('Du lyckades tyvärr inte svara rätt på en enda fråga. <span class="subheader">Läs igenom texten igen och försök sedan en gång till.</span>');
 			$('#quiz-errors h3').text('Inga korrekta svar :(');
 		}
-		$('#quiz-elapsed').text('DIN TID: ' + ((new Date() - this.startTime) / 1000).toFixed(1) + ' sekunder');
+		// $('#quiz-elapsed').text('DIN TID: ' + ((new Date() - this.startTime) / 1000).toFixed(1) + ' sekunder');
 		$('#submit').addClass('disabled');
 		// WAIT FOR THE LAST QUIZ TO FADE OUT
 		window.setTimeout(function() {
@@ -231,8 +235,8 @@ var Quiz = {
 
 	restart: function() {
 		this.slides.length = 0;
-		this.firstItem = true;
-		delete this.startTime;
+		// this.firstItem = true;
+		// delete this.startTime;
 		// RESET TEXT
 		$('#submit').text('NÄSTA FRÅGA');
 		// TRY TO PREVENT LAGGY TRANSITION

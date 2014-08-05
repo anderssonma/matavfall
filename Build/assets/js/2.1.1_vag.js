@@ -2,8 +2,6 @@ $(document).ready(function() {
 
 	var controller = $.superscrollorama();
 
-	var text1Out = TweenMax.to($('#text-intro'), 4, {css:{top: '-20%'}, delay: 2, ease:Expo.easeOut});
-	
 	var hand1In = TweenMax.to($('#hand'), 2, {css:{left: '50%'}, ease:Expo.easeOut});
 	var waste1In = TweenMax.to($('#wastebag'), 2, {css:{left: '50%'}, ease:Expo.easeOut});
 
@@ -44,7 +42,6 @@ $(document).ready(function() {
 
 	controller.pin($('#truck-road'), 4000, {
 		anim: (new TimelineLite())
-			.add(text1Out)
 			.add([hand1In, waste1In])
 			.add([hand1Out, waste1Drop, caskBox, caskLid])
 			.add([caskBoxSmall, caskLidClose, house1In, roadIn])
