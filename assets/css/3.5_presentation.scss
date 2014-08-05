@@ -7,7 +7,11 @@
 		-webkit-font-smoothing: antialiased;
 		-mos-osx-font-smoothing: greyscale;
 		text-transform: uppercase;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
+	}
+	> p {
+		width: 800px;
+		margin: 0 auto 50px;
 	}
 }
 
@@ -468,12 +472,24 @@
 		&.intro {
 			width: 700px;
 			margin: -230px 0 0 -350px;
+			p {
+				font-size: 16px;
+			}
 			button {
 				position: absolute;
 				bottom: 0;
 				left: 0;
 				width: 500px;
 				border-radius: 0 0 0 3px;
+			}
+			ul {
+				padding-left: 58px;
+			}
+			li {
+				-webkit-font-smoothing: antialiased;
+				margin-bottom: 5px;
+				line-height: 1.2em;
+				opacity: 0.8;
 			}
 		}
 

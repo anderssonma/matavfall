@@ -7,7 +7,10 @@
     -webkit-font-smoothing: antialiased;
     -mos-osx-font-smoothing: greyscale;
     text-transform: uppercase;
-    margin-bottom: 50px; }
+    margin-bottom: 20px; }
+  .pres-wrap > p {
+    width: 800px;
+    margin: 0 auto 50px; }
 
 #image-counter {
   position: absolute;
@@ -379,12 +382,21 @@
     .presentation .overlay.intro {
       width: 700px;
       margin: -230px 0 0 -350px; }
+      .presentation .overlay.intro p {
+        font-size: 16px; }
       .presentation .overlay.intro button {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 500px;
         border-radius: 0 0 0 3px; }
+      .presentation .overlay.intro ul {
+        padding-left: 58px; }
+      .presentation .overlay.intro li {
+        -webkit-font-smoothing: antialiased;
+        margin-bottom: 5px;
+        line-height: 1.2em;
+        opacity: 0.8; }
     .presentation .overlay.print {
       margin-top: -210px;
       text-align: center; }

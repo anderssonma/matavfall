@@ -141,7 +141,7 @@ var DPLM = {
 		var timePlayed = parseInt(localStorage.getItem('SMM_GAME_TIME') || 0, 10);
 
 		if (score <= 0 || timePlayed <= 0) {
-			this.makePlaceholder(ctx, 'left', 1050, 'BEN 1');
+			this.makePlaceholder(ctx, 'left', 1050, 'DEL 1');
 			return false;
 		}
 
@@ -205,7 +205,7 @@ var DPLM = {
 		var title = localStorage.getItem('SMM_DAYBUILDER_TITLE') || 0;
 		var points = localStorage.getItem('SMM_DAYBUILDER_POINTS') || 0;
 		if (title === 0) {
-			this.makePlaceholder(ctx, 'mid', 1050, 'BEN 2');
+			this.makePlaceholder(ctx, 'mid', 1050, 'DEL 2');
 			return false;
 		}
 
@@ -248,7 +248,7 @@ var DPLM = {
 		var imgWords = parseInt(localStorage.getItem('SMM_PRES_WORDS') || 0, 10);
 		var imgTotal = parseInt(localStorage.getItem('SMM_PRES_TOTAL') || 0, 10);
 		if (imgWords === 0 && imgTotal === 0) {
-			this.makePlaceholder(ctx, 'right', 1050, 'BEN 2');
+			this.makePlaceholder(ctx, 'right', 1050, 'DEL 2');
 			return false;
 		}
 
@@ -323,7 +323,7 @@ var DPLM = {
 		console.log(totalCorrectAnswers);
 		var medalValue;
 		if (totalCorrectAnswers === 0) {
-			this.makePlaceholder(ctx, col, 1680, 'BEN ' + quizPageNum); // 1770
+			this.makePlaceholder(ctx, col, 1680, 'DEL ' + quizPageNum); // 1770
 			return false;
 		} else if (totalCorrectAnswers === totalQuestions) {
 			// GOLD!
