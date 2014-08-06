@@ -213,9 +213,11 @@ var setupGame = function() {
 			jumpTriggered,
 			keysDown,
 			spawnHandler,
-			trashMaxUptime,
+			//trashMaxUptime,
 			stoveHandler;
 	GAME.initGlobals = function() {
+		GAME.spawnDuration = 5000;
+		GAME.currentTime = 0;
 		GAME.gameInProgress = true,
 		GAME.isPaused = false,
 		//GAME.timerIntervals = [],
@@ -231,10 +233,10 @@ var setupGame = function() {
 		keysDown = {};
 		spawnHandler = {
 			countSinceLast: 0,
-			minCount: 40,
-			chance: 20 // 100 / 20 = 5% chance
+			minCount: 60, // frames since last spawn (60 FPS)
+			chance: 1 // 100 / 5 = 20% chance
 		};
-		trashMaxUptime = 2; // 3 SECONDS + THIS VAL
+		//trashMaxUptime = 2; // 3 SECONDS + THIS VAL
 
 		var randomStartItem = Math.floor(Math.random() * possibleRecipeItems.length);
 		//console.log(randomStartItem);
@@ -510,17 +512,17 @@ var setupGame = function() {
 			// CHANGE DIFFICULTY WHEN SCORE GOES ABOVE X
 			// MAKE IT MORE DYNAMIC IF POSSIBLE
 			if (this.level === 1 && this.currentScore > 2000) {
-				trashMaxUptime = trashMaxUptime - 1;
+				//trashMaxUptime = trashMaxUptime - 1;
 				window.setTimeout(function() {
-					spawnHandler.chance = spawnHandler.chance - 10;
-				}, 5000);
+					spawnHandler.minCount = 50;
+				}, 2500);
 				this.level = 2;
 			}
 			if (this.level === 2 && this.currentScore > 5000) {
-				trashMaxUptime = trashMaxUptime - 1;
+				//trashMaxUptime = trashMaxUptime - 1;
 				window.setTimeout(function() {
-					spawnHandler.chance = spawnHandler.chance - 3;
-				}, 5000);
+					spawnHandler.minCount = 40;
+				}, 2500);
 				this.level = 3;
 			}
 
@@ -588,7 +590,8 @@ var setupGame = function() {
 			init: function() {
 				I.birthday = (new Date()).getTime();
 				if (I.type !== 'trash') {
-					I.lifetime = Math.floor(Math.random() * trashMaxUptime + 3) * 1000;
+					//I.lifetime = Math.floor(Math.random() * trashMaxUptime + 3) * 1000;
+					I.lifetime = GAME.spawnDuration;
 					I.clock.startAlert();
 				} else {
 					I.lifetime = 2000;
@@ -701,7 +704,7 @@ var setupGame = function() {
 						if (typeOfHit === 0) {
 							playSound('great');
 							player.updateScore(200, this.goal);
-							updateTime(2);
+							updateTime(3);
 						} else {
 							playSound('ok');
 							player.updateScore(100, this.goal);
@@ -1023,6 +1026,33 @@ var setupGame = function() {
 			var self = this;
 			this.interval = window.setInterval(function() {
 				updateTime(-1);
+				GAME.currentTime = GAME.currentTime + 1;
+				switch (GAME.currentTime) {
+					case 10:
+						GAME.spawnDuration = 4300;
+						break;
+					case 20:
+						GAME.spawnDuration = 3700;
+						break;
+					case 30:
+						GAME.spawnDuration = 3200;
+						break;
+					case 40:
+						GAME.spawnDuration = 2800;
+						break;
+					case 50:
+						GAME.spawnDuration = 2500;
+						break;
+					case 60:
+						GAME.spawnDuration = 2250;
+						break;
+					case 70:
+						GAME.spawnDuration = 2000;
+						break;
+				}
+				if (GAME.currentTime % 10 === 0) {
+					console.log(GAME.currentTime + ' :: ' + GAME.spawnDuration);
+				}
 				if (remainingTime < 1) {
 					self.pause();
 					gameOver();
