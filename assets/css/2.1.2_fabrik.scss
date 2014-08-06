@@ -18,7 +18,7 @@ html, body {
 
 .fabrik-container {
 	overflow: hidden;
-	height: 3900px;
+	height: 3820px;
 	position: relative;
 	img {
 		max-width: 100%;
@@ -2923,7 +2923,7 @@ html, body {
 	left: -200px;
 }
 #text1 {
-	top: -70px;
+	top: -20px;
 }
 #text2 {
 	top: 170px;
@@ -2934,11 +2934,11 @@ html, body {
 }
 #text4 {
 	position: absolute;
-	top: 660px;
-	right: 40px;
+	top: 680px;
+	right: 60px;
 	left: auto;
 	opacity: 0;
-	width: 570px;
+	width: 500px;
 	p {
 		width: auto !important;
 	}
@@ -2946,6 +2946,6 @@ html, body {
 		margin: 0;
 	}
 	.subh-second {
-		margin-top: 50px;
+		margin-top: 70px;
 	}
 }
