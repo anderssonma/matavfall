@@ -246,13 +246,13 @@ var Quiz = {
 			$('#quiz-slides .vanish').removeAttr('style').removeClass('vanish');
 			$('#slide-recap').removeClass('quiz-in');
 			$('#quiz-end').removeClass('quiz-in');
-			$('#quiz-stars').removeClass();
 			// REMOVE ALL ADDED ELEMENTS
 			$('#quiz-errors h4, #quiz-errors p').remove();
 			$('#quiz-sidebar .in-trash').empty();
 		}, 0);
 		// A LITTLE WAIT BEFORE WE RESTART AND FADE IN
 		window.setTimeout(function() {
+			$('#quiz-stars').removeClass().addClass('quiz-stars');
 			$('#quiz-' + 0 + ', #slide-' + 0).addClass('quiz-in');
 			$('#submit').removeClass('disabled');
 			Quiz.init();

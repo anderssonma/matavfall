@@ -7,6 +7,16 @@
 		<div id="quiz-box" class="quiz-box">
 
 			<div id="quiz-start" class="quiz-start">
+				<div id="quiz-saved-stars" class="quiz-stars">
+					<h6>DITT BÄSTA RESULTAT</h6>
+					<h5></h5>
+					<img class="lit lit-1" src="<!-- @path star_lit.svg -->" width="56">
+					<img class="lit lit-2" src="<!-- @path star_lit.svg -->" width="56">
+					<img class="lit lit-3" src="<!-- @path star_lit.svg -->" width="56">
+					<img class="unlit unlit-1" src="<!-- @path star_unlit.svg -->" width="56">
+					<img class="unlit unlit-2" src="<!-- @path star_unlit.svg -->" width="56">
+					<img class="unlit unlit-3" src="<!-- @path star_unlit.svg -->" width="56">
+				</div>
 				<button>STARTA QUIZET</button>
 			</div>
 
@@ -17,11 +27,11 @@
 						<span>1</span>
 						<img class="mikroorg-liten" src="<!-- @path mikroorg_liten.svg -->" width="100">
 					</div>
-					<div class="quiz-target" data-item="2. För att mikro-organismerna ska få fler ytor att jobba med. Då bildas biogasen snabbare." data-target="false">
+					<div class="quiz-target" data-item="2. För att mikro-organismerna ska få fler ytor att jobba med. Då bildas biogasen snabbare." data-target="true">
 						<span>2</span>
 						<img class="mikroorg-ytor" src="<!-- @path mikroorg_ytor.svg -->" width="40">
 					</div>
-					<div class="quiz-target" data-item="3. För att matavfallet kan bilda gas och värme när det är finfördelat." data-target="true">
+					<div class="quiz-target" data-item="3. För att matavfallet kan bilda gas och värme när det är finfördelat." data-target="false">
 						<span>3</span>
 						<img class="gas-varm" src="<!-- @path metan_varme.svg -->" width="120">
 					</div>
@@ -83,7 +93,7 @@
 					</div>
 
 					<div id="slide-4" class="quiz-slide quiz-slide-4">
-						<div class="quiz-target" data-item="1. När temperaturen är jämn." data-target="false">
+						<div class="quiz-target" data-item="1. När temperaturen är jämn." data-target="true">
 							<span>1</span>
 							<img class="temperatur-jamn" src="<!-- @path temperatur_jamn.svg -->" width="90">
 						</div>
@@ -91,7 +101,7 @@
 							<span>2</span>
 							<img class="termometer-10" src="<!-- @path termometer_10.svg -->" width="120">
 						</div>
-						<div class="quiz-target" data-item="3. När pH-värdet i rötningstanken ligger på 1-2." data-target="true">
+						<div class="quiz-target" data-item="3. När pH-värdet i rötningstanken ligger på 1-2." data-target="false">
 							<span>3</span>
 							<img class="ph-varde" src="<!-- @path ph_1-2.svg -->" width="100">
 						</div>
@@ -102,24 +112,6 @@
 					</div>
 
 					<div id="slide-5" class="quiz-slide quiz-slide-5">
-						<div class="quiz-target" data-item="1. En till två dagar." data-target="false">
-							<span>1</span>
-							<img class="kalender-12" src="<!-- @path kalender_1-2.svg -->" width="70">
-						</div>
-						<div class="quiz-target" data-item="2. 25-40 dagar." data-target="true">
-							<span>2</span>
-							<img class="kalender-2540" src="<!-- @path kalender_25-40.svg -->" width="70">
-						</div>
-						<div class="quiz-target" data-item="Minst två månader." data-target="false">
-							<span>3</span>
-							<img class="kalender-2m" src="<!-- @path kalender_2m.svg -->" width="90">
-						</div>
-						<div class="quiz-options">
-							<img src="<!-- @path mikroorg_glad.svg -->" width="100" data-item="Mikroorganism" data-id="0" class="draggable">
-						</div>
-					</div>
-
-					<div id="slide-6" class="quiz-slide quiz-slide-6">
 						<div class="quiz-target">
 							<img width="110" src="<!-- @path biogas_naturlig.svg -->">
 						</div>
@@ -127,7 +119,7 @@
 						<div class="quiz-options">
 							<img src="<!-- @path smor.svg -->" width="160" data-item="Smör" data-id="0" class="draggable item-1">
 							<img src="<!-- @path gurka_alt.svg -->" width="100" data-item="Gurka" data-id="1" class="draggable item-2">
-							<img src="<!-- @path burk.svg -->" width="80" data-item="Burk" data-id="2" class="draggable item-3">
+							<img src="<!-- @path morot.svg -->" width="54" data-item="Morot" data-id="2" class="draggable item-3">
 							<img src="<!-- @path tomat.svg -->" width="80" data-item="Tomat" data-id="3" class="draggable item-4">
 							<img src="<!-- @path chips.svg -->" width="120" data-item="Chips" data-id="4" class="draggable item-5">
 							<img src="<!-- @path melon.svg -->" width="150" data-item="Melon" data-id="5" class="draggable item-6">
@@ -135,8 +127,8 @@
 
 					</div>
 
-					<div id="slide-7" class="quiz-slide quiz-slide-7">
-						<div class="quiz-target" data-item="1. 10 000 personbilar som kör 1235 mil under ett helt år." data-target="true">
+					<div id="slide-6" class="quiz-slide quiz-slide-6">
+						<div class="quiz-target" data-item="1. 10 000 personbilar som kör 1235 mil under ett helt år." data-target="false">
 							<span>1</span>
 							<img class="reg-10000" src="<!-- @path regskylt_10000.svg -->" height="34">
 						</div>
@@ -144,7 +136,7 @@
 							<span>2</span>
 							<img class="reg-50000" src="<!-- @path regskylt_50000.svg -->" height="34">
 						</div>
-						<div class="quiz-target" data-item="3. 120 000 personbilar som kör 1235 mil under ett helt år." data-target="false">
+						<div class="quiz-target" data-item="3. 120 000 personbilar som kör 1235 mil under ett helt år." data-target="true">
 							<span>3</span>
 							<img class="reg-120000" src="<!-- @path regskylt_120000.svg -->" height="34">
 						</div>
@@ -165,7 +157,7 @@
 				<div id="quiz-sidebar" class="quiz-sidebar">
 
 					<div id="quiz-0" class="quiz-page quiz-0 quiz-in" data-valid="1" data-invalid="0,2" data-multitarget="true">
-						<span>Fråga 1 av 8</span>
+						<span>Fråga 1 av 7</span>
 						<h3>Varför finfördelas matavfallet i biogasanläggningen?</h3>
 						<ol>
 							<li>För att mikroorganismerna som är väldigt små inte kan äta stora saker.</li>
@@ -177,7 +169,7 @@
 					</div>
 
 					<div id="quiz-1" class="quiz-page quiz-1" data-valid="0" data-invalid="1,2" data-multitarget="true">
-						<span>Fråga 2 av 8</span>
+						<span>Fråga 2 av 7</span>
 						<h3>Vilket ämne får inte förekomma i rötningstanken när metanbildarna ska tillverka biogas?</h3>
 						<ol>
 							<li>Syre</li>
@@ -188,8 +180,8 @@
 						<ul class="in-trash"></ul>
 					</div>
 
-					<div id="quiz-2" class="quiz-page quiz-2" data-valid="2" data-invalid="0,1" data-multitarget="true">
-						<span>Fråga 3 av 8</span>
+					<div id="quiz-2" class="quiz-page quiz-2" data-valid="1" data-invalid="0,2" data-multitarget="true">
+						<span>Fråga 3 av 7</span>
 						<h3>Varför hettas slurryn upp till 70 grader?</h3>
 						<ol>
 							<li>För att mikroorganismerna gillar när det är varmt.</li>
@@ -200,8 +192,8 @@
 						<ul class="in-trash"></ul>
 					</div>
 
-					<div id="quiz-3" class="quiz-page quiz-3" data-valid="0,1,2,3,4" data-invalid="5,6,7" data-multitarget="false">
-						<span>Fråga 4 av 8</span>
+					<div id="quiz-3" class="quiz-page quiz-3" data-valid="0,1" data-invalid="2,3" data-multitarget="false">
+						<span>Fråga 4 av 7</span>
 						<h3>Var bildas biogas naturligt?</h3>
 						<p>Dra och släpp det eller de svar som du tror rätt i cirkeln, undvik de eller det svar som du inte tror hör hemma där. Råkar du välja fel så klickar du på krysset i listan här nedan.</p>
 						<p class="small">
@@ -213,7 +205,7 @@
 					</div>
 
 					<div id="quiz-4" class="quiz-page quiz-4" data-valid="0" data-invalid="1,2" data-multitarget="true">
-						<span>Fråga 5 av 8</span>
+						<span>Fråga 5 av 7</span>
 						<h3>När trivs mikroorganismerna bäst?</h3>
 						<ol>
 							<li>När temperaturen är jämn.</li>
@@ -224,32 +216,20 @@
 						<ul class="in-trash"></ul>
 					</div>
 
-					<div id="quiz-5" class="quiz-page quiz-5" data-valid="1" data-invalid="0,2" data-multitarget="true">
-						<span>Fråga 6 av 8</span>
-						<h3>Hur lång tid tar det för mikroorganismerna att bilda biogas av matavfall i rötningstanken vid 37 graders värme?</h3>
-						<ol>
-							<li>En till två dagar.</li>
-							<li>25-40 dagar.</li>
-							<li>Minst två månader.</li>
-						</ol>
-						<h6>Du har valt</h6>
-						<ul class="in-trash"></ul>
-					</div>
-
-					<div id="quiz-6" class="quiz-page quiz-6" data-valid="1" data-invalid="0,2,3" data-multitarget="false">
-						<span>Fråga 7 av 8</span>
+					<div id="quiz-5" class="quiz-page quiz-5" data-valid="0,4" data-invalid="1,2,3,5" data-multitarget="false">
+						<span>Fråga 6 av 7</span>
 						<h3>Vad ger mest biogas?</h3>
-						<p>Dra och släpp det eller de svar som du tror är rätt till cirkeln, undvik de eller det svar som du inte tror ger mycket biogas. Råkar du välja fel så klickar du på krysset i listan här nedan.</p>
+						<p>Dra och släpp de <strong>2 matvarorna</strong> som du tror är rätt till cirkeln, undvik de eller det svar som du inte tror ger mycket biogas. Råkar du välja fel så klickar du på krysset i listan här nedan.</p>
 						<p class="small">
 							<strong>På bilden:</strong> 
-							Smör, tomat, burk, gurka, melon och chips.
+							Smör, tomat, morot, gurka, melon och chips.
 						</p>
 						<h6>Du har valt</h6>
 						<ul class="in-trash"></ul>
 					</div>
 
-					<div id="quiz-7" class="quiz-page quiz-7" data-valid="0" data-invalid="1,2" data-multitarget="true">
-						<span>Fråga 8 av 8</span>
+					<div id="quiz-6" class="quiz-page quiz-6" data-valid="2" data-invalid="0,1" data-multitarget="true">
+						<span>Fråga 7 av 7</span>
 						<h3>Om alla i Sverige sorterade sitt matavfall skulle man kunna tillverka biogas för:</h3>
 						<ol>
 							<li>10 000 personbilar som kör 1235 mil under ett helt år.</li>
