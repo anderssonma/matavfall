@@ -1857,9 +1857,37 @@
 		.tin {
 			position: absolute;
 			top: 0;
-			left: 65px;
+			left: 45px;
 			display: none;
 			opacity: 0;
+		}
+
+		&.paper {
+			left: 160px;
+			.lid {
+				background: #004891;
+				.darker {
+					background: #003B6D;
+				}
+			}
+		}
+
+		&.battery {
+			left: auto;
+			right: 30px;
+			width: 70px;
+			.tin {
+				left: 30px;
+			}
+			.lid {
+				background: #E6332A;
+				bottom: 172px;
+				left: 5px;
+				width: 79px;
+				.darker {
+					background: #D22A24;
+				}
+			}
 		}
 	}
 	#trash-food {
@@ -1892,40 +1920,62 @@
 		#trash-glass {
 			.bottle {
 				display: block;
-				-webkit-animation: 5s dropFood infinite ease-in;
-				animation: 5s dropFood infinite ease-in;
+				-webkit-animation: 8.35s dropFood infinite ease-in;
+				animation: 8.35s dropFood infinite ease-in;
 			}
 		}
 		#trash-metal {
 			.lid {
-				-webkit-animation: 5s 1.6s openMetalLid infinite ease-in;
-				animation: 5s 1.6s openMetalLid infinite ease-in;
+				-webkit-animation: 8.35s 1.6s openMetalLid infinite ease-in;
+				animation: 8.35s 1.6s openMetalLid infinite ease-in;
 			}
 			.tin {
 				display: block;
-				-webkit-animation: 5s 1.6s dropMetal infinite ease-in;
-				animation: 5s 1.6s dropMetal infinite ease-in;
+				-webkit-animation: 8.35s 1.6s dropMetal infinite ease-in;
+				animation: 8.35s 1.6s dropMetal infinite ease-in;
+			}
+		}
+		#trash-metal.paper {
+			.lid {
+				-webkit-animation: 8.35s 4.9s openMetalLid infinite ease-in;
+				animation: 8.35s 4.9ss openMetalLid infinite ease-in;
+			}
+			.tin {
+				display: block;
+				-webkit-animation: 8.35s 4.9s dropMetal infinite ease-in;
+				animation: 8.35s 4.9ss dropMetal infinite ease-in;
+			}
+		}
+		#trash-metal.battery {
+			.lid {
+				-webkit-animation: 8.35s 6.5s openMetalLid infinite ease-in;
+				animation: 8.35s 6.5s openMetalLid infinite ease-in;
+			}
+			.tin {
+				display: block;
+				-webkit-animation: 8.35s 6.5s dropMetalAlt infinite ease-in;
+				animation: 8.35s 6.5s dropMetalAlt infinite ease-in;
 			}
 		}
 		#trash-food {
 			.bag {
 				display: block;
-				-webkit-animation: 5s 3.3s dropFood infinite ease-in;
-				animation: 5s 3.3s dropFood infinite ease-in;
+				-webkit-animation: 8.35s 3.3s dropFood infinite ease-in;
+				animation: 8.35s 3.3s dropFood infinite ease-in;
 			}
 			.lid {
 				-webkit-transform-origin: top left;
 				transform-origin: top left;
-				-webkit-animation: 5s 3.3s openFoodLid infinite ease-in;
-				animation: 5s 3.3s openFoodLid infinite ease-in;
+				-webkit-animation: 8.35s 3.3s openFoodLid infinite ease-in;
+				animation: 8.35s 3.3s openFoodLid infinite ease-in;
 			}
 		}
 	}
 
 	#tl-text-8 {
-		bottom: 490px; // 590px;
+		bottom: 60px;
 		left: 0;
-		width: 300px;
+		width: 500px;
 	}
 	#tl-text-9 {
 		bottom: 60px; // -40px;
@@ -1952,7 +2002,7 @@
 		opacity: 1;
 		-webkit-transform: translateY(0);
 	}
-	30%, 100% {
+	25%, 100% {
 		opacity: 1;
 		-webkit-transform: translateY(290px);
 	}
@@ -1966,25 +2016,54 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
-	30%, 100% {
+	25%, 100% {
 		opacity: 1;
 		transform: translateY(290px);
 	}
 }
 
+@-webkit-keyframes dropMetalAlt {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(0);
+	}
+	10% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+	25%, 100% {
+		opacity: 1;
+		-webkit-transform: translateY(260px);
+	}
+}
+@keyframes dropMetalAlt {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	10% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	25%, 100% {
+		opacity: 1;
+		transform: translateY(260px);
+	}
+}
+
 @-webkit-keyframes openMetalLid {
-	0%, 40%, 100% {
+	0%, 35%, 100% {
 		height: 10px;
 	}
-	10%, 30% {
+	10%, 25% {
 		height: 60px;
 	}
 }
 @keyframes openMetalLid {
-	0%, 40%, 100% {
+	0%, 35%, 100% {
 		height: 10px;
 	}
-	10%, 30% {
+	10%, 25% {
 		height: 60px;
 	}
 }
@@ -1998,7 +2077,7 @@
 		opacity: 1;
 		-webkit-transform: translateY(0) scale(1);
 	}
-	30%, 100% {
+	25%, 100% {
 		opacity: 1;
 		-webkit-transform: translateY(280px) scale(0.6);
 	}
@@ -2012,25 +2091,25 @@
 		opacity: 1;
 		transform: translateY(0) scale(1);
 	}
-	30%, 100% {
+	25%, 100% {
 		opacity: 1;
 		transform: translateY(280px) scale(0.6);
 	}
 }
 
 @-webkit-keyframes openFoodLid {
-	0%, 40%, 100% {
+	0%, 35%, 100% {
 		-webkit-transform: rotate(0) translateX(0);
 	}
-	10%, 30% {
+	10%, 25% {
 		-webkit-transform: rotate(-90deg) translateX(-12px);
 	}
 }
 @keyframes openFoodLid {
-	0%, 40%, 100% {
+	0%, 35%, 100% {
 		transform: rotate(0) translateX(0);
 	}
-	10%, 30% {
+	10%, 25% {
 		transform: rotate(-90deg) translateX(-12px);
 	}
 }
