@@ -3,10 +3,10 @@
 	padding: 150px 0;
 	transition: 0.35s background;
 	&.color-1 {
-		background: #E6BEAA;
+		background: #F6BBA9;
 	}
 	&.color-2 {
-		background: #78AD7C;
+		background: #51B07B;
 	}
 	&.color-3 {
 		background: #AAD3E8;
@@ -16,13 +16,14 @@
 		text-align: center;
 	}
 	.diploma-controls .controls-complete {
-		width: 760px;
+		width: 670px;
 		margin: 20px auto 0;
 		transition: 0.35s opacity;
 		overflow: hidden;
 		display: none;
-		p {
-			width: 490px;
+		.text-final {
+			margin-top: 6px;
+			width: 400px;
 			float: right;
 		}
 		.buttons {
@@ -43,12 +44,12 @@
 				background: rgba(0,0,0,.5);
 			}
 			&.c-1 {
-				background: #E6BEAA;
-				border-color: #DEA58D;
+				background: #F6BBA9;
+				border-color: #F2A18C;
 			}
 			&.c-2 {
-				background: #78AD7C;
-				border-color: #578357;
+				background: #51B07B;
+				border-color: #358656;
 			}
 			&.c-3 {
 				background: #AAD3E8;
@@ -60,7 +61,7 @@
 		}
 		button.export {
 			position: relative;
-			background: #DEA58D;
+			background: #F2A18C;
 			border: none;
 			padding: 0 16px;
 			height: 44px;
@@ -103,9 +104,9 @@
 			border-color: rgba(255,255,255,1) !important;
 		}
 		button.export {
-			background: #DEA58D;
+			background: #F2A18C;
 			&:hover {
-				color: #DEA58D;
+				color: #F2A18C;
 			}
 		}
 	}
@@ -114,9 +115,9 @@
 			border-color: rgba(255,255,255,1) !important;
 		}
 		button.export {
-			background: #578357;
+			background: #358656;
 			&:hover {
-				color: #578357;
+				color: #358656;
 			}
 		}
 	}
@@ -276,9 +277,9 @@
 		font-size: 18px;
 	}
 	.diploma-container {
-		width: 1000px;
-		margin: 20px auto 0;
-		height: 1400px;
+		width: 800px;
+		margin: 30px auto 0;
+		height: 1120px;
 		overflow: hidden;
 		position: relative;
 	}
@@ -286,8 +287,8 @@
 		background: #FFF;
 		-webkit-transform-origin: top left;
 		transform-origin: top left;
-		-webkit-transform: scale(0.625);
-		transform: scale(0.625);
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);
 		transition: 0.5s opacity;
 	}
 

@@ -20,11 +20,11 @@ var DPLM = {
 	topMargin: 140,
 	colors: [
 		{	// RED
-			darkColor: '#BA4A3C',
-			lightColor: '#DEA58D',
+			darkColor: '#D73939',
+			lightColor: '#F2A18C',
 		}, { // GREEN
-			darkColor: '#3B6336',
-			lightColor: '#578357',
+			darkColor: '#146635',
+			lightColor: '#358656',
 		}, { // BLUE
 			darkColor: '#5188B1',
 			lightColor: '#87B7DC',

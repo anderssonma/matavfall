@@ -62,7 +62,7 @@ $(document).ready(function() {
 	controller.addTween('#fralla-3', TweenMax.fromTo($('#fralla-3'), 1, {css: { transform: 'rotate(200deg) scale(0)'}},  {css: {transform: 'rotate(10deg) scale(0.8)' }, ease:Back.easeOut}), scrollDuration, -100 );
 	controller.addTween('#fralla-4', TweenMax.fromTo($('#fralla-4'), 1, {css: { transform: 'rotate(200deg) scale(0)'}},  {css: {transform: 'rotate(-15deg) scale(0.8)' }, ease:Back.easeOut}), scrollDuration, -100 );
 	// CHANGE BG TO GREEN
-	controller.addTween('#fralla-4', TweenMax.to($('#gas-to-food-container'), 0.5, {css: {backgroundColor: '#84C9A2'}}), scrollDuration, -100);
+	controller.addTween('#fralla-4', TweenMax.to($('#gas-to-food-container'), 0.5, {css: {backgroundColor: '#62B987'}}), scrollDuration, -100);
 	controller.addTween('#vete-holder-6', TweenMax.to($('#vete-holder-6'), 0.5, {css: {opacity: 0 }, ease:Expo.easeInOut}));
 	controller.addTween('#vete-holder-7', TweenMax.to($('#vete-holder-7'), 0.5, {css: {opacity: 0 }, ease:Expo.easeInOut}));
 	controller.addTween('#vete-holder-8', TweenMax.to($('#vete-holder-8'), 0.5, {css: {opacity: 0 }, ease:Expo.easeInOut}));

@@ -1,6 +1,6 @@
 .mission {
   width: 100%;
-  background: #51B07A;
+  background: #4F79A1;
   padding: 150px 0 200px;
 }
 .mission-container {
@@ -25,23 +25,23 @@
 
 /* SLIDESHOW OVERRIDES */
 .slideshow .slides article {
-  background: #62B987;
+  background: #7C9FC1;
 }
 .slideshow .slides h3 {
-  background: #51B07A;
+  background: #4F79A1;
 }
 .slideshow .nav {
-  border-color: transparent #62B987 transparent transparent;
+  border-color: transparent #7C9FC1 transparent transparent;
 }
 .slideshow .nav-arrow {
-  border-color: transparent #99D1B1 transparent transparent;
+  border-color: transparent #A9C0D6 transparent transparent;
 }
 
 .slideshow .nav.nav-right {
-  border-color: transparent transparent transparent #62B987;
+  border-color: transparent transparent transparent #7C9FC1;
 }
 .slideshow .nav-right .nav-arrow {
-  border-color: transparent transparent transparent #99D1B1;
+  border-color: transparent transparent transparent #A9C0D6;
 }
 
 .slideshow p {
