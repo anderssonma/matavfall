@@ -1447,6 +1447,11 @@ html, body {
 	-webkit-transform: rotate(-20deg);
 	-ms-transform: rotate(-20deg);
 	transform: rotate(-20deg);
+	.burnable-item {
+		-webkit-animation: 4s 0.5s conveyorSpin infinite;
+		-webkit-transform: rotate(30deg);
+		transform: rotate(30deg);
+	}
 }
 
 .no-cssanimations .burnable-arc {
@@ -1472,6 +1477,17 @@ html, body {
 	100% {
 		-webkit-transform: rotate(122deg);
 		transform: rotate(122deg);
+	}
+}
+
+@-webkit-keyframes conveyorSpin {
+	0%, 50% {
+		-webkit-transform: rotate(30deg);
+		transform: rotate(30deg);
+	}
+	100% {
+		-webkit-transform: rotate(520deg);
+		transform: rotate(520deg);
 	}
 }
 
