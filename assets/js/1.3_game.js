@@ -806,7 +806,6 @@ var setupGame = function() {
 		delete keysDown[e.keyCode];
 	});
 
-
 	// TEXT BINDINGS FOR GAME OVER STATE
 	var scoreText = document.getElementById('game-score-text'),
 			scoreTitle = document.getElementById('game-score-title'),
@@ -847,8 +846,8 @@ var setupGame = function() {
 		if (stoveHandler.completedRecipes > 0) {
 			var dishString = (stoveHandler.completedRecipes > 1) ? ' RÄTTER' : ' RÄTT';
 			recipeText.innerHTML = stoveHandler.completedRecipes + dishString;
-			var previousRecipes = localStorage.getItem('SMM_GAME_RECIPES');
-			localStorage.setItem('SMM_GAME_RECIPES', parseInt(previousRecipes + stoveHandler.completedRecipes, 10));
+			var previousRecipes = parseInt(localStorage.getItem('SMM_GAME_RECIPES'), 10);
+			localStorage.setItem('SMM_GAME_RECIPES', (previousRecipes + parseInt(stoveHandler.completedRecipes, 10)));
 		} else {
 			recipeText.innerHTML = 'INGET ALLS &nbsp;;..(';
 		}
@@ -974,7 +973,7 @@ var setupGame = function() {
 			bgLayer.fillStyle = '#D21937';
 		}
 		bgLayer.beginPath();
-		bgLayer.arc(CANVAS_WIDTH - 35, 148, 35, 0, 2*Math.PI);
+		bgLayer.arc(CANVAS_WIDTH - 35, 148, 35, 0, 2 * Math.PI);
 		bgLayer.fill();
 		bgLayer.closePath();
 		// TEXT

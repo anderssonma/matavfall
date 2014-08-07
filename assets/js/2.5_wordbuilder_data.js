@@ -7,7 +7,7 @@ var wordChoices = [
 	], [ // PART 2
 		'Jag gillar varmt bröd och värmer alltid brödet i micron eller ugnen.',
 		'Jag ber mamma sätta på spisen och steka ett ägg. Ibland får hon steka två gånger.',
-		'Jag äter en tallrik ekologisk filmjölk.',
+		'Jag äter en tallrik filmjölk, ekologiskt om det finns.',
 		'Allt på vårt frukostbord är ekologiskt och jag äter olika varje dag.'
 	], [ // PART 3
 		'…ta med dem när jag går hemifrån. Vi sorterar inte. Jag slänger allt bland restavfall.',
@@ -18,19 +18,19 @@ var wordChoices = [
 		'…ber jag mamma eller pappa skjutsa mig till skolan, eller betala en taxi för mig.',
 		'…ber jag mamma eller pappa skjutsa mig till bussen, även om det är en omväg.',
 		'…tar jag bussen, men om det regnar eller snöar ber jag efter skjuts till busshållplatsen.',
-		'…cyklar jag till skolan, oavsett väder. Det är ju inte så långt!'
+		'…cyklar eller går jag till skolan, oavsett väder. Det är ju inte så långt!'
 	], [ // PART 5
 		'…godis! Och chips. Inget annat.',
 		'…helst frukt. Inte så noga, bara det mättar.',
-		'…nästan alltid en banan. Oftast är den ekologiskt odlad.',
+		'…nästan alltid ett äpple. Oftast är det ekologiskt odlat.',
 		'…en frukt som är ekologiskt odlad. Vi handlar bara sådana frukter hemma.'
 	], [ // PART 6
-		'…tänder alla lampor i hemmet och sätter på datorn, TV:n och stereon som sällskap.',
+		'…tänder alla lampor i hemmet och sätter på datorn, TV:n och musik som sällskap.',
 		'…går till mitt rum och sätter igång datorn (som jag stängde av i morse).',
 		'…äter något lätt, gärna filmjölk, sedan gör jag läxor om jag har några.',
 		'…gör en rolig frågesport om miljöfrågor, som familjen får tävla om efter middagen.'
 	], [ // PART 7
-		'…har jag alltid en lampa tänd i rummet. Och stereon på, fast lågt. Då sover jag bäst.',
+		'…har jag alltid en lampa tänd i rummet. Och musik på, fast lågt. Då sover jag bäst.',
 		'…har jag datorn eller telefonen på hela natten. Man vet aldrig...',
 		'…har jag surfat tills jag blivit jättetrött. Men jag stänger av dator och telefon när jag ska sova.',
 		'…vill jag ha lugn och ro. Så jag släcker lamporna, dator och telefon.'

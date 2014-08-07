@@ -107,6 +107,23 @@ h1 {
   background: #DBECF9;
   overflow: hidden;
   position: relative; }
+  .pager .alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    line-height: 48px; }
+    .pager .alert > div {
+      width: 1000px;
+      margin: 0 auto;
+      color: #FFF;
+      -webkit-font-smoothing: antialiased; }
+    .pager .alert img {
+      float: right;
+      margin-top: 18px; }
   .pager .page-wrapper {
     position: absolute;
     bottom: 0;

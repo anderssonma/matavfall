@@ -248,7 +248,7 @@ var DPLM = {
 		var imgWords = parseInt(localStorage.getItem('SMM_PRES_WORDS') || 0, 10);
 		var imgTotal = parseInt(localStorage.getItem('SMM_PRES_TOTAL') || 0, 10);
 		if (imgWords === 0 && imgTotal === 0) {
-			this.makePlaceholder(ctx, 'right', 1050, 'DEL 2');
+			this.makePlaceholder(ctx, 'right', 1050, 'DEL 3');
 			return false;
 		}
 
@@ -453,8 +453,7 @@ var DPLM = {
 		this.paintQuizData(ctx, 'mid');
 		this.paintQuizData(ctx, 'right');
 
-		if (this.activePlaceholders.length === 1) { // SHOULD BE 0 !
-			console.log('here');
+		if (this.activePlaceholders.length === 0) { // SHOULD BE 0 !
 			this.paintSignature(ctx);
 			$('#diploma').addClass('complete');
 		} else {

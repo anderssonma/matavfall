@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 	var bil_scale = TweenMax.to($('#bil-bla'), 1.2, {css:{transform: 'scale(.4)'}, ease:Expo.easeIn}, scrollDuration);
 	var matavfallspase_container_img_opacity = TweenMax.to($('#matavfallspase-container img'), 0.5, {css:{opacity: 0}, ease:Expo.easeIn}, scrollDuration);
-	var bil_bla_aker = TweenMax.to($('#bil-bla'), 2, {css: {position: 'fixed' ,marginTop: - (windowHeightSplit + 100), marginLeft:-60}, ease:Expo.easeInOut}, scrollDuration , 250);
+	var bil_bla_aker = TweenMax.to($('#bil-bla'), 2, {css: {position: 'fixed' ,marginTop: - (windowHeightSplit + 100), marginLeft: '-200px'}, ease:Expo.easeInOut}, scrollDuration , 250);
 	var vag = TweenMax.to($('#vag'), 1.2, {css:{opacity: 1}, ease:Expo.easeIn}, scrollDuration);
 
 	controller.addTween("#text-godsel", TweenMax.to($('#biogasgodsel_tank'), 10, {css: {top: '2460px', opacity: 0}, ease:Expo.easeInOut}), 1400);

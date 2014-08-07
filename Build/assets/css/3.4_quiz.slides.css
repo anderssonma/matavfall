@@ -1,0 +1,159 @@
+.quiz.page-3 {
+  background: #F2DABE; }
+  .quiz.page-3 h1 {
+    color: rgba(0, 0, 0, 0.5); }
+
+.quiz.page-3 .quiz-box {
+  background: #D6AD88; }
+
+.quiz.page-3 .quiz-page,
+.quiz.page-3 .quiz-page-end,
+.quiz.page-3 .quiz-sidebar {
+  background: #BF9976; }
+
+.quiz.page-3 .quiz-start {
+  background: rgba(214, 173, 136, 0.75); }
+
+.quiz.page-3 .quiz-sidebar button.btn, .quiz.page-3 .quiz-start button {
+  color: #F2DABE; }
+
+.quiz.page-3 .quiz-start button {
+  background: #997A5E; }
+  .quiz.page-3 .quiz-start button:hover {
+    background: #7C644D;
+    color: #FFF; }
+
+.quiz.page-3 .quiz-page .in-trash li {
+  background: #997A5E; }
+
+.quiz.page-3 .quiz-sidebar .quiz-page > span {
+  color: #F2DABE; }
+
+.quiz.page-3 .quiz-target.valid {
+  background: #BF9976; }
+
+.quiz.page-3 #quiz-answers .subheader {
+  color: #FFF; }
+
+.quiz.page-3 .small {
+  font-size: 14px; }
+  .quiz.page-3 .small strong {
+    font-size: 13px;
+    text-transform: uppercase; }
+
+.quiz-slide-1 .quiz-target,
+.quiz-slide-2 .quiz-target,
+.quiz-slide-4 .quiz-target,
+.quiz-slide-5 .quiz-target,
+.quiz-slide-7 .quiz-target {
+  left: 25%; }
+  .quiz-slide-1 .quiz-target:nth-child(2),
+  .quiz-slide-2 .quiz-target:nth-child(2),
+  .quiz-slide-4 .quiz-target:nth-child(2),
+  .quiz-slide-5 .quiz-target:nth-child(2),
+  .quiz-slide-7 .quiz-target:nth-child(2) {
+    left: 50%; }
+  .quiz-slide-1 .quiz-target:nth-child(3),
+  .quiz-slide-2 .quiz-target:nth-child(3),
+  .quiz-slide-4 .quiz-target:nth-child(3),
+  .quiz-slide-5 .quiz-target:nth-child(3),
+  .quiz-slide-7 .quiz-target:nth-child(3) {
+    left: 75%; }
+
+.quiz-slide-0 .quiz-target img {
+  margin: 20px 0 0 20px; }
+.quiz-slide-0 .item-1 {
+  top: 370px;
+  left: 15%; }
+.quiz-slide-0 .item-2 {
+  top: 380px;
+  left: 45%; }
+.quiz-slide-0 .item-3 {
+  top: 420px;
+  left: 70%; }
+
+.quiz-slide-1 .syre {
+  margin-left: 15px; }
+.quiz-slide-1 .vatten {
+  margin: 30px 0 0 5px; }
+.quiz-slide-1 .metan {
+  margin: 10px 0 0 15px; }
+.quiz-slide-1 .draggable {
+  top: 380px;
+  left: 43%; }
+
+.quiz-slide-2 .mikroorg-sol {
+  margin: 22px 0 0 0; }
+.quiz-slide-2 .mikroorg-dod {
+  margin: 25px 0 0 3px; }
+.quiz-slide-2 .matavfall-flytande {
+  margin-top: 22px; }
+.quiz-slide-2 .draggable {
+  top: 320px;
+  left: 37%; }
+
+.quiz-slide-3 .quiz-target img {
+  margin: 45px 0 0 20px; }
+.quiz-slide-3 .item-1 {
+  top: 350px;
+  left: 26%; }
+.quiz-slide-3 .item-2 {
+  top: 440px;
+  left: 10%; }
+.quiz-slide-3 .item-3 {
+  top: 360px;
+  left: 69%; }
+.quiz-slide-3 .item-4 {
+  top: 440px;
+  left: 48%; }
+
+.quiz-slide-4 .temperatur-jamn {
+  margin: 20px 0 0 -18px; }
+.quiz-slide-4 .termometer-10 {
+  margin: -58px 0 0 34px; }
+.quiz-slide-4 .ph-varde {
+  margin: 12px 0 0 -20px; }
+.quiz-slide-4 .draggable {
+  top: 340px;
+  left: 43%; }
+
+.quiz-slide-5 .kalender-12 {
+  margin: 28px 0 0 0; }
+.quiz-slide-5 .kalender-2540 {
+  margin: 28px 0 0 0; }
+.quiz-slide-5 .kalender-2m {
+  margin: 28px 0 0 -8px; }
+.quiz-slide-5 .draggable {
+  top: 340px;
+  left: 43%; }
+
+.quiz-slide-6 .quiz-target img {
+  margin: 45px 0 0 20px; }
+.quiz-slide-6 .item-1 {
+  top: 470px;
+  left: 10%; }
+.quiz-slide-6 .item-2 {
+  top: 420px;
+  left: 62%; }
+.quiz-slide-6 .item-3 {
+  top: 380px;
+  left: 40%; }
+.quiz-slide-6 .item-4 {
+  top: 442px;
+  right: 8%; }
+.quiz-slide-6 .item-5 {
+  top: 300px;
+  left: 76%; }
+.quiz-slide-6 .item-6 {
+  top: 360px;
+  left: 19%; }
+
+.quiz-slide-7 .draggable {
+  top: 400px;
+  left: 31%; }
+.quiz-slide-7 .reg-10000 {
+  margin: 26px 0 0 14px; }
+.quiz-slide-7 .reg-50000 {
+  margin: 26px 0 0 14px; }
+.quiz-slide-7 .reg-160000 {
+  margin: 26px 0 0 14px; }
