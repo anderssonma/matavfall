@@ -104,7 +104,14 @@ $(document).ready(function() {
 
 	// PART 2
 	var house1In = TweenMax.to($('#house-1'), 1, {css: {transform: 'translateY(-215px)'}});
-	var house2In = TweenMax.to($('#house-2'), 1.2, {css: {transform: 'translateY(-215px)'}, delay: 0.2});
+	var house2In = TweenMax.to($('#house-2'), 1.2, {css: {transform: 'translateY(-215px)'}, delay: 0.2,
+		onComplete: function() {
+			$('#stamp-2').addClass('animate');
+		},
+		onReverseComplete: function() {
+			$('#stamp-2').removeClass('animate');
+		}
+	});
 	var house3In = TweenMax.to($('#house-3'), 1.4, {css: {transform: 'translateY(-215px)'}, delay: 0.4});
 	//var dirtpileIn = TweenMax.to($('#dirtpile'), 1.6, {css: {transform: 'translateY(-185px)'}, delay: 0.6});
 	// var text1In = TweenMax.to($('#tl-text-1'), 1, {css: {transform: 'translateY(100px)', opacity: 1}});
@@ -235,11 +242,11 @@ $(document).ready(function() {
 		anim: (new TimelineLite())
 			// PART 1 IS ALREADY VISIBLE ON START
 			// PART 2
-			.add([pan1Out, pan2, clouds1, silhouette1])
+			.add([pan1Out, pan2, clouds1, silhouette1], '+=2')
 			.add([house1In, house2In, house3In]) //dirtpileIn])
 			//.add([text1In, text2In])
 			// PART 3
-			.add([pan2Out, pan3, clouds2, silhouette2, dirtBlack])
+			.add([pan2Out, pan3, clouds2, silhouette2, dirtBlack], '+=2')
 			.add([house4In, house5In, house6In, house7In]) // house8In, house9In, house10In])
 			//.add([text3In, text4In, text5In])
 			// PART 4
@@ -248,7 +255,7 @@ $(document).ready(function() {
 			.add([factoryIn, factorySilo1In, factorySilo2In])
 			//.add([text6In, text7In])
 			// PART 5
-			.add([pan4Out, pan5, clouds4, silhouette4, dirtGreen])
+			.add([pan4Out, pan5, clouds4, silhouette4, dirtGreen], '+=2')
 			//.add([trashGlassIn, trashMetalIn, trashFoodIn])
 			//.add([text8In, text9In])
 			// PART 6
@@ -257,10 +264,10 @@ $(document).ready(function() {
 			.add([bush1In, bush2In])
 			//.add(text10In)
 			// PART 7
-			.add([pan6Out, pan7, clouds6, silhouette6])
+			.add([pan6Out, pan7, clouds6, silhouette6], '+=2')
 			.add([flagIn, fuelpumpIn, lorryIn, house12In, treesIn]) //, lorryExhaustIn])
 			//.add(text11In)
-			.add(dirtGreenReverse, '+=2')
+			.add(dirtGreenReverse, '+=1')
 	});
 
 });

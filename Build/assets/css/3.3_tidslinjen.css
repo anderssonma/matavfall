@@ -851,76 +851,104 @@
 .timeline .bg-2 {
   display: none; }
 
-#house-1 {
+#stamp-2 #house-1 {
   position: absolute;
   left: 0;
   bottom: 0; }
-
-#house-2 {
+#stamp-2 #house-2 {
   position: absolute;
   left: 215px;
   bottom: 0; }
-
-#house-3 {
+#stamp-2 #house-3 {
   position: absolute;
   left: 450px;
   bottom: 0; }
-
-#dirtpile {
+#stamp-2 #dirtpile {
   position: absolute;
   right: 0;
   bottom: 85px;
-  -webkit-animation: 10s 7s bigWaste forwards infinite;
-  animation: 10s 7s bigWaste forwards infinite;
   z-index: 4;
   -webkit-transform: scale(0);
   transform: scale(0); }
-
-#dirtpile-base {
+#stamp-2 #dirtpile-base {
   position: absolute;
   left: 0;
-  bottom: -54px;
-  -webkit-animation: 10s 2s wasteUp forwards infinite;
-  animation: 10s 2s wasteUp forwards infinite; }
-
-#dirtpile-small-1 {
+  bottom: -54px; }
+#stamp-2 #dirtpile-small-1 {
   position: absolute;
   left: 90px;
-  bottom: -40px;
-  -webkit-animation: 10s 2s wasteUpSmall forwards infinite;
-  animation: 10s 2s wasteUpSmall forwards infinite; }
-
-#dirtpile-small-2 {
+  bottom: -40px; }
+#stamp-2 #dirtpile-small-2 {
   position: absolute;
   left: 270px;
-  bottom: -40px;
-  -webkit-animation: 10s 2s wasteUpSmall2 forwards infinite;
-  animation: 10s 2s wasteUpSmall2 forwards infinite; }
-
-#dirtpile-small-3 {
+  bottom: -40px; }
+#stamp-2 #dirtpile-small-3 {
   position: absolute;
   left: 436px;
-  bottom: -40px;
-  -webkit-animation: 10s 2s wasteUpSmall3 forwards infinite;
-  animation: 10s 2s wasteUpSmall3 forwards infinite; }
-
-#waste-small {
+  bottom: -40px; }
+#stamp-2 #waste-small {
   position: absolute;
   left: 14px;
   top: 4px;
   z-index: 2;
-  opacity: 0;
-  -webkit-animation: 10s 2s wasteUpAlt forwards infinite;
-  animation: 10s 2s wasteUpAlt forwards infinite; }
-
-#waste-large {
+  opacity: 0; }
+#stamp-2 #waste-large {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
-  opacity: 0;
-  -webkit-animation: 10s 2s wasteUpAlt2 infinite;
-  animation: 10s 2s wasteUpAlt2 infinite; }
+  opacity: 0; }
+#stamp-2 .dirt-below {
+  position: absolute;
+  width: 780px;
+  height: 60px;
+  left: -30px;
+  bottom: 200px;
+  overflow: hidden; }
+#stamp-2 .dirt-above {
+  position: absolute;
+  width: 780px;
+  height: 60px;
+  left: 0;
+  bottom: 200px;
+  overflow: hidden;
+  z-index: 3; }
+#stamp-2 .dirt-mover {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+#stamp-2 .dirt-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: #625747;
+  z-index: 4; }
+#stamp-2.animate #dirtpile {
+  -webkit-animation: 10s 5s bigWaste forwards infinite;
+  animation: 10s 5s bigWaste forwards infinite; }
+#stamp-2.animate #dirtpile-base {
+  -webkit-animation: 10s wasteUp forwards infinite;
+  animation: 10s wasteUp forwards infinite; }
+#stamp-2.animate #dirtpile-small-1 {
+  -webkit-animation: 10s wasteUpSmall forwards infinite;
+  animation: 10s wasteUpSmall forwards infinite; }
+#stamp-2.animate #dirtpile-small-2 {
+  -webkit-animation: 10s wasteUpSmall2 forwards infinite;
+  animation: 10s wasteUpSmall2 forwards infinite; }
+#stamp-2.animate #dirtpile-small-3 {
+  -webkit-animation: 10s wasteUpSmall3 forwards infinite;
+  animation: 10s wasteUpSmall3 forwards infinite; }
+#stamp-2.animate #waste-small {
+  -webkit-animation: 10s wasteUpAlt forwards infinite;
+  animation: 10s wasteUpAlt forwards infinite; }
+#stamp-2.animate #waste-large {
+  -webkit-animation: 10s wasteUpAlt2 infinite;
+  animation: 10s wasteUpAlt2 infinite; }
+#stamp-2.animate .dirt-mover {
+  -webkit-animation: 10s moveWaste infinite;
+  animation: 10s moveWaste infinite; }
 
 .no-cssanimations #dirtpile {
   bottom: 185px;
@@ -933,39 +961,6 @@
 .no-cssanimations #waste-small,
 .no-cssanimations #waste-large {
   opacity: 1; }
-
-.dirt-below {
-  position: absolute;
-  width: 780px;
-  height: 60px;
-  left: -30px;
-  bottom: 200px;
-  overflow: hidden; }
-
-.dirt-above {
-  position: absolute;
-  width: 780px;
-  height: 60px;
-  left: 0;
-  bottom: 200px;
-  overflow: hidden;
-  z-index: 3; }
-
-.dirt-mover {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  -webkit-animation: 10s 2s moveWaste infinite;
-  animation: 10s 2s moveWaste infinite; }
-
-.dirt-cover {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: #625747;
-  z-index: 4; }
 
 @-webkit-keyframes bigWaste {
   0%, 17% {
