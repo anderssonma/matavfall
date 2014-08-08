@@ -279,15 +279,14 @@ body.scroll .loader {
       outline: none;
       line-height: 96px;
       color: #FFF;
-      background: transparent;
-      border: 1px dashed #FFF;
+      background: rgba(255, 255, 255, 0.25);
+      border: none;
       -webkit-font-smoothing: antialiased;
       transition: 0.35s -webkit-transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border; }
     .welcome .circle:hover img {
       -webkit-transform: rotate(20deg) scale(1.1); }
     .welcome .circle:hover button {
-      background: rgba(255, 255, 255, 0.25);
-      border: 1px dashed rgba(255, 255, 255, 0.25); }
+      background: rgba(255, 255, 255, 0.35); }
   .welcome .mask-alt {
     position: absolute;
     top: 50%;
