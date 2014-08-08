@@ -140,6 +140,8 @@ var Quiz = {
 		};
 		this.score[this.activeSlide.id] = pushScore;
 
+		console.log(this.score);
+
 		if (this.nextSlide === this.slides.length - 2) {
 			$('#submit').text('AVSLUTA'); // CHANGE TEXT ON LAST Q'S SUBMIT LABEL
 		}
@@ -180,7 +182,7 @@ var Quiz = {
 		
 		// LOOP THROUGH EVERY QUESTION AND PRINT OUT ANY ERRORS
 		for (var i = 0; i < this.score.length; i++) {
-			if (this.score[i].remaining === 0 && this.score[i].errors.length === 0) {
+			if (this.score[i].remaining === 0 && this.score[i].errors === 0) {
 				$('#quiz-errors').append('<h4>' + (i + 1) + ': ' + this.score[i].question + '</h4>');
 				$('#quiz-errors').append('<p>' + this.slides[i].getCorrectAnswer() + '</p>');
 				correctAnswers++;
