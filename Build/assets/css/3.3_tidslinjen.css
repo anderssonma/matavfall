@@ -1087,7 +1087,7 @@
     transform: translateX(780px); } }
 
 #stamp-1 #tl-text-01 {
-  bottom: 460px;
+  bottom: 490px;
   left: 0;
   opacity: 1;
   width: 530px; }
@@ -1110,7 +1110,7 @@
   width: 480px; }
 
 #tl-text-1 {
-  bottom: 480px;
+  bottom: 485px;
   left: 0;
   width: 490px; }
 
@@ -1193,7 +1193,7 @@
   bottom: 60px;
   width: 490px; }
 .stamp-3 #tl-text-3 {
-  bottom: 520px;
+  bottom: 490px;
   left: 0; }
 
 @-webkit-keyframes buildScraper1 {
@@ -1865,9 +1865,9 @@
   right: 316px;
   bottom: 0; }
 #stamp-6 #tl-text-10 {
-  bottom: 450px;
+  bottom: 60px;
   left: 0;
-  width: 420px; }
+  width: 440px; }
 
 @-webkit-keyframes moveMan {
   0%, 80% {
@@ -2121,7 +2121,8 @@
     z-index: 1; }
   #stamp-7 #tl-text-11 {
     bottom: 60px;
-    left: 0; }
+    left: 0;
+    width: 530px; }
 
 .no-cssanimations #stamp-7 #lorry .truck {
   display: block;
@@ -2337,5 +2338,17 @@
   right: 0;
   bottom: 0;
   height: 218px;
+  background: #625747; }
+
+.dirt-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 218px;
   background: #625747;
   z-index: 2; }
+  .dirt-overlay.overlay-black {
+    background: #333333; }
+  .dirt-overlay.overlay-green {
+    background: #63A272; }

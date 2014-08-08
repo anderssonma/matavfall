@@ -146,9 +146,12 @@ $(document).ready(function() {
 	// var text4In = TweenMax.to($('#tl-text-4'), 1.2, {css: {transform: 'translateY(-100px)', opacity: 1}, delay: 0.2});
 	// var text5In = TweenMax.to($('#tl-text-5'), 1.4, {css: {transform: 'translateY(-100px)', opacity: 1}, delay: 0.4});
 
+	var dirtBlack = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#333'}, delay: 1});
+	var dirtBlackText1 = TweenMax.to($('#dirt-overlay-p2'), 2, {css: {backgroundColor: '#333'}, delay: 1});
+	var dirtBlackCover1 = TweenMax.to($('#dirt-cover-p2'), 2, {css: {backgroundColor: '#333'}, delay: 1});
+	var dirtBlackText2 = TweenMax.to($('#dirt-overlay-p3'), 2, {css: {backgroundColor: '#333'}, delay: 1});
 
 	// PART 4
-	var dirtBlack = TweenMax.to($('#dirt'), 2, {css: {backgroundColor: '#333'}, delay: 1});
 	var outhouseIn = TweenMax.to($('#outhouse'), 1, {css: {transform: 'translateY(-215px)'}});
 	var flies1In = TweenMax.to($('#flies-1'), 1, {css: {bottom: '380px'}});
 	var flies2In = TweenMax.to($('#flies-2'), 1, {css: {bottom: '290px'}});
@@ -175,6 +178,8 @@ $(document).ready(function() {
 			$('#stamp-5').removeClass('animate');
 		}
 	});
+	var dirtGreenText1 = TweenMax.to($('#dirt-overlay-p4'), 2, {css: {backgroundColor: '#63A272'}, delay: 1});
+	var dirtGreenText2 = TweenMax.to($('#dirt-overlay-p5'), 2, {css: {backgroundColor: '#63A272'}, delay: 1});
 	/*
 	var trashGlassIn = TweenMax.to($('#trash-glass'), 1, {css: {transform: 'translateY(-217px)'}});
 	var trashMetalIn = TweenMax.to($('#trash-metal'), 1.2, {css: {transform: 'translateY(-217px)'}, delay: 0.2});
@@ -246,7 +251,7 @@ $(document).ready(function() {
 			.add([house1In, house2In, house3In]) //dirtpileIn])
 			//.add([text1In, text2In])
 			// PART 3
-			.add([pan2Out, pan3, clouds2, silhouette2, dirtBlack], '+=2')
+			.add([pan2Out, pan3, clouds2, silhouette2, dirtBlack, dirtBlackText1, dirtBlackCover1, dirtBlackText2], '+=2')
 			.add([house4In, house5In, house6In, house7In]) // house8In, house9In, house10In])
 			//.add([text3In, text4In, text5In])
 			// PART 4
@@ -255,7 +260,7 @@ $(document).ready(function() {
 			.add([factoryIn, factorySilo1In, factorySilo2In])
 			//.add([text6In, text7In])
 			// PART 5
-			.add([pan4Out, pan5, clouds4, silhouette4, dirtGreen], '+=2')
+			.add([pan4Out, pan5, clouds4, silhouette4, dirtGreen, dirtGreenText1, dirtGreenText2], '+=2')
 			//.add([trashGlassIn, trashMetalIn, trashFoodIn])
 			//.add([text8In, text9In])
 			// PART 6

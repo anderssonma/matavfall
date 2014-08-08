@@ -1267,7 +1267,7 @@
 
 #stamp-1 {
 	#tl-text-01 {
-		bottom: 460px;
+		bottom: 490px;
 		left: 0;
 		opacity: 1;
 		width: 530px;
@@ -1295,7 +1295,7 @@
 	width: 480px;
 }
 #tl-text-1 {
-	bottom: 480px; // 560px;
+	bottom: 485px; // 560px;
 	left: 0;
 	width: 490px;
 }
@@ -1409,7 +1409,7 @@
 		width: 490px;
 	}
 	#tl-text-3 {
-		bottom: 520px; // 620px;
+		bottom: 490px; // 590px;
 		left: 0;
 	}
 }
@@ -2238,9 +2238,9 @@
 	}
 
 	#tl-text-10 {
-		bottom: 450px; // 550px;
+		bottom: 60px;
 		left: 0;
-		width: 420px;
+		width: 440px;
 	}
 }
 
@@ -2547,6 +2547,7 @@
 	#tl-text-11 {
 		bottom: 60px; // -40px;
 		left: 0;
+		width: 530px;
 	}
 }
 
@@ -2787,5 +2788,20 @@
 	bottom: 0;
 	height: 218px;
 	background: #625747;
+}
+
+.dirt-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 218px;
+	background: #625747;
 	z-index: 2;
+	&.overlay-black {
+		background: #333333;
+	}
+	&.overlay-green {
+		background: #63A272;
+	}
 }
