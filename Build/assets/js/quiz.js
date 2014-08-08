@@ -326,8 +326,9 @@ var Quiz = {
 
 	checkPreviousData: function() {
 		var oldHighScore = parseInt(localStorage.getItem('SMM_QUIZ_' + PAGER.currentPage + '_CORRECT') || 0, 10);
-		console.log(oldHighScore);
+		console.log(oldHighScore)
 		if (oldHighScore === 0) {
+			this.firstSlide($('#quiz-start button'));
 			return false;
 		}
 

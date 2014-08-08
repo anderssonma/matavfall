@@ -157,8 +157,7 @@ body.scroll .pager.out .alert {
     -webkit-transform: translateY(100px);
     -webkit-transition: 1.5s ease-out -webkit-transform; }
     .pager .page.page-2 {
-      left: calc(100% / 3);
-      background: #62B987; }
+      left: calc(100% / 3); }
     .pager .page.page-3 {
       left: calc(100% / 3 * 2); }
     .pager .page h2 {
@@ -387,3 +386,49 @@ body.scroll .loader {
         color: #CCC; }
   .nav.disabled {
     left: -100px; }
+
+.page-divider {
+  background: #6CB4C1;
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 204px;
+  text-align: center;
+  z-index: 2; }
+  .page-divider.page-divider-1 {
+    height: 34px; }
+    .page-divider.page-divider-1 .fake-bottom {
+      height: 24px; }
+    .page-divider.page-divider-1 .wave {
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 30px;
+      width: 100%;
+      background: url(../img/hav_fram_alt.svg);
+      z-index: 2;
+      -webkit-animation: 3s wave3 infinite linear; }
+  .page-divider.page-divider-2 {
+    overflow: hidden;
+    background: #62B987; }
+  .page-divider.page-divider-3 {
+    overflow: hidden;
+    background: #786855; }
+  .page-divider .fake-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 31px;
+    background: #399494; }
+  .page-divider img {
+    position: relative;
+    z-index: 1; }
+
+@-webkit-keyframes wave3 {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 2px, 0) rotateZ(0deg); }
+
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 2px, 0) rotateZ(-360deg); } }
