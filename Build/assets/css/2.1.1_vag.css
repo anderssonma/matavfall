@@ -71,6 +71,16 @@
     opacity: 0; }
     #truck-road #text-twoboxes p {
       margin-bottom: 0; }
+  #truck-road #text-cow {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    width: 350px;
+    margin-left: -530px;
+    margin-bottom: -95px;
+    opacity: 0; }
+    #truck-road #text-cow p {
+      margin-bottom: 0; }
   #truck-road #bio-factory {
     position: absolute;
     bottom: -300px;
@@ -93,7 +103,9 @@
     -webkit-transform-origin: 100% bottom;
     -moz-transform-origin: 100% bottom;
     transform-origin: 100% bottom;
-    -webkit-transform: rotate(-40deg); }
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    transform: rotate(-40deg); }
   #truck-road #matavfallstunna {
     width: 94%;
     display: block;
@@ -103,7 +115,29 @@
     position: absolute;
     bottom: -30%;
     left: 50%;
-    margin-left: -350px; }
+    margin-left: 250px; }
+    #truck-road #road-cow .farting-cow {
+      position: relative;
+      z-index: 1; }
+  #truck-road #gascloud-1, #truck-road #gascloud-2, #truck-road #gascloud-3 {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0); }
+  #truck-road #gascloud-1-1 {
+    position: absolute;
+    top: 5px;
+    left: 152px; }
+  #truck-road #gascloud-2-1 {
+    position: absolute;
+    top: 50px;
+    left: 160px; }
+  #truck-road #gascloud-3-1 {
+    position: absolute;
+    top: 12px;
+    left: 215px; }
   #truck-road #road-firs {
     position: absolute;
     bottom: -60%;

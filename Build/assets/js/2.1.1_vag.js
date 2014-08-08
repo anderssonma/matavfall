@@ -34,9 +34,14 @@ $(document).ready(function() {
 	var house1Out = TweenMax.to($('#house-1'), 2, {css:{top: '-50%'}, ease:Expo.easeIn});
 	var caskBoxOut = TweenMax.to($('#matavfallstunna-container'), 2, {css:{bottom: '150%'}, ease:Expo.easeIn});
 	var text2Out = TweenMax.to($('#text-twoboxes'), 2, {css:{top: '-50%'}, ease:Expo.easeIn});
-	var firsIn = TweenMax.to($('#road-firs'), 2, {css:{bottom: '40%'}, delay: 2, ease:Expo.easeOut});
-	var cowIn = TweenMax.to($('#road-cow'), 2, {css:{bottom: '70%'}, delay: 1.8, ease:Expo.easeOut});
-	var factoryIn = TweenMax.to($('#bio-factory'), 2, {css:{bottom: 0}, delay: 2, ease:Expo.easeOut});
+	var firsIn = TweenMax.to($('#road-firs'), 2, {css:{bottom: '20%'}, delay: 2, ease:Expo.easeOut});
+	var cowIn = TweenMax.to($('#road-cow'), 2, {css:{bottom: '60%'}, delay: 1.8, ease:Expo.easeOut});
+	var cowTextIn = TweenMax.to($('#text-cow'), 2, {css:{bottom: '70%', opacity: 1}, delay: 1.9, ease:Expo.easeOut});
+	var factoryIn = TweenMax.to($('#bio-factory'), 2, {css:{bottom: 0}, delay: 2.2, ease:Expo.easeOut});
+
+	var cowFart1 = TweenMax.to($('#gascloud-1'), 2, {css:{top: '5px', left: '152px', transform: 'scale(1)'}, ease:Expo.easeOut});
+	var cowFart2 = TweenMax.to($('#gascloud-2'), 2, {css:{top: '50px', left: '160px', transform: 'scale(1)'}, delay: 0.25, ease:Expo.easeOut});
+	var cowFart3 = TweenMax.to($('#gascloud-3'), 2, {css:{top: '12px', left: '215px', transform: 'scale(1)'}, delay: 0.5, ease:Expo.easeOut});
 
 	var truckOut = TweenMax.to($('#waste-truck'), 4, {css:{top: '100%'}, ease:Expo.easeOut});
 
@@ -48,7 +53,8 @@ $(document).ready(function() {
 			.add([truckIn, truckLidIn, text2In])
 			.add(truckLidOff)
 			// PART X: DRIVE
-			.add([moveRoad, house1Out, caskBoxOut, text2Out, firsIn, cowIn, factoryIn])
+			.add([moveRoad, house1Out, caskBoxOut, text2Out, firsIn, cowIn, cowTextIn, cowFart1, factoryIn])
+			.add([cowFart1, cowFart2, cowFart3])
 			.add([truckOut])
 	});
 

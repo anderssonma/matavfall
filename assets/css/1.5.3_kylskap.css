@@ -2,13 +2,21 @@
 #fakta-kylskap {
 	padding: 600px 0 0;
 	margin: 0;
+	background: #F77A77;
+}
+#fakta-kylskap.blue {
 	background: #65AAA7;
 }
 #fakta-kylskap .intro {
 	color: #fff;
 	-webkit-font-smoothing: antialiased;
 	width: 620px;
+	opacity: 0;
 }
+#fakta-kylskap.blue .intro {
+	opacity: 1;
+}
+
 #fakta-kylskap .intro p {
 	font-size: 18px;
 }
@@ -24,7 +32,12 @@
 	width: 1000px;
 	margin: 200px auto 0;
 	position: relative;
+	opacity: 0;
 }
+#fakta-kylskap.blue .kyl-frys {
+	opacity: 1;
+}
+
 .kyl-frys #text-block-1 {
 	background: #fff;
 	padding: 40px;

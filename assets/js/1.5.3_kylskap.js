@@ -4,22 +4,20 @@ $(document).ready(function() {
 
 	var scrollDuration = 200; 
 	
-	$('#tarmometer-container').removeClass('active');
+	/*
 	controller.addTween('#intro-fridge', TweenMax.to($('#intro-fridge'), .1, {
 		css: {
 			opacity: 1
 		},
-		onComplete: function() {
-			$('#tarmometer-container').addClass('active');
-		}, 
-		onReverseComplete: function() {
-			$('#tarmometer-container').removeClass('active');
-		},  
 		ease:Expo.easeInOut
 	}), scrollDuration , -200);
+*/
 
 	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
 	controller.addTween('#text-block-1', TweenMax.to($('#text-block-1'), .1, {css: {},
+		onStart: function() {
+			$('#tarmometer-container').addClass('active');
+		},  
 		onComplete: function() {
 			$('#stroke').addClass('step-1'); 
 			$('#cirkel').addClass('step-1');
@@ -27,9 +25,11 @@ $(document).ready(function() {
 		onReverseComplete: function() {
 			$('#stroke').removeClass('step-1');
 			$('#cirkel').removeClass('step-1');
+			$('#tarmometer-container').removeClass('active');
 		}, 
 		ease:Expo.easeInOut
 	}), scrollDuration , 100);
+	$('#tarmometer-container').removeClass('active'); // TRY TO PREVENT IT SHOWING UP ON PAGE LOAD
 
 	controller.addTween('#text-block-2', TweenMax.to($('#text-block-2'), 2, {css:{opacity: 0}, ease:Power3.easeOut}), scrollDuration, 100);
 	controller.addTween('#text-block-2', TweenMax.to($('#text-block-2'), .1, {css: {},
@@ -85,5 +85,8 @@ $(document).ready(function() {
 	controller.addTween('#citron', TweenMax.fromTo( $('#citron'), .25, {css:{opacity:0, transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, transform: 'scale(1)' }, ease:Quad.easeInOut}), scrollDuration , -150);
 	controller.addTween('#gurka', TweenMax.fromTo( $('#gurka'), .25, {css:{opacity:0, transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, transform: 'scale(1) rotate(40deg)' }, ease:Quad.easeInOut}) , scrollDuration , -150);
 	controller.addTween('#tomat', TweenMax.fromTo( $('#tomat'), .25, {css:{opacity:0, transform: 'scale(0)'}, immediateRender:true, ease:Quad.easeInOut}, {css:{opacity:1, transform: 'scale(1)' }, onComplete: function(){$('#tarmometer-container').removeClass('active');}, ease:Quad.easeInOut}) , scrollDuration , -150);
-	controller.addTween('#tomat', TweenMax.to($('#tomat'), .1, { onReverseComplete: function(){$('#tarmometer-container').addClass('active');},  ease:Expo.easeInOut}), scrollDuration , 300);
+	controller.addTween('#tomat', TweenMax.to($('#tomat'), .1, {
+		onReverseComplete: function() {
+			$('#tarmometer-container').addClass('active');
+		},  ease:Expo.easeInOut}), scrollDuration , 300);
 });

@@ -49,8 +49,9 @@ var SB = {
 	populateChoices: function() {
 		var htmlString = '';
 		var listItems = this.wordChoices[this.currentSet];
+		var scoreItems = this.scoreArray[this.currentSet];
 		listItems.forEach(function(item, i) {
-			htmlString = htmlString + '<li onclick="SB.pickWord(' + i + ')">' + item + '</li>';
+			htmlString = htmlString + '<li onclick="SB.pickWord(' + scoreItems[i] + ')">' + item + '</li>';
 		});
 		this.$elList.html(htmlString + '<li class="undo-button" onclick="SB.undo();"><img src="assets/img/pil_vanster.svg" width="20"></li>');
 		this.forceReflow();
@@ -163,6 +164,7 @@ var SB = {
 		this.insertInProgress = false;
 		this.undoInProgress = false;
 		this.wordChoices = wordChoices;
+		this.scoreArray = scoreArray;
 		this.currentSet = 0;
 		this.$el = $('#daybuilder');
 		this.$elList = $('#sentence-choices', this.$el);

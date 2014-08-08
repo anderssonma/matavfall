@@ -11,7 +11,9 @@
   position: relative;
   overflow: hidden;
   background: #F77A77;
-  transition: 3s background; }
+  transition: 1.5s background; }
+  .cinema.animate-bg-blue {
+    background: #65AAA7; }
 
 .cinema.darken {
   background: #C44B4B; }
