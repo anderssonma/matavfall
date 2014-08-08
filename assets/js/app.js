@@ -44,6 +44,108 @@ var WORLD = {
 	}
 };
 
+
+// HTML LOADER
+// ===========
+var HTMLHandler = {
+	files: [
+		'ben1.html',
+		'ben2.html',
+		'ben3.html'
+	],
+	done: function() {
+		PAGER.updateLoadProgress();
+		PAGER.pageReady();
+	},
+	load: function() {
+		var self = this;
+		$.get(this.files[PAGER.currentPage - 1], function(data) {
+			//ELEM.content.append(data)
+			if (!Modernizr.csstransitions) {
+				window.setTimeout(function() {
+					self.done();
+				}, 2000);
+				$(data).appendTo(ELEM.content);
+			} else {
+				$(data).appendTo(ELEM.content);
+				self.done();
+			}
+			//ELEM.content[0].innerHTML = data;
+		});
+	},
+	remove: function() {
+		ELEM.content.empty();
+	},
+};
+
+// CSS LOADER
+// ==========
+var CSSHandler = {
+	files: {
+		1: [
+			'/assets/css/1.1_fakta.css',
+			'/assets/css/uppdrag.css',
+			'/assets/css/1.2_uppdrag.css',
+			'/assets/css/1.3_spel.css',
+			'/assets/css/1.4_recept.css',
+			'/assets/css/1.5.1_popcorn.css',
+			'/assets/css/1.5.2_bio.css',
+			'/assets/css/1.5.3_kylskap.css',
+			'/assets/css/quiz.css',
+			'/assets/css/1.6_quiz.slides.css',
+			'/assets/css/diplom.css'
+		],
+		2: [
+			'/assets/css/2.1.1_vag.css',
+			'/assets/css/2.1.2_fabrik.css',
+			'/assets/css/uppdrag.css',
+			'/assets/css/2.2_uppdrag.css',
+			'/assets/css/2.3_fakta.css',
+			'/assets/css/quiz.css',
+			'/assets/css/2.4_quiz.slides.css',
+			'/assets/css/2.5_wordbuilder.css',
+			'/assets/css/diplom.css'
+		],
+		3: [ 
+			'/assets/css/3.1_agg.css',
+			'/assets/css/uppdrag.css',
+			'/assets/css/3.2_uppdrag.css',
+			'/assets/css/3.3_tidslinjen.css',
+			'/assets/css/quiz.css',
+			'/assets/css/3.4_quiz.slides.css',
+			'/assets/css/3.5_presentation.css',
+			'/assets/css/diplom.css'
+		]
+	},
+	done: function() {
+		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
+			HTMLHandler.load();
+		}, 0); // DEBUG: 0, LIVE: 500
+	},
+	completedFile: function() {
+		PAGER.updateLoadProgress();
+		this.count = this.count - 1;
+		if (this.count === 0) {
+			this.done();
+		}
+	},
+	load: function() {
+		var data = this.files[PAGER.currentPage];
+		this.count = data.length;
+		data.forEach(function(item) { // IE9+
+			ResourceLoader('css', item, function() {
+				CSSHandler.completedFile();
+			});
+		});
+	},
+	remove: function() {
+		var data = this.files[PAGER.currentPage];
+		data.forEach(function(item) { // IE9+
+			$('link[href~="' + item + '"]').remove();
+		});
+	}
+};
+
 var PAGER = {
 	currentPage: 1,
 	initialLoad: true,
@@ -132,6 +234,11 @@ var PAGER = {
 		$('#welcome .circle').on('click', function() {
 			$('#welcome .circle').off('click');
 			$('#pager').addClass('out');
+
+			if (!Modernizr.csstransitions) {
+				$('#welcome').hide();
+				PAGER.initialLoad = false;
+			}
 		});
 
 		window.setTimeout(function() {
@@ -141,97 +248,6 @@ var PAGER = {
 };
 
 
-// HTML LOADER
-// ===========
-var HTMLHandler = {
-	files: [
-		'ben1.html',
-		'ben2.html',
-		'ben3.html'
-	],
-	done: function() {
-		PAGER.updateLoadProgress();
-		PAGER.pageReady();
-	},
-	load: function() {
-		var self = this;
-		$.get(this.files[PAGER.currentPage - 1], function(data) {
-			ELEM.content.append(data);
-			self.done();
-		});
-	},
-	remove: function() {
-		ELEM.content.empty();
-	},
-};
-
-// CSS LOADER
-// ==========
-var CSSHandler = {
-	files: {
-		1: [
-			'/assets/css/1.1_fakta.css',
-			'/assets/css/uppdrag.css',
-			'/assets/css/1.2_uppdrag.css',
-			'/assets/css/1.3_spel.css',
-			'/assets/css/1.4_recept.css',
-			'/assets/css/1.5.1_popcorn.css',
-			'/assets/css/1.5.2_bio.css',
-			'/assets/css/1.5.3_kylskap.css',
-			'/assets/css/quiz.css',
-			'/assets/css/1.6_quiz.slides.css',
-			'/assets/css/diplom.css'
-		],
-		2: [
-			'/assets/css/2.1.1_vag.css',
-			'/assets/css/2.1.2_fabrik.css',
-			'/assets/css/uppdrag.css',
-			'/assets/css/2.2_uppdrag.css',
-			'/assets/css/2.3_fakta.css',
-			'/assets/css/quiz.css',
-			'/assets/css/2.4_quiz.slides.css',
-			'/assets/css/2.5_wordbuilder.css',
-			'/assets/css/diplom.css'
-		],
-		3: [ 
-			'/assets/css/3.1_agg.css',
-			'/assets/css/uppdrag.css',
-			'/assets/css/3.2_uppdrag.css',
-			'/assets/css/3.3_tidslinjen.css',
-			'/assets/css/quiz.css',
-			'/assets/css/3.4_quiz.slides.css',
-			'/assets/css/3.5_presentation.css',
-			'/assets/css/diplom.css'
-		]
-	},
-	done: function() {
-		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
-			HTMLHandler.load();
-		}, 0); // DEBUG: 0, LIVE: 500
-	},
-	completedFile: function() {
-		PAGER.updateLoadProgress();
-		this.count = this.count - 1;
-		if (this.count === 0) {
-			this.done();
-		}
-	},
-	load: function() {
-		var data = this.files[PAGER.currentPage];
-		this.count = data.length;
-		data.forEach(function(item) { // IE9+
-			ResourceLoader('css', item, function() {
-				CSSHandler.completedFile();
-			});
-		});
-	},
-	remove: function() {
-		var data = this.files[PAGER.currentPage];
-		data.forEach(function(item) { // IE9+
-			$('link[href~="' + item + '"]').remove();
-		});
-	}
-};
 
 /*
 var INTROMSG = {

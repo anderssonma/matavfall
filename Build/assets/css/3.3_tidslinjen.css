@@ -1654,10 +1654,11 @@
 #stamp-5 #tl-text-8 {
   bottom: 60px;
   left: 0;
-  width: 500px; }
+  width: 570px; }
 #stamp-5 #tl-text-9 {
   bottom: 60px;
-  right: 0; }
+  right: 0;
+  width: 380px; }
 
 .no-cssanimations #stamp-5 #trash-glass .bottle,
 .no-cssanimations #stamp-5 #trash-metal .tin,

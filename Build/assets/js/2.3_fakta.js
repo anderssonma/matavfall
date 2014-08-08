@@ -76,6 +76,7 @@ $(document).ready(function() {
 		});
 
 	//sektion EL
+	/*
 	controller.addTween('#brodrost', TweenMax.fromTo($('#brodrost'), 0.6, {css:{transform: 'scale(0) rotate(75deg)'}}, {css:{transform: 'scale(1) rotate( -10deg)'}, ease:Back.easeOut}),scrollDuration);
 	controller.addTween('#dammsugare', TweenMax.fromTo($('#dammsugare'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 20deg)'}, ease:Back.easeOut}),scrollDuration);
 	controller.addTween('#elvisp', TweenMax.fromTo($('#elvisp'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 10deg)'}, ease:Back.easeOut}),scrollDuration);
@@ -84,7 +85,8 @@ $(document).ready(function() {
 	controller.addTween('#big-text', TweenMax.fromTo($('#big-text'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 0deg)'}, ease:Back.easeOut}),scrollDuration);
 	controller.addTween('#xbox', TweenMax.fromTo($('#xbox'), 0.8, {css:{transform: 'scale(0) rotate(75deg)'}}, {css:{transform: 'scale(1) rotate( -10deg)'}, ease:Back.easeOut}), scrollDuration);
 	controller.addTween('#TV', TweenMax.fromTo($('#TV'), 0.6, {css:{transform: 'scale(0) rotate(-75deg)'}}, {css:{transform: 'scale(1) rotate( 12deg)'}, ease:Back.easeOut}),scrollDuration);
-
+	*/
+	
 	//sektion Sverige
 	var sverige_mat_1 = TweenMax.to($('#sverige-container #matavfallspase-1'), 0.5, {css:{transform: 'scale(0.6)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
 	var sverige_mat_2 = TweenMax.to($('#sverige-container #matavfallspase-2'), 0.6, {css:{transform: 'scale(0.5)', opacity:1}, ease:Expo.easeInOut}, scrollDuration);
