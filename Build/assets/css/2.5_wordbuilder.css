@@ -301,5 +301,6 @@
         color: rgba(255, 255, 255, 0.75); }
   .daybuilder.final-good .certificate, .daybuilder.final-okay .certificate, .daybuilder.final-bad .certificate {
     -webkit-transform: translateY(640px);
+    -ms-transform: translateY(640px);
     transform: translateY(640px);
     opacity: 1; }

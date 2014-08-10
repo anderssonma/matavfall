@@ -42,8 +42,8 @@ var SB = {
 				// SHOW CLOCK
 				SB.currentSet++;
 				SB.nextSentence(1);
-			}, 500);
-		}, 250);
+			}, SB.timeouts.normal);
+		}, SB.timeouts.fast);
 
 	},
 	populateChoices: function() {
@@ -74,7 +74,7 @@ var SB = {
 		window.setTimeout(function() {
 			SB.populateChoices();
 			SB.insertInProgress = false;
-		}, 250);
+		}, SB.timeouts.fast);
 		
 	},
 
@@ -95,7 +95,7 @@ var SB = {
 			SB.nextSentence(0);
 			SB.currentSet--;
 			SB.undoInProgress = false;
-		}, 750);
+		}, SB.timeouts.slow);
 
 	},
 
@@ -129,7 +129,7 @@ var SB = {
 		$('.certificate p', this.$el).text(textVerdict);
 		window.setTimeout(function() {
 			SB.$el.addClass(classVerdict);
-		}, 250);
+		}, SB.timeouts.fast);
 
 		localStorage.setItem('SMM_DAYBUILDER_TITLE', title);
 		localStorage.setItem('SMM_DAYBUILDER_POINTS', finalScore);
@@ -148,7 +148,7 @@ var SB = {
 			$choices.empty();
 			SB.scoreTable.length = 0;
 			SB.init();
-		}, 500);
+		}, SB.timeouts.slow);
 	},
 
 	hideIntro: function(self) {
@@ -156,7 +156,7 @@ var SB = {
 		$introBG.addClass('hide');
 		window.setTimeout(function() {
 			$introBG.addClass('remove');
-		}, 1800);
+		}, SB.timeouts.slower);
 	},
 
 	init: function() {
@@ -172,6 +172,23 @@ var SB = {
 		$('.buildarea #part-1', this.$el).addClass('show');
 		this.forceReflow();
 		$('.buildarea #part-1', this.$el).addClass('in');
+
+		if (!Modernizr.csstransitions) {
+			SB.timeouts = {
+				fast: 100,
+				normal: 200,
+				slow: 300,
+				slower: 400
+			}
+		} else {
+			SB.timeouts = {
+				fast: 250,
+				normal: 500,
+				slow: 750,
+				slower: 1800
+			}
+		}
+
 		this.populateChoices();
 	}
 };

@@ -386,6 +386,7 @@
 	&.final-bad { 
 		.certificate {
 			-webkit-transform: translateY(640px);
+			-ms-transform: translateY(640px);
 			transform: translateY(640px);
 			opacity: 1;
 		}

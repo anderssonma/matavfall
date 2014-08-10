@@ -5,6 +5,9 @@
   font-weight: normal;
   font-style: normal; }
 
+img {
+  overflow: hidden; }
+
 *,
 *:before,
 *:after {
@@ -107,25 +110,51 @@ h1 {
   left: 0;
   right: 0;
   height: 50px;
-  background: rgba(0, 0, 0, 0.25);
+  background: #172C42;
   z-index: 99;
   line-height: 48px;
+  -webkit-transition: 0.35s top ease-out;
   transition: 0.35s top ease-out; }
+  .alert a {
+    color: #109BA8;
+    text-decoration: none; }
   .alert.out {
     top: -50px !important; }
-  .alert > div {
+  .alert .wrap {
     width: 1000px;
     margin: 0 auto;
     color: #FFF;
     -webkit-font-smoothing: antialiased; }
   .alert img {
     float: right;
-    margin-top: 18px; }
+    margin-top: 18px;
+    display: none; }
 
-body.scroll .alert {
+.teacher-zone {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  height: 50px;
+  width: 180px;
+  z-index: 99;
+  background: #109BA8;
+  color: #FFF;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  -webkit-transition: 0.35s top ease-out;
+  transition: 0.35s top ease-out; }
+  .teacher-zone.out {
+    top: -50px !important; }
+
+body.scroll .alert,
+body.scroll .teacher-zone {
   top: 0; }
 
-body.scroll .pager.out .alert {
+body.scroll .pager.out .alert,
+body.scroll .pager.out .teacher-zone {
   top: -50px !important; }
 
 .pager {
@@ -264,7 +293,8 @@ body.scroll .loader {
     width: 200px;
     height: 200px; }
     .welcome .circle img {
-      transition: 0.5s -webkit-transform ease-in-out; }
+      -webkit-transition: 0.5s -webkit-transform ease-in-out;
+      transition: 0.5s transform ease-in-out; }
     .welcome .circle button {
       position: absolute;
       top: 50%;
@@ -282,9 +312,12 @@ body.scroll .loader {
       background: rgba(255, 255, 255, 0.25);
       border: none;
       -webkit-font-smoothing: antialiased;
-      transition: 0.35s -webkit-transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border; }
+      -webkit-transition: 0.35s -webkit-transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border;
+      transition: 0.35s transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border; }
     .welcome .circle:hover img {
-      -webkit-transform: rotate(20deg) scale(1.1); }
+      -webkit-transform: rotate(20deg) scale(1.1);
+      -ms-transform: rotate(20deg) scale(1.1);
+      transform: rotate(20deg) scale(1.1); }
     .welcome .circle:hover button {
       background: rgba(255, 255, 255, 0.35); }
   .welcome .mask-alt {
@@ -292,28 +325,38 @@ body.scroll .loader {
     top: 50%;
     left: 50%;
     -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
     margin-left: -1300px;
     margin-top: -696px; }
 
 .pager.out .welcome {
   background: transparent; }
   .pager.out .welcome h1 {
+    -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
     opacity: 0; }
   .pager.out .welcome p {
+    -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     -webkit-transform: translateY(200px);
+    transform: translateY(200px);
     opacity: 0; }
   .pager.out .welcome .circle img {
     -webkit-transform: scale(8);
+    transform: scale(8);
     opacity: 0;
-    transition: 1.5s -webkit-transform ease-in, 0.5s opacity ease-out; }
+    -webkit-transition: 1.5s -webkit-transform ease-in, 0.5s opacity ease-out;
+    transition: 1.5s transform ease-in, 0.5s opacity ease-out; }
   .pager.out .welcome .circle button {
     -webkit-transform: scale(0);
+    transform: scale(0);
     opacity: 0; }
   .pager.out .welcome .mask-alt {
     -webkit-transform: scale(15);
+    transform: scale(15);
     transition: 1.5s all ease-in; }
 
 .nav {

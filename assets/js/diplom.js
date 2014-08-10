@@ -432,7 +432,7 @@ var DPLM = {
 		this.activePlaceholders.length = 0;
 		this.activeTextboxes.length = 0;
 		this.activeImages.length = 0;
-		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		//ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	},
 
 	renderAll: function(ctx) {
@@ -543,7 +543,23 @@ var DPLM = {
 		];
 
 		this.ctx = this.canvas.getContext('2d');
-		this.renderAll(this.ctx);
+
+		var imagesToLoad = this.staticImages.length;
+		var isReady = function() {
+			console.log(imagesToLoad);
+			if (imagesToLoad === 0) {
+				DPLM.renderAll(DPLM.ctx);
+			}
+		};
+		this.staticImages.forEach(function(item){
+			var img = new Image();
+			img.onload = function() {
+				imagesToLoad--;
+				isReady();
+			};
+			img.src = item.src;
+		});
+
 	}
 };
 

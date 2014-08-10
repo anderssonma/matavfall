@@ -287,10 +287,12 @@
 	canvas {
 		background: #FFF;
 		-webkit-transform-origin: top left;
+		-ms-transform-origin: top left;
 		transform-origin: top left;
 		-webkit-transform: scale(0.5);
 		-ms-transform: scale(0.5);
 		transform: scale(0.5);
+		-webkit-transition: 0.5s opacity;
 		transition: 0.5s opacity;
 	}
 

@@ -193,6 +193,10 @@ var PAGER = {
 	},
 	updateNavigation: function(pageNum, item) {
 		if (this.currentPage != pageNum) {
+			if (!Modernizr.csstransitions) {
+				window.location = 'http://' + window.location.hostname + '#' + pageNum;
+				return false;
+			}
 			window.location.hash = '#' + pageNum;
 			ELEM.nav.addClass('disabled');
 			ELEM.navItems.removeClass('active');

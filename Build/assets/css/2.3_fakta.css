@@ -329,12 +329,13 @@
 
 #fakta2-2 #el-container-container {
   background: #786754;
-  position: relative; }
+  position: relative;
+  border-bottom: 100px solid #F4F3E2; }
 
 #fakta2-2 #el-container {
   position: relative;
   width: 1000px;
-  height: 1700px;
+  height: 700px;
   background: #786754;
   margin: 0 auto; }
 
@@ -347,23 +348,33 @@
   background: #786754;
   z-index: 3;
   width: 300px; }
+  #fakta2-2 .preface-text h2 {
+    font-size: 3em;
+    width: 270px;
+    margin-top: 40px; }
   #fakta2-2 .preface-text .no-topm {
     margin-top: 0; }
 
 #fakta2-2 #el-container #dammsugare {
   position: absolute;
-  top: 610px;
-  right: 50px; }
+  top: 200px;
+  right: -60px;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 #fakta2-2 #el-container #elvisp {
   position: absolute;
-  top: 620px;
-  left: 380px;
+  top: 200px;
+  left: 590px;
   height: 290px;
   width: 250px;
   background-image: url(../img/elvisp_sprite.svg);
   -webkit-animation: play-elvisp 0.3s steps(4, end) infinite;
-  animation: play-elvisp 0.3s steps(4, end) infinite; }
+  animation: play-elvisp 0.3s steps(4, end) infinite;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 @-webkit-keyframes play-elvisp {
   from {
@@ -381,8 +392,11 @@
 
 #fakta2-2 #el-container #kaffekokare {
   position: absolute;
-  top: 675px;
-  left: 60px; }
+  top: 260px;
+  left: 380px;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 #fakta2-2 #el-container #kaffekokare-container {
   position: relative; }
@@ -471,13 +485,16 @@
 
 #fakta2-2 #el-container #PC {
   position: absolute;
-  top: 1270px;
-  right: 20px;
+  top: 410px;
+  right: -40px;
   width: 550px;
   height: 300px;
   background-image: url(../img/pc_sprite.svg);
   -webkit-animation: play-PC 2.5s steps(5, end) infinite;
-  animation: play-PC 2.5s steps(5, end) infinite; }
+  animation: play-PC 2.5s steps(5, end) infinite;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 @-webkit-keyframes play-PC {
   from {
@@ -495,20 +512,28 @@
 
 #fakta2-2 #el-container #xbox {
   position: absolute;
-  top: 1320px;
-  left: 80px;
-  -webkit-transform-origin: 50% 100%; }
+  top: 420px;
+  left: 360px;
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 #fakta2-2 #el-container #TV {
   position: absolute;
-  top: 230px;
-  right: 0;
+  top: -40px;
+  right: -60px;
   background-image: url(../img/tv_sprite.svg);
   width: 497px;
   height: 380px;
   background-repeat: no-repeat;
   -webkit-animation: play-screen 1s steps(6, end) infinite;
-  animation: play-screen 1s steps(6, end) infinite; }
+  animation: play-screen 1s steps(6, end) infinite;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 @-webkit-keyframes play-screen {
   from {
@@ -526,8 +551,11 @@
 
 #fakta2-2 #el-container #brodrost {
   position: absolute;
-  top: 360px;
-  left: 20px; }
+  top: 80px;
+  left: 340px;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
 
 #fakta2-2 #el-container #brodrost #rostbrod-1 {
   position: absolute;
@@ -601,6 +629,7 @@
     top: 50%;
     left: 50%;
     -webkit-transform: scale(0);
+    -ms-transform: scale(0.5);
     transform: scale(0);
     opacity: 0;
     width: 150px; }
