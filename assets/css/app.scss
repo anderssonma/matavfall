@@ -446,8 +446,8 @@ body.scroll {
 	margin-top: -140px; //-95px; // (50 * 3 + 20 * 2) / 2
 	z-index: 10;
 	padding: 0;
-	-webkit-transition: 0.35s 0.5s left;
-	transition: 0.35s 0.5s left;
+	-webkit-transition: 0.35s left; // 0.5s delay
+	transition: 0.35s left;	// 0.5s delay
 	li {
 		display: block;
 		margin-left: 10px;

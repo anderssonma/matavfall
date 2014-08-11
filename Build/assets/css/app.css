@@ -367,8 +367,8 @@ body.scroll .loader {
   margin-top: -140px;
   z-index: 10;
   padding: 0;
-  -webkit-transition: 0.35s 0.5s left;
-  transition: 0.35s 0.5s left; }
+  -webkit-transition: 0.35s left;
+  transition: 0.35s left; }
   .nav li {
     display: block;
     margin-left: 10px;

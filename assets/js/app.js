@@ -179,7 +179,7 @@ var PAGER = {
 				ELEM.loader.addClass('hide');
 				window.setTimeout(function() {
 					ELEM.loader.addClass('disabled');
-				}, 400);
+				}, 200); // 400
 			}, 0); // DEBUG: 0, LIVE: 1000
 		}, 0); // DEBUG: 0, LIVE: 1000
 	},
