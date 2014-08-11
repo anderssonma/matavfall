@@ -2128,9 +2128,14 @@
     bottom: 0;
     z-index: 1; }
   #stamp-7 #tl-text-11 {
-    bottom: 60px;
+    bottom: 50px;
     left: 0;
-    width: 530px; }
+    width: 400px; }
+  #stamp-7 #tl-text-12 {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    width: 480px; }
 
 .no-cssanimations #stamp-7 #lorry .truck {
   display: block;

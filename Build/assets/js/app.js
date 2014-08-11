@@ -195,9 +195,9 @@ var PAGER = {
 		if (this.currentPage != pageNum) {
 			if (!Modernizr.csstransitions) {
 				window.location = 'http://' + window.location.hostname + '#' + pageNum;
-				return false;
+			} else {
+				window.location.hash = '#' + pageNum;
 			}
-			window.location.hash = '#' + pageNum;
 			ELEM.nav.addClass('disabled');
 			ELEM.navItems.removeClass('active');
 			$(item).addClass('active');

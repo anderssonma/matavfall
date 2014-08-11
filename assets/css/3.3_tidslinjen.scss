@@ -2553,9 +2553,15 @@
 	}
 
 	#tl-text-11 {
-		bottom: 60px; // -40px;
+		bottom: 50px; // -40px;
 		left: 0;
-		width: 530px;
+		width: 400px;
+	}
+	#tl-text-12 {
+		position: absolute;
+		right: 0;
+		bottom: 50px;
+		width: 480px;
 	}
 }
 

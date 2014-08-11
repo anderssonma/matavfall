@@ -11,14 +11,10 @@ $(document).ready(function() {
 	var caskBox = TweenMax.to($('#matavfallstunna-container'), 2, {css:{bottom: '50%'}, ease:Expo.easeOut});
 	var caskLid = TweenMax.to($('#matavfallstunna-lock'), 1, {css:{transform: 'rotate(50deg)'}, ease:Expo.easeOut});
 	var caskBoxSmall = TweenMax.to($('#matavfallstunna-container'), 2, {css:{transform: 'scale(0.25)', marginLeft: '-300px', marginBottom: '-95px'}, ease:Expo.easeOut});
-	var caskLidClose = TweenMax.to($('#matavfallstunna-lock'), 2, {css:{transform: 'rotate(-40deg)'}, ease:Expo.easeOut,
-		onStart: function() {
-			$('#wastebag').addClass('hide');
-		},
-		onReverseComplete: function() {
-			$('#wastebag').removeClass('hide');
-		}
-	});
+	var caskLidClose = TweenMax.to($('#matavfallstunna-lock'), 2, {css:{transform: 'rotate(-40deg)'}, ease:Expo.easeOut});
+
+	var wasteBagOut = TweenMax.to($('#wastebag'), 0, {css:{display: 'none'}, ease:Expo.easeOut, delay: 2});
+
 	var house1In = TweenMax.to($('#house-1'), 2, {css:{top: '50%', opacity: 1}, ease:Expo.easeOut});
 	var roadIn = TweenMax.to($('#road-bio'), 2, {css:{opacity: '1', top: '-100px'}, ease:Expo.easeOut});
 
@@ -48,7 +44,7 @@ $(document).ready(function() {
 	controller.pin($('#truck-road'), 4000, {
 		anim: (new TimelineLite())
 			.add([hand1In, waste1In])
-			.add([hand1Out, waste1Drop, caskBox, caskLid])
+			.add([hand1Out, waste1Drop, caskBox, caskLid, wasteBagOut])
 			.add([caskBoxSmall, caskLidClose, house1In, roadIn])
 			.add([truckIn, truckLidIn, text2In])
 			.add(truckLidOff)

@@ -96,7 +96,21 @@ var DPLM = {
 		var x = this.columns[col];
 		// PAINT BG BOX
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
-		ctx.roundRect(x - (boxWidth / 2), (y - this.topMargin), boxWidth, boxHeight, (boxHeight / 2)).fill();
+		if (!Modernizr.csstransitions) { // FOR IE 9 WE FAKE A ROUND RECT WITH A RECT + 2 CIRCLES
+			ctx.fillRect(x - (boxWidth / 2) + (boxHeight / 2), (y - this.topMargin), boxWidth - boxHeight, boxHeight);
+			
+			ctx.beginPath();
+			ctx.arc(x - (boxWidth / 2) + 26, (y - this.topMargin + (boxHeight / 2)), (boxHeight / 2), 0, 2*Math.PI);
+			ctx.fill();
+			ctx.closePath();
+
+			ctx.beginPath();
+			ctx.arc(x + (boxWidth / 2) - 26, (y - this.topMargin + (boxHeight / 2)), (boxHeight / 2), 0, 2*Math.PI);
+			ctx.fill();
+			ctx.closePath();
+		} else {
+			ctx.roundRect(x - (boxWidth / 2), (y - this.topMargin), boxWidth, boxHeight, (boxHeight / 2)).fill();
+		}
 		// PAINT TEXT
 		ctx.fillStyle = '#FFF';
 		ctx.fillText('–  ' + string + '  –', x, (y + boxHeight - 15 - this.topMargin));
@@ -320,7 +334,6 @@ var DPLM = {
 				break;
 		}
 
-		console.log(totalCorrectAnswers);
 		var medalValue;
 		if (totalCorrectAnswers === 0) {
 			this.makePlaceholder(ctx, col, 1680, 'DEL ' + quizPageNum); // 1770
@@ -544,17 +557,16 @@ var DPLM = {
 
 		this.ctx = this.canvas.getContext('2d');
 
-		var imagesToLoad = this.staticImages.length;
+		var imagesToPreload = this.staticImages.length;
 		var isReady = function() {
-			console.log(imagesToLoad);
-			if (imagesToLoad === 0) {
+			if (imagesToPreload === 0) {
 				DPLM.renderAll(DPLM.ctx);
 			}
 		};
 		this.staticImages.forEach(function(item){
 			var img = new Image();
 			img.onload = function() {
-				imagesToLoad--;
+				imagesToPreload--;
 				isReady();
 			};
 			img.src = item.src;

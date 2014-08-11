@@ -5,9 +5,6 @@
   font-weight: normal;
   font-style: normal; }
 
-img {
-  overflow: hidden; }
-
 *,
 *:before,
 *:after {
@@ -372,7 +369,7 @@ body.scroll .loader {
   left: 20px;
   list-style: none;
   margin-top: -140px;
-  z-index: 10;
+  z-index: 9999;
   padding: 0;
   -webkit-transition: 0.35s left;
   transition: 0.35s left; }

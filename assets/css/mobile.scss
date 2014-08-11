@@ -170,7 +170,7 @@ p {
 	font-size: 18px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 3000px) { // 768
 	.pager {
 		display: none;
 	}
@@ -178,8 +178,15 @@ p {
 		position: relative;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
 		.inner {
-			padding: 60px 10% 40px;
+			padding: 10px 0 40px;
+			text-align: center;
+			max-width: 260px;
+			margin: 0 auto;
+			img {
+				margin: 40px 0;
+			}
 		}
 	}
 	.mobile-section {
