@@ -128,7 +128,7 @@
 		left: 54px;
 		bottom: -4px;
 		-webkit-transform: rotate(-90deg);
-		ransform: rotate(-90deg);
+		transform: rotate(-90deg);
 		-webkit-animation: 10s eatCarrot2 infinite;
 		animation: 10s eatCarrot2 infinite;
 	}
@@ -1099,6 +1099,7 @@
 .no-cssanimations {
 	#dirtpile {
 		bottom: 185px;
+		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 	#dirtpile-base,
@@ -1570,6 +1571,7 @@
 		bottom: 0;
 		left: 80px;
 		opacity: 0;
+		-webkit-transition: 0.5s opacity;
 		transition: 0.5s opacity;
 	}
 	#flies-2 {
@@ -1577,6 +1579,7 @@
 		bottom: 0;
 		left: 260px;
 		opacity: 0;
+		-webkit-transition: 0.5s opacity;
 		transition: 0.5s opacity;
 	}
 	&.animate {
@@ -2152,6 +2155,7 @@
 			top: 20px;
 			left: 105px;
 			opacity: 0;
+			-webkit-transition: 0.5s opacity;
 			transition: 0.5s opacity;
 		}
 		.woman {
@@ -2159,6 +2163,7 @@
 			top: 24px;
 			left: 2px;
 			opacity: 0;
+			-webkit-transition: 0.5s opacity;
 			transition: 0.5s opacity;
 		}
 	}
@@ -2204,6 +2209,7 @@
 			top: 20px;
 			left: 16px;
 			opacity: 0;
+			-webkit-transition: 0.5s opacity;
 			transition: 0.5s opacity;
 		}
 		.woman {
@@ -2211,6 +2217,7 @@
 			top: 24px;
 			left: 38px;
 			opacity: 0;
+			-webkit-transition: 0.5s opacity;
 			transition: 0.5s opacity;
 		}
 	}

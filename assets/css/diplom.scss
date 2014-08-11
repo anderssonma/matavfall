@@ -1,6 +1,7 @@
 .diploma {
 	width: 100%;
 	padding: 150px 0;
+	-webkit-transition: 0.35s background;
 	transition: 0.35s background;
 	&.color-1 {
 		background: #F6BBA9;
@@ -18,6 +19,7 @@
 	.diploma-controls .controls-complete {
 		width: 670px;
 		margin: 20px auto 0;
+		-webkit-transition: 0.35s opacity;
 		transition: 0.35s opacity;
 		overflow: hidden;
 		display: none;
@@ -37,6 +39,7 @@
 			background: rgba(0,0,0,.25);
 			float: left;
 			margin: 24px 0 0 16px;
+			-webkit-transition: 0.35s all;
 			transition: 0.35s all;
 			outline: none;
 			border: 2px solid rgba(0,0,0,0.15);
@@ -72,6 +75,8 @@
 			float: right;
 			margin-right: 12px;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-transition: 0.35s background, 0.35s opacity, 0.35s color;
 			transition: 0.35s background, 0.35s opacity, 0.35s color;
 			vertical-align: text-bottom;
 			font-weight: bold;
@@ -143,6 +148,7 @@
 		border-radius: 3px;
 		padding: 40px;
 		opacity: 0;
+		-webkit-transition: 0.5s opacity;
 		transition: 0.5s opacity;
 		background: #FFF;
 		h6 {
@@ -176,6 +182,7 @@
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			outline: none;
+			-webkit-transition: 0.35s background;
 			transition: 0.35s background;
 			&.left {
 				border-radius: 3px 0 0 3px;

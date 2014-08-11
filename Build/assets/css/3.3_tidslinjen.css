@@ -108,7 +108,7 @@
     left: 54px;
     bottom: -4px;
     -webkit-transform: rotate(-90deg);
-    ransform: rotate(-90deg);
+    transform: rotate(-90deg);
     -webkit-animation: 10s eatCarrot2 infinite;
     animation: 10s eatCarrot2 infinite; }
   .veggie-box .carrot2 {
@@ -952,6 +952,7 @@
 
 .no-cssanimations #dirtpile {
   bottom: 185px;
+  -webkit-transform: scale(1);
   transform: scale(1); }
 .no-cssanimations #dirtpile-base,
 .no-cssanimations #dirtpile-small-1,
@@ -1335,12 +1336,14 @@
   bottom: 0;
   left: 80px;
   opacity: 0;
+  -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity; }
 #stamp-4 #flies-2 {
   position: absolute;
   bottom: 0;
   left: 260px;
   opacity: 0;
+  -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity; }
 #stamp-4.animate #flies-1 {
   opacity: 1;
@@ -1802,12 +1805,14 @@
     top: 20px;
     left: 105px;
     opacity: 0;
+    -webkit-transition: 0.5s opacity;
     transition: 0.5s opacity; }
   #stamp-6 .back-store .woman {
     position: absolute;
     top: 24px;
     left: 2px;
     opacity: 0;
+    -webkit-transition: 0.5s opacity;
     transition: 0.5s opacity; }
 #stamp-6.animate .back-store .man {
   opacity: 0.5;
@@ -1842,12 +1847,14 @@
     top: 20px;
     left: 16px;
     opacity: 0;
+    -webkit-transition: 0.5s opacity;
     transition: 0.5s opacity; }
   #stamp-6 .back-rest .woman {
     position: absolute;
     top: 24px;
     left: 38px;
     opacity: 0;
+    -webkit-transition: 0.5s opacity;
     transition: 0.5s opacity; }
 #stamp-6.animate .back-rest .man {
   opacity: 0.5;

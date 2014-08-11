@@ -54,6 +54,7 @@ img {
 p {
 	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
   line-height: 1.5em;
 }
 h3 {
@@ -146,6 +147,7 @@ h1 {
 		margin: 0 auto;
 		color: #FFF;
 		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 	img {
 		float: right;
@@ -165,6 +167,7 @@ h1 {
 	color: #FFF;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	line-height: 50px;
 	text-decoration: none;
@@ -215,7 +218,9 @@ body.scroll .pager.out .teacher-zone {
 		height: 200px;
 		//background: #786854;
 		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
 		-webkit-transition: 1.5s ease-out -webkit-transform;
+		transition: 1.5s ease-out transform;
 		&.page-2 {
 			left: calc(100% / 3);
 			//background: #62B987;
@@ -242,6 +247,7 @@ body.scroll .pager.out .teacher-zone {
 	&.out {
 		.page {
 			-webkit-transform: translateY(0);
+			transform: translateY(0);
 		}
 	}
 }
@@ -374,6 +380,7 @@ body.scroll {
 			background: rgba(255,255,255,0.25);
 			border: none;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 			-webkit-transition: 0.35s -webkit-transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border;
 			transition: 0.35s transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border;
 		}
@@ -510,6 +517,7 @@ body.scroll {
 			line-height: 1.25em;
 			opacity: 0;
 			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 			small {
 				display: block;
 				font-size: 12px;
@@ -545,6 +553,7 @@ body.scroll {
 			background: url(../img/hav_fram_alt.svg);
 			z-index: 2;
 			-webkit-animation: 3s wave3 infinite linear;
+			animation: 3s wave3 infinite linear;
 		}
 	}
 	&.page-divider-2 {
@@ -575,5 +584,13 @@ body.scroll {
   }
   100% {
     -webkit-transform: rotateZ(360deg) translate3d(0,2px,0) rotateZ(-360deg);
+  }
+}
+@keyframes wave3 {
+  0% {
+    transform: rotateZ(0deg) translate3d(0,2px,0) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0,2px,0) rotateZ(-360deg);
   }
 }

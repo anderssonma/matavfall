@@ -476,10 +476,12 @@
       */ }
     .box-inner-2 .sign.flip .front {
       -webkit-transform: rotateY(180deg);
-      transform: perspective(600px) rotateY(180deg); }
+      -ms-transform: rotateY(180deg);
+      transform: rotateY(180deg); }
     .box-inner-2 .sign.flip .back {
       -webkit-transform: rotateY(0deg);
-      transform: perspective(600px) rotateY(0deg); }
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg); }
     .box-inner-2 .sign .card {
       position: absolute;
       height: 100%;
@@ -501,7 +503,8 @@
         margin-top: 32px; }
     .box-inner-2 .sign .back {
       -webkit-transform: rotateY(-180deg);
-      transform: perspective(600px) rotateY(-180deg); }
+      -ms-transform: rotateY(-180deg);
+      transform: rotateY(-180deg); }
       .box-inner-2 .sign .back img {
         margin-top: 10px; }
 
@@ -607,7 +610,8 @@
   background: #FFF;
   border-radius: 50%;
   overflow: hidden;
-  -webkit-transition: 0.5s background; }
+  -webkit-transition: 0.5s background;
+  transition: 0.5s background; }
   .car-box > .circle .bg {
     position: absolute;
     top: 0;
@@ -615,7 +619,8 @@
     bottom: 0;
     width: 50%;
     background: #FFF;
-    -webkit-transition: 0.5s background; }
+    -webkit-transition: 0.5s background;
+    transition: 0.5s background; }
   .car-box > .circle.hide {
     opacity: 0; }
 .car-box .circle-2 {
@@ -668,7 +673,8 @@
   background: #F8F7F7;
   border-radius: 50%;
   border: 8px solid #333;
-  -webkit-transition: 0.2s border-width, 0.4s height, 0.4s width, 0.4s margin; }
+  -webkit-transition: 0.2s border-width, 0.4s height, 0.4s width, 0.4s margin;
+  transition: 0.2s border-width, 0.4s height, 0.4s width, 0.4s margin; }
   .wheel.wheel-right {
     left: 172px; }
   .wheel .bg {
@@ -679,7 +685,8 @@
     bottom: 0;
     background: #FFF;
     border-radius: 0 23px 23px 0;
-    -webkit-transition: 0.4s border; }
+    -webkit-transition: 0.4s border;
+    transition: 0.4s border; }
 
 #car-box.egg-mode .wheel {
   border-width: 0px;
@@ -757,6 +764,8 @@
   left: 0;
   margin: -90px 0 0 -46px;
   -webkit-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  transform: scale(0.2);
   opacity: 0;
   /*
   -webkit-transform: scale(0.2);
@@ -785,7 +794,9 @@
   height: 360px;
   margin: -180px -180px 0 0;
   z-index: 3;
-  -webkit-transform: rotate(10deg); }
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg); }
   .saucepan .circle {
     width: 100%;
     height: 100%;

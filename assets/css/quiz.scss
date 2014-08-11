@@ -86,9 +86,6 @@
 	width: 700px;
 	height: 600px;
 	background: rgba(143,186,175,.75);
-	-webkit-transition: 0.5s all ease-out;
-	transition: 0.5s all ease-out;
-
 	-webkit-transition: 0.35s all ease-in, 0.35s top;
 	transition: 0.35s all ease-in, 0s 0.35s top;
 	z-index: 40;
@@ -207,6 +204,7 @@
 	/* border: 8px solid transparent; */
 	overflow: hidden;
 	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 .quiz-target.valid {
 	/* border-color: #F6F6F6; */

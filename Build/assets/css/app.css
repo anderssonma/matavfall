@@ -45,6 +45,7 @@ img {
 p {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: 1.5em; }
 
 h3 {
@@ -124,7 +125,8 @@ h1 {
     width: 1000px;
     margin: 0 auto;
     color: #FFF;
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .alert img {
     float: right;
     margin-top: 18px;
@@ -141,6 +143,7 @@ h1 {
   color: #FFF;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   line-height: 50px;
   text-decoration: none;
@@ -184,7 +187,9 @@ body.scroll .pager.out .teacher-zone {
     width: calc(100% / 3);
     height: 200px;
     -webkit-transform: translateY(100px);
-    -webkit-transition: 1.5s ease-out -webkit-transform; }
+    transform: translateY(100px);
+    -webkit-transition: 1.5s ease-out -webkit-transform;
+    transition: 1.5s ease-out transform; }
     .pager .page.page-2 {
       left: calc(100% / 3); }
     .pager .page.page-3 {
@@ -200,7 +205,8 @@ body.scroll .pager.out .teacher-zone {
   .pager.page-3-active .page-wrapper {
     left: -200%; }
   .pager.out .page {
-    -webkit-transform: translateY(0); }
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
 
 .loader {
   position: fixed;
@@ -312,6 +318,7 @@ body.scroll .loader {
       background: rgba(255, 255, 255, 0.25);
       border: none;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       -webkit-transition: 0.35s -webkit-transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border;
       transition: 0.35s transform ease-out, 0.35s opacity ease-out, 0.35s background, 0.35s border; }
     .welcome .circle:hover img {
@@ -421,7 +428,8 @@ body.scroll .loader {
       width: 200px;
       line-height: 1.25em;
       opacity: 0;
-      -webkit-font-smoothing: antialiased; }
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
       .nav li span small {
         display: block;
         font-size: 12px;
@@ -450,7 +458,8 @@ body.scroll .loader {
       width: 100%;
       background: url(../img/hav_fram_alt.svg);
       z-index: 2;
-      -webkit-animation: 3s wave3 infinite linear; }
+      -webkit-animation: 3s wave3 infinite linear;
+      animation: 3s wave3 infinite linear; }
   .page-divider.page-divider-2 {
     overflow: hidden;
     background: #62B987; }
@@ -474,3 +483,10 @@ body.scroll .loader {
 
   100% {
     -webkit-transform: rotateZ(360deg) translate3d(0, 2px, 0) rotateZ(-360deg); } }
+
+@keyframes wave3 {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 2px, 0) rotateZ(0deg); }
+
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 2px, 0) rotateZ(-360deg); } }

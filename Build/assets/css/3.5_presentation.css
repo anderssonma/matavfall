@@ -19,6 +19,7 @@
   color: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: 0.35s left;
   transition: 0.35s left; }
 
 .editing #image-counter {
@@ -30,11 +31,13 @@
   right: 20px;
   color: #FFF;
   opacity: 0;
+  -webkit-transition: 0.2s all;
   transition: 0.2s all;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   #layer-help.show {
     opacity: 1;
+    -webkit-transition: 0.2s 0.15s all;
     transition: 0.2s 0.15s all; }
 
 .controls {
@@ -65,6 +68,7 @@
       -moz-osx-font-smoothing: grayscale;
       cursor: pointer;
       background: #36895B;
+      -webkit-transition: 0.35s opacity;
       transition: 0.35s opacity; }
       .controls .pager .left:hover, .controls .pager .right:hover {
         opacity: 0.5; }
@@ -85,6 +89,7 @@
     color: #63A272;
     border-bottom: 1px solid #63A272;
     cursor: pointer;
+    -webkit-transition: 0.35s color;
     transition: 0.35s color; }
     .controls .image-mode:hover,
     .controls .word-mode:hover {
@@ -117,6 +122,7 @@
     .tools div:first-child {
       border-left: none; }
     .tools div img {
+      -webkit-transition: 0.35s opacity;
       transition: 0.35s opacity; }
     .tools div:hover img {
       opacity: 0.5; }
@@ -165,6 +171,7 @@
   position: absolute;
   right: -150px;
   bottom: 40px;
+  -webkit-transition: 0.35s all;
   transition: 0.35s all;
   opacity: 0; }
   .color-swatches .color {
@@ -246,6 +253,7 @@
       z-index: 30; }
     .presentation .image-drawer img {
       opacity: 0;
+      -webkit-transition: 0.35s opacity ease-in;
       transition: 0.35s opacity ease-in; }
     .presentation .image-drawer.show img {
       opacity: 1; }
@@ -272,6 +280,7 @@
     border-radius: 3px;
     padding: 10px;
     color: #666;
+    -webkit-transition: 0.5s right;
     transition: 0.5s right;
     z-index: 10; }
     .presentation .toast.show {
@@ -316,6 +325,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       outline: none;
+      -webkit-transition: 0.35s background;
       transition: 0.35s background;
       text-transform: uppercase;
       font-weight: bold; }
@@ -340,11 +350,13 @@
         height: 124px;
         background: #36895B;
         border-bottom: none;
+        -webkit-transition: 0.35s border-color;
         transition: 0.35s border-color;
         text-align: center;
         line-height: 165px; }
         .presentation .overlay .bg-picker .bg-choice img {
           opacity: 0;
+          -webkit-transition: 0.35s opacity;
           transition: 0.35s opacity; }
         .presentation .overlay .bg-picker .bg-choice.bg-1 {
           border-top: 2px solid #63A272;
@@ -442,15 +454,19 @@
   background: #77AD7C; }
   #drop-zone.bg-1 {
     background: url(../img/pres_bg1.svg) #77ad7c no-repeat center;
+    -webkit-transition: 0.35s background-color;
     transition: 0.35s background-color; }
   #drop-zone.bg-2 {
     background: url(../img/pres_bg2.svg) #d2ecf8 no-repeat center;
+    -webkit-transition: 0.35s background-color;
     transition: 0.35s background-color; }
   #drop-zone.bg-3 {
     background: url(../img/pres_bg3.svg) #e7bea9 no-repeat center;
+    -webkit-transition: 0.35s background-color;
     transition: 0.35s background-color; }
   #drop-zone.bg-4 {
     background: url(../img/pres_bg4.svg) #f4f4e3 no-repeat center;
+    -webkit-transition: 0.35s background-color;
     transition: 0.35s background-color; }
 
 #drop-zone .ui-draggable {
@@ -473,12 +489,14 @@
   font-size: 18px;
   line-height: 74px;
   text-align: center;
+  -webkit-transition: 0.35s all;
   transition: 0.35s all;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   background: #63A272; }
   .trash-can span, .trash-can img {
+    -webkit-transition: 0.35s all;
     transition: 0.35s all; }
   .trash-can span {
     opacity: 1;
