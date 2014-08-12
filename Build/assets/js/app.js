@@ -259,11 +259,15 @@ var PAGER = {
 
 $(document).ready(function() {
 
-	if (!isMobile.any() && document.addEventListener) {
+	if (isMobile.any() && document.addEventListener) {
 		ELEM.setup();
 		WORLD.setup();
 		PAGER.init();
 	} else {
+		scrollDisabler.reenable();
+		ELEM.setup();
+		ELEM.loader.addClass('hide');
+		/*
 		ELEM.setup();
 		console.log('MOBILE');
 		ELEM.loader.addClass('hide');
@@ -271,7 +275,25 @@ $(document).ready(function() {
 			ELEM.loader.addClass('disabled');
 		}, 400);
 		$('#pager').addClass('page-1-active');
-		$.get('mobile.html', function(data) {
+		*/
+		window.addEventListener('hashchange', function() {
+			ELEM.content.empty();
+			$.get('mobile_ben' + (location.hash.slice(1) || '/') + '.html', function(data) {
+				ELEM.content.append(data);
+			});
+		}, false);
+
+		var pageHash;
+		if (window.location.hash) {
+			pageHash = location.hash.slice(1) || '/';
+		} else {
+			window.location.hash = '#' + 1;
+			window.setTimeout(function() {
+				self.setupBinds(); // WAIT 1 CYCLE, OR IT WILL TRIGGER TWICE ON LOAD
+			}, 0);
+		}
+
+		$.get('mobile_ben' + pageHash + '.html', function(data) {
 			ELEM.content.append(data);
 			ResourceLoader('css', '/assets/css/mobile.css', function() {
 				// DONE CALLBACK

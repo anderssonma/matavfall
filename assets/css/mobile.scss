@@ -16,11 +16,20 @@
 	}
 }
 
+#start-btn {
+	display: none;
+}
+
+.loader {
+	display: none;
+}
+
 .chapter {
 	background: #FFF;
-	padding: 5%;
+	padding: 5% 0;
 	h3 {
-		font-size: 24px;
+		color: #333;
+		font-size: 36px;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		margin-bottom: 6px;
@@ -28,22 +37,40 @@
 	span {
 		margin-top: 10px;
 		color: rgba(0,0,0,.35);
+		font-size: 20px;
 	}
 }
 
 
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.inner-wrap {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.footer {
+	background: #FFF;
+	color: #666;
+	height: 100px;
+	line-height: 100px;
+	h3 {
+		font-family: "Lato";
+		-webkit-font-smoothing: antialiased;
+	}
+}
 
 .mobile-section {
 	width: 100%;
-	padding: 140px 5% 100px;
+	padding: 120px 0 100px;
 	position: relative;
 	&:before {
 		top:  100%;
@@ -70,59 +97,244 @@
 	margin: 20px;
 }
 
+
+// UPPDRAG
+.mobile-section.uppdrag {
+	h1 {
+		text-align: left !important;
+		font-weight: bold !important;
+	}
+	.slideshow #slide1:checked ~ .slides .inner {
+	  -webkit-transform: translateX(0);
+	  -ms-transform: translateX(0);
+	  transform: translateX(0);
+	}
+	.slideshow #slide2:checked ~ .slides .inner {
+	  -webkit-transform: translateX(-960px);
+	  -ms-transform:  translateX(-960px);
+	  transform:  translateX(-960px);
+	}
+	.slideshow #slide3:checked ~ .slides .inner {
+	  -webkit-transform: translateX(-1920px);
+	  -ms-transform: translateX(-1920px);
+	  transform: translateX(-1920px);
+	}
+	label {
+		width: 36px !important;
+		height: 36px !important;
+		margin: 0 10px !important;
+		border-radius: 18px !important;
+		&:before {
+			display: block;
+			color: #FFF;
+			line-height: 31px;
+			text-indent: -1px;
+			text-align: center;
+		}
+		&[for="slide1"]:before {
+			content: '1';
+		}
+		&[for="slide2"]:before {
+			content: '2';
+		}
+		&[for="slide3"]:before {
+			content: '3';
+		}
+	}
+
+	.slideshow #slide1:checked ~ label[for="slide1"],
+	.slideshow #slide2:checked ~ label[for="slide2"],
+	.slideshow #slide3:checked ~ label[for="slide3"] {
+	  background: #F8F8F8;
+	  &:before {
+	  	color: #666;
+	  }
+	}
+
+	.slideshow .slides {
+		margin-bottom: 22px;
+	}
+	h2 {
+		margin-top: 0;
+	}
+	p {
+		font-size: 18px;
+	}
+	.mission-container {
+		width: 960px !important;
+	}
+	.mission {
+		padding: 0 !important;
+	}
+	.slideshow {
+		max-width: 960px !important;
+	}
+	article {
+		width: 960px !important;
+	}
+	.nav {
+		display: none;
+	}
+}
+
+
 .section_1-1 {
 	background: #6CB4C1;
 	color: #FFF;
+	h4 {
+		-webkit-font-smoothing: antialiased;
+	}
 	&:before {
 		background-image: linear-gradient(135deg, #6CB4C1 25%, transparent 25%), linear-gradient(225deg, #6CB4C1 25%, transparent 25%);
 	}
 }
+
+
 .section_1-2 {
-	background: #F77A77;
-	color: #FFF;
+	background: #62B987;
 	&:before {
-		background-image: linear-gradient(135deg, #F77A77 25%, transparent 25%), linear-gradient(225deg, #F77A77 25%, transparent 25%);
+		background-image: linear-gradient(135deg, #62B987 25%, transparent 25%), linear-gradient(225deg, #62B987 25%, transparent 25%);
 	}
 }
-.section_1-2 .lead-2,
-.section_1-2 .imagery-2 {
+
+.section_1-3 {
+	padding-top: 40px;
+	background: #F2DABE;
+	p {
+		font-size: 18px;
+	}
+	.container {
+		width: 960px !important;
+	}
+	.intro {
+		left: 0 !important;
+	}
+	.recipes {
+		padding: 0 !important;
+		.recipe-list {
+			top: 60px;
+		}
+	}
+	.book-cover-open,
+	.book-right-bg,
+	.book-cover {
+		width: 480px !important;
+	}
+	&:before {
+		background-image: linear-gradient(135deg, #F2DABE 25%, transparent 25%), linear-gradient(225deg, #F2DABE 25%, transparent 25%);
+	}
+}
+
+.section_1-4 {
+	background: #E3648A;
+	color: #FFF;
+	&:before {
+		background-image: linear-gradient(135deg, #E3648A 25%, transparent 25%), linear-gradient(225deg, #E3648A 25%, transparent 25%);
+	}
+	.cinema-mobile {
+		width: 100%;
+		border: 1px solid rgba(0,0,0,.1);
+		margin-top: 60px;
+	}
+}
+.section_1-4 .lead-2,
+.section_1-4 .imagery-2 {
 	margin-top: 80px;
 }
-.section_1-2 .img-cheese {
+.section_1-4 .img-cheese {
 	transform: rotate(45deg);
 	-webkit-transform: rotate(55deg);
 	margin-left: 60px;
 	margin-bottom: 60px;
 }
 
-.section_1-3 {
+.section_1-5 {
 	background: #36AF96;
 	color: #FFF;
+	&:before {
+		background-image: linear-gradient(135deg, #36AF96 25%, transparent 25%), linear-gradient(225deg, #36AF96 25%, transparent 25%);
+	}
 	.img-fridge {
 		margin-bottom: 50px;
+	}
+}
+
+.section_1-6 {
+	background: #9FCEC2;
+	.quiz {
+		padding: 0 !important;
+	}
+	.quiz h1 {
+		text-align: left !important;
+		font-weight: bold !important;
+	}
+	.quiz-box, .quiz .container {
+		width: 960px !important;
+	}
+	.quiz-start {
+		width: 660px !important;
 	}
 }
 
 .section_2-1 {
 	background: #62B987;
 	color: #FFF;
-	.lead-2 {
-		margin-top: 80px;
-	}
-	.imagery-2 {
-		margin-top: 160px;
-	}
-	.img-burntrash,
-	.img-biowash {
-		float: right;
-	}
-	.img-bush {
-		margin: 20px 0 0 0;
-		&.bush-2 {
-			margin-left: -30px;
-		}
+	&:before {
+		background-image: linear-gradient(135deg, #62B987 25%, transparent 25%), linear-gradient(225deg, #62B987 25%, transparent 25%);
 	}
 }
+
+.section_2-2 {
+	background: #4F79A1;
+	&:before {
+		background-image: linear-gradient(135deg, #4F79A1 25%, transparent 25%), linear-gradient(225deg, #4F79A1 25%, transparent 25%);
+	}
+	.mission-1 p {
+		width: 280px;
+	}
+	.mission-2 p {
+		width: 560px;
+	}
+	.mission-2 .scale {
+		right: 50px;
+		width: 200px;
+	}
+	.mission-2 .clock {
+		right: 60px;
+	}
+	.mission-2 .temp {
+		right: 180px;
+	}
+
+	.mission-3 h2 {
+		margin-top: 60px;
+	}
+	.mission-3 .micro {
+		right: 100px;
+		top: 220px;
+	}
+}
+
+.section_2-3 {
+	background: #F4F3E2;
+	color: #979681 !important;
+	&:before {
+		background-image: linear-gradient(135deg, #F4F3E2 25%, transparent 25%), linear-gradient(225deg, #F4F3E2 25%, transparent 25%);
+	}
+}
+
+.section_2-4 {
+	background: #4D457F;
+	&:before {
+		background-image: linear-gradient(135deg, #4D457F 25%, transparent 25%), linear-gradient(225deg, #4D457F 25%, transparent 25%);
+	}
+}
+
+.section_2-5 {
+	background: #F8BCA9;
+}
+
+
 
 .section_3-1 {
 	background: #EA6A43;
@@ -153,6 +365,7 @@
 h2 {
 	font-size: 28px;
 	margin-top: 30px;
+	text-transform: uppercase;
 }
 
 p {
@@ -170,7 +383,7 @@ p {
 	font-size: 18px;
 }
 
-@media (max-width: 3000px) { // 768
+@media (max-width: 768px) { // 768
 	.pager {
 		display: none;
 	}
