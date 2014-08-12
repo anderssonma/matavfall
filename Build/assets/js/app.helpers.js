@@ -107,7 +107,7 @@ var scrollDisabler = {
 		window.onmousewheel = document.onmousewheel = document.onkeydown = null;	
 	}
 };
-// scrollDisabler.disable(); FOR PRODUCTION!
+scrollDisabler.disable(); // FOR PRODUCTION!
 
 var transitionEndEventName = function() {
 	var i,

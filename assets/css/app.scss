@@ -248,6 +248,99 @@ body.scroll .pager.out .teacher-zone {
 	}
 }
 
+/*
+.radial-progress {
+	$circle-size: 210px;
+	$circle-background: #1D3853;
+	$circle-color: #FFF;
+	$inset-size: 200px;
+	$inset-color: #fbfbfb;
+	$transition-length: 1s;
+	$shadow: 6px 6px 10px rgba(0,0,0,0.2);
+	$percentage-color: #97a71d;
+	$percentage-font-size: 22px;
+	$percentage-text-width: 57px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -105px 0 0 -105px;
+	width:  $circle-size;
+	height: $circle-size;
+
+	z-index: 1;
+	background-color: $circle-background;
+	border-radius: 50%;
+	.circle-prog {
+		.mask, .fill, .shadow {
+			width:    $circle-size;
+			height:   $circle-size;
+			position: absolute;
+			border-radius: 50%;
+		}
+		.mask, .fill {
+			-webkit-backface-visibility: hidden;
+			// transition: -webkit-transform $transition-length;
+			// transition: -ms-transform $transition-length;
+			// transition: transform $transition-length;
+			border-radius: 50%;
+		}
+		.mask {
+			clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+			.fill {
+				clip: rect(0px, $circle-size/2, $circle-size, 0px);
+				background-color: $circle-color;
+			}
+		}
+	}
+	.inset {
+		width:       $inset-size;
+		height:      $inset-size;
+		position:    absolute;
+		margin-left: ($circle-size - $inset-size)/2;
+		margin-top:  ($circle-size - $inset-size)/2;
+
+		background-color: $inset-color;
+		border-radius: 50%;
+		.percentage {
+			width:       $percentage-text-width;
+			position:    absolute;
+			top:         ($inset-size - $percentage-font-size) / 2;
+			left:        ($inset-size - $percentage-text-width) / 2;
+
+			line-height: 1;
+			text-align:  center;
+
+			font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color:       $percentage-color;
+			font-weight: 800;
+			font-size:   $percentage-font-size;
+		}
+	}
+*/
+
+	// $i: 0;
+	// $increment: 180deg / 100;
+	//.loop ($i) when ($i <= 100) {
+	//@while $i <= 100
+	// @for $i from 0 through 100 {
+		// &[data-progress="#{$i}"] {
+			//.circle-prog {
+				//.mask.full, .fill {
+					//-webkit-transform: rotate($increment * $i);
+					//-ms-transform: rotate($increment * $i);
+					//transform: rotate($increment * $i);
+				//}	
+				//.fill.fix {
+					//-webkit-transform: rotate($increment * $i * 2);
+					//-ms-transform: rotate($increment * $i * 2);
+					//transform: rotate($increment * $i * 2);
+				//}
+			//}
+		//}
+	//}
+//}
+
 .loader {
 	position: fixed;
 	top: 50%;
@@ -351,7 +444,7 @@ body.scroll {
 		top: 50%;
 		left: 50%;
 		margin: -100px 0 0 -100px;
-		z-index: 1;
+		z-index: 2;
 		cursor: pointer;
 		width: 200px;
 		height: 200px;
@@ -441,16 +534,19 @@ body.scroll {
 	}
 }
 
-.nav {
+.main-nav {
 	position: fixed;
 	top: 50%;
-	left: 20px;
+	left: -100px;
 	list-style: none;
 	margin-top: -140px; //-95px; // (50 * 3 + 20 * 2) / 2
 	z-index: 9999;
 	padding: 0;
-	-webkit-transition: 0.35s left; // 0.5s delay
-	transition: 0.35s left;	// 0.5s delay
+	-webkit-transition: 0.35s -webkit-transform, 0.35s opacity; // 0.5s delay
+	transition: 0.35s transform, 0.35s opacity;	// 0.5s delay
+	-webkit-transform: translateX(120px);
+	-ms-transform: translateX(120px);
+	transform: translateX(120px);
 	li {
 		display: block;
 		margin-left: 10px;
@@ -476,17 +572,18 @@ body.scroll {
 			span {
 				opacity: 1;
 				left: 94px;
-				transition: 0.30s all 0.05s;
+				-webkit-transition: 0.30s all 0.05s, 0.15s opacity 0.15s;
+				transition: 0.30s all 0.05s, 0.15s opacity 0.15s;
 			}
 			img {
 				opacity: 1;
 			}
-		}
-		&.nav-page2:hover {
-			width: 260px;
-		}
-		&.nav-page3:hover {
-			width: 250px;
+			&.nav-page2:hover {
+				width: 260px;
+			}
+			&.nav-page3:hover {
+				width: 250px;
+			}
 		}
 		&.active {
 			opacity: 1;
@@ -499,6 +596,7 @@ body.scroll {
 			margin-left: -3px;
 			height: 100%;
 			-webkit-transition: 0.35s all;
+			transition: 0.35s all;
 			position: relative;
 			z-index: 1;
 			opacity: 0.65;
@@ -522,7 +620,10 @@ body.scroll {
 		}
 	}
 	&.disabled {
-		left: -100px;
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 0;
 	}
 }
 
