@@ -65,25 +65,8 @@
 	top: 360px;
 	left: 42%;
 }
-/*
-.quiz-slide-1 .item-2 {
-	top: 440px;
-	left: auto;
-	right: 220px;
-}
-.quiz-slide-1 .item-3 {
-	top: 370px;
-	left: 380px;
-}
-.quiz-slide-1 .item-3.rotated {
-	-webkit-transform: rotate(60deg);
-	-ms-transform: rotate(60deg);
-	transform: rotate(60deg);
-}
-*/
 
 /* == SLIDE 3 == */
-
 .quiz-slide-2 .item-1 {
 	bottom: 40px;
 	left: 136px;
@@ -246,21 +229,3 @@
 .quiz-slide-7 .mjolk-varm {
 	margin: 14px 0 0 8px;
 }
-
-
-/*
-.quiz-slide-3 .item-1 {
-	top: 140px;
-	left: auto;
-	right: 64px;
-}
-.quiz-slide-3 .item-2 {
-	top: 50px;
-	left: auto;
-	right: 160px;
-}
-.quiz-slide-3 .item-3 {
-	top: 170px;
-	left: 380px;
-}
-*/

@@ -11,43 +11,7 @@ html {
   border-bottom: 20px solid #6CB4C1;
   /*background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOGFjNmNmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0NTllOWQiPjwvcmVjdD4KPC9zdmc+");*/
   background: #6CB4C1;
-  position: relative;
-  /*
-  #bananskal, 
-  #tomathalva, 
-  #appelskrutt, 
-  #aggskal, 
-  #fiskben, 
-  #pasta, 
-  #rakskal, 
-  #plastpase, 
-  #burk, 
-  #glasflaska, 
-  #plastflaska,
-  #fimp,
-  #ostron,
-  #tallrik,
-  #kokosskal,
-  #tuggummi, 
-  #snus,
-  #snus-1,
-  #ost, 
-  #medicin,
-  #grapefrukt,
-  #gurka,
-  #hammare, 
-  #konservburk,
-  #krabbklo,
-  #mussla,
-  #kycklingklubba,
-  #bananfluga,
-  #ostmacka,
-  #bananfluga-1,
-  #bananfluga-2,
-  #bananfluga-3, 
-  #bananfluga-4{
-  	position: absolute;
-  }*/ }
+  position: relative; }
   .fakta_1-1 h1 {
     text-transform: uppercase;
     text-align: center;

@@ -31,7 +31,7 @@ var wordChoices = [
 		'…påminna alla i familjen när det är min vecka om att det är viktigt att sortera.', // 3
 		'…lägga soporna där de ska vara, rätt sorterade.', // 2
 		'…sortera men ibland glömmer jag bort mig och slänger allt bland restavfallet ändå.', // 1
-		'…ta med dem när jag går hemifrån. Vi sorterar inte. Jag slänger allt bland restavfallet, i den vanliga soppåsen.' // 0
+		'…inte sortera alls. Jag slänger allt bland restavfallet, i den vanliga soppåsen.' // 0
 	], [ // PART 4
 		'…ber jag mamma eller pappa skjutsa mig till skolan, eller betala en taxi för mig.', // 0
 		'…ber jag mamma eller pappa skjutsa mig till bussen, även om det är en omväg.', // 1

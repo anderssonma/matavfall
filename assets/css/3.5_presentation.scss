@@ -672,36 +672,3 @@
 		transform: scale(0);
 	}
 }
-
-/*
-@media print {
-	body {
-		margin: 0;
-		overflow: hidden;
-		background: #77AD7C;
-	}
-	.no-print-pres { // UTILITY CLASS
-		display: none;
-	}
-
-	.image-drawer,
-	.word-drawer,
-	#layer-help,
-	#image-counter,
-	.controls,
-	.tools {
-		display: none;
-	}
-	.presentation {
-		height: 680px;
-		background: #77AD7C;
-		margin: 0;
-		#drop-zone {
-			margin-top: 0;
-			.ui-draggable {
-				margin-top: -130px;
-			}
-		}
-	}
-}
-*/

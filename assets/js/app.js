@@ -251,57 +251,6 @@ var PAGER = {
 	}
 };
 
-
-
-/*
-var INTROMSG = {
-	HTML5Storage: false,
-	createDateString: function() {
-		var today = new Date();
-		return today.getDate() + (today.getMonth() + 1) + today.getFullYear();
-	},
-	getLastVisit: function() {
-		return localStorage.getItem('lastVisit');
-	},
-	setLastVisit: function() {
-		localStorage.setItem('lastVisit', this.createDateString());
-	},
-	isFirstVisit: function() {
-		return localStorage.getItem('lastVisit') === null ? true : false;
-	},
-	close: function() {
-		// SET THE LAST VISIT ON OVERLAY CLOSE
-		// THEN WE KNOW THAT THE USER HAVE AT LEAST SEEN IT ONCE
-		this.setLastVisit();
-	},
-
-	init: function() {
-
-		this.HTML5Storage = (supportsLocalStorage()) ? true : false;
-		if (supportsLocalStorage()) {
-			//alert(this.isFirstVisit());
-			if (!this.isFirstVisit()) {
-				this.close();
-			} else {
-
-				
-				//$('#welcome').fadeIn();
-				//this.setLastVisit();
-				if (this.getLastVisit() + 10 < this.createDateString()) {
-					// FIRST VISIT IN 10 DAYS, SHOW OVERLAY?
-				} else {
-					// HIDE OVERLAY
-					// this.close();
-				}
-			}
-		} else {
-			// COOKIES?
-		}
-	}
-};
-*/
-
-
 // START LOADING
 // =============
 
@@ -346,24 +295,3 @@ $(document).ready(function() {
 	});
 
 });
-
-/*
-$(function() {
-	PAGER.init();
-	// console.log(localStorage.getItem('scrollpos_3'));
-});
-
-var saveScrollPos = function() {
-	// BONUS TODO: SCROLL TO PREVIOUS SPOT && GET SAVED SCROLL POS IF IT EXISTS
-	var prevPos = 0;
-	var savedPos = localStorage.getItem('scrollpos_3');
-	if (supportsLocalStorage() && savedPos !== null) {
-		prevPos = savedPos;
-	}
-}
-
-window.addEventListener('onbeforeunload', function() {
-	// SAVE THE SCROLL POS ON EXIT/RELOAD || TODO: TRY TO RESTORE IT LATER
-	localStorage.setItem('scrollpos_3', $(document).scrollTop());
-});
-*/

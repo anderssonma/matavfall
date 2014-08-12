@@ -79,82 +79,29 @@
 		transition: 0.35s transform;
 
 	}
-	/*
-	.clock {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-left: -115px;
-		-webkit-transform: translateY(-50%) scale(0.25);
-		opacity: 0;
-		transition: 0.35s opacity, 0.35s -webkit-transform ease-out;
-		.pointer {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 10px;
-			height: 100px;
-			background: #555;
-			border-radius: 5px;
-			margin-left: -5px;
-			-webkit-transform-origin: top center;
-			-webkit-transform: rotate(180deg);
-			&.hour {
-				-webkit-transform: rotate(90deg);
-				height: 75px;
-			}
-		}
-		.pin {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 20px;
-			height: 20px;
-			background: #333;
-			border-radius: 10px;
-			margin: -10px 0 0 -10px;
+	
+
+	&.step-1 {
+		.undo-button {
+			display: none;
 		}
 	}
-	*/
-
-	/*
-	&.loading {
-		.clock {
-			opacity: 1;
-			-webkit-transform: translateY(-50%) scale(1);
-			transition-delay: 0.5s;
+	&.step-2, &.step-3, &.step-4, &.step-5, &.step-6 {
+		.undo-button {
+			display: inline-block;
 		}
-       }*/	
-       &.step-1 {
-          .undo-button {
-             display: none;
-         }
-     }
-     &.step-2, &.step-3, &.step-4, &.step-5, &.step-6 {
-      .undo-button {
-         display: inline-block;
-     }
- }
- &.step-2 {
-  background-color: #4D457F;
-  .landscape-bg {
-     opacity: 0.45;
- }
-}
-&.step-3 {
-  background-color: #6E5985;
-  .landscape-bg {
-     opacity: 0.65;
- }
-		/*
-		.pointer {
-			-webkit-transform: rotate(900deg);
-			transition: 3s 0.2s all ease-in-out;
-			&.hour {
-				-webkit-transform: rotate(135deg);
-			}
+	}
+	&.step-2 {
+		background-color: #4D457F;
+		.landscape-bg {
+			opacity: 0.45;
 		}
-		*/
+	}
+	&.step-3 {
+		background-color: #6E5985;
+		.landscape-bg {
+			opacity: 0.65;
+		}
 	}
 	&.step-4 {
 		background-color: #E2AC96;
@@ -233,41 +180,6 @@
 				opacity: 1;
 			}
 		}
-		/*
-		p:before {
-			line-height: 22px;
-			padding: 0;
-			margin: 0;
-			position: absolute;
-			left: 0;
-			top: 6px;
-			color: rgba(0,0,0,.2);
-			font-weight: bold;
-			font-size: 16px;
-			//border-bottom: 1px solid rgba(0,0,0,.2);
-		}
-		#part-1:before {
-			content: '07:00';
-		}
-		#part-2:before {
-			content: '08:00';
-		}
-		#part-3:before {
-			content: '08:30';
-		}
-		#part-4:before {
-			content: '09:00';
-		}
-		#part-5:before {
-			content: '10:30';
-		}
-		#part-6:before {
-			content: '16:00';
-		}
-		#part-7:before {
-			content: '22:00';
-		}
-		*/
 		span {
 			opacity: 0;
 			-webkit-transition: 0.35s all;
