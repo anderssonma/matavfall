@@ -101,10 +101,10 @@
     width: 80%;
     right: -3px;
     -webkit-transform-origin: 100% bottom;
-    -moz-transform-origin: 100% bottom;
+    -ms-transform-origin: 100% bottom;
     transform-origin: 100% bottom;
     -webkit-transform: rotate(-40deg);
-    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
     transform: rotate(-40deg); }
   #truck-road #matavfallstunna {
     width: 94%;

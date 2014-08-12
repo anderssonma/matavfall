@@ -3,40 +3,13 @@
 <!--[if IE 9 ]>    <html class="ie9 lte9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
- 
-  <!--[if lte IE 8]>
+	<!--[if lte IE 8]>
     <script type="text/javascript">
-      window.location = "http://www.smartmedmat.se";
+      //window.location = "http://www.smartmedmat.se";
     </script>
 	<![endif]-->
-
   <link rel='stylesheet' href='assets/css/vendor/normalize.css'>
 <link rel='stylesheet' href='assets/css/app.css'>
 <link rel='stylesheet' href='assets/css/landscape.css'>
@@ -46,7 +19,6 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
   <title>MATAVFALLS-WEBB</title>
-
 </head>
 
 <body>
@@ -117,8 +89,9 @@
 				  </div>
 					<img class="city" src="assets/img/ben1.svg">
 					<img class="family" src="assets/img/familj.svg" width="96">
-					<img class="citybus" src="assets/img/biogasbuss.svg" width="340">
 				</div>
+
+				<img class="citybus" src="assets/img/biogasbuss.svg" width="340">
 
 			</div>
 			<div class="page page-2">
@@ -217,7 +190,7 @@
 			<p>De flesta i Sverige har börjat sortera sitt matavfall. Genom att slänga mindre och samla in det som inte går att äta, typ möglig broccoli, kan vi få en renare och bättre värld. Här får du koll på hur – i tre munsbitar! Det börjar med sortering. Del två handlar om biogasfabriken. I sista delen får du fundera över hur vår hantering av mat påverkar miljön. Trevlig matavfallsresa! </p>
 			<div class="circle">
 				<img src="assets/img/jordglob.svg" width="200">
-				<button id="start-btn">STARTA!</button>
+				<a id="start-btn">STARTA!</a>
 			</div>
 
 			<!--
@@ -239,12 +212,18 @@
 			-->
 
 			<img class="mask-alt" src="assets/img/welcome_mask_alt.svg" width="2600">
+			<div class="star"></div>
+			<div class="star star-2"></div>
+			<div class="star star-3"></div>
+			<div class="star star-4"></div>
+			<div class="star star-5"></div>
+			<div class="star star-6"></div>
 		</div>
 
 		<!-- <button class="temp" onclick="localStorage.removeItem('lastVisit')">RESET</button> -->
 
 		<div id="loader" class="loader">
-			<img src="assets/img/preloader.gif">
+			<img src="assets/img/jordglob.svg" width="200">
 			<h6 id="progress-text"></h6>
 		</div>
 
@@ -280,7 +259,6 @@
 
 	<!-- OUR FILES -->
 	<script src='assets/js/vendor/modernizr.min.js'></script>
-<script src='assets/js/vendor/jquery.cookie.min.js'></script>
 <script src='assets/js/app.helpers.js'></script>
 <script src='assets/js/app.js'></script>
 
