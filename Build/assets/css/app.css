@@ -102,6 +102,9 @@ h1 {
   margin-right: auto;
   float: none !important; }
 
+.mobile-nav {
+  display: none; }
+
 .alert {
   position: absolute;
   top: -50px;
@@ -436,7 +439,7 @@ body.scroll .loader {
     -webkit-transform: scale(0.25);
     transform: scale(0.25); }
     .welcome .star.star-2 {
-      margin: -331px 0 0 -100px;
+      margin: -330px 0 0 -100px;
       -webkit-animation-delay: 1.5s;
       animation-delay: 1.5s; }
     .welcome .star.star-3 {
@@ -463,27 +466,27 @@ body.scroll .loader {
 @-webkit-keyframes starPulse {
   0% {
     -webkit-transform: scale(0.25);
-    opacity: 1; }
+    opacity: 0.5; }
 
   10% {
-    -webkit-transform: scale(1);
-    opacity: 1; }
+    -webkit-transform: scale(0.65);
+    opacity: 0.5; }
 
   35%, 100% {
-    -webkit-transform: scale(0.75);
+    -webkit-transform: scale(0.65);
     opacity: 0; } }
 
 @keyframes starPulse {
   0% {
     transform: scale(0.25);
-    opacity: 1; }
+    opacity: 0.5; }
 
   10% {
-    transform: scale(1);
-    opacity: 1; }
+    transform: scale(0.65);
+    opacity: 0.5; }
 
   35%, 100% {
-    transform: scale(0.75);
+    transform: scale(0.65);
     opacity: 0; } }
 
 .pager.out .welcome {

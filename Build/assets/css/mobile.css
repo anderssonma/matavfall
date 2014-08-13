@@ -17,6 +17,33 @@
 .loader {
   display: none; }
 
+.mobile-nav {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 60px;
+  background: #FFF;
+  z-index: 600; }
+  .mobile-nav .wrapper {
+    width: 960px;
+    margin: 0 auto; }
+    .mobile-nav .wrapper div {
+      color: #666;
+      width: calc(100% / 3);
+      float: left;
+      text-align: center;
+      line-height: 60px;
+      -webkit-transition: 0.35s color;
+      transition: 0.35s color; }
+      .mobile-nav .wrapper div.mid {
+        border-left: 1px dashed #778797;
+        border-right: 1px dashed #778797; }
+      .mobile-nav .wrapper div:hover {
+        color: #109BA8;
+        cursor: pointer; }
+
 .chapter {
   background: #FFF;
   padding: 5% 0; }
@@ -29,7 +56,8 @@
   .chapter span {
     margin-top: 10px;
     color: rgba(0, 0, 0, 0.35);
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 1.35em; }
 
 .clearfix:after {
   visibility: hidden;
@@ -66,7 +94,7 @@
     position: absolute;
     content: '';
     pointer-events: none;
-    z-index: 1; }
+    z-index: 10; }
 
 .textbox {
   width: 50%;
@@ -78,7 +106,17 @@
   float: right; }
 
 .imagery img {
-  margin: 20px; }
+  margin: 20px 20px 40px; }
+
+.mobile-section .quiz {
+  padding: 0 !important; }
+.mobile-section .quiz h1 {
+  text-align: left !important;
+  font-weight: bold !important; }
+.mobile-section .quiz-box, .mobile-section .quiz .container {
+  width: 960px !important; }
+.mobile-section .quiz-start {
+  width: 660px !important; }
 
 .mobile-section.uppdrag h1 {
   text-align: left !important;
@@ -177,6 +215,7 @@
     background-image: linear-gradient(135deg, #e3648a 25%, transparent 25%), linear-gradient(225deg, #e3648a 25%, transparent 25%); }
   .section_1-4 .cinema-mobile {
     width: 100%;
+    height: 576px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 60px; }
 
@@ -200,21 +239,116 @@
 
 .section_1-6 {
   background: #9FCEC2; }
-  .section_1-6 .quiz {
-    padding: 0 !important; }
-  .section_1-6 .quiz h1 {
-    text-align: left !important;
-    font-weight: bold !important; }
-  .section_1-6 .quiz-box, .section_1-6 .quiz .container {
-    width: 960px !important; }
-  .section_1-6 .quiz-start {
-    width: 660px !important; }
+  .section_1-6 .quiz-slide-0 .item-8 {
+    left: 410px; }
+  .section_1-6 .quiz-slide-2 .item-2 {
+    left: 222px; }
+  .section_1-6 .quiz-slide-2 .item-4 {
+    left: 345px; }
+  .section_1-6 .quiz-slide-2 .item-5 {
+    left: 440px; }
 
 .section_2-1 {
   background: #62B987;
   color: #FFF; }
   .section_2-1:before {
     background-image: linear-gradient(135deg, #62b987 25%, transparent 25%), linear-gradient(225deg, #62b987 25%, transparent 25%); }
+  .section_2-1 .imagery img {
+    margin-bottom: 60px; }
+  .section_2-1 .last-img {
+    margin-top: -20px;
+    margin-bottom: 0 !important; }
+  .section_2-1 .zoom-bubble {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #E3E3E3;
+    border-radius: 75px;
+    z-index: 10;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    float: left;
+    margin-bottom: 40px; }
+  .section_2-1 .zoom-bubble-2 {
+    margin-left: 40px; }
+    .section_2-1 .zoom-bubble-2 img {
+      max-width: 105%; }
+  .section_2-1 .zoom-bubble img {
+    position: absolute;
+    margin: 0; }
+  .section_2-1 .zoom-bubble .screw {
+    top: 20px;
+    left: -10px;
+    -webkit-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    z-index: 1;
+    max-width: none; }
+  .section_2-1 .zoom-bubble .banana {
+    top: 0;
+    left: -8px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg); }
+  .section_2-1 .zoom-bubble .apple {
+    top: 0;
+    left: 70px; }
+  .section_2-1 .zoom-bubble .fish {
+    top: 50px;
+    left: 0px;
+    -webkit-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    transform: rotate(220deg); }
+  .section_2-1 .zoom-bubble .sludge {
+    position: absolute;
+    border-radius: 100%; }
+  .section_2-1 .zoom-bubble .sludge-1 {
+    left: 48px;
+    bottom: 20px;
+    background: #4B3B32;
+    width: 20px;
+    height: 20px; }
+  .section_2-1 .zoom-bubble .sludge-2 {
+    left: 78px;
+    bottom: 20px;
+    background: #C89D64;
+    width: 14px;
+    height: 14px; }
+  .section_2-1 .zoom-bubble .sludge-3 {
+    left: 98px;
+    bottom: 32px;
+    background: #634E42;
+    width: 16px;
+    height: 16px; }
+  .section_2-1 .zoom-bubble-2 .crunch {
+    top: 40px;
+    z-index: 1; }
+  .section_2-1 .zoom-bubble-2 .crunch-slurry {
+    position: absolute;
+    top: 90px;
+    width: 200px;
+    height: 100px;
+    background: #967954; }
+  .section_2-1 .zoom-bubble-2 .sludge {
+    top: 114px;
+    left: 66px;
+    background: #634E42;
+    width: 16px;
+    height: 16px; }
+  .section_2-1 .zoom-bubble-2 .sludge-5 {
+    top: 112px;
+    left: 94px;
+    background: #634E42;
+    width: 13px;
+    height: 13px; }
+  .section_2-1 .zoom-bubble-2 .sludge-6 {
+    top: 111px;
+    left: 44px;
+    background: #634E42;
+    width: 10px;
+    height: 10px; }
 
 .section_2-2 {
   background: #4F79A1; }
@@ -242,18 +376,102 @@
   color: #979681 !important; }
   .section_2-3:before {
     background-image: linear-gradient(135deg, #f4f3e2 25%, transparent 25%), linear-gradient(225deg, #f4f3e2 25%, transparent 25%); }
+  .section_2-3 .fact-box {
+    width: 46%;
+    float: left;
+    margin-right: 4%; }
+    .section_2-3 .fact-box.fact-box-right {
+      float: right;
+      margin: 0 0 0 4%; }
+  .section_2-3 .fact-box-big {
+    width: 100%;
+    float: left; }
+    .section_2-3 .fact-box-big.lead {
+      margin-top: 30px;
+      padding-top: 30px; }
+      .section_2-3 .fact-box-big.lead h2 {
+        font-size: 36px;
+        margin-top: 0; }
+      .section_2-3 .fact-box-big.lead p {
+        margin-top: 2px;
+        font-size: 18px;
+        width: 90%; }
+    .section_2-3 .fact-box-big.lead-2 {
+      border-top: 1px dashed #C5C5B1; }
+  .section_2-3 .fact-box-35 p,
+  .section_2-3 .fact-box-55 p {
+    margin-top: 30px !important; }
+  .section_2-3 .fact-box-35 h2,
+  .section_2-3 .fact-box-55 h2 {
+    margin-top: 6px; }
+  .section_2-3 .textbox > p,
+  .section_2-3 .textbox .fact-box p,
+  .section_2-3 .textbox .fact-box-big p {
+    margin: 0; }
+  .section_2-3 .imagery .bag {
+    margin-bottom: 10px; }
+    .section_2-3 .imagery .bag.last {
+      margin-bottom: 60px; }
+  .section_2-3 .car {
+    margin: 20px 10px 0 0; }
+    .section_2-3 .car.car-2 {
+      top: -10px;
+      position: relative; }
+    .section_2-3 .car.car-3 {
+      top: 8px;
+      position: relative; }
+    .section_2-3 .car.car-5 {
+      top: -20px;
+      position: relative; }
 
 .section_2-4 {
-  background: #4D457F; }
-  .section_2-4:before {
-    background-image: linear-gradient(135deg, #4d457f 25%, transparent 25%), linear-gradient(225deg, #4d457f 25%, transparent 25%); }
-
-.section_2-5 {
   background: #F8BCA9; }
 
+.section_2-5 {
+  background: #4D457F;
+  padding: 0; }
+  .section_2-5:before {
+    display: none; }
+  .section_2-5 p {
+    font-size: 18px; }
+
 .section_3-1 {
-  background: #EA6A43;
+  background: #62B987;
   color: #FFF; }
+  .section_3-1:before {
+    background-image: linear-gradient(135deg, #62b987 25%, transparent 25%), linear-gradient(225deg, #62b987 25%, transparent 25%); }
+  .section_3-1 .imagery img {
+    margin-bottom: 60px; }
+  .section_3-1 .store {
+    position: relative; }
+    .section_3-1 .store img {
+      position: relative;
+      z-index: 1; }
+    .section_3-1 .store .bg {
+      position: absolute;
+      top: 70px;
+      left: 30px;
+      right: 50px;
+      bottom: 70px;
+      background: #DBECF9; }
+  .section_3-1 .house {
+    margin-left: 5px;
+    margin-right: 5px; }
+
+.section_3-2 {
+  background: #E55C46; }
+  .section_3-2:before {
+    background-image: linear-gradient(135deg, #e55c46 25%, transparent 25%), linear-gradient(225deg, #e55c46 25%, transparent 25%); }
+
+.section_3-3 {
+  background: #9FCDC3; }
+  .section_3-3:before {
+    background-image: linear-gradient(135deg, #9fcdc3 25%, transparent 25%), linear-gradient(225deg, #9fcdc3 25%, transparent 25%); }
+
+.section_3-4 {
+  background: #F2DABE; }
+  .section_3-4 .imagery img {
+    margin-bottom: 60px; }
 
 .threes {
   width: 100%;

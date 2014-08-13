@@ -146,9 +146,40 @@ var CSSHandler = {
 	}
 };
 
+// MOBILE JS LOADER
+/*
+var MOBILEJSHandler = {
+	files: {
+		1: [
+			'/assets/js/uppdrag.js',
+			'/assets/js/1.4_recept.js',
+			'/assets/js/quiz.js'
+		],
+		2: [
+			'/assets/js/uppdrag.js',
+			'/assets/js/2.5_wordbuilder.js',
+			'/assets/js/quiz.js'
+		],
+		3: [ 
+			'/assets/js/uppdrag.js',
+			'/assets/js/quiz.js'
+		]
+	},
+	load: function(page) {
+		var data =  MOBILEJSHandler.files[page];
+		data.forEach(function(item) { // IE9+
+			ResourceLoader('js', item, function() {
+				//console.log('LOADED');
+			});
+		});
+	}
+};
+*/
+
 var PAGER = {
 	currentPage: 1,
 	initialLoad: true,
+	mobileMode: false,
 	insertPage: function() {
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			CSSHandler.load(); // (ASYNC) CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
@@ -190,6 +221,9 @@ var PAGER = {
 	updateLoadProgress: function() {
 		this.filesLoaded++;
 		var percentageCount = Math.round(((this.filesLoaded / this.filesToLoad).toFixed(2)) * 100);
+		if (percentageCount > 100) {
+			percentageCount = percentageCount - 100;
+		}
 		this.progressText.innerHTML = percentageCount + ' %';
 		//this.progressCicle.dataset.progress = percentageCount;
 		
@@ -257,48 +291,82 @@ var PAGER = {
 // START LOADING
 // =============
 
+var MOBILE = {
+	pageHash: 1,
+	appendPage: function(page) {
+		$.get('mobile_ben' + page + '.html', function(data) {
+			ELEM.content.append(data);
+			window.setTimeout(function() {
+				//MOBILEJSHandler.load(page);
+			}, 1500);
+		});
+	}
+};
+
 $(document).ready(function() {
 
-	if (isMobile.any() && document.addEventListener) {
+	if (!isMobile.any() && document.addEventListener) {
+
 		ELEM.setup();
 		WORLD.setup();
 		PAGER.init();
+
 	} else {
+
+		PAGER.mobileMode = true;
 		scrollDisabler.reenable();
 		ELEM.setup();
 		ELEM.loader.addClass('hide');
-		/*
-		ELEM.setup();
-		console.log('MOBILE');
-		ELEM.loader.addClass('hide');
-		window.setTimeout(function() {
-			ELEM.loader.addClass('disabled');
-		}, 400);
-		$('#pager').addClass('page-1-active');
-		*/
+
+		ResourceLoader('css', '/assets/css/mobile.css', function() {});
+
+		FastClick.attach(document.body);
+
 		window.addEventListener('hashchange', function() {
-			ELEM.content.empty();
-			$.get('mobile_ben' + (location.hash.slice(1) || '/') + '.html', function(data) {
-				ELEM.content.append(data);
-			});
+			console.log(location.hash.slice(1))
+			MOBILE.appendPage(location.hash.slice(1) || 1);
 		}, false);
 
-		var pageHash;
 		if (window.location.hash) {
-			pageHash = location.hash.slice(1) || '/';
+			MOBILE.appendPage(location.hash.slice(1) || '/');
 		} else {
 			window.location.hash = '#' + 1;
-			window.setTimeout(function() {
-				self.setupBinds(); // WAIT 1 CYCLE, OR IT WILL TRIGGER TWICE ON LOAD
-			}, 0);
 		}
 
-		$.get('mobile_ben' + pageHash + '.html', function(data) {
-			ELEM.content.append(data);
-			ResourceLoader('css', '/assets/css/mobile.css', function() {
-				// DONE CALLBACK
-			});
+		document.getElementById('mobilenav-p1').addEventListener('click', function() { 
+			if (parseInt(location.hash.slice(1), 10) === 1) {
+				return false;
+			}
+			ELEM.content.empty();
+			if (!Modernizr.csstransitions) {
+				window.location = 'http://' + window.location.hostname + '#' + 1;
+			} else {
+				window.location.hash = '#' + 1;
+			}
 		});
+		document.getElementById('mobilenav-p2').addEventListener('click', function() {
+			if (parseInt(location.hash.slice(1), 10) === 2) {
+				return false;
+			}
+			ELEM.content.empty();
+			if (!Modernizr.csstransitions) {
+				window.location = 'http://' + window.location.hostname + '#' + 2;
+			} else {
+				window.location.hash = '#' + 2;
+			}
+		});
+		document.getElementById('mobilenav-p3').addEventListener('click', function() {
+			if (parseInt(location.hash.slice(1), 10) === 3) {
+				return false;
+			}
+			ELEM.content.empty();
+			if (!Modernizr.csstransitions) {
+				window.location = 'http://' + window.location.hostname + '#' + 3;
+			} else {
+				window.location.hash = '#' + 3;
+			}
+		});
+
 	}
 
 	var topIsAnimating = true;

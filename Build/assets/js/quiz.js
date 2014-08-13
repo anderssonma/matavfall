@@ -307,8 +307,8 @@ var Quiz = {
 		//this.nextQuestion();
 	},
 
-	firstSlide: function(self) {
-		$(self).parent().addClass('start');
+	firstSlide: function(el) {
+		$(el).parent().addClass('start');
 		this.nextQuestion();
 		// $(this.elSlide).addClass('quiz-in');
 	},
@@ -329,7 +329,11 @@ var Quiz = {
 	checkPreviousData: function() {
 		var oldHighScore = parseInt(localStorage.getItem('SMM_QUIZ_' + PAGER.currentPage + '_CORRECT') || 0, 10);
 		if (oldHighScore === 0) {
-			this.firstSlide($('#quiz-start button'));
+			var delay = PAGER.mobileMode ? 2000 : 0;
+			var self = this;
+			window.setTimeout(function() {
+				self.firstSlide($('#quiz-start button'));
+			}, delay);
 			return false;
 		}
 
