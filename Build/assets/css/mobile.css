@@ -11,10 +11,9 @@
   .mobile-intro .inner {
     padding: 20% 10%; }
 
-#start-btn {
-  display: none; }
-
-.loader {
+#start-btn,
+.loader,
+.mobile-imagery {
   display: none; }
 
 .mobile-nav {
@@ -181,7 +180,8 @@
   background: #6CB4C1;
   color: #FFF; }
   .section_1-1 h4 {
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4em; }
   .section_1-1:before {
     background-image: linear-gradient(135deg, #6cb4c1 25%, transparent 25%), linear-gradient(225deg, #6cb4c1 25%, transparent 25%); }
 
@@ -360,6 +360,17 @@
     background: #634E42;
     width: 10px;
     height: 10px; }
+  .section_2-1 .offsprings {
+    float: left;
+    width: 100%;
+    margin-top: 60px; }
+    .section_2-1 .offsprings p {
+      font-size: 14px; }
+    .section_2-1 .offsprings .third {
+      width: 300px;
+      float: left; }
+      .section_2-1 .offsprings .third.third-mid {
+        margin: 0 30px; }
 
 .section_2-2 {
   background: #4F79A1; }
@@ -505,6 +516,22 @@ p {
   .pager {
     display: none; }
 
+  .mobile-imagery {
+    display: block;
+    margin: 40px 0;
+    float: left;
+    width: 100%; }
+    .mobile-imagery .left {
+      margin-left: 20px; }
+    .mobile-imagery .left-2x {
+      margin-left: 40px; }
+    .mobile-imagery .zoom-bubble,
+    .mobile-imagery .zoom-bubble-2 {
+      margin: 0 auto 10px;
+      float: none; }
+    .mobile-imagery.img-cars, .mobile-imagery.img-buns, .mobile-imagery.img-huts {
+      margin: 20px 0 0; }
+
   .mobile-intro {
     position: relative;
     width: 100%;
@@ -587,6 +614,17 @@ p {
   .textlead p {
     font-size: 16px;
     line-height: 22px; }
+
+  .section_2-1 .offsprings {
+    margin-top: 10px; }
+    .section_2-1 .offsprings p {
+      font-size: 12px;
+      line-height: 18px; }
+    .section_2-1 .offsprings .third {
+      width: 100%;
+      float: left; }
+      .section_2-1 .offsprings .third.third-mid {
+        margin: 20px 0; }
 
   .section_2-3 .fact-box {
     width: 100%;
