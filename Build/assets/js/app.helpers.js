@@ -135,7 +135,7 @@ var transitionEndEventName = function() {
  * (c) 2013, Kent Mewhort, licensed under BSD. See LICENSE.txt for details.
  */
 
-// constructor
+/*
 function PointerEventsPolyfill(options){
     // set defaults
     this.options = {
@@ -198,3 +198,4 @@ PointerEventsPolyfill.prototype.register_mouse_events = function(){
         return true;
     });
 };
+*/

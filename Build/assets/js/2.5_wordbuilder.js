@@ -5,7 +5,6 @@ var SB = {
 	},
 
 	pickWord: function(i) {
-		console.log('UNDO: ' + this.undoInProgress + ' || INSERT: ' + this.insertInProgress);
 		if (this.undoInProgress || this.insertInProgress) {
 			return false;
 		}

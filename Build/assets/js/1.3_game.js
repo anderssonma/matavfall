@@ -829,7 +829,6 @@ var setupGame = function() {
 		if (activeTrash.length > 0) {
 			activeTrash.forEach(function(trash) {
 				window.clearTimeout(trash.timeout);
-				//console.log('RM: ' + trash.type);
 				trash.active = false;
 			});
 			removeTrash();
@@ -1081,8 +1080,8 @@ var setupGame = function() {
 
 	GAME.resumeGame = function() {
 		if (GAME.isPaused) {
-			GAME.isPaused = false;
 			$(gamePauseBox).fadeOut(500, function() {
+				GAME.isPaused = false;
 				window.setTimeout(function() {
 					player.gameLoop();
 					GAME.clock.resume();
@@ -1164,15 +1163,13 @@ var setupGame = function() {
 
 	var startGame = function() {
 
-		var legacyTimeout;
-
 		window.requestAnimationFrame = (function(){
 			return  window.requestAnimationFrame	||
 				window.webkitRequestAnimationFrame	||
 				window.mozRequestAnimationFrame			||
 				function(callback) { // USE A TIMEOUT FOR OLD BROWSERS -> 1000 / 60 for 60 FPS
-					var legacyTimeout = window.setTimeout(callback, 1000 / 60);
-					return legacyTimeout;
+					GAME.legacyTimeout = window.setTimeout(callback, 1000 / 60);
+					//return legacyTimeout;
 				};
 		})();
 
@@ -1181,7 +1178,7 @@ var setupGame = function() {
 				window.webkitCancelAnimationFrame		||
 				window.mozCancelAnimationFrame			||
 				function() {
-					window.clearTimeout(legacyTimeout);
+					window.clearTimeout(GAME.legacyTimeout);
 				};
 		})();
 
@@ -1252,7 +1249,9 @@ var setupGame = function() {
 
 		// HELP BTN
 		$(helpToggle).on('click', function() {
-			$('#start-game-btn').on('click', function() {
+			$('#start-game-btn').on('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
 				$('#game-desc').removeClass('show');
 				$('#start-game-btn').off();
 			}).html('Stäng &nbsp;&rarr;');
@@ -1366,6 +1365,7 @@ $(document).ready(function() {
 					setupGame();
 					GAME.paintBackground();
 					GAME.start();
+					$('#start-game-btn').off();
 				});
 			}, 0);
 			

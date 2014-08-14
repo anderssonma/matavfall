@@ -94,18 +94,19 @@ var DPLM = {
 		var boxWidth = 292;
 		var boxHeight = 52;
 		var x = this.columns[col];
+		var newY = y - this.topMargin + (boxHeight / 2);
 		// PAINT BG BOX
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
 		if (!Modernizr.csstransitions) { // FOR IE 9 WE FAKE A ROUND RECT WITH A RECT + 2 CIRCLES
 			ctx.fillRect(x - (boxWidth / 2) + (boxHeight / 2), (y - this.topMargin), boxWidth - boxHeight, boxHeight);
 
 			ctx.beginPath();
-			ctx.arc(x - (boxWidth / 2) + 26, (y - this.topMargin + (boxHeight / 2)), (boxHeight / 2), 0, 2*Math.PI);
+			ctx.arc(x - (boxWidth / 2) + 26, newY, (boxHeight / 2), 0, 2*Math.PI);
 			ctx.fill();
 			ctx.closePath();
 
 			ctx.beginPath();
-			ctx.arc(x + (boxWidth / 2) - 26, (y - this.topMargin + (boxHeight / 2)), (boxHeight / 2), 0, 2*Math.PI);
+			ctx.arc(x + (boxWidth / 2) - 26, newY, (boxHeight / 2), 0, 2*Math.PI);
 			ctx.fill();
 			ctx.closePath();
 		} else {
@@ -115,11 +116,53 @@ var DPLM = {
 		ctx.fillStyle = '#FFF';
 		ctx.fillText('–  ' + string + '  –', x, (y + boxHeight - 15 - this.topMargin));
 
+		// REPLACE PREVIOUS PLACEHOLDER IF IT EXISTS
+		var oldId = -1;
+		this.activeTextboxes.forEach(function(item, i) {
+			if (item.top === newY && item.col === x) {
+				oldId = i;
+			}
+		});
+		if (oldId !== -1) {
+			this.activeTextboxes.splice(oldId, 1);
+		}
+
 		this.activeTextboxes.push({
 			col: col,
-			top: y - this.topMargin,
+			top: y,
 			text: string
 		});
+
+		this.setContextDefaults(ctx);
+	},
+
+
+	paintTextBoxFallbackCtx: function(ctx, col, y, string) {
+		var boxWidth = 292;
+		var boxHeight = 52;
+		var x = this.columns[col];
+		var newY = y - this.topMargin + (boxHeight / 2);
+		// PAINT BG BOX
+		ctx.fillStyle = this.colors[this.activeColor].darkColor;
+		if (!Modernizr.csstransitions) { // FOR IE 9 WE FAKE A ROUND RECT WITH A RECT + 2 CIRCLES
+			ctx.fillRect(x - (boxWidth / 2) + (boxHeight / 2), (y - this.topMargin), boxWidth - boxHeight, boxHeight);
+
+			ctx.beginPath();
+			ctx.arc(x - (boxWidth / 2) + 26, newY, (boxHeight / 2), 0, 2*Math.PI);
+			ctx.fill();
+			ctx.closePath();
+
+			ctx.beginPath();
+			ctx.arc(x + (boxWidth / 2) - 26, newY, (boxHeight / 2), 0, 2*Math.PI);
+			ctx.fill();
+			ctx.closePath();
+		} else {
+			ctx.roundRect(x - (boxWidth / 2), (y - this.topMargin), boxWidth, boxHeight, (boxHeight / 2)).fill();
+		}
+		// PAINT TEXT
+		ctx.fillStyle = '#FFF';
+		ctx.fillText('–  ' + string + '  –', x, (y + boxHeight - 15 - this.topMargin));
+
 		this.setContextDefaults(ctx);
 	},
 
@@ -445,7 +488,7 @@ var DPLM = {
 		this.activePlaceholders.length = 0;
 		this.activeTextboxes.length = 0;
 		this.activeImages.length = 0;
-		//ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	},
 
 	renderAll: function(ctx) {
@@ -557,7 +600,7 @@ var DPLM = {
 				height: 116
 			}
 			*/
-			
+
 		];
 
 		this.ctx = this.canvas.getContext('2d');
@@ -643,19 +686,23 @@ DPLM.print = function() {
 	if (DPLM.printModeModern) {
 		exportImage(this.canvas);
 	} else {
+
 		// PAINT STATIC BG
+		fallbackCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 		fallbackCtx.fillStyle = '#FFFFFF';
 		fallbackCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 		this.setContextDefaults(fallbackCtx);
 
 		this.paintStaticBackground(fallbackCtx);
-		// PAINT PLACEHOLDERS
+
+		/* PAINT PLACEHOLDERS – DISABLED BECAUSE NO PRINTING IF PLACEHOLDERS EXISTS
 		this.activePlaceholders.forEach(function(item) {
 			DPLM.paintPlaceholder(fallbackCtx, item.col, item.top, item.text);
-		});
+		}); */
+
 		// PAINT TEXBOXES
 		this.activeTextboxes.forEach(function(item) {
-			DPLM.paintTextBox(fallbackCtx, item.col, item.top, item.text);
+			DPLM.paintTextBoxFallbackCtx(fallbackCtx, item.col, item.top, item.text);
 		});
 
 		var loadCounter = 0;
@@ -688,7 +735,6 @@ DPLM.print = function() {
 
 
 $(document).ready(function() {
-	PointerEventsPolyfill.initialize({});
 
 	var bgColor;
 	switch (parseInt(PAGER.currentPage, 10)) {
