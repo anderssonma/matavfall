@@ -108,17 +108,17 @@ var SB = {
 		var title, imageSrc, textVerdict, classVerdict;
 		if (finalScore >= Math.floor(maxScore * 0.8)) { // 80% or more correct
 			title = 'MILJÖHJÄLTE';
-			imageSrc = 'jorden_glad';
+			imageSrc = 'jorden_glad_alt';
 			textVerdict = 'En miljöhjälte både tänker rätt och gör rätt för en bättre miljö. Grattis! Fortsätt att tänka på hur du kan bidra till en bättre miljö, varje dag. Uppmuntra dina föräldrar att också bli miljöhjältar. Säg till din lärare att det är bra om ni alla tillsammans pratar om hur viktigt det är att välja ekologisk mat – hemma och i skolan.';
 			classVerdict = 'final-good';
 		} else if (finalScore >= Math.floor(maxScore * 0.4)) { // 40%-80% correct
 			title = 'MILJÖTALANGEN';
-			imageSrc = 'jorden_neutral';
+			imageSrc = 'jorden_neutral_alt';
 			textVerdict = 'En miljötalang tänker på miljön ibland, men inte alltid. Du kan med enkla medel bli en ”miljöhjälte”. Ta gärna hjälp av dina föräldrar. Be att de handlar mer ekologisk mat hemma. Hjälps åt att sortera avfall. Prata mer om hur ni alla, även mamma och pappa, kan förbättra miljön. Det får vi alla glädje av.';
 			classVerdict = 'final-okay';
 		} else {
 			title = 'MILJÖBOVEN';
-			imageSrc = 'jorden_dyster';
+			imageSrc = 'jorden_dyster_alt';
 			textVerdict = 'En miljöbov bryr sig inte om att tänka på miljön över huvud taget. Du kan med enkla medel bli en ”miljötalang”. Spara energi genom att inte duscha onödigt länge, stäng av telefon, dator, tv och lampor när de inte används. Och hjälp både dig själv och andra med att sortera avfallet hemma.';
 			classVerdict = 'final-bad';
 		}
