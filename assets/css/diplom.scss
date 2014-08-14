@@ -227,12 +227,15 @@
 			}
 		}
 		.button {
-			background: #DEA58D;
+			background: #F2A18C;
+			font-weight: bold;
+			line-height: 20px;
 			&.left {
-				border-right: 1px solid #E6BEAA;
+				border-right: 1px solid #F6BBA9;
 			}
 			&:hover {
-				background: #E6BEAA;
+				background: #FADDD4;
+				color: #F2A18C;
 			}
 		}
 	}
@@ -247,12 +250,15 @@
 			}
 		}
 		.button {
-			background: #578357;
+			background: #358656;
+			font-weight: bold;
+			line-height: 20px;
 			&.left {
-				border-right: 1px solid #78AD7C;
+				border-right: 1px solid #51B07B;
 			}
 			&:hover {
-				background: #78AD7C;
+				color: #358656;
+				background: #A8D7BD;
 			}
 		}
 	}
@@ -268,11 +274,14 @@
 		}
 		.button {
 			background: #87B7DC;
+			font-weight: bold;
+			line-height: 20px;
 			&.left {
 				border-right: 1px solid #AAD3E8;
 			}
 			&:hover {
-				background: #AAD3E8;
+				background: #D4E9F3;
+				color: #87B7DC;
 			}
 		}
 	}

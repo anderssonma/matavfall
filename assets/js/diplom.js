@@ -98,7 +98,7 @@ var DPLM = {
 		ctx.fillStyle = this.colors[this.activeColor].darkColor;
 		if (!Modernizr.csstransitions) { // FOR IE 9 WE FAKE A ROUND RECT WITH A RECT + 2 CIRCLES
 			ctx.fillRect(x - (boxWidth / 2) + (boxHeight / 2), (y - this.topMargin), boxWidth - boxHeight, boxHeight);
-			
+
 			ctx.beginPath();
 			ctx.arc(x - (boxWidth / 2) + 26, (y - this.topMargin + (boxHeight / 2)), (boxHeight / 2), 0, 2*Math.PI);
 			ctx.fill();
@@ -238,7 +238,7 @@ var DPLM = {
 			height = 290; // 382
 		}
 
-		
+
 		var globe = new Image();
 		globe.onload = function() {
 			DPLM.activeImages.push({
@@ -382,7 +382,7 @@ var DPLM = {
 			});
 			DPLM.ctx.drawImage(sig, (DPLM.canvas.width / 2) - 450, 1830, 900, 274);
 		};
-		sig.src = '/assets/img/diplom_signatur.svg';
+		sig.src = '/assets/img/diplom_signatur_alt.svg';
 	},
 
 	paintStaticBackground: function(ctx) {
@@ -425,7 +425,7 @@ var DPLM = {
 	},
 
 	paintStaticImages: function(ctx) {
-			// PAINT SOME STATIC IMAGERY
+		// PAINT SOME STATIC IMAGERY
 		this.staticImages.forEach(function(item){
 			var img = new Image();
 			img.onload = function() {
@@ -545,7 +545,10 @@ var DPLM = {
 				left: 274,
 				width: 1058,
 				height: 42,
-			}, {
+			}
+
+			/*
+			, {
 				type: 'image',
 				src: '/assets/img/logo_vasyd_tfm.svg',
 				top: this.canvas.height - 84 - 116,
@@ -553,6 +556,8 @@ var DPLM = {
 				width: 93,
 				height: 116
 			}
+			*/
+			
 		];
 
 		this.ctx = this.canvas.getContext('2d');
@@ -578,7 +583,7 @@ var DPLM = {
 
 // DEPENDS ON SVG-TODATAURL.JS IN IE / SAFARI
 DPLM.whichBrowser = (function(){
-  var ua= navigator.userAgent, tem, 
+  var ua= navigator.userAgent, tem,
   M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
   if(/trident/i.test(M[1])){
       tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
@@ -590,7 +595,7 @@ DPLM.whichBrowser = (function(){
   }
   M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
   if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-  
+
   return M.join(' ');
 })();
 
