@@ -140,7 +140,7 @@ var Quiz = {
 		};
 		this.score[this.activeSlide.id] = pushScore;
 
-		console.log(this.score);
+		//console.log(this.score[this.activeSlide.id]);
 
 		if (this.nextSlide === this.slides.length - 2) {
 			$('#submit').text('AVSLUTA'); // CHANGE TEXT ON LAST Q'S SUBMIT LABEL
@@ -289,9 +289,10 @@ var Quiz = {
 						// GET ALL THE VALID ITEMS AND CONCATENATE THEM
 						var allImages = $(thisSlide + ' .draggable').get();
 						var answerArr = [];
-						for (var i = 0; i < this.validItems.length; i++) {
-							answerArr.push($(allImages[i]).data('item'));
-						}
+						this.validItems.forEach(function(item, i) {
+							answerArr.push($(allImages[item]).data('item'));
+						});
+
 						var replacement = ' och';
 						answerArr = answerArr.join(', ').toLowerCase();
 						answerArr = answerArr.replace(/,([^,]*)$/,replacement+'$1');
