@@ -301,6 +301,7 @@ var setupGame = function() {
 				this.remainingHits--;
 				if (this.remainingHits <= 0) {
 					this.changeItem();
+					updateTime(3);
 				} else {
 					this.elCount.text(this.remainingHits);
 				}
@@ -493,6 +494,7 @@ var setupGame = function() {
 					this.combo = this.combo + 1;
 					this.comboHandler.required++;
 					this.comboHandler.progress = 0;
+					updateTime(1);
 				} else {
 					this.comboHandler.progress++;
 				}
@@ -524,6 +526,20 @@ var setupGame = function() {
 					spawnHandler.minCount = 40;
 				}, 2500);
 				this.level = 3;
+			}
+			if (this.level === 3 && this.currentScore > 10000) {
+				//trashMaxUptime = trashMaxUptime - 1;
+				window.setTimeout(function() {
+					spawnHandler.minCount = 30;
+				}, 2500);
+				this.level = 4;
+			}
+			if (this.level === 4 && this.currentScore > 15000) {
+				//trashMaxUptime = trashMaxUptime - 1;
+				window.setTimeout(function() {
+					spawnHandler.minCount = 20;
+				}, 2500);
+				this.level = 5;
 			}
 
 		},
@@ -701,18 +717,15 @@ var setupGame = function() {
 				} else {
 					var typeOfHit = $.inArray(this.type, pathArray[this.path].accepts);
 					if (typeOfHit > -1) { // IF HIT
-						if (typeOfHit === 0) {
+						if (typeOfHit === 0 && this.path ===0) { // IF CORRECT HIT IN THE SAUCEPAN
 							playSound('great');
-							player.updateScore(200, this.goal);
+							player.updateScore(300, this.goal);
 							updateTime(3);
-						} else {
-							playSound('ok');
-							player.updateScore(100, this.goal);
-							updateTime(1);
-						}
-
-						if (this.path === 0) { // IF IT'S A SAUCEPAN HIT
 							stoveHandler.subtractItem();
+						} else { // IF CORRECT HIT IN THE FRIDGE / TRASH
+							playSound('ok');
+							player.updateScore(150, this.goal);
+							updateTime(1);
 						}
 					} else { // IF MISS
 						playSound('miss');
