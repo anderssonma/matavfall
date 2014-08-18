@@ -37,20 +37,26 @@
 
 	<div class="mobile-nav">
 		<div class="wrapper">
-			<div id="mobilenav-p1">DEL 1</div>
-			<div id="mobilenav-p2" class="mid">DEL 2</div>
-			<div id="mobilenav-p3">DEL 3</div>
+			<div class="logo">SMART<br>MED MAT</div>
+			<div class="pages">
+				<div id="mobilenav-p1">DEL 1</div>
+				<div id="mobilenav-p2" class="mid">DEL 2</div>
+				<div id="mobilenav-p3" class="last">DEL 3</div>
+			</div>
 		</div>
 	</div>
 
 	<div id="pager" class="pager pager-animate">
+
+		<button id="enable-print" class="print-button" onclick="PAGER.enablePrintMode();">&larr;&nbsp;&nbsp; UTSKRIFTSVÄNLIG VERSION</button>
+		<button id="disable-print" class="print-button disable" onclick="PAGER.disablePrintMode();">LÄMNA UTSKRIFTSVÄNLIG VERSION &nbsp;&nbsp;&rarr;</button>
 
 		<div class="alert">
 			<div class="wrap">Smartmedmat.se är nylanserad. Hittar du något konstigt så skicka gärna ett mail till <a href="mailto:smartmedmat@givakt.se">smartmedmat@givakt.se</a>.
 				<img src="assets/img/icon_clear.svg" width="16" onclick="$(this).parent().parent().addClass('out');">
 			</div>
 		</div>
-		<a class="teacher-zone" href="http://larare.smartmedmat.se/">FÖR LÄRARE &rarr;</a>
+		<a class="teacher-zone" href="http://larare.smartmedmat.se/">FÖR LÄRARE &nbsp;&nbsp;&rarr;</a>
 
 		<div class="page-wrapper">
 

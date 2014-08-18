@@ -180,6 +180,14 @@ var PAGER = {
 	currentPage: 1,
 	initialLoad: true,
 	mobileMode: false,
+	enablePrintMode: function() {
+		localStorage.setItem('SMM_PRINTMODE', true);
+		window.location.reload();
+	},
+	disablePrintMode: function() {
+		localStorage.setItem('SMM_PRINTMODE', false);
+		window.location.reload();
+	},
 	insertPage: function() {
 		window.setTimeout(function() { // TOO FAST LOCALLY OTHERWISE ;)
 			CSSHandler.load(); // (ASYNC) CALLS -> HTMLHandler.load() :: CALLS -> JSHandler.start()
@@ -303,9 +311,16 @@ var MOBILE = {
 	}
 };
 
+PAGER.printMode = localStorage.getItem('SMM_PRINTMODE') || false;
+PAGER.printMode = (PAGER.printMode === 'true');
+
 $(document).ready(function() {
 
-	if (!isMobile.any() && document.addEventListener) {
+	console.log('IS.M: ' + !isMobile.any() + ' // IS.P: ' + !PAGER.printMode);
+
+	if (!isMobile.any() && !PAGER.printMode) {
+
+		console.log('HERE');
 
 		ELEM.setup();
 		WORLD.setup();
@@ -322,15 +337,20 @@ $(document).ready(function() {
 
 		FastClick.attach(document.body);
 
+		if (PAGER.printMode && !isMobile.any()) {
+			$('body').addClass('print-mode');
+		}
+
 		window.addEventListener('hashchange', function() {
-			console.log(location.hash.slice(1))
 			MOBILE.appendPage(location.hash.slice(1) || 1);
 		}, false);
 
 		if (window.location.hash) {
 			MOBILE.appendPage(location.hash.slice(1) || '/');
+			$('body').addClass('page-' + location.hash.slice(1));
 		} else {
 			window.location.hash = '#' + 1;
+			$('body').addClass('page-1');
 		}
 
 		document.getElementById('mobilenav-p1').addEventListener('click', function() { 
@@ -343,6 +363,7 @@ $(document).ready(function() {
 			} else {
 				window.location.hash = '#' + 1;
 			}
+			$('body').removeClass('page-2 page-3').addClass('page-1');
 		});
 		document.getElementById('mobilenav-p2').addEventListener('click', function() {
 			if (parseInt(location.hash.slice(1), 10) === 2) {
@@ -354,6 +375,7 @@ $(document).ready(function() {
 			} else {
 				window.location.hash = '#' + 2;
 			}
+			$('body').removeClass('page-1 page-3').addClass('page-2');
 		});
 		document.getElementById('mobilenav-p3').addEventListener('click', function() {
 			if (parseInt(location.hash.slice(1), 10) === 3) {
@@ -365,12 +387,14 @@ $(document).ready(function() {
 			} else {
 				window.location.hash = '#' + 3;
 			}
+			$('body').removeClass('page-1 page-2').addClass('page-3');
 		});
 
 	}
 
 	var topIsAnimating = true;
 	$(window).on('scroll', function(e) {
+		console.log('SCROLL');
 		var sTop = $(this).scrollTop();
 		var wHeight = $(window).height();
 		if (topIsAnimating && sTop > wHeight) { // STOP TOP ANIM

@@ -120,7 +120,7 @@ var setupGame = function() {
 			type: 'broccoli',
 			title: 'Broccoli',
 			isDish: true,
-			image: '../assets/img/broccoli.svg',
+			image: '../assets/img/broccoli_spel.svg',
 			width: 100,
 			height: 111
 		}, {
@@ -148,7 +148,7 @@ var setupGame = function() {
 			type: 'apple',
 			title: 'Äppleskrutt',
 			isDish: false,
-			image: '../assets/img/appelskrutt.svg',
+			image: '../assets/img/appelskrutt_spel.svg',
 			width: 58,
 			height: 120,
 		}, {
@@ -162,7 +162,7 @@ var setupGame = function() {
 			type: 'trash',
 			title: 'Telefon',
 			isDish: false,
-			image: '../assets/img/mobil.svg',
+			image: '../assets/img/mobil_spel.svg',
 			width: 54,
 			height: 104,
 		}
@@ -648,6 +648,7 @@ var setupGame = function() {
 
 		I.init = function() {
 			var newTrash = trashTypes[Math.floor(Math.random() *  trashTypes.length)];
+			// console.log(newTrash.image);
 			this.image = newTrash.image;
 			this.type = newTrash.type;
 			this.height = newTrash.height;
@@ -802,6 +803,7 @@ var setupGame = function() {
 			e.preventDefault();
 		} else if ( e.keyCode === 37 || e.keyCode === 39) { // LEFT/RIGHT ARROW
 			keysDown[e.keyCode] = true;
+			e.preventDefault();
 		} else if (e.keyCode === 65 || e.keyCode === 83 || e.keyCode === 68) { // 'A','S','D'
 			jumpTriggered = true;
 			player.nothingHitYet = true;

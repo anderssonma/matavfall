@@ -157,6 +157,33 @@ h1 {
 	}
 }
 
+.print-button {
+	position: absolute;
+	left: 40px;
+	bottom: 40px;
+	width: 290px;
+	background: #172C42;
+	z-index: 400;
+	padding: 12px 16px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	color: rgba(255,255,255,.5);
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	
+	&.disable {
+		width: 360px;
+		display: none;
+	}
+	&:hover {
+		-webkit-transition: 0.35s color ease-out;
+		transition: 0.35s color ease-out;
+		color: rgba(255,255,255,.75);
+	}
+}
+
 .teacher-zone {
 	position: absolute;
 	top: -50px;
@@ -180,14 +207,21 @@ h1 {
 	}
 }
 
-body.scroll .alert,
-body.scroll .teacher-zone {
+body .alert,
+body .teacher-zone {
 	-webkit-transform: translateY(50px) !important;
 	transform: translateY(50px) !important;
 }
+body .pager.out .print-button {
+	-webkit-transform: translateX(-400px) !important;
+	transform: translateX(-400px) !important;
+	opacity: 0;
+	-webkit-transition: 0.35s all ease-out;
+	transition: 0.35s all ease-out;
+}
 
-body.scroll .pager.out .alert,
-body.scroll .pager.out .teacher-zone {
+body .pager.out .alert,
+body .pager.out .teacher-zone {
 	-webkit-transform: translateY(0) !important;
 	transform: translateY(0) !important;
 }
@@ -219,7 +253,8 @@ body.scroll .pager.out .teacher-zone {
 		bottom: 0;
 		left: 0;
 		width: calc(100% / 3);
-		height: 200px;
+		height: 400px;
+		overflow: hidden;
 		//background: #786854;
 		-webkit-transform: translateY(100px);
 		transform: translateY(100px);
@@ -735,6 +770,7 @@ body.scroll {
 	height: 204px;
 	text-align: center;
 	z-index: 2;
+	overflow: hidden;
 	&.page-divider-1 {
 		height: 34px;
 		.fake-bottom {
@@ -750,6 +786,8 @@ body.scroll {
 			z-index: 2;
 			-webkit-animation: 3s wave3 infinite linear;
 			animation: 3s wave3 infinite linear;
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
 		}
 	}
 	&.page-divider-2 {
