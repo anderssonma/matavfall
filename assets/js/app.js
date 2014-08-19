@@ -316,11 +316,9 @@ PAGER.printMode = (PAGER.printMode === 'true');
 
 $(document).ready(function() {
 
-	console.log('IS.M: ' + !isMobile.any() + ' // IS.P: ' + !PAGER.printMode);
+	//console.log('IS.M: ' + !isMobile.any() + ' // IS.P: ' + !PAGER.printMode);
 
 	if (!isMobile.any() && !PAGER.printMode) {
-
-		console.log('HERE');
 
 		ELEM.setup();
 		WORLD.setup();
@@ -394,7 +392,6 @@ $(document).ready(function() {
 
 	var topIsAnimating = true;
 	$(window).on('scroll', function(e) {
-		console.log('SCROLL');
 		var sTop = $(this).scrollTop();
 		var wHeight = $(window).height();
 		if (topIsAnimating && sTop > wHeight) { // STOP TOP ANIM

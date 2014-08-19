@@ -267,16 +267,17 @@
 .kyl-frys #tarmometer-container {
 	position: fixed;
 	top: 50%;
-	left: 50%;
+	left: 100%;
 	width: 200px;
 	margin-top: -150px;
 	margin-left: 420px;
-	transition: opacity 0.35s;
-	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s, left 0.35s;
+	-webkit-transition: opacity 0.35s, left 0.35s;
 	opacity: 0;
 }
 .kyl-frys #tarmometer-container.active {
 	opacity: 1;
+	left: 50%;
 }
 .kyl-frys #tarmometer-container #tarmometer {
 	position: relative;
