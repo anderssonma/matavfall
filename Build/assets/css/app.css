@@ -219,7 +219,7 @@ body .pager.out .teacher-zone {
     bottom: 0;
     left: 0;
     width: calc(100% / 3);
-    height: 400px;
+    height: 700px;
     overflow: hidden;
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
